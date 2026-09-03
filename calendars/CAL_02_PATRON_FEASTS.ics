@@ -1,0 +1,1993 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CAY GIA PHA//Calendar Projection//VI
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Lễ Bổn Mạng Gia Đình
+X-WR-TIMEZONE:Asia/Ho_Chi_Minh
+BEGIN:VEVENT
+UID:patron-G5X4-48S@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Trần Trọng Thu
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Trần Trọng Thu\nTê
+ n Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn T
+ răm Năm Đức Maria))\nNgày sinh: 1872\nNơi sinh: Thanh Hóa\, Việt
+  Nam\nNgày mất: 15/08/1969\n\nCha: Trần Cha Ông cố Thu - bà An\nM
+ ẹ: Mẹ Ông Thu - bà An\nVợ/Chồng: Nguyễn Thị Xuân - Út (v
+ ợ)\n\nQuan hệ với Cụ Thu: Trục Gốc Gia Tộc (Root Anchor)\nNh
+ ánh gia đình: Gốc Cụ Tổ (Root)\n\nDòng gia đình:\nGiuse Trần
+  Trọng Thu\n→ Trần Cha Ông cố Thu - bà An (thân phụ)\n\nFSID:
+  G5X4-48S
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X4-G4M@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Catarina — Catarina Trần Thị Vị
+DTSTART;VALUE=DATE:20260429
+DTEND;VALUE=DATE:20260430
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Catarina Trần Thị Vị\nT
+ ên Thánh: Catarina\nNgày lễ kính: 29/04 hàng năm (Thánh Catarina 
+ Siena)\nNgày sinh: 1929\nNơi sinh: Thanh Hóa\, Việt Nam\nNgày mất:
+  02/05/2009\n\nCha: Giuse Trần Trọng Thu\nMẹ: Nguyễn Thị Xuân -
+  Út\nVợ/Chồng: Gioan Lã Văn Mão (chồng)\n\nQuan hệ với Cụ 
+ Thu: Con gái trực hệ (F1)\nNhánh gia đình: Nhánh Bà Vị (Trần
+  Thị Vị)\n\nDòng gia đình:\nCatarina Trần Thị Vị\n→ Giuse T
+ rần Trọng Thu\n\nFSID: G5X4-G4M
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X4-7WL@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan — Gioan Trần Trọng Thả
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Trần Trọng Thả\nT
+ ên Thánh: Gioan\nNgày lễ kính: 27/12 hàng năm (Thánh Gioan Tông 
+ Đồ)\nNgày sinh: 1929\nNơi sinh: Thanh Hóa\, Việt Nam\n\nCha: Giuse
+  Trần Trọng Thu\nMẹ: Nguyễn Thị Xuân - Út\nVợ/Chồng: Maria
+  Lê Thị Phùng (vợ)\n\nQuan hệ với Cụ Thu: Con trai trực hệ
+  (F1)\nNhánh gia đình: Chưa xác định nhánh\n\nDòng gia đình:\n
+ Gioan Trần Trọng Thả\n→ Giuse Trần Trọng Thu\n\nFSID: G5X4-7WL
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-H78@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Cecilia — Cecilia Lê Thị Hoa
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Cecilia Lê Thị Hoa\nTên T
+ hánh: Cecilia\nNgày lễ kính: 22/11 hàng năm (Thánh Cecilia)\nNgày
+  sinh: 1949\nNơi sinh: Thanh Hóa\, Việt Nam\n\nCha: Lê Chí Trung\nM
+ ẹ: Trần Thị Thi\n\nQuan hệ với Cụ Thu: Cháu trực hệ (F2)\
+ nNhánh gia đình: Nhánh Bà Thi (Trần Thị Thi)\n\nDòng gia đình:
+ \nCecilia Lê Thị Hoa\n→ Trần Thị Thi\n→ Giuse Trần Trọng Th
+ u\n\nFSID: G5XX-H78
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XN-46X@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan — Gioan Lã Văn Mão
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Lã Văn Mão\nTên Th
+ ánh: Gioan\nNgày lễ kính: 27/12 hàng năm (Thánh Gioan Tông Đồ)
+ \nNgày sinh: 1925\nNgày mất: 27/01/2022\n\nVợ/Chồng: Catarina Tr
+ ần Thị Vị (vợ)\n\nQuan hệ với Cụ Thu: Rể nhánh trực h
+ ệ (F1)\nNhánh gia đình: Nhánh Bà Vị (Trần Thị Vị)\n\nDòng 
+ gia đình:\nGioan Lã Văn Mão\n→ Catarina Trần Thị Vị (vợ)\n
+ → Giuse Trần Trọng Thu\n\nFSID: G5XN-46X
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XF-TK3@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Lã Văn Tiến
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Lã Văn Tiến\nTên T
+ hánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn Tră
+ m Năm Đức Maria))\nNgày sinh: 03/03/1962\n\nCha: Gioan Lã Văn Mão\
+ nMẹ: Catarina Trần Thị Vị\nVợ/Chồng: Bùi Thị Minh (vợ)\n\
+ nQuan hệ với Cụ Thu: Cháu trực hệ (F2)\nNhánh gia đình: Nhá
+ nh Bà Vị (Trần Thị Vị)\n\nDòng gia đình:\nGiuse Lã Văn Tiế
+ n\n→ Catarina Trần Thị Vị\n→ Giuse Trần Trọng Thu\n\nFSID: G
+ 5XF-TK3
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X4-ZNG@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng An-tôn — An-tôn Trần Trọng Thư
+DTSTART;VALUE=DATE:20260613
+DTEND;VALUE=DATE:20260614
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: An-tôn Trần Trọng Thư\n
+ Tên Thánh: An-tôn\nNgày lễ kính: 13/06 hàng năm (Thánh Antôn Pa
+ dua)\nNgày sinh: 1918\nNơi sinh: Thanh Hóa\, Việt Nam\nNgày mất: 1
+ 7/05/1991\n\nCha: Giuse Trần Trọng Thu\nMẹ: Nguyễn Thị Xuân - 
+ Út\nVợ/Chồng: Bà Sa - Teresa Phạm Thị Hưng (vợ)\, Bà Lê Th
+ ị Nghi - Cả (vợ)\n\nQuan hệ với Cụ Thu: Con trai trực hệ (
+ F1)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gi
+ a đình:\nAn-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFS
+ ID: G5X4-ZNG
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-Y74@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Ghêgonô — Ghêgonô Trần Ngọc Thuận
+DTSTART;VALUE=DATE:20260903
+DTEND;VALUE=DATE:20260904
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Ghêgonô Trần Ngọc Thu
+ ận\nTên Thánh: Ghêgonô\nNgày lễ kính: 03/09 hàng năm (Thánh G
+ rêgôriô)\nNgày sinh: 29/11/1960\n\nCha: Gioan Trần Trọng Thả\nM
+ ẹ: Maria Lê Thị Phùng\nVợ/Chồng: Anna Nguyễn Thị Nhân (vợ
+ )\n\nQuan hệ với Cụ Thu: Cháu trực hệ (F2)\nNhánh gia đình: 
+ Nhánh Cụ Thả (Trần Trọng Thả)\n\nDòng gia đình:\nGhêgonô T
+ rần Ngọc Thuận\n→ Gioan Trần Trọng Thả\n→ Giuse Trần Tr
+ ọng Thu\n\nFSID: G5XX-Y74
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-1D8@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Lê Thị Phùng
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Lê Thị Phùng\nTên 
+ Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là Mẹ Th
+ iên Chúa)\nNgày sinh: 1942\nNgày mất: 2021\n\nVợ/Chồng: Gioan Tr
+ ần Trọng Thả (chồng)\n\nQuan hệ với Cụ Thu: Dâu nhánh tr
+ ực hệ (F1)\nNhánh gia đình: Chưa xác định nhánh\n\nDòng gia 
+ đình:\nMaria Lê Thị Phùng\n→ Gioan Trần Trọng Thả (chồng)\
+ n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-1D8
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XF-HNP@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Trần Xuân Hiệp
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Trần Xuân Hiệp\nT
+ ên Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn
+  Trăm Năm Đức Maria))\nNgày sinh: 21/03/1968\nNơi sinh: Cẩm Thủ
+ y\, Thanh Hóa\, Việt Nam\n\nCha: Gioan Trần Trọng Thả\nMẹ: Mari
+ a Lê Thị Phùng\nVợ/Chồng: Nguyễn Thị Thu Thuý (vợ)\n\nQuan 
+ hệ với Cụ Thu: Cháu trực hệ (F2)\nNhánh gia đình: Chưa xác
+  định nhánh\n\nDòng gia đình:\nGiuse Trần Xuân Hiệp\n→ Gioan
+  Trần Trọng Thả\n→ Giuse Trần Trọng Thu\n\nFSID: G5XF-HNP
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XN-6F8@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Lã Xuân Hùng
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Lã Xuân Hùng\nTên T
+ hánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn Tră
+ m Năm Đức Maria))\nNgày sinh: 1990\n\nCha: Lã Văn Minh\nMẹ: Đinh
+  Thị Xây\nVợ/Chồng: Teresa Hoàng Thị Phương (vợ)\n\nQuan h
+ ệ với Cụ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh Bà
+  Vị (Trần Thị Vị)\n\nDòng gia đình:\nGiuse Lã Xuân Hùng\n→
+  Lã Văn Minh\n→ Catarina Trần Thị Vị\n→ Giuse Trần Trọng T
+ hu\n\nFSID: G5XN-6F8
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XN-75K@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Teresa — Teresa Lã Thị Hiền
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Teresa Lã Thị Hiền\nTên
+  Thánh: Teresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa Hài 
+ Đồng Giêsu)\nNgày sinh: 20/05/1987\n\nCha: Lã Văn Minh\nMẹ: Đinh
+  Thị Xây\nVợ/Chồng: Hà Văn Quyết (chồng)\n\nQuan hệ với C
+ ụ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh Bà Vị (Tr
+ ần Thị Vị)\n\nDòng gia đình:\nTeresa Lã Thị Hiền\n→ Lã V
+ ăn Minh\n→ Catarina Trần Thị Vị\n→ Giuse Trần Trọng Thu\n\n
+ FSID: G5XN-75K
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-F2P@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Trương Thị Tần
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Trương Thị Tần\nT
+ ên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là M
+ ẹ Thiên Chúa)\nNgày sinh: 1955\nNơi sinh: Thanh Hóa\, Việt Nam\nN
+ gày mất: 20/04/2022\n\nVợ/Chồng: Lê Đức Thành (chồng)\n\nQua
+ n hệ với Cụ Thu: Dâu nhánh trực hệ (F2)\nNhánh gia đình: Nh
+ ánh Bà Thi (Trần Thị Thi)\n\nDòng gia đình:\nMaria Trương Thị
+  Tần\n→ Lê Đức Thành (chồng)\n→ Trần Thị Thi\n→ Giuse T
+ rần Trọng Thu\n\nFSID: G5XX-F2P
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X4-SD7@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Teresa — Teresa Trần Thị Nguyệt
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Teresa Trần Thị Nguyệt\
+ nTên Thánh: Teresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa 
+ Hài Đồng Giêsu)\nNgày sinh: 06/06/1964\nNơi sinh: Thanh Hóa\, Vi
+ ệt Nam\n\nCha: An-tôn Trần Trọng Thư\nMẹ: Bà Sa - Teresa Phạm
+  Thị Hưng\n\nQuan hệ với Cụ Thu: Cháu trực hệ (F2)\nNhánh g
+ ia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nTe
+ resa Trần Thị Nguyệt\n→ An-tôn Trần Trọng Thư\n→ Giuse Tr
+ ần Trọng Thu\n\nFSID: G5X4-SD7
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XW-XBH@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giacôbê — Giacôbê Trần Trung Kiêm
+DTSTART;VALUE=DATE:20260725
+DTEND;VALUE=DATE:20260726
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giacôbê Trần Trung Kiêm\
+ nTên Thánh: Giacôbê\nNgày lễ kính: 25/07 hàng năm (Thánh Giacô
+ bê Tông Đồ)\nNgày sinh: 10/05/1967\nNơi sinh: Thanh Hóa\, Việt N
+ am\nNgày mất: 10/12/2023\n\nCha: An-tôn Trần Trọng Thư\nMẹ: Bà
+  Sa - Teresa Phạm Thị Hưng\nVợ/Chồng: Lucia Nguyễn Thị Mai (v
+ ợ)\n\nQuan hệ với Cụ Thu: Cháu trực hệ (F2)\nNhánh gia đìn
+ h: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nGiacôbê 
+ Trần Trung Kiêm\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Tr
+ ọng Thu\n\nFSID: G5XW-XBH
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XQ-BHG@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioakim — Gioakim Trần Đức Hạnh
+DTSTART;VALUE=DATE:20260726
+DTEND;VALUE=DATE:20260727
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioakim Trần Đức Hạnh\
+ nTên Thánh: Gioakim\nNgày lễ kính: 26/07 hàng năm (Thánh Gioakim 
+ và Thánh Anna)\nNgày sinh: 13/08/1959\nNơi sinh: Thanh Hóa\, Việt N
+ am\n\nCha: An-tôn Trần Trọng Thư\nMẹ: Bà Sa - Teresa Phạm Thị
+  Hưng\nVợ/Chồng: Maria Madalena Nguyễn Thị Đào (vợ)\n\nQuan h
+ ệ với Cụ Thu: Cháu trực hệ (F2)\nNhánh gia đình: Nhánh Cụ
+  Thư (Trần Trọng Thư)\n\nDòng gia đình:\nGioakim Trần Đức H
+ ạnh\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFS
+ ID: G5XQ-BHG
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XW-GS1@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Mattheu — Mattheu Trần Văn Đạo
+DTSTART;VALUE=DATE:20260921
+DTEND;VALUE=DATE:20260922
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Mattheu Trần Văn Đạo\nT
+ ên Thánh: Mattheu\nNgày lễ kính: 21/09 hàng năm (Thánh Matthêu)\
+ nNgày sinh: 21/09/1971\nNơi sinh: Thanh Hóa\, Việt Nam\n\nCha: An-tô
+ n Trần Trọng Thư\nMẹ: Bà Sa - Teresa Phạm Thị Hưng\nVợ/Ch
+ ồng: Maria Nguyễn Thị Thu Hiền (vợ)\n\nQuan hệ với Cụ Thu:
+  Cháu trực hệ (F2)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọ
+ ng Thư)\n\nDòng gia đình:\nMattheu Trần Văn Đạo\n→ An-tôn Tr
+ ần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XW-GS1
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X4-4TG@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Bonaventura — Bonaventura Trần Văn Nghĩa
+DTSTART;VALUE=DATE:20260715
+DTEND;VALUE=DATE:20260716
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Bonaventura Trần Văn Nghĩ
+ a\nTên Thánh: Bonaventura\nNgày lễ kính: 15/07 hàng năm (Thánh B
+ ônavêntura)\nNgày sinh: 12/07/1973\nNơi sinh: Thanh Hóa\, Việt Nam\
+ n\nCha: An-tôn Trần Trọng Thư\nMẹ: Bà Sa - Teresa Phạm Thị H
+ ưng\nVợ/Chồng: Inne Lê Thị Hoàng Thanh (vợ)\n\nQuan hệ với 
+ Cụ Thu: Cháu trực hệ (F2)\nNhánh gia đình: Nhánh Cụ Thư (Tr
+ ần Trọng Thư)\n\nDòng gia đình:\nBonaventura Trần Văn Nghĩa\n
+ → An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5X
+ 4-4TG
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XW-X8X@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Agnest — Agnest Trần Thị Đức
+DTSTART;VALUE=DATE:20260121
+DTEND;VALUE=DATE:20260122
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Agnest Trần Thị Đức\nT
+ ên Thánh: Agnest\nNgày lễ kính: 21/01 hàng năm (Thánh Anê)\nNgà
+ y sinh: BET 15 OCT 1956 AND 19 OCT 1956\nNơi sinh: Thanh Hóa\, Việt Na
+ m\n\nCha: An-tôn Trần Trọng Thư\nMẹ: Bà Sa - Teresa Phạm Thị 
+ Hưng\nVợ/Chồng: Micae Nguyễn Văn Thìn (chồng)\n\nQuan hệ vớ
+ i Cụ Thu: Cháu trực hệ (F2)\nNhánh gia đình: Nhánh Cụ Thư (T
+ rần Trọng Thư)\n\nDòng gia đình:\nAgnest Trần Thị Đức\n→ 
+ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XW-X8
+ X
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X4-SBN@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Terresa — Terresa Trần Thị Phúc
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Terresa Trần Thị Phúc\nT
+ ên Thánh: Terresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa H
+ ài Đồng Giêsu)\nNgày sinh: 14/10/1956\nNơi sinh: Thanh Hóa\, Việ
+ t Nam\n\nCha: An-tôn Trần Trọng Thư\nMẹ: Bà Sa - Teresa Phạm Th
+ ị Hưng\nVợ/Chồng: Giuse Nguyễn Huy Xuân (chồng)\n\nQuan hệ v
+ ới Cụ Thu: Cháu trực hệ (F2)\nNhánh gia đình: Nhánh Cụ Thư
+  (Trần Trọng Thư)\n\nDòng gia đình:\nTerresa Trần Thị Phúc\n
+ → An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5X
+ 4-SBN
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XW-676@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Teresa — Teresa Trần Thị Ngoan
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Teresa Trần Thị Ngoan\nT
+ ên Thánh: Teresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa H
+ ài Đồng Giêsu)\nNgày sinh: 05/04/1963\nNơi sinh: Thanh Hóa\, Việ
+ t Nam\n\nCha: An-tôn Trần Trọng Thư\nMẹ: Bà Sa - Teresa Phạm Th
+ ị Hưng\nVợ/Chồng: Gioan Baotixita Trần Ngọc Tâm (chồng)\n\nQ
+ uan hệ với Cụ Thu: Cháu trực hệ (F2)\nNhánh gia đình: Nhánh
+  Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nTeresa Trần Thị
+  Ngoan\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nF
+ SID: G5XW-676
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-1BH@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan — Gioan Trần Đức Nam
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Trần Đức Nam\nTên
+  Thánh: Gioan\nNgày lễ kính: 27/12 hàng năm (Thánh Gioan Tông Đ
+ ồ)\nNgày sinh: 1997\n\nCha: Ghêgonô Trần Ngọc Thuận\nMẹ: Anna
+  Nguyễn Thị Nhân\n\nQuan hệ với Cụ Thu: Chắt trực hệ (F3)
+ \nNhánh gia đình: Chưa xác định nhánh\n\nDòng gia đình:\nGioan
+  Trần Đức Nam\n→ Ghêgonô Trần Ngọc Thuận\n→ Gioan Trần 
+ Trọng Thả\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-1BH
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XF-39K@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Trần Ngọc Thiên Duyên
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Trần Ngọc Thiên Du
+ yên\nTên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ 
+ là Mẹ Thiên Chúa)\nNgày sinh: 1998\n\nCha: Ghêgonô Trần Ngọc T
+ huận\nMẹ: Anna Nguyễn Thị Nhân\n\nQuan hệ với Cụ Thu: Chắ
+ t trực hệ (F3)\nNhánh gia đình: Chưa xác định nhánh\n\nDòng 
+ gia đình:\nMaria Trần Ngọc Thiên Duyên\n→ Ghêgonô Trần Ngọ
+ c Thuận\n→ Gioan Trần Trọng Thả\n→ Giuse Trần Trọng Thu\n\
+ nFSID: G5XF-39K
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-16S@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Trần Thị Trang
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Trần Thị Trang\nTê
+ n Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là Mẹ 
+ Thiên Chúa)\nNgày sinh: 1990\n\nCha: Ghêgonô Trần Ngọc Thuận\nM
+ ẹ: Anna Nguyễn Thị Nhân\nVợ/Chồng: Antôn Hứa Đình Hợp (c
+ hồng)\n\nQuan hệ với Cụ Thu: Chắt trực hệ (F3)\nNhánh gia 
+ đình: Chưa xác định nhánh\n\nDòng gia đình:\nMaria Trần Thị
+  Trang\n→ Ghêgonô Trần Ngọc Thuận\n→ Gioan Trần Trọng Th
+ ả\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-16S
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XF-96C@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Teresa — Teresa Trần Lệ Quyên
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Teresa Trần Lệ Quyên\nT
+ ên Thánh: Teresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa H
+ ài Đồng Giêsu)\nNgày sinh: 1992\n\nCha: Ghêgonô Trần Ngọc Thu
+ ận\nMẹ: Anna Nguyễn Thị Nhân\nVợ/Chồng: Phero Trần Trọng 
+ Nhân (chồng)\n\nQuan hệ với Cụ Thu: Chắt trực hệ (F3)\nNhá
+ nh gia đình: Chưa xác định nhánh\n\nDòng gia đình:\nTeresa Tr
+ ần Lệ Quyên\n→ Ghêgonô Trần Ngọc Thuận\n→ Gioan Trần Tr
+ ọng Thả\n→ Giuse Trần Trọng Thu\n\nFSID: G5XF-96C
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XF-J4D@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Anna — Anna Nguyễn Thị Nhân
+DTSTART;VALUE=DATE:20260726
+DTEND;VALUE=DATE:20260727
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Anna Nguyễn Thị Nhân\nT
+ ên Thánh: Anna\nNgày lễ kính: 26/07 hàng năm (Thánh Gioakim và T
+ hánh Anna)\nNgày sinh: 06/09/1966\n\nVợ/Chồng: Ghêgonô Trần Ng
+ ọc Thuận (chồng)\n\nQuan hệ với Cụ Thu: Dâu nhánh trực h
+ ệ (F2)\nNhánh gia đình: Chưa xác định nhánh\n\nDòng gia đình
+ :\nAnna Nguyễn Thị Nhân\n→ Ghêgonô Trần Ngọc Thuận (chồng
+ )\n→ Gioan Trần Trọng Thả\n→ Giuse Trần Trọng Thu\n\nFSID: G
+ 5XF-J4D
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-YP4@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Trần Nguyễn Hồng Ân
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Trần Nguyễn Hồng 
+ Ân\nTên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ l
+ à Mẹ Thiên Chúa)\nNgày sinh: 2007\n\nCha: Giuse Trần Xuân Hiệp\
+ nMẹ: Nguyễn Thị Thu Thuý\n\nQuan hệ với Cụ Thu: Chắt trực
+  hệ (F3)\nNhánh gia đình: Chưa xác định nhánh\n\nDòng gia đì
+ nh:\nMaria Trần Nguyễn Hồng Ân\n→ Giuse Trần Xuân Hiệp\n→ 
+ Gioan Trần Trọng Thả\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-YP4
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XF-997@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan — Gioan Trần Nguyễn Xuân Phát
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Trần Nguyễn Xuân P
+ hát\nTên Thánh: Gioan\nNgày lễ kính: 27/12 hàng năm (Thánh Gioan
+  Tông Đồ)\nNgày sinh: 2002\n\nCha: Giuse Trần Xuân Hiệp\nMẹ: N
+ guyễn Thị Thu Thuý\n\nQuan hệ với Cụ Thu: Chắt trực hệ (F
+ 3)\nNhánh gia đình: Chưa xác định nhánh\n\nDòng gia đình:\nGio
+ an Trần Nguyễn Xuân Phát\n→ Giuse Trần Xuân Hiệp\n→ Gioan T
+ rần Trọng Thả\n→ Giuse Trần Trọng Thu\n\nFSID: G5XF-997
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-P9S8-C9R@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Teresa — Teresa Hoàng Thị Phương
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Teresa Hoàng Thị Phương\
+ nTên Thánh: Teresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa 
+ Hài Đồng Giêsu)\n\nVợ/Chồng: Giuse Lã Xuân Hùng (chồng)\n\nQ
+ uan hệ với Cụ Thu: Dâu nhánh trực hệ (F3)\nNhánh gia đình: 
+ Nhánh Bà Vị (Trần Thị Vị)\n\nDòng gia đình:\nTeresa Hoàng Th
+ ị Phương\n→ Giuse Lã Xuân Hùng (chồng)\n→ Lã Văn Minh\n→ 
+ Catarina Trần Thị Vị\n→ Giuse Trần Trọng Thu\n\nFSID: P9S8-C9R
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-NKK@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Lucia — Lucia Nguyễn Thị Mai
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Lucia Nguyễn Thị Mai\nTê
+ n Thánh: Lucia\nNgày lễ kính: 13/12 hàng năm (Thánh Lucia)\nNgày 
+ sinh: 14/09/1968\nNơi sinh: Thanh Hóa\, Việt Nam\nNgày mất: 31/01/2
+ 023\n\nVợ/Chồng: Giacôbê Trần Trung Kiêm (chồng)\n\nQuan hệ v
+ ới Cụ Thu: Dâu nhánh trực hệ (F2)\nNhánh gia đình: Nhánh C
+ ụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nLucia Nguyễn Thị 
+ Mai\n→ Giacôbê Trần Trung Kiêm (chồng)\n→ An-tôn Trần Trọn
+ g Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-NKK
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X7-SK8@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan Baotixita — Gioan Baotixita Trần Qu
+ ốc Tuấn
+DTSTART;VALUE=DATE:20260624
+DTEND;VALUE=DATE:20260625
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Baotixita Trần Quốc
+  Tuấn\nTên Thánh: Gioan Baotixita\nNgày lễ kính: 24/06 hàng năm 
+ (Sinh Nhật Thánh Gioan Tẩy Giả)\nNgày sinh: 05/07/1987\n\nCha: Gio
+ akim Trần Đức Hạnh\nMẹ: Maria Madalena Nguyễn Thị Đào\n\nQu
+ an hệ với Cụ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh
+  Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nGioan Baotixita Tr
+ ần Quốc Tuấn\n→ Gioakim Trần Đức Hạnh\n→ An-tôn Trần T
+ rọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5X7-SK8
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-JQR@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Anton — Anton Trần Thế An
+DTSTART;VALUE=DATE:20260613
+DTEND;VALUE=DATE:20260614
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Anton Trần Thế An\nTên T
+ hánh: Anton\nNgày lễ kính: 13/06 hàng năm (Thánh Antôn Padua)\nNg
+ ày sinh: 27/07/1994\nNơi sinh: Thanh Hóa\, Việt Nam\n\nCha: Giacôbê
+  Trần Trung Kiêm\nMẹ: Lucia Nguyễn Thị Mai\nVợ/Chồng: Phạm 
+ Phương Nga (vợ)\n\nQuan hệ với Cụ Thu: Chắt trực hệ (F3)\n
+ Nhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đ
+ ình:\nAnton Trần Thế An\n→ Giacôbê Trần Trung Kiêm\n→ An-tô
+ n Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-JQR
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-X69@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Trần Minh Long
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Trần Minh Long\nTên 
+ Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn Tr
+ ăm Năm Đức Maria))\nNgày sinh: 20/07/1991\n\nCha: Giacôbê Trần T
+ rung Kiêm\nMẹ: Lucia Nguyễn Thị Mai\nVợ/Chồng: Anna Trần Th
+ ị Linh (vợ)\n\nQuan hệ với Cụ Thu: Chắt trực hệ (F3)\nNhá
+ nh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:
+ \nGiuse Trần Minh Long\n→ Giacôbê Trần Trung Kiêm\n→ An-tôn Tr
+ ần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-X69
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XF-7NG@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Teresa — Teresa Trần Nguyễn Linh Giang
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Teresa Trần Nguyễn Linh G
+ iang\nTên Thánh: Teresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têr
+ êsa Hài Đồng Giêsu)\nNgày sinh: 09/02/2008\n\nCha: Phanxico Trần 
+ Văn Toàn\nMẹ: Teresa Nguyễn Thị Lưu\n\nQuan hệ với Cụ Thu: 
+ Chắt trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọ
+ ng Thư)\n\nDòng gia đình:\nTeresa Trần Nguyễn Linh Giang\n→ Phan
+ xico Trần Văn Toàn\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần 
+ Trọng Thu\n\nFSID: G5XF-7NG
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XF-9LD@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Trần Nguyễn Linh Lam
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Trần Nguyễn Linh La
+ m\nTên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là
+  Mẹ Thiên Chúa)\nNgày sinh: 01/09/2011\n\nCha: Phanxico Trần Văn T
+ oàn\nMẹ: Teresa Nguyễn Thị Lưu\n\nQuan hệ với Cụ Thu: Chắt
+  trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Th
+ ư)\n\nDòng gia đình:\nMaria Trần Nguyễn Linh Lam\n→ Phanxico Tr
+ ần Văn Toàn\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng
+  Thu\n\nFSID: G5XF-9LD
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-578@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Trần Minh Đăng
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Trần Minh Đăng\nTê
+ n Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn T
+ răm Năm Đức Maria))\nNgày sinh: 25/03/2003\n\nCha: Mattheu Trần V
+ ăn Đạo\nMẹ: Maria Nguyễn Thị Thu Hiền\n\nQuan hệ với Cụ 
+ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần 
+ Trọng Thư)\n\nDòng gia đình:\nGiuse Trần Minh Đăng\n→ Mattheu 
+ Trần Văn Đạo\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Tr
+ ọng Thu\n\nFSID: G5XX-578
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-J73@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Teresa — Teresa Nguyễn Thị Lưu
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Teresa Nguyễn Thị Lưu\nT
+ ên Thánh: Teresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa H
+ ài Đồng Giêsu)\nNgày sinh: 04/09/1975\n\nVợ/Chồng: Phanxico Tr
+ ần Văn Toàn (chồng)\n\nQuan hệ với Cụ Thu: Dâu nhánh trực 
+ hệ (F2)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nD
+ òng gia đình:\nTeresa Nguyễn Thị Lưu\n→ Phanxico Trần Văn To
+ àn (chồng)\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng T
+ hu\n\nFSID: G5XX-J73
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X7-XG1@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Trần Thị Hân
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Trần Thị Hân\nTên
+  Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là Mẹ T
+ hiên Chúa)\nNgày sinh: 23/10/1983\nNơi sinh: Thanh Hóa\, Việt Nam\n
+ \nCha: Gioakim Trần Đức Hạnh\nMẹ: Maria Madalena Nguyễn Thị 
+ Đào\nVợ/Chồng: Giuse Phạm Văn Hạnh (chồng)\n\nQuan hệ với
+  Cụ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (T
+ rần Trọng Thư)\n\nDòng gia đình:\nMaria Trần Thị Hân\n→ Gio
+ akim Trần Đức Hạnh\n→ An-tôn Trần Trọng Thư\n→ Giuse Tr
+ ần Trọng Thu\n\nFSID: G5X7-XG1
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-Y6L@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Trần Minh Anh
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Trần Minh Anh\nTên T
+ hánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là Mẹ Thi
+ ên Chúa)\nNgày sinh: 29/08/2005\nNơi sinh: Hồ Chí Minh\, Vietnam\n\
+ nCha: Mattheu Trần Văn Đạo\nMẹ: Maria Nguyễn Thị Thu Hiền\n\
+ nQuan hệ với Cụ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nh
+ ánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nMaria Trần Mi
+ nh Anh\n→ Mattheu Trần Văn Đạo\n→ An-tôn Trần Trọng Thư\n
+ → Giuse Trần Trọng Thu\n\nFSID: G5XX-Y6L
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XW-7JZ@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Teresa — Teresa Trần Thị Nga
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Teresa Trần Thị Nga\nTên
+  Thánh: Teresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa Hài 
+ Đồng Giêsu)\nNgày sinh: 24/06/1985\nNơi sinh: Thanh Hóa\, Việt Na
+ m\n\nCha: Gioakim Trần Đức Hạnh\nMẹ: Maria Madalena Nguyễn Th
+ ị Đào\nVợ/Chồng: Giuse Nguyễn Văn Khảo (chồng)\n\nQuan hệ
+  với Cụ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh Cụ T
+ hư (Trần Trọng Thư)\n\nDòng gia đình:\nTeresa Trần Thị Nga\n
+ → Gioakim Trần Đức Hạnh\n→ An-tôn Trần Trọng Thư\n→ Giu
+ se Trần Trọng Thu\n\nFSID: G5XW-7JZ
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-NS4@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Nguyễn Thị Thu Hiền
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Nguyễn Thị Thu Hi
+ ền\nTên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ 
+ là Mẹ Thiên Chúa)\nNgày sinh: 15/09/1971\n\nVợ/Chồng: Mattheu Tr
+ ần Văn Đạo (chồng)\n\nQuan hệ với Cụ Thu: Dâu nhánh trực
+  hệ (F2)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nD
+ òng gia đình:\nMaria Nguyễn Thị Thu Hiền\n→ Mattheu Trần Văn
+  Đạo (chồng)\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọ
+ ng Thu\n\nFSID: G5XX-NS4
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X4-QXS@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Trần Hải Linh
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Trần Hải Linh\nTên
+  Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn Tr
+ ăm Năm Đức Maria))\nNgày sinh: 21/09/1994\nNơi sinh: Thanh Hóa\, V
+ iệt Nam\n\nCha: Gioakim Trần Đức Hạnh\nMẹ: Maria Madalena Nguy
+ ễn Thị Đào\nVợ/Chồng: Thị Oanh Thư Maria Nguyễn (vợ)\n\nQ
+ uan hệ với Cụ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhán
+ h Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nGiuse Trần Hải
+  Linh\n→ Gioakim Trần Đức Hạnh\n→ An-tôn Trần Trọng Thư\n
+ → Giuse Trần Trọng Thu\n\nFSID: G5X4-QXS
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X7-GBR@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Madalena Nguyễn Thị Đào
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Madalena Nguyễn Thị
+  Đào\nTên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức M
+ ẹ là Mẹ Thiên Chúa)\nNgày sinh: 25/10/1959\nNơi sinh: Thanh Hóa\
+ , Việt Nam\n\nVợ/Chồng: Gioakim Trần Đức Hạnh (chồng)\n\nQu
+ an hệ với Cụ Thu: Dâu nhánh trực hệ (F2)\nNhánh gia đình: N
+ hánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nMaria Madalena
+  Nguyễn Thị Đào\n→ Gioakim Trần Đức Hạnh (chồng)\n→ An-
+ tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5X7-GBR
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-135@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria Chiara — Maria Chiara Trần Lê Gia Li
+ nh
+DTSTART;VALUE=DATE:20260811
+DTEND;VALUE=DATE:20260812
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Chiara Trần Lê Gia L
+ inh\nTên Thánh: Maria Chiara\nNgày lễ kính: 11/08 hàng năm (Thánh
+  Nữ Clara (Maria Chiara))\nNgày sinh: 21/09/2006\n\nCha: Bonaventura Tr
+ ần Văn Nghĩa\nMẹ: Inne Lê Thị Hoàng Thanh\n\nQuan hệ với C
+ ụ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Tr
+ ần Trọng Thư)\n\nDòng gia đình:\nMaria Chiara Trần Lê Gia Linh\
+ n→ Bonaventura Trần Văn Nghĩa\n→ An-tôn Trần Trọng Thư\n→ 
+ Giuse Trần Trọng Thu\n\nFSID: G5XX-135
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-RHT@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng An-tôn — An-tôn Trần Lê Gia Bảo
+DTSTART;VALUE=DATE:20260613
+DTEND;VALUE=DATE:20260614
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: An-tôn Trần Lê Gia Bảo\
+ nTên Thánh: An-tôn\nNgày lễ kính: 13/06 hàng năm (Thánh Antôn P
+ adua)\nNgày sinh: 29/01/2008\n\nCha: Bonaventura Trần Văn Nghĩa\nMẹ
+ : Inne Lê Thị Hoàng Thanh\n\nQuan hệ với Cụ Thu: Chắt trực h
+ ệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDò
+ ng gia đình:\nAn-tôn Trần Lê Gia Bảo\n→ Bonaventura Trần Văn 
+ Nghĩa\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nF
+ SID: G5XX-RHT
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XF-979@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Inne — Inne Lê Thị Hoàng Thanh
+DTSTART;VALUE=DATE:20260121
+DTEND;VALUE=DATE:20260122
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Inne Lê Thị Hoàng Thanh\n
+ Tên Thánh: Inne\nNgày lễ kính: 21/01 hàng năm (Thánh Anê)\nNgày
+  sinh: 04/12/1976\n\nVợ/Chồng: Bonaventura Trần Văn Nghĩa (chồng
+ )\n\nQuan hệ với Cụ Thu: Dâu nhánh trực hệ (F2)\nNhánh gia đ
+ ình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nInne L
+ ê Thị Hoàng Thanh\n→ Bonaventura Trần Văn Nghĩa (chồng)\n→ A
+ n-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XF-979
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XF-Q6B@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Vinh Sơn — Vinh Sơn Trần Nhật Quang
+DTSTART;VALUE=DATE:20260405
+DTEND;VALUE=DATE:20260406
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Vinh Sơn Trần Nhật Quang
+ \nTên Thánh: Vinh Sơn\nNgày lễ kính: 05/04 hàng năm (Thánh Vinh 
+ Sơn Phaolô)\nNgày sinh: 28/04/2004\n\nCha: Bênađô Trần Trung Chín
+ h\nMẹ: Maria Teresa Trần Ngọc Mai\n\nQuan hệ với Cụ Thu: Chắ
+ t trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Th
+ ư)\n\nDòng gia đình:\nVinh Sơn Trần Nhật Quang\n→ Bênađô Tr
+ ần Trung Chính\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọ
+ ng Thu\n\nFSID: G5XF-Q6B
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XF-3ZF@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Teresa — Teresa Trần Nhật Quỳnh
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Teresa Trần Nhật Quỳnh\
+ nTên Thánh: Teresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa 
+ Hài Đồng Giêsu)\nNgày sinh: 10/07/2006\n\nCha: Bênađô Trần Trun
+ g Chính\nMẹ: Maria Teresa Trần Ngọc Mai\n\nQuan hệ với Cụ Thu
+ : Chắt trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Tr
+ ọng Thư)\n\nDòng gia đình:\nTeresa Trần Nhật Quỳnh\n→ Bêna
+ đô Trần Trung Chính\n→ An-tôn Trần Trọng Thư\n→ Giuse Trầ
+ n Trọng Thu\n\nFSID: G5XF-3ZF
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-BJT@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Teresa Trần Ngọc Mai
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Teresa Trần Ngọc Ma
+ i\nTên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là
+  Mẹ Thiên Chúa)\nNgày sinh: 14/02/1978\n\nVợ/Chồng: Bênađô Tr
+ ần Trung Chính (chồng)\n\nQuan hệ với Cụ Thu: Dâu nhánh trự
+ c hệ (F2)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\n
+ Dòng gia đình:\nMaria Teresa Trần Ngọc Mai\n→ Bênađô Trần Tr
+ ung Chính (chồng)\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Tr
+ ọng Thu\n\nFSID: G5XX-BJT
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-6P2@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Lucia — Lucia Nguyễn Thị Lan
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Lucia Nguyễn Thị Lan\nTê
+ n Thánh: Lucia\nNgày lễ kính: 13/12 hàng năm (Thánh Lucia)\nNgày 
+ sinh: 20/11/1982\n\nCha: Micae Nguyễn Văn Thìn\nMẹ: Agnest Trần Th
+ ị Đức\nVợ/Chồng: Giuse Lăng Văn Trường (chồng)\n\nQuan h
+ ệ với Cụ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh C
+ ụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nLucia Nguyễn Thị 
+ Lan\n→ Agnest Trần Thị Đức\n→ An-tôn Trần Trọng Thư\n→ 
+ Giuse Trần Trọng Thu\n\nFSID: G5XX-6P2
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-FDN@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Nguyễn Thị Thanh Thuý
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Nguyễn Thị Thanh Th
+ uý\nTên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ l
+ à Mẹ Thiên Chúa)\nNgày sinh: 13/08/1978\n\nCha: Micae Nguyễn Văn 
+ Thìn\nMẹ: Agnest Trần Thị Đức\nVợ/Chồng: Giuse Trần Duy Qu
+ ốc (chồng)\n\nQuan hệ với Cụ Thu: Chắt trực hệ (F3)\nNhán
+ h gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\
+ nMaria Nguyễn Thị Thanh Thuý\n→ Agnest Trần Thị Đức\n→ An-
+ tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-FDN
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-6WJ@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Nguyễn Văn Đạt
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Nguyễn Văn Đạt\nT
+ ên Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn
+  Trăm Năm Đức Maria))\nNgày sinh: 18/03/1989\n\nCha: Micae Nguyễn 
+ Văn Thìn\nMẹ: Agnest Trần Thị Đức\nVợ/Chồng: Maria Đào Th
+ ị Chung (vợ)\n\nQuan hệ với Cụ Thu: Chắt trực hệ (F3)\nNh
+ ánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đìn
+ h:\nGiuse Nguyễn Văn Đạt\n→ Agnest Trần Thị Đức\n→ An-tô
+ n Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-6WJ
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-DL8@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Nguyễn Văn Thắng
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Nguyễn Văn Thắng\n
+ Tên Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạ
+ n Trăm Năm Đức Maria))\nNgày sinh: 09/10/1986\nNơi sinh: Thanh Hóa
+ \, Việt Nam\n\nCha: Micae Nguyễn Văn Thìn\nMẹ: Agnest Trần Thị
+  Đức\nVợ/Chồng: Terexa Bùi Thị Điệp (vợ)\n\nQuan hệ với
+  Cụ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (T
+ rần Trọng Thư)\n\nDòng gia đình:\nGiuse Nguyễn Văn Thắng\n→
+  Agnest Trần Thị Đức\n→ An-tôn Trần Trọng Thư\n→ Giuse Tr
+ ần Trọng Thu\n\nFSID: G5XX-DL8
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-VKD@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Anna — AnNa Nguyễn Thị Hằng
+DTSTART;VALUE=DATE:20260726
+DTEND;VALUE=DATE:20260727
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: AnNa Nguyễn Thị Hằng\nT
+ ên Thánh: Anna\nNgày lễ kính: 26/07 hàng năm (Thánh Gioakim và T
+ hánh Anna)\nNgày sinh: 01/11/1984\nNơi sinh: Thanh Hoá\n\nCha: Giuse N
+ guyễn Huy Xuân\nMẹ: Terresa Trần Thị Phúc\nVợ/Chồng: Nguyễ
+ n Văn Bình (chồng)\n\nQuan hệ với Cụ Thu: Chắt trực hệ (F3
+ )\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia 
+ đình:\nAnNa Nguyễn Thị Hằng\n→ Terresa Trần Thị Phúc\n→ A
+ n-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-VKD
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X4-QS6@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Terresa — Terresa Nguyễn Thị Ánh
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Terresa Nguyễn Thị Ánh\n
+ Tên Thánh: Terresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa 
+ Hài Đồng Giêsu)\nNgày sinh: 20/10/1986\nNơi sinh: Thanh Hóa\, Vi
+ ệt Nam\n\nCha: Giuse Nguyễn Huy Xuân\nMẹ: Terresa Trần Thị Phú
+ c\nVợ/Chồng: Vinh sơn Dương Chí Dũng (chồng)\n\nQuan hệ với
+  Cụ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (T
+ rần Trọng Thư)\n\nDòng gia đình:\nTerresa Nguyễn Thị Ánh\n→
+  Terresa Trần Thị Phúc\n→ An-tôn Trần Trọng Thư\n→ Giuse Tr
+ ần Trọng Thu\n\nFSID: G5X4-QS6
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XW-DLM@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Lucia — Lucia Nguyễn Thị Hà
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Lucia Nguyễn Thị Hà\nTê
+ n Thánh: Lucia\nNgày lễ kính: 13/12 hàng năm (Thánh Lucia)\nNgày 
+ sinh: 20/10/1982\nNơi sinh: Thanh Hóa\, Việt Nam\n\nCha: Giuse Nguyễ
+ n Huy Xuân\nMẹ: Terresa Trần Thị Phúc\nVợ/Chồng: Gioan Văn Tr
+ ọng Thường (chồng)\n\nQuan hệ với Cụ Thu: Chắt trực hệ 
+ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng g
+ ia đình:\nLucia Nguyễn Thị Hà\n→ Terresa Trần Thị Phúc\n→ 
+ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XW-DL
+ M
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X4-S11@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Nguyễn Sơn Lâm
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Nguyễn Sơn Lâm\nTê
+ n Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn T
+ răm Năm Đức Maria))\nNgày sinh: 17/12/1994\nNơi sinh: Thanh Hóa\, 
+ Việt Nam\n\nCha: Giuse Nguyễn Huy Xuân\nMẹ: Terresa Trần Thị Ph
+ úc\nVợ/Chồng: La Thị Kim (vợ)\n\nQuan hệ với Cụ Thu: Chắt
+  trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Th
+ ư)\n\nDòng gia đình:\nGiuse Nguyễn Sơn Lâm\n→ Terresa Trần Th
+ ị Phúc\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n
+ \nFSID: G5X4-S11
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-X13@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan Baotixita — Gioan Baotixita Trần Ti
+ ến Tùng
+DTSTART;VALUE=DATE:20260624
+DTEND;VALUE=DATE:20260625
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Baotixita Trần Tiến
+  Tùng\nTên Thánh: Gioan Baotixita\nNgày lễ kính: 24/06 hàng năm (
+ Sinh Nhật Thánh Gioan Tẩy Giả)\nNgày sinh: 10/06/1987\nNơi sinh: 
+ Thanh Hóa\, Việt Nam\nNgày mất: 17/09/2013\n\nCha: Gioan Baotixita T
+ rần Ngọc Tâm\nMẹ: Teresa Trần Thị Ngoan\n\nQuan hệ với Cụ
+  Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần
+  Trọng Thư)\n\nDòng gia đình:\nGioan Baotixita Trần Tiến Tùng\n
+ → Teresa Trần Thị Ngoan\n→ An-tôn Trần Trọng Thư\n→ Giuse 
+ Trần Trọng Thu\n\nFSID: G5XX-X13
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X4-3NL@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Nguyễn Thị Hồng
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Nguyễn Thị Hồng\n
+ Tên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là M
+ ẹ Thiên Chúa)\nNgày sinh: 17/10/1988\nNơi sinh: Thanh Hóa\, Việt 
+ Nam\n\nCha: Giuse Nguyễn Huy Xuân\nMẹ: Terresa Trần Thị Phúc\nV
+ ợ/Chồng: Bùi Trung Dũng (chồng)\, Lương Văn Toàn (chồng)\n\n
+ Quan hệ với Cụ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhá
+ nh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nMaria Nguyễn Th
+ ị Hồng\n→ Terresa Trần Thị Phúc\n→ An-tôn Trần Trọng Th
+ ư\n→ Giuse Trần Trọng Thu\n\nFSID: G5X4-3NL
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XW-8KK@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Nguyễn Huy Xuân
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Nguyễn Huy Xuân\nTê
+ n Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn T
+ răm Năm Đức Maria))\nNgày sinh: 20/12/1952\nNơi sinh: Thanh Hóa\, 
+ Việt Nam\n\nVợ/Chồng: Terresa Trần Thị Phúc (vợ)\n\nQuan hệ
+  với Cụ Thu: Rể nhánh trực hệ (F2)\nNhánh gia đình: Nhánh C
+ ụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nGiuse Nguyễn Huy Xu
+ ân\n→ Terresa Trần Thị Phúc (vợ)\n→ An-tôn Trần Trọng Th
+ ư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XW-8KK
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X4-87R@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan — Gioan Nguyễn Hồng Ân
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Nguyễn Hồng Ân\nT
+ ên Thánh: Gioan\nNgày lễ kính: 27/12 hàng năm (Thánh Gioan Tông 
+ Đồ)\nNgày sinh: 12/04/1997\nNơi sinh: Bảo Lộc\, Lâm Ðồng\, Vi
+ ệt Nam\n\nCha: Giuse Nguyễn Huy Xuân\nMẹ: Terresa Trần Thị Phú
+ c\nVợ/Chồng: Maria Nguyễn Minh Thư (vợ)\n\nQuan hệ với Cụ T
+ hu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần T
+ rọng Thư)\n\nDòng gia đình:\nGioan Nguyễn Hồng Ân\n→ Terresa 
+ Trần Thị Phúc\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Tr
+ ọng Thu\n\nFSID: G5X4-87R
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-FFJ@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Teresa — Teresa Trần Thị Tình
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Teresa Trần Thị Tình\nT
+ ên Thánh: Teresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa H
+ ài Đồng Giêsu)\nNgày sinh: 10/03/1978\n\nCha: Gioan Baotixita Trần
+  Ngọc Tâm\nMẹ: Teresa Trần Thị Ngoan\nVợ/Chồng: Phaolo Trần
+  Đình Hữu (chồng)\n\nQuan hệ với Cụ Thu: Chắt trực hệ (F
+ 3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia
+  đình:\nTeresa Trần Thị Tình\n→ Teresa Trần Thị Ngoan\n→ An
+ -tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-FFJ
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G52M-87Y@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan Baotixita — Gioan Baotixita Hứa Trầ
+ n Bảo Nguyên
+DTSTART;VALUE=DATE:20260624
+DTEND;VALUE=DATE:20260625
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Baotixita Hứa Trần 
+ Bảo Nguyên\nTên Thánh: Gioan Baotixita\nNgày lễ kính: 24/06 hàng
+  năm (Sinh Nhật Thánh Gioan Tẩy Giả)\nNgày sinh: 2018\n\nCha: Ant
+ ôn Hứa Đình Hợp\nMẹ: Maria Trần Thị Trang\n\nQuan hệ với 
+ Cụ Thu: Chút trực hệ (F4)\nNhánh gia đình: Chưa xác định nh
+ ánh\n\nDòng gia đình:\nGioan Baotixita Hứa Trần Bảo Nguyên\n→
+  Maria Trần Thị Trang\n→ Ghêgonô Trần Ngọc Thuận\n→ Gioan 
+ Trần Trọng Thả\n→ Giuse Trần Trọng Thu\n\nFSID: G52M-87Y
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-6TS@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Trần Tiến Dũng
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Trần Tiến Dũng\nT
+ ên Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn
+  Trăm Năm Đức Maria))\nNgày sinh: 25/09/1985\nNơi sinh: Thanh Hóa\
+ , Việt Nam\n\nCha: Gioan Baotixita Trần Ngọc Tâm\nMẹ: Teresa Tr
+ ần Thị Ngoan\nVợ/Chồng: Anna Dương Ngọc Thảo (vợ)\n\nQuan 
+ hệ với Cụ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh C
+ ụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nGiuse Trần Tiến D
+ ũng\n→ Teresa Trần Thị Ngoan\n→ An-tôn Trần Trọng Thư\n→ 
+ Giuse Trần Trọng Thu\n\nFSID: G5XX-6TS
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-PVY@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Teresa — Teresa Trần Thị Thương
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Teresa Trần Thị Thương\
+ nTên Thánh: Teresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa 
+ Hài Đồng Giêsu)\nNgày sinh: 09/09/1980\n\nCha: Gioan Baotixita Trầ
+ n Ngọc Tâm\nMẹ: Teresa Trần Thị Ngoan\nVợ/Chồng: Giuse Phạm
+  Hữu Thanh (chồng)\n\nQuan hệ với Cụ Thu: Chắt trực hệ (F3
+ )\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia 
+ đình:\nTeresa Trần Thị Thương\n→ Teresa Trần Thị Ngoan\n→ 
+ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-PV
+ Y
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-5LQ@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan Baotixita — Gioan Baotixita Trần Ng
+ ọc Tâm
+DTSTART;VALUE=DATE:20260624
+DTEND;VALUE=DATE:20260625
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Baotixita Trần Ngọc
+  Tâm\nTên Thánh: Gioan Baotixita\nNgày lễ kính: 24/06 hàng năm (S
+ inh Nhật Thánh Gioan Tẩy Giả)\nNgày sinh: 15/05/1957\n\nVợ/Chồ
+ ng: Teresa Trần Thị Ngoan (vợ)\n\nQuan hệ với Cụ Thu: Rể nh
+ ánh trực hệ (F2)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng
+  Thư)\n\nDòng gia đình:\nGioan Baotixita Trần Ngọc Tâm\n→ Teres
+ a Trần Thị Ngoan (vợ)\n→ An-tôn Trần Trọng Thư\n→ Giuse Tr
+ ần Trọng Thu\n\nFSID: G5XX-5LQ
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G52M-S2S@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Antôn — Antôn Hứa Đình Hợp
+DTSTART;VALUE=DATE:20260613
+DTEND;VALUE=DATE:20260614
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Antôn Hứa Đình Hợp\nT
+ ên Thánh: Antôn\nNgày lễ kính: 13/06 hàng năm (Thánh Antôn Padu
+ a)\nNgày sinh: 1989\n\nVợ/Chồng: Maria Trần Thị Trang (vợ)\n\nQ
+ uan hệ với Cụ Thu: Rể nhánh trực hệ (F3)\nNhánh gia đình: 
+ Chưa xác định nhánh\n\nDòng gia đình:\nAntôn Hứa Đình Hợp\
+ n→ Maria Trần Thị Trang (vợ)\n→ Ghêgonô Trần Ngọc Thuận\
+ n→ Gioan Trần Trọng Thả\n→ Giuse Trần Trọng Thu\n\nFSID: G52
+ M-S2S
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-P91@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan Baotixita — Gioan Baotixita Trần Văn
+  Tuyển
+DTSTART;VALUE=DATE:20260624
+DTEND;VALUE=DATE:20260625
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Baotixita Trần Văn T
+ uyển\nTên Thánh: Gioan Baotixita\nNgày lễ kính: 24/06 hàng năm (
+ Sinh Nhật Thánh Gioan Tẩy Giả)\nNgày sinh: 08/08/1989\n\nCha: Gioa
+ n Baotixita Trần Ngọc Tâm\nMẹ: Teresa Trần Thị Ngoan\nVợ/Ch
+ ồng: Anna Vũ Thị Hồng Duyên (vợ)\n\nQuan hệ với Cụ Thu: Ch
+ ắt trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng
+  Thư)\n\nDòng gia đình:\nGioan Baotixita Trần Văn Tuyển\n→ Tere
+ sa Trần Thị Ngoan\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần T
+ rọng Thu\n\nFSID: G5XX-P91
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-P41B-PV2@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Anna — Anna Trần Phương Anh
+DTSTART;VALUE=DATE:20260726
+DTEND;VALUE=DATE:20260727
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Anna Trần Phương Anh\nTê
+ n Thánh: Anna\nNgày lễ kính: 26/07 hàng năm (Thánh Gioakim và Th
+ ánh Anna)\nNgày sinh: 30/07/2025\nNơi sinh: HCM\n\nCha: Anton Trần Th
+ ế An\nMẹ: Phạm Phương Nga\n\nQuan hệ với Cụ Thu: Chút trự
+ c hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\n
+ Dòng gia đình:\nAnna Trần Phương Anh\n→ Anton Trần Thế An\n
+ → Giacôbê Trần Trung Kiêm\n→ An-tôn Trần Trọng Thư\n→ Giu
+ se Trần Trọng Thu\n\nFSID: P41B-PV2
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XF-9QL@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Trần Minh Hiếu
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Trần Minh Hiếu\nTê
+ n Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn T
+ răm Năm Đức Maria))\nNgày sinh: 04/12/2020\n\nCha: Giuse Trần Minh
+  Long\nMẹ: Anna Trần Thị Linh\n\nQuan hệ với Cụ Thu: Chút tr
+ ực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\
+ n\nDòng gia đình:\nGiuse Trần Minh Hiếu\n→ Giuse Trần Minh Long
+ \n→ Giacôbê Trần Trung Kiêm\n→ An-tôn Trần Trọng Thư\n→ G
+ iuse Trần Trọng Thu\n\nFSID: G5XF-9QL
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X4-4PY@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Phạm Uyên Phương
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Phạm Uyên Phương\n
+ Tên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là M
+ ẹ Thiên Chúa)\nNgày sinh: 08/11/2019\nNơi sinh: Hồ Chí Minh\, Vi
+ ệt Nam\n\nCha: Giuse Phạm Văn Hạnh\nMẹ: Maria Trần Thị Hân\n
+ \nQuan hệ với Cụ Thu: Chút trực hệ (F4)\nNhánh gia đình: Nh
+ ánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nMaria Phạm Uy
+ ên Phương\n→ Maria Trần Thị Hân\n→ Gioakim Trần Đức Hạn
+ h\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: 
+ G5X4-4PY
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-PZV4-X28@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan — Gioan Trần Minh Quang
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Trần Minh Quang\nTên
+  Thánh: Gioan\nNgày lễ kính: 27/12 hàng năm (Thánh Gioan Tông Đ
+ ồ)\nNgày sinh: 08/04/2026\nNơi sinh: Hồ Chí Minh\, Vietnam\n\nCha: 
+ Giuse Trần Minh Long\nMẹ: Anna Trần Thị Linh\n\nQuan hệ với C
+ ụ Thu: Chút trực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Tr
+ ần Trọng Thư)\n\nDòng gia đình:\nGioan Trần Minh Quang\n→ Gius
+ e Trần Minh Long\n→ Giacôbê Trần Trung Kiêm\n→ An-tôn Trần T
+ rọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: PZV4-X28
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XW-TB3@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan — Gioan Phạm Minh Hoàng
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Phạm Minh Hoàng\nTê
+ n Thánh: Gioan\nNgày lễ kính: 27/12 hàng năm (Thánh Gioan Tông Đ
+ ồ)\nNgày sinh: 24/11/2017\nNơi sinh: Hồ Chí Minh\, Việt Nam\n\nCh
+ a: Giuse Phạm Văn Hạnh\nMẹ: Maria Trần Thị Hân\n\nQuan hệ v
+ ới Cụ Thu: Chút trực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư
+  (Trần Trọng Thư)\n\nDòng gia đình:\nGioan Phạm Minh Hoàng\n→
+  Maria Trần Thị Hân\n→ Gioakim Trần Đức Hạnh\n→ An-tôn Tr
+ ần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XW-TB3
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-JKX@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Catarina — Catarina Nguyễn Trần Nhã Uyê
+ n
+DTSTART;VALUE=DATE:20260429
+DTEND;VALUE=DATE:20260430
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Catarina Nguyễn Trần Nhã
+  Uyên\nTên Thánh: Catarina\nNgày lễ kính: 29/04 hàng năm (Thánh 
+ Catarina Siena)\nNgày sinh: 25/04/2019\nNơi sinh: Hồ Chí Minh\, Việ
+ t Nam\n\nCha: Giuse Nguyễn Văn Khảo\nMẹ: Teresa Trần Thị Nga\n\
+ nQuan hệ với Cụ Thu: Chút trực hệ (F4)\nNhánh gia đình: Nhá
+ nh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nCatarina Nguyễn
+  Trần Nhã Uyên\n→ Teresa Trần Thị Nga\n→ Gioakim Trần Đức
+  Hạnh\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\n
+ FSID: G5XX-JKX
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-PX8S-YTM@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Trần An Nhã (Clara)
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Trần An Nhã (Clara)\
+ nTên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là M
+ ẹ Thiên Chúa)\nNgày sinh: 13/06/2026\nNơi sinh: Sai Gon\, Hồ Chí 
+ Minh\, Việt Nam\n\nCha: Giuse Trần Hải Linh\nMẹ: Thị Oanh Thư M
+ aria Nguyễn\n\nQuan hệ với Cụ Thu: Chút trực hệ (F4)\nNhánh 
+ gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nM
+ aria Trần An Nhã (Clara)\n→ Giuse Trần Hải Linh\n→ Gioakim Tr
+ ần Đức Hạnh\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Tr
+ ọng Thu\n\nFSID: PX8S-YTM
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-P2S@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Anna — Anna Trần Thị Linh
+DTSTART;VALUE=DATE:20260726
+DTEND;VALUE=DATE:20260727
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Anna Trần Thị Linh\nTên 
+ Thánh: Anna\nNgày lễ kính: 26/07 hàng năm (Thánh Gioakim và Thán
+ h Anna)\nNgày sinh: 07/03/1995\n\nVợ/Chồng: Giuse Trần Minh Long (c
+ hồng)\n\nQuan hệ với Cụ Thu: Dâu nhánh trực hệ (F3)\nNhánh 
+ gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nA
+ nna Trần Thị Linh\n→ Giuse Trần Minh Long (chồng)\n→ Giacôbê
+  Trần Trung Kiêm\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Tr
+ ọng Thu\n\nFSID: G5XX-P2S
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XW-BNB@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Phạm Văn Hạnh
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Phạm Văn Hạnh\nTê
+ n Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn T
+ răm Năm Đức Maria))\nNgày sinh: 24/10/1983\n\nVợ/Chồng: Maria Tr
+ ần Thị Hân (vợ)\n\nQuan hệ với Cụ Thu: Rể nhánh trực h
+ ệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDò
+ ng gia đình:\nGiuse Phạm Văn Hạnh\n→ Maria Trần Thị Hân (v
+ ợ)\n→ Gioakim Trần Đức Hạnh\n→ An-tôn Trần Trọng Thư\n
+ → Giuse Trần Trọng Thu\n\nFSID: G5XW-BNB
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X4-MQF@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Nguyễn Văn Khảo
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Nguyễn Văn Khảo\nT
+ ên Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn
+  Trăm Năm Đức Maria))\nNgày sinh: 02/02/1984\n\nVợ/Chồng: Teresa
+  Trần Thị Nga (vợ)\n\nQuan hệ với Cụ Thu: Rể nhánh trực h
+ ệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDò
+ ng gia đình:\nGiuse Nguyễn Văn Khảo\n→ Teresa Trần Thị Nga (v
+ ợ)\n→ Gioakim Trần Đức Hạnh\n→ An-tôn Trần Trọng Thư\n
+ → Giuse Trần Trọng Thu\n\nFSID: G5X4-MQF
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-XTR@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Lăng Văn Trường
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Lăng Văn Trường\nT
+ ên Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn
+  Trăm Năm Đức Maria))\nNgày sinh: 1978\nNgày mất: 2009\n\nVợ/Ch
+ ồng: Lucia Nguyễn Thị Lan (vợ)\n\nQuan hệ với Cụ Thu: Rể n
+ hánh trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọn
+ g Thư)\n\nDòng gia đình:\nGiuse Lăng Văn Trường\n→ Lucia Nguy
+ ễn Thị Lan (vợ)\n→ Agnest Trần Thị Đức\n→ An-tôn Trần 
+ Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-XTR
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-K59@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Trần Huyền Trân
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Trần Huyền Trân\nT
+ ên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là M
+ ẹ Thiên Chúa)\nNgày sinh: 12/12/2009\n\nCha: Giuse Trần Duy Quốc\
+ nMẹ: Maria Nguyễn Thị Thanh Thuý\n\nQuan hệ với Cụ Thu: Chút
+  trực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Th
+ ư)\n\nDòng gia đình:\nMaria Trần Huyền Trân\n→ Maria Nguyễn T
+ hị Thanh Thuý\n→ Agnest Trần Thị Đức\n→ An-tôn Trần Trọ
+ ng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-K59
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-DLK@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Anton — Anton Trần Quốc Việt
+DTSTART;VALUE=DATE:20260613
+DTEND;VALUE=DATE:20260614
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Anton Trần Quốc Việt\nT
+ ên Thánh: Anton\nNgày lễ kính: 13/06 hàng năm (Thánh Antôn Padua
+ )\nNgày sinh: 13/09/2011\n\nCha: Giuse Trần Duy Quốc\nMẹ: Maria Ngu
+ yễn Thị Thanh Thuý\n\nQuan hệ với Cụ Thu: Chút trực hệ (F4
+ )\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia 
+ đình:\nAnton Trần Quốc Việt\n→ Maria Nguyễn Thị Thanh Thuý\
+ n→ Agnest Trần Thị Đức\n→ An-tôn Trần Trọng Thư\n→ Gius
+ e Trần Trọng Thu\n\nFSID: G5XX-DLK
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-2Z9@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Anton — Anton Nguyễn Trung Hiếu
+DTSTART;VALUE=DATE:20260613
+DTEND;VALUE=DATE:20260614
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Anton Nguyễn Trung Hiếu\n
+ Tên Thánh: Anton\nNgày lễ kính: 13/06 hàng năm (Thánh Antôn Padu
+ a)\nNgày sinh: 25/03/2009\n\nCha: Phanxico Nguyễn Văn Trung\nMẹ: Yxa
+ ve Nguyễn Thị Ngọc\n\nQuan hệ với Cụ Thu: Chút trực hệ (F
+ 4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia
+  đình:\nAnton Nguyễn Trung Hiếu\n→ Yxave Nguyễn Thị Ngọc\n
+ → Agnest Trần Thị Đức\n→ An-tôn Trần Trọng Thư\n→ Giuse
+  Trần Trọng Thu\n\nFSID: G5XX-2Z9
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-LDD@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Lucia — Lucia Nguyễn Ngọc Khánh Băng
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Lucia Nguyễn Ngọc Khánh 
+ Băng\nTên Thánh: Lucia\nNgày lễ kính: 13/12 hàng năm (Thánh Luci
+ a)\nNgày sinh: 04/07/2014\n\nCha: Phanxico Nguyễn Văn Trung\nMẹ: Yxa
+ ve Nguyễn Thị Ngọc\n\nQuan hệ với Cụ Thu: Chút trực hệ (F
+ 4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia
+  đình:\nLucia Nguyễn Ngọc Khánh Băng\n→ Yxave Nguyễn Thị Ng
+ ọc\n→ Agnest Trần Thị Đức\n→ An-tôn Trần Trọng Thư\n→
+  Giuse Trần Trọng Thu\n\nFSID: G5XX-LDD
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-TWG@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Trần Duy Quốc
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Trần Duy Quốc\nTên
+  Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn Tr
+ ăm Năm Đức Maria))\nNgày sinh: 02/06/1981\n\nVợ/Chồng: Maria Ngu
+ yễn Thị Thanh Thuý (vợ)\n\nQuan hệ với Cụ Thu: Rể nhánh tr
+ ực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\
+ n\nDòng gia đình:\nGiuse Trần Duy Quốc\n→ Maria Nguyễn Thị Th
+ anh Thuý (vợ)\n→ Agnest Trần Thị Đức\n→ An-tôn Trần Trọ
+ ng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-TWG
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-1N6@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Nguyễn Đào Minh Quân
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Nguyễn Đào Minh Qu
+ ân\nTên Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse 
+ (Bạn Trăm Năm Đức Maria))\nNgày sinh: 28/02/2014\n\nCha: Giuse Ngu
+ yễn Văn Đạt\nMẹ: Maria Đào Thị Chung\n\nQuan hệ với Cụ T
+ hu: Chút trực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Tr
+ ọng Thư)\n\nDòng gia đình:\nGiuse Nguyễn Đào Minh Quân\n→ Giu
+ se Nguyễn Văn Đạt\n→ Agnest Trần Thị Đức\n→ An-tôn Trầ
+ n Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-1N6
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-F1D@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Lăng Nguyễn Ánh Tuyên
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Lăng Nguyễn Ánh Tuy
+ ên\nTên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ l
+ à Mẹ Thiên Chúa)\nNgày sinh: 26/02/2001\n\nCha: Giuse Lăng Văn Tr
+ ường\nMẹ: Lucia Nguyễn Thị Lan\nVợ/Chồng: Phao lô Nguyễn V
+ ăn Quế (chồng)\n\nQuan hệ với Cụ Thu: Chút trực hệ (F4)\nN
+ hánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đì
+ nh:\nMaria Lăng Nguyễn Ánh Tuyên\n→ Lucia Nguyễn Thị Lan\n→ A
+ gnest Trần Thị Đức\n→ An-tôn Trần Trọng Thư\n→ Giuse Tr
+ ần Trọng Thu\n\nFSID: G5XX-F1D
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-PJC@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Đào Thị Chung
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Đào Thị Chung\nTên
+  Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là Mẹ T
+ hiên Chúa)\nNgày sinh: 10/10/1988\n\nVợ/Chồng: Giuse Nguyễn Văn 
+ Đạt (chồng)\n\nQuan hệ với Cụ Thu: Dâu nhánh trực hệ (F3)
+ \nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia 
+ đình:\nMaria Đào Thị Chung\n→ Giuse Nguyễn Văn Đạt (chồng)
+ \n→ Agnest Trần Thị Đức\n→ An-tôn Trần Trọng Thư\n→ Giu
+ se Trần Trọng Thu\n\nFSID: G5XX-PJC
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-PJ7@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Cecilia — Cecilia Nguyễn Bùi Nhật Linh
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Cecilia Nguyễn Bùi Nhật 
+ Linh\nTên Thánh: Cecilia\nNgày lễ kính: 22/11 hàng năm (Thánh Cec
+ ilia)\nNgày sinh: 13/11/2012\n\nCha: Giuse Nguyễn Văn Thắng\nMẹ: T
+ erexa Bùi Thị Điệp\n\nQuan hệ với Cụ Thu: Chút trực hệ (F
+ 4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia
+  đình:\nCecilia Nguyễn Bùi Nhật Linh\n→ Giuse Nguyễn Văn Thắ
+ ng\n→ Agnest Trần Thị Đức\n→ An-tôn Trần Trọng Thư\n→ G
+ iuse Trần Trọng Thu\n\nFSID: G5XX-PJ7
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-JVR@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Cecilia — Cecilia Nguyễn Bùi Trà My
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Cecilia Nguyễn Bùi Trà My
+ \nTên Thánh: Cecilia\nNgày lễ kính: 22/11 hàng năm (Thánh Cecilia
+ )\nNgày sinh: 29/06/2016\n\nCha: Giuse Nguyễn Văn Thắng\nMẹ: Terex
+ a Bùi Thị Điệp\n\nQuan hệ với Cụ Thu: Chút trực hệ (F4)\n
+ Nhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đ
+ ình:\nCecilia Nguyễn Bùi Trà My\n→ Giuse Nguyễn Văn Thắng\n→
+  Agnest Trần Thị Đức\n→ An-tôn Trần Trọng Thư\n→ Giuse Tr
+ ần Trọng Thu\n\nFSID: G5XX-JVR
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-R7W@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Nguyễn Quang Hải
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Nguyễn Quang Hải\nT
+ ên Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn
+  Trăm Năm Đức Maria))\nNgày sinh: 27/02/2019\n\nCha: Giuse Nguyễn 
+ Văn Thắng\nMẹ: Terexa Bùi Thị Điệp\n\nQuan hệ với Cụ Thu:
+  Chút trực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọ
+ ng Thư)\n\nDòng gia đình:\nGiuse Nguyễn Quang Hải\n→ Giuse Nguy
+ ễn Văn Thắng\n→ Agnest Trần Thị Đức\n→ An-tôn Trần Tr
+ ọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-R7W
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-674@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan — Gioan Dương Minh Nhật
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Dương Minh Nhật\nT
+ ên Thánh: Gioan\nNgày lễ kính: 27/12 hàng năm (Thánh Gioan Tông 
+ Đồ)\nNgày sinh: 09/11/2017\n\nCha: Vinh sơn Dương Chí Dũng\nMẹ:
+  Terresa Nguyễn Thị Ánh\n\nQuan hệ với Cụ Thu: Chút trực h
+ ệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDò
+ ng gia đình:\nGioan Dương Minh Nhật\n→ Terresa Nguyễn Thị Ánh
+ \n→ Terresa Trần Thị Phúc\n→ An-tôn Trần Trọng Thư\n→ Giu
+ se Trần Trọng Thu\n\nFSID: G5XX-674
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-YR6@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan — Gioan Vũ Văn Hùng
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Vũ Văn Hùng\nTên Th
+ ánh: Gioan\nNgày lễ kính: 27/12 hàng năm (Thánh Gioan Tông Đồ)
+ \nNgày sinh: 09/03/1972\nNgày mất: 16/03/2015\n\nVợ/Chồng: Marria 
+ Nguyễn Thị Huyền (vợ)\n\nQuan hệ với Cụ Thu: Rể nhánh tr
+ ực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\
+ n\nDòng gia đình:\nGioan Vũ Văn Hùng\n→ Marria Nguyễn Thị Huy
+ ền (vợ)\n→ Terresa Trần Thị Phúc\n→ An-tôn Trần Trọng Th
+ ư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-YR6
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-XH5@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Dương Chí Thiện
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Dương Chí Thiện\nT
+ ên Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn
+  Trăm Năm Đức Maria))\nNgày sinh: 14/01/2020\n\nCha: Vinh sơn Dươ
+ ng Chí Dũng\nMẹ: Terresa Nguyễn Thị Ánh\n\nQuan hệ với Cụ T
+ hu: Chút trực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Tr
+ ọng Thư)\n\nDòng gia đình:\nGiuse Dương Chí Thiện\n→ Terresa 
+ Nguyễn Thị Ánh\n→ Terresa Trần Thị Phúc\n→ An-tôn Trần Tr
+ ọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-XH5
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-DQ2@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Văn Trọng Mạnh
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Văn Trọng Mạnh\nT
+ ên Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn
+  Trăm Năm Đức Maria))\nNgày sinh: 20/02/2007\n\nCha: Gioan Văn Tr
+ ọng Thường\nMẹ: Lucia Nguyễn Thị Hà\n\nQuan hệ với Cụ Th
+ u: Chút trực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Tr
+ ọng Thư)\n\nDòng gia đình:\nGiuse Văn Trọng Mạnh\n→ Lucia Ngu
+ yễn Thị Hà\n→ Terresa Trần Thị Phúc\n→ An-tôn Trần Trọn
+ g Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-DQ2
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-G6Q@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Vinh Sơn — Vinh sơn Dương Chí Dũng
+DTSTART;VALUE=DATE:20260405
+DTEND;VALUE=DATE:20260406
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Vinh sơn Dương Chí Dũng\
+ nTên Thánh: Vinh Sơn\nNgày lễ kính: 05/04 hàng năm (Thánh Vinh S
+ ơn Phaolô)\nNgày sinh: 01/01/1987\n\nVợ/Chồng: Terresa Nguyễn Th
+ ị Ánh (vợ)\n\nQuan hệ với Cụ Thu: Rể nhánh trực hệ (F3)\
+ nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đ
+ ình:\nVinh sơn Dương Chí Dũng\n→ Terresa Nguyễn Thị Ánh (vợ
+ )\n→ Terresa Trần Thị Phúc\n→ An-tôn Trần Trọng Thư\n→ Gi
+ use Trần Trọng Thu\n\nFSID: G5XX-G6Q
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-XHC@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Terresa — Terresa Văn Nguyễn Hà My
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Terresa Văn Nguyễn Hà My\
+ nTên Thánh: Terresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa
+  Hài Đồng Giêsu)\nNgày sinh: 21/08/2009\n\nCha: Gioan Văn Trọng T
+ hường\nMẹ: Lucia Nguyễn Thị Hà\n\nQuan hệ với Cụ Thu: Chú
+ t trực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Th
+ ư)\n\nDòng gia đình:\nTerresa Văn Nguyễn Hà My\n→ Lucia Nguyễn
+  Thị Hà\n→ Terresa Trần Thị Phúc\n→ An-tôn Trần Trọng Th
+ ư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-XHC
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-N1V@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Văn Nguyễn Hà Phương
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Văn Nguyễn Hà Phư
+ ơng\nTên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ 
+ là Mẹ Thiên Chúa)\nNgày sinh: 25/03/2016\n\nCha: Gioan Văn Trọng 
+ Thường\nMẹ: Lucia Nguyễn Thị Hà\n\nQuan hệ với Cụ Thu: Ch
+ út trực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng 
+ Thư)\n\nDòng gia đình:\nMaria Văn Nguyễn Hà Phương\n→ Lucia Ng
+ uyễn Thị Hà\n→ Terresa Trần Thị Phúc\n→ An-tôn Trần Trọ
+ ng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-N1V
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-DQV@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan — Gioan Văn Trọng Thường
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Văn Trọng Thường\
+ nTên Thánh: Gioan\nNgày lễ kính: 27/12 hàng năm (Thánh Gioan Tôn
+ g Đồ)\nNgày sinh: 09/10/1979\n\nVợ/Chồng: Lucia Nguyễn Thị Hà
+  (vợ)\n\nQuan hệ với Cụ Thu: Rể nhánh trực hệ (F3)\nNhánh 
+ gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nG
+ ioan Văn Trọng Thường\n→ Lucia Nguyễn Thị Hà (vợ)\n→ Terr
+ esa Trần Thị Phúc\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần 
+ Trọng Thu\n\nFSID: G5XX-DQV
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5F9-ZMZ@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Anna — Anna Nguyễn Thanh Vân
+DTSTART;VALUE=DATE:20260726
+DTEND;VALUE=DATE:20260727
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Anna Nguyễn Thanh Vân\nTê
+ n Thánh: Anna\nNgày lễ kính: 26/07 hàng năm (Thánh Gioakim và Th
+ ánh Anna)\nNgày sinh: 06/01/2024\n\nCha: Giuse Nguyễn Sơn Lâm\nMẹ:
+  La Thị Kim\n\nQuan hệ với Cụ Thu: Chút trực hệ (F4)\nNhánh 
+ gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nA
+ nna Nguyễn Thanh Vân\n→ Giuse Nguyễn Sơn Lâm\n→ Terresa Trần 
+ Thị Phúc\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu
+ \n\nFSID: G5F9-ZMZ
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5F2-89P@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Bùi Gia Thiện
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Bùi Gia Thiện\nTên 
+ Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn Tr
+ ăm Năm Đức Maria))\nNgày sinh: 20/05/2023\n\nCha: Bùi Trung Dũng\n
+ Mẹ: Maria Nguyễn Thị Hồng\n\nQuan hệ với Cụ Thu: Chút trự
+ c hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\n
+ Dòng gia đình:\nGiuse Bùi Gia Thiện\n→ Maria Nguyễn Thị Hồng
+ \n→ Terresa Trần Thị Phúc\n→ An-tôn Trần Trọng Thư\n→ Giu
+ se Trần Trọng Thu\n\nFSID: G5F2-89P
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-GRGM-TCY@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Lucia — Lucia Nguyễn Ngọc Khánh Vân
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Lucia Nguyễn Ngọc Khánh 
+ Vân\nTên Thánh: Lucia\nNgày lễ kính: 13/12 hàng năm (Thánh Lucia
+ )\nNgày sinh: 18/04/2024\nNơi sinh: Hóc Môn\, Hồ Chí Minh\, Việt 
+ Nam\n\nCha: Gioan Nguyễn Hồng Ân\nMẹ: Maria Nguyễn Minh Thư\n\nQ
+ uan hệ với Cụ Thu: Chút trực hệ (F4)\nNhánh gia đình: Nhánh
+  Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nLucia Nguyễn Ng
+ ọc Khánh Vân\n→ Gioan Nguyễn Hồng Ân\n→ Terresa Trần Thị 
+ Phúc\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFS
+ ID: GRGM-TCY
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-PFH@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Teresa — Teresa Lương Nguyễn Hoàng Nhi
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Teresa Lương Nguyễn Hoàn
+ g Nhi\nTên Thánh: Teresa\nNgày lễ kính: 01/10 hàng năm (Thánh Tê
+ rêsa Hài Đồng Giêsu)\nNgày sinh: 24/06/2012\n\nCha: Lương Văn To
+ àn\nMẹ: Maria Nguyễn Thị Hồng\n\nQuan hệ với Cụ Thu: Chút 
+ trực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư
+ )\n\nDòng gia đình:\nTeresa Lương Nguyễn Hoàng Nhi\n→ Maria Nguy
+ ễn Thị Hồng\n→ Terresa Trần Thị Phúc\n→ An-tôn Trần Tr
+ ọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-PFH
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5X1-TNH@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Nguyễn Minh Thư
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Nguyễn Minh Thư\nTê
+ n Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là Mẹ 
+ Thiên Chúa)\nNgày sinh: 11/11/2002\n\nVợ/Chồng: Gioan Nguyễn Hồ
+ ng Ân (chồng)\n\nQuan hệ với Cụ Thu: Dâu nhánh trực hệ (F3)
+ \nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia 
+ đình:\nMaria Nguyễn Minh Thư\n→ Gioan Nguyễn Hồng Ân (chồng)
+ \n→ Terresa Trần Thị Phúc\n→ An-tôn Trần Trọng Thư\n→ Giu
+ se Trần Trọng Thu\n\nFSID: G5X1-TNH
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-R46@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Teresa — Teresa Trần Thị Hằng
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Teresa Trần Thị Hằng\nT
+ ên Thánh: Teresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa H
+ ài Đồng Giêsu)\nNgày sinh: 05/11/2000\n\nCha: Phaolo Trần Đình H
+ ữu\nMẹ: Teresa Trần Thị Tình\n\nQuan hệ với Cụ Thu: Chút t
+ rực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)
+ \n\nDòng gia đình:\nTeresa Trần Thị Hằng\n→ Teresa Trần Thị
+  Tình\n→ Teresa Trần Thị Ngoan\n→ An-tôn Trần Trọng Thư\n
+ → Giuse Trần Trọng Thu\n\nFSID: G5XX-R46
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-KTZ@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Phaolo — Phaolo Trần Đình Hữu
+DTSTART;VALUE=DATE:20260629
+DTEND;VALUE=DATE:20260630
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Phaolo Trần Đình Hữu\nT
+ ên Thánh: Phaolo\nNgày lễ kính: 29/06 hàng năm (Thánh Phêrô và
+  Thánh Phaolô)\nNgày sinh: 10/03/1971\nNgày mất: 03/09/2000\n\nVợ/
+ Chồng: Teresa Trần Thị Tình (vợ)\n\nQuan hệ với Cụ Thu: R
+ ể nhánh trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần T
+ rọng Thư)\n\nDòng gia đình:\nPhaolo Trần Đình Hữu\n→ Teresa 
+ Trần Thị Tình (vợ)\n→ Teresa Trần Thị Ngoan\n→ An-tôn Tr
+ ần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-KTZ
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-R4G@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Anna — Anna Dương Ngọc Thảo
+DTSTART;VALUE=DATE:20260726
+DTEND;VALUE=DATE:20260727
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Anna Dương Ngọc Thảo\nT
+ ên Thánh: Anna\nNgày lễ kính: 26/07 hàng năm (Thánh Gioakim và T
+ hánh Anna)\nNgày sinh: 28/03/1984\n\nVợ/Chồng: Giuse Trần Tiến D
+ ũng (chồng)\n\nQuan hệ với Cụ Thu: Dâu nhánh trực hệ (F3)\n
+ Nhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đ
+ ình:\nAnna Dương Ngọc Thảo\n→ Giuse Trần Tiến Dũng (chồng)
+ \n→ Teresa Trần Thị Ngoan\n→ An-tôn Trần Trọng Thư\n→ Gius
+ e Trần Trọng Thu\n\nFSID: G5XX-R4G
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-BJ9@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Gioan Baotixita — Gioan Baotixita Trần Dư
+ ơng Anh Khôi
+DTSTART;VALUE=DATE:20260624
+DTEND;VALUE=DATE:20260625
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Gioan Baotixita Trần Dươn
+ g Anh Khôi\nTên Thánh: Gioan Baotixita\nNgày lễ kính: 24/06 hàng n
+ ăm (Sinh Nhật Thánh Gioan Tẩy Giả)\nNgày sinh: 19/05/2013\n\nCha:
+  Giuse Trần Tiến Dũng\nMẹ: Anna Dương Ngọc Thảo\n\nQuan hệ 
+ với Cụ Thu: Chút trực hệ (F4)\nNhánh gia đình: Nhánh Cụ Th
+ ư (Trần Trọng Thư)\n\nDòng gia đình:\nGioan Baotixita Trần Dư
+ ơng Anh Khôi\n→ Giuse Trần Tiến Dũng\n→ Teresa Trần Thị Ngo
+ an\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID:
+  G5XX-BJ9
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-R4C@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Trần Đình Hoàng
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Trần Đình Hoàng\nT
+ ên Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn
+  Trăm Năm Đức Maria))\nNgày sinh: 16/11/1998\nNơi sinh: Thanh Hóa\
+ , Việt Nam\n\nCha: Phaolo Trần Đình Hữu\nMẹ: Teresa Trần Thị
+  Tình\nVợ/Chồng: Maria Nguyễn Thị Hồng (vợ)\n\nQuan hệ vớ
+ i Cụ Thu: Chút trực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (T
+ rần Trọng Thư)\n\nDòng gia đình:\nGiuse Trần Đình Hoàng\n→ 
+ Teresa Trần Thị Tình\n→ Teresa Trần Thị Ngoan\n→ An-tôn Tr
+ ần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-R4C
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-GNR@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Phạm Thanh Sơn
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Phạm Thanh Sơn\nTên
+  Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn Tr
+ ăm Năm Đức Maria))\nNgày sinh: 18/02/2009\n\nCha: Giuse Phạm Hữu
+  Thanh\nMẹ: Teresa Trần Thị Thương\n\nQuan hệ với Cụ Thu: Ch
+ út trực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng 
+ Thư)\n\nDòng gia đình:\nGiuse Phạm Thanh Sơn\n→ Teresa Trần Th
+ ị Thương\n→ Teresa Trần Thị Ngoan\n→ An-tôn Trần Trọng Th
+ ư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-GNR
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-GNB@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Teresa — Teresa Phạm Thanh Vân
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Teresa Phạm Thanh Vân\nTê
+ n Thánh: Teresa\nNgày lễ kính: 01/10 hàng năm (Thánh Têrêsa Hài
+  Đồng Giêsu)\nNgày sinh: 01/03/2013\n\nCha: Giuse Phạm Hữu Thanh\
+ nMẹ: Teresa Trần Thị Thương\n\nQuan hệ với Cụ Thu: Chút tr
+ ực hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\
+ n\nDòng gia đình:\nTeresa Phạm Thanh Vân\n→ Teresa Trần Thị Th
+ ương\n→ Teresa Trần Thị Ngoan\n→ An-tôn Trần Trọng Thư\n
+ → Giuse Trần Trọng Thu\n\nFSID: G5XX-GNB
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G1XS-W6K@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Trần Khánh Lam
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Trần Khánh Lam\nTên
+  Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là Mẹ T
+ hiên Chúa)\nNgày sinh: 14/11/2024\nNơi sinh: Sóc Trăng\, Việt Nam\
+ n\nCha: Gioan Baotixita Trần Văn Tuyển\nMẹ: Anna Vũ Thị Hồng D
+ uyên\n\nQuan hệ với Cụ Thu: Chút trực hệ (F4)\nNhánh gia đì
+ nh: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nMaria Tr
+ ần Khánh Lam\n→ Gioan Baotixita Trần Văn Tuyển\n→ Teresa Trầ
+ n Thị Ngoan\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng T
+ hu\n\nFSID: G1XS-W6K
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XF-M3Y@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Giuse — Giuse Phạm Hữu Thanh
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Giuse Phạm Hữu Thanh\nTê
+ n Thánh: Giuse\nNgày lễ kính: 19/03 hàng năm (Thánh Giuse (Bạn T
+ răm Năm Đức Maria))\nNgày sinh: 01/05/1976\n\nVợ/Chồng: Teresa T
+ rần Thị Thương (vợ)\n\nQuan hệ với Cụ Thu: Rể nhánh trự
+ c hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\n
+ Dòng gia đình:\nGiuse Phạm Hữu Thanh\n→ Teresa Trần Thị Thư
+ ơng (vợ)\n→ Teresa Trần Thị Ngoan\n→ An-tôn Trần Trọng Th
+ ư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XF-M3Y
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G5XX-2DJ@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Anna — Anna Vũ Thị Hồng Duyên
+DTSTART;VALUE=DATE:20260726
+DTEND;VALUE=DATE:20260727
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Anna Vũ Thị Hồng Duyên\
+ nTên Thánh: Anna\nNgày lễ kính: 26/07 hàng năm (Thánh Gioakim và
+  Thánh Anna)\nNgày sinh: 12/05/1996\n\nVợ/Chồng: Gioan Baotixita Tr
+ ần Văn Tuyển (chồng)\n\nQuan hệ với Cụ Thu: Dâu nhánh trự
+ c hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\n
+ Dòng gia đình:\nAnna Vũ Thị Hồng Duyên\n→ Gioan Baotixita Trầ
+ n Văn Tuyển (chồng)\n→ Teresa Trần Thị Ngoan\n→ An-tôn Trầ
+ n Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-2DJ
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-P9SS-7XY@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Phao lô — Phao lô Nguyễn Văn Quế
+DTSTART;VALUE=DATE:20260629
+DTEND;VALUE=DATE:20260630
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Phao lô Nguyễn Văn Quế\
+ nTên Thánh: Phao lô\nNgày lễ kính: 29/06 hàng năm (Thánh Phêrô
+  và Thánh Phaolô)\nNgày sinh: 07/10/1995\nNơi sinh: Thanh Hóa\, Vi
+ ệt Nam\n\nVợ/Chồng: Maria Lăng Nguyễn Ánh Tuyên (vợ)\n\nQuan 
+ hệ với Cụ Thu: Rể nhánh trực hệ (F4)\nNhánh gia đình: Nhá
+ nh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nPhao lô Nguyễn
+  Văn Quế\n→ Maria Lăng Nguyễn Ánh Tuyên (vợ)\n→ Lucia Nguy
+ ễn Thị Lan\n→ Agnest Trần Thị Đức\n→ An-tôn Trần Trọng
+  Thư\n→ Giuse Trần Trọng Thu\n\nFSID: P9SS-7XY
+END:VEVENT
+BEGIN:VEVENT
+UID:patron-G1B5-W5Y@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:✝️ Bổn mạng Maria — Maria Nguyễn Thị Hồng
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:✝️ Lễ Bổn Mạng\n\nTên: Maria Nguyễn Thị Hồng\n
+ Tên Thánh: Maria\nNgày lễ kính: 01/01 hàng năm (Đức Mẹ là M
+ ẹ Thiên Chúa)\nNgày sinh: 24/11/1998\n\nVợ/Chồng: Giuse Trần Đ
+ ình Hoàng (chồng)\n\nQuan hệ với Cụ Thu: Dâu nhánh trực hệ
+  (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng 
+ gia đình:\nMaria Nguyễn Thị Hồng\n→ Giuse Trần Đình Hoàng (
+ chồng)\n→ Teresa Trần Thị Tình\n→ Teresa Trần Thị Ngoan\n
+ → An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G1B
+ 5-W5Y
+END:VEVENT
+END:VCALENDAR

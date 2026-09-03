@@ -1,0 +1,481 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CAY GIA PHA//Calendar Projection//VI
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Ngày Giỗ & Tưởng Niệm
+X-WR-TIMEZONE:Asia/Ho_Chi_Minh
+BEGIN:VEVENT
+UID:memorial-G5X4-48S@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Giuse Trần Trọng Thu
+DTSTART;VALUE=DATE:19690815
+DTEND;VALUE=DATE:19690816
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Giuse Trần Trọng Thu\n\nNg
+ ày sinh: 1872\nNơi sinh: Thanh Hóa\, Việt Nam\n\nNgày mất: 15/08/1
+ 969\nNơi qua đời: Thanh Hóa\, Việt Nam\n\nTrạng thái ngày giỗ
+ : CHÍNH XÁC\n\nCha: Trần Cha Ông cố Thu - bà An\nMẹ: Mẹ Ông T
+ hu - bà An\nVợ/Chồng: Nguyễn Thị Xuân - Út (vợ)\n\nQuan hệ 
+ với Cụ Thu: Trục Gốc Gia Tộc (Root Anchor)\nNhánh gia đình: G
+ ốc Cụ Tổ (Root)\n\nDòng gia đình:\nGiuse Trần Trọng Thu\n→ 
+ Trần Cha Ông cố Thu - bà An (thân phụ)\n\nFSID: G5X4-48S
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XW-KDS@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Bà Cử - hai
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Bà Cử - hai\n\nNgày mất:
+  Chưa xác định chính xác\n\nTrạng thái ngày giỗ: TẠM THỜI
+ \nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\nCha: Giuse Trầ
+ n Trọng Thu\nMẹ: Nguyễn Thị Xuân - Út\n\nQuan hệ với Cụ Th
+ u: Con gái trực hệ (F1)\nNhánh gia đình: Nhánh Bà Cử (Bà Cử
+  - hai)\n\nDòng gia đình:\nBà Cử - hai\n→ Giuse Trần Trọng Thu
+ \n\nFSID: G5XW-KDS
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5X4-7PJ@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Bà Định - thứ tư
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Bà Định - thứ tư\n\nNg
+ ày mất: Chưa xác định chính xác\n\nTrạng thái ngày giỗ: T
+ ẠM THỜI\nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\nCha: 
+ Giuse Trần Trọng Thu\nMẹ: Nguyễn Thị Xuân - Út\n\nQuan hệ v
+ ới Cụ Thu: Con gái trực hệ (F1)\nNhánh gia đình: Nhánh Bà Đ
+ ịnh (Bà Định - thứ tư)\n\nDòng gia đình:\nBà Định - thứ 
+ tư\n→ Giuse Trần Trọng Thu\n\nFSID: G5X4-7PJ
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XX-DT3@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Mẹ Ông Thu - bà An
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Mẹ Ông Thu - bà An\n\nNgà
+ y mất: Chưa xác định chính xác\n\nTrạng thái ngày giỗ: TẠ
+ M THỜI\nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\nVợ/Ch
+ ồng: Trần Cha Ông cố Thu - bà An (chồng)\n\nQuan hệ với Cụ
+  Thu: Thân mẫu Cụ Thu\nNhánh gia đình: Tiền Phương (Thân sinh
+  Cụ Thu)\n\nDòng gia đình:\nMẹ Ông Thu - bà An\n→ Giuse Trần 
+ Trọng Thu (con trai)\n\nFSID: G5XX-DT3
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XX-DT9@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Trần Cha Ông cố Thu - bà An
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Trần Cha Ông cố Thu - bà
+  An\n\nNgày mất: Chưa xác định chính xác\n\nTrạng thái ngày 
+ giỗ: TẠM THỜI\nNgày tưởng niệm tạm thời: 01/01 hàng năm\
+ n\nVợ/Chồng: Mẹ Ông Thu - bà An (vợ)\n\nQuan hệ với Cụ Thu
+ : Thân phụ Cụ Thu\nNhánh gia đình: Tiền Phương (Thân sinh C
+ ụ Thu)\n\nDòng gia đình:\nTrần Cha Ông cố Thu - bà An\n→ Gius
+ e Trần Trọng Thu (con trai)\n\nFSID: G5XX-DT9
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5X4-9YX@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Trần Thị Thi
+DTSTART;VALUE=DATE:19890101
+DTEND;VALUE=DATE:19890102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Trần Thị Thi\n\nNgày sinh
+ : 1917\nNơi sinh: Thanh Hóa\, Việt Nam\n\nNgày mất: 1989\nNơi qua 
+ đời: Thanh Hóa\, Việt Nam\n\nTrạng thái ngày giỗ: TẠM THỜI
+ \nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\nCha: Giuse Trầ
+ n Trọng Thu\nMẹ: Nguyễn Thị Xuân - Út\nVợ/Chồng: Lê Chí Tr
+ ung (chồng)\n\nQuan hệ với Cụ Thu: Con gái trực hệ (F1)\nNhá
+ nh gia đình: Nhánh Bà Thi (Trần Thị Thi)\n\nDòng gia đình:\nTr
+ ần Thị Thi\n→ Giuse Trần Trọng Thu\n\nFSID: G5X4-9YX
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5X4-G4M@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Catarina Trần Thị Vị
+DTSTART;VALUE=DATE:20090502
+DTEND;VALUE=DATE:20090503
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Catarina Trần Thị Vị\n\n
+ Ngày sinh: 1929\nNơi sinh: Thanh Hóa\, Việt Nam\n\nNgày mất: 02/05
+ /2009\nNơi qua đời: Thanh Hóa\, Việt Nam\n\nTrạng thái ngày gi
+ ỗ: CHÍNH XÁC\n\nCha: Giuse Trần Trọng Thu\nMẹ: Nguyễn Thị Xu
+ ân - Út\nVợ/Chồng: Gioan Lã Văn Mão (chồng)\n\nQuan hệ với 
+ Cụ Thu: Con gái trực hệ (F1)\nNhánh gia đình: Nhánh Bà Vị (T
+ rần Thị Vị)\n\nDòng gia đình:\nCatarina Trần Thị Vị\n→ Gi
+ use Trần Trọng Thu\n\nFSID: G5X4-G4M
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5X4-NQX@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Nguyễn Thị Xuân - Út
+DTSTART;VALUE=DATE:19290101
+DTEND;VALUE=DATE:19290102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Nguyễn Thị Xuân - Út\n\n
+ Ngày sinh: 1888\nNơi sinh: Thanh Hóa\, Việt Nam\n\nNgày mất: 1929\
+ nNơi qua đời: Thanh Hóa\, Việt Nam\n\nTrạng thái ngày giỗ: T
+ ẠM THỜI\nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\nVợ/
+ Chồng: Giuse Trần Trọng Thu (chồng)\n\nQuan hệ với Cụ Thu: P
+ hối ngẫu Cụ Thu (Cụ Bà)\nNhánh gia đình: Chưa xác định nh
+ ánh\n\nDòng gia đình:\nNguyễn Thị Xuân - Út\n→ Giuse Trần Tr
+ ọng Thu (chồng)\n\nFSID: G5X4-NQX
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XX-C4M@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Lê Chí Trung
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Lê Chí Trung\n\nNgày mất:
+  Chưa xác định chính xác\n\nTrạng thái ngày giỗ: TẠM THỜI
+ \nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\nVợ/Chồng: Tr
+ ần Thị Thi (vợ)\n\nQuan hệ với Cụ Thu: Rể nhánh trực hệ
+  (F1)\nNhánh gia đình: Nhánh Bà Thi (Trần Thị Thi)\n\nDòng gia 
+ đình:\nLê Chí Trung\n→ Trần Thị Thi (vợ)\n→ Giuse Trần Tr
+ ọng Thu\n\nFSID: G5XX-C4M
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XN-46X@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Gioan Lã Văn Mão
+DTSTART;VALUE=DATE:20220127
+DTEND;VALUE=DATE:20220128
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Gioan Lã Văn Mão\n\nNgày s
+ inh: 1925\n\nNgày mất: 27/01/2022\nNơi qua đời: Thanh Hóa\, Việt
+  Nam\n\nTrạng thái ngày giỗ: CHÍNH XÁC\n\nVợ/Chồng: Catarina T
+ rần Thị Vị (vợ)\n\nQuan hệ với Cụ Thu: Rể nhánh trực h
+ ệ (F1)\nNhánh gia đình: Nhánh Bà Vị (Trần Thị Vị)\n\nDòng 
+ gia đình:\nGioan Lã Văn Mão\n→ Catarina Trần Thị Vị (vợ)\n
+ → Giuse Trần Trọng Thu\n\nFSID: G5XN-46X
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G1FQ-RV5@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Trần Thị An - Cẩm Giang
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Trần Thị An - Cẩm Giang\
+ n\nNgày mất: Chưa xác định chính xác\n\nTrạng thái ngày gi
+ ỗ: TẠM THỜI\nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\
+ nCha: Trần Cha Ông cố Thu - bà An\nMẹ: Mẹ Ông Thu - bà An\nV
+ ợ/Chồng: Trương Công Trạng (chồng)\n\nQuan hệ với Cụ Thu:
+  Chị/Em ruột Cụ Thu\nNhánh gia đình: Nhánh Bàng Hệ (Cố An /
+  Trương Công Trạng)\n\nDòng gia đình:\nTrần Thị An - Cẩm Gia
+ ng\n→ Trần Cha Ông cố Thu - bà An (thân phụ chung)\n→ Giuse T
+ rần Trọng Thu (em/anh trai)\n\nFSID: G1FQ-RV5
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5X4-ZNG@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — An-tôn Trần Trọng Thư
+DTSTART;VALUE=DATE:19910517
+DTEND;VALUE=DATE:19910518
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: An-tôn Trần Trọng Thư\n\
+ nNgày sinh: 1918\nNơi sinh: Thanh Hóa\, Việt Nam\n\nNgày mất: 17/0
+ 5/1991\nNơi qua đời: Thanh Hóa\, Việt Nam\n\nTrạng thái ngày gi
+ ỗ: CHÍNH XÁC\n\nCha: Giuse Trần Trọng Thu\nMẹ: Nguyễn Thị Xu
+ ân - Út\nVợ/Chồng: Bà Sa - Teresa Phạm Thị Hưng (vợ)\, Bà L
+ ê Thị Nghi - Cả (vợ)\n\nQuan hệ với Cụ Thu: Con trai trực h
+ ệ (F1)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDò
+ ng gia đình:\nAn-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\
+ n\nFSID: G5X4-ZNG
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XX-1D8@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Maria Lê Thị Phùng
+DTSTART;VALUE=DATE:20210101
+DTEND;VALUE=DATE:20210102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Maria Lê Thị Phùng\n\nNgà
+ y sinh: 1942\n\nNgày mất: 2021\n\nTrạng thái ngày giỗ: TẠM TH
+ ỜI\nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\nVợ/Chồng
+ : Gioan Trần Trọng Thả (chồng)\n\nQuan hệ với Cụ Thu: Dâu n
+ hánh trực hệ (F1)\nNhánh gia đình: Chưa xác định nhánh\n\nD
+ òng gia đình:\nMaria Lê Thị Phùng\n→ Gioan Trần Trọng Thả (
+ chồng)\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-1D8
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G1FJ-F61@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Trương Công Trạng
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Trương Công Trạng\n\nNgà
+ y mất: Chưa xác định chính xác\n\nTrạng thái ngày giỗ: TẠ
+ M THỜI\nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\nVợ/Ch
+ ồng: Trần Thị An - Cẩm Giang (vợ)\n\nQuan hệ với Cụ Thu: D
+ âu/Rể nhánh Bàng Hệ (Chị/Em Cụ Thu)\nNhánh gia đình: Nhánh 
+ Bàng Hệ (Cố An / Trương Công Trạng)\n\nDòng gia đình:\nTrươ
+ ng Công Trạng\n→ Trần Thị An - Cẩm Giang (phối ngẫu)\n→ T
+ rần Cha Ông cố Thu - bà An (thân phụ chung)\n→ Giuse Trần Tr
+ ọng Thu\n\nFSID: G1FJ-F61
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XX-F2P@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Maria Trương Thị Tần
+DTSTART;VALUE=DATE:20220420
+DTEND;VALUE=DATE:20220421
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Maria Trương Thị Tần\n\n
+ Ngày sinh: 1955\nNơi sinh: Thanh Hóa\, Việt Nam\n\nNgày mất: 20/04
+ /2022\nNơi qua đời: Thanh Hóa\, Việt Nam\n\nTrạng thái ngày gi
+ ỗ: CHÍNH XÁC\n\nVợ/Chồng: Lê Đức Thành (chồng)\n\nQuan hệ
+  với Cụ Thu: Dâu nhánh trực hệ (F2)\nNhánh gia đình: Nhánh B
+ à Thi (Trần Thị Thi)\n\nDòng gia đình:\nMaria Trương Thị Tần
+ \n→ Lê Đức Thành (chồng)\n→ Trần Thị Thi\n→ Giuse Trần 
+ Trọng Thu\n\nFSID: G5XX-F2P
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-GRB6-R94@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Con Bà Nghi - Ông Thư
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Con Bà Nghi - Ông Thư\n\nNg
+ ày mất: Chưa xác định chính xác\n\nTrạng thái ngày giỗ: T
+ ẠM THỜI\nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\nCha: 
+ An-tôn Trần Trọng Thư\nMẹ: Bà Lê Thị Nghi - Cả\n\nQuan hệ 
+ với Cụ Thu: Cháu trực hệ (F2)\nNhánh gia đình: Nhánh Cụ Th
+ ư (Trần Trọng Thư)\n\nDòng gia đình:\nCon Bà Nghi - Ông Thư\n
+ → An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: GRB
+ 6-R94
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XW-XBH@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Giacôbê Trần Trung Kiêm
+DTSTART;VALUE=DATE:20231210
+DTEND;VALUE=DATE:20231211
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Giacôbê Trần Trung Kiêm\n
+ \nNgày sinh: 10/05/1967\nNơi sinh: Thanh Hóa\, Việt Nam\n\nNgày mấ
+ t: 10/12/2023\nNơi qua đời: Thanh Hóa\, Việt Nam\n\nTrạng thái n
+ gày giỗ: CHÍNH XÁC\nÂm lịch: 28/10 Âm Lịch (Quý Mão 2023)\n\n
+ Cha: An-tôn Trần Trọng Thư\nMẹ: Bà Sa - Teresa Phạm Thị Hưng
+ \nVợ/Chồng: Lucia Nguyễn Thị Mai (vợ)\n\nQuan hệ với Cụ Th
+ u: Cháu trực hệ (F2)\nNhánh gia đình: Nhánh Cụ Thư (Trần Tr
+ ọng Thư)\n\nDòng gia đình:\nGiacôbê Trần Trung Kiêm\n→ An-tô
+ n Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XW-XBH
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-GRB6-XCQ@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Bà Lê Thị Nghi - Cả
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Bà Lê Thị Nghi - Cả\n\nN
+ gày mất: Chưa xác định chính xác\n\nTrạng thái ngày giỗ: T
+ ẠM THỜI\nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\nVợ/
+ Chồng: An-tôn Trần Trọng Thư (chồng)\n\nQuan hệ với Cụ Thu
+ : Dâu nhánh trực hệ (F1)\nNhánh gia đình: Nhánh Cụ Thư (Trầ
+ n Trọng Thư)\n\nDòng gia đình:\nBà Lê Thị Nghi - Cả\n→ An-t
+ ôn Trần Trọng Thư (chồng)\n→ Giuse Trần Trọng Thu\n\nFSID: G
+ RB6-XCQ
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5X7-BT8@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Bà Sa - Teresa Phạm Thị Hưng
+DTSTART;VALUE=DATE:20210916
+DTEND;VALUE=DATE:20210917
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Bà Sa - Teresa Phạm Thị H
+ ưng\n\nNgày sinh: Khoảng 1934\nNơi sinh: Kim Sơn\, Ninh Bình\, Vi
+ ệt Nam\n\nNgày mất: 16/09/2021\nNơi qua đời: Hồ Chí Minh\, Vi
+ ệt Nam\n\nTrạng thái ngày giỗ: CHÍNH XÁC\n\nVợ/Chồng: An-tô
+ n Trần Trọng Thư (chồng)\n\nQuan hệ với Cụ Thu: Dâu nhánh t
+ rực hệ (F1)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)
+ \n\nDòng gia đình:\nBà Sa - Teresa Phạm Thị Hưng\n→ An-tôn Tr
+ ần Trọng Thư (chồng)\n→ Giuse Trần Trọng Thu\n\nFSID: G5X7-BT
+ 8
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XF-FJ1@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Nguyễn Văn Ngọc
+DTSTART;VALUE=DATE:20210101
+DTEND;VALUE=DATE:20210102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Nguyễn Văn Ngọc\n\nNgày 
+ sinh: 1959\n\nNgày mất: 2021\n\nTrạng thái ngày giỗ: TẠM THỜI
+ \nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\nVợ/Chồng: Tr
+ ần Thị Hoà (vợ)\n\nQuan hệ với Cụ Thu: Rể nhánh trực h
+ ệ (F2)\nNhánh gia đình: Chưa xác định nhánh\n\nDòng gia đình
+ :\nNguyễn Văn Ngọc\n→ Trần Thị Hoà (vợ)\n→ Gioan Trần Tr
+ ọng Thả\n→ Giuse Trần Trọng Thu\n\nFSID: G5XF-FJ1
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XX-NKK@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Lucia Nguyễn Thị Mai
+DTSTART;VALUE=DATE:20230131
+DTEND;VALUE=DATE:20230201
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Lucia Nguyễn Thị Mai\n\nNg
+ ày sinh: 14/09/1968\nNơi sinh: Thanh Hóa\, Việt Nam\n\nNgày mất: 3
+ 1/01/2023\nNơi qua đời: Thanh Hóa\, Việt Nam\n\nTrạng thái ngày
+  giỗ: CHÍNH XÁC\nÂm lịch: 10/01 Âm Lịch (Quý Mão 2023)\n\nVợ
+ /Chồng: Giacôbê Trần Trung Kiêm (chồng)\n\nQuan hệ với Cụ T
+ hu: Dâu nhánh trực hệ (F2)\nNhánh gia đình: Nhánh Cụ Thư (Tr
+ ần Trọng Thư)\n\nDòng gia đình:\nLucia Nguyễn Thị Mai\n→ Gia
+ côbê Trần Trung Kiêm (chồng)\n→ An-tôn Trần Trọng Thư\n→ 
+ Giuse Trần Trọng Thu\n\nFSID: G5XX-NKK
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XX-5VP@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Nguyễn Thị Huệ
+DTSTART;VALUE=DATE:19900101
+DTEND;VALUE=DATE:19900102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Nguyễn Thị Huệ\n\nNgày 
+ sinh: 1984\n\nNgày mất: 1990\n\nTrạng thái ngày giỗ: TẠM THỜI
+ \nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\nCha: Micae Nguy
+ ễn Văn Thìn\nMẹ: Agnest Trần Thị Đức\n\nQuan hệ với Cụ 
+ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần 
+ Trọng Thư)\n\nDòng gia đình:\nNguyễn Thị Huệ\n→ Agnest Trầ
+ n Thị Đức\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng 
+ Thu\n\nFSID: G5XX-5VP
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XX-2HY@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Micae Nguyễn Văn Thìn
+DTSTART;VALUE=DATE:20160819
+DTEND;VALUE=DATE:20160820
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Micae Nguyễn Văn Thìn\n\nN
+ gày sinh: 1954\n\nNgày mất: 19/08/2016\nNơi qua đời: Thanh Hóa\, 
+ Việt Nam\n\nTrạng thái ngày giỗ: CHÍNH XÁC\n\nVợ/Chồng: Agne
+ st Trần Thị Đức (vợ)\n\nQuan hệ với Cụ Thu: Rể nhánh tr
+ ực hệ (F2)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\
+ n\nDòng gia đình:\nMicae Nguyễn Văn Thìn\n→ Agnest Trần Thị 
+ Đức (vợ)\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng T
+ hu\n\nFSID: G5XX-2HY
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XX-X13@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Gioan Baotixita Trần Tiến Tùng
+DTSTART;VALUE=DATE:20130917
+DTEND;VALUE=DATE:20130918
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Gioan Baotixita Trần Tiến 
+ Tùng\n\nNgày sinh: 10/06/1987\nNơi sinh: Thanh Hóa\, Việt Nam\n\nNg
+ ày mất: 17/09/2013\nNơi qua đời: Bảo Lộc\, Lâm Ðồng\, Việ
+ t Nam\n\nTrạng thái ngày giỗ: CHÍNH XÁC\n\nCha: Gioan Baotixita Tr
+ ần Ngọc Tâm\nMẹ: Teresa Trần Thị Ngoan\n\nQuan hệ với Cụ 
+ Thu: Chắt trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần 
+ Trọng Thư)\n\nDòng gia đình:\nGioan Baotixita Trần Tiến Tùng\n
+ → Teresa Trần Thị Ngoan\n→ An-tôn Trần Trọng Thư\n→ Giuse 
+ Trần Trọng Thu\n\nFSID: G5XX-X13
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XX-RGW@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Mẹ Tình Thương
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Mẹ Tình Thương\n\nNgày m
+ ất: Chưa xác định chính xác\n\nTrạng thái ngày giỗ: TẠM T
+ HỜI\nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\nQuan hệ v
+ ới Cụ Thu: Chưa xác định liên kết trong gia phả\nNhánh gia 
+ đình: Chưa xác định nhánh\n\nDòng gia đình:\nMẹ Tình Thươn
+ g\n\nFSID: G5XX-RGW
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XX-XTR@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Giuse Lăng Văn Trường
+DTSTART;VALUE=DATE:20090101
+DTEND;VALUE=DATE:20090102
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Giuse Lăng Văn Trường\n\n
+ Ngày sinh: 1978\n\nNgày mất: 2009\n\nTrạng thái ngày giỗ: TẠM 
+ THỜI\nNgày tưởng niệm tạm thời: 01/01 hàng năm\n\nVợ/Chồ
+ ng: Lucia Nguyễn Thị Lan (vợ)\n\nQuan hệ với Cụ Thu: Rể nhá
+ nh trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng T
+ hư)\n\nDòng gia đình:\nGiuse Lăng Văn Trường\n→ Lucia Nguyễn 
+ Thị Lan (vợ)\n→ Agnest Trần Thị Đức\n→ An-tôn Trần Trọ
+ ng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-XTR
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XX-YR6@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Gioan Vũ Văn Hùng
+DTSTART;VALUE=DATE:20150316
+DTEND;VALUE=DATE:20150317
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Gioan Vũ Văn Hùng\n\nNgày 
+ sinh: 09/03/1972\n\nNgày mất: 16/03/2015\n\nTrạng thái ngày giỗ: 
+ CHÍNH XÁC\nÂm lịch: 25/01 Âm Lịch (Ất Mùi 2015)\n\nVợ/Chồng
+ : Marria Nguyễn Thị Huyền (vợ)\n\nQuan hệ với Cụ Thu: Rể n
+ hánh trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọn
+ g Thư)\n\nDòng gia đình:\nGioan Vũ Văn Hùng\n→ Marria Nguyễn Th
+ ị Huyền (vợ)\n→ Terresa Trần Thị Phúc\n→ An-tôn Trần Tr
+ ọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-YR6
+END:VEVENT
+BEGIN:VEVENT
+UID:memorial-G5XX-KTZ@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕯️ Ngày giỗ — Phaolo Trần Đình Hữu
+DTSTART;VALUE=DATE:20000903
+DTEND;VALUE=DATE:20000904
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕯️ Tưởng niệm\n\nTên: Phaolo Trần Đình Hữu\n\n
+ Ngày sinh: 10/03/1971\n\nNgày mất: 03/09/2000\n\nTrạng thái ngày g
+ iỗ: CHÍNH XÁC\nÂm lịch: 05/08 Âm Lịch (Canh Thìn 2000)\n\nVợ/
+ Chồng: Teresa Trần Thị Tình (vợ)\n\nQuan hệ với Cụ Thu: R
+ ể nhánh trực hệ (F3)\nNhánh gia đình: Nhánh Cụ Thư (Trần T
+ rọng Thư)\n\nDòng gia đình:\nPhaolo Trần Đình Hữu\n→ Teresa 
+ Trần Thị Tình (vợ)\n→ Teresa Trần Thị Ngoan\n→ An-tôn Tr
+ ần Trọng Thư\n→ Giuse Trần Trọng Thu\n\nFSID: G5XX-KTZ
+END:VEVENT
+END:VCALENDAR

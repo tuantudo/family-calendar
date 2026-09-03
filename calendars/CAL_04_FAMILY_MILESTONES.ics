@@ -1,0 +1,80 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CAY GIA PHA//Calendar Projection//VI
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Kỷ Niệm Gia Đình & Bí Tích
+X-WR-TIMEZONE:Asia/Ho_Chi_Minh
+BEGIN:VEVENT
+UID:milestone-marr-F24@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:💍 Kỷ niệm hôn phối — Giuse Lã Xuân Hùng & Teresa Ho
+ àng Thị Phương
+DTSTART;VALUE=DATE:20250203
+DTEND;VALUE=DATE:20250204
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:💍 Kỷ niệm hôn phối\n\nChồng: Giuse Lã Xuân Hùng\
+ nVợ: Teresa Hoàng Thị Phương\nNgày thành hôn: 03/02/2025\nNơi k
+ ết hôn: Nhà thờ Giáo Xứ Lộc Mỹ\, Nghi Quang\, Nghi Lộc\, Ng
+ hệ An\n\nĐịnh vị gia phả:\n- Phía Chồng (Giuse Lã Xuân Hùng
+ ): Chắt trực hệ (F3)\n- Phía Vợ (Teresa Hoàng Thị Phương): D
+ âu nhánh trực hệ (F3)\n\nDòng gia đình (Phía Chồng):\nGiuse L
+ ã Xuân Hùng\n→ Lã Văn Minh\n→ Catarina Trần Thị Vị\n→ Giu
+ se Trần Trọng Thu\n\nFSID: G5XN-6F8 / P9S8-C9R
+END:VEVENT
+BEGIN:VEVENT
+UID:milestone-marr-F67@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:💍 Kỷ niệm hôn phối — Phao lô Nguyễn Văn Quế & Mar
+ ia Lăng Nguyễn Ánh Tuyên
+DTSTART;VALUE=DATE:20250221
+DTEND;VALUE=DATE:20250222
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:💍 Kỷ niệm hôn phối\n\nChồng: Phao lô Nguyễn Văn
+  Quế\nVợ: Maria Lăng Nguyễn Ánh Tuyên\nNgày thành hôn: 21/02/2
+ 025\nNơi kết hôn: Nhà Thờ giáo xứ Phong ý\, Thị Trấn Phong 
+ Sơn\, Thanh Hoá\, Việt Nam\n\nĐịnh vị gia phả:\n- Phía Chồng
+  (Phao lô Nguyễn Văn Quế): Rể nhánh trực hệ (F4)\n- Phía V
+ ợ (Maria Lăng Nguyễn Ánh Tuyên): Chút trực hệ (F4)\n\nDòng gi
+ a đình (Phía Vợ):\nMaria Lăng Nguyễn Ánh Tuyên\n→ Lucia Nguy
+ ễn Thị Lan\n→ Agnest Trần Thị Đức\n→ An-tôn Trần Trọng
+  Thư\n→ Giuse Trần Trọng Thu\n\nFSID: P9SS-7XY / G5XX-F1D
+END:VEVENT
+BEGIN:VEVENT
+UID:milestone-chr-P41B-PV2@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕊️ Kỷ niệm Rửa Tội — Anna Trần Phương Anh
+DTSTART;VALUE=DATE:20260111
+DTEND;VALUE=DATE:20260112
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕊️ Kỷ niệm Bí Tích Rửa Tội\n\nTên: Anna Trần 
+ Phương Anh\nNgày Rửa Tội: 11/01/2026\nNơi Rửa Tội: Giáo xứ 
+ Thanh Đa\, hcm\, Việt Nam\n\nCha: Anton Trần Thế An\nMẹ: Phạm P
+ hương Nga\n\nQuan hệ với Cụ Thu: Chút trực hệ (F4)\nNhánh gi
+ a đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nDòng gia đình:\nAnn
+ a Trần Phương Anh\n→ Anton Trần Thế An\n→ Giacôbê Trần Tru
+ ng Kiêm\n→ An-tôn Trần Trọng Thư\n→ Giuse Trần Trọng Thu\n\
+ nFSID: P41B-PV2
+END:VEVENT
+BEGIN:VEVENT
+UID:milestone-chr-GRGM-TCY@giadinhongthu.vn
+DTSTAMP:20260903T000000Z
+SUMMARY:🕊️ Kỷ niệm Rửa Tội — Lucia Nguyễn Ngọc Khánh V
+ ân
+DTSTART;VALUE=DATE:20240601
+DTEND;VALUE=DATE:20240602
+RRULE:FREQ=YEARLY
+TRANSP:TRANSPARENT
+DESCRIPTION:🕊️ Kỷ niệm Bí Tích Rửa Tội\n\nTên: Lucia Nguy
+ ễn Ngọc Khánh Vân\nNgày Rửa Tội: 01/06/2024\nNơi Rửa Tội: 
+ Hóc Môn\, Hồ Chí Minh\, Việt Nam\n\nCha: Gioan Nguyễn Hồng Ân\
+ nMẹ: Maria Nguyễn Minh Thư\n\nQuan hệ với Cụ Thu: Chút trực 
+ hệ (F4)\nNhánh gia đình: Nhánh Cụ Thư (Trần Trọng Thư)\n\nD
+ òng gia đình:\nLucia Nguyễn Ngọc Khánh Vân\n→ Gioan Nguyễn H
+ ồng Ân\n→ Terresa Trần Thị Phúc\n→ An-tôn Trần Trọng Thư
+ \n→ Giuse Trần Trọng Thu\n\nFSID: GRGM-TCY
+END:VEVENT
+END:VCALENDAR
