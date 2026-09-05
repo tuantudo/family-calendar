@@ -200,7 +200,7 @@
         <!-- 4. PEOPLE DIRECTORY -->
         <section id="view_people" class="view-section">
             <div class="section-header">
-                <h2 class="section-title">👥 Danh Sách Thành Viên Gia Tộc (<span id="peopleTotalCount">-</span>)</h2>
+                <h2 class="section-title">👥 Danh Sách Thành Viên Gia Tộc&nbsp;(<span id="peopleTotalCount">-</span>)</h2>
                 <p class="section-desc">Tra cứu lý lịch, phân loại thế hệ và ngày kỷ niệm của từng thành viên.</p>
             </div>
             <div id="peopleGrid" class="directory-grid"></div>
@@ -209,15 +209,24 @@
         <!-- 5. FAMILIES DIRECTORY -->
         <section id="view_families" class="view-section">
             <div class="section-header">
-                <h2 class="section-title">🏡 Danh Sách Gia Đình & Nhánh Hôn Phối (<span id="familiesTotalCount">-</span>)</h2>
-                <p class="section-desc">Các đơn vị gia đình trong phả hệ, bao gồm cha mẹ và con cái.</p>
+                <h2 class="section-title">🏡 Danh Sách Gia Đình & Nhánh Hôn Phối&nbsp;(<span id="familiesTotalCount">-</span>)</h2>
+                <p class="section-desc">Phân loại thế hệ và cấu trúc các đơn vị gia đình trong dòng họ Cố Thu.</p>
+            </div>
+            <!-- FAMILY GENERATION FILTER BAR -->
+            <div class="family-filter-bar" id="familyFilterBar">
+                <button class="filter-pill active" id="filter_fam_all" onclick="filterFamiliesByGen('all')">Tất cả (<span id="cnt_fam_all">-</span>)</button>
+                <button class="filter-pill pill-f0" id="filter_fam_0" onclick="filterFamiliesByGen(0)">F0 · Cố Thu (<span id="cnt_fam_f0">-</span>)</button>
+                <button class="filter-pill pill-f1" id="filter_fam_1" onclick="filterFamiliesByGen(1)">F1 · Đời Con (<span id="cnt_fam_f1">-</span>)</button>
+                <button class="filter-pill pill-f2" id="filter_fam_2" onclick="filterFamiliesByGen(2)">F2 · Đời Cháu (<span id="cnt_fam_f2">-</span>)</button>
+                <button class="filter-pill pill-f3" id="filter_fam_3" onclick="filterFamiliesByGen(3)">F3 · Đời Chắt (<span id="cnt_fam_f3">-</span>)</button>
+                <button class="filter-pill pill-f4" id="filter_fam_4" onclick="filterFamiliesByGen(4)">F4 · Đời Chút (<span id="cnt_fam_f4">-</span>)</button>
             </div>
             <div id="familiesGrid" class="directory-grid"></div>
         </section>
 
         <!-- 6. PERSON PROFILE VIEW -->
         <section id="view_person" class="view-section">
-            <div class="profile-container">
+            <div class="profile-container" id="personProfileContainer">
                 <div style="border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                     <div>
                         <div style="font-size: 24px; font-weight: 800; color: var(--primary-dark);" id="p_name">Họ Tên</div>
@@ -249,9 +258,12 @@
 
         <!-- 7. FAMILY PROFILE VIEW -->
         <section id="view_family" class="view-section">
-            <div class="profile-container">
-                <div style="border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+            <div class="profile-container" id="familyProfileContainer">
+                <div style="border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                     <div>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span id="f_gen_badge" class="gen-badge gen-f0">F0 · ĐỜI CỐ THU</span>
+                        </div>
                         <div style="font-size: 24px; font-weight: 800; color: var(--primary-dark);" id="f_title">Gia Đình</div>
                         <div style="font-size: 14px; color: var(--text-muted); margin-top: 2px;" id="f_marr_meta"></div>
                     </div>

@@ -20,6 +20,8 @@ let appData = {
 // Derived Graph State
 let derivedGenerations = {}; // pid -> level integer (0 = Root Anchor, 1 = F1, etc.)
 let derivedPaths = {};        // pid -> [pid0, pid1, ... pidN] shortest lineage path from Anchor
+let derivedFamilyGenerations = {}; // fid -> level integer (0 = F0 family, 1 = F1, etc.)
+let currentFamilyGenFilter = 'all'; // 'all' | 0 | 1 | 2 | 3 | 4
 let treeViewMode = 'explore'; // 'explore' (Generation Bands) | 'focus' (Pedigree Focus)
 let currentTreeFocusId = "";  // Currently selected person in Focus Mode
 
@@ -48,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             initTreeDropdown(data.rootAnchor);
             renderPeopleDirectory();
-            renderFamiliesDirectory();
+            renderFamiliesDirectory('all');
             renderTimeline();
             renderMemories();
 
@@ -65,12 +67,14 @@ window.addEventListener("hashchange", handleHashRoute);
 // --- DYNAMIC GRAPH DERIVATION ENGINE (BFS FROM FAMILY ANCHOR) ---
 function deriveFamilyGraphGenerations(rootId) {
     const people = appData.people;
+    const families = appData.families;
     derivedGenerations = {};
     derivedPaths = {};
+    derivedFamilyGenerations = {};
 
     if (!people[rootId]) return;
 
-    // Build relationship adjacency graph
+    // 1. Build relationship adjacency graph for individual people
     const adj = {};
     Object.keys(people).forEach(pid => {
         adj[pid] = [];
@@ -80,7 +84,7 @@ function deriveFamilyGraphGenerations(rootId) {
         (p.spouses || []).forEach(sid => { if (people[sid]) adj[pid].push({ id: sid, delta: 0, type: 'spouse' }); });
     });
 
-    // BFS Queue
+    // BFS Queue for Person Generations
     const queue = [rootId];
     derivedGenerations[rootId] = 0;
     derivedPaths[rootId] = [rootId];
@@ -100,11 +104,39 @@ function deriveFamilyGraphGenerations(rootId) {
             }
         });
     }
+
+    // 2. Derive Family Unit Generation strictly from Relationship Graph
+    Object.keys(families).forEach(fid => {
+        const fam = families[fid];
+        const h = fam.husband;
+        const w = fam.wife;
+        const chils = fam.children || [];
+
+        const hLvl = (h && derivedGenerations[h] !== undefined) ? derivedGenerations[h] : null;
+        const wLvl = (w && derivedGenerations[w] !== undefined) ? derivedGenerations[w] : null;
+
+        let lvl = null;
+        if (h === rootId || w === rootId) {
+            lvl = 0;
+        } else if (hLvl !== null && wLvl !== null) {
+            lvl = (hLvl >= 0 && wLvl >= 0) ? Math.min(hLvl, wLvl) : (hLvl >= 0 ? hLvl : wLvl);
+        } else if (hLvl !== null) {
+            lvl = hLvl;
+        } else if (wLvl !== null) {
+            lvl = wLvl;
+        } else if (chils.length > 0) {
+            const chLvls = chils.map(c => derivedGenerations[c]).filter(l => l !== undefined);
+            if (chLvls.length > 0) {
+                lvl = Math.min(...chLvls) - 1;
+            }
+        }
+        derivedFamilyGenerations[fid] = lvl;
+    });
 }
 
 function getGenerationMeta(pid) {
     const lvl = derivedGenerations[pid];
-    if (lvl === undefined) return { level: 99, label: "Gia tộc", badgeCls: "gen-other", borderCls: "border-other", title: "Thành viên gia tộc" };
+    if (lvl === undefined || lvl === null) return { level: 99, label: "Gia tộc", badgeCls: "gen-other", borderCls: "border-other", title: "Thành viên gia tộc" };
     if (lvl < 0) return { level: lvl, label: `Tiền nhân (F${lvl})`, badgeCls: "gen-f0", borderCls: "border-f0", title: "Bậc tiền nhân" };
     if (lvl === 0) return { level: 0, label: "F0 · Gốc Phả Hệ", badgeCls: "gen-f0", borderCls: "border-f0", title: "Cố Thu (Family Anchor)" };
     if (lvl === 1) return { level: 1, label: "F1 · Đời Con", badgeCls: "gen-f1", borderCls: "border-f1", title: "Thế hệ thứ 1 (Con)" };
@@ -112,6 +144,18 @@ function getGenerationMeta(pid) {
     if (lvl === 3) return { level: 3, label: "F3 · Đời Chắt", badgeCls: "gen-f3", borderCls: "border-f3", title: "Thế hệ thứ 3 (Chắt)" };
     if (lvl === 4) return { level: 4, label: "F4 · Đời Chút", badgeCls: "gen-f4", borderCls: "border-f4", title: "Thế hệ thứ 4 (Chút)" };
     return { level: lvl, label: `F${lvl} · Hậu duệ`, badgeCls: "gen-f4", borderCls: "border-f4", title: `Thế hệ thứ ${lvl}` };
+}
+
+function getFamilyGenerationMeta(fid) {
+    const lvl = derivedFamilyGenerations[fid];
+    if (lvl === undefined || lvl === null) return { level: 99, label: "Gia tộc", badgeCls: "gen-other", borderCls: "border-other", bgCls: "bg-gen-other", title: "Nhánh chưa phân loại" };
+    if (lvl < 0) return { level: lvl, label: `Tiền nhân (F${lvl})`, badgeCls: "gen-f0", borderCls: "border-f0", bgCls: "bg-gen-f0", title: "Bậc tiền nhân" };
+    if (lvl === 0) return { level: 0, label: "F0 · Đời Cố Thu", badgeCls: "gen-f0", borderCls: "border-f0", bgCls: "bg-gen-f0", title: "Nhánh Cố Thu (Gốc phả hệ)" };
+    if (lvl === 1) return { level: 1, label: "F1 · Đời Con", badgeCls: "gen-f1", borderCls: "border-f1", bgCls: "bg-gen-f1", title: "Nhánh thế hệ con" };
+    if (lvl === 2) return { level: 2, label: "F2 · Đời Cháu", badgeCls: "gen-f2", borderCls: "border-f2", bgCls: "bg-gen-f2", title: "Nhánh thế hệ cháu" };
+    if (lvl === 3) return { level: 3, label: "F3 · Đời Chắt", badgeCls: "gen-f3", borderCls: "border-f3", bgCls: "bg-gen-f3", title: "Nhánh thế hệ chắt" };
+    if (lvl === 4) return { level: 4, label: "F4 · Đời Chút", badgeCls: "gen-f4", borderCls: "border-f4", bgCls: "bg-gen-f4", title: "Nhánh thế hệ chút" };
+    return { level: lvl, label: `F${lvl} · Hậu duệ`, badgeCls: "gen-f4", borderCls: "border-f4", bgCls: "bg-gen-f4", title: `Nhánh thế hệ thứ ${lvl}` };
 }
 
 function bindPublicationHeaders(data) {
@@ -633,31 +677,83 @@ function renderPeopleDirectory() {
     });
 }
 
-function renderFamiliesDirectory() {
+function filterFamiliesByGen(gen) {
+    currentFamilyGenFilter = gen;
+    renderFamiliesDirectory(gen);
+}
+
+function renderFamiliesDirectory(filterGen = currentFamilyGenFilter) {
+    currentFamilyGenFilter = filterGen;
     const grid = document.getElementById("familiesGrid");
     if (!grid) return;
     grid.innerHTML = "";
-    Object.values(appData.families).forEach(f => {
+
+    const allFams = Object.values(appData.families);
+    const countMap = { all: allFams.length, 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 };
+    allFams.forEach(f => {
+        const lvl = derivedFamilyGenerations[f.id];
+        if (lvl !== undefined && lvl !== null && countMap[lvl] !== undefined) {
+            countMap[lvl]++;
+        }
+    });
+
+    const cntAll = document.getElementById("cnt_fam_all");
+    const cntF0 = document.getElementById("cnt_fam_f0");
+    const cntF1 = document.getElementById("cnt_fam_f1");
+    const cntF2 = document.getElementById("cnt_fam_f2");
+    const cntF3 = document.getElementById("cnt_fam_f3");
+    const cntF4 = document.getElementById("cnt_fam_f4");
+    if (cntAll) cntAll.innerText = countMap.all;
+    if (cntF0) cntF0.innerText = countMap[0];
+    if (cntF1) cntF1.innerText = countMap[1];
+    if (cntF2) cntF2.innerText = countMap[2];
+    if (cntF3) cntF3.innerText = countMap[3];
+    if (cntF4) cntF4.innerText = countMap[4];
+
+    const pills = [
+        { id: "filter_fam_all", val: 'all' },
+        { id: "filter_fam_0", val: 0 },
+        { id: "filter_fam_1", val: 1 },
+        { id: "filter_fam_2", val: 2 },
+        { id: "filter_fam_3", val: 3 },
+        { id: "filter_fam_4", val: 4 }
+    ];
+    pills.forEach(p => {
+        const el = document.getElementById(p.id);
+        if (el) el.classList.toggle("active", filterGen === p.val);
+    });
+
+    let renderedCount = 0;
+    allFams.forEach(f => {
+        const fMeta = getFamilyGenerationMeta(f.id);
+        if (filterGen !== 'all' && fMeta.level !== filterGen) return;
+
+        renderedCount++;
         const card = document.createElement("div");
-        card.className = "family-card";
+        card.className = `family-card ${fMeta.borderCls} ${fMeta.bgCls}`;
         card.onclick = () => openFamilyProfile(f.id);
         const husb = appData.people[f.husband], wife = appData.people[f.wife];
         card.innerHTML = `
             <div>
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                    <span style="font-size:11.5px; font-weight:800; color:var(--primary); background:var(--primary-light); padding:2px 8px; border-radius:12px; border:1px solid #bfdbfe;">GIA ĐÌNH</span>
-                    <span style="font-family:monospace; font-size:11.5px; color:var(--text-muted); background:var(--bg); padding:2px 6px; border-radius:4px;">${f.id}</span>
+                    <span class="gen-badge ${fMeta.badgeCls}">${fMeta.label}</span>
+                    <span style="font-family:monospace; font-size:11.5px; color:var(--text-muted); background:rgba(0,0,0,0.04); padding:2px 6px; border-radius:4px;">${f.id}</span>
                 </div>
                 <div style="font-weight:700; font-size:16px; color:var(--primary-dark);">Nhánh: ${husb ? husb.name : 'Chưa rõ'} & ${wife ? wife.name : 'Chưa rõ'}</div>
                 <div style="font-size:13px; color:var(--text-muted); margin-top:4px;">Kết hôn: ${f.marriage && f.marriage.date ? f.marriage.date : 'Chưa có dữ kiện'}</div>
                 <div style="font-size:12.5px; color:var(--text-muted); margin-top:2px;">Con cái trực hệ: <strong>${f.children.length}</strong> người con</div>
             </div>
-            <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:14px; padding-top:10px; border-top:1px dashed var(--border); font-size:12.5px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; padding-top:10px; border-top:1px dashed var(--border); font-size:12.5px;">
+                <span style="font-size:12px; color:var(--text-muted);">${fMeta.title}</span>
                 <span style="color:var(--primary); font-weight:700;">Xem chi tiết nhánh →</span>
             </div>
         `;
         grid.appendChild(card);
     });
+
+    if (renderedCount === 0) {
+        grid.innerHTML = `<div style="grid-column: 1/-1; padding: 32px; text-align: center; color: var(--text-muted); background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius-md);">Không có đơn vị gia đình nào thuộc thế hệ này.</div>`;
+    }
 }
 
 // --- PROFILES ---
@@ -670,12 +766,14 @@ function openPersonProfile(pid) {
     if (sec) sec.classList.add("active");
 
     const gMeta = getGenerationMeta(p.id);
+    const pContainer = document.getElementById("personProfileContainer");
     const pName = document.getElementById("p_name");
     const pGender = document.getElementById("p_gender_status");
     const pFsid = document.getElementById("p_fsid");
     const pFacts = document.getElementById("p_facts");
     const pRels = document.getElementById("p_relatives");
 
+    if (pContainer) pContainer.className = `profile-container ${gMeta.borderCls}`;
     if (pName) pName.innerText = p.name;
     if (pGender) pGender.innerHTML = `<span class="gen-badge ${gMeta.badgeCls}">${gMeta.label}</span> • ${p.sex === 'M' ? 'Nam' : 'Nữ'} • Tên gốc: ${p.raw_name}`;
     if (pFsid) pFsid.innerText = `FSID: ${p.fsid || p.id}`;
@@ -687,24 +785,33 @@ function openPersonProfile(pid) {
 
     let relsHtml = "";
     if (p.parents.length > 0) {
-        relsHtml += `<div style="font-weight:700; font-size:13px; color:var(--text-muted); margin-bottom:4px;">Thân Phụ / Thân Mẫu:</div>`;
+        relsHtml += `<div style="font-weight:700; font-size:13px; color:var(--text-muted); margin-bottom:6px;">Thân Phụ / Thân Mẫu:</div>`;
         p.parents.forEach(parId => {
             const par = appData.people[parId];
-            if (par) relsHtml += `<a class="rel-link" onclick="openPersonProfile('${par.id}')">👤 ${par.name} (${par.sex === 'M' ? 'Cha' : 'Mẹ'})</a>`;
+            if (par) {
+                const gPar = getGenerationMeta(par.id);
+                relsHtml += `<a class="rel-link" onclick="openPersonProfile('${par.id}')"><span class="gen-badge ${gPar.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gPar.label.split('·')[0].trim()}</span> 👤 ${par.name} (${par.sex === 'M' ? 'Cha' : 'Mẹ'})</a>`;
+            }
         });
     }
     if (p.spouses.length > 0) {
-        relsHtml += `<div style="font-weight:700; font-size:13px; color:var(--text-muted); margin-top:10px; margin-bottom:4px;">Hôn Phối:</div>`;
+        relsHtml += `<div style="font-weight:700; font-size:13px; color:var(--text-muted); margin-top:10px; margin-bottom:6px;">Hôn Phối:</div>`;
         p.spouses.forEach(spId => {
             const sp = appData.people[spId];
-            if (sp) relsHtml += `<a class="rel-link" onclick="openPersonProfile('${sp.id}')">💍 ${sp.name}</a>`;
+            if (sp) {
+                const gSp = getGenerationMeta(sp.id);
+                relsHtml += `<a class="rel-link" onclick="openPersonProfile('${sp.id}')"><span class="gen-badge ${gSp.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gSp.label.split('·')[0].trim()}</span> 💍 ${sp.name}</a>`;
+            }
         });
     }
     if (p.children.length > 0) {
-        relsHtml += `<div style="font-weight:700; font-size:13px; color:var(--text-muted); margin-top:10px; margin-bottom:4px;">Con Cái (${p.children.length}):</div>`;
+        relsHtml += `<div style="font-weight:700; font-size:13px; color:var(--text-muted); margin-top:10px; margin-bottom:6px;">Con Cái (${p.children.length}):</div>`;
         p.children.forEach(chId => {
             const ch = appData.people[chId];
-            if (ch) relsHtml += `<a class="rel-link" onclick="openPersonProfile('${ch.id}')">👶 ${ch.name}</a>`;
+            if (ch) {
+                const gCh = getGenerationMeta(ch.id);
+                relsHtml += `<a class="rel-link" onclick="openPersonProfile('${ch.id}')"><span class="gen-badge ${gCh.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gCh.label.split('·')[0].trim()}</span> 👶 ${ch.name}</a>`;
+            }
         });
     }
     relsHtml += `<div style="margin-top:16px;"><button class="cal-nav-btn today" onclick="currentTreeFocusId='${p.id}'; switchTreeViewMode('focus'); navigateRoute('/tree');">🌳 Xem cây phả đồ lấy người này làm trọng tâm →</button></div>`;
@@ -731,27 +838,44 @@ function openFamilyProfile(fid) {
     const sec = document.getElementById("view_family");
     if (sec) sec.classList.add("active");
 
+    const fMeta = getFamilyGenerationMeta(fid);
     const husb = appData.people[f.husband], wife = appData.people[f.wife];
+    const fContainer = document.getElementById("familyProfileContainer");
+    const fBadge = document.getElementById("f_gen_badge");
     const fTitle = document.getElementById("f_title");
     const fId = document.getElementById("f_id_label");
     const fMarr = document.getElementById("f_marr_meta");
     const fParents = document.getElementById("f_parents");
     const fChildren = document.getElementById("f_children");
 
+    if (fContainer) fContainer.className = `profile-container ${fMeta.borderCls}`;
+    if (fBadge) {
+        fBadge.className = `gen-badge ${fMeta.badgeCls}`;
+        fBadge.innerText = fMeta.label;
+    }
     if (fTitle) fTitle.innerText = `Gia Đình: ${husb ? husb.name : 'Chưa rõ'} & ${wife ? wife.name : 'Chưa rõ'}`;
     if (fId) fId.innerText = `FAM ID: ${f.id}`;
     if (fMarr) fMarr.innerText = f.marriage && f.marriage.date ? `Kết hôn: ${f.marriage.date}` : "Chưa có thông tin hôn phối chính thức";
 
     let pHtml = "";
-    if (husb) pHtml += `<a class="rel-link" onclick="openPersonProfile('${husb.id}')">👨 Người chồng: ${husb.name}</a>`;
-    if (wife) pHtml += `<a class="rel-link" onclick="openPersonProfile('${wife.id}')">👩 Người vợ: ${wife.name}</a>`;
+    if (husb) {
+        const gH = getGenerationMeta(husb.id);
+        pHtml += `<a class="rel-link" onclick="openPersonProfile('${husb.id}')"><span class="gen-badge ${gH.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gH.label.split('·')[0].trim()}</span> 👨 Người chồng: ${husb.name}</a>`;
+    }
+    if (wife) {
+        const gW = getGenerationMeta(wife.id);
+        pHtml += `<a class="rel-link" onclick="openPersonProfile('${wife.id}')"><span class="gen-badge ${gW.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gW.label.split('·')[0].trim()}</span> 👩 Người vợ: ${wife.name}</a>`;
+    }
     if (fParents) fParents.innerHTML = pHtml;
 
     let cHtml = "";
     if (f.children.length > 0) {
         f.children.forEach(cid => {
             const c = appData.people[cid];
-            if (c) cHtml += `<a class="rel-link" onclick="openPersonProfile('${c.id}')">👶 ${c.name}</a>`;
+            if (c) {
+                const gC = getGenerationMeta(c.id);
+                cHtml += `<a class="rel-link" onclick="openPersonProfile('${c.id}')"><span class="gen-badge ${gC.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gC.label.split('·')[0].trim()}</span> 👶 ${c.name}</a>`;
+            }
         });
     } else {
         cHtml = `<div style="font-size:13px; color:var(--text-muted);">(Chưa có dữ liệu con cái)</div>`;
