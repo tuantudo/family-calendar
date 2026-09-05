@@ -1404,26 +1404,33 @@ function renderMachModule() {
         featContainer.innerHTML = featHtml;
     }
 
-    // 2. Render Stories Grid (All 19 stories with series tags)
+    // 2. Render Stories Grid (Normalized Articles)
     const storiesGrid = document.getElementById("machStoriesGrid");
-    if (storiesGrid) {
-        storiesGrid.innerHTML = machData.stories.map(s => {
-            const ser = (machData.series && machData.series[s.seriesSlug]) ? machData.series[s.seriesSlug] : { title: "MẠCH" };
-            const auth = (machData.authors && machData.authors[s.authorId]) ? machData.authors[s.authorId] : { name: "Ban Biên Tập" };
-            const isClara = s.seriesSlug === "thu-gui-clara";
-            const tagLabel = isClara ? `THƯ GỬI CLARA · SỐ ${String(s.seriesOrder).padStart(2, '0')}` : `${s.section ? s.section.toUpperCase() + ' · ' : ''}BÀI ${String(s.seriesOrder).padStart(2, '0')}`;
-            const badgeStyle = isClara ? `background:#fef3c7; color:#92400e; border-color:#fde68a;` : ``;
+    const articleList = machData.articles || machData.stories || [];
+    if (storiesGrid && articleList.length > 0) {
+        storiesGrid.innerHTML = articleList.map(s => {
+            const seriesId = (s.seriesIds && s.seriesIds.length > 0) ? s.seriesIds[0] : (s.seriesId || s.seriesSlug);
+            const ser = (machData.series && seriesId) ? machData.series[seriesId] : null;
+            const authId = (s.authorIds && s.authorIds.length > 0) ? s.authorIds[0] : s.authorId;
+            const auth = (machData.authors && authId) ? machData.authors[authId] : { name: "Ban Biên Tập" };
+            
+            const isLetter = s.articleType === 'letter' || (ser && ser.seriesType === 'epistolary');
+            const serName = ser ? (ser.shortTitle || ser.title) : 'MẠCH';
+            const orderLabel = s.seriesOrder ? ` · ${isLetter ? 'SỐ' : 'BÀI'} ${String(s.seriesOrder).padStart(2, '0')}` : '';
+            const sectionLabel = s.section ? `${s.section.toUpperCase()} ` : '';
+            const tagLabel = `${serName.toUpperCase()}${orderLabel}`;
+            const badgeStyle = isLetter ? `background:#fef3c7; color:#92400e; border-color:#fde68a;` : ``;
 
             return `
                 <div class="story-card" onclick="navigateRoute('/mach/bai-viet/${s.slug}')">
                     <div>
                         <div class="story-card-tag" style="${badgeStyle}">${tagLabel}</div>
                         <h3 class="story-card-title">${s.title}</h3>
-                        <p class="story-card-excerpt">${s.excerpt}</p>
+                        <p class="story-card-excerpt">${s.excerpt || s.deckLead || s.subtitle || ''}</p>
                     </div>
                     <div class="story-card-footer">
                         <span>✍️ ${auth.name}</span>
-                        <span>${s.date}</span>
+                        <span>${s.date || (s.publishedAt ? s.publishedAt.slice(0, 10) : '2026')}</span>
                     </div>
                 </div>
             `;
@@ -1434,14 +1441,16 @@ function renderMachModule() {
     const seriesGrid = document.getElementById("machSeriesGrid");
     if (seriesGrid && machData.series) {
         seriesGrid.innerHTML = Object.values(machData.series).map(ser => {
-            const auth = (machData.authors && machData.authors[ser.authorId]) ? machData.authors[ser.authorId] : { name: "Ban Biên Tập" };
-            const isClara = ser.slug === "thu-gui-clara";
-            const badgeText = isClara ? `✉️ CHUỖI THƯ TỪ • ${ser.stories.length} LÁ THƯ` : `📖 TẬP SAN GIA TỘC • ${ser.stories.length} BÀI`;
-            const badgeColor = isClara ? `background:#fef3c7; color:#92400e; border-color:#fde68a;` : ``;
-            const borderAccent = isClara ? `border-left: 5px solid #d97706;` : `border-left: 5px solid var(--lacquer-red);`;
+            const authId = (ser.authorIds && ser.authorIds.length > 0) ? ser.authorIds[0] : ser.authorId;
+            const auth = (machData.authors && authId) ? machData.authors[authId] : { name: "Ban Biên Tập" };
+            const articleCount = (ser.articleIds || ser.stories || []).length;
+            const isEpistolary = ser.seriesType === 'epistolary';
+            const badgeText = isEpistolary ? `✉️ CHUỖI THƯ TỪ • ${articleCount} LÁ THƯ` : `📖 TẬP SAN GIA TỘC • ${articleCount} BÀI`;
+            const badgeColor = isEpistolary ? `background:#fef3c7; color:#92400e; border-color:#fde68a;` : ``;
+            const borderAccent = isEpistolary ? `border-left: 5px solid #d97706;` : `border-left: 5px solid var(--lacquer-red);`;
 
             return `
-                <div class="series-card" style="${borderAccent} cursor:pointer;" onclick="navigateRoute('/mach/series/${ser.slug}')">
+                <div class="series-card" style="${borderAccent} cursor:pointer;" onclick="navigateRoute('/mach/series/${ser.slug || ser.id}')">
                     <span class="series-card-badge" style="${badgeColor}">${badgeText}</span>
                     <h3 class="series-card-title">${ser.title}</h3>
                     <div style="font-style:italic; font-size:13.5px; color:var(--text-muted); margin-bottom:10px;">${ser.subtitle || ''}</div>
@@ -1458,12 +1467,13 @@ function renderMachModule() {
     // 4. Render Authors Grid
     const authorsGrid = document.getElementById("machAuthorsGrid");
     if (authorsGrid && machData.authors) {
+        const articleList = machData.articles || machData.stories || [];
         authorsGrid.innerHTML = Object.values(machData.authors).map(a => {
-            const authorStoriesCount = machData.stories.filter(s => s.authorId === a.id).length;
+            const authorStoriesCount = articleList.filter(s => (s.authorIds && s.authorIds.includes(a.id)) || s.authorId === a.id).length;
             return `
-                <div class="author-card" onclick="navigateRoute('/mach/tac-gia/${a.id}')">
+                <div class="author-card" onclick="navigateRoute('/mach/tac-gia/${a.slug || a.id}')">
                     <div class="author-card-header">
-                        <div class="author-avatar">${a.avatar || '✍️'}</div>
+                        <div class="author-avatar">${a.avatarEmoji || a.avatar || '✍️'}</div>
                         <div>
                             <div class="author-name">${a.name}</div>
                             <div class="author-role">${a.role}</div>
@@ -1479,9 +1489,12 @@ function renderMachModule() {
     }
 }
 
+// --- PUBLICATION ENGINE COMPOSITION CORE ---
+
 function openStoryDetail(slug) {
-    if (!machData || !machData.stories) return;
-    const story = machData.stories.find(s => s.slug === slug);
+    if (!machData) return;
+    const articleList = machData.articles || machData.stories || [];
+    const story = articleList.find(s => s.slug === slug || s.id === slug);
     if (!story) return;
 
     document.querySelectorAll(".view-section").forEach(s => s.classList.remove("active"));
@@ -1491,150 +1504,244 @@ function openStoryDetail(slug) {
     const machNav = document.getElementById("nav_mach");
     if (machNav) machNav.classList.add("active");
 
-    const ser = machData.series ? machData.series[story.seriesSlug] : null;
-    const auth = (machData.authors && machData.authors[story.authorId]) ? machData.authors[story.authorId] : { name: "Ban Biên Tập", role: "", bio: "", avatar: "✍️" };
-    const isClara = story.seriesSlug === "thu-gui-clara";
+    renderArticleComposition(story, machData.media || {}, machData.authors || {}, machData.series || {});
+    window.scrollTo(0, 0);
+}
 
-    // Set Breadcrumb
+function renderArticleComposition(article, mediaRegistry, authorsRegistry, seriesRegistry) {
+    // 1. Resolve entity context
+    const seriesId = (article.seriesIds && article.seriesIds.length > 0) ? article.seriesIds[0] : (article.seriesId || article.seriesSlug);
+    const series = (seriesRegistry && seriesId) ? seriesRegistry[seriesId] : null;
+    const authorId = (article.authorIds && article.authorIds.length > 0) ? article.authorIds[0] : article.authorId;
+    const author = (authorsRegistry && authorId) ? authorsRegistry[authorId] : { name: "Ban Biên Tập", role: "", bio: "", avatarEmoji: "✍️" };
+    const isLetter = article.articleType === 'letter' || (series && series.seriesType === 'epistolary');
+
+    // 2. Breadcrumb
     const bc = document.getElementById("storySeriesBreadcrumb");
     if (bc) {
-        if (ser) {
-            bc.innerHTML = `<a onclick="navigateRoute('/mach/series/${ser.slug}')" style="cursor:pointer; text-decoration:underline;">Series: ${ser.title}</a>`;
+        if (series) {
+            bc.innerHTML = `<a onclick="navigateRoute('/mach/series/${series.slug || series.id}')" style="cursor:pointer; text-decoration:underline;">Series: ${series.title}</a>`;
         } else {
             bc.innerHTML = "";
         }
     }
 
-    // Header
+    // 3. Header Kicker Tag & Title
     const tagOrder = document.getElementById("storyTagOrder");
     if (tagOrder) {
-        if (isClara) {
-            tagOrder.innerText = `THƯ GỬI CLARA • LÁ THƯ SỐ ${String(story.seriesOrder).padStart(2, '0')}`;
-        } else {
-            const shortSerTitle = ser ? (ser.shortTitle || "TẬP SAN MẠCH") : "MẠCH";
-            tagOrder.innerText = `${shortSerTitle.toUpperCase()} • ${story.section ? story.section.toUpperCase() + ' · ' : ''}BÀI ${String(story.seriesOrder).padStart(2, '0')}`;
-        }
+        const serTitle = series ? (series.shortTitle || series.title) : "MẠCH";
+        const orderLabel = article.seriesOrder ? ` · ${isLetter ? 'LÁ THƯ' : 'BÀI'} ${String(article.seriesOrder).padStart(2, '0')}` : '';
+        const sectionLabel = article.section ? ` · ${article.section.toUpperCase()}` : '';
+        tagOrder.innerText = `${serTitle.toUpperCase()}${sectionLabel}${orderLabel}`;
     }
-    const stTitle = document.getElementById("storyTitle");
-    if (stTitle) stTitle.innerText = story.title;
-    const authMeta = document.getElementById("storyAuthorMeta");
-    if (authMeta) authMeta.innerHTML = `✍️ <a onclick="navigateRoute('/mach/tac-gia/${auth.id}')" style="color:inherit; cursor:pointer; text-decoration:underline;">${auth.name}</a>`;
-    const dateMeta = document.getElementById("storyDateMeta");
-    if (dateMeta) dateMeta.innerText = story.date || "2026";
 
-    // Mentions
+    const stTitle = document.getElementById("storyTitle");
+    if (stTitle) stTitle.innerText = article.title;
+
+    const authMeta = document.getElementById("storyAuthorMeta");
+    if (authMeta) {
+        authMeta.innerHTML = `✍️ <a onclick="navigateRoute('/mach/tac-gia/${author.slug || author.id}')" style="color:inherit; cursor:pointer; text-decoration:underline;">${author.name}</a>`;
+    }
+
+    const dateMeta = document.getElementById("storyDateMeta");
+    if (dateMeta) {
+        dateMeta.innerText = article.date || (article.publishedAt ? article.publishedAt.slice(0, 10) : "2026");
+    }
+
+    // 4. Mentions Bar (using relatedEntities.peopleIds)
     const mentionsBar = document.getElementById("storyMentionsBar");
     if (mentionsBar) {
-        if (story.mentions && story.mentions.length > 0) {
-            mentionsBar.style.display = "flex";
-            mentionsBar.innerHTML = `<span style="font-weight:700; color:var(--text-muted); margin-right:6px;">🌿 Nhân vật liên quan:</span>` +
-                story.mentions.map(m => `<span class="mention-chip" onclick="openPersonProfile('${m.id}')">${m.name}</span>`).join(" ");
+        const pIds = (article.relatedEntities && article.relatedEntities.peopleIds) ? article.relatedEntities.peopleIds : (article.mentions || []).map(m => m.id);
+        if (pIds && pIds.length > 0 && appData && appData.people) {
+            const validPeople = pIds.map(pid => appData.people[pid]).filter(Boolean);
+            if (validPeople.length > 0) {
+                mentionsBar.style.display = "flex";
+                mentionsBar.innerHTML = `<span style="font-weight:700; color:var(--text-muted); margin-right:6px;">🌿 Nhân vật liên quan:</span>` +
+                    validPeople.map(p => `<span class="mention-chip" onclick="openPersonProfile('${p.id}')">${p.name}</span>`).join(" ");
+            } else {
+                mentionsBar.style.display = "none";
+            }
         } else {
             mentionsBar.style.display = "none";
         }
     }
 
-    // Body rendering
+    // 5. Block-by-block Pure Rendering
     const contentBody = document.getElementById("storyContentBody");
     if (contentBody) {
-        let text = story.contentMarkdown || "";
-        // Strip YAML frontmatter
-        text = text.replace(/^---[\s\S]*?---\s*/, '').trim();
-        // If the top line starts with # and matches title/heading, strip it to prevent duplicate main header
-        text = text.replace(/^#\s+[^\n]+\n+/, '').trim();
+        let html = "";
         
-        // Strip out red spread markers, DNA reference sections, orchestration notes and typography notes
-        text = text.replace(/<span style="color:red">[\s\S]*?<\/span>/gi, '');
-        text = text.replace(/#\s+ARTICLE DNA[\s\S]*$/i, '');
-        text = text.replace(/#\s+ARTICLE ORCHESTRATION NOTES[\s\S]*$/i, '');
-        text = text.replace(/#\s+TYPOGRAPHY NOTES[\s\S]*$/i, '');
-        
-        // Extract footnotes
-        const footnotes = [];
-        text = text.replace(/\[\^(\d+)\]:\s*([\s\S]*?)(?=\n\[\^|\n\n|$)/g, (match, fnId, fnContent) => {
-            footnotes.push({ id: fnId, text: fnContent.trim() });
-            return "";
-        });
+        // Render Hero Media if specified and presentation is image-led or feature
+        if (article.heroMediaId && mediaRegistry && mediaRegistry[article.heroMediaId]) {
+            if (article.presentationVariant === 'image-led' || article.presentationVariant === 'feature') {
+                html += renderMediaBlock({
+                    type: 'media',
+                    mediaId: article.heroMediaId,
+                    layout: 'wide'
+                }, mediaRegistry);
+            }
+        }
 
-        // Replace inline footnote references
-        text = text.replace(/\[\^(\d+)\]/g, '<sup class="story-footnote-ref"><a href="#fn-$1">[$1]</a></sup>');
+        if (article.blocks && Array.isArray(article.blocks) && article.blocks.length > 0) {
+            html += renderContentBlocks(article.blocks, mediaRegistry, authorsRegistry, article);
+        } else {
+            // Fallback for raw markdown string
+            let text = article.contentMarkdown || "";
+            text = text.replace(/^---[\s\S]*?---\s*/, '').trim();
+            text = text.replace(/^#\s+[^\n]+\n+/, '').trim();
+            html += `<p>${formatInlineMarkdown(text)}</p>`;
+        }
 
-        // Format figures
-        text = text.replace(/!\[(.*?)\]\((.*?)\)(?:\s*\n\s*[\*_](.*?)[\*_])?/g, (m, alt, src, cap) => {
-            const caption = cap ? cap.trim().replace(/^[\*_]+|[\*_]+$/g, "") : alt;
-            return `<figure><img src="${src}" alt="${alt}"><figcaption>${caption}</figcaption></figure>`;
-        });
-
-        // Convert double newline to paragraphs
-        const paragraphs = text.split(/\n\s*\n/).map(p => {
-            p = p.trim();
-            if (!p) return "";
-            if (p.startsWith("<figure")) return p;
-            if (p.startsWith("### ")) return `<h3>${p.replace(/^###\s+/, "")}</h3>`;
-            if (p.startsWith("## ")) return `<h2>${p.replace(/^##\s+/, "")}</h2>`;
-            if (p.startsWith("# ")) return `<h2 style="text-align:center; margin-bottom:1.2em;">${p.replace(/^#\s+/, "")}</h2>`;
-            if (p.startsWith("> ")) return `<blockquote>${p.replace(/^>\s*/gm, "")}</blockquote>`;
-            if (p === "---" || p === "***" || p === "___") return `<hr class="story-divider">`;
-            // Clean inline soft line breaks while respecting markdown styling
-            const cleanP = p.replace(/\n/g, " ");
-            return `<p>${cleanP}</p>`;
-        }).join("");
-
-        let finalHtml = paragraphs;
-        if (footnotes.length > 0) {
-            finalHtml += `
+        // Footnotes rendering
+        if (article.footnotes && article.footnotes.length > 0) {
+            html += `
                 <div class="story-footnotes-box">
-                    <div class="story-footnotes-title">Chú thích & Ghi chú biên tập</div>
+                    <div class="story-footnotes-title">Chú thích & Ghi chú tư liệu</div>
                     <ol class="story-footnotes-list">
-                        ${footnotes.map(fn => `<li id="fn-${fn.id}">${fn.text}</li>`).join("")}
+                        ${article.footnotes.map(fn => `<li id="fn-${fn.id}">${formatInlineMarkdown(fn.text)}</li>`).join("")}
                     </ol>
                 </div>
             `;
         }
 
-        contentBody.innerHTML = finalHtml;
+        contentBody.innerHTML = html;
     }
 
-    // Author card footer
+    // 6. Author card footer
     const authorCard = document.getElementById("storyAuthorCard");
     if (authorCard) {
         authorCard.innerHTML = `
             <div class="author-card" style="cursor:default;">
                 <div class="author-card-header">
-                    <div class="author-avatar">${auth.avatar || '✍️'}</div>
+                    <div class="author-avatar">${author.avatarEmoji || author.avatar || '✍️'}</div>
                     <div>
-                        <div class="author-name">${auth.name}</div>
-                        <div class="author-role">${auth.role}</div>
+                        <div class="author-name">${author.name}</div>
+                        <div class="author-role">${author.role || ''}</div>
                     </div>
                 </div>
-                <p class="author-bio">${auth.bio}</p>
+                <p class="author-bio">${author.bio || ''}</p>
             </div>
         `;
     }
 
-    // Prev / Next Navigation in Series
+    // 7. Prev / Next Navigation in Series
     const prevNext = document.getElementById("storyNavPrevNext");
-    if (prevNext && ser) {
-        const curIdx = ser.stories.indexOf(story.slug);
-        const prevSlug = curIdx > 0 ? ser.stories[curIdx - 1] : null;
-        const nextSlug = curIdx < ser.stories.length - 1 ? ser.stories[curIdx + 1] : null;
+    const articleIds = series ? (series.articleIds || series.stories || []) : [];
+    if (prevNext && series && articleIds.length > 0) {
+        const curIdx = articleIds.indexOf(article.slug);
+        const prevSlug = curIdx > 0 ? articleIds[curIdx - 1] : null;
+        const nextSlug = (curIdx >= 0 && curIdx < articleIds.length - 1) ? articleIds[curIdx + 1] : null;
         
-        const prevStory = prevSlug ? machData.stories.find(s => s.slug === prevSlug) : null;
-        const nextStory = nextSlug ? machData.stories.find(s => s.slug === nextSlug) : null;
+        const allArticles = machData.articles || machData.stories || [];
+        const prevStory = prevSlug ? allArticles.find(s => s.slug === prevSlug) : null;
+        const nextStory = nextSlug ? allArticles.find(s => s.slug === nextSlug) : null;
 
+        const term = isLetter ? 'Thư' : 'Bài';
         let navHtml = "";
         if (prevStory) {
-            navHtml += `<button class="story-nav-btn" onclick="navigateRoute('/mach/bai-viet/${prevStory.slug}')">← ${isClara ? 'Thư trước' : 'Bài trước'}: ${prevStory.shortTitle || prevStory.title}</button>`;
+            navHtml += `<button class="story-nav-btn" onclick="navigateRoute('/mach/bai-viet/${prevStory.slug}')">← ${term} trước: ${prevStory.shortTitle || prevStory.title}</button>`;
         } else {
             navHtml += `<div></div>`;
         }
         if (nextStory) {
-            navHtml += `<button class="story-nav-btn" onclick="navigateRoute('/mach/bai-viet/${nextStory.slug}')">${isClara ? 'Thư tiếp' : 'Bài tiếp'}: ${nextStory.shortTitle || nextStory.title} →</button>`;
+            navHtml += `<button class="story-nav-btn" onclick="navigateRoute('/mach/bai-viet/${nextStory.slug}')">${term} tiếp: ${nextStory.shortTitle || nextStory.title} →</button>`;
         }
         prevNext.innerHTML = navHtml;
     }
+}
 
-    window.scrollTo(0, 0);
+function renderContentBlocks(blocks, mediaRegistry, authorsRegistry, article) {
+    return blocks.map(block => {
+        switch (block.type) {
+            case 'lead':
+                return `<p class="story-lead">${formatInlineMarkdown(block.text)}</p>`;
+            case 'paragraph': {
+                const dropClass = block.hasDropCap ? ' class="drop-cap-p"' : '';
+                return `<p${dropClass}>${formatInlineMarkdown(block.text)}</p>`;
+            }
+            case 'heading': {
+                const lvl = block.level || 2;
+                const anchor = block.anchorId ? ` id="${block.anchorId}"` : '';
+                return `<h${lvl}${anchor}>${formatInlineMarkdown(block.text)}</h${lvl}>`;
+            }
+            case 'media':
+                return renderMediaBlock(block, mediaRegistry);
+            case 'quote':
+                return `
+                    <blockquote class="story-quote">
+                        <p>${formatInlineMarkdown(block.text)}</p>
+                        ${block.author ? `<cite>— ${block.author}</cite>` : ''}
+                    </blockquote>
+                `;
+            case 'pull_quote':
+                return `
+                    <div class="story-pull-quote">
+                        <blockquote>“${formatInlineMarkdown(block.text)}”</blockquote>
+                        ${block.author ? `<cite>${block.author}</cite>` : ''}
+                    </div>
+                `;
+            case 'divider':
+                return `<div class="story-divider story-divider-${block.style || 'section_break'}"><span>❦</span></div>`;
+            case 'list': {
+                const tag = block.ordered ? 'ol' : 'ul';
+                return `<${tag} class="story-list">${block.items.map(item => `<li>${formatInlineMarkdown(item)}</li>`).join('')}</${tag}>`;
+            }
+            case 'callout':
+                return `
+                    <div class="story-callout story-callout-${block.tone || 'heritage'}">
+                        ${block.title ? `<h4>${block.title}</h4>` : ''}
+                        <p>${formatInlineMarkdown(block.text)}</p>
+                    </div>
+                `;
+            case 'signature': {
+                const author = (authorsRegistry && block.authorId) ? authorsRegistry[block.authorId] : null;
+                const authorName = block.authorName || (author ? author.name : '');
+                return `
+                    <div class="story-signature">
+                        <div class="signature-name">${authorName}</div>
+                        ${block.location ? `<div class="signature-meta">${block.location}${block.dateStr ? ' · ' + block.dateStr : ''}</div>` : ''}
+                    </div>
+                `;
+            }
+            default:
+                return block.text ? `<p>${formatInlineMarkdown(block.text)}</p>` : '';
+        }
+    }).join("");
+}
+
+function renderMediaBlock(block, mediaRegistry) {
+    const media = (mediaRegistry && block.mediaId) ? mediaRegistry[block.mediaId] : null;
+    const src = media ? media.src : (block.src || '');
+    const alt = block.customAlt || (media ? media.alt : '') || 'Ảnh tư liệu MẠCH';
+    const caption = block.customCaption || (media ? media.caption : '');
+    const credit = media ? media.credit : '';
+    const layoutClass = block.layout ? `story-figure-${block.layout}` : 'story-figure-normal';
+
+    if (!src) return "";
+
+    return `
+        <figure class="story-figure ${layoutClass}">
+            <picture>
+                <img src="${src}" alt="${alt}" loading="lazy" decoding="async">
+            </picture>
+            ${(caption || credit) ? `
+                <figcaption>
+                    ${caption ? `<span class="figure-caption-text">${caption}</span>` : ''}
+                    ${credit ? `<span class="figure-credit">Ảnh: ${credit}</span>` : ''}
+                </figcaption>
+            ` : ''}
+        </figure>
+    `;
+}
+
+function formatInlineMarkdown(text) {
+    if (!text) return "";
+    return text
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+        .replace(/_([^_]+)_/g, '<em>$1</em>')
+        .replace(/\[\^(\d+)\]/g, '<sup class="story-footnote-ref"><a href="#fn-$1">[$1]</a></sup>')
+        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
 }
 
 function openSeriesDetail(slug) {
@@ -1649,10 +1756,12 @@ function openSeriesDetail(slug) {
     const machNav = document.getElementById("nav_mach");
     if (machNav) machNav.classList.add("active");
 
-    const auth = (machData.authors && machData.authors[ser.authorId]) ? machData.authors[ser.authorId] : { name: "Ban Biên Tập" };
-    const isClara = ser.slug === "thu-gui-clara";
-    const badgeText = isClara ? `✉️ CHUỖI THƯ TỪ GIA TỘC` : `📚 TẬP SAN LƯU TRỮ`;
+    const authId = (ser.authorIds && ser.authorIds.length > 0) ? ser.authorIds[0] : ser.authorId;
+    const auth = (machData.authors && authId) ? machData.authors[authId] : { name: "Ban Biên Tập" };
+    const isEpistolary = ser.seriesType === 'epistolary';
+    const badgeText = isEpistolary ? `✉️ CHUỖI THƯ TỪ GIA TỘC` : `📚 TẬP SAN LƯU TRỮ`;
     const headerCard = document.getElementById("seriesHeaderCard");
+    const articleIds = ser.articleIds || ser.stories || [];
     if (headerCard) {
         headerCard.innerHTML = `
             <span class="series-card-badge">${badgeText}</span>
@@ -1660,26 +1769,29 @@ function openSeriesDetail(slug) {
             <div style="font-style:italic; font-size:16px; color:var(--imperial-gold); margin-bottom:16px;">${ser.subtitle || ''}</div>
             <p style="font-size:15px; color:var(--text-main); line-height:1.7;">${ser.description}</p>
             <div style="margin-top:18px; font-size:13.5px; color:var(--text-muted); border-top:1px solid var(--border-subtle); padding-top:12px;">
-                Tác giả / Chủ biên: <strong>${auth.name}</strong> • Quy mô: <strong>${ser.stories.length} ${isClara ? 'lá thư' : 'bài viết'}</strong>
+                Tác giả / Chủ biên: <strong>${auth.name}</strong> • Quy mô: <strong>${articleIds.length} ${isEpistolary ? 'lá thư' : 'bài viết'}</strong>
             </div>
         `;
     }
 
     const grid = document.getElementById("seriesStoriesGrid");
     if (grid) {
-        const seriesStories = ser.stories.map(stSlug => machData.stories.find(s => s.slug === stSlug)).filter(Boolean);
+        const allArticles = machData.articles || machData.stories || [];
+        const seriesStories = articleIds.map(stSlug => allArticles.find(s => s.slug === stSlug || s.id === stSlug)).filter(Boolean);
         grid.innerHTML = seriesStories.map(s => {
-            const tagLabel = isClara ? `THƯ GỬI CLARA · SỐ ${String(s.seriesOrder).padStart(2, '0')}` : `${s.section ? s.section.toUpperCase() + ' · ' : ''}BÀI ${String(s.seriesOrder).padStart(2, '0')}`;
+            const isLetter = s.articleType === 'letter' || isEpistolary;
+            const serName = ser.shortTitle || ser.title;
+            const tagLabel = `${serName.toUpperCase()} · ${isLetter ? 'SỐ' : 'BÀI'} ${String(s.seriesOrder).padStart(2, '0')}`;
             return `
                 <div class="story-card" onclick="navigateRoute('/mach/bai-viet/${s.slug}')">
                     <div>
                         <div class="story-card-tag">${tagLabel}</div>
                         <h3 class="story-card-title">${s.title}</h3>
-                        <p class="story-card-excerpt">${s.excerpt}</p>
+                        <p class="story-card-excerpt">${s.excerpt || s.deckLead || s.subtitle || ''}</p>
                     </div>
                     <div class="story-card-footer">
-                        <span>${s.date}</span>
-                        <span style="color:var(--lacquer-red); font-weight:700;">Đọc thư / bài →</span>
+                        <span>${s.date || (s.publishedAt ? s.publishedAt.slice(0, 10) : '2026')}</span>
+                        <span style="color:var(--lacquer-red); font-weight:700;">Đọc ${isLetter ? 'thư' : 'bài'} →</span>
                     </div>
                 </div>
             `;
@@ -1704,7 +1816,7 @@ function openAuthorDetail(authorId) {
     if (headerCard) {
         headerCard.innerHTML = `
             <div class="author-card-header">
-                <div class="author-avatar" style="width:64px; height:64px; font-size:36px;">${auth.avatar || '✍️'}</div>
+                <div class="author-avatar" style="width:64px; height:64px; font-size:36px;">${auth.avatarEmoji || auth.avatar || '✍️'}</div>
                 <div>
                     <h1 class="story-title" style="margin-bottom:4px;">${auth.name}</h1>
                     <div class="author-role" style="font-size:15px;">${auth.role}</div>
@@ -1716,18 +1828,20 @@ function openAuthorDetail(authorId) {
 
     const grid = document.getElementById("authorStoriesGrid");
     if (grid) {
-        const authorStories = machData.stories.filter(s => s.authorId === authorId);
+        const allArticles = machData.articles || machData.stories || [];
+        const authorStories = allArticles.filter(s => (s.authorIds && s.authorIds.includes(authorId)) || s.authorId === authorId);
         grid.innerHTML = authorStories.map(s => {
-            const ser = (machData.series && machData.series[s.seriesSlug]) ? machData.series[s.seriesSlug] : { title: "Tự sự" };
+            const seriesId = (s.seriesIds && s.seriesIds.length > 0) ? s.seriesIds[0] : (s.seriesId || s.seriesSlug);
+            const ser = (machData.series && seriesId) ? machData.series[seriesId] : { title: "Tự sự" };
             return `
                 <div class="story-card" onclick="navigateRoute('/mach/bai-viet/${s.slug}')">
                     <div>
                         <div class="story-card-tag">${ser.title}</div>
                         <h3 class="story-card-title">${s.title}</h3>
-                        <p class="story-card-excerpt">${s.excerpt}</p>
+                        <p class="story-card-excerpt">${s.excerpt || s.deckLead || s.subtitle || ''}</p>
                     </div>
                     <div class="story-card-footer">
-                        <span>${s.date}</span>
+                        <span>${s.date || (s.publishedAt ? s.publishedAt.slice(0, 10) : '2026')}</span>
                         <span style="color:var(--lacquer-red); font-weight:700;">Đọc bài →</span>
                     </div>
                 </div>
@@ -1737,7 +1851,7 @@ function openAuthorDetail(authorId) {
     window.scrollTo(0, 0);
 }
 
-// Override Global Search to index both MẠCH series (Tập san Mạch & Thư gửi Clara)
+// Override Global Search to index normalized entities (People, Articles, Series, Authors, Topics)
 handleGlobalSearch = function(e) {
     const q = e.target.value.toLowerCase().trim();
     const dd = document.getElementById("globalSearchDropdown");
@@ -1745,6 +1859,8 @@ handleGlobalSearch = function(e) {
     if (!q) { dd.style.display = "none"; return; }
 
     const results = [];
+    
+    // 1. People
     Object.values(appData.people).forEach(p => {
         if (p.name.toLowerCase().includes(q) || (p.fsid && p.fsid.toLowerCase().includes(q))) {
             const gMeta = getGenerationMeta(p.id);
@@ -1752,12 +1868,30 @@ handleGlobalSearch = function(e) {
         }
     });
 
-    if (machData && machData.stories) {
-        machData.stories.forEach(s => {
-            if (s.title.toLowerCase().includes(q) || s.excerpt.toLowerCase().includes(q) || (s.subtitle && s.subtitle.toLowerCase().includes(q))) {
-                const isClara = s.seriesSlug === "thu-gui-clara";
-                const prefix = isClara ? "✉️ Thư gửi Clara" : "📖 Tập san MẠCH";
-                results.push({ type: 'STORY', id: s.slug, title: s.title, sub: `${prefix} • ${s.date}` });
+    // 2. Articles
+    const allArticles = (machData && (machData.articles || machData.stories)) ? (machData.articles || machData.stories) : [];
+    allArticles.forEach(s => {
+        if (s.title.toLowerCase().includes(q) || (s.excerpt && s.excerpt.toLowerCase().includes(q)) || (s.deckLead && s.deckLead.toLowerCase().includes(q)) || (s.subtitle && s.subtitle.toLowerCase().includes(q))) {
+            const isLetter = s.articleType === 'letter' || (s.seriesIds && s.seriesIds.includes("thu-gui-clara"));
+            const prefix = isLetter ? "✉️ Thư gửi Clara" : "📖 Tập san MẠCH";
+            results.push({ type: 'STORY', id: s.slug, title: s.title, sub: `${prefix} • ${s.date || (s.publishedAt ? s.publishedAt.slice(0, 10) : '')}` });
+        }
+    });
+
+    // 3. Series
+    if (machData && machData.series) {
+        Object.values(machData.series).forEach(ser => {
+            if (ser.title.toLowerCase().includes(q) || ser.description.toLowerCase().includes(q)) {
+                results.push({ type: 'SERIES', id: ser.slug || ser.id, title: ser.title, sub: `📚 Chuỗi Series MẠCH` });
+            }
+        });
+    }
+
+    // 4. Authors
+    if (machData && machData.authors) {
+        Object.values(machData.authors).forEach(a => {
+            if (a.name.toLowerCase().includes(q) || a.role.toLowerCase().includes(q)) {
+                results.push({ type: 'AUTHOR', id: a.slug || a.id, title: a.name, sub: `✍️ Tác giả: ${a.role}` });
             }
         });
     }
@@ -1765,7 +1899,7 @@ handleGlobalSearch = function(e) {
     if (results.length === 0) {
         dd.innerHTML = `<div style="padding:12px; color:var(--text-muted); text-align:center;">Không tìm thấy kết quả</div>`;
     } else {
-        dd.innerHTML = results.slice(0, 10).map(r => `
+        dd.innerHTML = results.slice(0, 12).map(r => `
             <div class="search-row" onclick="selectGlobalSearchResult('${r.type}', '${r.id}')">
                 <div style="font-weight:700; color:var(--primary-dark);">${r.title}</div>
                 <div style="font-size:12px; color:var(--text-muted);">${r.sub}</div>
@@ -1782,5 +1916,7 @@ selectGlobalSearchResult = function(type, id) {
     if (inp) inp.value = "";
     if (type === 'PERSON') openPersonProfile(id);
     else if (type === 'STORY') navigateRoute(`/mach/bai-viet/${id}`);
+    else if (type === 'SERIES') navigateRoute(`/mach/series/${id}`);
+    else if (type === 'AUTHOR') navigateRoute(`/mach/tac-gia/${id}`);
     else if (type === 'MEMORY') navigateRoute('/mach');
 };
