@@ -256,7 +256,9 @@ for p in people_data.values():
 timeline_events.sort(key=lambda x: (x["year"], x["date"]))
 
 export_obj = {
-    "publication": "Trích lục Gia phả nhà ông Trần Trọng Thu",
+    "publication": "GIÒNG HỌ TRẦN TRỌNG THU",
+    "subtitle": "CÂY GIA PHẢ",
+    "provenance": "Trích lục Gia phả nhà ông Trần Trọng Thu",
     "rootAnchor": "@I1@",
     "generatedAt": datetime.datetime.now().isoformat(),
     "stats": {

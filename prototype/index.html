@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CÂY GIA PHẢ — FRONTEND EXPERIENCE PROTOTYPE</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'sans-serif'],
+            serif: ['"Source Serif 4"', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          colors: {
+            paper: { 50: '#FBF9F5', 100: '#F5F1EA', 200: '#EBE4D8', 300: '#DED3C1', 900: '#1C1917' },
+            crimson: { 800: '#881337', 900: '#701A1A', 950: '#450A0A' },
+            gold: { 600: '#D97706', 700: '#B45309', 800: '#92400E' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #FBF9F5; color: #1C1917; font-family: 'Be Vietnam Pro', sans-serif; }
+    .serif-title { font-family: 'Source Serif 4', serif; }
+    .dropcap::first-letter {
+      float: left; font-size: 3.5rem; line-height: 0.8; font-family: 'Source Serif 4', serif;
+      font-weight: 700; margin-right: 0.75rem; color: #701A1A;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col bg-paper-50 text-paper-900 selection:bg-amber-200">
+
+  <!-- TOP PROTOTYPE SWITCHER BANNER -->
+  <header class="bg-paper-900 text-stone-200 border-b border-stone-800 px-4 py-2 flex flex-wrap items-center justify-between text-xs sticky top-0 z-50 shadow-md">
+    <div class="flex items-center space-x-3">
+      <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500 text-paper-900">PROTOTYPE V2</span>
+      <span class="font-medium text-stone-300">FRONTEND EXPERIENCE SYSTEM — CÂY GIA PHẢ / GIÒNG HỌ TRẦN TRỌNG THU</span>
+    </div>
+    <nav class="flex items-center space-x-1 mt-1 sm:mt-0 font-medium">
+      <button onclick="switchView('home')" id="nav-home" class="px-2.5 py-1 rounded transition bg-stone-800 text-amber-400">01. Cổng Di Sản (Home)</button>
+      <button onclick="switchView('tree')" id="nav-tree" class="px-2.5 py-1 rounded transition hover:bg-stone-800 text-stone-400">02. Cây Gia Phả & Hồ Sơ</button>
+      <button onclick="switchView('family')" id="nav-family" class="px-2.5 py-1 rounded transition hover:bg-stone-800 text-stone-400">03. Hồ Sơ Gia Đình</button>
+      <button onclick="switchView('mach')" id="nav-mach" class="px-2.5 py-1 rounded transition hover:bg-stone-800 text-stone-400">04. MẠCH Reader</button>
+      <button onclick="switchView('archive')" id="nav-archive" class="px-2.5 py-1 rounded transition hover:bg-stone-800 text-stone-400">05. Tư Liệu Khảo Chứng</button>
+      <button onclick="switchView('fitmap')" id="nav-fitmap" class="px-2.5 py-1 rounded transition hover:bg-stone-800 text-stone-400 text-amber-500">06. Backend Fit Map</button>
+    </nav>
+  </header>
+
+  <!-- MAIN VIEW CONTAINER -->
+  <main class="flex-1 overflow-y-auto">
+
+    <!-- VIEW 01: PUBLICATION HOME -->
+    <section id="view-home" class="py-12 px-4 max-w-5xl mx-auto space-y-16">
+      <!-- MASTHEAD -->
+      <div class="text-center space-y-4 border-b border-paper-200 pb-12">
+        <p class="text-xs uppercase tracking-[0.25em] text-crimson-900 font-bold font-mono">HỆ THỐNG XUẤT BẢN DI SẢN & KÝ ỨC GIA TỘC</p>
+        <h1 class="serif-title text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-crimson-950">
+          GIÒNG HỌ TRẦN TRỌNG THU
+        </h1>
+        <p class="text-lg text-stone-600 max-w-2xl mx-auto italic font-serif">
+          “Nơi những gì còn nhớ được ở lại, được kết nối và có thể được truyền lại.”
+        </p>
+        <div class="pt-4 flex items-center justify-center space-x-4 text-xs text-stone-500 font-mono">
+          <span>Khởi từ: Cụ Giuse Trần Trọng Thu (1872–1969)</span>
+          <span>•</span>
+          <span>Thọ Vực ➔ Bình Châu</span>
+          <span>•</span>
+          <span>223 Nhân vật / 68 Gia đình</span>
+        </div>
+      </div>
+
+      <!-- 3 CORE TERRITORIES -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- 1. GIA PHẢ -->
+        <div onclick="switchView('tree')" class="cursor-pointer group bg-white border border-paper-200 hover:border-crimson-800/40 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-800 flex items-center justify-center text-xl font-serif">🌳</div>
+            <h3 class="serif-title text-xl font-bold text-paper-900 group-hover:text-crimson-900 transition">1. Cây Gia Phả</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Cấu trúc huyết thống khách quan, thế thứ F0–F4, danh bạ 223 tiền nhân & hậu duệ, sơ đồ phả hệ focus-centric.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-crimson-900">
+            <span>Khám phá phả hệ</span>
+            <span class="group-hover:translate-x-1 transition">➔</span>
+          </div>
+        </div>
+
+        <!-- 2. MẠCH -->
+        <div onclick="switchView('mach')" class="cursor-pointer group bg-white border border-paper-200 hover:border-crimson-800/40 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-red-50 text-red-800 flex items-center justify-center text-xl font-serif">✍️</div>
+            <h3 class="serif-title text-xl font-bold text-paper-900 group-hover:text-crimson-900 transition">2. MẠCH</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Tiểu luận, bút ký nếp nhà, tập san chuyên đề và chuỗi <em>“Thư gửi Clara”</em> — thấu cảm và trao truyền giá trị.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-crimson-900">
+            <span>Đọc ấn phẩm</span>
+            <span class="group-hover:translate-x-1 transition">➔</span>
+          </div>
+        </div>
+
+        <!-- 3. TƯ LIỆU -->
+        <div onclick="switchView('archive')" class="cursor-pointer group bg-white border border-paper-200 hover:border-crimson-800/40 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-stone-100 text-stone-800 flex items-center justify-center text-xl font-serif">📜</div>
+            <h3 class="serif-title text-xl font-bold text-paper-900 group-hover:text-crimson-900 transition">3. Tư Liệu Khảo Chứng</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Văn khố vật chứng: di ảnh tiền nhân, trích lục Hán Nôm, thiệp cưới cũ, thực địa mộ tổ kèm nguồn gốc minh bạch.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-crimson-900">
+            <span>Xem văn khố</span>
+            <span class="group-hover:translate-x-1 transition">➔</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDITORIAL SPOTLIGHT -->
+      <div class="bg-paper-100/70 border border-paper-200 rounded-2xl p-8 space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold uppercase tracking-wider text-gold-700 font-mono">TIÊU ĐIỂM CHIÊM NGHIỆM</span>
+          <span class="text-xs text-stone-500">Tập san MẠCH — Số 01</span>
+        </div>
+        <blockquote class="serif-title text-xl sm:text-2xl text-stone-800 italic leading-relaxed">
+          “Cây gia phả lưu lại cấu trúc và vị trí. MẠCH lưu lại những gì xảy ra giữa những vị trí ấy: những cuộc gặp, những biến dời và điều gì vẫn giữ chúng ta còn là một gia đình.”
+        </blockquote>
+        <div class="flex items-center justify-between pt-2">
+          <span class="text-xs font-medium text-stone-600">— Người giữ mạch (Chấp bút)</span>
+          <button onclick="switchView('mach')" class="text-xs font-semibold text-crimson-900 hover:underline">Đọc toàn văn bài luận ➔</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 02: INTERACTIVE TREE & PERSON PROFILE -->
+    <section id="view-tree" class="hidden py-8 px-4 max-w-6xl mx-auto space-y-8">
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-paper-200 pb-4">
+        <div>
+          <h2 class="serif-title text-2xl sm:text-3xl font-bold text-paper-900">Sơ Đồ Phả Hệ & Hồ Sơ Nhân Vật</h2>
+          <p class="text-xs text-stone-500 mt-1 font-mono">FOCUS-CENTRIC PEDIGREE EXPLORER (FAMILYSEARCH PATTERN)</p>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button onclick="selectPerson('@I1@')" class="px-3 py-1.5 rounded-lg border text-xs font-medium bg-white hover:bg-stone-50">Cụ Giuse Thu (@I1@)</button>
+          <button onclick="selectPerson('@I18@')" class="px-3 py-1.5 rounded-lg border text-xs font-medium bg-white hover:bg-stone-50">An-tôn Trần Trọng Thư (@I18@)</button>
+          <button onclick="selectPerson('@I9@')" class="px-3 py-1.5 rounded-lg border text-xs font-medium bg-white hover:bg-stone-50">Gioan Trần Trọng Thả (@I9@)</button>
+          <button onclick="selectPerson('@I6@')" class="px-3 py-1.5 rounded-lg border text-xs font-medium bg-white hover:bg-stone-50">Trần Thị Thi (@I6@)</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- TREE VISUALIZER (7 COLS) -->
+        <div class="lg:col-span-7 bg-white border border-paper-200 rounded-2xl p-6 shadow-sm space-y-6">
+          <div class="flex items-center justify-between text-xs font-mono text-stone-500 border-b pb-3">
+            <span>TIÊU ĐIỂM: <strong id="tree-focus-name" class="text-crimson-900 font-sans font-bold">Giuse Trần Trọng Thu</strong></span>
+            <span class="bg-amber-100 text-amber-900 px-2 py-0.5 rounded font-bold" id="tree-focus-gen">THẾ HỆ F0</span>
+          </div>
+
+          <!-- PEDIGREE BANDS -->
+          <div class="space-y-6">
+            <!-- PARENTS -->
+            <div class="space-y-2">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-stone-400">Tiền Nhân (Cha Mẹ)</span>
+              <div class="grid grid-cols-2 gap-3" id="tree-parents">
+                <!-- Dynamically Rendered -->
+              </div>
+            </div>
+
+            <!-- FOCUS PERSON & SPOUSE -->
+            <div class="p-4 rounded-xl border-2 border-amber-400 bg-amber-50/30 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-mono font-bold text-amber-800">NHÂN VẬT TRUNG TÂM & HÔN PHỐI</span>
+                <span class="text-[10px] bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-bold">XÁC THỰC LỊCH SỬ</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="bg-white p-3 rounded-lg border border-amber-300">
+                  <div class="text-xs text-stone-500" id="focus-holy-name">Thánh danh: Giuse</div>
+                  <div class="serif-title text-base font-bold text-crimson-950" id="focus-full-name">Trần Trọng Thu</div>
+                  <div class="text-[11px] text-stone-500 font-mono mt-1" id="focus-lifespan">1872 – 15/08/1969</div>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-amber-200">
+                  <div class="text-xs text-stone-500">Hôn phối</div>
+                  <div class="serif-title text-base font-bold text-stone-800" id="focus-spouse">Nguyễn Thị Xuân - Út</div>
+                  <div class="text-[11px] text-stone-500 font-mono mt-1" id="focus-spouse-lifespan">1888 – 1929</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CHILDREN DIRECT -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-stone-400">Hậu Duệ Trực Hệ (Con Cái)</span>
+                <span class="text-xs text-stone-500 font-mono" id="tree-children-count">6 người con</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="tree-children">
+                <!-- Dynamically Rendered -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PERSON PROFILE DOSSIER (5 COLS) -->
+        <div class="lg:col-span-5 bg-white border border-paper-200 rounded-2xl p-6 shadow-sm space-y-6">
+          <div class="border-b border-stone-100 pb-4">
+            <div class="flex items-center justify-between text-xs font-mono text-stone-400 mb-1">
+              <span>HỒ SƠ TIỀN NHÂN</span>
+              <span class="text-crimson-900 font-bold" id="profile-id">ID: @I1@</span>
+            </div>
+            <h3 class="serif-title text-2xl font-bold text-crimson-950" id="profile-name">Giuse Trần Trọng Thu</h3>
+            <p class="text-xs text-stone-500 font-mono mt-1" id="profile-sub">Cụ Tổ Khởi Chi • Thế Hệ F0</p>
+          </div>
+
+          <!-- LIFE TIMELINE -->
+          <div class="space-y-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-stone-700 font-mono">Cột Mốc Cuộc Đời</span>
+            <div class="space-y-2 border-l-2 border-amber-300 pl-3 text-xs" id="profile-timeline">
+              <!-- Dynamically Rendered -->
+            </div>
+          </div>
+
+          <!-- RELATED MẠCH & ARCHIVES -->
+          <div class="space-y-3 pt-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-stone-700 font-mono">Tư Liệu & Ký Ức Đã Ghi Lại</span>
+            <div class="space-y-2">
+              <div onclick="switchView('archive')" class="cursor-pointer p-3 rounded-xl border border-stone-200 hover:border-amber-400 bg-paper-50 transition text-xs flex items-center space-x-3">
+                <span class="text-base">📸</span>
+                <div>
+                  <div class="font-semibold text-paper-900">Mộ tổ Dòng họ Trần Trọng Thu</div>
+                  <div class="text-[10px] text-stone-500">Tư liệu thực địa Bình Tiên, Bình Châu</div>
+                </div>
+              </div>
+              <div onclick="switchView('mach')" class="cursor-pointer p-3 rounded-xl border border-stone-200 hover:border-amber-400 bg-paper-50 transition text-xs flex items-center space-x-3">
+                <span class="text-base">📖</span>
+                <div>
+                  <div class="font-semibold text-paper-900">MẠCH Số 01: Cây Gia Phả & Mạch</div>
+                  <div class="text-[10px] text-stone-500">Tiểu luận khảo cứu nếp nhà</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 03: FAMILY PROFILE (P0) -->
+    <section id="view-family" class="hidden py-8 px-4 max-w-5xl mx-auto space-y-8">
+      <div class="border-b border-paper-200 pb-4">
+        <h2 class="serif-title text-3xl font-bold text-paper-900">Hồ Sơ Gia Đình Hạt Nhân</h2>
+        <p class="text-xs text-stone-500 mt-1 font-mono">FAMILY PROFILE AS CO-SUBJECT (MÃ GIA ĐÌNH: @F2@)</p>
+      </div>
+
+      <div class="bg-white border border-paper-200 rounded-2xl p-6 shadow-sm space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-6 border-b border-stone-100">
+          <div class="p-4 rounded-xl bg-stone-50 border border-stone-200 space-y-2">
+            <span class="text-[10px] font-mono text-stone-400 uppercase">Chồng / Thân Phụ</span>
+            <div class="serif-title text-xl font-bold text-crimson-950">Giuse Trần Trọng Thu</div>
+            <div class="text-xs text-stone-500 font-mono">1872 – 15/08/1969 • Thọ Vực, Thanh Hóa</div>
+            <button onclick="selectPerson('@I1@'); switchView('tree');" class="mt-2 text-xs font-semibold text-crimson-900 hover:underline block">Xem hồ sơ cá nhân ➔</button>
+          </div>
+          <div class="p-4 rounded-xl bg-stone-50 border border-stone-200 space-y-2">
+            <span class="text-[10px] font-mono text-stone-400 uppercase">Vợ / Thân Mẫu</span>
+            <div class="serif-title text-xl font-bold text-stone-800">Nguyễn Thị Xuân - Út</div>
+            <div class="text-xs text-stone-500 font-mono">1888 – 1929 • Thanh Hóa, Việt Nam</div>
+            <button onclick="alert('Đang mở hồ sơ @I8@')" class="mt-2 text-xs font-semibold text-stone-600 hover:underline block">Xem hồ sơ cá nhân ➔</button>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider text-stone-700 font-mono">Danh Sách 6 Người Con Trực Hệ (F1)</span>
+            <span class="text-xs text-stone-500 font-mono">GIA ĐÌNH GỐC KHỞI CHI</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div class="p-3 rounded-xl border border-stone-200 bg-white">
+              <div class="font-semibold text-sm text-paper-900">Trần Thị Thi</div>
+              <div class="text-xs text-stone-500 font-mono">1917 – 1989 • Nữ</div>
+            </div>
+            <div class="p-3 rounded-xl border border-stone-200 bg-white">
+              <div class="font-semibold text-sm text-paper-900">An-tôn Trần Trọng Thư</div>
+              <div class="text-xs text-stone-500 font-mono">1918 – 17/05/1991 • Nam</div>
+            </div>
+            <div class="p-3 rounded-xl border border-stone-200 bg-white">
+              <div class="font-semibold text-sm text-paper-900">Catarina Trần Thị Vị</div>
+              <div class="text-xs text-stone-500 font-mono">1929 – 02/05/2009 • Nữ</div>
+            </div>
+            <div class="p-3 rounded-xl border border-stone-200 bg-white">
+              <div class="font-semibold text-sm text-paper-900">Gioan Trần Trọng Thả</div>
+              <div class="text-xs text-stone-500 font-mono">1929 – (Còn sống) • Nam</div>
+            </div>
+            <div class="p-3 rounded-xl border border-stone-200 bg-stone-50 text-stone-600">
+              <div class="font-medium text-sm">Bà Cử - hai</div>
+              <div class="text-xs text-stone-400 font-mono">Chưa có năm sinh/mất • Nữ</div>
+            </div>
+            <div class="p-3 rounded-xl border border-stone-200 bg-stone-50 text-stone-600">
+              <div class="font-medium text-sm">Bà Định - thứ tư</div>
+              <div class="text-xs text-stone-400 font-mono">Chưa có năm sinh/mất • Nữ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 04: MẠCH EDITORIAL READER -->
+    <section id="view-mach" class="hidden py-10 px-4 max-w-4xl mx-auto space-y-12">
+      <!-- ARTICLE HEADER -->
+      <div class="space-y-4 text-center max-w-2xl mx-auto border-b border-paper-200 pb-8">
+        <div class="flex items-center justify-center space-x-2 text-xs font-mono text-crimson-900 font-bold uppercase tracking-widest">
+          <span>Tập San MẠCH • Số 01</span>
+          <span>•</span>
+          <span>Tiểu Luận</span>
+        </div>
+        <h1 class="serif-title text-3xl sm:text-4xl lg:text-5xl font-bold text-paper-900 leading-tight">
+          Cây Gia Phả & Mạch
+        </h1>
+        <p class="text-base sm:text-lg text-stone-600 italic font-serif">
+          Hai hình thức lưu giữ cấu trúc và ký ức sống gia đình.
+        </p>
+        <div class="text-xs text-stone-500 font-mono pt-2">
+          Chấp bút: <strong>Người giữ mạch</strong> • Mùa Thu 2026
+        </div>
+      </div>
+
+      <!-- TYPOGRAPHIC BODY -->
+      <article class="prose prose-stone max-w-none text-stone-800 text-base sm:text-lg leading-relaxed space-y-6 font-serif">
+        <p class="dropcap">
+          Ban đầu, “CÂY GIA PHẢ” được thực hiện như một cách dựng lại cấu trúc huyết thống của gia đình: các nhánh họ, vai vế, tên tuổi ông bà tổ tiên, quê quán, ngày sinh, ngày mất và mối liên hệ giữa nhiều thế hệ trong dòng họ.
+        </p>
+        <p>
+          Chỉ cần các nhánh được nối lại với nhau, tên người được ghi lại, vai vế được xác định và cấu trúc gia đình được dựng lên đầy đủ, thì những gì thuộc về dòng họ dường như cũng sẽ được giữ lại theo.
+        </p>
+        <p>
+          Nhưng càng đi sâu vào việc dựng lại cây gia phả, tôi càng nhận ra mình không chỉ đang ghi chép tên tuổi hay quan hệ huyết thống, mà đang lần theo một dòng chảy kéo dài qua nhiều thế hệ.
+        </p>
+        <div class="my-8 p-6 bg-paper-100/60 border-l-4 border-crimson-900 rounded-r-xl font-sans not-italic text-sm text-stone-700 leading-relaxed">
+          <strong class="font-serif text-base block text-crimson-950 mb-1">Ghi chú biên tập:</strong>
+          Các nhánh gia đình từ Thọ Vực chuyển cư vào Bình Châu, rồi con cháu tiếp tục tỏa đi Sài Gòn, Bình Triệu và nước ngoài. Khoảng cách địa lý làm thay đổi nhịp gặp gỡ nhưng căn cước cội nguồn vẫn giữ nguyên vẹn qua các thế hệ.
+        </div>
+        <p>
+          Có những người tôi chưa từng gặp. Có những người chỉ còn tồn tại trong vài dòng ghi chép hoặc trong ký ức của những người lớn tuổi. Có những nhánh gia đình đã đi rất xa khỏi nơi khởi đầu của họ. Nhưng tất cả vẫn hiện diện trong cùng một dòng nối.
+        </p>
+        <p>
+          “MẠCH” được bắt đầu từ câu hỏi đó: Làm sao để ký ức không bị lãng quên khi những người già ngày một thưa vắng?
+        </p>
+      </article>
+
+      <!-- CHAPTER SWITCHER -->
+      <div class="border-t border-paper-200 pt-8 flex items-center justify-between text-xs font-semibold text-crimson-900">
+        <span class="text-stone-400">Bài trước: 01. Lời mở</span>
+        <button onclick="alert('Đang mở chuỗi Thư gửi Clara #001')" class="hover:underline">Bài tiếp theo: Thư gửi Clara #001 ➔</button>
+      </div>
+    </section>
+
+    <!-- VIEW 05: ARCHIVES & FACSIMILE -->
+    <section id="view-archive" class="hidden py-8 px-4 max-w-5xl mx-auto space-y-8">
+      <div class="border-b border-paper-200 pb-4">
+        <h2 class="serif-title text-3xl font-bold text-paper-900">Tư Liệu Khảo Chứng & Văn Khố</h2>
+        <p class="text-xs text-stone-500 mt-1 font-mono">FACSIMILE & PROVENANCE INSPECTOR (MUSEUM PATTERN)</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div class="bg-white border border-paper-200 rounded-2xl p-4 shadow-sm space-y-3">
+          <div class="aspect-[4/3] bg-stone-900 rounded-xl overflow-hidden flex items-center justify-center">
+            <img src="../assets/images/mach/issue-01/Mo-to-ho-Tran.jpg" onerror="this.src='https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80'" alt="Mộ tổ họ Trần" class="w-full h-full object-cover">
+          </div>
+          <div class="flex items-center justify-between text-[11px] text-stone-500 font-mono">
+            <span>MÃ TƯ LIỆU: #MED_MO_TO_01</span>
+            <span class="text-green-700 font-bold">XÁC THỰC VẬT CHỨNG</span>
+          </div>
+        </div>
+
+        <div class="space-y-6 bg-white border border-paper-200 rounded-2xl p-6 shadow-sm">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-crimson-900 font-mono">HỒ SƠ HIỆN VẬT</span>
+            <h3 class="serif-title text-2xl font-bold text-paper-900 mt-1">Mộ tổ Dòng họ Trần Trọng Thu</h3>
+            <p class="text-xs text-stone-500 font-mono mt-0.5">Địa bàn: Bình Tiên, Bình Châu</p>
+          </div>
+
+          <div class="space-y-3 text-xs text-stone-700 leading-relaxed border-t border-b border-stone-100 py-4">
+            <div><strong>Xuất xứ (Provenance):</strong> Chụp thực địa trong đợt khảo sát di sản gia tộc năm 2026.</div>
+            <div><strong>Ý nghĩa di sản:</strong> Nơi an nghỉ của các bậc tiền nhân, điểm quy tụ con cháu các nhánh mỗi dịp tảo mộ đầu xuân.</div>
+            <div><strong>Thực thể liên quan:</strong> Cụ Giuse Trần Trọng Thu, Cụ Nguyễn Thị Xuân - Út và các nhánh đời F1.</div>
+          </div>
+
+          <div class="flex items-center space-x-3 pt-2">
+            <button onclick="switchView('tree')" class="px-4 py-2 bg-crimson-900 text-white rounded-xl text-xs font-semibold hover:bg-crimson-950 transition">Xem trên Phả Đồ</button>
+            <button onclick="switchView('mach')" class="px-4 py-2 border border-stone-300 rounded-xl text-xs font-semibold hover:bg-stone-50 transition">Đọc bài viết liên quan</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 06: BACKEND FIT MAP -->
+    <section id="view-fitmap" class="hidden py-8 px-4 max-w-5xl mx-auto space-y-8">
+      <div class="border-b border-paper-200 pb-4">
+        <h2 class="serif-title text-3xl font-bold text-paper-900">Backend Integration & Gap Map</h2>
+        <p class="text-xs text-stone-500 mt-1 font-mono">ĐỐI CHIẾU KHỚP NỐI GIỮA TRẢI NGHIỆM FRONTEND VÀ BACKEND HIỆN CÓ</p>
+      </div>
+
+      <div class="bg-white border border-paper-200 rounded-2xl overflow-hidden shadow-sm">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="bg-paper-100 border-b border-paper-200 text-stone-700 font-mono">
+              <th class="p-3">Thành phần UX / UI</th>
+              <th class="p-3">Hỗ trợ Hiện có (Backend)</th>
+              <th class="p-3">Khoảng trống (Data/Capability Gap)</th>
+              <th class="p-3">Giải pháp Integration Layer</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-stone-100 text-stone-700">
+            <tr>
+              <td class="p-3 font-semibold text-paper-900">Pedigree Focus Tree</td>
+              <td class="p-3 text-green-700">genealogy.json (parents, children, spouses)</td>
+              <td class="p-3 text-stone-500">Chưa có tọa độ đồ họa tối ưu</td>
+              <td class="p-3">Tính toán layout thế hệ client-side dựa trên Focus Node.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-paper-900">Person Dossier & Media</td>
+              <td class="p-3 text-amber-700">mach.json (media.peopleIds)</td>
+              <td class="p-3 text-red-600 font-medium">Chưa có avatar riêng trong genealogy.json</td>
+              <td class="p-3">Dùng ảnh từ kho Mach Media hoặc Avatar danh dự theo giới tính.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-paper-900">Epistemic Certainty (7 Mức)</td>
+              <td class="p-3 text-stone-400">Chưa có trường explicit trong JSON</td>
+              <td class="p-3 text-red-600 font-medium">Dữ liệu hiện tại chỉ lưu GEDCOM thuần</td>
+              <td class="p-3">Default mức CONFIRMED cho đời F0-F1 có nguồn gốc trích lục.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-paper-900">Cross-linking Mạch ➔ Person</td>
+              <td class="p-3 text-green-700">mach.json (relatedEntities.peopleIds)</td>
+              <td class="p-3 text-stone-500">Cần liên kết 2 chiều ngược lại</td>
+              <td class="p-3">Xây dựng Reverse Indexing khi khởi tạo ứng dụng.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function switchView(viewId) {
+      const views = ['home', 'tree', 'family', 'mach', 'archive', 'fitmap'];
+      views.forEach(v => {
+        document.getElementById(`view-${v}`).classList.add('hidden');
+        const nav = document.getElementById(`nav-${v}`);
+        if(nav) {
+          nav.classList.remove('bg-stone-800', 'text-amber-400');
+          nav.classList.add('text-stone-400');
+        }
+      });
+      document.getElementById(`view-${viewId}`).classList.remove('hidden');
+      const activeNav = document.getElementById(`nav-${viewId}`);
+      if(activeNav) {
+        activeNav.classList.add('bg-stone-800', 'text-amber-400');
+        activeNav.classList.remove('text-stone-400');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    const exactPeopleData = {
+      '@I1@': {
+        id: '@I1@',
+        name: 'Giuse Trần Trọng Thu',
+        holy: 'Thánh danh: Giuse',
+        full: 'Trần Trọng Thu',
+        lifespan: '1872 – 15/08/1969',
+        gen: 'THẾ HỆ F0',
+        spouse: 'Nguyễn Thị Xuân - Út',
+        spouseLifespan: '1888 – 1929',
+        sub: 'Cụ Tổ Khởi Chi • Thế Hệ F0',
+        parents: [
+          { role: 'Thân phụ', name: 'Trần Cha Ông cố Thu - bà An', date: 'Chưa có năm sinh/mất' },
+          { role: 'Thân mẫu', name: 'Mẹ Ông Thu - bà An', date: 'Chưa có năm sinh/mất' }
+        ],
+        children: [
+          { id: '@I6@', name: 'Trần Thị Thi', sub: 'F1 • 1917–1989 (Nữ)' },
+          { id: '@I18@', name: 'An-tôn Trần Trọng Thư', sub: 'F1 • 1918–1991 (Nam)' },
+          { id: '@I7@', name: 'Catarina Trần Thị Vị', sub: 'F1 • 1929–2009 (Nữ)' },
+          { id: '@I9@', name: 'Gioan Trần Trọng Thả', sub: 'F1 • 1929 (Nam)' },
+          { id: '@I2@', name: 'Bà Cử - hai', sub: 'F1 • Chưa rõ năm (Nữ)' },
+          { id: '@I3@', name: 'Bà Định - thứ tư', sub: 'F1 • Chưa rõ năm (Nữ)' }
+        ],
+        timeline: [
+          { year: '1872', text: 'Chào đời tại Thọ Vực, Thanh Hóa, Việt Nam.' },
+          { year: '15/08/1969', text: 'Tạ thế tại Thanh Hóa, hưởng thọ 97 tuổi.' }
+        ]
+      },
+      '@I18@': {
+        id: '@I18@',
+        name: 'An-tôn Trần Trọng Thư',
+        holy: 'Thánh danh: An-tôn',
+        full: 'Trần Trọng Thư',
+        lifespan: '1918 – 17/05/1991',
+        gen: 'THẾ HỆ F1',
+        spouse: 'Bà Phạm Thị Huê / Nguyễn Thị Lan',
+        spouseLifespan: 'Gia đình F1',
+        sub: 'Thế Hệ F1 • Chi Trưởng Nam',
+        parents: [
+          { role: 'Thân phụ', name: 'Giuse Trần Trọng Thu', date: '1872 – 1969' },
+          { role: 'Thân mẫu', name: 'Nguyễn Thị Xuân - Út', date: '1888 – 1929' }
+        ],
+        children: [
+          { id: '@I55@', name: 'Trần Trọng Thịnh', sub: 'F2 • Hậu duệ' },
+          { id: '@I54@', name: 'Trần Trọng Tuấn', sub: 'F2 • Hậu duệ' },
+          { id: '@I47@', name: 'Trần Trọng Thủy', sub: 'F2 • Hậu duệ' }
+        ],
+        timeline: [
+          { year: '1918', text: 'Chào đời tại Thọ Vực, Thanh Hóa.' },
+          { year: '17/05/1991', text: 'Tạ thế tại Thanh Hóa, hưởng thọ 73 tuổi.' }
+        ]
+      },
+      '@I9@': {
+        id: '@I9@',
+        name: 'Gioan Trần Trọng Thả',
+        holy: 'Thánh danh: Gioan',
+        full: 'Trần Trọng Thả',
+        lifespan: '1929 – (Còn sống)',
+        gen: 'THẾ HỆ F1',
+        spouse: 'Bà Nguyễn Thị Nhạn',
+        spouseLifespan: 'Gia đình F1',
+        sub: 'Thế Hệ F1 • Nhánh Chú Thả',
+        parents: [
+          { role: 'Thân phụ', name: 'Giuse Trần Trọng Thu', date: '1872 – 1969' },
+          { role: 'Thân mẫu', name: 'Nguyễn Thị Xuân - Út', date: '1888 – 1929' }
+        ],
+        children: [
+          { id: '@I21@', name: 'Trần Trọng Nam', sub: 'F2 • Hậu duệ' },
+          { id: '@I22@', name: 'Trần Trọng Hải', sub: 'F2 • Hậu duệ' }
+        ],
+        timeline: [
+          { year: '1929', text: 'Chào đời tại Thọ Vực, Thanh Hóa.' }
+        ]
+      },
+      '@I6@': {
+        id: '@I6@',
+        name: 'Trần Thị Thi',
+        holy: 'Nữ giới',
+        full: 'Trần Thị Thi',
+        lifespan: '1917 – 1989',
+        gen: 'THẾ HỆ F1',
+        spouse: 'Lê Chí Trung',
+        spouseLifespan: 'Chưa có năm sinh/mất',
+        sub: 'Thế Hệ F1 • Trưởng Nữ',
+        parents: [
+          { role: 'Thân phụ', name: 'Giuse Trần Trọng Thu', date: '1872 – 1969' },
+          { role: 'Thân mẫu', name: 'Nguyễn Thị Xuân - Út', date: '1888 – 1929' }
+        ],
+        children: [
+          { id: '@I10@', name: 'Cecilia Lê Thị Hoa', sub: 'F2 • 1949' },
+          { id: '@I17@', name: 'Lê Đức Thành', sub: 'F2 • 1951' }
+        ],
+        timeline: [
+          { year: '1917', text: 'Chào đời tại Thọ Vực, Thanh Hóa.' },
+          { year: '1989', text: 'Tạ thế tại Thanh Hóa, hưởng thọ 72 tuổi.' }
+        ]
+      }
+    };
+
+    function selectPerson(id) {
+      const p = exactPeopleData[id] || exactPeopleData['@I1@'];
+      document.getElementById('tree-focus-name').innerText = p.name;
+      document.getElementById('tree-focus-gen').innerText = p.gen;
+      document.getElementById('focus-holy-name').innerText = p.holy;
+      document.getElementById('focus-full-name').innerText = p.full;
+      document.getElementById('focus-lifespan').innerText = p.lifespan;
+      document.getElementById('focus-spouse').innerText = p.spouse;
+      document.getElementById('focus-spouse-lifespan').innerText = p.spouseLifespan;
+      
+      document.getElementById('profile-id').innerText = `ID: ${p.id}`;
+      document.getElementById('profile-name').innerText = p.name;
+      document.getElementById('profile-sub').innerText = p.sub;
+
+      // Render Parents
+      const parContainer = document.getElementById('tree-parents');
+      parContainer.innerHTML = p.parents.map(par => `
+        <div class="p-3 rounded-xl border border-stone-200 bg-stone-50 text-xs">
+          <div class="text-[10px] text-stone-400 font-mono">${par.role}</div>
+          <div class="font-semibold text-stone-800">${par.name}</div>
+          <div class="text-[10px] text-stone-400 font-mono mt-0.5">${par.date}</div>
+        </div>
+      `).join('');
+
+      // Render Children
+      document.getElementById('tree-children-count').innerText = `${p.children.length} người con`;
+      const chContainer = document.getElementById('tree-children');
+      chContainer.innerHTML = p.children.map(ch => `
+        <div onclick="if(exactPeopleData['${ch.id}']) selectPerson('${ch.id}'); else alert('Hồ sơ chi tiết của ${ch.name} đang ở trạng thái chưa mở rộng.');" class="cursor-pointer p-2.5 rounded-lg border border-stone-200 hover:border-crimson-800 hover:bg-rose-50/40 transition text-xs">
+          <div class="font-semibold text-paper-900">${ch.name}</div>
+          <div class="text-[10px] text-stone-500 font-mono">${ch.sub}</div>
+        </div>
+      `).join('');
+
+      // Render Timeline
+      const tlContainer = document.getElementById('profile-timeline');
+      tlContainer.innerHTML = p.timeline.map(t => `<div><span class="font-bold text-stone-800">${t.year}</span>: ${t.text}</div>`).join('');
+    }
+
+    // Initialize Default
+    selectPerson('@I1@');
+  </script>
+</body>
+</html>

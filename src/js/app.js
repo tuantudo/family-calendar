@@ -33,6 +33,12 @@ let currentFamilyGenFilter = 'all'; // 'all' | 0 | 1 | 2 | 3 | 4
 let treeViewMode = 'focus'; // 'focus' (Pedigree Visual Graph) | 'explore' (Generation Bands)
 let currentTreeFocusId = "";  // Currently selected person in Focus Mode
 
+let mediaDb = {
+    assets: {},        // assetId -> MediaAsset entity
+    personMedia: [],   // array of PersonMedia relationship entities
+    byPersonId: {}     // personId -> [PersonMedia] indexed cache
+};
+
 let calEvents = [];
 let curCalDate = new Date();
 let calViewMode = 'month'; // 'month' | 'agenda'
@@ -47,42 +53,149 @@ const CAL_FEEDS = [
 
 // --- INITIALIZATION ---
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("data/genealogy.json")
-        .then(r => r.json())
-        .then(data => {
-            appData = data;
-            deriveFamilyGraphGenerations(data.rootAnchor || Object.keys(data.people)[0]);
-            
-            bindPublicationHeaders(data);
-            bindStats(data.stats);
-
-            initTreeDropdown(data.rootAnchor);
-            renderPeopleDirectory();
-            renderFamiliesDirectory('all');
-            renderTimeline();
-            renderMemories();
-
-            loadCalendarFeeds();
-            fetch("data/mach.json")
-                .then(r => r.json())
-                .then(m => {
-                    machData = m;
-                    renderMachModule();
-                    renderHomePublicationLanding();
-                    handleHashRoute();
-                })
-                .catch(err => {
-                    console.warn("Could not load data/mach.json:", err);
-                    renderHomePublicationLanding();
-                    handleHashRoute();
-                });
-        })
-        .catch(err => {
-            console.error("Error loading genealogy dataset:", err);
+    // 1. Fetch Media Management Layer (media.json & person_media.json) in parallel
+    Promise.all([
+        fetch("data/media.json").then(r => r.ok ? r.json() : {}).catch(() => ({})),
+        fetch("data/person_media.json").then(r => r.ok ? r.json() : []).catch(() => ([]))
+    ])
+    .then(([mediaAssets, personMediaList]) => {
+        mediaDb.assets = mediaAssets || {};
+        mediaDb.personMedia = Array.isArray(personMediaList) ? personMediaList : [];
+        mediaDb.byPersonId = {};
+        
+        // Build efficient index for N-to-N relationships
+        mediaDb.personMedia.forEach(rel => {
+            if (rel && rel.personId) {
+                if (!mediaDb.byPersonId[rel.personId]) mediaDb.byPersonId[rel.personId] = [];
+                mediaDb.byPersonId[rel.personId].push(rel);
+            }
         });
+    })
+    .finally(() => {
+        // 2. Fetch genealogy.json
+        fetch("data/genealogy.json")
+            .then(r => r.json())
+            .then(data => {
+                appData = data;
+                deriveFamilyGraphGenerations(data.rootAnchor || Object.keys(data.people)[0]);
+                
+                bindPublicationHeaders(data);
+                bindStats(data.stats);
+
+                initTreeDropdown(data.rootAnchor);
+                renderPeopleDirectory();
+                renderFamiliesDirectory('all');
+                renderTimeline();
+                renderMemories();
+
+                loadCalendarFeeds();
+                fetch("data/mach.json")
+                    .then(r => r.json())
+                    .then(m => {
+                        machData = m;
+                        renderMachModule();
+                        renderHomePublicationLanding();
+                        handleHashRoute();
+                    })
+                    .catch(err => {
+                        console.warn("Could not load data/mach.json:", err);
+                        renderHomePublicationLanding();
+                        handleHashRoute();
+                    });
+            })
+            .catch(err => {
+                console.error("Error loading genealogy dataset:", err);
+            });
+    });
 });
 
 window.addEventListener("hashchange", handleHashRoute);
+
+/**
+ * MEDIA MANAGEMENT RESOLVER LAYER
+ * Independent PersonMedia & MediaAsset querying engine.
+ * Pure contract: Person ID -> Relationship -> MediaAsset -> File URL
+ * Zero FSID-to-filename inference in presentation code.
+ */
+function getPersonMedia(personId, role = null) {
+    if (!personId) return [];
+    const relations = mediaDb.byPersonId[personId] || [];
+    const results = [];
+
+    relations.forEach(rel => {
+        if (role && rel.role !== role) return;
+        if (rel.status !== "MATCHED") return;
+        const asset = mediaDb.assets[rel.assetId];
+        if (asset && asset.file) {
+            results.push({
+                relation: rel,
+                asset: asset,
+                url: asset.file,
+                isPrimary: !!rel.isPrimary,
+                role: rel.role,
+                source: asset.source,
+                sourceId: asset.sourceId,
+                sha256: asset.sha256,
+                provenance: asset.provenance || {}
+            });
+        }
+    });
+
+    return results;
+}
+
+function getPersonPortrait(personId) {
+    const portraits = getPersonMedia(personId, "PORTRAIT");
+    if (portraits.length === 0) return null;
+    // Prefer isPrimary if multiple portraits exist
+    const primary = portraits.find(p => p.isPrimary) || portraits[0];
+    return primary;
+}
+
+// Presentation-level avatar resolver with gender-aware UI fallback
+function resolvePersonAvatar(person) {
+    if (!person || !person.id) return null;
+    const realPortrait = getPersonPortrait(person.id);
+    if (realPortrait) {
+        return {
+            url: realPortrait.url,
+            isPlaceholder: false,
+            source: realPortrait.source || "FamilySearch",
+            sourceId: realPortrait.sourceId || realPortrait.fsId || person.fsid || person.id
+        };
+    }
+
+    // Gender-aware fallback based strictly on person.sex
+    const sex = (person.sex || "").toUpperCase();
+    if (sex === "M") {
+        return {
+            url: null,
+            isPlaceholder: true,
+            placeholderType: "male",
+            icon: "👨",
+            childIcon: "👦",
+            label: "Nam"
+        };
+    } else if (sex === "F") {
+        return {
+            url: null,
+            isPlaceholder: true,
+            placeholderType: "female",
+            icon: "👩",
+            childIcon: "👧",
+            label: "Nữ"
+        };
+    } else {
+        return {
+            url: null,
+            isPlaceholder: true,
+            placeholderType: "neutral",
+            icon: "👤",
+            childIcon: "👤",
+            label: "Chưa xác định"
+        };
+    }
+}
 
 // --- DYNAMIC GRAPH DERIVATION ENGINE (BFS FROM FAMILY ANCHOR) ---
 function deriveFamilyGraphGenerations(rootId) {
@@ -178,13 +291,197 @@ function getFamilyGenerationMeta(fid) {
     return { level: lvl, label: `F${lvl} · Hậu duệ`, badgeCls: "gen-f4", borderCls: "border-f4", bgCls: "bg-gen-f4", title: `Nhánh thế hệ thứ ${lvl}` };
 }
 
+// --- SITE IDENTITY & PAGE CONTEXT CONFIGURATION ---
+const SITE_CONFIG = {
+    publicationName: "GIÒNG HỌ TRẦN TRỌNG THU",
+    subtitle: "CÂY GIA PHẢ"
+};
+
+const ROUTE_CONTEXTS = {
+    "/": {
+        type: "HOME",
+        territory: "home",
+        title: "Trang Chủ",
+        navId: "nav_home",
+        secId: "view_home"
+    },
+    "/gia-pha": {
+        type: "GENEALOGY",
+        territory: "gia_pha",
+        title: "Gia Phả • Cây Phả Đồ",
+        navId: "nav_gia_pha",
+        secId: "view_tree",
+        init: () => renderTreeModule()
+    },
+    "/tree": {
+        type: "GENEALOGY",
+        territory: "gia_pha",
+        title: "Gia Phả • Cây Phả Đồ",
+        navId: "nav_gia_pha",
+        secId: "view_tree",
+        init: () => renderTreeModule()
+    },
+    "/gia-pha/cay": {
+        type: "GENEALOGY",
+        territory: "gia_pha",
+        title: "Gia Phả • Cây Phả Đồ",
+        navId: "nav_gia_pha",
+        secId: "view_tree",
+        init: () => renderTreeModule()
+    },
+    "/gia-pha/nhan-vat": {
+        type: "GENEALOGY",
+        territory: "gia_pha",
+        title: "Gia Phả • Thành Viên",
+        navId: "nav_gia_pha",
+        secId: "view_people"
+    },
+    "/people": {
+        type: "GENEALOGY",
+        territory: "gia_pha",
+        title: "Gia Phả • Thành Viên",
+        navId: "nav_gia_pha",
+        secId: "view_people"
+    },
+    "/gia-pha/gia-dinh": {
+        type: "GENEALOGY",
+        territory: "gia_pha",
+        title: "Gia Phả • Gia Đình",
+        navId: "nav_gia_pha",
+        secId: "view_families"
+    },
+    "/families": {
+        type: "GENEALOGY",
+        territory: "gia_pha",
+        title: "Gia Phả • Gia Đình",
+        navId: "nav_gia_pha",
+        secId: "view_families"
+    },
+    "/gia-pha/dong-thoi-gian": {
+        type: "GENEALOGY",
+        territory: "gia_pha",
+        title: "Gia Phả • Dòng Thời Gian",
+        navId: "nav_gia_pha",
+        secId: "view_timeline"
+    },
+    "/timeline": {
+        type: "GENEALOGY",
+        territory: "gia_pha",
+        title: "Gia Phả • Dòng Thời Gian",
+        navId: "nav_gia_pha",
+        secId: "view_timeline"
+    },
+    "/gia-pha/ky-uc": {
+        type: "GENEALOGY",
+        territory: "gia_pha",
+        title: "Gia Phả • Ký Ức & Giai Thoại",
+        navId: "nav_gia_pha",
+        secId: "view_memories",
+        init: () => renderMemories()
+    },
+    "/memories": {
+        type: "GENEALOGY",
+        territory: "gia_pha",
+        title: "Gia Phả • Ký Ức & Giai Thoại",
+        navId: "nav_gia_pha",
+        secId: "view_memories",
+        init: () => renderMemories()
+    },
+    "/mach": {
+        type: "MACH",
+        territory: "mach",
+        title: "Mạch • Tập San & Ký Ức",
+        navId: "nav_mach",
+        secId: "view_mach",
+        init: () => renderMachModule()
+    },
+    "/tu-lieu": {
+        type: "TU_LIEU",
+        territory: "tu_lieu",
+        title: "Tư Liệu • Lưu Trữ Hiện Vật",
+        navId: "nav_tu_lieu",
+        secId: "view_tu_lieu",
+        init: () => renderTuLieuModule()
+    },
+    "/lich": {
+        type: "CALENDAR",
+        territory: "capability",
+        title: "Lịch Gia Đình",
+        navId: "nav_lich",
+        secId: "view_calendar",
+        init: () => renderCalendarModule()
+    },
+    "/calendar": {
+        type: "CALENDAR",
+        territory: "capability",
+        title: "Lịch Gia Đình",
+        navId: "nav_lich",
+        secId: "view_calendar",
+        init: () => renderCalendarModule()
+    },
+    "/tim-kiem": {
+        type: "SEARCH",
+        territory: "capability",
+        title: "Tìm Kiếm Toàn Cục",
+        navId: "nav_tim_kiem",
+        secId: "view_search",
+        init: () => runSearchPage()
+    },
+    "/search": {
+        type: "SEARCH",
+        territory: "capability",
+        title: "Tìm Kiếm Toàn Cục",
+        navId: "nav_tim_kiem",
+        secId: "view_search",
+        init: () => runSearchPage()
+    },
+    "/ve-dong-ho": {
+        type: "ABOUT",
+        territory: "about",
+        title: "Về Dòng Họ",
+        navId: "",
+        secId: "view_ve_dong_ho"
+    },
+    "/ve-du-an": {
+        type: "ABOUT",
+        territory: "about",
+        title: "Về Dự Án",
+        navId: "",
+        secId: "view_ve_du_an"
+    },
+    "/typography-specimen": {
+        type: "SPECIMEN",
+        territory: "specimen",
+        title: "Typography Specimen",
+        navId: "",
+        secId: "view_typography_specimen"
+    }
+};
+
 function bindPublicationHeaders(data) {
-    if (data.publication) {
-        document.title = `CÂY GIA PHẢ — ${data.publication}`;
-        const heroTitle = document.getElementById("heroPublicationTitle");
-        if (heroTitle) heroTitle.innerText = data.publication;
-        const footerPub = document.getElementById("footerPublication");
-        if (footerPub) footerPub.innerText = data.publication;
+    const pubName = (data && data.publication) || SITE_CONFIG.publicationName;
+    const subTitle = (data && data.subtitle) || SITE_CONFIG.subtitle;
+
+    const brandTitle = document.getElementById("globalBrandTitle");
+    if (brandTitle) brandTitle.innerText = pubName;
+    const brandBadge = document.getElementById("globalBrandBadge");
+    if (brandBadge) brandBadge.innerText = subTitle;
+
+    const heroTitle = document.getElementById("heroPublicationTitle");
+    if (heroTitle) heroTitle.innerText = pubName;
+
+    const footerTitle = document.getElementById("footerSiteTitle");
+    if (footerTitle) footerTitle.innerText = pubName;
+}
+
+function updatePageContext(route, contextOverride = null) {
+    const ctx = contextOverride || ROUTE_CONTEXTS[route] || ROUTE_CONTEXTS["/"];
+    const pubName = (appData && appData.publication) || SITE_CONFIG.publicationName;
+    
+    if (ctx.type === "HOME") {
+        document.title = `${pubName} — ${SITE_CONFIG.subtitle}`;
+    } else {
+        document.title = `${ctx.title} — ${pubName}`;
     }
 }
 
@@ -253,57 +550,22 @@ function showSectionByRoute(route) {
     document.querySelectorAll(".view-section").forEach(s => s.classList.remove("active"));
     document.querySelectorAll(".nav-item-btn").forEach(b => b.classList.remove("active"));
 
-    let secId = "view_home";
-    let navId = "nav_home";
+    const ctx = ROUTE_CONTEXTS[route] || ROUTE_CONTEXTS["/"];
+    
+    updatePageContext(route, ctx);
 
-    if (route === "/tree" || route === "/gia-pha" || route === "/gia-pha/cay") {
-        secId = "view_tree";
-        navId = "nav_gia_pha";
-        renderTreeModule();
-    } else if (route === "/people" || route === "/gia-pha/nguoi" || route === "/gia-pha/nhan-vat") {
-        secId = "view_people";
-        navId = "nav_gia_pha";
-    } else if (route === "/families" || route === "/gia-pha/gia-dinh") {
-        secId = "view_families";
-        navId = "nav_gia_pha";
-    } else if (route === "/calendar" || route === "/lich") {
-        secId = "view_calendar";
-        navId = "nav_lich";
-        renderCalendarModule();
-    } else if (route === "/mach" || route === "/mach/bai-viet" || route === "/mach/series" || route === "/mach/chuyen-de" || route === "/mach/tac-gia") {
-        secId = "view_mach";
-        navId = "nav_mach";
-        renderMachModule();
-    } else if (route === "/tu-lieu" || route === "/tu-lieu/hien-vat" || route === "/tu-lieu/bo-suu-tap") {
-        secId = "view_tu_lieu";
-        navId = "nav_tu_lieu";
-        renderTuLieuModule();
-    } else if (route === "/tim-kiem" || route === "/search") {
-        secId = "view_search";
-        navId = "";
-        runSearchPage();
-    } else if (route === "/timeline" || route === "/gia-pha/dong-thoi-gian") {
-        secId = "view_timeline";
-        navId = "";
-    } else if (route === "/memories" || route === "/gia-pha/ky-uc") {
-        secId = "view_memories";
-        navId = "";
-        renderMemories();
-    } else if (route === "/ve-dong-ho" || route === "/about-family") {
-        secId = "view_ve_dong_ho";
-        navId = "";
-    } else if (route === "/ve-du-an" || route === "/about-project") {
-        secId = "view_ve_du_an";
-        navId = "";
-    } else if (route === "/typography-specimen" || route === "/typography" || route === "/ve-du-an/typography-specimen") {
-        secId = "view_typography_specimen";
-        navId = "";
+    const sec = document.getElementById(ctx.secId);
+    if (sec) sec.classList.add("active");
+
+    if (ctx.navId) {
+        const nav = document.getElementById(ctx.navId);
+        if (nav) nav.classList.add("active");
     }
 
-    const sec = document.getElementById(secId);
-    if (sec) sec.classList.add("active");
-    const nav = document.getElementById(navId);
-    if (nav) nav.classList.add("active");
+    if (typeof ctx.init === 'function') {
+        ctx.init();
+    }
+
     window.scrollTo(0, 0);
 }
 
@@ -822,7 +1084,12 @@ function renderGraphNode(p, role = 'child', isFocus = false) {
     const gMeta = getGenerationMeta(p.id);
     const bDate = p.birth && p.birth.date ? p.birth.date : "Chưa rõ";
     const dDate = p.death && p.death.date ? p.death.date : "";
-    const lifeStr = dDate ? `${bDate} – ${dDate}` : (bDate !== "Chưa rõ" ? `s. ${bDate}` : "Chưa có năm sinh");
+    const avatar = resolvePersonAvatar(p);
+
+    const fallbackIcon = avatar && avatar.icon ? avatar.icon : (p.sex === 'M' ? '👨' : (p.sex === 'F' ? '👩' : '👤'));
+    const avatarHtml = (avatar && !avatar.isPlaceholder && avatar.url)
+        ? `<div class="node-avatar-box"><img src="${avatar.url}" alt="${p.name}" class="node-avatar-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'node-avatar-fallback\\'>${fallbackIcon}</span>'"/></div>`
+        : `<div class="node-avatar-box"><span class="node-avatar-fallback">${fallbackIcon}</span></div>`;
 
     return `
         <div class="graph-node ${gMeta.borderCls} ${isFocus ? 'node-focus' : ''}" onclick="focusGraphPerson('${p.id}')">
@@ -831,8 +1098,13 @@ function renderGraphNode(p, role = 'child', isFocus = false) {
                 ${isFocus ? '<span class="focus-indicator">● ĐANG XEM</span>' : ''}
                 <span class="node-fsid">${p.fsid || p.id}</span>
             </div>
-            <div class="node-name" title="${p.name}">${p.sex === 'M' ? '👨' : '👩'} ${p.name}</div>
-            <div class="node-meta">📅 ${lifeStr}</div>
+            <div class="node-body-row">
+                ${avatarHtml}
+                <div class="node-content-main">
+                    <div class="node-name" title="${p.name}">${p.name}</div>
+                    <div class="node-meta">📅 ${lifeStr}</div>
+                </div>
+            </div>
             <div class="node-actions" onclick="event.stopPropagation();">
                 <span style="font-size:10.5px; color:var(--text-muted);">${gMeta.label.split('·')[1] ? gMeta.label.split('·')[1].trim() : 'Thành viên'}</span>
                 <a onclick="openPersonProfile('${p.id}')" title="Xem hồ sơ chi tiết">Hồ sơ ↗</a>
@@ -1119,6 +1391,12 @@ function renderUnifiedPersonCard(p, isTreeNode = false, isCenter = false) {
     const bDate = p.birth && p.birth.date ? p.birth.date : "Chưa rõ";
     const dDate = p.death && p.death.date ? p.death.date : "";
     const lifeStr = dDate ? `${bDate} – ${dDate}` : (bDate !== "Chưa rõ" ? `Sinh: ${bDate}` : "Chưa có năm sinh");
+    const avatar = resolvePersonAvatar(p);
+
+    const fallbackIcon = avatar && avatar.icon ? avatar.icon : (p.sex === 'M' ? '👨' : (p.sex === 'F' ? '👩' : '👤'));
+    const avatarHtml = (avatar && !avatar.isPlaceholder && avatar.url)
+        ? `<div class="card-avatar-box"><img src="${avatar.url}" alt="${p.name}" class="card-avatar-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'card-avatar-fallback\\'>${fallbackIcon}</span>'"/></div>`
+        : `<div class="card-avatar-box"><span class="card-avatar-fallback">${fallbackIcon}</span></div>`;
 
     return `
         <div class="person-card ${gMeta.borderCls}" ${isTreeNode ? `onclick="renderFocusPedigreeTree('${p.id}')"` : `onclick="openPersonProfile('${p.id}')"`} style="${isCenter ? 'border: 2px solid var(--primary); box-shadow: var(--shadow-md);' : ''}">
@@ -1127,9 +1405,14 @@ function renderUnifiedPersonCard(p, isTreeNode = false, isCenter = false) {
                     <span class="gen-badge ${gMeta.badgeCls}">${gMeta.label}</span>
                     <span class="card-id-badge">${p.fsid || p.id}</span>
                 </div>
-                <div class="card-name-title">${p.name}</div>
-                <div class="card-meta-primary">📅 ${lifeStr}</div>
-                <div class="card-meta-secondary">Giới tính: <strong>${p.sex === 'M' ? 'Nam' : 'Nữ'}</strong> • Con cái: <strong>${p.children ? p.children.length : 0}</strong></div>
+                <div class="card-body-layout">
+                    ${avatarHtml}
+                    <div class="card-content-main">
+                        <div class="card-name-title">${p.name}</div>
+                        <div class="card-meta-primary">📅 ${lifeStr}</div>
+                        <div class="card-meta-secondary">Giới tính: <strong>${p.sex === 'M' ? 'Nam' : 'Nữ'}</strong> • Con: <strong>${p.children ? p.children.length : 0}</strong></div>
+                    </div>
+                </div>
             </div>
             <div class="card-footer-row">
                 <a class="card-accent-link" onclick="event.stopPropagation(); renderFocusPedigreeTree('${p.id}'); switchTreeViewMode('focus');">🌳 Tiêu điểm phả đồ</a>
@@ -1283,24 +1566,63 @@ function renderFamiliesDirectory(filterGen = currentFamilyGenFilter) {
 
 // --- PROFILES ---
 function openPersonProfile(pid) {
-    const p = appData.people[pid];
+    let p = appData.people[pid];
+    if (!p) {
+        // Fallback: search by fsid if pid is an FSID like G5X4-48S
+        p = Object.values(appData.people).find(person => person.fsid === pid || person._FSFTID === pid);
+    }
     if (!p) return;
-    window.location.hash = `#/person/${pid}`;
+    const actualPid = p.id;
+    const targetHash = `#/person/${actualPid}`;
+    if (window.location.hash !== targetHash) {
+        window.history.replaceState(null, '', targetHash);
+    }
     document.querySelectorAll(".view-section").forEach(s => s.classList.remove("active"));
+    document.querySelectorAll(".nav-item-btn").forEach(b => b.classList.remove("active"));
+    const navGiaPha = document.getElementById("nav_gia_pha");
+    if (navGiaPha) navGiaPha.classList.add("active");
     const sec = document.getElementById("view_person");
     if (sec) sec.classList.add("active");
+
+    updatePageContext(window.location.hash, {
+        type: "PERSON",
+        territory: "gia_pha",
+        title: `${p.name} • Hồ Sơ Nhân Vật`
+    });
 
     const gMeta = getGenerationMeta(p.id);
     const pContainer = document.getElementById("personProfileContainer");
     const pName = document.getElementById("p_name");
     const pGender = document.getElementById("p_gender_status");
     const pFsid = document.getElementById("p_fsid");
+    const pAvatar = document.getElementById("p_avatar_container");
+    const pProv = document.getElementById("p_provenance_badge");
     const pFacts = document.getElementById("p_facts");
     const pRels = document.getElementById("p_relatives");
 
+    const avatar = resolvePersonAvatar(p);
+    const fallbackIcon = avatar && avatar.icon ? avatar.icon : (p.sex === 'M' ? '👨' : (p.sex === 'F' ? '👩' : '👤'));
+    if (pAvatar) {
+        if (avatar && !avatar.isPlaceholder && avatar.url) {
+            pAvatar.innerHTML = `<img src="${avatar.url}" alt="${p.name}" class="profile-avatar-img" onerror="this.parentElement.innerHTML='<span class=\\'profile-avatar-fallback\\'>${fallbackIcon}</span>'"/>`;
+        } else {
+            pAvatar.innerHTML = `<span class="profile-avatar-fallback">${fallbackIcon}</span>`;
+        }
+    }
+
+    if (pProv) {
+        if (avatar && !avatar.isPlaceholder && avatar.url) {
+            const srcLabel = avatar.source || "FamilySearch";
+            const srcId = avatar.sourceId || p.fsid || p.id;
+            pProv.innerHTML = `<span class="profile-provenance-tag">🏛️ Ảnh chân dung ${srcLabel} (${srcId})</span>`;
+        } else {
+            pProv.innerHTML = `<span style="font-size: 11.5px; color: var(--text-muted);">Chưa có ảnh chân dung lưu trữ</span>`;
+        }
+    }
+
     if (pContainer) pContainer.className = `profile-container ${gMeta.borderCls}`;
     if (pName) pName.innerText = p.name;
-    if (pGender) pGender.innerHTML = `<span class="gen-badge ${gMeta.badgeCls}">${gMeta.label}</span> • ${p.sex === 'M' ? 'Nam' : 'Nữ'} • Tên gốc: ${p.raw_name}`;
+    if (pGender) pGender.innerHTML = `<span class="gen-badge ${gMeta.badgeCls}">${gMeta.label}</span> • ${p.sex === 'M' ? 'Nam' : (p.sex === 'F' ? 'Nữ' : 'Chưa xác định')} • Tên gốc: ${p.raw_name}`;
     if (pFsid) pFsid.innerText = `FSID: ${p.fsid || p.id}`;
 
     let factsHtml = `<div>• <strong>Ngày sinh:</strong> ${p.birth && p.birth.date ? p.birth.date : 'Chưa có dữ kiện'} ${p.birth && p.birth.place ? `(${p.birth.place})` : ''}</div>`;
@@ -1315,7 +1637,12 @@ function openPersonProfile(pid) {
             const par = appData.people[parId];
             if (par) {
                 const gPar = getGenerationMeta(par.id);
-                relsHtml += `<a class="rel-link" onclick="openPersonProfile('${par.id}')"><span class="gen-badge ${gPar.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gPar.label.split('·')[0].trim()}</span> 👤 ${par.name} (${par.sex === 'M' ? 'Cha' : 'Mẹ'})</a>`;
+                const parAv = resolvePersonAvatar(par);
+                const parIcon = parAv && parAv.icon ? parAv.icon : (par.sex === 'M' ? '👨' : (par.sex === 'F' ? '👩' : '👤'));
+                const parThumb = (parAv && !parAv.isPlaceholder && parAv.url)
+                    ? `<span class="rel-thumb-box"><img src="${parAv.url}" alt="${par.name}" class="rel-thumb-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'rel-thumb-fallback\\'>${parIcon}</span>'"/></span>`
+                    : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${parIcon}</span></span>`;
+                relsHtml += `<a class="rel-link" onclick="openPersonProfile('${par.id}')">${parThumb}<span class="gen-badge ${gPar.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gPar.label.split('·')[0].trim()}</span> ${par.name} (${par.sex === 'M' ? 'Cha' : (par.sex === 'F' ? 'Mẹ' : 'Phụ huynh')})</a>`;
             }
         });
     }
@@ -1325,7 +1652,11 @@ function openPersonProfile(pid) {
             const sp = appData.people[spId];
             if (sp) {
                 const gSp = getGenerationMeta(sp.id);
-                relsHtml += `<a class="rel-link" onclick="openPersonProfile('${sp.id}')"><span class="gen-badge ${gSp.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gSp.label.split('·')[0].trim()}</span> 💍 ${sp.name}</a>`;
+                const spAv = resolvePersonAvatar(sp);
+                const spThumb = (spAv && !spAv.isPlaceholder && spAv.url)
+                    ? `<span class="rel-thumb-box"><img src="${spAv.url}" alt="${sp.name}" class="rel-thumb-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'rel-thumb-fallback\\'>💍</span>'"/></span>`
+                    : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">💍</span></span>`;
+                relsHtml += `<a class="rel-link" onclick="openPersonProfile('${sp.id}')">${spThumb}<span class="gen-badge ${gSp.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gSp.label.split('·')[0].trim()}</span> ${sp.name}</a>`;
             }
         });
     }
@@ -1335,7 +1666,12 @@ function openPersonProfile(pid) {
             const ch = appData.people[chId];
             if (ch) {
                 const gCh = getGenerationMeta(ch.id);
-                relsHtml += `<a class="rel-link" onclick="openPersonProfile('${ch.id}')"><span class="gen-badge ${gCh.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gCh.label.split('·')[0].trim()}</span> 👶 ${ch.name}</a>`;
+                const chAv = resolvePersonAvatar(ch);
+                const chIcon = chAv && chAv.childIcon ? chAv.childIcon : (ch.sex === 'M' ? '👦' : (ch.sex === 'F' ? '👧' : '👤'));
+                const chThumb = (chAv && !chAv.isPlaceholder && chAv.url)
+                    ? `<span class="rel-thumb-box"><img src="${chAv.url}" alt="${ch.name}" class="rel-thumb-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'rel-thumb-fallback\\'>${chIcon}</span>'"/></span>`
+                    : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${chIcon}</span></span>`;
+                relsHtml += `<a class="rel-link" onclick="openPersonProfile('${ch.id}')">${chThumb}<span class="gen-badge ${gCh.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gCh.label.split('·')[0].trim()}</span> ${ch.name}</a>`;
             }
         });
     }
@@ -1358,13 +1694,26 @@ function openPersonProfile(pid) {
 function openFamilyProfile(fid) {
     const f = appData.families[fid];
     if (!f) return;
-    window.location.hash = `#/family/${fid}`;
+    const targetHash = `#/family/${fid}`;
+    if (window.location.hash !== targetHash) {
+        window.history.replaceState(null, '', targetHash);
+    }
     document.querySelectorAll(".view-section").forEach(s => s.classList.remove("active"));
+    document.querySelectorAll(".nav-item-btn").forEach(b => b.classList.remove("active"));
+    const navGiaPha = document.getElementById("nav_gia_pha");
+    if (navGiaPha) navGiaPha.classList.add("active");
     const sec = document.getElementById("view_family");
     if (sec) sec.classList.add("active");
 
-    const fMeta = getFamilyGenerationMeta(fid);
     const husb = appData.people[f.husband], wife = appData.people[f.wife];
+    const famName = `${husb ? husb.name : 'Chưa rõ'} & ${wife ? wife.name : 'Chưa rõ'}`;
+    updatePageContext(window.location.hash, {
+        type: "FAMILY",
+        territory: "gia_pha",
+        title: `Nhánh ${famName} • Gia Đình`
+    });
+
+    const fMeta = getFamilyGenerationMeta(fid);
     const fContainer = document.getElementById("familyProfileContainer");
     const fBadge = document.getElementById("f_gen_badge");
     const fTitle = document.getElementById("f_title");
@@ -1385,11 +1734,21 @@ function openFamilyProfile(fid) {
     let pHtml = "";
     if (husb) {
         const gH = getGenerationMeta(husb.id);
-        pHtml += `<a class="rel-link" onclick="openPersonProfile('${husb.id}')"><span class="gen-badge ${gH.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gH.label.split('·')[0].trim()}</span> 👨 Người chồng: ${husb.name}</a>`;
+        const hAv = resolvePersonAvatar(husb);
+        const hIcon = hAv && hAv.icon ? hAv.icon : '👨';
+        const hThumb = (hAv && !hAv.isPlaceholder && hAv.url)
+            ? `<span class="rel-thumb-box"><img src="${hAv.url}" alt="${husb.name}" class="rel-thumb-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'rel-thumb-fallback\\'>${hIcon}</span>'"/></span>`
+            : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${hIcon}</span></span>`;
+        pHtml += `<a class="rel-link" onclick="openPersonProfile('${husb.id}')">${hThumb}<span class="gen-badge ${gH.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gH.label.split('·')[0].trim()}</span> Người chồng: ${husb.name}</a>`;
     }
     if (wife) {
         const gW = getGenerationMeta(wife.id);
-        pHtml += `<a class="rel-link" onclick="openPersonProfile('${wife.id}')"><span class="gen-badge ${gW.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gW.label.split('·')[0].trim()}</span> 👩 Người vợ: ${wife.name}</a>`;
+        const wAv = resolvePersonAvatar(wife);
+        const wIcon = wAv && wAv.icon ? wAv.icon : '👩';
+        const wThumb = (wAv && !wAv.isPlaceholder && wAv.url)
+            ? `<span class="rel-thumb-box"><img src="${wAv.url}" alt="${wife.name}" class="rel-thumb-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'rel-thumb-fallback\\'>${wIcon}</span>'"/></span>`
+            : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${wIcon}</span></span>`;
+        pHtml += `<a class="rel-link" onclick="openPersonProfile('${wife.id}')">${wThumb}<span class="gen-badge ${gW.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gW.label.split('·')[0].trim()}</span> Người vợ: ${wife.name}</a>`;
     }
     if (fParents) fParents.innerHTML = pHtml;
 
@@ -1399,7 +1758,12 @@ function openFamilyProfile(fid) {
             const c = appData.people[cid];
             if (c) {
                 const gC = getGenerationMeta(c.id);
-                cHtml += `<a class="rel-link" onclick="openPersonProfile('${c.id}')"><span class="gen-badge ${gC.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gC.label.split('·')[0].trim()}</span> 👶 ${c.name}</a>`;
+                const cAv = resolvePersonAvatar(c);
+                const cIcon = cAv && cAv.childIcon ? cAv.childIcon : (c.sex === 'M' ? '👦' : (c.sex === 'F' ? '👧' : '👤'));
+                const cThumb = (cAv && !cAv.isPlaceholder && cAv.url)
+                    ? `<span class="rel-thumb-box"><img src="${cAv.url}" alt="${c.name}" class="rel-thumb-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'rel-thumb-fallback\\'>${cIcon}</span>'"/></span>`
+                    : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${cIcon}</span></span>`;
+                cHtml += `<a class="rel-link" onclick="openPersonProfile('${c.id}')">${cThumb}<span class="gen-badge ${gC.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gC.label.split('·')[0].trim()}</span> ${c.name}</a>`;
             }
         });
     } else {
@@ -1506,14 +1870,6 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-function bindPublicationHeaders(data) {
-    document.title = "GIÒNG HỌ TRẦN TRỌNG THU — Cây Gia Phả & Ấn Phẩm Di Sản";
-    const heroTitle = document.getElementById("heroPublicationTitle");
-    if (heroTitle) heroTitle.innerText = "Giòng Họ Trần Trọng Thu";
-    const footerPub = document.getElementById("footerPublication");
-    if (footerPub) footerPub.innerText = data.publication || "Ấn phẩm Di sản Gia tộc";
-}
-
 function bindStats(stats) {
     if (!stats) return;
     const elPeopleCount = document.getElementById("peopleTotalCount");
@@ -1537,23 +1893,58 @@ function renderHomePublicationLanding() {
     const rootId = appData.rootAnchor || Object.keys(people)[0];
     const rootPerson = people[rootId];
 
-    // 1. SECTION 1: Dynamic Hero Lede & Subject Anchor
+    // 1. BLOCK 01: Dynamic Hero Lede & Subject Anchor
     const heroAnchorEl = document.getElementById("homeHeroAnchor");
     if (heroAnchorEl) {
         if (rootPerson) {
-            const rootName = rootPerson.name || "Tiền nhân khởi tổ";
+            const rootName = rootPerson.name || "cụ Giuse Trần Trọng Thu";
             const bYear = rootPerson.birth && rootPerson.birth.date ? rootPerson.birth.date.replace(/[^0-9]/g, '').slice(0, 4) : "1872";
             const dYear = rootPerson.death && rootPerson.death.date ? rootPerson.death.date.slice(-4) : "1969";
             const bPlace = (rootPerson.birth && rootPerson.birth.place) ? rootPerson.birth.place.split(',')[0].trim() : "Thanh Hóa";
             const genLevels = window.maxDerivedGenLevel ? (window.maxDerivedGenLevel + 1) : 5;
             
-            heroAnchorEl.innerHTML = `Một hệ thống ấn phẩm bảo tồn và truyền tải lịch sử gia đình, ký ức nếp nhà và phả hệ huyết thống. Bắt đầu từ cội nguồn cụ <strong>${escapeHtml(rootName)}</strong> (${bYear} – ${dYear}) tại ${escapeHtml(bPlace)}, tiếp nối qua ${genLevels} thế hệ với ${stats.individuals || 223} thành viên đã và đang cùng chung dòng chảy.`;
+            heroAnchorEl.innerHTML = `Dòng họ bắt đầu từ cụ <strong>${escapeHtml(rootName)}</strong> (${bYear}–${dYear}) tại ${escapeHtml(bPlace)}, trải qua hơn 150 năm với ${genLevels} thế hệ tiếp nối.`;
         } else {
-            heroAnchorEl.innerText = "Một hệ thống ấn phẩm bảo tồn và truyền tải lịch sử gia đình, ký ức nếp nhà, tài liệu lưu trữ và quan hệ phả hệ huyết thống qua các thế hệ.";
+            heroAnchorEl.innerText = "Dòng họ bắt đầu từ cụ Giuse Trần Trọng Thu (1872–1969) tại Thanh Hóa, trải qua hơn 150 năm với 5 thế hệ tiếp nối.";
         }
     }
 
-    // 2. SECTION 2: Dynamic Territory Card Metas
+    // 2. BLOCK 02: Dynamic Human Memory Spotlight (Bà Sa / Cụ Thư)
+    const spotlightContent = document.getElementById("homeSpotlightContent");
+    if (spotlightContent) {
+        const memories = appData.memories || [];
+        if (memories.length > 0) {
+            // Default to memory 0 (Bà Sa) as recommended in brief, easily configurable
+            const mem = memories[0];
+            const title = mem.title ? mem.title.replace(/^📖\s*/, '') : "Ký ức tiền nhân";
+            const personName = mem.personName ? ` — ${mem.personName.split('@')[0].trim()}` : '';
+            const fullTitle = `${title}${personName}`;
+            // Clean passage from memory story without altering facts
+            const passage = mem.story ? (mem.story.length > 290 ? mem.story.slice(0, 290).trim() + '...' : mem.story) : '';
+            
+            spotlightContent.innerHTML = `
+                <h3 class="box-title">${escapeHtml(fullTitle)}</h3>
+                <p class="box-passage">${escapeHtml(passage)}</p>
+                <div class="box-footer">
+                    <span>Ghi chép truyền khẩu · ${memories.length} mẩu ký ức</span>
+                    <a class="box-link" href="#/gia-pha/ky-uc" onclick="navigateRoute('/gia-pha/ky-uc')">Đọc toàn bộ ký ức này →</a>
+                </div>
+            `;
+        } else {
+            const spotlightSec = document.getElementById("homeHumanSpotlight");
+            if (spotlightSec) spotlightSec.style.display = "none";
+        }
+    }
+
+    // 3. BLOCK 03: Explore People Count
+    const explorePeopleCount = document.getElementById("explorePeopleCount");
+    if (explorePeopleCount) {
+        const peopleCount = stats.individuals || Object.keys(people).length;
+        const genCount = window.maxDerivedGenLevel ? (window.maxDerivedGenLevel + 1) : 5;
+        explorePeopleCount.innerText = `Tra cứu hồ sơ ${peopleCount} thành viên qua ${genCount} thế hệ`;
+    }
+
+    // 4. BLOCK 04: Dynamic Territory Card Metas
     const genMeta = document.getElementById("homeGenealogyMeta");
     if (genMeta) {
         const peopleCount = stats.individuals || Object.keys(people).length;
@@ -1566,46 +1957,22 @@ function renderHomePublicationLanding() {
     if (machMeta && machData) {
         const articleCount = (machData.articles || machData.stories || []).length;
         const seriesCount = Object.keys(machData.series || {}).length;
-        machMeta.innerText = `${articleCount} bài viết & tự sự · ${seriesCount} tuyển tập chuyên đề`;
+        machMeta.innerText = `${articleCount} bài viết & tự sự · ${seriesCount} tuyển tập`;
     }
 
     const archiveMeta = document.getElementById("homeArchiveMeta");
-    if (archiveMeta && machData) {
-        const archiveCount = Object.keys(machData.archiveIndex || {}).length;
-        archiveMeta.innerText = archiveCount > 0 ? `${archiveCount} hiện vật đã số hóa` : "Đang tiếp nhận & số hóa tư liệu";
+    if (archiveMeta) {
+        // Honest empty/in-progress state - do not claim unindexed items or display "0 hiện vật"
+        archiveMeta.innerText = "Đang sưu tầm & số hóa tư liệu";
     }
 
-    // 3. SECTION 3A: Dynamic Human Memory Spotlight
-    const spotlightContent = document.getElementById("homeSpotlightContent");
-    if (spotlightContent) {
-        const memories = appData.memories || [];
-        if (memories.length > 0) {
-            const mem = memories[0];
-            const title = mem.title ? mem.title.replace(/^📖\s*/, '') : "Ký ức gia đình";
-            const personName = mem.personName ? ` — ${mem.personName.split('@')[0].trim()}` : '';
-            const fullTitle = `${title}${personName}`;
-            const passage = mem.story ? (mem.story.length > 280 ? mem.story.slice(0, 280).trim() + '...' : mem.story) : '';
-            
-            spotlightContent.innerHTML = `
-                <h3 class="box-title">${escapeHtml(fullTitle)}</h3>
-                <p class="box-passage">${escapeHtml(passage)}</p>
-                <div class="box-footer">
-                    <span>Ghi chép truyền khẩu · ${memories.length} mẩu chuyện</span>
-                    <a class="box-link" href="#/gia-pha/ky-uc" onclick="navigateRoute('/gia-pha/ky-uc')">Đọc toàn bộ ký ức →</a>
-                </div>
-            `;
-        } else {
-            const spotlightSec = document.getElementById("homeHumanSpotlight");
-            if (spotlightSec) spotlightSec.style.display = "none";
-        }
-    }
-
-    // 4. SECTION 3B: Dynamic Featured Essay from MẠCH
+    // 5. BLOCK 05: Dynamic Featured Essay from MẠCH (clara-001 default)
     const featureCard = document.getElementById("homeFeatureCard");
     if (featureCard && machData && (machData.articles || machData.stories)) {
         const allArticles = machData.articles || machData.stories;
-        let featured = allArticles.find(a => a.slug === '06-gio-va-ky-uc-gia-dinh') 
-                    || allArticles.find(a => a.slug === 'clara-001')
+        // Priority: clara-001 (human/epistolary voice) or 06-gio-va-ky-uc-gia-dinh
+        let featured = allArticles.find(a => a.slug === 'clara-001')
+                    || allArticles.find(a => a.slug === '06-gio-va-ky-uc-gia-dinh') 
                     || allArticles[0];
 
         if (featured) {
@@ -1615,9 +1982,10 @@ function renderHomePublicationLanding() {
             const auth = (machData.authors && authId) ? machData.authors[authId] : { name: "Ban Biên Tập MẠCH" };
             const isLetter = featured.articleType === 'letter' || (ser && ser.seriesType === 'epistolary');
             const tagLabel = ser ? `${(ser.shortTitle || ser.title).toUpperCase()}${featured.seriesOrder ? ' · ' + (isLetter ? 'SỐ' : 'BÀI') + ' ' + String(featured.seriesOrder).padStart(2, '0') : ''}` : 'MẠCH · NẾP NHÀ';
-            const excerpt = featured.excerpt || featured.deckLead || featured.subtitle || "Khám phá bài viết trong tập san MẠCH.";
+            const excerpt = featured.deckLead || featured.excerpt || featured.subtitle || "Khám phá bài viết trong tập san MẠCH.";
 
             featureCard.setAttribute("onclick", `navigateRoute('/mach/bai-viet/${featured.slug}')`);
+            featureCard.className = "comm-substance-box box-essay";
             featureCard.innerHTML = `
                 <div class="essay-tag">${escapeHtml(tagLabel)}</div>
                 <h3 class="box-title">${escapeHtml(featured.title)}</h3>
@@ -1630,35 +1998,24 @@ function renderHomePublicationLanding() {
         }
     }
 
-    // 5. SECTION 4: Explore People Count
-    const explorePeopleCount = document.getElementById("explorePeopleCount");
-    if (explorePeopleCount) {
-        const peopleCount = stats.individuals || Object.keys(people).length;
-        const genCount = window.maxDerivedGenLevel ? (window.maxDerivedGenLevel + 1) : 5;
-        explorePeopleCount.innerText = `Tra cứu hồ sơ ${peopleCount} thành viên qua ${genCount} thế hệ`;
-    }
-
-    // 6. SECTION 5: Dynamic Substance Facts
+    // 6. BLOCK 06: Dynamic Substance Facts (Compact Scale Line - 223 / 68 / 5 thế hệ)
     const substanceFacts = document.getElementById("homeSubstanceFacts");
     if (substanceFacts) {
         const peopleCount = stats.individuals || Object.keys(people).length;
         const famCount = stats.families || Object.keys(appData.families || {}).length;
         const genCount = window.maxDerivedGenLevel ? (window.maxDerivedGenLevel + 1) : 5;
         const startYear = (rootPerson && rootPerson.birth && rootPerson.birth.date) ? rootPerson.birth.date.replace(/[^0-9]/g, '').slice(0, 4) : "1872";
-        const articleCount = (machData && (machData.articles || machData.stories)) ? (machData.articles || machData.stories).length : 19;
 
         substanceFacts.innerHTML = `
             <div class="fact-row">
-                <span class="fact-label">Quy mô hiện tại:</span>
+                <span class="fact-label">Quy mô ghi nhận:</span>
                 <span class="fact-val"><strong>${peopleCount}</strong> thành viên</span>
                 <span class="fact-sep">·</span>
                 <span class="fact-val"><strong>${famCount}</strong> gia đình</span>
                 <span class="fact-sep">·</span>
                 <span class="fact-val"><strong>${genCount}</strong> thế hệ</span>
                 <span class="fact-sep">·</span>
-                <span class="fact-val"><strong>${articleCount}</strong> bài viết Mạch</span>
-                <span class="fact-sep">·</span>
-                <span class="fact-val">Niên biểu từ <strong>${startYear}</strong></span>
+                <span class="fact-val">Khởi nguồn từ năm <strong>${startYear}</strong></span>
             </div>
         `;
     }
@@ -1854,6 +2211,12 @@ function openStoryDetail(slug) {
     if (storySec) storySec.classList.add("active");
     const machNav = document.getElementById("nav_mach");
     if (machNav) machNav.classList.add("active");
+
+    updatePageContext(window.location.hash, {
+        type: "STORY",
+        territory: "mach",
+        title: `${story.title} • Mạch`
+    });
 
     renderArticleComposition(story, machData.media || {}, machData.authors || {}, machData.series || {});
     window.scrollTo(0, 0);
@@ -2180,6 +2543,12 @@ function openSeriesDetail(slug) {
     const machNav = document.getElementById("nav_mach");
     if (machNav) machNav.classList.add("active");
 
+    updatePageContext(window.location.hash, {
+        type: "SERIES",
+        territory: "mach",
+        title: `${ser.title} • Tuyển Tập Mạch`
+    });
+
     const authId = (ser.authorIds && ser.authorIds.length > 0) ? ser.authorIds[0] : ser.authorId;
     const auth = (machData.authors && authId) ? machData.authors[authId] : { name: "Ban Biên Tập" };
     const isEpistolary = ser.seriesType === 'epistolary';
@@ -2235,6 +2604,12 @@ function openAuthorDetail(authorId) {
     if (sec) sec.classList.add("active");
     const machNav = document.getElementById("nav_mach");
     if (machNav) machNav.classList.add("active");
+
+    updatePageContext(window.location.hash, {
+        type: "AUTHOR",
+        territory: "mach",
+        title: `${auth.name} • Tác Giả Mạch`
+    });
 
     const headerCard = document.getElementById("authorHeaderCard");
     if (headerCard) {

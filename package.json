@@ -1,0 +1,25 @@
+{
+  "name": "family-calendar",
+  "version": "1.0.0",
+  "description": "Hệ thống số hóa phả hệ và lịch gia đình trực tuyến của Gia phả nhà ông Trần Trọng Thu.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuantudo/family-calendar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tuantudo/family-calendar/issues"
+  },
+  "homepage": "https://github.com/tuantudo/family-calendar#readme"
+}

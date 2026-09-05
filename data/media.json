@@ -1,0 +1,2962 @@
+{
+  "MEDIA_FS_G1B5-W5Y": {
+    "assetId": "MEDIA_FS_G1B5-W5Y",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G1B5-W5Y.jpg",
+    "sha256": "1025209a90b628c7f430135b7d1d93efcba4285925d3cefcd16dbebf520d94c5",
+    "byteSize": 3274,
+    "source": "FamilySearch",
+    "sourceId": "G1B5-W5Y",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/j4x7q/thumb200s.jpg",
+      "originalName": "Maria Nguyễn Thị Hồng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G1F2-5PG": {
+    "assetId": "MEDIA_FS_G1F2-5PG",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G1F2-5PG.jpg",
+    "sha256": "c2a6775f74c91d4d0c3df968122fd4a7201e4951448169683118e22ba6c1c5ab",
+    "byteSize": 6172,
+    "source": "FamilySearch",
+    "sourceId": "G1F2-5PG",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/kw30q/thumb200s.jpg",
+      "originalName": "Trương Xuân Hạnh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G1F2-5RM": {
+    "assetId": "MEDIA_FS_G1F2-5RM",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G1F2-5RM.jpg",
+    "sha256": "0c05f6003092f47e4a47c5954de3002f6af6e2a1256d173a7a05d2bddddd8b19",
+    "byteSize": 5710,
+    "source": "FamilySearch",
+    "sourceId": "G1F2-5RM",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/pirxp/thumb200s.jpg",
+      "originalName": "Trương Thị Hồng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G1F2-LXL": {
+    "assetId": "MEDIA_FS_G1F2-LXL",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G1F2-LXL.jpg",
+    "sha256": "0a3c625a5ea1e1f9011df774105610f996b6d54578f4a01460735742f9af8731",
+    "byteSize": 4881,
+    "source": "FamilySearch",
+    "sourceId": "G1F2-LXL",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/kjrxp/thumb200s.jpg",
+      "originalName": "Trương Công Tân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G1F2-VPV": {
+    "assetId": "MEDIA_FS_G1F2-VPV",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G1F2-VPV.jpg",
+    "sha256": "a9e44e7a7fa16dd5f6246721e88cff4ca30c0250173ced11f6494e3520da7269",
+    "byteSize": 4576,
+    "source": "FamilySearch",
+    "sourceId": "G1F2-VPV",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/aw30q/thumb200s.jpg",
+      "originalName": "Trương Thị Hợi",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G1F2-X1Y": {
+    "assetId": "MEDIA_FS_G1F2-X1Y",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G1F2-X1Y.jpg",
+    "sha256": "f6ce9bf03bcba11558bd03d756a671f54ebbbba3eac400080e521d4d29c82001",
+    "byteSize": 4523,
+    "source": "FamilySearch",
+    "sourceId": "G1F2-X1Y",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/zw30q/thumb200s.jpg",
+      "originalName": "Trương Thị Liên",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G1FJ-P31": {
+    "assetId": "MEDIA_FS_G1FJ-P31",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G1FJ-P31.jpg",
+    "sha256": "39c40ffc206d565540785394607bcd1088e38632f0e2a1c78bdcf127d2bfa1c9",
+    "byteSize": 5400,
+    "source": "FamilySearch",
+    "sourceId": "G1FJ-P31",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/jirxp/thumb200s.jpg",
+      "originalName": "Trương Văn Định",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G1FJ-RY7": {
+    "assetId": "MEDIA_FS_G1FJ-RY7",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G1FJ-RY7.jpg",
+    "sha256": "1f81799595a71c7b5d33d36b42f85afaa594a818a6f3d9c3e1db144ee56bb33a",
+    "byteSize": 5803,
+    "source": "FamilySearch",
+    "sourceId": "G1FJ-RY7",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/6epxp/thumb200s.jpg",
+      "originalName": "Trương Văn Năm",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G1FL-367": {
+    "assetId": "MEDIA_FS_G1FL-367",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G1FL-367.jpg",
+    "sha256": "62bb8e7e15297caf93d248e749d0738a412f4527aa19816121350a0628db8fb6",
+    "byteSize": 4291,
+    "source": "FamilySearch",
+    "sourceId": "G1FL-367",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/qw30q/thumb200s.jpg",
+      "originalName": "Trương Văn Bạo",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G1FL-QF7": {
+    "assetId": "MEDIA_FS_G1FL-QF7",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G1FL-QF7.jpg",
+    "sha256": "40e0901c05bc8c33c0e5a735d6893e3e29694ef99b73d84ced97715080798985",
+    "byteSize": 5387,
+    "source": "FamilySearch",
+    "sourceId": "G1FL-QF7",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/2w30q/thumb200s.jpg",
+      "originalName": "Trương Thị Chức - Cẩm Tú",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G1FV-RMH": {
+    "assetId": "MEDIA_FS_G1FV-RMH",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G1FV-RMH.jpg",
+    "sha256": "1b90cb01703ddb58395af1268ed737e2b9d74d821337b0ceeb0f0ba5d64605d8",
+    "byteSize": 5570,
+    "source": "FamilySearch",
+    "sourceId": "G1FV-RMH",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/5fpxp/thumb200s.jpg",
+      "originalName": "Hà Thị Rì",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G1X9-1Z3": {
+    "assetId": "MEDIA_FS_G1X9-1Z3",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G1X9-1Z3.jpg",
+    "sha256": "d4f4006bf85ee879ec084db3eaee53600a1bc769e294877ee99bba233bb19cb7",
+    "byteSize": 4298,
+    "source": "FamilySearch",
+    "sourceId": "G1X9-1Z3",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/wopwp/thumb200s.jpg",
+      "originalName": "Nicola Nguyễn Hải Đông",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G1XS-W6K": {
+    "assetId": "MEDIA_FS_G1XS-W6K",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G1XS-W6K.jpg",
+    "sha256": "52664037d2dec95ebf471f3711c3d7b9b869090907fbc8cc82ccbe4022713166",
+    "byteSize": 5116,
+    "source": "FamilySearch",
+    "sourceId": "G1XS-W6K",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ytpwp/thumb200s.jpg",
+      "originalName": "Maria Trần Khánh Lam",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G52M-87Y": {
+    "assetId": "MEDIA_FS_G52M-87Y",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G52M-87Y.jpg",
+    "sha256": "b75a4c895a49d95a631ec00192c40c586a5e41df8c5f523354c8b2c67c765e55",
+    "byteSize": 3575,
+    "source": "FamilySearch",
+    "sourceId": "G52M-87Y",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/xarvn/thumb200s.jpg",
+      "originalName": "Gioan Baotixita Hứa Trần Bảo Nguyên",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G52M-S2S": {
+    "assetId": "MEDIA_FS_G52M-S2S",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G52M-S2S.jpg",
+    "sha256": "6a878863485304842606eba08e390ed4b0197daf9d80039958c30426691cd305",
+    "byteSize": 3978,
+    "source": "FamilySearch",
+    "sourceId": "G52M-S2S",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/sarvn/thumb200s.jpg",
+      "originalName": "Antôn Hứa Đình Hợp",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5F2-89P": {
+    "assetId": "MEDIA_FS_G5F2-89P",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5F2-89P.jpg",
+    "sha256": "229b2888f3ae4c1341d6678b7ac144c44791e18553a3f30a4f49e1d302b240e6",
+    "byteSize": 6102,
+    "source": "FamilySearch",
+    "sourceId": "G5F2-89P",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/5zp6o/thumb200s.jpg",
+      "originalName": "Giuse Bùi Gia Thiện",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5F9-ZMZ": {
+    "assetId": "MEDIA_FS_G5F9-ZMZ",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5F9-ZMZ.jpg",
+    "sha256": "65398f294a3ba46ae3a99ffc151c229c2620ec35ca8bbd487026828a7406dfc7",
+    "byteSize": 5028,
+    "source": "FamilySearch",
+    "sourceId": "G5F9-ZMZ",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/szp6o/thumb200s.jpg",
+      "originalName": "Anna Nguyễn Thanh Vân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5JG-2M7": {
+    "assetId": "MEDIA_FS_G5JG-2M7",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5JG-2M7.jpg",
+    "sha256": "2b9c4fdd1311b7f2e82c69ade2a4cfaad6ef335fb60378dab280572213e713a0",
+    "byteSize": 4213,
+    "source": "FamilySearch",
+    "sourceId": "G5JG-2M7",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/f9dnn/thumb200s.jpg",
+      "originalName": "Nguyễn Đăng Bảo",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5JG-38D": {
+    "assetId": "MEDIA_FS_G5JG-38D",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5JG-38D.jpg",
+    "sha256": "6280c738bb4ce3eadc4e52b2688e206811e1b9379c17180fea81cd841ce93087",
+    "byteSize": 4045,
+    "source": "FamilySearch",
+    "sourceId": "G5JG-38D",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ebdnn/thumb200s.jpg",
+      "originalName": "Nguyễn Đăng Quang Anh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5JL-6W4": {
+    "assetId": "MEDIA_FS_G5JL-6W4",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5JL-6W4.jpg",
+    "sha256": "5e4081d0bd47b802249f70eddfece5ed4a66ec713011404177bb3971479523fc",
+    "byteSize": 3583,
+    "source": "FamilySearch",
+    "sourceId": "G5JL-6W4",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ickpn/thumb200s.jpg",
+      "originalName": "Hà Thị Ngọc Diệp",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5JL-LWR": {
+    "assetId": "MEDIA_FS_G5JL-LWR",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5JL-LWR.jpg",
+    "sha256": "a67f0f06d64cd7be1e2c1258df757f769aa31b15bd279c3d1d12f231a3d4e29b",
+    "byteSize": 4274,
+    "source": "FamilySearch",
+    "sourceId": "G5JL-LWR",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/fckpn/thumb200s.jpg",
+      "originalName": "Hà Băng Di",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5JL-TLK": {
+    "assetId": "MEDIA_FS_G5JL-TLK",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5JL-TLK.jpg",
+    "sha256": "1465180d0607c05e58d8cef322c6c641e2243e4f5304ec0ea08919faa93be783",
+    "byteSize": 5452,
+    "source": "FamilySearch",
+    "sourceId": "G5JL-TLK",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/1ckpn/thumb200s.jpg",
+      "originalName": "Hà Khánh Chi",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5V1-7WJ": {
+    "assetId": "MEDIA_FS_G5V1-7WJ",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5V1-7WJ.jpg",
+    "sha256": "00043972d050c2439058d28250b9e2aab76dae7f30f35e2f9ef98a0ad12b6a66",
+    "byteSize": 4577,
+    "source": "FamilySearch",
+    "sourceId": "G5V1-7WJ",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/gl6on/thumb200s.jpg",
+      "originalName": "Phero Trần Trọng Nhân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X1-TNH": {
+    "assetId": "MEDIA_FS_G5X1-TNH",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X1-TNH.jpg",
+    "sha256": "21561b3b086868e505f99350916d6c6799e0510088bd0d92a91887b634afb24e",
+    "byteSize": 2873,
+    "source": "FamilySearch",
+    "sourceId": "G5X1-TNH",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ce7ln/thumb200s.jpg",
+      "originalName": "Maria Nguyễn Minh Thư",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-3NL": {
+    "assetId": "MEDIA_FS_G5X4-3NL",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-3NL.jpg",
+    "sha256": "6291665c31b7551b4393f34e0ee7f1242fae1118e5137b4baad342edef540992",
+    "byteSize": 5837,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-3NL",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/4d7ln/thumb200s.jpg",
+      "originalName": "Maria Nguyễn Thị Hồng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-48S": {
+    "assetId": "MEDIA_FS_G5X4-48S",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-48S.jpg",
+    "sha256": "bf640c47f627d6da2728833369c4d824a7cd15847fc18e47271c41cd6f10d9bb",
+    "byteSize": 7191,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-48S",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/n440q/thumb200s.jpg",
+      "originalName": "Giuse Trần Trọng Thu",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-4PY": {
+    "assetId": "MEDIA_FS_G5X4-4PY",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-4PY.jpg",
+    "sha256": "700edba69765102a1d2e5ada17b7447056a54e68f148f72ab07f67175f859243",
+    "byteSize": 5105,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-4PY",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/wf0nn/thumb200s.jpg",
+      "originalName": "Maria Phạm Uyên Phương",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-4TG": {
+    "assetId": "MEDIA_FS_G5X4-4TG",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-4TG.jpg",
+    "sha256": "0b471ee53eb48754463f8ac04b4877c2b6a3fcd44d4d1e00992170789efe85a3",
+    "byteSize": 3563,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-4TG",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/kw7ln/thumb200s.jpg",
+      "originalName": "Bonaventura Trần Văn Nghĩa",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-7L5": {
+    "assetId": "MEDIA_FS_G5X4-7L5",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-7L5.jpg",
+    "sha256": "1cd19a745865fb79c14800b5144ebbcf8c7683e962bf97d671f2d4272d2bcf28",
+    "byteSize": 5109,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-7L5",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/voyon/thumb200s.jpg",
+      "originalName": "Marria Nguyễn Thị Huyền",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-7WL": {
+    "assetId": "MEDIA_FS_G5X4-7WL",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-7WL.jpg",
+    "sha256": "edefb9ffd13c7195eb60976d98453bed873094586c64ef616fdcc72758e9fe6d",
+    "byteSize": 4348,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-7WL",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/a5rvn/thumb200s.jpg",
+      "originalName": "Gioan Trần Trọng Thả",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-87R": {
+    "assetId": "MEDIA_FS_G5X4-87R",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-87R.jpg",
+    "sha256": "6a532a8ba5ea4f4750bc7812ab33a931e86dc82260b5175a5510f38218f98c00",
+    "byteSize": 2931,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-87R",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/0e7ln/thumb200s.jpg",
+      "originalName": "Gioan Nguyễn Hồng Ân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-FMG": {
+    "assetId": "MEDIA_FS_G5X4-FMG",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-FMG.jpg",
+    "sha256": "2422df31d38a05e90430c0326c99d4cb5d8c58c3c899e698404ce2119d32ae04",
+    "byteSize": 4200,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-FMG",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/za7ln/thumb200s.jpg",
+      "originalName": "Bênađô Trần Trung Chính",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-G4M": {
+    "assetId": "MEDIA_FS_G5X4-G4M",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-G4M.jpg",
+    "sha256": "eb108f81bfc6b8bf171844ffccdeb591f033899623272827556b430e8a17ee33",
+    "byteSize": 4356,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-G4M",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/yv1nn/thumb200s.jpg",
+      "originalName": "Catarina Trần Thị Vị",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-MQF": {
+    "assetId": "MEDIA_FS_G5X4-MQF",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-MQF.jpg",
+    "sha256": "5390793c0001272e2c4e7c0e17b9f3e04cdf40bd14f548c98375672bfe280db7",
+    "byteSize": 5087,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-MQF",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/jf0nn/thumb200s.jpg",
+      "originalName": "Giuse Nguyễn Văn Khảo",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-NQX": {
+    "assetId": "MEDIA_FS_G5X4-NQX",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-NQX.jpg",
+    "sha256": "b6db4c9b35e7fdfc11592b9bd4f10a579232611efdb668612b888f5c937a9c9b",
+    "byteSize": 7407,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-NQX",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/s440q/thumb200s.jpg",
+      "originalName": "Nguyễn Thị Xuân - Út",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-QS6": {
+    "assetId": "MEDIA_FS_G5X4-QS6",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-QS6.jpg",
+    "sha256": "0f2f40539d53f39d5ca9ad91797136fd39c966a5009f6f08e5f39a6492f8ba54",
+    "byteSize": 5359,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-QS6",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/2d7ln/thumb200s.jpg",
+      "originalName": "Terresa Nguyễn Thị Ánh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-QXS": {
+    "assetId": "MEDIA_FS_G5X4-QXS",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-QXS.jpg",
+    "sha256": "4402660fcdf4828ebe85efbaa59f1b28d64332f6ca6b6a4d6a5d45b27076489b",
+    "byteSize": 4579,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-QXS",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/1h0nn/thumb200s.jpg",
+      "originalName": "Giuse Trần Hải Linh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-S11": {
+    "assetId": "MEDIA_FS_G5X4-S11",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-S11.jpg",
+    "sha256": "128b2bd20560af697761fffbc6d9f8785083c8b8418f3aefbd32fe6a13742476",
+    "byteSize": 5643,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-S11",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/9d7ln/thumb200s.jpg",
+      "originalName": "Giuse Nguyễn Sơn Lâm",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-SBN": {
+    "assetId": "MEDIA_FS_G5X4-SBN",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-SBN.jpg",
+    "sha256": "4072d6e0f95d6a66a0dfafd17696c1276f3f5d38f67a02c8ad3225a4de639372",
+    "byteSize": 5547,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-SBN",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/g5aln/thumb200s.jpg",
+      "originalName": "Terresa Trần Thị Phúc",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-SD7": {
+    "assetId": "MEDIA_FS_G5X4-SD7",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-SD7.jpg",
+    "sha256": "76934cdf867326253a48cdf55ee50cf31f5a84f4d17f725635bef022324464d5",
+    "byteSize": 4936,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-SD7",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/3oemn/thumb200s.jpg",
+      "originalName": "Teresa Trần Thị Nguyệt",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X4-ZNG": {
+    "assetId": "MEDIA_FS_G5X4-ZNG",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X4-ZNG.jpg",
+    "sha256": "62e46d84e95a2f4cf894e52b59712d369e0cd550fdfe62ca85381657c4c3489b",
+    "byteSize": 4137,
+    "source": "FamilySearch",
+    "sourceId": "G5X4-ZNG",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/xbw0o/thumb200s.jpg",
+      "originalName": "An-tôn Trần Trọng Thư",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X6-1DG": {
+    "assetId": "MEDIA_FS_G5X6-1DG",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X6-1DG.jpg",
+    "sha256": "1b9b4434dc273ad7770a283ad302d2a34354f0b1f3041847297692cb21c446d2",
+    "byteSize": 3852,
+    "source": "FamilySearch",
+    "sourceId": "G5X6-1DG",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/5j8on/thumb200s.jpg",
+      "originalName": "Lê Thị Tâm",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X6-1DK": {
+    "assetId": "MEDIA_FS_G5X6-1DK",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X6-1DK.jpg",
+    "sha256": "b51a02736d4da583961b2574909715cefb76a58fe7a00c403eaeb6c0a6879810",
+    "byteSize": 4131,
+    "source": "FamilySearch",
+    "sourceId": "G5X6-1DK",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/jt7on/thumb200s.jpg",
+      "originalName": "Lê Đức Thành",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X7-BT8": {
+    "assetId": "MEDIA_FS_G5X7-BT8",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X7-BT8.jpg",
+    "sha256": "80bf8951926c1fc0d9b6ec37681e19a3ab56595f11471b8fdb21aa6d6118031c",
+    "byteSize": 3756,
+    "source": "FamilySearch",
+    "sourceId": "G5X7-BT8",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/4etkn/thumb200s.jpg",
+      "originalName": "Bà Sa - Teresa Phạm Thị Hưng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X7-GBR": {
+    "assetId": "MEDIA_FS_G5X7-GBR",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X7-GBR.jpg",
+    "sha256": "7364082281aeb72e618ddbaad50563b4e5ea229eb9bd02c0bb7bf840e54c6631",
+    "byteSize": 5115,
+    "source": "FamilySearch",
+    "sourceId": "G5X7-GBR",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/7jcln/thumb200s.jpg",
+      "originalName": "Maria Madalena Nguyễn Thị Đào",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X7-SK8": {
+    "assetId": "MEDIA_FS_G5X7-SK8",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X7-SK8.jpg",
+    "sha256": "cf8de92893a7ffe259f0cd16c9c9a2f25e8aaa6dbe814f0d0be710f812246c58",
+    "byteSize": 3663,
+    "source": "FamilySearch",
+    "sourceId": "G5X7-SK8",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/e8hco/thumb200s.jpg",
+      "originalName": "Gioan Baotixita Trần Quốc Tuấn",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5X7-XG1": {
+    "assetId": "MEDIA_FS_G5X7-XG1",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5X7-XG1.jpg",
+    "sha256": "08c341cc0d4c36634f8acbf86efa65fb3c3e9f3f6bda03073489f1166e34cec7",
+    "byteSize": 5050,
+    "source": "FamilySearch",
+    "sourceId": "G5X7-XG1",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/288ln/thumb200s.jpg",
+      "originalName": "Maria Trần Thị Hân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-1D9": {
+    "assetId": "MEDIA_FS_G5XF-1D9",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-1D9.jpg",
+    "sha256": "936500c05645d8a3d7561ce5ed286dec66b68a57e4e26477a8d7bf6d94a99daa",
+    "byteSize": 3224,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-1D9",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/kqyon/thumb200s.jpg",
+      "originalName": "Trần Quốc Long",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-2MC": {
+    "assetId": "MEDIA_FS_G5XF-2MC",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-2MC.jpg",
+    "sha256": "80592f318d781c065e239ef8786a66e5d9eab5824d6bb2e64ce276f6414ca4f9",
+    "byteSize": 4532,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-2MC",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/hh6on/thumb200s.jpg",
+      "originalName": "Trần Văn Lương",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-39K": {
+    "assetId": "MEDIA_FS_G5XF-39K",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-39K.jpg",
+    "sha256": "910677eb47d069062edd11e938f12e5abcf4e301efd643429e8d0d9a0cd0b420",
+    "byteSize": 3419,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-39K",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/26rvn/thumb200s.jpg",
+      "originalName": "Maria Trần Ngọc Thiên Duyên",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-3ZF": {
+    "assetId": "MEDIA_FS_G5XF-3ZF",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-3ZF.jpg",
+    "sha256": "b393cf1b3c98201be3199430ad019bbe510f491657aae15398a7d5fe0b9c121a",
+    "byteSize": 4792,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-3ZF",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/bb7ln/thumb200s.jpg",
+      "originalName": "Teresa Trần Nhật Quỳnh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-6B7": {
+    "assetId": "MEDIA_FS_G5XF-6B7",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-6B7.jpg",
+    "sha256": "5f90d9d0cdadf7de49cfcc169d41bb9422f1526e4290ecc2ea45627a16db9a2f",
+    "byteSize": 3372,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-6B7",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/dhsvn/thumb200s.jpg",
+      "originalName": "Trần Thị Hoà",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-6BT": {
+    "assetId": "MEDIA_FS_G5XF-6BT",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-6BT.jpg",
+    "sha256": "b0d8979d838b35aaeb9220b57bab26fe7b686712c142de2208a2a9ee18ce4831",
+    "byteSize": 3544,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-6BT",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/5isvn/thumb200s.jpg",
+      "originalName": "Nguyễn Văn Hưng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-7NG": {
+    "assetId": "MEDIA_FS_G5XF-7NG",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-7NG.jpg",
+    "sha256": "a472fb9140aef439268dbb149fe5b3a62f2c1e0eb2cbe23fdcef9d59517c1d27",
+    "byteSize": 6365,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-7NG",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/avemn/thumb200s.jpg",
+      "originalName": "Teresa Trần Nguyễn Linh Giang",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-96C": {
+    "assetId": "MEDIA_FS_G5XF-96C",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-96C.jpg",
+    "sha256": "28c85ded71f1a711fb143927005c45488ce0ab423fa5b062311cbb984bb96676",
+    "byteSize": 4754,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-96C",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/el6on/thumb200s.jpg",
+      "originalName": "Teresa Trần Lệ Quyên",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-979": {
+    "assetId": "MEDIA_FS_G5XF-979",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-979.jpg",
+    "sha256": "72c1da41deacafaecd4b60d6b58ff06d6b888f22361aeaa9ec4211f641c46cf2",
+    "byteSize": 3435,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-979",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/qw7ln/thumb200s.jpg",
+      "originalName": "Inne Lê Thị Hoàng Thanh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-997": {
+    "assetId": "MEDIA_FS_G5XF-997",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-997.jpg",
+    "sha256": "835a4bec85e0a773649e8aae47547ae179a5d92eba2e00b455ca855984777c7d",
+    "byteSize": 4770,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-997",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/y7rvn/thumb200s.jpg",
+      "originalName": "Gioan Trần Nguyễn Xuân Phát",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-9LD": {
+    "assetId": "MEDIA_FS_G5XF-9LD",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-9LD.jpg",
+    "sha256": "871eb93f497ea83125c794f54ff1e1e33d908c6c0989d3cfac0d8ce7accb88b2",
+    "byteSize": 3532,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-9LD",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/708ln/thumb200s.jpg",
+      "originalName": "Maria Trần Nguyễn Linh Lam",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-9QL": {
+    "assetId": "MEDIA_FS_G5XF-9QL",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-9QL.jpg",
+    "sha256": "a9e0004aa2b64f376b931a862f7e6ddd4cee4ba048543542312438129103d228",
+    "byteSize": 6294,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-9QL",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/frlln/thumb200s.jpg",
+      "originalName": "Giuse Trần Minh Hiếu",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-C3K": {
+    "assetId": "MEDIA_FS_G5XF-C3K",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-C3K.jpg",
+    "sha256": "0aff86e41216cee675f47c6aebdad914a566885648cad17fb449ba7589fe00ea",
+    "byteSize": 4691,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-C3K",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/oh6on/thumb200s.jpg",
+      "originalName": "Trần Thị Liên",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-FJ1": {
+    "assetId": "MEDIA_FS_G5XF-FJ1",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-FJ1.jpg",
+    "sha256": "a82abc1008e42612836945698154b056962366aff79a2c64f5196d8ea2a41c06",
+    "byteSize": 3401,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-FJ1",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/hhsvn/thumb200s.jpg",
+      "originalName": "Nguyễn Văn Ngọc",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-HNP": {
+    "assetId": "MEDIA_FS_G5XF-HNP",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-HNP.jpg",
+    "sha256": "4cda9c7b45c48d4ff5b0af5b88f548ea6e28895b36a87d187c9d62bb2a2f16c2",
+    "byteSize": 3712,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-HNP",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/q5rvn/thumb200s.jpg",
+      "originalName": "Giuse Trần Xuân Hiệp",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-J4D": {
+    "assetId": "MEDIA_FS_G5XF-J4D",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-J4D.jpg",
+    "sha256": "036b64c4dd90e008c1d8b590f341fe25c7c7c21a1c233f0177debbc8af6df308",
+    "byteSize": 6685,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-J4D",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ityon/thumb200s.jpg",
+      "originalName": "Anna Nguyễn Thị Nhân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-KX1": {
+    "assetId": "MEDIA_FS_G5XF-KX1",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-KX1.jpg",
+    "sha256": "099ce6958db0b658af3bd99c2e8311b8d23a356b34fa25c2ea16cb5d04a5f94e",
+    "byteSize": 3982,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-KX1",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/vh6on/thumb200s.jpg",
+      "originalName": "Nguyễn Trần",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-L3L": {
+    "assetId": "MEDIA_FS_G5XF-L3L",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-L3L.jpg",
+    "sha256": "26c4f59851c602cc70d814ba321d107e04b1d3780534f4fee2df676d1694c890",
+    "byteSize": 3621,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-L3L",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/j5rvn/thumb200s.jpg",
+      "originalName": "Nguyễn Thị Thu Thuý",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-M3Y": {
+    "assetId": "MEDIA_FS_G5XF-M3Y",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-M3Y.jpg",
+    "sha256": "c35cbba70cd4e5806125f2a22536289102e60e5292e1fa4affb91047d1a95fd9",
+    "byteSize": 3210,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-M3Y",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/4h2mn/thumb200s.jpg",
+      "originalName": "Giuse Phạm Hữu Thanh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-M9D": {
+    "assetId": "MEDIA_FS_G5XF-M9D",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-M9D.jpg",
+    "sha256": "44bad099f91ad6f5957f421c7607fc51db93d206f6583789b75131f6c8b9f21c",
+    "byteSize": 4674,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-M9D",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/648ln/thumb200s.jpg",
+      "originalName": "Phanxico Nguyễn Văn Trung",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-N7S": {
+    "assetId": "MEDIA_FS_G5XF-N7S",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-N7S.jpg",
+    "sha256": "1e870ba10693c68327009315cdf8e857342753f39785812d7e141728166b73be",
+    "byteSize": 4037,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-N7S",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/sh6on/thumb200s.jpg",
+      "originalName": "Nguyễn Đức Tốt",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-Q6B": {
+    "assetId": "MEDIA_FS_G5XF-Q6B",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-Q6B.jpg",
+    "sha256": "4258bde8e7292447b9d7a6a58607194b2681c1f4e8d49ac6c21eeaaf9b484a8b",
+    "byteSize": 5229,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-Q6B",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/6b7ln/thumb200s.jpg",
+      "originalName": "Vinh Sơn Trần Nhật Quang",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-TK3": {
+    "assetId": "MEDIA_FS_G5XF-TK3",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-TK3.jpg",
+    "sha256": "8fda28e6fd02e765935abbdcc0957d5fe30524b000ea7c7f2f3a209ed90fd729",
+    "byteSize": 4357,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-TK3",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/rboxp/thumb200s.jpg",
+      "originalName": "Giuse Lã Văn Tiến",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-VYR": {
+    "assetId": "MEDIA_FS_G5XF-VYR",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-VYR.jpg",
+    "sha256": "49cb604b672d1525e4e417c5e173dd5edd6ee25816a994d305d29f8b10aa2c92",
+    "byteSize": 2922,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-VYR",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/tisvn/thumb200s.jpg",
+      "originalName": "Nguyễn Văn Tân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-XFS": {
+    "assetId": "MEDIA_FS_G5XF-XFS",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-XFS.jpg",
+    "sha256": "d1bfca10e00cf7deac9c64b2cf9174e3ec73cfa8c6294f6d3efefdebbbc94020",
+    "byteSize": 3846,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-XFS",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/48rvn/thumb200s.jpg",
+      "originalName": "An Tôn Trần Nguyễn Xuân Lộc",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-Z72": {
+    "assetId": "MEDIA_FS_G5XF-Z72",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-Z72.jpg",
+    "sha256": "c3601001301983d1864bbf75778477cf4f16bec05ac0d57a721e87889e25bd51",
+    "byteSize": 3418,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-Z72",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/pisvn/thumb200s.jpg",
+      "originalName": "Nguyễn Văn Mạnh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XF-ZGP": {
+    "assetId": "MEDIA_FS_G5XF-ZGP",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XF-ZGP.jpg",
+    "sha256": "338be7dc0eabe724d393f98b8c1b58869290dccc68a0a3913b2401f324532e10",
+    "byteSize": 5218,
+    "source": "FamilySearch",
+    "sourceId": "G5XF-ZGP",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/uh6on/thumb200s.jpg",
+      "originalName": "Nguyễn Trần X",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XN-46X": {
+    "assetId": "MEDIA_FS_G5XN-46X",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XN-46X.jpg",
+    "sha256": "0230b5663d70132e42e59e69a1c70da0b2d2a12ac58a9ea11cc06ba45ebf8169",
+    "byteSize": 8339,
+    "source": "FamilySearch",
+    "sourceId": "G5XN-46X",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/a640q/thumb200s.jpg",
+      "originalName": "Gioan Lã Văn Mão",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XN-6F8": {
+    "assetId": "MEDIA_FS_G5XN-6F8",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XN-6F8.jpg",
+    "sha256": "8d7413ca9fc330032223486ea49ff61897434dfb621a9b4c7ad70979ee1f9936",
+    "byteSize": 3046,
+    "source": "FamilySearch",
+    "sourceId": "G5XN-6F8",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/jzyvq/thumb200s.jpg",
+      "originalName": "Giuse Lã Xuân Hùng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XN-75K": {
+    "assetId": "MEDIA_FS_G5XN-75K",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XN-75K.jpg",
+    "sha256": "4a335d96453a7d3fdab98a54c2a712a5cf1c7d5eeb38c3aa1510bda8acfdfc76",
+    "byteSize": 5074,
+    "source": "FamilySearch",
+    "sourceId": "G5XN-75K",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/zbkpn/thumb200s.jpg",
+      "originalName": "Teresa Lã Thị Hiền",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XN-JC1": {
+    "assetId": "MEDIA_FS_G5XN-JC1",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XN-JC1.jpg",
+    "sha256": "46f69bb7a4cb6f60590c121414c548341b2d01476bd660c4766ec3d8cf5fa13c",
+    "byteSize": 4179,
+    "source": "FamilySearch",
+    "sourceId": "G5XN-JC1",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/87dnn/thumb200s.jpg",
+      "originalName": "Nguyễn Đăng Trường",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XN-MDR": {
+    "assetId": "MEDIA_FS_G5XN-MDR",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XN-MDR.jpg",
+    "sha256": "cfdfbe34499534b620890b5fe477244c209a0bc6b591a6f842803116ad5963cc",
+    "byteSize": 3688,
+    "source": "FamilySearch",
+    "sourceId": "G5XN-MDR",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ackpn/thumb200s.jpg",
+      "originalName": "Hà Văn Quyết",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XN-NWJ": {
+    "assetId": "MEDIA_FS_G5XN-NWJ",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XN-NWJ.jpg",
+    "sha256": "5e54970a1c7148f5a297103251b239e8248521edc1ecdc98ea3ab920d4d100e5",
+    "byteSize": 6078,
+    "source": "FamilySearch",
+    "sourceId": "G5XN-NWJ",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/t9dnn/thumb200s.jpg",
+      "originalName": "Lã Thị Hường",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XN-SV4": {
+    "assetId": "MEDIA_FS_G5XN-SV4",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XN-SV4.jpg",
+    "sha256": "184df32502134a7734d7c9f333752eabf38cd592e1eeff67188a2175d50482da",
+    "byteSize": 5292,
+    "source": "FamilySearch",
+    "sourceId": "G5XN-SV4",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/t7dnn/thumb200s.jpg",
+      "originalName": "Đinh Thị Xây",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XN-VB3": {
+    "assetId": "MEDIA_FS_G5XN-VB3",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XN-VB3.jpg",
+    "sha256": "63eef5b23d29553e6cb759f787ad78014c2bb8367fcd337f4ac8b3ff50fd8bc9",
+    "byteSize": 5041,
+    "source": "FamilySearch",
+    "sourceId": "G5XN-VB3",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/57dnn/thumb200s.jpg",
+      "originalName": "Lã Thị Thảo",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XQ-BHG": {
+    "assetId": "MEDIA_FS_G5XQ-BHG",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XQ-BHG.jpg",
+    "sha256": "b5c39bed6ad6d4ffa5ce16af2f34ea78be2365c203be4232237e3f6847b22e63",
+    "byteSize": 4398,
+    "source": "FamilySearch",
+    "sourceId": "G5XQ-BHG",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/5icln/thumb200s.jpg",
+      "originalName": "Gioakim Trần Đức Hạnh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XW-676": {
+    "assetId": "MEDIA_FS_G5XW-676",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XW-676.jpg",
+    "sha256": "6c5f2f56d1f9cbee3f331e1209f5eb3ab7c94b888afe31ca839b9a8da6f37248",
+    "byteSize": 4603,
+    "source": "FamilySearch",
+    "sourceId": "G5XW-676",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ma0nn/thumb200s.jpg",
+      "originalName": "Teresa Trần Thị Ngoan",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XW-7JZ": {
+    "assetId": "MEDIA_FS_G5XW-7JZ",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XW-7JZ.jpg",
+    "sha256": "87ebeb11543613c4e25ddab9c13b7aa234b29610756e891e887faf0b41dc2fb7",
+    "byteSize": 5105,
+    "source": "FamilySearch",
+    "sourceId": "G5XW-7JZ",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/qf0nn/thumb200s.jpg",
+      "originalName": "Teresa Trần Thị Nga",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XW-8KK": {
+    "assetId": "MEDIA_FS_G5XW-8KK",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XW-8KK.jpg",
+    "sha256": "04b17cb29b12ac52323499d8bfb5be4c6a39e8928e04452966b800aa0e30f24c",
+    "byteSize": 3990,
+    "source": "FamilySearch",
+    "sourceId": "G5XW-8KK",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/kgcln/thumb200s.jpg",
+      "originalName": "Giuse Nguyễn Huy Xuân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XW-BNB": {
+    "assetId": "MEDIA_FS_G5XW-BNB",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XW-BNB.jpg",
+    "sha256": "fb502962927243519cae2822f9d99fa42e5ef403e14b38132b5fea29362f2c47",
+    "byteSize": 4109,
+    "source": "FamilySearch",
+    "sourceId": "G5XW-BNB",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/aftkn/thumb200s.jpg",
+      "originalName": "Giuse Phạm Văn Hạnh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XW-DLM": {
+    "assetId": "MEDIA_FS_G5XW-DLM",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XW-DLM.jpg",
+    "sha256": "9aef100199110b60f6c29e34f32fecc1f7ef22c2de57a133348c5c727257fb65",
+    "byteSize": 4764,
+    "source": "FamilySearch",
+    "sourceId": "G5XW-DLM",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/oc7ln/thumb200s.jpg",
+      "originalName": "Lucia Nguyễn Thị Hà",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XW-GS1": {
+    "assetId": "MEDIA_FS_G5XW-GS1",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XW-GS1.jpg",
+    "sha256": "9efa3cc827d62ce6de40a879423373423c7e16473244001fba803f7a450cab54",
+    "byteSize": 3974,
+    "source": "FamilySearch",
+    "sourceId": "G5XW-GS1",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/786ln/thumb200s.jpg",
+      "originalName": "Mattheu Trần Văn Đạo",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XW-HCR": {
+    "assetId": "MEDIA_FS_G5XW-HCR",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XW-HCR.jpg",
+    "sha256": "6513436e784bf9807240d19b1b4889acddba41020d659150b3ad0b73e60170fe",
+    "byteSize": 4140,
+    "source": "FamilySearch",
+    "sourceId": "G5XW-HCR",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ttemn/thumb200s.jpg",
+      "originalName": "Phanxico Trần Văn Toàn",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XW-K4P": {
+    "assetId": "MEDIA_FS_G5XW-K4P",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XW-K4P.jpg",
+    "sha256": "f71269fb8951b5bb96e1a964bdf8418f1ad7328b3ee856f03c9f2957f5ad3652",
+    "byteSize": 4026,
+    "source": "FamilySearch",
+    "sourceId": "G5XW-K4P",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/mf0nn/thumb200s.jpg",
+      "originalName": "Tito Nguyễn Trần Thiên Khoa",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XW-TB3": {
+    "assetId": "MEDIA_FS_G5XW-TB3",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XW-TB3.jpg",
+    "sha256": "6984d06f224b9ca4147fd737c47ff878aafb2fee686c6707385014968d404cac",
+    "byteSize": 5482,
+    "source": "FamilySearch",
+    "sourceId": "G5XW-TB3",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/uf0nn/thumb200s.jpg",
+      "originalName": "Gioan Phạm Minh Hoàng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XW-X8X": {
+    "assetId": "MEDIA_FS_G5XW-X8X",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XW-X8X.jpg",
+    "sha256": "dadc03807bda807652b19a6dda199a704fdfff603b3486ee0a405187f5504197",
+    "byteSize": 5134,
+    "source": "FamilySearch",
+    "sourceId": "G5XW-X8X",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/n5aln/thumb200s.jpg",
+      "originalName": "Agnest Trần Thị Đức",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XW-XBH": {
+    "assetId": "MEDIA_FS_G5XW-XBH",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XW-XBH.jpg",
+    "sha256": "8c2392cb50fabeefaecca55b14f6bffeca844a49938e83b11807c62cca230f53",
+    "byteSize": 3725,
+    "source": "FamilySearch",
+    "sourceId": "G5XW-XBH",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/y30nn/thumb200s.jpg",
+      "originalName": "Giacôbê Trần Trung Kiêm",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XW-XH8": {
+    "assetId": "MEDIA_FS_G5XW-XH8",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XW-XH8.jpg",
+    "sha256": "44076350727e00f59f07c0f765e1ce2fa4169c59923ea3efa06bc1aee19ac5a0",
+    "byteSize": 5375,
+    "source": "FamilySearch",
+    "sourceId": "G5XW-XH8",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/3h0nn/thumb200s.jpg",
+      "originalName": "Maria Nguyễn Thị Oanh Thư",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-135": {
+    "assetId": "MEDIA_FS_G5XX-135",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-135.jpg",
+    "sha256": "75a64e82d9ffbcad254a6ca1f63bf096de52ab17fdf6d1a72a12f79cdbfd8729",
+    "byteSize": 4162,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-135",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/pdyln/thumb200s.jpg",
+      "originalName": "Maria Chiara Trần Lê Gia Linh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-16S": {
+    "assetId": "MEDIA_FS_G5XX-16S",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-16S.jpg",
+    "sha256": "844662873853a3ea6dd336325550f589461b9b79ea34d945527ce5d0e115f88a",
+    "byteSize": 4258,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-16S",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/e6rvn/thumb200s.jpg",
+      "originalName": "Maria Trần Thị Trang",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-1BH": {
+    "assetId": "MEDIA_FS_G5XX-1BH",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-1BH.jpg",
+    "sha256": "ebd68e2afa3dad94683242b41f0c345389fbd8bc584aea13a6d87332c3138ff0",
+    "byteSize": 3825,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-1BH",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/j6rvn/thumb200s.jpg",
+      "originalName": "Gioan Trần Đức Nam",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-1D8": {
+    "assetId": "MEDIA_FS_G5XX-1D8",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-1D8.jpg",
+    "sha256": "4a55cd1e84b7fe06a2cb28072256c3650649715e9ea17922e50e40d58356d94e",
+    "byteSize": 4709,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-1D8",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/tiyon/thumb200s.jpg",
+      "originalName": "Maria Lê Thị Phùng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-1M8": {
+    "assetId": "MEDIA_FS_G5XX-1M8",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-1M8.jpg",
+    "sha256": "47a2195262673bddffaa3527c1e48de36abec2c01c3e04f3fb57fb1cf7b95ae5",
+    "byteSize": 4893,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-1M8",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/rlyln/thumb200s.jpg",
+      "originalName": "Terexa Nguyễn Đào Ngọc Nhi",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-1N6": {
+    "assetId": "MEDIA_FS_G5XX-1N6",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-1N6.jpg",
+    "sha256": "9785adc01863be009a3955dfd0d0abef297294907a2fb157383ec89444b9abe3",
+    "byteSize": 4726,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-1N6",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/olyln/thumb200s.jpg",
+      "originalName": "Giuse Nguyễn Đào Minh Quân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-29P": {
+    "assetId": "MEDIA_FS_G5XX-29P",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-29P.jpg",
+    "sha256": "e06c6d894e4bdfc5960238db215e4a4d617f86b7fd7f8f1131f2be683c01ae6e",
+    "byteSize": 3851,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-29P",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/cdrvn/thumb200s.jpg",
+      "originalName": "Vũ Việt Anh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-29S": {
+    "assetId": "MEDIA_FS_G5XX-29S",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-29S.jpg",
+    "sha256": "4aa1e57ed590a1daae63038528ccc796e20b1be334069e18b2ac720fb17190b9",
+    "byteSize": 3746,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-29S",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/pu7on/thumb200s.jpg",
+      "originalName": "Lê Thị Vân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-2DJ": {
+    "assetId": "MEDIA_FS_G5XX-2DJ",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-2DJ.jpg",
+    "sha256": "5673fc8f7fca15195ae2e6f587f0214a041a889c6f22e280ffaa9b3e283b8f94",
+    "byteSize": 4502,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-2DJ",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/he2mn/thumb200s.jpg",
+      "originalName": "Anna Vũ Thị Hồng Duyên",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-2HY": {
+    "assetId": "MEDIA_FS_G5XX-2HY",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-2HY.jpg",
+    "sha256": "aff28eec21b5742c38699f933af4a0e9d7ada371cd2544d0438393d061765f97",
+    "byteSize": 3349,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-2HY",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/fk5ln/thumb200s.jpg",
+      "originalName": "Micae Nguyễn Văn Thìn",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-2Z9": {
+    "assetId": "MEDIA_FS_G5XX-2Z9",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-2Z9.jpg",
+    "sha256": "e422d91ddb5cf06f6a8fa049b360c849e9726109681344208e1e09167f3d2506",
+    "byteSize": 4210,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-2Z9",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/m38ln/thumb200s.jpg",
+      "originalName": "Anton Nguyễn Trung Hiếu",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-427": {
+    "assetId": "MEDIA_FS_G5XX-427",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-427.jpg",
+    "sha256": "94c359eb148228bd7ae2497dcaa161230d4907c6df047c2b728a4ce3ab10de41",
+    "byteSize": 3502,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-427",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/9x7on/thumb200s.jpg",
+      "originalName": "Trần Thị Nhàn",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-43Z": {
+    "assetId": "MEDIA_FS_G5XX-43Z",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-43Z.jpg",
+    "sha256": "7147107f2fe292ecbc529b6977dadff672e76f967c4c5ab6b54c1a818228556a",
+    "byteSize": 3662,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-43Z",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/4drvn/thumb200s.jpg",
+      "originalName": "Nguyễn Thị Thuý",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-4KD": {
+    "assetId": "MEDIA_FS_G5XX-4KD",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-4KD.jpg",
+    "sha256": "b996febf6305c51a92ed7dc859a4706c25ecfd5b3ea2c718236a0c10b4ef4d7c",
+    "byteSize": 4062,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-4KD",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/1v7on/thumb200s.jpg",
+      "originalName": "Lê Thị Oanh - đi tu",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-578": {
+    "assetId": "MEDIA_FS_G5XX-578",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-578.jpg",
+    "sha256": "1810e74232de8b46c7c62b813a32c4da35d4466ddadd417ee244c20fffcceeee",
+    "byteSize": 3564,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-578",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/eqpmn/thumb200s.jpg",
+      "originalName": "Giuse Trần Minh Đăng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-59X": {
+    "assetId": "MEDIA_FS_G5XX-59X",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-59X.jpg",
+    "sha256": "caa88a188d150307fc246ecb301b44a5f6f70b70b13380ff11ee0cb81a5ef0f8",
+    "byteSize": 6713,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-59X",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/b38ln/thumb200s.jpg",
+      "originalName": "Yxave Nguyễn Thị Ngọc",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-5J4": {
+    "assetId": "MEDIA_FS_G5XX-5J4",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-5J4.jpg",
+    "sha256": "8aa9da7b04c26e2a0876dd8144ba6da6535d718a4506a1527cbc13bfc171b88a",
+    "byteSize": 4461,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-5J4",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/7f7ln/thumb200s.jpg",
+      "originalName": "Nguyễn Văn Bình",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-5LQ": {
+    "assetId": "MEDIA_FS_G5XX-5LQ",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-5LQ.jpg",
+    "sha256": "ac88fc3eda894ef15af685b32427a2b97a688efec31adb2aa12ccc5d67a23212",
+    "byteSize": 4438,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-5LQ",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/i62mn/thumb200s.jpg",
+      "originalName": "Gioan Baotixita Trần Ngọc Tâm",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-5VP": {
+    "assetId": "MEDIA_FS_G5XX-5VP",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-5VP.jpg",
+    "sha256": "d9fb27d3e56f2031f75b9ddd7ca4a75bb2165146282786ceecc653a08cc5f50e",
+    "byteSize": 2911,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-5VP",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ukyln/thumb200s.jpg",
+      "originalName": "Nguyễn Thị Huệ",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-674": {
+    "assetId": "MEDIA_FS_G5XX-674",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-674.jpg",
+    "sha256": "152ffef6abd2323f5bfd9e052f7258be6bd6f320ea77e4e1a502c09a72ff6c6c",
+    "byteSize": 4195,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-674",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/4y7ln/thumb200s.jpg",
+      "originalName": "Gioan Dương Minh Nhật",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-6P2": {
+    "assetId": "MEDIA_FS_G5XX-6P2",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-6P2.jpg",
+    "sha256": "303081edd57334323a8ded46423c72715fcfe66be3f3918b5b252bbe9e64fe5f",
+    "byteSize": 4651,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-6P2",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/b48ln/thumb200s.jpg",
+      "originalName": "Lucia Nguyễn Thị Lan",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-6TS": {
+    "assetId": "MEDIA_FS_G5XX-6TS",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-6TS.jpg",
+    "sha256": "6e1d3eaf4ae471a204977e0c3a8ed7ce4b250318a1df25e1e8dc665ebfdf8e57",
+    "byteSize": 4719,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-6TS",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/2b2mn/thumb200s.jpg",
+      "originalName": "Giuse Trần Tiến Dũng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-6WJ": {
+    "assetId": "MEDIA_FS_G5XX-6WJ",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-6WJ.jpg",
+    "sha256": "35afd7120da11fcf82c2b990155e1b717a5be9c1debc85ee92b53dd8968f7046",
+    "byteSize": 4142,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-6WJ",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ulyln/thumb200s.jpg",
+      "originalName": "Giuse Nguyễn Văn Đạt",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-B1V": {
+    "assetId": "MEDIA_FS_G5XX-B1V",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-B1V.jpg",
+    "sha256": "91e59bd1abae386b1e85168ac44665e7f587795a8483666f8b22c0efd0c2e73a",
+    "byteSize": 2857,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-B1V",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/wlyln/thumb200s.jpg",
+      "originalName": "Phê-rô Nguyễn Văn Luân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-BJ9": {
+    "assetId": "MEDIA_FS_G5XX-BJ9",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-BJ9.jpg",
+    "sha256": "89f91b1c9b10278e6b7579f6521705942f015a6cfa8200d6f31e9cef097db74c",
+    "byteSize": 5152,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-BJ9",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/6d2mn/thumb200s.jpg",
+      "originalName": "Gioan Baotixita Trần Dương Anh Khôi",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-BJT": {
+    "assetId": "MEDIA_FS_G5XX-BJT",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-BJT.jpg",
+    "sha256": "b50b486fb5e320246914846f76a908e87e84142264ad60144b2a7776aeb93382",
+    "byteSize": 4602,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-BJT",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/2b7ln/thumb200s.jpg",
+      "originalName": "Maria Teresa Trần Ngọc Mai",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-CPT": {
+    "assetId": "MEDIA_FS_G5XX-CPT",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-CPT.jpg",
+    "sha256": "c04dc6af5509548d68f3c8d614823130083ff54bb06d8e3a7ae371db73f80d05",
+    "byteSize": 3681,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-CPT",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/icrvn/thumb200s.jpg",
+      "originalName": "Vũ Văn Thuần",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-D1T": {
+    "assetId": "MEDIA_FS_G5XX-D1T",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-D1T.jpg",
+    "sha256": "7815ef3c81f370262fc860a81ef0a478d6bc7460b1d4c63983289ab4af7aa6b0",
+    "byteSize": 2739,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-D1T",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/qu7on/thumb200s.jpg",
+      "originalName": "Điền Quang Sơn",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-DL8": {
+    "assetId": "MEDIA_FS_G5XX-DL8",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-DL8.jpg",
+    "sha256": "7b3a8e59cccddd8bd4b769cefa75635f0ad80815d89011cf82ed5aec006b9dfd",
+    "byteSize": 5489,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-DL8",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/wdkln/thumb200s.jpg",
+      "originalName": "Giuse Nguyễn Văn Thắng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-DLK": {
+    "assetId": "MEDIA_FS_G5XX-DLK",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-DLK.jpg",
+    "sha256": "d06275228469483930bc42b1ddc0d966029e03cf61dd5bbab0428138677ba53b",
+    "byteSize": 7073,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-DLK",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/x28ln/thumb200s.jpg",
+      "originalName": "Anton Trần Quốc Việt",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-DQ2": {
+    "assetId": "MEDIA_FS_G5XX-DQ2",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-DQ2.jpg",
+    "sha256": "fda2cda02178193b4291362e7a141f2bce4b35ca036c8a60a48b9263eb2c2184",
+    "byteSize": 3683,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-DQ2",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/xjcln/thumb200s.jpg",
+      "originalName": "Giuse Văn Trọng Mạnh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-DQ5": {
+    "assetId": "MEDIA_FS_G5XX-DQ5",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-DQ5.jpg",
+    "sha256": "756d6b319845a24eb6e9954212fcc0809fd93514f525809fb6f33fbdd05ee33a",
+    "byteSize": 5996,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-DQ5",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/9f7ln/thumb200s.jpg",
+      "originalName": "Nguyễn Phạm Bình Minh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-DQV": {
+    "assetId": "MEDIA_FS_G5XX-DQV",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-DQV.jpg",
+    "sha256": "7a5c952e153e9ddf09631b28d5bbaa27faf264d4bce1a04d52a24899fa9b8f1b",
+    "byteSize": 3466,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-DQV",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/qe7ln/thumb200s.jpg",
+      "originalName": "Gioan Văn Trọng Thường",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-F1D": {
+    "assetId": "MEDIA_FS_G5XX-F1D",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-F1D.jpg",
+    "sha256": "2a5d3dca9216d51b5d84cf778f6fb387cd0b7c6ea038505c6b1612631f650b12",
+    "byteSize": 3914,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-F1D",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/848ln/thumb200s.jpg",
+      "originalName": "Maria Lăng Nguyễn Ánh Tuyên",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-F2P": {
+    "assetId": "MEDIA_FS_G5XX-F2P",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-F2P.jpg",
+    "sha256": "12fe8076ec5e09530ba510201c3265a6141515a97366bae3d88c4d6c667ea9e0",
+    "byteSize": 3736,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-F2P",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/dt7on/thumb200s.jpg",
+      "originalName": "Maria Trương Thị Tần",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-FDN": {
+    "assetId": "MEDIA_FS_G5XX-FDN",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-FDN.jpg",
+    "sha256": "65ef593d20f738c3d697b3aa1123c40c542013c3dc2c49fb0e36bf1faf516b88",
+    "byteSize": 4390,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-FDN",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/n28ln/thumb200s.jpg",
+      "originalName": "Maria Nguyễn Thị Thanh Thuý",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-FFJ": {
+    "assetId": "MEDIA_FS_G5XX-FFJ",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-FFJ.jpg",
+    "sha256": "4494b8c8831ed2794e8e8bde1db1c86816a500e67d2b29e588db406ec764bf82",
+    "byteSize": 5157,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-FFJ",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/aj2mn/thumb200s.jpg",
+      "originalName": "Teresa Trần Thị Tình",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-G6Q": {
+    "assetId": "MEDIA_FS_G5XX-G6Q",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-G6Q.jpg",
+    "sha256": "7ce4678e0ac6ddc512d5a59ac34ecead33aa267424f4466dc9d12770b0376bfd",
+    "byteSize": 6909,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-G6Q",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/mf7ln/thumb200s.jpg",
+      "originalName": "Vinh sơn Dương Chí Dũng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-GDN": {
+    "assetId": "MEDIA_FS_G5XX-GDN",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-GDN.jpg",
+    "sha256": "5b33a33e24c7734f3564d1cc6ad0eb4c55a805f985e409646e8e3faff4ba87b3",
+    "byteSize": 4156,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-GDN",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/me7ln/thumb200s.jpg",
+      "originalName": "Phê rô Vũ Hùng Phong",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-GNB": {
+    "assetId": "MEDIA_FS_G5XX-GNB",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-GNB.jpg",
+    "sha256": "02781cf4e98881282066cd5c37a143dfbcfd8987f5d7efa6c68a7596f663169c",
+    "byteSize": 3001,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-GNB",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/pi2mn/thumb200s.jpg",
+      "originalName": "Teresa Phạm Thanh  Vân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-GNR": {
+    "assetId": "MEDIA_FS_G5XX-GNR",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-GNR.jpg",
+    "sha256": "d948534c1c10af9d586dd8e1d4459d506fb0018d9c07395160e21854ca6d8b20",
+    "byteSize": 6759,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-GNR",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/cg2mn/thumb200s.jpg",
+      "originalName": "Giuse Phạm Thanh Sơn",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-HLJ": {
+    "assetId": "MEDIA_FS_G5XX-HLJ",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-HLJ.jpg",
+    "sha256": "f91aa2e78d576fddc78b5f6584062a350650d6194565e01a61ddb212c324a5ed",
+    "byteSize": 3281,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-HLJ",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ot7on/thumb200s.jpg",
+      "originalName": "Lê Minh Hải",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-J73": {
+    "assetId": "MEDIA_FS_G5XX-J73",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-J73.jpg",
+    "sha256": "a9b072fdba252d3a980756ca2dbfd5dd6e77c46baf8f6f9715aab2eef89b1636",
+    "byteSize": 3658,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-J73",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/2vemn/thumb200s.jpg",
+      "originalName": "Teresa Nguyễn Thị Lưu",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-JKX": {
+    "assetId": "MEDIA_FS_G5XX-JKX",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-JKX.jpg",
+    "sha256": "8fd7abdf353f636a99506d0e1fc46bebdcd405b1f03760903aec6f65d36dca74",
+    "byteSize": 7324,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-JKX",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/pf0nn/thumb200s.jpg",
+      "originalName": "Catarina Nguyễn Trần Nhã Uyên",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-JQR": {
+    "assetId": "MEDIA_FS_G5XX-JQR",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-JQR.jpg",
+    "sha256": "2deadc6effbdd40728af66b5080d3f9ce00b99d44f37908d4dbed101b6747448",
+    "byteSize": 3893,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-JQR",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/an6ln/thumb200s.jpg",
+      "originalName": "Anton Trần Thế An",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-JVR": {
+    "assetId": "MEDIA_FS_G5XX-JVR",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-JVR.jpg",
+    "sha256": "dac331a3303a33b15f3a502c833d6b246c9c6a76b7027c9142810be07f9ef1dc",
+    "byteSize": 6235,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-JVR",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/iekln/thumb200s.jpg",
+      "originalName": "Cecilia Nguyễn Bùi Trà My",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-K59": {
+    "assetId": "MEDIA_FS_G5XX-K59",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-K59.jpg",
+    "sha256": "7c40695818874e72fe974750c1c067312441787feb7c29aa94f31bd623e1762c",
+    "byteSize": 5618,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-K59",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/338ln/thumb200s.jpg",
+      "originalName": "Maria Trần Huyền Trân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-K5H": {
+    "assetId": "MEDIA_FS_G5XX-K5H",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-K5H.jpg",
+    "sha256": "0362f6a4880c90662aeec4a2570a18e757d6a2e1d7289efe3a9dc3f6f40fdd5f",
+    "byteSize": 3540,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-K5H",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/3ekln/thumb200s.jpg",
+      "originalName": "Terexa Bùi Thị Điệp",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-KTZ": {
+    "assetId": "MEDIA_FS_G5XX-KTZ",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-KTZ.jpg",
+    "sha256": "8667cbdfeb85e96b8dfb20a7b7fbbb8c97807087cfda9edac9f261f61d2ad5d3",
+    "byteSize": 2732,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-KTZ",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/d8smn/thumb200s.jpg",
+      "originalName": "Phaolo Trần Đình Hữu",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-LDD": {
+    "assetId": "MEDIA_FS_G5XX-LDD",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-LDD.jpg",
+    "sha256": "58e8abe6c7e74e6f5d4e85cb13fbef40767be14fdf41543be19777adf0ab7f4a",
+    "byteSize": 6557,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-LDD",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/p38ln/thumb200s.jpg",
+      "originalName": "Lucia Nguyễn Ngọc Khánh Băng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-LQ4": {
+    "assetId": "MEDIA_FS_G5XX-LQ4",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-LQ4.jpg",
+    "sha256": "d3571ae47fa126af5ad3a54a61048639acdd8e3846b809cbb835f4c323b3b502",
+    "byteSize": 4818,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-LQ4",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/4x7on/thumb200s.jpg",
+      "originalName": "Lê Trần Tiến Đạt",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-N1V": {
+    "assetId": "MEDIA_FS_G5XX-N1V",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-N1V.jpg",
+    "sha256": "b1aecb6dbaff0e299e727f935803f33d23e7dc17c9d467c92590bcc3d4f11474",
+    "byteSize": 3738,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-N1V",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ye7ln/thumb200s.jpg",
+      "originalName": "Maria Văn Nguyễn Hà Phương",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-NKK": {
+    "assetId": "MEDIA_FS_G5XX-NKK",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-NKK.jpg",
+    "sha256": "dc8b3f53c609130f745a65aae37fe18a10347c620ecd02ef68dc8d48de4f1046",
+    "byteSize": 3490,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-NKK",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/r96ln/thumb200s.jpg",
+      "originalName": "Lucia Nguyễn Thị Mai",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-NS4": {
+    "assetId": "MEDIA_FS_G5XX-NS4",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-NS4.jpg",
+    "sha256": "a8f89f359d6c7a0d749d3be3253b8dfd5271702f7ccb920c835163cdd62fcf74",
+    "byteSize": 5952,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-NS4",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/g86ln/thumb200s.jpg",
+      "originalName": "Maria Nguyễn Thị Thu Hiền",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-P2S": {
+    "assetId": "MEDIA_FS_G5XX-P2S",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-P2S.jpg",
+    "sha256": "9bc64f08dd56c46dc837d5b7dd18d0d9bbd864133c3ec7e6dfdbdabfce330a55",
+    "byteSize": 6804,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-P2S",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/erlln/thumb200s.jpg",
+      "originalName": "Anna Trần Thị Linh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-P91": {
+    "assetId": "MEDIA_FS_G5XX-P91",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-P91.jpg",
+    "sha256": "b0751d16a55c44ebbf0ac6390b631d6e30c0740cb1a155ed1e030a35dbe1b5bc",
+    "byteSize": 4315,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-P91",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/zd2mn/thumb200s.jpg",
+      "originalName": "Gioan Baotixita Trần Văn Tuyển",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-PFH": {
+    "assetId": "MEDIA_FS_G5XX-PFH",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-PFH.jpg",
+    "sha256": "1f57702c201146747b461052f7847ba6c65b179954c0fa2d601ee098b4e18126",
+    "byteSize": 3887,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-PFH",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/vf7ln/thumb200s.jpg",
+      "originalName": "Teresa Lương Nguyễn Hoàng Nhi",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-PJ7": {
+    "assetId": "MEDIA_FS_G5XX-PJ7",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-PJ7.jpg",
+    "sha256": "0fb9621f2b19a02a9638c0c8f9e46ebe05f84fd33b6653fda8a66cbb2e6c3fff",
+    "byteSize": 4734,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-PJ7",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/8ekln/thumb200s.jpg",
+      "originalName": "Cecilia Nguyễn Bùi Nhật Linh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-PJC": {
+    "assetId": "MEDIA_FS_G5XX-PJC",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-PJC.jpg",
+    "sha256": "54173a689d7727ea42e931176956b5623eac40a90944ebf45240885ed1aaeff0",
+    "byteSize": 4821,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-PJC",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/nlyln/thumb200s.jpg",
+      "originalName": "Maria Đào Thị Chung",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-PVY": {
+    "assetId": "MEDIA_FS_G5XX-PVY",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-PVY.jpg",
+    "sha256": "550a420a53582940080d599fbe68d929037b23157395c8a8a44c566c2a547ddf",
+    "byteSize": 5977,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-PVY",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/jg2mn/thumb200s.jpg",
+      "originalName": "Teresa Trần Thị Thương",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-R46": {
+    "assetId": "MEDIA_FS_G5XX-R46",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-R46.jpg",
+    "sha256": "b72c0bf52b1f1d751543114e00e1cf5a149f9d5dc2c9e45c0e9d99c23a5ab24d",
+    "byteSize": 5527,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-R46",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/qk2mn/thumb200s.jpg",
+      "originalName": "Teresa Trần Thị Hằng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-R4C": {
+    "assetId": "MEDIA_FS_G5XX-R4C",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-R4C.jpg",
+    "sha256": "61829bfa1687e39fd032bf7054b4ca77e9d9c3227cd07160fd08aeeb09724305",
+    "byteSize": 5057,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-R4C",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/f98ln/thumb200s.jpg",
+      "originalName": "Giuse Trần Đình Hoàng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-R4G": {
+    "assetId": "MEDIA_FS_G5XX-R4G",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-R4G.jpg",
+    "sha256": "153bec6de898e177c9f907f1e5f4863f08860802e70ec9380a4108f3c6ece437",
+    "byteSize": 5140,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-R4G",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ga3mn/thumb200s.jpg",
+      "originalName": "Anna Dương Ngọc Thảo",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-R7N": {
+    "assetId": "MEDIA_FS_G5XX-R7N",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-R7N.jpg",
+    "sha256": "0e4dea4f0394d7c97d02870334cb6640606948ee74d66bf0d36ea5d0d766f77a",
+    "byteSize": 4220,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-R7N",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/3myln/thumb200s.jpg",
+      "originalName": "Simon Nguyễn Nam Khôi",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-R7W": {
+    "assetId": "MEDIA_FS_G5XX-R7W",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-R7W.jpg",
+    "sha256": "abf2b3f395d11d2ff5e621acc28120d9ebff4171b9c41b53606e6554f9654b6f",
+    "byteSize": 5787,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-R7W",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/oekln/thumb200s.jpg",
+      "originalName": "Giuse Nguyễn Quang Hải",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-R7X": {
+    "assetId": "MEDIA_FS_G5XX-R7X",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-R7X.jpg",
+    "sha256": "e65f33e4a5ce19ed48e57d06e55cde79bde4e6e5efe19e25f4cd28cd8ddf97ce",
+    "byteSize": 3289,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-R7X",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/278ln/thumb200s.jpg",
+      "originalName": "Trương Thị Thuỳ Trang",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-RHT": {
+    "assetId": "MEDIA_FS_G5XX-RHT",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-RHT.jpg",
+    "sha256": "cb8f20d6cd54882d4e7f3f5d5f188698f9a032c830a9cab06cea346f73b46812",
+    "byteSize": 4370,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-RHT",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/hx7ln/thumb200s.jpg",
+      "originalName": "An-tôn Trần Lê Gia Bảo",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-RPN": {
+    "assetId": "MEDIA_FS_G5XX-RPN",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-RPN.jpg",
+    "sha256": "76a582e8a30b39daafcac2485bbc071b083b3abd49c1cd78693386b8d48fe892",
+    "byteSize": 4055,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-RPN",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/fn6ln/thumb200s.jpg",
+      "originalName": "Phạm Phương Nga",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-T9J": {
+    "assetId": "MEDIA_FS_G5XX-T9J",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-T9J.jpg",
+    "sha256": "c350368fbfab0487b3b1263b666660b6a1d2807ada8fed3a7a2c1c7a6cd10055",
+    "byteSize": 3455,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-T9J",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/mhsvn/thumb200s.jpg",
+      "originalName": "Nguyễn Thị Nhung",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-TWG": {
+    "assetId": "MEDIA_FS_G5XX-TWG",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-TWG.jpg",
+    "sha256": "cbcee5b24c31b0f0981a2f278d4dd296f8243f569831134c14d8f4818d986e2f",
+    "byteSize": 7125,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-TWG",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/s28ln/thumb200s.jpg",
+      "originalName": "Giuse Trần Duy Quốc",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-V14": {
+    "assetId": "MEDIA_FS_G5XX-V14",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-V14.jpg",
+    "sha256": "53dbd47755ac834e44d5429396bdc4f6e04d50af79ec5999a8033b5858d25d2d",
+    "byteSize": 3457,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-V14",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/fdrvn/thumb200s.jpg",
+      "originalName": "Vũ Trọng Quý",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-V24": {
+    "assetId": "MEDIA_FS_G5XX-V24",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-V24.jpg",
+    "sha256": "b7fa8d2b2aecb7c8af317fde92ed28920d35e20dc1761e1895c11b5c80187cbf",
+    "byteSize": 5078,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-V24",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ey7ln/thumb200s.jpg",
+      "originalName": "Lương Văn Toàn",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-VKD": {
+    "assetId": "MEDIA_FS_G5XX-VKD",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-VKD.jpg",
+    "sha256": "f9a7243b8f35656af26eda44dafc1911e7758910f75e9f89c7d8a83d2146e589",
+    "byteSize": 2872,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-VKD",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/zc7ln/thumb200s.jpg",
+      "originalName": "AnNa Nguyễn Thị Hằng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-X13": {
+    "assetId": "MEDIA_FS_G5XX-X13",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-X13.jpg",
+    "sha256": "7627708ef89bb1ccd516093bb35cd82a6a6626c48c32ac0385a3afaf0276bda2",
+    "byteSize": 5043,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-X13",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/f92mn/thumb200s.jpg",
+      "originalName": "Gioan Baotixita Trần Tiến Tùng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-X69": {
+    "assetId": "MEDIA_FS_G5XX-X69",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-X69.jpg",
+    "sha256": "39bb80b59f7a9017e8dd7af42aec4f27c8ab98781ba6711aea2f798fcc32372c",
+    "byteSize": 3035,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-X69",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/arlln/thumb200s.jpg",
+      "originalName": "Giuse Trần Minh Long",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-XH5": {
+    "assetId": "MEDIA_FS_G5XX-XH5",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-XH5.jpg",
+    "sha256": "c2d89e733ccc91038b59ef560e5a6380efe3e151b5c88720300c193676541a13",
+    "byteSize": 4523,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-XH5",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/7y7ln/thumb200s.jpg",
+      "originalName": "Giuse Dương Chí Thiện",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-XHC": {
+    "assetId": "MEDIA_FS_G5XX-XHC",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-XHC.jpg",
+    "sha256": "bb5b962baf8885ec4fde1b56d94b3247e000807d556df0178183c665b352a136",
+    "byteSize": 4998,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-XHC",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/2f7ln/thumb200s.jpg",
+      "originalName": "Terresa Văn Nguyễn Hà My",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-XTR": {
+    "assetId": "MEDIA_FS_G5XX-XTR",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-XTR.jpg",
+    "sha256": "a498a7b49c68220b9e8e14fdff3514f05bc678a6421104ceea088ce74dea1a8c",
+    "byteSize": 3578,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-XTR",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/ykyln/thumb200s.jpg",
+      "originalName": "Giuse Lăng Văn Trường",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-Y6L": {
+    "assetId": "MEDIA_FS_G5XX-Y6L",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-Y6L.jpg",
+    "sha256": "5c42f85e5de3131b95fb7314302c0ea08bda2d7c6ab24d7cb91b9385c713a0a8",
+    "byteSize": 5317,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-Y6L",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/otoln/thumb200s.jpg",
+      "originalName": "Maria Trần Minh Anh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-Y74": {
+    "assetId": "MEDIA_FS_G5XX-Y74",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-Y74.jpg",
+    "sha256": "0306348514494e964850833194cd8b4c387ff9db4928ad2611d25e935c9d2220",
+    "byteSize": 3829,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-Y74",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/35rvn/thumb200s.jpg",
+      "originalName": "Ghêgonô Trần Ngọc Thuận",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-YP4": {
+    "assetId": "MEDIA_FS_G5XX-YP4",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-YP4.jpg",
+    "sha256": "75df5a5a2fd31883c66ad97561b4b2ccdbbe4d3cfcd0bda4bf4c56ab7873f6b8",
+    "byteSize": 3651,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-YP4",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/b8rvn/thumb200s.jpg",
+      "originalName": "Maria Trần Nguyễn Hồng Ân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-YR6": {
+    "assetId": "MEDIA_FS_G5XX-YR6",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-YR6.jpg",
+    "sha256": "ecc3ca50dfd75d4ff60b0dcd92389d3773b082db05874be5c1f64f306039d742",
+    "byteSize": 3618,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-YR6",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/koyon/thumb200s.jpg",
+      "originalName": "Gioan Vũ Văn Hùng",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_G5XX-ZZF": {
+    "assetId": "MEDIA_FS_G5XX-ZZF",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_G5XX-ZZF.jpg",
+    "sha256": "d9332c47e8dd71f6a9f1a4d9cb31537f8049820f4b438cd29b12b4eeb75248b9",
+    "byteSize": 3058,
+    "source": "FamilySearch",
+    "sourceId": "G5XX-ZZF",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/xv7on/thumb200s.jpg",
+      "originalName": "Vũ Thị Huệ",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_GRGM-TCY": {
+    "assetId": "MEDIA_FS_GRGM-TCY",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_GRGM-TCY.jpg",
+    "sha256": "90cc91123bb62c3af7ec8c0e3147cff194dd4b4ee062fd2dd6f391e4a68df561",
+    "byteSize": 4901,
+    "source": "FamilySearch",
+    "sourceId": "GRGM-TCY",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/1xp6o/thumb200s.jpg",
+      "originalName": "Lucia Nguyễn Ngọc Khánh Vân",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_P41B-PV2": {
+    "assetId": "MEDIA_FS_P41B-PV2",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_P41B-PV2.jpg",
+    "sha256": "e9ad00247e6501c48ed9909f659e260b227e4c7a1dd3ea779f8cc7f3dd64327a",
+    "byteSize": 5003,
+    "source": "FamilySearch",
+    "sourceId": "P41B-PV2",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/73gau/thumb200s.jpg",
+      "originalName": "Anna Trần Phương Anh",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_P9S8-C9R": {
+    "assetId": "MEDIA_FS_P9S8-C9R",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_P9S8-C9R.jpg",
+    "sha256": "3f08795dc37ee4d322d4ebfe7f5c2a8e119ead5eb93e9007198767953c3c0cfc",
+    "byteSize": 3076,
+    "source": "FamilySearch",
+    "sourceId": "P9S8-C9R",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/zyyvq/thumb200s.jpg",
+      "originalName": "Teresa Hoàng Thị Phương",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_P9SS-7XY": {
+    "assetId": "MEDIA_FS_P9SS-7XY",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_P9SS-7XY.jpg",
+    "sha256": "98e7b2dc5b10be35954e8f9373a3e0c33f7edf59760c3d622682883fe3a67154",
+    "byteSize": 2900,
+    "source": "FamilySearch",
+    "sourceId": "P9SS-7XY",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/cryvq/thumb200s.jpg",
+      "originalName": "Phao lô Nguyễn Văn Quế",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_PWKK-D5H": {
+    "assetId": "MEDIA_FS_PWKK-D5H",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_PWKK-D5H.jpg",
+    "sha256": "cd51354430e0fbc81de8734ca583b363eaafda2f96e2eaa36538bce889e7c8b2",
+    "byteSize": 6285,
+    "source": "FamilySearch",
+    "sourceId": "PWKK-D5H",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/sxprt/thumb200s.jpg",
+      "originalName": "Phê rô Nguyễn Minh Khang",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_PX8S-YTM": {
+    "assetId": "MEDIA_FS_PX8S-YTM",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_PX8S-YTM.jpg",
+    "sha256": "681d275e5d20f9130a8c5d3ae787b1c2d5cc1f7068c05fb71739c18f7addb179",
+    "byteSize": 4703,
+    "source": "FamilySearch",
+    "sourceId": "PX8S-YTM",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/anvfw/thumb200s.jpg",
+      "originalName": "Maria Trần An Nhã (Clara)",
+      "harvestedAt": "2026-09-05"
+    }
+  },
+  "MEDIA_FS_PZV4-X28": {
+    "assetId": "MEDIA_FS_PZV4-X28",
+    "kind": "portrait",
+    "mimeType": "image/jpeg",
+    "file": "assets/images/avatars/FS_AVATAR_PZV4-X28.jpg",
+    "sha256": "18f579f75de0e73bede8fd76b0872d30f0f0ed8431630a8be5beae01bae18796",
+    "byteSize": 4170,
+    "source": "FamilySearch",
+    "sourceId": "PZV4-X28",
+    "provenance": {
+      "sourceName": "FamilySearch Descendancy View",
+      "originalUrl": "https://tree-portraits-pgp.familysearchcdn.org/0gobv/thumb200s.jpg",
+      "originalName": "Gioan Trần Minh Quang",
+      "harvestedAt": "2026-09-05"
+    }
+  }
+}
