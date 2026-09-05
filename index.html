@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/css/main.css?v=20260905_1905">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>">
 </head>
 <body>
 
@@ -31,12 +32,21 @@
 
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#/" class="nav-item-btn active" id="nav_home" onclick="navigateRoute('/')">Tổng quan</a></li>
-                    <li><a href="#/tree" class="nav-item-btn" id="nav_tree" onclick="navigateRoute('/tree')">🌳 Gia Phả</a></li>
+                    <li><a href="#/" class="nav-item-btn active" id="nav_home" onclick="navigateRoute('/')">Trang Chủ</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#/gia-pha" class="nav-item-btn" id="nav_gia_pha" onclick="navigateRoute('/gia-pha')">🌳 Gia Phả</a>
+                        <div class="nav-dropdown-menu">
+                            <a href="#/gia-pha" onclick="navigateRoute('/gia-pha')">Cây Phả Đồ</a>
+                            <a href="#/gia-pha/nhan-vat" onclick="navigateRoute('/gia-pha/nhan-vat')">Thành viên</a>
+                            <a href="#/gia-pha/gia-dinh" onclick="navigateRoute('/gia-pha/gia-dinh')">Gia đình</a>
+                            <a href="#/gia-pha/dong-thoi-gian" onclick="navigateRoute('/gia-pha/dong-thoi-gian')">Dòng thời gian</a>
+                            <a href="#/gia-pha/ky-uc" onclick="navigateRoute('/gia-pha/ky-uc')">Ký ức</a>
+                        </div>
+                    </li>
                     <li><a href="#/mach" class="nav-item-btn" id="nav_mach" onclick="navigateRoute('/mach')">🧵 Mạch</a></li>
-                    <li><a href="#/calendar" class="nav-item-btn" id="nav_calendar" onclick="navigateRoute('/calendar')">📅 Lịch</a></li>
-                    <li><a href="#/people" class="nav-item-btn" id="nav_people" onclick="navigateRoute('/people')">Thành viên</a></li>
-                    <li><a href="#/families" class="nav-item-btn" id="nav_families" onclick="navigateRoute('/families')">Gia đình</a></li>
+                    <li><a href="#/tu-lieu" class="nav-item-btn" id="nav_tu_lieu" onclick="navigateRoute('/tu-lieu')">📜 Tư Liệu</a></li>
+                    <li><a href="#/lich" class="nav-item-btn" id="nav_lich" onclick="navigateRoute('/lich')">📅 Lịch</a></li>
+                    <li><a href="#/tim-kiem" class="nav-item-btn" id="nav_tim_kiem" onclick="navigateRoute('/tim-kiem')">🔍 Tìm kiếm</a></li>
                 </ul>
             </nav>
         </div>
@@ -45,15 +55,41 @@
     <!-- MAIN VIEWPORT -->
     <main>
 
-        <!-- 1. HOME / DASHBOARD VIEW -->
+        <!-- 1. HOME / PUBLICATION LANDING VIEW -->
         <section id="view_home" class="view-section active">
-            <div class="hero-banner">
-                <div class="hero-badge">Trích lục Gia phả chính thức</div>
+            <div class="hero-banner pub-home-hero">
+                <div class="hero-badge">Ấn phẩm di sản • Giòng họ Trần Trọng Thu</div>
                 <h1 class="hero-title" id="heroPublicationTitle">Gia Phả Gia Tộc</h1>
-                <div class="hero-sub">Hệ Thống Tri Thức & Kỷ Niệm Gia Tộc Trực Tuyến</div>
-                <p class="hero-text">Hệ thống số hóa toàn diện dữ liệu gia phả, phân tầng thế hệ F0–F4 theo mốc Family Anchor, tư liệu lịch sử và lịch sự kiện gia đình.</p>
+                <div class="hero-sub">Giữ lại trước khi diễn giải — nơi những gì còn nhớ được ở lại, được kết nối và có thể được truyền lại.</div>
+                <p class="hero-text">Một publication thống nhất về dòng họ: <strong>Gia Phả</strong> ghi nhận con người, gia đình, thế hệ và mối quan hệ; <strong>Mạch</strong> kể lại ký ức, câu chuyện và suy tưởng; <strong>Tư liệu</strong> bảo tồn những vật chứng còn lại.</p>
             </div>
 
+            <!-- PUBLICATION TERRITORY ENTRIES -->
+            <div class="pub-territory-grid" id="pubTerritoryGrid">
+                <div class="pub-territory-card" onclick="navigateRoute('/gia-pha')">
+                    <div class="pub-territory-icon">🌳</div>
+                    <div class="pub-territory-name">GIA PHẢ</div>
+                    <div class="pub-territory-desc">Dòng họ là ai — phả đồ tương tác, thế hệ F0–F4, hồ sơ nhân vật và gia đình</div>
+                    <div class="pub-territory-stats"></div>
+                    <div class="pub-territory-link">Vào Gia Phả →</div>
+                </div>
+                <div class="pub-territory-card" onclick="navigateRoute('/mach')">
+                    <div class="pub-territory-icon">🧵</div>
+                    <div class="pub-territory-name">MẠCH</div>
+                    <div class="pub-territory-desc">Những điều được kể lại — tập san, thư gửi thế hệ sau, ký ức và suy tưởng</div>
+                    <div class="pub-territory-stats"></div>
+                    <div class="pub-territory-link">Vào Mạch →</div>
+                </div>
+                <div class="pub-territory-card" onclick="navigateRoute('/tu-lieu')">
+                    <div class="pub-territory-icon">📜</div>
+                    <div class="pub-territory-name">TƯ LIỆU</div>
+                    <div class="pub-territory-desc">Những vật chứng còn lại — ảnh cổ, giấy tờ, văn bản và kỷ vật (đang số hóa)</div>
+                    <div class="pub-territory-stats"></div>
+                    <div class="pub-territory-link">Vào Tư Liệu →</div>
+                </div>
+            </div>
+
+            <div class="section-divider-title"><span>Những gì đang được ghi nhận</span></div>
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-num" id="stat_indis">-</div>
@@ -73,22 +109,27 @@
                 </div>
             </div>
 
+            <div class="nostra-home-grid-wrap">
+                <div class="section-divider-title"><span>Mới nhất từ Mạch</span></div>
+                <div class="mach-stories-grid" id="homeLatestStories"></div>
+            </div>
+
             <div class="quick-nav-grid">
-                <a class="quick-card" href="#/calendar" onclick="navigateRoute('/calendar')">
+                <a class="quick-card" href="#/lich" onclick="navigateRoute('/lich')">
                     <div class="quick-icon">📅</div>
                     <div>
                         <div class="quick-title">Lịch Gia Đình</div>
                         <div class="quick-desc">Xem ngày sinh, bổn mạng, ngày giỗ theo Dương & Âm lịch</div>
                     </div>
                 </a>
-                <a class="quick-card" href="#/tree" onclick="navigateRoute('/tree')">
+                <a class="quick-card" href="#/gia-pha" onclick="navigateRoute('/gia-pha')">
                     <div class="quick-icon">🌳</div>
                     <div>
                         <div class="quick-title">Cây Phả Đồ</div>
                         <div class="quick-desc">Khám phá các thế hệ tiền nhân F0 và hậu duệ F1–F4 trực hệ</div>
                     </div>
                 </a>
-                <a class="quick-card" href="#/people" onclick="navigateRoute('/people')">
+                <a class="quick-card" href="#/gia-pha/nhan-vat" onclick="navigateRoute('/gia-pha/nhan-vat')">
                     <div class="quick-icon">👥</div>
                     <div>
                         <div class="quick-title">Danh Bạ Thành Viên</div>
@@ -346,11 +387,12 @@
 
         <!-- 10. MẠCH HOME / INDEX VIEW -->
         <section id="view_mach" class="view-section">
-            <div class="mach-hero">
-                <div class="mach-badge">🧵 Không Gian Khảo Cứu & Tự Sự Dòng Họ</div>
-                <h1 class="mach-hero-title">MẠCH</h1>
-                <p class="mach-hero-sub">Lưu giữ dòng chảy ký ức, các ấn phẩm chuyên đề và khảo cứu về đời sống dòng họ trong thời hiện đại.</p>
-            </div>
+<div class="mach-hero">
+                    <div class="mach-badge">🧵 Không Gian Khảo Cứu & Tự Sự Dòng Họ</div>
+                    <h1 class="mach-hero-title">MẠCH</h1>
+                    <p class="mach-hero-sub">Lưu giữ dòng chảy ký ức, các ấn phẩm chuyên đề và khảo cứu về đời sống dòng họ trong thời hiện đại.</p>
+                    <div class="mach-hero-meta" id="machHeroMeta"></div>
+                </div>
 
             <!-- MẠCH SUB NAVIGATION -->
             <div class="mach-nav-tabs">
@@ -425,7 +467,89 @@
             </div>
         </section>
 
-        <!-- 14. TYPOGRAPHY SPECIMEN EVALUATION MODULE (TYPOGRAPHY_03) -->
+        <!-- 14. TƯ LIỆU TERRITORY (STRUCTURAL ENTRY / PLACEHOLDER) -->
+        <section id="view_tu_lieu" class="view-section">
+            <div class="tu-lieu-wrapper">
+                <div class="tu-lieu-hero">
+                    <div class="tu-lieu-badge">📜 Lãnh Thổ Tư Liệu</div>
+                    <h1 class="tu-lieu-title">TƯ LIỆU</h1>
+                    <p class="tu-lieu-sub">Kho bảo tồn những vật chứng còn lại của dòng họ — hình ảnh, giấy tờ, văn bản, âm thanh và kỷ vật đời sống.</p>
+                </div>
+                <div class="tu-lieu-body">
+                    <div class="tu-lieu-note">
+                        <strong>Đang trong giai đoạn số hóa</strong>
+                        <p>Lãnh thổ Tư Liệu đã được xác lập trong kiến trúc xuất bản. Nội dung số hóa hiện vật, quy trình văn khố và mô hình hiện vật sẽ được triển khai trong các giai đoạn tiếp theo. Những gì thực sự còn lại — ảnh cổ, giấy tờ, thư từ — sẽ được bảo tồn và trưng bày tại đây.</p>
+                    </div>
+                    <div class="tu-lieu-guidance">
+                        <div class="tu-lieu-guidance-card">
+                            <div class="tu-lieu-guidance-icon">🖼️</div>
+                            <div class="tu-lieu-guidance-title">Hình ảnh di sản</div>
+                            <div class="tu-lieu-guidance-desc">Ảnh cổ, chân dung tiền nhân, ảnh sinh hoạt gia đình</div>
+                        </div>
+                        <div class="tu-lieu-guidance-card">
+                            <div class="tu-lieu-guidance-icon">📄</div>
+                            <div class="tu-lieu-guidance-title">Văn bản & Giấy tờ</div>
+                            <div class="tu-lieu-guidance-desc">Trích lục gia phả, giấy hộ tịch, sổ rửa tội, thư tay</div>
+                        </div>
+                        <div class="tu-lieu-guidance-card">
+                            <div class="tu-lieu-guidance-icon">🎙️</div>
+                            <div class="tu-lieu-guidance-title">Âm thanh & Video</div>
+                            <div class="tu-lieu-guidance-desc">Lời kể của các bậc tiền nhân, thước phim tư liệu</div>
+                        </div>
+                    </div>
+                    <p class="tu-lieu-invite">Trong thời gian chờ đợi, hãy khám phá các vật chứng đang được nhắc tới trong <a onclick="navigateRoute('/mach')" class="inline-link">Mạch</a> và các hồ sơ <a onclick="navigateRoute('/gia-pha/nhan-vat')" class="inline-link">nhân vật</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. TÌM KIẾM TOÀN CỤC (CAPABILITY / SEARCH RESULTS PAGE) -->
+        <section id="view_search" class="view-section">
+            <div class="search-page-wrapper">
+                <div class="search-page-header">
+                    <h2 class="section-title">🔍 Tìm Kiếm Toàn Cục</h2>
+                    <p class="section-desc">Tra cứu đồng thời nhân vật, bài viết, tuyển tập, tác giả và ký ức trong toàn bộ publication.</p>
+                    <div class="search-page-input-wrap">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="searchPageInput" placeholder="Nhập tên người, bài viết, thế hệ F0-F4, ngày âm/dương..." onkeyup="handleSearchPageInput(event)" oninput="handleSearchPageInput(event)">
+                        <button class="btn-cal-subscribe-action" onclick="runSearchPage()">Tìm kiếm</button>
+                    </div>
+                </div>
+                <div id="searchPageResults" class="search-page-results"></div>
+            </div>
+        </section>
+
+        <!-- 16. VỀ DÒNG HỌ (HERITAGE OVERVIEW) -->
+        <section id="view_ve_dong_ho" class="view-section">
+            <div class="ve-dong-ho-wrapper">
+                <div class="section-header">
+                    <h2 class="section-title">Về Dòng Họ</h2>
+                    <p class="section-desc">Giới thiệu lịch sử, nguồn gốc và thông tin dòng họ Trần Trọng Thu.</p>
+                </div>
+                <div class="ve-dong-ho-copy">
+                    <p>Giòng họ Trần Trọng Thu không bắt đầu từ một kho tàng lớn. Nó bắt đầu từ những cái tên, những mối quan hệ, những câu chuyện được nhớ lại, những bức ảnh cũ, những giấy tờ còn sót và những điều có nguy cơ biến mất nếu hôm nay không được ghi lại.</p>
+                    <p>Cội nguồn dòng họ gắn liền với Thọ Vực, Bình Châu, Bình Triệu và hành trình tới Sài Gòn. Mỗi thế hệ F0–F4 đều mang trong mình những ký ức và bài học đời sống được trao truyền qua từng nếp nhà.</p>
+                    <p>Hãy khám phá <a class="inline-link" onclick="navigateRoute('/gia-pha')">cây phả đồ</a>, các <a class="inline-link" onclick="navigateRoute('/gia-pha/nhan-vat')">hồ sơ nhân vật</a> và những bài <a class="inline-link" onclick="navigateRoute('/mach')">tự sự trong Mạch</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 17. VỀ DỰ ÁN (PROJECT & STEWARDSHIP) -->
+        <section id="view_ve_du_an" class="view-section">
+            <div class="ve-du-an-wrapper">
+                <div class="section-header">
+                    <h2 class="section-title">Về Dự Án</h2>
+                    <p class="section-desc">Minh bạch lý do dự án ra đời, phương pháp khảo cứu và nguyên tắc ghi chép.</p>
+                </div>
+                <div class="ve-du-an-copy">
+                    <p><strong>Giữ lại trước khi diễn giải.</strong> Trước khi kể cho người khác dòng họ mình là gì, hãy ghi nhận trung thực và đầy đủ những gì thực sự còn lại.</p>
+                    <p>Cây Gia Phả không khởi đầu từ một dòng họ vĩ đại. Nó khởi đầu từ nỗ lực của một cá nhân mong muốn gìn giữ những gì còn có thể nhớ được trước khi thế hệ đi trước qua đi.</p>
+                    <p>Mọi thông tin trong hệ thống đều gắn nhãn mức độ xác tín: <span class="certainty-tag">CONFIRMED</span>, <span class="certainty-tag">ORAL_TRADITION</span>, <span class="certainty-tag">MEMORY</span>, <span class="certainty-tag">INTERPRETATION</span>, <span class="certainty-tag">UNVERIFIED</span>, <span class="certainty-tag">DISPUTED</span>, <span class="certainty-tag">UNKNOWN</span>.</p>
+                    <p class="ve-du-an-specimen-link">Công cụ đánh giá typography nội bộ: <a class="inline-link" onclick="navigateRoute('/ve-du-an/typography-specimen')">Bảng so sánh danh tính typography →</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 18. TYPOGRAPHY SPECIMEN EVALUATION MODULE (TYPOGRAPHY_03) -->
         <section id="view_typography_specimen" class="view-section">
             <div class="specimen-wrapper">
                 

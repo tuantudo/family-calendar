@@ -68,10 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then(m => {
                     machData = m;
                     renderMachModule();
+                    renderHomePublicationLanding();
                     handleHashRoute();
                 })
                 .catch(err => {
                     console.warn("Could not load data/mach.json:", err);
+                    renderHomePublicationLanding();
                     handleHashRoute();
                 });
         })
@@ -217,14 +219,23 @@ function handleHashRoute() {
     if (route.startsWith("/person/")) {
         const pid = route.replace("/person/", "");
         openPersonProfile(pid);
+    } else if (route.startsWith("/gia-pha/nhan-vat/")) {
+        const pid = route.replace("/gia-pha/nhan-vat/", "");
+        openPersonProfile(pid);
     } else if (route.startsWith("/family/")) {
         const fid = route.replace("/family/", "");
+        openFamilyProfile(fid);
+    } else if (route.startsWith("/gia-pha/gia-dinh/")) {
+        const fid = route.replace("/gia-pha/gia-dinh/", "");
         openFamilyProfile(fid);
     } else if (route.startsWith("/mach/bai-viet/")) {
         const slug = route.replace("/mach/bai-viet/", "");
         openStoryDetail(slug);
     } else if (route.startsWith("/mach/series/")) {
         const slug = route.replace("/mach/series/", "");
+        openSeriesDetail(slug);
+    } else if (route.startsWith("/mach/chuyen-de/")) {
+        const slug = route.replace("/mach/chuyen-de/", "");
         openSeriesDetail(slug);
     } else if (route.startsWith("/mach/tac-gia/")) {
         const aid = route.replace("/mach/tac-gia/", "");
@@ -247,30 +258,44 @@ function showSectionByRoute(route) {
 
     if (route === "/tree" || route === "/gia-pha" || route === "/gia-pha/cay") {
         secId = "view_tree";
-        navId = "nav_tree";
+        navId = "nav_gia_pha";
         renderTreeModule();
-    } else if (route === "/people" || route === "/gia-pha/nguoi") {
+    } else if (route === "/people" || route === "/gia-pha/nguoi" || route === "/gia-pha/nhan-vat") {
         secId = "view_people";
-        navId = "nav_people";
+        navId = "nav_gia_pha";
     } else if (route === "/families" || route === "/gia-pha/gia-dinh") {
         secId = "view_families";
-        navId = "nav_families";
+        navId = "nav_gia_pha";
     } else if (route === "/calendar" || route === "/lich") {
         secId = "view_calendar";
-        navId = "nav_calendar";
+        navId = "nav_lich";
         renderCalendarModule();
-    } else if (route === "/mach" || route === "/mach/bai-viet" || route === "/mach/series" || route === "/mach/tac-gia") {
+    } else if (route === "/mach" || route === "/mach/bai-viet" || route === "/mach/series" || route === "/mach/chuyen-de" || route === "/mach/tac-gia") {
         secId = "view_mach";
         navId = "nav_mach";
         renderMachModule();
-    } else if (route === "/timeline") {
+    } else if (route === "/tu-lieu" || route === "/tu-lieu/hien-vat" || route === "/tu-lieu/bo-suu-tap") {
+        secId = "view_tu_lieu";
+        navId = "nav_tu_lieu";
+        renderTuLieuModule();
+    } else if (route === "/tim-kiem" || route === "/search") {
+        secId = "view_search";
+        navId = "";
+        runSearchPage();
+    } else if (route === "/timeline" || route === "/gia-pha/dong-thoi-gian") {
         secId = "view_timeline";
-        navId = "nav_timeline";
-    } else if (route === "/memories") {
-        secId = "view_mach";
-        navId = "nav_mach";
-        renderMachModule();
-    } else if (route === "/typography-specimen" || route === "/typography") {
+        navId = "";
+    } else if (route === "/memories" || route === "/gia-pha/ky-uc") {
+        secId = "view_memories";
+        navId = "";
+        renderMemories();
+    } else if (route === "/ve-dong-ho" || route === "/about-family") {
+        secId = "view_ve_dong_ho";
+        navId = "";
+    } else if (route === "/ve-du-an" || route === "/about-project") {
+        secId = "view_ve_du_an";
+        navId = "";
+    } else if (route === "/typography-specimen" || route === "/typography" || route === "/ve-du-an/typography-specimen") {
         secId = "view_typography_specimen";
         navId = "";
     }
@@ -1482,6 +1507,58 @@ function escapeHtml(text) {
 }
 
 // =======================================================
+// HOME PUBLICATION LANDING (PUBLICATION_V1)
+// =======================================================
+
+function renderHomePublicationLanding() {
+    // 1. Territory cards: populate stats after data load
+    const cardStats = document.querySelectorAll(".pub-territory-stats");
+    if (cardStats.length > 0) {
+        const peopleCount = (appData.stats && appData.stats.individuals) || Object.keys(appData.people).length || 0;
+        const famCount = (appData.stats && appData.stats.families) || Object.keys(appData.families).length || 0;
+        const storyCount = (machData && (machData.articles || machData.stories)) ? (machData.articles || machData.stories).length : 0;
+        const labels = [
+            `${peopleCount} thành viên • ${famCount} gia đình • Phả đồ tương tác`,
+            `${storyCount} bài viết • 2 tuyển tập • 3 tác giả`,
+            `${Object.keys(machData.archiveIndex || {}).length} hiện vật đang số hóa`
+        ];
+        cardStats.forEach((el, i) => { if (labels[i]) el.innerText = labels[i]; });
+    }
+
+    // 2. Latest MẠCH stories on home
+    const latestGrid = document.getElementById("homeLatestStories");
+    if (latestGrid && machData && (machData.articles || machData.stories)) {
+        const articleList = (machData.articles || machData.stories).slice();
+        articleList.sort((a, b) => {
+            const da = a.date || a.publishedAt || '';
+            const db = b.date || b.publishedAt || '';
+            return db.localeCompare(da);
+        });
+        latestGrid.innerHTML = articleList.slice(0, 3).map(s => {
+            const seriesId = (s.seriesIds && s.seriesIds.length > 0) ? s.seriesIds[0] : (s.seriesId || s.seriesSlug);
+            const ser = (machData.series && seriesId) ? machData.series[seriesId] : null;
+            const authId = (s.authorIds && s.authorIds.length > 0) ? s.authorIds[0] : s.authorId;
+            const auth = (machData.authors && authId) ? machData.authors[authId] : { name: "Ban Biên Tập" };
+            const isLetter = s.articleType === 'letter' || (ser && ser.seriesType === 'epistolary');
+            const tagLabel = ser ? `${(ser.shortTitle || ser.title).toUpperCase()}${s.seriesOrder ? ' · ' + (isLetter ? 'SỐ' : 'BÀI') + ' ' + String(s.seriesOrder).padStart(2, '0') : ''}` : 'MẠCH';
+            return `
+                <div class="story-card" onclick="navigateRoute('/mach/bai-viet/${s.slug}')">
+                    <div>
+                        <div class="story-card-tag">${tagLabel}</div>
+                        <h3 class="story-card-title">${s.title}</h3>
+                        <p class="story-card-excerpt">${s.excerpt || s.deckLead || s.subtitle || ''}</p>
+                    </div>
+                    <div class="story-card-footer">
+                        <span>✍️ ${auth.name}</span>
+                        <span>${s.date || (s.publishedAt ? s.publishedAt.slice(0, 10) : '2026')}</span>
+                    </div>
+                </div>
+            `;
+        }).join("");
+    }
+}
+
+// =======================================================
 // MẠCH EDITORIAL & NARRATIVE MODULE CONTROLLER (MACH_01)
 // =======================================================
 
@@ -1507,6 +1584,22 @@ function filterMachTab(tab) {
 
 function renderMachModule() {
     if (!machData || !machData.stories) return;
+
+    // 0. Editorial masthead meta: publication facts in hero
+    const heroMeta = document.getElementById("machHeroMeta");
+    if (heroMeta) {
+        const articleList = machData.articles || machData.stories || [];
+        const seriesCount = machData.series ? Object.keys(machData.series).length : 0;
+        const authorsCount = machData.authors ? Object.keys(machData.authors).length : 0;
+        const issue01 = machData.series ? machData.series["issue-01"] : null;
+        const issueLabel = issue01 ? `Tập san MẠCH Số 01/2026` : `Tập san gia tộc`;
+        heroMeta.innerHTML = `
+            <span class="mach-hero-meta-item">${articleList.length} bài viết</span>
+            <span class="mach-hero-meta-item">${seriesCount} tuyển tập</span>
+            <span class="mach-hero-meta-item">${authorsCount} tác giả</span>
+            <span class="mach-hero-meta-item mach-hero-meta-accent">${issueLabel}</span>
+        `;
+    }
 
     // 1. Render Featured Series Spotlights (Tập san MẠCH + Thư gửi Clara)
     const featContainer = document.getElementById("machFeaturedContainer");
@@ -2143,5 +2236,108 @@ selectGlobalSearchResult = function(type, id) {
     else if (type === 'STORY') navigateRoute(`/mach/bai-viet/${id}`);
     else if (type === 'SERIES') navigateRoute(`/mach/series/${id}`);
     else if (type === 'AUTHOR') navigateRoute(`/mach/tac-gia/${id}`);
-    else if (type === 'MEMORY') navigateRoute('/mach');
+    else if (type === 'MEMORY') navigateRoute('/gia-pha/ky-uc');
 };
+
+// --- TƯ LIỆU LANDING (STRUCTURAL ENTRY / PLACEHOLDER) ---
+function renderTuLieuModule() {
+    const wrapper = document.querySelector(".tu-lieu-wrapper");
+    if (!wrapper) return;
+    const invite = document.querySelector(".tu-lieu-invite");
+    if (invite) {
+        const peopleCount = (appData.stats && appData.stats.individuals) || Object.keys(appData.people).length || 0;
+        const storiesCount = (machData && (machData.articles || machData.stories)) ? (machData.articles || machData.stories).length : 0;
+        invite.innerHTML = `Kho tư liệu đang được xây dựng. Trong khi chờ đợi, hãy khám phá <a onclick="navigateRoute('/mach')" class="inline-link">${storiesCount} bài tự sự trong Mạch</a> và <a onclick="navigateRoute('/gia-pha/nhan-vat')" class="inline-link">${peopleCount} hồ sơ nhân vật trong Gia Phả</a>.`;
+    }
+}
+
+// --- TÌM KIẾM TOÀN CỤC / SEARCH RESULTS PAGE ---
+function runSearchPage() {
+    const inp = document.getElementById("searchPageInput");
+    const q = inp ? inp.value.toLowerCase().trim() : "";
+    const container = document.getElementById("searchPageResults");
+    if (!container) return;
+    if (!q) {
+        container.innerHTML = `<div style="padding:32px; text-align:center; color:var(--text-muted);">Nhập từ khóa để bắt đầu tìm kiếm.</div>`;
+        return;
+    }
+
+    const results = [];
+
+    Object.values(appData.people || {}).forEach(p => {
+        if ((p.name && p.name.toLowerCase().includes(q)) || (p.fsid && p.fsid.toLowerCase().includes(q))) {
+            const gMeta = getGenerationMeta(p.id);
+            results.push({ type: 'PERSON', id: p.id, icon: '👤', title: p.name, sub: `${gMeta.label} • FSID: ${p.fsid || p.id}`, cat: 'Nhân vật' });
+        }
+    });
+
+    (appData.memories || []).forEach(m => {
+        if ((m.title && m.title.toLowerCase().includes(q)) || (m.story && m.story.toLowerCase().includes(q))) {
+            results.push({ type: 'MEMORY', id: m.id, icon: '🕯️', title: m.title, sub: `Ký ức gia tộc • ${m.personName || ''}`, cat: 'Ký ức' });
+        }
+    });
+
+    const allArticles = (machData && (machData.articles || machData.stories)) ? (machData.articles || machData.stories) : [];
+    allArticles.forEach(s => {
+        if ((s.title && s.title.toLowerCase().includes(q)) || (s.excerpt && s.excerpt.toLowerCase().includes(q)) || (s.deckLead && s.deckLead.toLowerCase().includes(q)) || (s.subtitle && s.subtitle.toLowerCase().includes(q))) {
+            const isLetter = s.articleType === 'letter' || (s.seriesIds && s.seriesIds.includes("thu-gui-clara"));
+            const prefix = isLetter ? "✉️ Thư gửi Clara" : "📖 Tập san MẠCH";
+            results.push({ type: 'STORY', id: s.slug, icon: '📖', title: s.title, sub: `${prefix} • ${s.date || (s.publishedAt ? s.publishedAt.slice(0, 10) : '')}`, cat: 'Bài viết' });
+        }
+    });
+
+    if (machData && machData.series) {
+        Object.values(machData.series).forEach(ser => {
+            if (ser.title.toLowerCase().includes(q) || (ser.description && ser.description.toLowerCase().includes(q))) {
+                results.push({ type: 'SERIES', id: ser.slug || ser.id, icon: '📚', title: ser.title, sub: 'Chuỗi tuyển tập MẠCH', cat: 'Tuyển tập' });
+            }
+        });
+    }
+
+    if (machData && machData.authors) {
+        Object.values(machData.authors).forEach(a => {
+            if (a.name.toLowerCase().includes(q) || (a.role && a.role.toLowerCase().includes(q))) {
+                results.push({ type: 'AUTHOR', id: a.slug || a.id, icon: '✍️', title: a.name, sub: `Tác giả: ${a.role || ''}`, cat: 'Tác giả' });
+            }
+        });
+    }
+
+    if (results.length === 0) {
+        container.innerHTML = `<div style="padding:40px; text-align:center; color:var(--text-muted);">Không tìm thấy kết quả cho "<strong>${escapeHtml(q)}</strong>".</div>`;
+        return;
+    }
+
+    const byCat = {};
+    results.forEach(r => { (byCat[r.cat] = byCat[r.cat] || []).push(r); });
+
+    container.innerHTML = `<div style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">Tìm thấy <strong>${results.length}</strong> kết quả cho "<strong>${escapeHtml(q)}</strong>"</div>` +
+        Object.keys(byCat).map(cat => `
+            <div class="search-page-group">
+                <div class="section-divider-title"><span>${cat} (${byCat[cat].length})</span></div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:12px;">
+                    ${byCat[cat].map(r => `
+                        <div class="search-result-card" onclick="selectSearchPageResult('${r.type}', '${r.id}')">
+                            <div class="search-result-icon">${r.icon}</div>
+                            <div>
+                                <div class="search-result-title">${escapeHtml(r.title)}</div>
+                                <div class="search-result-sub">${escapeHtml(r.sub)}</div>
+                            </div>
+                        </div>
+                    `).join("")}
+                </div>
+            </div>
+        `).join("");
+}
+
+function handleSearchPageInput(e) {
+    if (e.key === 'Enter') runSearchPage();
+    else if (e.target.value && e.target.value.trim()) runSearchPage();
+}
+
+function selectSearchPageResult(type, id) {
+    if (type === 'PERSON') openPersonProfile(id);
+    else if (type === 'STORY') navigateRoute(`/mach/bai-viet/${id}`);
+    else if (type === 'SERIES') navigateRoute(`/mach/series/${id}`);
+    else if (type === 'AUTHOR') navigateRoute(`/mach/tac-gia/${id}`);
+    else if (type === 'MEMORY') navigateRoute('/gia-pha/ky-uc');
+}
