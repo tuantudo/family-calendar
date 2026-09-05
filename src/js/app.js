@@ -1356,38 +1356,68 @@ function filterMachTab(tab) {
 function renderMachModule() {
     if (!machData || !machData.stories) return;
 
-    // 1. Render Featured Story
+    // 1. Render Featured Series Spotlights (Tập san MẠCH + Thư gửi Clara)
     const featContainer = document.getElementById("machFeaturedContainer");
-    if (featContainer && machData.stories.length > 0) {
-        const feat = machData.stories[0];
-        const auth = (machData.authors && machData.authors[feat.authorId]) ? machData.authors[feat.authorId] : { name: "Ban Biên Tập" };
-        const ser = (machData.series && machData.series[feat.seriesSlug]) ? machData.series[feat.seriesSlug] : { title: "Chuyên đề" };
-        featContainer.innerHTML = `
-            <div class="series-card" style="border-left: 5px solid var(--lacquer-red); margin-bottom: 24px;" onclick="navigateRoute('/mach/bai-viet/${feat.slug}')">
-                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-                    <span class="series-card-badge">⭐ BÀI VIẾT NỔI BẬT • ${ser.title.toUpperCase()}</span>
-                    <span style="font-size:12.5px; color:var(--text-subtle);">${feat.date}</span>
+    if (featContainer && machData.series) {
+        const issue01 = machData.series["issue-01"];
+        const clara = machData.series["thu-gui-clara"];
+        
+        let featHtml = `<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:16px; margin-bottom:24px;">`;
+
+        if (issue01) {
+            const auth = (machData.authors && machData.authors[issue01.authorId]) ? machData.authors[issue01.authorId] : { name: "Người giữ mạch" };
+            featHtml += `
+                <div class="series-card" style="border-left: 5px solid var(--lacquer-red); cursor:pointer;" onclick="navigateRoute('/mach/series/${issue01.slug}')">
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                        <span class="series-card-badge">📖 TẬP SAN LƯU TRỮ • 12 BÀI</span>
+                        <span style="font-size:12px; color:var(--text-muted);">Số 01/2026</span>
+                    </div>
+                    <h3 class="series-card-title" style="margin-top: 8px; font-size:1.15rem;">${issue01.title}</h3>
+                    <p class="series-card-desc" style="font-size:13.5px;">${issue01.description}</p>
+                    <div class="series-card-meta">
+                        <span>✍️ ${auth.name}</span>
+                        <span style="color:var(--lacquer-red); font-weight:700;">Xem toàn bộ tập san →</span>
+                    </div>
                 </div>
-                <h3 class="series-card-title" style="margin-top: 6px;">${feat.title}</h3>
-                <p class="series-card-desc">${feat.excerpt}</p>
-                <div class="series-card-meta">
-                    <span>✍️ ${auth.name}</span>
-                    <span style="color:var(--lacquer-red); font-weight:700;">Đọc tiếp bài viết →</span>
+            `;
+        }
+
+        if (clara) {
+            const auth = (machData.authors && machData.authors[clara.authorId]) ? machData.authors[clara.authorId] : { name: "Tuấn" };
+            featHtml += `
+                <div class="series-card" style="border-left: 5px solid #d97706; cursor:pointer;" onclick="navigateRoute('/mach/series/${clara.slug}')">
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                        <span class="series-card-badge" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">✉️ CHUỖI THƯ TỪ • 7 LÁ THƯ</span>
+                        <span style="font-size:12px; color:var(--text-muted);">2026</span>
+                    </div>
+                    <h3 class="series-card-title" style="margin-top: 8px; font-size:1.15rem;">${clara.title}</h3>
+                    <p class="series-card-desc" style="font-size:13.5px;">${clara.description}</p>
+                    <div class="series-card-meta">
+                        <span>✍️ ${auth.name}</span>
+                        <span style="color:#d97706; font-weight:700;">Đọc các lá thư →</span>
+                    </div>
                 </div>
-            </div>
-        `;
+            `;
+        }
+
+        featHtml += `</div>`;
+        featContainer.innerHTML = featHtml;
     }
 
-    // 2. Render Stories Grid
+    // 2. Render Stories Grid (All 19 stories with series tags)
     const storiesGrid = document.getElementById("machStoriesGrid");
     if (storiesGrid) {
         storiesGrid.innerHTML = machData.stories.map(s => {
-            const ser = (machData.series && machData.series[s.seriesSlug]) ? machData.series[s.seriesSlug] : { title: "Chuyên đề" };
+            const ser = (machData.series && machData.series[s.seriesSlug]) ? machData.series[s.seriesSlug] : { title: "MẠCH" };
             const auth = (machData.authors && machData.authors[s.authorId]) ? machData.authors[s.authorId] : { name: "Ban Biên Tập" };
+            const isClara = s.seriesSlug === "thu-gui-clara";
+            const tagLabel = isClara ? `THƯ GỬI CLARA · SỐ ${String(s.seriesOrder).padStart(2, '0')}` : `${s.section ? s.section.toUpperCase() + ' · ' : ''}BÀI ${String(s.seriesOrder).padStart(2, '0')}`;
+            const badgeStyle = isClara ? `background:#fef3c7; color:#92400e; border-color:#fde68a;` : ``;
+
             return `
                 <div class="story-card" onclick="navigateRoute('/mach/bai-viet/${s.slug}')">
                     <div>
-                        <div class="story-card-tag">${s.section ? s.section.toUpperCase() + ' · ' : ''}BÀI ${String(s.seriesOrder).padStart(2, '0')}</div>
+                        <div class="story-card-tag" style="${badgeStyle}">${tagLabel}</div>
                         <h3 class="story-card-title">${s.title}</h3>
                         <p class="story-card-excerpt">${s.excerpt}</p>
                     </div>
@@ -1405,15 +1435,20 @@ function renderMachModule() {
     if (seriesGrid && machData.series) {
         seriesGrid.innerHTML = Object.values(machData.series).map(ser => {
             const auth = (machData.authors && machData.authors[ser.authorId]) ? machData.authors[ser.authorId] : { name: "Ban Biên Tập" };
+            const isClara = ser.slug === "thu-gui-clara";
+            const badgeText = isClara ? `✉️ CHUỖI THƯ TỪ • ${ser.stories.length} LÁ THƯ` : `📖 TẬP SAN GIA TỘC • ${ser.stories.length} BÀI`;
+            const badgeColor = isClara ? `background:#fef3c7; color:#92400e; border-color:#fde68a;` : ``;
+            const borderAccent = isClara ? `border-left: 5px solid #d97706;` : `border-left: 5px solid var(--lacquer-red);`;
+
             return `
-                <div class="series-card" onclick="navigateRoute('/mach/series/${ser.slug}')">
-                    <span class="series-card-badge">📚 ẤN PHẨM / TUYỂN TẬP • ${ser.stories.length} BÀI</span>
+                <div class="series-card" style="${borderAccent} cursor:pointer;" onclick="navigateRoute('/mach/series/${ser.slug}')">
+                    <span class="series-card-badge" style="${badgeColor}">${badgeText}</span>
                     <h3 class="series-card-title">${ser.title}</h3>
                     <div style="font-style:italic; font-size:13.5px; color:var(--text-muted); margin-bottom:10px;">${ser.subtitle || ''}</div>
                     <p class="series-card-desc">${ser.description}</p>
                     <div class="series-card-meta">
-                        <span>Chủ biên / Chấp bút: <strong>${auth.name}</strong></span>
-                        <span style="color:var(--imperial-gold); font-weight:700;">Xem toàn bộ ấn phẩm →</span>
+                        <span>Tác giả / Chủ biên: <strong>${auth.name}</strong></span>
+                        <span style="color:var(--lacquer-red); font-weight:700;">Xem toàn bộ →</span>
                     </div>
                 </div>
             `;
@@ -1436,7 +1471,7 @@ function renderMachModule() {
                     </div>
                     <p class="author-bio">${a.bio}</p>
                     <div style="margin-top:14px; font-size:12.5px; color:var(--lacquer-red); font-weight:700;">
-                        ${authorStoriesCount} bài viết / khảo cứu →
+                        ${authorStoriesCount} tác phẩm / bài viết →
                     </div>
                 </div>
             `;
@@ -1458,12 +1493,13 @@ function openStoryDetail(slug) {
 
     const ser = machData.series ? machData.series[story.seriesSlug] : null;
     const auth = (machData.authors && machData.authors[story.authorId]) ? machData.authors[story.authorId] : { name: "Ban Biên Tập", role: "", bio: "", avatar: "✍️" };
+    const isClara = story.seriesSlug === "thu-gui-clara";
 
     // Set Breadcrumb
     const bc = document.getElementById("storySeriesBreadcrumb");
     if (bc) {
         if (ser) {
-            bc.innerHTML = `<a onclick="navigateRoute('/mach/series/${ser.slug}')" style="cursor:pointer; text-decoration:underline;">Ấn phẩm: ${ser.title}</a>`;
+            bc.innerHTML = `<a onclick="navigateRoute('/mach/series/${ser.slug}')" style="cursor:pointer; text-decoration:underline;">Series: ${ser.title}</a>`;
         } else {
             bc.innerHTML = "";
         }
@@ -1472,7 +1508,11 @@ function openStoryDetail(slug) {
     // Header
     const tagOrder = document.getElementById("storyTagOrder");
     if (tagOrder) {
-        tagOrder.innerText = ser ? `${ser.title} • ${story.section ? story.section.toUpperCase() + ' · ' : ''}BÀI ${String(story.seriesOrder).padStart(2, '0')}` : (story.section ? story.section.toUpperCase() : "MẠCH");
+        if (isClara) {
+            tagOrder.innerText = `THƯ GỬI CLARA • LÁ THƯ SỐ ${String(story.seriesOrder).padStart(2, '0')}`;
+        } else {
+            tagOrder.innerText = ser ? `${ser.title} • ${story.section ? story.section.toUpperCase() + ' · ' : ''}BÀI ${String(story.seriesOrder).padStart(2, '0')}` : (story.section ? story.section.toUpperCase() : "MẠCH");
+        }
     }
     const stTitle = document.getElementById("storyTitle");
     if (stTitle) stTitle.innerText = story.title;
@@ -1496,11 +1536,11 @@ function openStoryDetail(slug) {
     // Body rendering
     const contentBody = document.getElementById("storyContentBody");
     if (contentBody) {
-        let text = story.contentMarkdown;
-        if (text.startsWith("---")) {
-            const pts = text.split("---", 2);
-            if (pts.length >= 3) text = pts[2].trim();
-        }
+        let text = story.contentMarkdown || "";
+        // Strip YAML frontmatter
+        text = text.replace(/^---[\s\S]*?---\s*/, '').trim();
+        // If the top line starts with # and matches title/heading, strip it to prevent duplicate main header
+        text = text.replace(/^#\s+[^\n]+\n+/, '').trim();
         
         // Format figures
         text = text.replace(/!\[(.*?)\]\((.*?)\)(?:\s*\n\s*[\*_](.*?)[\*_])?/g, (m, alt, src, cap) => {
@@ -1553,12 +1593,12 @@ function openStoryDetail(slug) {
 
         let navHtml = "";
         if (prevStory) {
-            navHtml += `<button class="story-nav-btn" onclick="navigateRoute('/mach/bai-viet/${prevStory.slug}')">← Bài trước: ${prevStory.shortTitle || prevStory.title}</button>`;
+            navHtml += `<button class="story-nav-btn" onclick="navigateRoute('/mach/bai-viet/${prevStory.slug}')">← ${isClara ? 'Thư trước' : 'Bài trước'}: ${prevStory.shortTitle || prevStory.title}</button>`;
         } else {
             navHtml += `<div></div>`;
         }
         if (nextStory) {
-            navHtml += `<button class="story-nav-btn" onclick="navigateRoute('/mach/bai-viet/${nextStory.slug}')">Bài tiếp: ${nextStory.shortTitle || nextStory.title} →</button>`;
+            navHtml += `<button class="story-nav-btn" onclick="navigateRoute('/mach/bai-viet/${nextStory.slug}')">${isClara ? 'Thư tiếp' : 'Bài tiếp'}: ${nextStory.shortTitle || nextStory.title} →</button>`;
         }
         prevNext.innerHTML = navHtml;
     }
@@ -1579,15 +1619,17 @@ function openSeriesDetail(slug) {
     if (machNav) machNav.classList.add("active");
 
     const auth = (machData.authors && machData.authors[ser.authorId]) ? machData.authors[ser.authorId] : { name: "Ban Biên Tập" };
+    const isClara = ser.slug === "thu-gui-clara";
+    const badgeText = isClara ? `✉️ CHUỖI THƯ TỪ GIA TỘC` : `📚 TẬP SAN LƯU TRỮ`;
     const headerCard = document.getElementById("seriesHeaderCard");
     if (headerCard) {
         headerCard.innerHTML = `
-            <span class="series-card-badge">📚 ẤN PHẨM CHUYÊN ĐỀ</span>
+            <span class="series-card-badge">${badgeText}</span>
             <h1 class="story-title" style="margin-top:10px; margin-bottom:8px;">${ser.title}</h1>
             <div style="font-style:italic; font-size:16px; color:var(--imperial-gold); margin-bottom:16px;">${ser.subtitle || ''}</div>
             <p style="font-size:15px; color:var(--text-main); line-height:1.7;">${ser.description}</p>
             <div style="margin-top:18px; font-size:13.5px; color:var(--text-muted); border-top:1px solid var(--border-subtle); padding-top:12px;">
-                Tác giả / Chủ biên: <strong>${auth.name}</strong> • Số bài: <strong>${ser.stories.length}</strong>
+                Tác giả / Chủ biên: <strong>${auth.name}</strong> • Quy mô: <strong>${ser.stories.length} ${isClara ? 'lá thư' : 'bài viết'}</strong>
             </div>
         `;
     }
@@ -1595,19 +1637,22 @@ function openSeriesDetail(slug) {
     const grid = document.getElementById("seriesStoriesGrid");
     if (grid) {
         const seriesStories = ser.stories.map(stSlug => machData.stories.find(s => s.slug === stSlug)).filter(Boolean);
-        grid.innerHTML = seriesStories.map(s => `
-            <div class="story-card" onclick="navigateRoute('/mach/bai-viet/${s.slug}')">
-                <div>
-                    <div class="story-card-tag">${s.section ? s.section.toUpperCase() + ' · ' : ''}BÀI ${String(s.seriesOrder).padStart(2, '0')}</div>
-                    <h3 class="story-card-title">${s.title}</h3>
-                    <p class="story-card-excerpt">${s.excerpt}</p>
+        grid.innerHTML = seriesStories.map(s => {
+            const tagLabel = isClara ? `THƯ GỬI CLARA · SỐ ${String(s.seriesOrder).padStart(2, '0')}` : `${s.section ? s.section.toUpperCase() + ' · ' : ''}BÀI ${String(s.seriesOrder).padStart(2, '0')}`;
+            return `
+                <div class="story-card" onclick="navigateRoute('/mach/bai-viet/${s.slug}')">
+                    <div>
+                        <div class="story-card-tag">${tagLabel}</div>
+                        <h3 class="story-card-title">${s.title}</h3>
+                        <p class="story-card-excerpt">${s.excerpt}</p>
+                    </div>
+                    <div class="story-card-footer">
+                        <span>${s.date}</span>
+                        <span style="color:var(--lacquer-red); font-weight:700;">Đọc thư / bài →</span>
+                    </div>
                 </div>
-                <div class="story-card-footer">
-                    <span>${s.date}</span>
-                    <span style="color:var(--lacquer-red); font-weight:700;">Đọc bài →</span>
-                </div>
-            </div>
-        `).join("");
+            `;
+        }).join("");
     }
     window.scrollTo(0, 0);
 }
@@ -1661,7 +1706,7 @@ function openAuthorDetail(authorId) {
     window.scrollTo(0, 0);
 }
 
-// Override Global Search to index MẠCH stories
+// Override Global Search to index both MẠCH series (Tập san Mạch & Thư gửi Clara)
 handleGlobalSearch = function(e) {
     const q = e.target.value.toLowerCase().trim();
     const dd = document.getElementById("globalSearchDropdown");
@@ -1678,8 +1723,10 @@ handleGlobalSearch = function(e) {
 
     if (machData && machData.stories) {
         machData.stories.forEach(s => {
-            if (s.title.toLowerCase().includes(q) || s.excerpt.toLowerCase().includes(q)) {
-                results.push({ type: 'STORY', id: s.slug, title: s.title, sub: `🧵 MẠCH • ${s.date}` });
+            if (s.title.toLowerCase().includes(q) || s.excerpt.toLowerCase().includes(q) || (s.subtitle && s.subtitle.toLowerCase().includes(q))) {
+                const isClara = s.seriesSlug === "thu-gui-clara";
+                const prefix = isClara ? "✉️ Thư gửi Clara" : "📖 Tập san MẠCH";
+                results.push({ type: 'STORY', id: s.slug, title: s.title, sub: `${prefix} • ${s.date}` });
             }
         });
     }
