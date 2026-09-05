@@ -1219,12 +1219,12 @@ function renderMachModule() {
     const storiesGrid = document.getElementById("machStoriesGrid");
     if (storiesGrid) {
         storiesGrid.innerHTML = machData.stories.map(s => {
-            const ser = (machData.series && machData.series[s.seriesSlug]) ? machData.series[s.seriesSlug] : { title: "Tự sự" };
+            const ser = (machData.series && machData.series[s.seriesSlug]) ? machData.series[s.seriesSlug] : { title: "Chuyên đề" };
             const auth = (machData.authors && machData.authors[s.authorId]) ? machData.authors[s.authorId] : { name: "Ban Biên Tập" };
             return `
                 <div class="story-card" onclick="navigateRoute('/mach/bai-viet/${s.slug}')">
                     <div>
-                        <div class="story-card-tag">${ser.title} ${s.seriesOrder ? '· Số ' + String(s.seriesOrder).padStart(2, '0') : ''}</div>
+                        <div class="story-card-tag">${s.section ? s.section.toUpperCase() + ' · ' : ''}BÀI ${String(s.seriesOrder).padStart(2, '0')}</div>
                         <h3 class="story-card-title">${s.title}</h3>
                         <p class="story-card-excerpt">${s.excerpt}</p>
                     </div>
@@ -1244,13 +1244,13 @@ function renderMachModule() {
             const auth = (machData.authors && machData.authors[ser.authorId]) ? machData.authors[ser.authorId] : { name: "Ban Biên Tập" };
             return `
                 <div class="series-card" onclick="navigateRoute('/mach/series/${ser.slug}')">
-                    <span class="series-card-badge">📚 TUYỂN TẬP • ${ser.stories.length} BÀI</span>
+                    <span class="series-card-badge">📚 ẤN PHẨM / TUYỂN TẬP • ${ser.stories.length} BÀI</span>
                     <h3 class="series-card-title">${ser.title}</h3>
                     <div style="font-style:italic; font-size:13.5px; color:var(--text-muted); margin-bottom:10px;">${ser.subtitle || ''}</div>
                     <p class="series-card-desc">${ser.description}</p>
                     <div class="series-card-meta">
-                        <span>Chủ biên: <strong>${auth.name}</strong></span>
-                        <span style="color:var(--imperial-gold); font-weight:700;">Xem tuyển tập →</span>
+                        <span>Chủ biên / Chấp bút: <strong>${auth.name}</strong></span>
+                        <span style="color:var(--imperial-gold); font-weight:700;">Xem toàn bộ ấn phẩm →</span>
                     </div>
                 </div>
             `;
@@ -1273,7 +1273,7 @@ function renderMachModule() {
                     </div>
                     <p class="author-bio">${a.bio}</p>
                     <div style="margin-top:14px; font-size:12.5px; color:var(--lacquer-red); font-weight:700;">
-                        ${authorStoriesCount} tác phẩm đã đóng góp →
+                        ${authorStoriesCount} bài viết / khảo cứu →
                     </div>
                 </div>
             `;
@@ -1300,7 +1300,7 @@ function openStoryDetail(slug) {
     const bc = document.getElementById("storySeriesBreadcrumb");
     if (bc) {
         if (ser) {
-            bc.innerHTML = `<a onclick="navigateRoute('/mach/series/${ser.slug}')" style="cursor:pointer; text-decoration:underline;">Tuyển tập: ${ser.title}</a>`;
+            bc.innerHTML = `<a onclick="navigateRoute('/mach/series/${ser.slug}')" style="cursor:pointer; text-decoration:underline;">Ấn phẩm: ${ser.title}</a>`;
         } else {
             bc.innerHTML = "";
         }
@@ -1309,7 +1309,7 @@ function openStoryDetail(slug) {
     // Header
     const tagOrder = document.getElementById("storyTagOrder");
     if (tagOrder) {
-        tagOrder.innerText = ser ? `${ser.title} ${story.seriesOrder ? '• THƯ SỐ ' + String(story.seriesOrder).padStart(2, '0') : ''}` : "TỰ SỰ";
+        tagOrder.innerText = ser ? `${ser.title} • ${story.section ? story.section.toUpperCase() + ' · ' : ''}BÀI ${String(story.seriesOrder).padStart(2, '0')}` : (story.section ? story.section.toUpperCase() : "MẠCH");
     }
     const stTitle = document.getElementById("storyTitle");
     if (stTitle) stTitle.innerText = story.title;
@@ -1390,12 +1390,12 @@ function openStoryDetail(slug) {
 
         let navHtml = "";
         if (prevStory) {
-            navHtml += `<button class="story-nav-btn" onclick="navigateRoute('/mach/bai-viet/${prevStory.slug}')">← Bài trước: ${prevStory.title}</button>`;
+            navHtml += `<button class="story-nav-btn" onclick="navigateRoute('/mach/bai-viet/${prevStory.slug}')">← Bài trước: ${prevStory.shortTitle || prevStory.title}</button>`;
         } else {
             navHtml += `<div></div>`;
         }
         if (nextStory) {
-            navHtml += `<button class="story-nav-btn" onclick="navigateRoute('/mach/bai-viet/${nextStory.slug}')">Bài tiếp: ${nextStory.title} →</button>`;
+            navHtml += `<button class="story-nav-btn" onclick="navigateRoute('/mach/bai-viet/${nextStory.slug}')">Bài tiếp: ${nextStory.shortTitle || nextStory.title} →</button>`;
         }
         prevNext.innerHTML = navHtml;
     }
@@ -1419,7 +1419,7 @@ function openSeriesDetail(slug) {
     const headerCard = document.getElementById("seriesHeaderCard");
     if (headerCard) {
         headerCard.innerHTML = `
-            <span class="series-card-badge">📚 TUYỂN TẬP ĐẶC BIỆT</span>
+            <span class="series-card-badge">📚 ẤN PHẨM CHUYÊN ĐỀ</span>
             <h1 class="story-title" style="margin-top:10px; margin-bottom:8px;">${ser.title}</h1>
             <div style="font-style:italic; font-size:16px; color:var(--imperial-gold); margin-bottom:16px;">${ser.subtitle || ''}</div>
             <p style="font-size:15px; color:var(--text-main); line-height:1.7;">${ser.description}</p>
@@ -1435,7 +1435,7 @@ function openSeriesDetail(slug) {
         grid.innerHTML = seriesStories.map(s => `
             <div class="story-card" onclick="navigateRoute('/mach/bai-viet/${s.slug}')">
                 <div>
-                    <div class="story-card-tag">THƯ SỐ ${String(s.seriesOrder).padStart(2, '0')}</div>
+                    <div class="story-card-tag">${s.section ? s.section.toUpperCase() + ' · ' : ''}BÀI ${String(s.seriesOrder).padStart(2, '0')}</div>
                     <h3 class="story-card-title">${s.title}</h3>
                     <p class="story-card-excerpt">${s.excerpt}</p>
                 </div>
