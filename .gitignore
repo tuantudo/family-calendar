@@ -1,0 +1,24 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Python bytecode & environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+
+# Antigravity & IDE metadata
+*.metadata.json
+.vscode/
+.idea/
+
+# Local configuration & secrets
+.env
+local_secrets.*
+
+# GEDCOM Source of Truth (Must remain private, never committed to public repo)
+*.ged
+*.gedcom

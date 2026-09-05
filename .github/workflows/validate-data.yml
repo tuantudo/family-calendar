@@ -1,0 +1,32 @@
+name: Data Integrity & Invariant Gate
+
+on:
+  push:
+    branches:
+      - main
+      - 'architecture/**'
+    paths:
+      - 'data/**'
+      - 'calendars/**'
+      - 'generator/**'
+      - 'src/**'
+      - 'index.html'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Data Integrity & Invariant Gate
+        run: |
+          python3 generator/validate_integrity.py
