@@ -1,26 +1,18 @@
 # KIẾN TRÚC ẤN PHẨM SỐ: PUBLICATION ARCHITECTURE_01
-**Định nghĩa Nền tảng Digital Magazine (MẠCH) trong Hệ sinh thái Tri thức Dòng họ Trần Trọng Thu**
+**Định nghĩa Nền tảng Digital Magazine & Editorial Architecture cho MẠCH trong Hệ sinh thái Dòng họ Trần Trọng Thu**
 
 - **Tài liệu**: `docs/ux/PUBLICATION_ARCHITECTURE_01.md`
-- **Dự án**: Cây Gia Phả & Ấn phẩm MẠCH (`gionghotrantrongthu.vercel.app`)
-- **Visual & Editorial Reference**: `/Users/tuantq/Projects/Personal/MACH`
+- **Dự án**: Cây Gia Phả & Tạp chí MẠCH (`gionghotrantrongthu.vercel.app`)
+- **Visual Reference**: `/Users/tuantq/Projects/Personal/MACH` (Aesthetic, Mood & Tone, Typography, Materiality)
+- **Editorial Reference**: BBC News Architecture (Content Hierarchy, Storytelling Formats, Editorial Discipline)
 - **Content Source**: `/Users/tuantq/Obsidian/20_PROJECTS/Mach/PROJECTS`
-- **Trạng thái**: Kiến trúc & Đặc tả mô hình (Specification / No Redesign Code)
+- **Trạng thái**: Kiến trúc & Đặc tả Biên tập (Specification / No Redesign Code)
 
 ---
 
-## 1. TỔNG QUAN: PHÂN ĐỊNH PHẠM VI HỆ THỐNG
+## 1. TỔNG QUAN: PHÂN ĐỊNH KHÔNG GIAN SẢN PHẨM
 
-Sau khi đối chiếu và làm rõ với tôn chỉ thiết kế, ranh giới sản phẩm của Cây Gia Phả được xác lập một cách chuẩn xác:
-
-> [!IMPORTANT]
-> **ĐỊNH VỊ CHÍNH XÁC (SYSTEM CLARIFICATION):**
-> 1. **CÂY GIA PHẢ** là một **Family Knowledge & Heritage Website (Website Tri thức & Di sản Gia tộc)** đa chế độ, không phải mọi ngóc ngách đều bị biến thành bài báo hay tạp chí.
-> 2. **MẠCH** chính là **DIGITAL MAGAZINE / ONLINE MAGAZINE (Tạp chí Mạng)** trung tâm của hệ thống — nơi hội tụ trọn vẹn chất lượng xuất bản, ngôn ngữ biên tập, nhiếp ảnh tư liệu và nhịp điệu đọc sâu sắc từ ấn phẩm gốc `/Users/tuantq/Projects/Personal/MACH`.
-> 3. Các không gian còn lại giữ trọn công năng riêng biệt:
->    - 🌳 **GIA PHẢ**: Dữ liệu cấu trúc, quan hệ huyết thống, tra cứu thế hệ (*Information / Structured Data*).
->    - 📅 **LỊCH**: Tiện ích thời gian, ngày giỗ, sinh nhật, bổn mạng, đồng bộ điện thoại (*Family Utility*).
->    - 📚 **TƯ LIỆU**: Kho lưu trữ văn tự cổ, bia mộ tổ, di thư, chứng tích (*Archive / Heritage Source*).
+Hệ sinh thái số `gionghotrantrongthu.vercel.app` được tổ chức theo mô hình **Website Tri thức & Di sản Gia tộc (Family Knowledge & Heritage Platform)** gồm 4 không gian với công năng chuyên biệt:
 
 ```
                  HỆ SINH THÁI TRI THỨC GIA TỘC (FAMILY KNOWLEDGE PLATFORM)
@@ -29,206 +21,212 @@ Sau khi đối chiếu và làm rõ với tôn chỉ thiết kế, ranh giới s
 ├──────────────────────────┬────────────────────────────┬─────────────────────────────────┤
 │ 🌳 GIA PHẢ               │ 🧵 MẠCH                    │ 📅 LỊCH & 📚 TƯ LIỆU            │
 │ (Information Mode)       │ (DIGITAL MAGAZINE MODE)    │ (Utility & Archival Modes)      │
-│ • Sơ đồ thế hệ SVG/Graph │ • Tạp chí trực tuyến       │ • Tra cứu Lịch Âm - Dương       │
-│ • 223 Nhân vật (GEDCOM)  │ • Ấn phẩm chuyên đề        │ • Đăng ký Lịch Apple/Google     │
-│ • 68 Gia đình            │ • Bút ký, Khảo cứu, Hồi ức │ • Kho bản scan gia phả cổ       │
-│ • Quan hệ cha/con/vợ/chồng│ • Nhiếp ảnh đời sống thật │ • Tư liệu bia mộ & di chúc      │
+│ • Cấu trúc phả hệ SVG    │ • Tạp chí mạng gia tộc     │ • Tra cứu Lịch Âm - Dương       │
+│ • 223 Nhân vật (GEDCOM)  │ • Khảo cứu, Bút ký, Luận   │ • Đăng ký Lịch Apple/Google     │
+│ • 68 Gia đình            │ • Tiếng nói trước đời sống │ • Kho bản scan gia phả cổ       │
+│ • Quan hệ cha/con/vợ/chồng│ • Nhiếp ảnh đời thường     │ • Tư liệu bia mộ & chứng tích   │
 └──────────────────────────┴────────────────────────────┴─────────────────────────────────┘
 ```
 
----
-
-## 2. CHƯƠNG ĐẶC BIỆT: MẠCH AS DIGITAL MAGAZINE (TẠP CHÍ MẠNG MẠCH)
-
-Đây là trọng tâm của Publication Engine. MẠCH là nơi biến tinh thần của một ấn phẩm in cao cấp thành một trải nghiệm tạp chí mạng đương đại.
-
-### 2.1. MẠCH Khác Một Blog Cá Nhân Như Thế Nào?
-
-```
-┌───────────────────────────────────────┬───────────────────────────────────────┐
-│ BLOG CÁ NHÂN THÔNG THƯỜNG             │ MẠCH — DIGITAL MAGAZINE GIA TỘC       │
-├───────────────────────────────────────┼───────────────────────────────────────┤
-│ • Danh sách bài viết phẳng theo ngày  │ • Biên tập theo Số / Chuyên đề        │
-│   (Reverse-chronological post feed)   │   (Curated Issues, Themes & Volumes)  │
-│ • Ảnh chỉ là hình minh họa chèn thêm  │ • Nhiếp ảnh tư liệu là một nửa câu    │
-│   (Decorative images / stock photos)  │   chuyện (Visual Storytelling)        │
-│ • Bố cục một màu đơn điệu             │ • Đa dạng Layout Archetypes tùy nội   │
-│   (Single generic article template)   │   dung (Essay, Photo story, Letter)   │
-│ • Văn phong tản mạn, thiếu kiểm chứng │ • Khảo cứu điềm đạm, có trích dẫn,    │
-│   (Informal rambling)                 │   chú thích nguồn gốc (Provenance)    │
-│ • Mục đích cá nhân nhất thời          │ • Lưu trữ văn hóa & nếp nhà dài lâu   │
-└───────────────────────────────────────┴───────────────────────────────────────┘
-```
-
-### 2.2. Các Editorial Primitives (Thành Phần Biên Tập Cốt Lõi Của Tạp Chí)
-
-Một Digital Magazine thực thụ đòi hỏi một bộ thành phần biên tập giàu biểu cảm:
-
-1. **Cover & Landing Spread**: Bìa số tạp chí với măng-sét MẠCH thư pháp, chủ đề phát hành, hình ảnh biểu tượng và lời tựa.
-2. **Featured Story / Hero Story**: Bài viết tâm điểm của số báo với cách xử lý typography cỡ lớn, ảnh toàn khổ và đoạn dẫn nhập (deck lead).
-3. **Issue & Volume Taxonomy**: Phân cấp theo Số ấn phẩm (Ví dụ: `MẠCH — Số 01/2026: Dòng Họ Trong Thời Hiện Đại`).
-4. **Editorial Sections**: Phân chia các chuyên mục tư tưởng rõ ràng:
-   - **Lời mở**: Dẫn nhập, xác lập tâm thế và bối cảnh.
-   - **Luận**: Các bài khảo cứu sâu về nếp nhà, biến chuyển thế hệ, nghi lễ, khế ước dòng họ.
-   - **Tư liệu & Ký ức**: Kể chuyện qua hiện vật, mộ tổ, bàn thờ, hình bóng tiền nhân.
-5. **Photo Essay & Gallery**: Bố cục chuyên biệt tôn vinh phóng sự ảnh đời thường (ngày giỗ, mâm cơm Tết, đám cưới).
-6. **Pull Quotes**: Khối trích dẫn điểm nhấn triết lý mang icon ngoặc kép tròn đặc trưng của MẠCH.
-7. **Rich Captions**: Chú thích ảnh chuẩn xuất bản (Đánh số hình, nội dung, nhân vật, niên đại, địa điểm).
-8. **Author & Editorial Colophon**: Hồ sơ tác giả (`Người Giữ Mạch`), địa danh, ngày tháng và lời kết trang trọng.
+> [!IMPORTANT]
+> **RANH GIỚI BẮT BUỘC:**
+> 1. **MẠCH là một trang con (Sub-space / Digital Magazine)** nằm trong tổng thể `gionghotrantrongthu.vercel.app`, **không phải** một website độc lập và **không** tách rời khỏi căn tính dòng họ.
+> 2. **Không ép toàn bộ website thành tạp chí**: Không gian Gia phả cần thanh thoát, chính xác; Lịch cần nhanh gọn, tiện dụng; Tư liệu cần trang nghiêm lưu trữ. MẠCH là nơi duy nhất áp dụng toàn diện công nghệ biên tập và trải nghiệm đọc tạp chí cao cấp.
 
 ---
 
-### 2.3. Cân Bằng Thị Giác Giữa Ảnh & Chữ (Image ↔ Text Balance)
+## 2. ĐỊNH NGHĨA MỚI VỀ MẠCH: DIGITAL MAGAZINE & EDITORIAL VOICE
 
-Trong MẠCH, **hình ảnh không phải là vật trang trí lấp chỗ trống**. Hình ảnh và câu chữ cùng hòa nhịp để tạo nên một **Nhịp Điệu Tự Sự (Narrative Rhythm)**:
+### 2.1. Bản Chất Của MẠCH
+MẠCH không đơn thuần là một mục blog cá nhân hay nơi lưu trữ bài viết gia đình tản mạn.
 
-$$\text{Mạch Reading Rhythm} = \text{Lead Deck} \rightarrow \text{Prose} \rightarrow \text{Documentary Photo} \rightarrow \text{Caption} \rightarrow \text{Prose} \rightarrow \text{Pull Quote} \rightarrow \text{Prose} \rightarrow \text{Signature}$$
+> **MẠCH là một Digital Magazine của Dòng họ Trần Trọng Thu — nơi dòng họ kể những câu chuyện của mình, suy ngẫm về con người, văn hóa, xã hội và thời đại, và từ đó hình thành một "tiếng nói riêng của dòng họ trước đời sống".**
+
+MẠCH mở rộng biên độ đề tài nhưng luôn neo chặt vào căn tính gia tộc:
+- **Con người & Ký ức**: Chân dung tiền nhân, hồi ức các thế hệ F0–F3, những lát cắt đời thường.
+- **Nếp nhà & Gia phong**: Nghi lễ, ngày giỗ, Tết, đám cưới, những khế ước vô hình gắn kết dòng tộc.
+- **Văn hóa & Xã hội**: Sự chuyển dịch từ đại gia đình truyền thống sang gia đình hạt nhân hiện đại.
+- **Thời đại & Công nghệ**: Trí tuệ nhân tạo (AI), giáo dục, sự trôi dạt của các thế hệ trẻ trong thế giới toàn cầu hóa.
+- **Tôn giáo & Lịch sử**: Ký ức Công giáo xứ Bắc (Thanh Hóa, Kim Sơn, Phát Diệm) và hành trình lập nghiệp phương Nam.
+
+---
+
+### 2.2. Tam Giác Quy Chiếu Thiết Kế (The Reference Triad)
+
+Để kiến tạo nên MẠCH, chúng ta kết hợp 3 trụ cột quy chiếu mà không sao chép nguyên xi bất kỳ hệ thống nào:
 
 ```
-                          NHỊP ĐIỆU BÀI ĐỌC TẠP CHÍ MẠCH
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ 1. HERO SPREAD      : Ảnh bia mộ / Không gian ký ức + Tiêu đề lớn           │
-│ 2. DECK LEAD        : Đoạn văn dẫn nhập đặt vấn đề (Font lớn, line-height cao)│
-│ 3. PROSE BLOCK 1    : 2-3 đoạn văn bản phân tích bối cảnh                   │
-│ 4. VISUAL ANCHOR    : Ảnh đời thường (bữa cơm gia đình / thiệp cưới)        │
-│ 5. RICH CAPTION     : Chú thích xuất xứ và thế hệ có mặt trong ảnh          │
-│ 6. PROSE BLOCK 2    : Luận giải sâu sắc về nếp nhà                          │
-│ 7. PULL QUOTE       : “ Trích dẫn đắt giá nhất đặt trong khối nổi bật ”     │
-│ 8. PROSE BLOCK 3    : Đúc kết và mở ra suy ngẫm cho thế hệ tiếp nối         │
-│ 9. COLOPHON         : Chữ ký tác giả (Người Giữ Mạch • Sài Gòn, 2026)       │
-└─────────────────────────────────────────────────────────────────────────────┘
+                          TAM GIÁC QUY CHIẾU MẠCH
+                                     ▲
+                                    / \
+                                   /   \
+                                  /     \
+                                 /  MACH \
+                                / (Visual) \
+                               /____________\
+                              ▲              ▲
+                             /                \
+                            /                  \
+             BBC NEWS ARCHITECTURE ──────── CÂY GIA PHẢ HERITAGE
+             (Editorial & Storytelling)     (Identity & Lineage)
+```
+
+1. **MACH Reference (`/Users/tuantq/Projects/Personal/MACH`)**:
+   - Cung cấp: *Mood & Tone, Linh hồn thị giác, Typography (`Source Serif 4`), Bảng màu di sản (Đỏ sơn mài, Vàng đất, Mực than), Chất cảm ấn phẩm, Nhiếp ảnh đời thường chân thực.*
+2. **BBC News Reference (Học hỏi Kiến trúc Biên tập)**:
+   - Cung cấp: *Kỷ luật phân loại thông tin (Editorial Discipline), Cấu trúc trang chủ đa tầng (Editorial Curation), Các định dạng bài viết đa dạng (Story Formats), và sự phân định rạch ròi giữa Dữ kiện / Phân tích / Quan điểm.*
+3. **Cây Gia Phả Context**:
+   - Cung cấp: *Căn cước cốt lõi, nguồn dữ liệu phả hệ chuẩn tắc, mối liên kết huyết thống và bối cảnh lịch sử có thực của dòng họ.*
+
+---
+
+## 3. KỶ LUẬT BIÊN TẬP LẤY CẢM HỨNG TỪ BBC (EDITORIAL DISCIPLINE)
+
+Một trong những giá trị quan trọng nhất học hỏi từ BBC là **tính minh bạch về thể loại nội dung**. Giao diện MẠCH không bao giờ để người đọc nhầm lẫn quan điểm cá nhân của một người là "chân lý chính thức của cả dòng họ".
+
+```
+                       HỆ THỐNG PHÂN ĐỊNH THỂ LOẠI NỘI DUNG
+┌──────────────────┬──────────────────────────────────────────┬────────────────────────┐
+│ Thể loại Label   │ Định nghĩa & Bản chất                    │ Badge Hiển thị         │
+├──────────────────┼──────────────────────────────────────────┼────────────────────────┤
+│ FACT             │ Dữ kiện lịch sử, trích lục hồ sơ,        │ 🏛️ TƯ LIỆU / DỮ KIỆN   │
+│ (Dữ kiện)        │ nhật ký, niên biểu có bằng chứng xác thực│ (Màu Chàm `#1E293B`)   │
+├──────────────────┼──────────────────────────────────────────┼────────────────────────┤
+│ ANALYSIS         │ Phân tích, khảo cứu cấu trúc gia đình,   │ 🔍 KHẢO CỨU / PHÂN TÍCH│
+│ (Khảo cứu)       │ sự biến chuyển xã hội qua các thời kỳ    │ (Màu Vàng đất `#C27803`)│
+├──────────────────┼──────────────────────────────────────────┼────────────────────────┤
+│ OPINION          │ Góc nhìn, suy ngẫm, cảm xúc riêng của    │ ✍️ GÓC NHÌN / Ý KIẾN   │
+│ (Quan điểm)      │ một cá nhân (không đại diện cho cả dòng họ)│ (Màu Gỗ mộc `#78350F`) │
+├──────────────────┼──────────────────────────────────────────┼────────────────────────┤
+│ ESSAY            │ Bút ký, tản văn, văn chương tự sự,       │ 📖 BÚT KÝ / TỰ SỰ      │
+│ (Tự sự / Luận)   │ dòng chảy ký ức mang tính triết lý sâu   │ (Màu Đỏ son `#9B1B1B`) │
+├──────────────────┼──────────────────────────────────────────┼────────────────────────┤
+│ FAMILY VOICE     │ Thông điệp chung, lời hiệu triệu,        │ 🌿 TIẾNG NÓI GIA TỘC   │
+│ (Tiếng nói chung)│ kỷ yếu chính thức được hội đồng tán thành│ (Màu Lục bảo `#065F46`)│
+└──────────────────┴──────────────────────────────────────────┴────────────────────────┘
 ```
 
 ---
 
-### 2.4. Hệ Thống Layout Linh Hoạt Cho MẠCH (Article Layout Archetypes)
+## 4. HỆ THỐNG 10 ĐỊNH DẠNG NỘI DUNG (STORY FORMATS)
 
-Không ép mọi bài viết vào một khuôn mẫu cứng nhắc, MẠCH hỗ trợ **8 khuôn mẫu dàn trang (Layout Archetypes)**:
+MẠCH hỗ trợ 10 định dạng bài viết chuyên biệt, giúp người viết truyền tải trọn vẹn thông điệp mà không bị giới hạn bởi một giao diện đơn điệu:
 
-1. **Text-Led Essay (Bút ký / Nghị luận)**:
-   - Dành cho các bài suy ngẫm sâu sắc (`01-gioi-thieu`, `04-tu-he-tu-tuong...`).
-   - Cột chữ thanh thoát $\le 720\text{px}$, drop cap đầu dòng, ít ảnh nhưng ảnh rất đắt giá.
-2. **Image-Led Feature (Bài viết lấy ảnh làm điểm tựa)**:
-   - Dành cho các bài gắn với sự kiện thị giác (`08-dam-cuoi...`, `07-mo-to...`).
-   - Ảnh Hero tràn khổ, ảnh minh họa chiếm tỷ trọng lớn, chữ bao quanh hoặc chạy so le.
-3. **Photo Essay (Phóng sự ảnh / Ký sự hình ảnh)**:
-   - Dành cho phóng sự về một ngày giỗ, một dịp Tết hay chuyến về quê thăm mộ.
-   - Nhịp điệu chủ đạo là chuỗi ảnh lớn kèm chú thích sâu, văn bản đóng vai trò dẫn chuyện.
-4. **Epistolary / Letter (Thư từ / Ký ức riêng tư)**:
-   - Dành cho series *Thư gửi Clara*.
-   - Khổ hẹp, font nghiêng nhẹ tao nhã, phong cách như một bức thư gửi qua thời gian.
-5. **Interview / Conversation (Đối thoại thế hệ)**:
-   - Dành cho ghi chép trò chuyện với các bậc cao niên (F1, F2).
-   - Phân biệt rõ câu hỏi của người ghi chép và lời kể mộc mạc của ông bà.
-6. **Archival Research Essay (Khảo cứu gia phả & tư liệu cổ)**:
-   - Trình bày song song giữa trích lục gia phả, ảnh scan văn bản cũ và lời giải nghĩa.
-7. **Mixed Media / Interactive Story**:
-   - Kết hợp giữa văn bản, ảnh, trích dẫn âm thanh hoặc sơ đồ phả hệ nhánh nhỏ có thể tương tác.
+```
+                           10 STORY FORMATS CỦA MẠCH
+├── 1. ESSAY / NGHỊ LUẬN       : Khảo cứu nếp nhà, triết lý gia tộc (chữ thanh thoát, drop cap)
+├── 2. LONG-FORM / CHUYÊN ĐỀ   : Bài đọc sâu 3000-5000 chữ, chia chương hồi, thanh tiến độ đọc
+├── 3. PHOTO ESSAY             : Phóng sự ảnh ngày giỗ, Tết, đám cưới (chuỗi ảnh lớn kèm caption sâu)
+├── 4. EPISTOLARY / THƯ TỪ     : Dạng thư gửi thế hệ sau (series "Thư gửi Clara")
+├── 5. INTERVIEW / ĐỐI THOẠI   : Ghi chép trò chuyện trực tiếp giữa con cháu và các bậc cao niên
+├── 6. HISTORICAL CHRONICLE    : Ký sự lịch sử (hành trình di cư, sự kiện thời chiến, giáo xứ cũ)
+├── 7. EXPLAINER / CẨM NANG    : Giải thích phong tục, ý nghĩa ngày giỗ, cách xưng hô trong họ
+├── 8. MEMORIAL / TƯỞNG NIỆM   : Bài viết tri ân, khắc họa chân dung người đã khuất
+├── 9. CURRENT COMMENTARY      : Suy ngẫm về thời sự, công nghệ, AI dưới lăng kính nếp nhà
+└── 10. MIXED MEDIA FEATURE    : Tích hợp văn bản, ảnh scan, trích lục phả hệ và âm thanh
+```
 
 ---
 
-### 2.5. Kiến Trúc Trang Bìa / Trang Chủ Của MẠCH (`#/mach`)
+## 5. BỐ CỤC TRANG CHỦ MẠCH THEO CHUẨN MAGAZINE (HOMEPAGE CURATION)
 
-Trang chủ của MẠCH không phải là danh sách bài viết liệt kê cơ học (Bài 1, Bài 2, Bài 3...) mà được cấu trúc như **Bìa Tạp Chí & Mục Lục Biên Tập (Magazine Homepage)**:
+Lấy cảm hứng từ cấu trúc trang chủ của BBC nhưng thể hiện bằng ngôn ngữ ấn phẩm MACH: trang chủ MẠCH không sắp xếp bài viết theo thứ tự thời gian tuyến tính đơn điệu, mà được **biên tập theo trật tự thị giác và chiều sâu tư tưởng**:
 
 ```
                       BỐ CỤC TRANG CHỦ TẠP CHÍ MẠCH (#/mach)
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ 1. MASTHEAD & CURRENT ISSUE BANNER                                          │
+│ 1. MAGAZINE MASTHEAD & CURRENT ISSUE                                        │
 │    🌿 MẠCH — NẾP NHÀ & KÝ ỨC SỐNG                                           │
 │    Ấn phẩm Lưu trữ — Số 01/2026: "Dòng Họ Trong Thời Hiện Đại"              │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ 2. HERO FEATURE STORY (Bài Đinh Của Số)                                     │
+│ 2. HERO FEATURE STORY (Bài Đinh / Tâm Điểm Số Báo)                          │
 │    ┌───────────────────────────────────┬──────────────────────────────────┐ │
-│    │ [ ẢNH COVER TÂM ĐIỂM TOÀN KHỔ ]   │ LUẬN • BÀI 03                    │ │
+│    │ [ ẢNH COVER TOÀN KHỔ ĐẬM NÉT ]    │ 📖 BÚT KÝ • BÀI 03               │ │
 │    │                                   │ Dòng Họ Trong Thời Hiện Đại      │ │
-│    │                                   │ Giữ mạch hay chấp nhận tan rã?   │ │
-│    │                                   │ ↳ Đọc bài viết chính →           │ │
+│    │ Bia mộ tổ Họ Trần tại Thanh Hóa   │ Giữ mạch hay chấp nhận tan rã?   │ │
+│    │                                   │ ↳ Đọc bài viết tâm điểm →        │ │
 │    └───────────────────────────────────┴──────────────────────────────────┘ │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ 3. CURATED SECTIONS (Phân Mục Tuyển Chọn)                                   │
+│ 3. SECONDARY EDITORIAL GRID (Các Bài Trọng Điểm Đi Kèm)                    │
 │    ┌──────────────────────┐ ┌──────────────────────┐ ┌────────────────────┐ │
-│    │ 🕊️ LỜI MỞ            │ │ 📖 LUẬN              │ │ 🏛️ TƯ LIỆU         │ │
-│    │ • 01. Giới thiệu     │ │ • 04. Đạo lý đời sống│ │ • 07. Mộ tổ        │ │
-│    │ • 02. Cây gia phả... │ │ • 05. Khế ước vô hình│ │ • 10. Bàn thờ...   │ │
-│    │                      │ │ • 06. Giỗ & Ký ức    │ │                    │ │
+│    │ 04. Đạo Lý Đời Sống  │ │ 05. Khế Ước Vô Hình  │ │ 06. Giỗ & Ký Ức    │ │
+│    │ [Ảnh minh họa nhỏ]   │ │ [Ảnh thiệp cưới]     │ │ [Ảnh mâm cơm giỗ]  │ │
+│    │ Đoạn tóm tắt lead... │ │ Đoạn tóm tắt lead... │ │ Đoạn tóm tắt lead..│ │
 │    └──────────────────────┘ └──────────────────────┘ └────────────────────┘ │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ 4. SPECIAL SERIES SHELF (Kệ Chuyên Đề Độc Lập)                              │
-│    ✉️ SERIES: THƯ GỬI CLARA — Những lá thư gửi lại thế hệ tương lai         │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-### 2.6. Trải Nghiệm Di Động (Mobile-First Editorial)
-
-Trên điện thoại, MẠCH không phải là phiên bản thu nhỏ co rúm của tạp chí desktop:
-- **Tỷ lệ chữ & khoảng thở**: Font chữ `Source Serif 4` cỡ 17–18px, line-height 1.75 mang lại trải nghiệm đọc êm ái như ứng dụng đọc sách chuyên nghiệp.
-- **Canh lề tự nhiên**: Canh trái tuyệt đối, loại bỏ khoảng hở rỗng của căn đều hai bên.
-- **Khối trích dẫn thu gọn tinh tế**: Ký tự ngoặc kép đặt nổi bật, nền ấm bo tròn, không chiếm hết chiều cao màn hình.
-- **Thanh điều hướng đọc**: Nút lùi về mục lục MẠCH luôn sẵn sàng, hỗ trợ chuyển nhanh sang bài tiếp theo ở cuối trang.
-
----
-
-## 3. MỐI QUAN HỆ GIỮA MẠCH VÀ CÁC KHÔNG GIAN KHÁC
-
-```
-                      MÔ HÌNH LIÊN KẾT LIÊN KHÔNG GIAN
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                             CÂY GIA PHẢ WEBSITE                             │
+│ 4. TOPIC SHELVES (Các Kệ Chuyên Mục Chọn Lọc)                               │
+│    ├── 🕊️ LỜI MỞ & ĐỊNH HƯỚNG                                               │
+│    ├── 🔍 KHẢO CỨU & NẾP NHÀ                                                │
+│    └── 🏛️ KHO TƯ LIỆU VÀ DI SẢN                                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│       ┌──────────────┐         Cross-Link         ┌──────────────┐          │
-│       │   GIA PHẢ    │ <────────────────────────> │     MẠCH     │          │
-│       │ (Cấu trúc &  │  Nhân vật xuất hiện trong  │ (Tự sự, Bút  │          │
-│       │  Huyết thống)│  bài viết gắn ID @I1@...   │  ký, Ký ức)  │          │
-│       └──────────────┘                            └──────────────┘          │
-│              │                                           │                  │
-│              │ Dẫn nguồn sự kiện                         │ Trích dẫn        │
-│              ▼                                           ▼                  │
-│       ┌──────────────┐                            ┌──────────────┐          │
-│       │     LỊCH     │                            │   TƯ LIỆU    │          │
-│       │ (Ngày giỗ,   │                            │ (Bản scan cổ,│          │
-│       │  Sinh nhật)  │                            │  Bia mộ tổ)  │          │
-│       └──────────────┘                            └──────────────┘          │
-│                                                                             │
+│ 5. SPECIAL SERIES SHOWCASE (Không Gian Series Độc Lập)                      │
+│    ✉️ THƯ GỬI CLARA — Dòng chảy suy tưởng gửi thế hệ tương lai               │
+│    Tác giả: Tuấn (Người Giữ Mạch) • Tuyển tập 10 lá thư                     │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-- **Từ MẠCH sang GIA PHẢ**: Khi bài viết nhắc đến cụ Thu hay ông Thư, người đọc có thể bấm vào tên để mở ngay hồ sơ phả hệ của nhân vật đó.
-- **Từ GIA PHẢ sang MẠCH**: Khi xem hồ sơ của cụ Thu, mục "Ký ức & Bài viết liên quan" sẽ liệt kê các bài viết trong MẠCH có nhắc đến cụ.
-- **Từ MẠCH sang LỊCH**: Các bài viết về ngày giỗ hay lễ bổn mạng có thể đính kèm nút "Xem ngày giỗ trên Lịch gia tộc".
-- **Từ MẠCH sang TƯ LIỆU**: Các bài khảo cứu về mộ tổ hay gia phả giấy dó có link xem bản scan độ phân giải cao trong kho Tư liệu.
+---
+
+## 6. CÂN BẰNG THỊ GIÁC & TRẢI NGHIỆM ĐỌC (IMAGE ↔ TEXT RHYTHM)
+
+Nhịp điệu bài đọc trong MẠCH tuân thủ nghiêm ngặt nguyên tắc **"Hình ảnh là một nửa câu chuyện"**:
+
+$$\text{Editorial Cadence} = \text{Lead Deck} \rightarrow \text{Prose (2 đoạn)} \rightarrow \text{Hero/Photo} \rightarrow \text{Rich Caption} \rightarrow \text{Prose} \rightarrow \text{Pull Quote} \rightarrow \text{Prose} \rightarrow \text{Colophon}$$
+
+```
+                           NHỊP THỞ BÀI ĐỌC TẠI MẠCH
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ • LEAD DECK     : Đoạn dẫn nhập 19px, line-height 1.7 (khởi động cảm xúc)   │
+│ • PROSE BLOCK 1 : 2 đoạn phân tích bối cảnh                                 │
+│ • VISUAL ANCHOR : Ảnh tư liệu thật (bàn thờ, bữa cơm, bao thiệp cưới)       │
+│ • RICH CAPTION  : Chú thích xuất xứ rõ ràng (nhân vật, năm, bối cảnh)       │
+│ • PROSE BLOCK 2 : Luận giải sâu sắc về nếp nhà                              │
+│ • PULL QUOTE    : “ Trích dẫn đắt giá nhất đặt trong khối nổi bật có icon ” │
+│ • PROSE BLOCK 3 : Lời kết và gợi mở suy ngẫm cho thế hệ tiếp nối            │
+│ • COLOPHON      : Chữ ký tác giả trang trọng (Người Giữ Mạch • Sài Gòn 2026)│
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## 4. QUY TRÌNH BIÊN TẬP & XUẤT BẢN TINH GỌN (OBSIDIAN $\rightarrow$ VERCEL)
+## 7. ĐA TÁC GIẢ & TIẾNG NÓI TƯƠNG LAI (MULTI-AUTHOR ARCHITECTURE)
 
-Không cần xây dựng hệ thống CMS cồng kềnh hay hệ quản trị phức tạp. MẠCH tận dụng sức mạnh của Markdown và Git:
+Mặc dù hiện tại Tuấn (`Người Giữ Mạch`) là tác giả chính của hầu hết các bài luận và series *Thư gửi Clara*, kiến trúc của MẠCH được thiết kế để **mở rộng cho nhiều thành viên và thế hệ khác trong dòng họ tham gia viết bài**:
+- Mỗi bài viết có trường `authorId` trỏ về hồ sơ tác giả chuẩn.
+- Hồ sơ tác giả bao gồm: Họ tên, Vai vế thế hệ trong gia phả (ví dụ: *Thế hệ F2 - Nhánh ông Thư*), Bút danh, Địa danh sinh sống và danh sách các bài đã viết.
+- Tạo không gian cho con cháu ở nước ngoài, các chú bác cao niên cùng đóng góp hồi ức.
+
+---
+
+## 8. QUY TRÌNH BIÊN TẬP TINH GỌN (OBSIDIAN $\rightarrow$ VERCEL)
+
+Không cần xây dựng CMS hay cơ sở dữ liệu cồng kềnh, MẠCH tận dụng workflow Markdown thanh lịch:
 
 ```
 ┌──────────────────────────┐      ┌──────────────────────────┐      ┌──────────────────────────┐
 │ 1. BÀN VIẾT (Authoring)  │      │ 2. BIÊN DỊCH (Build)     │      │ 3. PHÁT HÀNH (Delivery)  │
 │    (Obsidian Vault)      │ ───> │    (Python Engine)       │ ───> │    (Vercel Edge CDN)     │
 │                          │      │                          │      │                          │
-│ • Mach/PROJECTS/         │      │ • scripts/build_mach.py  │      │ • Deploy toàn cầu        │
-│ • Soạn thảo Markdown     │      │ • Trích xuất YAML        │      │ • Tải siêu tốc < 1s      │
-│ • Chèn ảnh & chú thích   │      │ • Xuất data/mach.json    │      │ • Xem trước (Preview)    │
+│ • Mach/PROJECTS/         │      │ • scripts/build_mach.py  │      │ • Tải siêu tốc < 1s      │
+│ • Soạn thảo Markdown     │      │ • Trích xuất Fact/Opinion│      │ • Deploy toàn cầu        │
+│ • Chèn ảnh & chú thích   │      │ • Xuất data/mach.json    │      │ • Hỗ trợ Preview         │
 └──────────────────────────┘      └──────────────────────────┘      └──────────────────────────┘
 ```
 
 ---
 
-## 5. MẠCH DIGITAL MAGAZINE NORTH STAR (7 NGUYÊN TẮC VÀNG)
+## 9. MẠCH EDITORIAL NORTH STAR (10 NGUYÊN TẮC KIM CHỈ NAM)
 
 > [!NOTE]
-> **7 NGUYÊN TẮC CỐT TỬ CỦA TẠP CHÍ MẠNG MẠCH:**
+> **10 NGUYÊN TẮC VÀNG CỦA TẠP CHÍ MẠNG MẠCH:**
 > 
-> 1. **MẠCH LÀ TẠP CHÍ, KHÔNG PHẢI BLOG**: Mọi bài viết đều được tổ chức theo Số ấn phẩm, Chuyên mục tư tưởng và có chất lượng biên tập khắt khe.
-> 2. **HÌNH ẢNH LÀ MỘT NỬA CÂU CHUYỆN**: Ảnh tư liệu đời thường, bia mộ, thiệp cưới là chứng tích lịch sử; ảnh và chữ luôn hòa quyện tạo nhịp điệu tự sự.
-> 3. **TYPOGRAPHY SERIF LÀM LINH HỒN**: Sử dụng `Source Serif 4` cho toàn bộ không gian đọc để bảo tồn chiều sâu văn chương và sự tĩnh lặng của tâm hồn.
-> 4. **TÔN TRỌNG TÍNH CHÂN THỰC (PROVENANCE)**: Mọi bức ảnh và câu chuyện đều có xuất xứ thực tế; tuyệt đối không dùng ảnh stock giả tạo hay bịa đặt chi tiết.
-> 5. **ĐA DẠNG HÓA BỐ CỤC (LAYOUT ARCHETYPES)**: Tùy theo tính chất bài viết (bút ký, phóng sự ảnh, thư từ, khảo cứu) mà áp dụng bố cục thị giác phù hợp.
-> 6. **TRẢI NGHIỆM ĐỌC DI ĐỘNG TUYỆT HẢO**: Canh trái tự nhiên, khổ chữ $\le 720\text{px}$, nhịp thở line-height $1.75$, không giật lag.
-> 7. **HỆ THỐNG VỪA ĐỦ, BỀN VỮNG**: Lấy Obsidian làm bàn viết và Vercel làm bệ phóng; giữ mã nguồn tĩnh gọn gàng, trường tồn cùng thời gian.
+> 1. **MỤC ĐÍCH TỐI THƯỢNG (PURPOSE)**: MẠCH là tiếng nói văn hóa và sự suy tư của Dòng họ Trần Trọng Thu trước đời sống đương đại; lưu giữ ký ức sống song song với cấu trúc phả hệ.
+> 2. **ĐỐI TƯỢNG ĐỘC GIẢ (AUDIENCE)**: Trước hết là con cháu trong gia tộc (đặc biệt là thế hệ trẻ lớn lên xa quê); sau đó là những ai quan tâm đến văn hóa gia đình và sự tiếp nối thế hệ.
+> 3. **GIỌNG ĐIỆU BIÊN TẬP (EDITORIAL VOICE)**: Điềm đạm, chân thành, sâu lắng, khảo cứu trung thực, đầy tình cảm nhưng không sáo rỗng, giáo điều.
+> 4. **NGUYÊN TẮC NỘI DUNG (CONTENT PRINCIPLES)**: Mọi câu chuyện đều phải có căn cước gia đình; mở rộng sang các vấn đề xã hội/công nghệ nhưng luôn nhìn từ góc độ nếp nhà.
+> 5. **ĐA DẠNG HÓA STORY FORMATS**: Sử dụng linh hoạt 10 định dạng (bút ký, phóng sự ảnh, thư từ, đối thoại...) phù hợp với bản chất câu chuyện.
+> 6. **HÌNH ẢNH LÀ MỘT NỬA CÂU CHUYỆN**: 100% ảnh tư liệu đời thường thật kèm chú thích niên đại và xuất xứ; tuyệt đối không dùng ảnh stock giả tạo.
+> 7. **PHÂN ĐỊNH FACT / ANALYSIS / OPINION**: Minh bạch tuyệt đối giữa dữ kiện lịch sử, phân tích khảo cứu và suy tưởng cá nhân của tác giả.
+> 8. **GẮN KẾT CHẶT CHẼ VỚI CĂN TÍNH DÒNG HỌ**: Không biến thành một tờ báo tin tức đại trà; luôn giữ sợi dây liên kết với cội nguồn Phong Ý, Kim Sơn và gia tộc.
+> 9. **MỐI QUAN HỆ HỮU CƠ VỚI CÂY GIA PHẢ**: Là không gian tự sự bổ trợ cho dữ liệu gia phả, kết nối 2 chiều với hồ sơ nhân vật và sự kiện lịch gia đình.
+> 10. **HỆ THỐNG MỞ VÀ TRƯỜNG TỒN (FUTURE POSSIBILITIES)**: Kiến trúc hỗ trợ nhiều cây bút trong gia đình cùng đóng góp, vận hành tinh gọn qua nhiều thập kỷ.
