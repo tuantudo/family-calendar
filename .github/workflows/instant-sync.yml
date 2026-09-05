@@ -1,0 +1,21 @@
+name: Trigger Google Calendar Instant Sync
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'calendars/**'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for GitHub Pages to deploy updated ICS files
+        run: sleep 25
+
+      - name: Call Google Apps Script Webhook
+        run: |
+          echo "Triggering instant Google Calendar sync..."
+          RESPONSE=$(curl -L -s -w "\nHTTP_STATUS:%{http_code}" "${{ secrets.GAS_SYNC_WEBHOOK_URL || 'https://script.google.com/macros/s/AKfycbzpP_RWa-kwE9OJrAQkBafFhN2jxZiTiIYNA-vsGQZsgo_l-0i2aPl9iQWQ8x0qBMEEgA/exec' }}")
+          echo "Response: $RESPONSE"
