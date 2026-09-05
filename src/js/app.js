@@ -1,9 +1,10 @@
 /**
- * app.js — Main Web Application Runtime & Controller
- * Zero-Hardcode Architecture: Binds 100% dynamically from data/genealogy.json & calendars/*.ics
+ * app.js — Main Web Application Controller & Entity Graph
+ * Architectural Benchmark: Google Calendar UX + webtrees Entity Graph
+ * 100% Data-Driven, Zero Hard-Code
  */
 
-// --- GLOBAL APPLICATION STATE ---
+// --- GLOBAL STATE ---
 let appData = {
     publication: "",
     rootAnchor: "",
@@ -79,7 +80,7 @@ function bindStats(stats) {
     if (elQuickDescPeople) elQuickDescPeople.innerText = `Tra cứu ${stats.individuals || 0} thành viên gia tộc và lý lịch chi tiết`;
 }
 
-// --- ROUTING & NAVIGATION ---
+// --- ROUTING & VIEW NAVIGATION ---
 function handleHashRoute() {
     const hash = window.location.hash || "#/";
     if (hash.startsWith("#/person/")) {
@@ -134,7 +135,7 @@ function showSectionByRoute(route) {
     window.scrollTo(0, 0);
 }
 
-// --- CALENDAR MODULE ---
+// --- CALENDAR MODULE (GOOGLE CALENDAR UX) ---
 function loadCalendarFeeds() {
     let promises = CAL_FEEDS.map(f => {
         return fetch(f.file)
@@ -261,7 +262,7 @@ function renderAgendaList(y, m) {
             evCardsHtml += `
                 <div class="agenda-event-card ${ev.chipCls}" onclick="openEventDetailModal(${calEvents.indexOf(ev)}, ${y})">
                     <div class="agenda-ev-title">${ev.icon} ${escapeHtml(ev.summary)}</div>
-                    <div class="agenda-ev-meta">Loại: <strong>${ev.label}</strong> • Nhấp để xem lý lịch & ký ức</div>
+                    <div class="agenda-ev-meta">Loại: <strong>${ev.label}</strong> • Nhấp để xem hồ sơ gia phả & ký ức</div>
                 </div>
             `;
         });
@@ -269,7 +270,7 @@ function renderAgendaList(y, m) {
         dayGroup.innerHTML = `
             <div class="agenda-date-head">
                 <span>Ngày ${d < 10 ? '0' + d : d}/${(m + 1) < 10 ? '0' + (m + 1) : (m + 1)}/${y}</span>
-                <span style="font-size:12.5px; font-weight:600; color:var(--lunar-color);">🌙 ${lunar.fullText}</span>
+                <span style="font-size:13px; font-weight:600; color:var(--lunar-color);">🌙 ${lunar.fullText}</span>
             </div>
             <div class="agenda-events-list">${evCardsHtml}</div>
         `;
@@ -338,8 +339,8 @@ function openDayDrawer(day, month, year, lunar, events) {
                 openEventDetailModal(calEvents.indexOf(ev), year);
             };
             card.innerHTML = `
-                <div style="font-weight:700; font-size:14.5px;">${ev.icon} ${escapeHtml(ev.summary)}</div>
-                <div style="font-size:12.5px; color:var(--text-muted); margin-top:4px;">Loại: <strong>${ev.label}</strong> • Xem lý lịch & tư liệu →</div>
+                <div style="font-weight:700; font-size:15px;">${ev.icon} ${escapeHtml(ev.summary)}</div>
+                <div style="font-size:13px; color:var(--text-muted); margin-top:4px;">Loại: <strong>${ev.label}</strong> • Xem chi tiết hồ sơ →</div>
             `;
             list.appendChild(card);
         });
@@ -370,7 +371,7 @@ function openEventDetailModal(evIdx, yr) {
     if (elDates) {
         elDates.innerHTML = `
             <div>📅 <strong>Dương lịch:</strong> ${ev.day < 10 ? '0' + ev.day : ev.day}/${ev.month < 10 ? '0' + ev.month : ev.month}/${yr}</div>
-            <div style="color:var(--lunar-color); margin-top:2px;">🌙 <strong>Âm lịch:</strong> ${lunar.fullText}</div>
+            <div style="color:var(--lunar-color); margin-top:3px;">🌙 <strong>Âm lịch:</strong> ${lunar.fullText}</div>
         `;
     }
 
@@ -381,7 +382,7 @@ function openEventDetailModal(evIdx, yr) {
     if (personMatch && linkBox) {
         linkBox.style.display = "block";
         linkBox.innerHTML = `
-            <div style="padding:8px 12px; background:var(--primary-light); border-radius:6px; border:1px solid #bfdbfe; font-size:13px;">
+            <div style="padding:10px 14px; background:var(--primary-light); border-radius:8px; border:1px solid #bfdbfe; font-size:13.5px;">
                 👤 Thành viên liên quan: <a onclick="closeModalDirect('eventModal'); openPersonProfile('${personMatch.id}')" style="color:var(--primary); font-weight:700; cursor:pointer; text-decoration:underline;">${personMatch.name} (Xem hồ sơ gia phả →)</a>
             </div>
         `;
@@ -394,7 +395,7 @@ function openEventDetailModal(evIdx, yr) {
     if (modal) modal.classList.add("active");
 }
 
-// --- TREE MODULE ---
+// --- TREE MODULE (PEDIGREE & GENERATIONS) ---
 function initTreeDropdown(defaultRootId) {
     const select = document.getElementById("treeCenterSelect");
     if (!select) return;
@@ -421,15 +422,15 @@ function renderFamilyTree(centerId) {
     let childrenHtml = person.children.length > 0 ? person.children.map(cid => renderTreeNodeCard(cid, 'child')).join("") : `<div style="font-size:13px; color:var(--text-muted); padding:10px;">(Không có thông tin con cái)</div>`;
 
     container.innerHTML = `
-        <div style="font-size:12px; font-weight:800; color:var(--text-muted); text-transform:uppercase; margin-bottom:6px;">1. Thân Phụ & Thân Mẫu (Tiền Nhân)</div>
+        <div style="font-size:12px; font-weight:800; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px;">1. Thân Phụ & Thân Mẫu (Tiền Nhân)</div>
         <div class="tree-level">${parentsHtml}</div>
-        <div style="font-size:16px; color:var(--border); margin:-10px 0 10px;">↓</div>
+        <div style="font-size:18px; color:var(--border); margin:-10px 0 10px;">↓</div>
 
-        <div style="font-size:12px; font-weight:800; color:var(--text-muted); text-transform:uppercase; margin-bottom:6px;">2. Thế Hệ Đương Thời (Vợ / Chồng)</div>
+        <div style="font-size:12px; font-weight:800; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px;">2. Thế Hệ Đương Thời (Vợ / Chồng)</div>
         <div class="tree-level">${centerHtml}${spousesHtml}</div>
-        <div style="font-size:16px; color:var(--border); margin:-10px 0 10px;">↓</div>
+        <div style="font-size:18px; color:var(--border); margin:-10px 0 10px;">↓</div>
 
-        <div style="font-size:12px; font-weight:800; color:var(--text-muted); text-transform:uppercase; margin-bottom:6px;">3. Con Cái Trực Hệ (Hậu Duệ)</div>
+        <div style="font-size:12px; font-weight:800; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px;">3. Con Cái Trực Hệ (Hậu Duệ)</div>
         <div class="tree-level" style="flex-wrap:wrap;">${childrenHtml}</div>
     `;
 }
@@ -444,9 +445,9 @@ function renderTreeNodeCard(pid, type) {
 
     return `
         <div class="tree-node ${isCenter ? 'center' : ''}" onclick="openPersonProfile('${p.id}')">
-            <div style="font-weight:700; font-size:14px;">${p.name}</div>
-            <div style="font-size:11.5px; color:var(--text-muted); margin-top:2px;">${lifeStr}</div>
-            <div style="font-size:10px; color:var(--primary); margin-top:4px; font-weight:700;">${isCenter ? '★ Trọng tâm' : 'Xem hồ sơ →'}</div>
+            <div style="font-weight:700; font-size:14.5px;">${p.name}</div>
+            <div style="font-size:12px; color:var(--text-muted); margin-top:2px;">${lifeStr}</div>
+            <div style="font-size:10.5px; color:var(--primary); margin-top:4px; font-weight:700;">${isCenter ? '★ Trọng tâm' : 'Xem hồ sơ →'}</div>
         </div>
     `;
 }
@@ -463,9 +464,9 @@ function renderPeopleDirectory() {
         const bDate = p.birth && p.birth.date ? p.birth.date : "Chưa rõ";
         const dDate = p.death && p.death.date ? p.death.date : "";
         card.innerHTML = `
-            <div style="font-weight:700; font-size:15px; color:var(--primary-dark);">${p.name}</div>
-            <div style="font-size:12px; color:var(--text-muted); margin-top:2px;">FSID: <strong>${p.fsid || p.id}</strong> • ${p.sex === 'M' ? 'Nam' : 'Nữ'}</div>
-            <div style="font-size:12px; color:var(--text-muted);">Sinh: ${bDate} ${dDate ? `• Mất: ${dDate}` : ''}</div>
+            <div style="font-weight:700; font-size:15.5px; color:var(--primary-dark);">${p.name}</div>
+            <div style="font-size:12.5px; color:var(--text-muted); margin-top:3px;">FSID: <strong>${p.fsid || p.id}</strong> • ${p.sex === 'M' ? 'Nam' : 'Nữ'}</div>
+            <div style="font-size:12.5px; color:var(--text-muted);">Sinh: ${bDate} ${dDate ? `• Mất: ${dDate}` : ''}</div>
         `;
         grid.appendChild(card);
     });
@@ -481,8 +482,8 @@ function renderFamiliesDirectory() {
         card.onclick = () => openFamilyProfile(f.id);
         const husb = appData.people[f.husband], wife = appData.people[f.wife];
         card.innerHTML = `
-            <div style="font-weight:700; font-size:15px; color:var(--primary-dark);">Nhánh: ${husb ? husb.name : 'Chưa rõ'} & ${wife ? wife.name : 'Chưa rõ'}</div>
-            <div style="font-size:12px; color:var(--text-muted); margin-top:2px;">Mã FAM: <strong>${f.id}</strong> • Con cái: <strong>${f.children.length}</strong> người con</div>
+            <div style="font-weight:700; font-size:15.5px; color:var(--primary-dark);">Nhánh: ${husb ? husb.name : 'Chưa rõ'} & ${wife ? wife.name : 'Chưa rõ'}</div>
+            <div style="font-size:12.5px; color:var(--text-muted); margin-top:3px;">Mã FAM: <strong>${f.id}</strong> • Con cái: <strong>${f.children.length}</strong> người con</div>
         `;
         grid.appendChild(card);
     });
@@ -596,8 +597,8 @@ function renderTimeline() {
         item.innerHTML = `
             <div class="timeline-dot"></div>
             <div style="font-size:12px; font-weight:800; color:var(--accent);">${ev.year !== 9999 ? ev.year : 'Chưa rõ năm'}</div>
-            <div style="font-size:14.5px; font-weight:700;"><a onclick="openPersonProfile('${ev.personId}')" style="color:var(--primary); cursor:pointer;">${ev.title}</a></div>
-            <div style="font-size:12.5px; color:var(--text-muted);">Ngày ghi nhận: ${ev.date}</div>
+            <div style="font-size:15px; font-weight:700;"><a onclick="openPersonProfile('${ev.personId}')" style="color:var(--primary); cursor:pointer;">${ev.title}</a></div>
+            <div style="font-size:13px; color:var(--text-muted);">Ngày ghi nhận: ${ev.date}</div>
         `;
         list.appendChild(item);
     });
@@ -612,7 +613,7 @@ function renderMemories() {
         card.className = "memory-card";
         card.innerHTML = `
             <div class="memory-title">${mem.title}</div>
-            <div style="font-size:13px; font-weight:600; color:var(--text-muted); margin-bottom:12px;">Nhân vật liên quan: <a onclick="openPersonProfile('${mem.personId}')" style="color:var(--primary); cursor:pointer;">${mem.personName}</a></div>
+            <div style="font-size:13.5px; font-weight:600; color:var(--text-muted); margin-bottom:12px;">Nhân vật liên quan: <a onclick="openPersonProfile('${mem.personId}')" style="color:var(--primary); cursor:pointer;">${mem.personName}</a></div>
             <div class="memory-body">${mem.story}</div>
         `;
         container.appendChild(card);
@@ -639,12 +640,12 @@ function handleGlobalSearch(e) {
     });
 
     if (results.length === 0) {
-        dd.innerHTML = `<div style="padding:10px; color:var(--text-muted); text-align:center;">Không tìm thấy kết quả</div>`;
+        dd.innerHTML = `<div style="padding:12px; color:var(--text-muted); text-align:center;">Không tìm thấy kết quả</div>`;
     } else {
         dd.innerHTML = results.slice(0, 10).map(r => `
             <div class="search-row" onclick="selectGlobalSearchResult('${r.type}', '${r.id}')">
                 <div style="font-weight:700; color:var(--primary-dark);">${r.title}</div>
-                <div style="font-size:11.5px; color:var(--text-muted);">${r.sub}</div>
+                <div style="font-size:12px; color:var(--text-muted);">${r.sub}</div>
             </div>
         `).join("");
     }
