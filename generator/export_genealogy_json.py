@@ -2,8 +2,9 @@
 import os, sys, re, json, datetime
 from collections import deque, defaultdict
 
-GED_PATH = "/Users/tuantq/Library/CloudStorage/OneDrive-PVCFC/Canhan/CAYGIAPHA/GIADINHONGTHU.ged"
-OUT_JSON = "/Users/tuantq/.gemini/antigravity-cli/brain/a37b61ef-976b-4d66-8e9b-f5e65b39f1a6/scratch/family-calendar/data/genealogy.json"
+REPO_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+GED_PATH = os.environ.get("GEDCOM_FILE_PATH", sys.argv[1] if len(sys.argv) > 1 else "/Users/tuantq/Library/CloudStorage/OneDrive-PVCFC/Canhan/CAYGIAPHA/GIADINHONGTHU.ged")
+OUT_JSON = os.path.join(REPO_DIR, "data", "genealogy.json")
 
 os.makedirs(os.path.dirname(OUT_JSON), exist_ok=True)
 

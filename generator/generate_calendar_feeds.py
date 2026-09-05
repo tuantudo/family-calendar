@@ -1,8 +1,11 @@
 import os, sys, re, datetime
 from collections import deque, defaultdict
 
-GED_PATH = "/Users/tuantq/Library/CloudStorage/OneDrive-PVCFC/Canhan/CAYGIAPHA/GIADINHONGTHU.ged"
-OUT_DIR = "/Users/tuantq/Library/CloudStorage/OneDrive-PVCFC/Canhan/CAYGIAPHA/test_isolation"
+REPO_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+GED_PATH = os.environ.get("GEDCOM_FILE_PATH", sys.argv[1] if len(sys.argv) > 1 else "/Users/tuantq/Library/CloudStorage/OneDrive-PVCFC/Canhan/CAYGIAPHA/GIADINHONGTHU.ged")
+OUT_DIR = os.path.join(REPO_DIR, "calendars")
+
+os.makedirs(OUT_DIR, exist_ok=True)
 
 with open(GED_PATH, "r", encoding="utf-8-sig", errors="replace") as f:
     lines = [l.strip("\r\n") for l in f]
