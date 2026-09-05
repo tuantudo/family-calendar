@@ -22,3 +22,5 @@ local_secrets.*
 # GEDCOM Source of Truth (Must remain private, never committed to public repo)
 *.ged
 *.gedcom
+.vercel
+.env*
