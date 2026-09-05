@@ -22,7 +22,7 @@ let derivedGenerations = {}; // pid -> level integer (0 = Root Anchor, 1 = F1, e
 let derivedPaths = {};        // pid -> [pid0, pid1, ... pidN] shortest lineage path from Anchor
 let derivedFamilyGenerations = {}; // fid -> level integer (0 = F0 family, 1 = F1, etc.)
 let currentFamilyGenFilter = 'all'; // 'all' | 0 | 1 | 2 | 3 | 4
-let treeViewMode = 'explore'; // 'explore' (Generation Bands) | 'focus' (Pedigree Focus)
+let treeViewMode = 'focus'; // 'focus' (Pedigree Visual Graph) | 'explore' (Generation Bands)
 let currentTreeFocusId = "";  // Currently selected person in Focus Mode
 
 let calEvents = [];
@@ -500,7 +500,10 @@ function openEventDetailModal(evIdx, yr) {
     if (modal) modal.classList.add("active");
 }
 
-// --- TREE MODULE (ARCH_03B: GENERATION BANDS & FOCUS PEDIGREE) ---
+// --- TREE MODULE (ARCH_03D: REAL VISUAL FAMILY GRAPH) ---
+let graphScale = 1.0;
+let graphHistory = [];
+
 function initTreeDropdown(defaultRootId) {
     const select = document.getElementById("treeCenterSelect");
     if (!select) return;
@@ -520,10 +523,12 @@ function switchTreeViewMode(mode) {
     const btnExplore = document.getElementById("btn_tree_explore");
     const btnFocus = document.getElementById("btn_tree_focus");
     const focusBar = document.getElementById("treeFocusSelectorBar");
+    const pathBar = document.getElementById("treeRelationPath");
 
     if (btnExplore) btnExplore.classList.toggle("active", mode === 'explore');
     if (btnFocus) btnFocus.classList.toggle("active", mode === 'focus');
     if (focusBar) focusBar.style.display = mode === 'focus' ? 'flex' : 'none';
+    if (pathBar) pathBar.style.display = mode === 'focus' ? 'flex' : 'none';
 
     renderTreeModule();
 }
@@ -536,7 +541,217 @@ function renderTreeModule() {
     }
 }
 
-// 1. EXPLORE MODE: Grouped by Generation Bands (F0, F1, F2, F3, F4)
+function focusGraphPerson(pid) {
+    if (!pid || !appData.people[pid]) return;
+    if (currentTreeFocusId && currentTreeFocusId !== pid) {
+        graphHistory.push(currentTreeFocusId);
+    }
+    const btnBack = document.getElementById("btn_graph_back");
+    if (btnBack) {
+        btnBack.style.opacity = graphHistory.length > 0 ? "1" : "0.5";
+        btnBack.style.pointerEvents = graphHistory.length > 0 ? "auto" : "none";
+    }
+    currentTreeFocusId = pid;
+    if (treeViewMode !== 'focus') {
+        switchTreeViewMode('focus');
+    } else {
+        renderFocusPedigreeTree(pid);
+    }
+}
+
+function graphGoBack() {
+    if (graphHistory.length === 0) return;
+    const prevId = graphHistory.pop();
+    const btnBack = document.getElementById("btn_graph_back");
+    if (btnBack) {
+        btnBack.style.opacity = graphHistory.length > 0 ? "1" : "0.5";
+        btnBack.style.pointerEvents = graphHistory.length > 0 ? "auto" : "none";
+    }
+    currentTreeFocusId = prevId;
+    renderFocusPedigreeTree(prevId);
+}
+
+function graphGoHome() {
+    focusGraphPerson(appData.rootAnchor || Object.keys(appData.people)[0]);
+}
+
+function zoomGraph(delta) {
+    graphScale = Math.min(1.4, Math.max(0.65, Math.round((graphScale + delta) * 10) / 10));
+    const viewport = document.getElementById("graphCanvasViewport");
+    if (viewport) {
+        viewport.style.transform = `scale(${graphScale})`;
+    }
+}
+
+function resetGraphZoom() {
+    graphScale = 1.0;
+    const viewport = document.getElementById("graphCanvasViewport");
+    if (viewport) {
+        viewport.style.transform = "scale(1.0)";
+    }
+}
+
+// Compact Interactive Graph Node
+function renderGraphNode(p, role = 'child', isFocus = false) {
+    if (!p) return "";
+    const gMeta = getGenerationMeta(p.id);
+    const bDate = p.birth && p.birth.date ? p.birth.date : "Chưa rõ";
+    const dDate = p.death && p.death.date ? p.death.date : "";
+    const lifeStr = dDate ? `${bDate} – ${dDate}` : (bDate !== "Chưa rõ" ? `s. ${bDate}` : "Chưa có năm sinh");
+
+    return `
+        <div class="graph-node ${gMeta.borderCls} ${isFocus ? 'node-focus' : ''}" onclick="focusGraphPerson('${p.id}')">
+            <div class="node-header">
+                <span class="gen-badge ${gMeta.badgeCls}">${gMeta.label.split('·')[0].trim()}</span>
+                ${isFocus ? '<span class="focus-indicator">● ĐANG XEM</span>' : ''}
+                <span class="node-fsid">${p.fsid || p.id}</span>
+            </div>
+            <div class="node-name" title="${p.name}">${p.sex === 'M' ? '👨' : '👩'} ${p.name}</div>
+            <div class="node-meta">📅 ${lifeStr}</div>
+            <div class="node-actions" onclick="event.stopPropagation();">
+                <span style="font-size:10.5px; color:var(--text-muted);">${gMeta.label.split('·')[1] ? gMeta.label.split('·')[1].trim() : 'Thành viên'}</span>
+                <a onclick="openPersonProfile('${p.id}')" title="Xem hồ sơ chi tiết">Hồ sơ ↗</a>
+            </div>
+        </div>
+    `;
+}
+
+// 1. FOCUS MODE: Real Visual Family Graph (Parents -> Focus & Spouse Union -> Branching Children)
+function renderFocusPedigreeTree(centerId) {
+    currentTreeFocusId = centerId;
+    const container = document.getElementById("treeGraphViewport");
+    const pathContainer = document.getElementById("treeRelationPath");
+    if (!container) return;
+    container.innerHTML = "";
+
+    const person = appData.people[centerId];
+    if (!person) return;
+
+    const select = document.getElementById("treeCenterSelect");
+    if (select && select.value !== centerId) select.value = centerId;
+
+    // Render Lineage Breadcrumbs Path from Root Anchor
+    if (pathContainer) {
+        pathContainer.style.display = "flex";
+        const pathIds = derivedPaths[centerId] || [centerId];
+        let pathHtml = `<span style="font-weight:700; color:var(--text-muted);"><span style="color:var(--accent);">🧭</span> Tuyến phả hệ trực hệ:</span> `;
+        pathHtml += pathIds.map((pid, idx) => {
+            const p = appData.people[pid];
+            const isLast = idx === pathIds.length - 1;
+            const gMeta = getGenerationMeta(pid);
+            return `<a onclick="focusGraphPerson('${pid}')" class="path-step" style="${isLast ? 'color:var(--accent); font-weight:800;' : ''}">${p ? p.name : pid} (${gMeta.label.split('·')[0].trim()})</a>`;
+        }).join(` <span class="path-arrow">→</span> `);
+        pathContainer.innerHTML = pathHtml;
+    }
+
+    // 1. Tier 1: Parents (Tiền bối)
+    let parentsHtml = "";
+    if (person.parents.length >= 2) {
+        const par1 = appData.people[person.parents[0]];
+        const par2 = appData.people[person.parents[1]];
+        parentsHtml = `
+            <div class="graph-tier-row">
+                <div class="graph-nodes-cluster">
+                    ${renderGraphNode(par1, 'parent')}
+                    <div class="union-hub">💑 Phụ Mẫu</div>
+                    ${renderGraphNode(par2, 'parent')}
+                </div>
+            </div>
+            <div class="vertical-stem-line"></div>
+        `;
+    } else if (person.parents.length === 1) {
+        const par = appData.people[person.parents[0]];
+        parentsHtml = `
+            <div class="graph-tier-row">
+                <div class="graph-nodes-cluster">
+                    ${renderGraphNode(par, 'parent')}
+                </div>
+            </div>
+            <div class="vertical-stem-line"></div>
+        `;
+    } else {
+        parentsHtml = `
+            <div class="tier-badge-label" style="background:#eff6ff; color:#1e3a8a; border-color:#bfdbfe;">🌲 Mốc Khởi Thủy Gia Tộc (Anchor)</div>
+            <div class="vertical-stem-line"></div>
+        `;
+    }
+
+    // 2. Tier 2: Focus Person & Spouse Union (Trọng tâm & Hôn phối)
+    let focusHtml = "";
+    if (person.spouses.length > 0) {
+        const spousesNodes = person.spouses.map(sid => renderGraphNode(appData.people[sid], 'spouse')).join(`<div class="union-hub" style="margin: 0 4px;">💍</div>`);
+        focusHtml = `
+            <div class="graph-tier-row">
+                <div class="graph-nodes-cluster">
+                    ${renderGraphNode(person, 'focus', true)}
+                    <div class="union-hub">💍 Hôn phối</div>
+                    ${spousesNodes}
+                </div>
+            </div>
+        `;
+    } else {
+        focusHtml = `
+            <div class="graph-tier-row">
+                <div class="graph-nodes-cluster">
+                    ${renderGraphNode(person, 'focus', true)}
+                </div>
+            </div>
+        `;
+    }
+
+    // 3. Tier 3: Children (Hậu duệ trực hệ)
+    let childrenHtml = "";
+    if (person.children.length > 0) {
+        const childrenColumns = person.children.map(cid => {
+            const ch = appData.people[cid];
+            if (!ch) return "";
+            const grandCount = ch.children ? ch.children.length : 0;
+            return `
+                <div class="child-column">
+                    <div class="child-drop-line"></div>
+                    ${renderGraphNode(ch, 'child')}
+                    ${grandCount > 0 ? `<div class="grand-badge" onclick="event.stopPropagation(); focusGraphPerson('${ch.id}')" title="Nhấn để xem nhánh con cháu">👶 ${grandCount} người con ↓</div>` : ''}
+                </div>
+            `;
+        }).join("");
+
+        childrenHtml = `
+            <div class="vertical-stem-line"></div>
+            <div class="children-tree-wrapper">
+                <div class="children-nodes-row">
+                    ${childrenColumns}
+                </div>
+            </div>
+        `;
+    } else {
+        childrenHtml = `
+            <div class="vertical-stem-line"></div>
+            <div style="font-size:12px; color:var(--text-muted); background:#ffffff; border:1px dashed var(--border); padding:5px 14px; border-radius:12px; margin-top:2px;">
+                (Chưa ghi nhận hậu duệ trực hệ)
+            </div>
+        `;
+    }
+
+    // Construct the Continuous Canvas
+    container.innerHTML = `
+        <div class="family-graph-wrapper" id="familyGraphWrapper">
+            <div class="graph-floating-toolbar">
+                <button class="graph-tool-btn" onclick="zoomGraph(0.1)" title="Phóng to">+</button>
+                <button class="graph-tool-btn" onclick="zoomGraph(-0.1)" title="Thu nhỏ">−</button>
+                <button class="graph-tool-btn" onclick="resetGraphZoom()" title="Đặt lại kích thước">⟲ 100%</button>
+                <button class="graph-tool-btn" onclick="graphGoHome()" title="Về mốc Cố Thu">⌂ Cố Thu</button>
+            </div>
+
+            <div class="graph-canvas-viewport" id="graphCanvasViewport" style="transform: scale(${graphScale});">
+                ${parentsHtml}
+                ${focusHtml}
+                ${childrenHtml}
+            </div>
+        </div>
+    `;
+}
+
+// 2. EXPLORE MODE: Grouped by Generation Bands (F0, F1, F2, F3, F4)
 function renderGenerationBandsExplore() {
     const container = document.getElementById("treeGraphViewport");
     const pathContainer = document.getElementById("treeRelationPath");
@@ -576,68 +791,6 @@ function renderGenerationBandsExplore() {
         `;
         container.appendChild(bandEl);
     });
-}
-
-// 2. FOCUS MODE: Centered Pedigree Subgraph (Ancestors -> Focus & Spouses -> Children)
-function renderFocusPedigreeTree(centerId) {
-    currentTreeFocusId = centerId;
-    const container = document.getElementById("treeGraphViewport");
-    const pathContainer = document.getElementById("treeRelationPath");
-    if (!container) return;
-    container.innerHTML = "";
-
-    const person = appData.people[centerId];
-    if (!person) return;
-
-    const select = document.getElementById("treeCenterSelect");
-    if (select && select.value !== centerId) select.value = centerId;
-
-    // Render Lineage Breadcrumbs Path from Root Anchor
-    if (pathContainer) {
-        pathContainer.style.display = "flex";
-        const pathIds = derivedPaths[centerId] || [centerId];
-        let pathHtml = `<span style="font-weight:700; color:var(--text-muted);">🧭 Tuyến phả hệ trực hệ:</span> `;
-        pathHtml += pathIds.map((pid, idx) => {
-            const p = appData.people[pid];
-            const isLast = idx === pathIds.length - 1;
-            const gMeta = getGenerationMeta(pid);
-            return `<a onclick="renderFocusPedigreeTree('${pid}')" class="path-step" style="${isLast ? 'color:var(--accent); font-weight:800;' : ''}">${p ? p.name : pid} (${gMeta.label.split('·')[0].trim()})</a>`;
-        }).join(` <span class="path-arrow">→</span> `);
-        pathContainer.innerHTML = pathHtml;
-    }
-
-    let parentsHtml = person.parents.length > 0 ? person.parents.map(pid => renderUnifiedPersonCard(appData.people[pid], true)).join("") : `<div style="font-size:13px; color:var(--text-muted); padding:10px;">(Không có thông tin thân phụ/thân mẫu)</div>`;
-    let centerHtml = renderUnifiedPersonCard(person, true, true);
-    let spousesHtml = person.spouses.map(sid => renderUnifiedPersonCard(appData.people[sid], true)).join("");
-    let childrenHtml = person.children.length > 0 ? person.children.map(cid => renderUnifiedPersonCard(appData.people[cid], true)).join("") : `<div style="font-size:13px; color:var(--text-muted); padding:10px;">(Không có thông tin con cái)</div>`;
-
-    container.innerHTML = `
-        <div class="generation-band" style="width:100%; margin-bottom:16px;">
-            <div class="band-header">
-                <div class="band-title">1. Thân Phụ & Thân Mẫu (Bậc Tiền Nhân)</div>
-            </div>
-            <div class="directory-grid">${parentsHtml}</div>
-        </div>
-
-        <div style="font-size:20px; color:var(--border); margin:-6px 0 10px; text-align:center;">↓</div>
-
-        <div class="generation-band" style="width:100%; margin-bottom:16px; border:2px solid var(--primary); background:#f8fafc;">
-            <div class="band-header">
-                <div class="band-title">2. Trọng Tâm Hiện Tại (Focus Person & Hôn Phối)</div>
-            </div>
-            <div class="directory-grid">${centerHtml}${spousesHtml}</div>
-        </div>
-
-        <div style="font-size:20px; color:var(--border); margin:-6px 0 10px; text-align:center;">↓</div>
-
-        <div class="generation-band" style="width:100%;">
-            <div class="band-header">
-                <div class="band-title">3. Con Cái Trực Hệ (Hậu Duệ)</div>
-                <div class="band-count">${person.children.length} người con</div>
-            </div>
-            <div class="directory-grid">${childrenHtml}</div>
-        </div>
-    `;
 }
 
 // Unified Person Card Generator matching Family Directory Visual Grammar
