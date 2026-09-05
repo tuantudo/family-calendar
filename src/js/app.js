@@ -628,10 +628,9 @@ function renderCalendarPlatformContent() {
         return `
             <div class="subscribe-feed-card">
                 <div class="subscribe-feed-header">
-                    <span class="subscribe-feed-badge ${f.class}">${f.icon} ${f.label}</span>
+                    <div class="subscribe-feed-title">${f.icon} Lịch ${f.label}</div>
                     ${countText ? `<span class="subscribe-feed-count">${escapeHtml(countText)}</span>` : ''}
                 </div>
-                <div class="subscribe-feed-title">${f.icon} Lịch ${f.label} Gia Đình</div>
                 <div class="subscribe-feed-desc">${escapeHtml(meta.desc)}</div>
                 <div class="subscribe-actions-row">
                     ${actionsHtml}
