@@ -1,0 +1,9221 @@
+{
+  "publication": "Trích lục Gia phả nhà ông Trần Trọng Thu",
+  "rootAnchor": "@I1@",
+  "generatedAt": "2026-09-05T15:57:05.640632",
+  "stats": {
+    "individuals": 223,
+    "families": 68,
+    "memories": 2
+  },
+  "people": {
+    "@I1@": {
+      "id": "@I1@",
+      "fsid": "G5X4-48S",
+      "name": "Giuse Trần Trọng Thu",
+      "raw_name": "Trọng Thu /Giuse Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "1872",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": {
+        "date": "15/08/1969",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "baptism": null,
+      "parents": [
+        "@I5@",
+        "@I4@"
+      ],
+      "spouses": [
+        "@I8@"
+      ],
+      "children": [
+        "@I6@",
+        "@I18@",
+        "@I7@",
+        "@I9@",
+        "@I2@",
+        "@I3@"
+      ],
+      "siblings": [
+        "@I15@"
+      ],
+      "fams": [
+        "@F2@"
+      ],
+      "famc": [
+        "@F1@"
+      ],
+      "memory": null
+    },
+    "@I2@": {
+      "id": "@I2@",
+      "fsid": "G5XW-KDS",
+      "name": "Bà Cử - hai",
+      "raw_name": "Bà Cử - hai //",
+      "sex": "F",
+      "birth": null,
+      "death": {
+        "date": "",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [
+        "@I1@",
+        "@I8@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I6@",
+        "@I18@",
+        "@I7@",
+        "@I9@",
+        "@I3@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F2@"
+      ],
+      "memory": null
+    },
+    "@I3@": {
+      "id": "@I3@",
+      "fsid": "G5X4-7PJ",
+      "name": "Bà Định - thứ tư",
+      "raw_name": " /Bà Định - thứ tư/",
+      "sex": "F",
+      "birth": null,
+      "death": {
+        "date": "",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [
+        "@I1@",
+        "@I8@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I6@",
+        "@I18@",
+        "@I7@",
+        "@I9@",
+        "@I2@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F2@"
+      ],
+      "memory": null
+    },
+    "@I4@": {
+      "id": "@I4@",
+      "fsid": "G5XX-DT3",
+      "name": "Mẹ Ông Thu - bà An",
+      "raw_name": "Mẹ Ông Thu - bà An //",
+      "sex": "F",
+      "birth": null,
+      "death": {
+        "date": "",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I5@"
+      ],
+      "children": [
+        "@I1@",
+        "@I15@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F1@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I5@": {
+      "id": "@I5@",
+      "fsid": "G5XX-DT9",
+      "name": "Trần Cha Ông cố Thu - bà An",
+      "raw_name": "Cha Ông cố Thu - bà An /Trần/",
+      "sex": "M",
+      "birth": null,
+      "death": {
+        "date": "",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I4@"
+      ],
+      "children": [
+        "@I1@",
+        "@I15@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F1@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I6@": {
+      "id": "@I6@",
+      "fsid": "G5X4-9YX",
+      "name": "Trần Thị Thi",
+      "raw_name": "Thị Thi /Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "1917",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": {
+        "date": "1989",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "baptism": null,
+      "parents": [
+        "@I1@",
+        "@I8@"
+      ],
+      "spouses": [
+        "@I11@"
+      ],
+      "children": [
+        "@I10@",
+        "@I17@"
+      ],
+      "siblings": [
+        "@I18@",
+        "@I7@",
+        "@I9@",
+        "@I2@",
+        "@I3@"
+      ],
+      "fams": [
+        "@F3@"
+      ],
+      "famc": [
+        "@F2@"
+      ],
+      "memory": null
+    },
+    "@I7@": {
+      "id": "@I7@",
+      "fsid": "G5X4-G4M",
+      "name": "Catarina Trần Thị Vị",
+      "raw_name": "Thị Vị /Catarina Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "1929",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": {
+        "date": "02/05/2009",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "baptism": null,
+      "parents": [
+        "@I1@",
+        "@I8@"
+      ],
+      "spouses": [
+        "@I12@"
+      ],
+      "children": [
+        "@I16@",
+        "@I13@",
+        "@I14@"
+      ],
+      "siblings": [
+        "@I6@",
+        "@I18@",
+        "@I9@",
+        "@I2@",
+        "@I3@"
+      ],
+      "fams": [
+        "@F4@"
+      ],
+      "famc": [
+        "@F2@"
+      ],
+      "memory": null
+    },
+    "@I8@": {
+      "id": "@I8@",
+      "fsid": "G5X4-NQX",
+      "name": "Nguyễn Thị Xuân - Út",
+      "raw_name": "Thị Xuân - Út /Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "1888",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": {
+        "date": "1929",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I1@"
+      ],
+      "children": [
+        "@I6@",
+        "@I18@",
+        "@I7@",
+        "@I9@",
+        "@I2@",
+        "@I3@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F2@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I9@": {
+      "id": "@I9@",
+      "fsid": "G5X4-7WL",
+      "name": "Gioan Trần Trọng Thả",
+      "raw_name": "Trọng Thả /Gioan Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "1929",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I1@",
+        "@I8@"
+      ],
+      "spouses": [
+        "@I23@"
+      ],
+      "children": [
+        "@I21@",
+        "@I22@",
+        "@I20@",
+        "@I26@",
+        "@I25@",
+        "@I28@"
+      ],
+      "siblings": [
+        "@I6@",
+        "@I18@",
+        "@I7@",
+        "@I2@",
+        "@I3@"
+      ],
+      "fams": [
+        "@F5@"
+      ],
+      "famc": [
+        "@F2@"
+      ],
+      "memory": null
+    },
+    "@I10@": {
+      "id": "@I10@",
+      "fsid": "G5XX-H78",
+      "name": "Cecilia Lê Thị Hoa",
+      "raw_name": "Thị Hoa /Cecilia Lê/",
+      "sex": "F",
+      "birth": {
+        "date": "1949",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I11@",
+        "@I6@"
+      ],
+      "spouses": [],
+      "children": [
+        "@I19@"
+      ],
+      "siblings": [
+        "@I17@"
+      ],
+      "fams": [
+        "@F6@"
+      ],
+      "famc": [
+        "@F3@"
+      ],
+      "memory": null
+    },
+    "@I11@": {
+      "id": "@I11@",
+      "fsid": "G5XX-C4M",
+      "name": "Lê Chí Trung",
+      "raw_name": " /Lê Chí Trung/",
+      "sex": "M",
+      "birth": null,
+      "death": {
+        "date": "",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I6@"
+      ],
+      "children": [
+        "@I10@",
+        "@I17@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F3@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I12@": {
+      "id": "@I12@",
+      "fsid": "G5XN-46X",
+      "name": "Gioan Lã Văn Mão",
+      "raw_name": "Văn Mão /Gioan Lã/",
+      "sex": "M",
+      "birth": {
+        "date": "1925",
+        "place": ""
+      },
+      "death": {
+        "date": "27/01/2022",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I7@"
+      ],
+      "children": [
+        "@I16@",
+        "@I13@",
+        "@I14@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F4@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I13@": {
+      "id": "@I13@",
+      "fsid": "G5XN-NWJ",
+      "name": "Lã Thị Hường",
+      "raw_name": "Thị Hường /Lã/",
+      "sex": "F",
+      "birth": {
+        "date": "28/02/1960",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I12@",
+        "@I7@"
+      ],
+      "spouses": [
+        "@I27@"
+      ],
+      "children": [
+        "@I24@",
+        "@I30@"
+      ],
+      "siblings": [
+        "@I16@",
+        "@I14@"
+      ],
+      "fams": [
+        "@F7@"
+      ],
+      "famc": [
+        "@F4@"
+      ],
+      "memory": null
+    },
+    "@I14@": {
+      "id": "@I14@",
+      "fsid": "G5XF-TK3",
+      "name": "Giuse Lã Văn Tiến",
+      "raw_name": "Văn Tiến /Giuse Lã/",
+      "sex": "M",
+      "birth": {
+        "date": "03/03/1962",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I12@",
+        "@I7@"
+      ],
+      "spouses": [
+        "@I29@"
+      ],
+      "children": [
+        "@I32@",
+        "@I31@"
+      ],
+      "siblings": [
+        "@I16@",
+        "@I13@"
+      ],
+      "fams": [
+        "@F8@"
+      ],
+      "famc": [
+        "@F4@"
+      ],
+      "memory": null
+    },
+    "@I15@": {
+      "id": "@I15@",
+      "fsid": "G1FQ-RV5",
+      "name": "Trần Thị An - Cẩm Giang",
+      "raw_name": "Trần Thị An - Cẩm Giang //",
+      "sex": "F",
+      "birth": null,
+      "death": {
+        "date": "",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [
+        "@I5@",
+        "@I4@"
+      ],
+      "spouses": [
+        "@I38@"
+      ],
+      "children": [],
+      "siblings": [
+        "@I1@"
+      ],
+      "fams": [
+        "@F9@"
+      ],
+      "famc": [
+        "@F1@"
+      ],
+      "memory": null
+    },
+    "@I16@": {
+      "id": "@I16@",
+      "fsid": "G5XN-754",
+      "name": "Lã Văn Minh",
+      "raw_name": "Văn Minh /Lã/",
+      "sex": "M",
+      "birth": {
+        "date": "1955",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I12@",
+        "@I7@"
+      ],
+      "spouses": [
+        "@I34@"
+      ],
+      "children": [
+        "@I37@",
+        "@I36@",
+        "@I33@"
+      ],
+      "siblings": [
+        "@I13@",
+        "@I14@"
+      ],
+      "fams": [
+        "@F10@"
+      ],
+      "famc": [
+        "@F4@"
+      ],
+      "memory": null
+    },
+    "@I17@": {
+      "id": "@I17@",
+      "fsid": "G5X6-1DK",
+      "name": "Lê Đức Thành",
+      "raw_name": "Đức Thành /Lê/",
+      "sex": "M",
+      "birth": {
+        "date": "1951",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I11@",
+        "@I6@"
+      ],
+      "spouses": [
+        "@I41@"
+      ],
+      "children": [
+        "@I39@",
+        "@I40@",
+        "@I42@",
+        "@I35@",
+        "@I43@"
+      ],
+      "siblings": [
+        "@I10@"
+      ],
+      "fams": [
+        "@F11@"
+      ],
+      "famc": [
+        "@F3@"
+      ],
+      "memory": null
+    },
+    "@I18@": {
+      "id": "@I18@",
+      "fsid": "G5X4-ZNG",
+      "name": "An-tôn Trần Trọng Thư",
+      "raw_name": "Trần /An-tôn/",
+      "sex": "M",
+      "birth": {
+        "date": "1918",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": {
+        "date": "17/05/1991",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "baptism": null,
+      "parents": [
+        "@I1@",
+        "@I8@"
+      ],
+      "spouses": [
+        "@I59@",
+        "@I51@"
+      ],
+      "children": [
+        "@I55@",
+        "@I54@",
+        "@I47@",
+        "@I56@",
+        "@I44@",
+        "@I46@",
+        "@I48@",
+        "@I49@",
+        "@I50@",
+        "@I52@",
+        "@I45@"
+      ],
+      "siblings": [
+        "@I6@",
+        "@I7@",
+        "@I9@",
+        "@I2@",
+        "@I3@"
+      ],
+      "fams": [
+        "@F12@",
+        "@F13@"
+      ],
+      "famc": [
+        "@F2@"
+      ],
+      "memory": {
+        "title": "📖 KÝ ỨC VỀ ÔNG AN-TÔN TRẦN TRỌNG THƯ",
+        "story": "Ông được biết đến như một người đạo đức, hiền lành, chất phác. Là người giúp việc cho giáo xứ Phong Ý từ đời trước của cha Quỳnh, đến cha Quỳnh, và truyền lại việc này cho con trai cả của ông là Trần Đức Hạnh tiếp tục công việc trong giáo xứ, sau đó đến cha Vinh, rồi đến cha Nhân. (Các linh mục quản xứ có lẽ sẽ được thể hiện tại kho lưu trữ tại giáo xứ Phong Ý. Sau cha Quỳnh thì ông Hạnh không làm việc này nữa).\n\nÔng gặp bà Hưng cũng nhờ sự tác hợp của các đấng bậc bề trên của cả 2 họ. Ông Thư được cha chánh xứ tiền nhiệm của cha Quỳnh nhận vào làm việc trong giáo xứ khi gia đình ông cố Thu ly tán sau sự kiện ông cố Thu bỏ nhà đi. Bà Sa - tên của tổ tiên bà đặt cho (tên trong giấy khai sinh hiện tại là bà Hưng. Trước đó tên là Hương, do vào nhà dòng, không có giấy tờ nên đi đâu cũng mượn giấy tờ người có tên Phạm Thị Hương, sau này, ông Thư làm giấy khai sinh thì trong giấy tờ, bà tên Phạm Thị Hưng).\n\nCâu chuyện được nhắc nhiều về ông là giai thoại chiếc mâm bằng đồng.\nChuyện kể rằng, nhà ông có chiếc mâm bằng đồng rất quý, một ngày nọ, nó bỗng dưng biến mất, ông trấn an mọi người trong nhà và nói rằng, rồi chiếc mâm đó sẽ được trả lại. Ông dặn dò con cháu siêng năng cầu nguyện. Và sau đó, chiếc mâm đồng đã được trả về thật. Câu chuyện được kết luận rằng, nhờ sự cầu nguyện mà ông đã cảm hóa được người ăn trộm quay về đường ngay nẻo chính.\n\nÔng là người giữ khuôn phép truyền thống, ưu ái cháu đích tôn - anh Trần Quốc Tuấn.\nChuyện kể rằng, ngày đó, làm cả 1 con bò, ông để giành được 1 cái lưỡi bò đem cho cháu đích tôn.\nLại có chuyện khác, ông leo lên cây trứng gà (lekima) để hái quả duy nhất của cây, cho cháu đích tôn bị té gãy chân.\n\nSự kiện con trai ông Hạnh ra đời, cả dòng họ đốt đèn ăn mừng rất lớn. (những người đương thời như Bác Phúc, Bác Đức chắc sẽ biết câu chuyện này). Bà Đào cũng có cảm giác rất đỗi tự hào vì sinh được con trai nối dõi.\n\n(Tuấn ghi lại theo lời kể của ông Hạnh - bà Đào ngày 08/04/2024)"
+      }
+    },
+    "@I19@": {
+      "id": "@I19@",
+      "fsid": "G5XX-C4H",
+      "name": "Nguyễn Văn Ba",
+      "raw_name": "Văn Ba /Nguyễn/",
+      "sex": "M",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I10@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F6@"
+      ],
+      "memory": null
+    },
+    "@I20@": {
+      "id": "@I20@",
+      "fsid": "G5XF-ZQY",
+      "name": "Trần Thị Dung",
+      "raw_name": "Thị Dung /Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "1964",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I9@",
+        "@I23@"
+      ],
+      "spouses": [
+        "@I57@"
+      ],
+      "children": [
+        "@I53@",
+        "@I58@",
+        "@I60@",
+        "@I61@"
+      ],
+      "siblings": [
+        "@I21@",
+        "@I22@",
+        "@I26@",
+        "@I25@",
+        "@I28@"
+      ],
+      "fams": [
+        "@F14@"
+      ],
+      "famc": [
+        "@F5@"
+      ],
+      "memory": null
+    },
+    "@I21@": {
+      "id": "@I21@",
+      "fsid": "G5XX-Y74",
+      "name": "Ghêgonô Trần Ngọc Thuận",
+      "raw_name": "Ngọc Thuận /Ghêgonô Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "29/11/1960",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I9@",
+        "@I23@"
+      ],
+      "spouses": [
+        "@I69@"
+      ],
+      "children": [
+        "@I65@",
+        "@I67@",
+        "@I62@",
+        "@I63@"
+      ],
+      "siblings": [
+        "@I22@",
+        "@I20@",
+        "@I26@",
+        "@I25@",
+        "@I28@"
+      ],
+      "fams": [
+        "@F15@"
+      ],
+      "famc": [
+        "@F5@"
+      ],
+      "memory": null
+    },
+    "@I22@": {
+      "id": "@I22@",
+      "fsid": "G5XF-6B7",
+      "name": "Trần Thị Hoà",
+      "raw_name": "Thị Hoà /Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "1963",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I9@",
+        "@I23@"
+      ],
+      "spouses": [
+        "@I72@"
+      ],
+      "children": [
+        "@I64@",
+        "@I66@",
+        "@I68@",
+        "@I70@"
+      ],
+      "siblings": [
+        "@I21@",
+        "@I20@",
+        "@I26@",
+        "@I25@",
+        "@I28@"
+      ],
+      "fams": [
+        "@F16@"
+      ],
+      "famc": [
+        "@F5@"
+      ],
+      "memory": null
+    },
+    "@I23@": {
+      "id": "@I23@",
+      "fsid": "G5XX-1D8",
+      "name": "Maria Lê Thị Phùng",
+      "raw_name": "Thị Phùng /Maria Lê/",
+      "sex": "F",
+      "birth": {
+        "date": "1942",
+        "place": ""
+      },
+      "death": {
+        "date": "2021",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I9@"
+      ],
+      "children": [
+        "@I21@",
+        "@I22@",
+        "@I20@",
+        "@I26@",
+        "@I25@",
+        "@I28@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F5@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I24@": {
+      "id": "@I24@",
+      "fsid": "G5XN-PZ7",
+      "name": "Quên tên",
+      "raw_name": " /Quên tên/",
+      "sex": "F",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I27@",
+        "@I13@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I30@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F7@"
+      ],
+      "memory": null
+    },
+    "@I25@": {
+      "id": "@I25@",
+      "fsid": "G5XF-2MC",
+      "name": "Trần Văn Lương",
+      "raw_name": "Văn Lương /Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "1970",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I9@",
+        "@I23@"
+      ],
+      "spouses": [
+        "@I74@"
+      ],
+      "children": [
+        "@I71@",
+        "@I73@"
+      ],
+      "siblings": [
+        "@I21@",
+        "@I22@",
+        "@I20@",
+        "@I26@",
+        "@I28@"
+      ],
+      "fams": [
+        "@F17@"
+      ],
+      "famc": [
+        "@F5@"
+      ],
+      "memory": null
+    },
+    "@I26@": {
+      "id": "@I26@",
+      "fsid": "G5XF-HNP",
+      "name": "Giuse Trần Xuân Hiệp",
+      "raw_name": " /Giuse Trần Xuân Hiệp/",
+      "sex": "M",
+      "birth": {
+        "date": "21/03/1968",
+        "place": "Cẩm Thủy, Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I9@",
+        "@I23@"
+      ],
+      "spouses": [
+        "@I77@"
+      ],
+      "children": [
+        "@I76@",
+        "@I75@",
+        "@I78@"
+      ],
+      "siblings": [
+        "@I21@",
+        "@I22@",
+        "@I20@",
+        "@I25@",
+        "@I28@"
+      ],
+      "fams": [
+        "@F18@"
+      ],
+      "famc": [
+        "@F5@"
+      ],
+      "memory": null
+    },
+    "@I27@": {
+      "id": "@I27@",
+      "fsid": "G5XF-1D9",
+      "name": "Trần Quốc Long",
+      "raw_name": "Quốc Long /Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "1956",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I13@"
+      ],
+      "children": [
+        "@I24@",
+        "@I30@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F7@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I28@": {
+      "id": "@I28@",
+      "fsid": "G5XF-C3K",
+      "name": "Trần Thị Liên",
+      "raw_name": "Thị Liên /Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "1975",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I9@",
+        "@I23@"
+      ],
+      "spouses": [
+        "@I83@"
+      ],
+      "children": [
+        "@I80@",
+        "@I79@"
+      ],
+      "siblings": [
+        "@I21@",
+        "@I22@",
+        "@I20@",
+        "@I26@",
+        "@I25@"
+      ],
+      "fams": [
+        "@F19@"
+      ],
+      "famc": [
+        "@F5@"
+      ],
+      "memory": null
+    },
+    "@I29@": {
+      "id": "@I29@",
+      "fsid": "G5XF-1D4",
+      "name": "Bùi Thị Minh",
+      "raw_name": "Thị Minh /Bùi/",
+      "sex": "F",
+      "birth": {
+        "date": "1960",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I14@"
+      ],
+      "children": [
+        "@I32@",
+        "@I31@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F8@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I30@": {
+      "id": "@I30@",
+      "fsid": "G5XN-X98",
+      "name": "Trần Quốc Cường",
+      "raw_name": "Quốc Cường /Trần/",
+      "sex": "M",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I27@",
+        "@I13@"
+      ],
+      "spouses": [
+        "@I85@"
+      ],
+      "children": [
+        "@I81@",
+        "@I82@"
+      ],
+      "siblings": [
+        "@I24@"
+      ],
+      "fams": [
+        "@F20@"
+      ],
+      "famc": [
+        "@F7@"
+      ],
+      "memory": null
+    },
+    "@I31@": {
+      "id": "@I31@",
+      "fsid": "G5XN-2SD",
+      "name": "Lã Thị Thuý",
+      "raw_name": "Thị Thuý /Lã/",
+      "sex": "F",
+      "birth": {
+        "date": "1987",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I14@",
+        "@I29@"
+      ],
+      "spouses": [
+        "@I89@"
+      ],
+      "children": [
+        "@I84@",
+        "@I86@",
+        "@I87@"
+      ],
+      "siblings": [
+        "@I32@"
+      ],
+      "fams": [
+        "@F21@"
+      ],
+      "famc": [
+        "@F8@"
+      ],
+      "memory": null
+    },
+    "@I32@": {
+      "id": "@I32@",
+      "fsid": "G5XN-JYD",
+      "name": "Lã Thị Hằng",
+      "raw_name": "Thị Hằng /Lã/",
+      "sex": "F",
+      "birth": {
+        "date": "1985",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I14@",
+        "@I29@"
+      ],
+      "spouses": [
+        "@I90@",
+        "@I92@"
+      ],
+      "children": [
+        "@I88@",
+        "@I91@"
+      ],
+      "siblings": [
+        "@I31@"
+      ],
+      "fams": [
+        "@F22@",
+        "@F23@"
+      ],
+      "famc": [
+        "@F8@"
+      ],
+      "memory": null
+    },
+    "@I33@": {
+      "id": "@I33@",
+      "fsid": "G5XN-6F8",
+      "name": "Giuse Lã Xuân Hùng",
+      "raw_name": "Xuân Hùng /Giuse Lã/",
+      "sex": "M",
+      "birth": {
+        "date": "1990",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I16@",
+        "@I34@"
+      ],
+      "spouses": [
+        "@I93@"
+      ],
+      "children": [],
+      "siblings": [
+        "@I37@",
+        "@I36@"
+      ],
+      "fams": [
+        "@F24@"
+      ],
+      "famc": [
+        "@F10@"
+      ],
+      "memory": null
+    },
+    "@I34@": {
+      "id": "@I34@",
+      "fsid": "G5XN-SV4",
+      "name": "Đinh Thị Xây",
+      "raw_name": "Thị Xây /Đinh/",
+      "sex": "F",
+      "birth": {
+        "date": "1953",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I16@"
+      ],
+      "children": [
+        "@I37@",
+        "@I36@",
+        "@I33@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F10@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I35@": {
+      "id": "@I35@",
+      "fsid": "G5XX-4KD",
+      "name": "Lê Thị Oanh - đi tu",
+      "raw_name": "Thị Oanh /Lê/",
+      "sex": "F",
+      "birth": {
+        "date": "1984",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I17@",
+        "@I41@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I39@",
+        "@I40@",
+        "@I42@",
+        "@I43@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F11@"
+      ],
+      "memory": null
+    },
+    "@I36@": {
+      "id": "@I36@",
+      "fsid": "G5XN-VB3",
+      "name": "Lã Thị Thảo",
+      "raw_name": "Thị Thảo /Lã/",
+      "sex": "F",
+      "birth": {
+        "date": "1988",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I16@",
+        "@I34@"
+      ],
+      "spouses": [
+        "@I97@"
+      ],
+      "children": [
+        "@I94@",
+        "@I95@"
+      ],
+      "siblings": [
+        "@I37@",
+        "@I33@"
+      ],
+      "fams": [
+        "@F25@"
+      ],
+      "famc": [
+        "@F10@"
+      ],
+      "memory": null
+    },
+    "@I37@": {
+      "id": "@I37@",
+      "fsid": "G5XN-75K",
+      "name": "Teresa Lã Thị Hiền",
+      "raw_name": "Thị Hiền /Teresa Lã/",
+      "sex": "F",
+      "birth": {
+        "date": "20/05/1987",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I16@",
+        "@I34@"
+      ],
+      "spouses": [
+        "@I101@"
+      ],
+      "children": [
+        "@I96@",
+        "@I98@",
+        "@I99@"
+      ],
+      "siblings": [
+        "@I36@",
+        "@I33@"
+      ],
+      "fams": [
+        "@F26@"
+      ],
+      "famc": [
+        "@F10@"
+      ],
+      "memory": null
+    },
+    "@I38@": {
+      "id": "@I38@",
+      "fsid": "G1FJ-F61",
+      "name": "Trương Công Trạng",
+      "raw_name": "Công Trạng /Trương/",
+      "sex": "M",
+      "birth": null,
+      "death": {
+        "date": "",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I15@"
+      ],
+      "children": [],
+      "siblings": [],
+      "fams": [
+        "@F9@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I39@": {
+      "id": "@I39@",
+      "fsid": "G5X6-1DG",
+      "name": "Lê Thị Tâm",
+      "raw_name": "Thị Tâm /Lê/",
+      "sex": "F",
+      "birth": {
+        "date": "1977",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I17@",
+        "@I41@"
+      ],
+      "spouses": [
+        "@I102@"
+      ],
+      "children": [
+        "@I109@",
+        "@I100@"
+      ],
+      "siblings": [
+        "@I40@",
+        "@I42@",
+        "@I35@",
+        "@I43@"
+      ],
+      "fams": [
+        "@F27@"
+      ],
+      "famc": [
+        "@F11@"
+      ],
+      "memory": null
+    },
+    "@I40@": {
+      "id": "@I40@",
+      "fsid": "G5XX-HLJ",
+      "name": "Lê Minh Hải",
+      "raw_name": "Minh Hải /Lê/",
+      "sex": "M",
+      "birth": {
+        "date": "1978",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I17@",
+        "@I41@"
+      ],
+      "spouses": [
+        "@I105@"
+      ],
+      "children": [
+        "@I103@",
+        "@I104@"
+      ],
+      "siblings": [
+        "@I39@",
+        "@I42@",
+        "@I35@",
+        "@I43@"
+      ],
+      "fams": [
+        "@F28@"
+      ],
+      "famc": [
+        "@F11@"
+      ],
+      "memory": null
+    },
+    "@I41@": {
+      "id": "@I41@",
+      "fsid": "G5XX-F2P",
+      "name": "Maria Trương Thị Tần",
+      "raw_name": "Thị Tần /Maria Trương/",
+      "sex": "F",
+      "birth": {
+        "date": "1955",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": {
+        "date": "20/04/2022",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I17@"
+      ],
+      "children": [
+        "@I39@",
+        "@I40@",
+        "@I42@",
+        "@I35@",
+        "@I43@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F11@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I42@": {
+      "id": "@I42@",
+      "fsid": "G5XX-VBG",
+      "name": "Lê Thị Yến",
+      "raw_name": "Thị Yến /Lê/",
+      "sex": "F",
+      "birth": {
+        "date": "1983",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I17@",
+        "@I41@"
+      ],
+      "spouses": [
+        "@I108@"
+      ],
+      "children": [
+        "@I106@",
+        "@I107@"
+      ],
+      "siblings": [
+        "@I39@",
+        "@I40@",
+        "@I35@",
+        "@I43@"
+      ],
+      "fams": [
+        "@F29@"
+      ],
+      "famc": [
+        "@F11@"
+      ],
+      "memory": null
+    },
+    "@I43@": {
+      "id": "@I43@",
+      "fsid": "G5XX-29S",
+      "name": "Lê Thị Vân",
+      "raw_name": "Thị Vân /Lê/",
+      "sex": "F",
+      "birth": {
+        "date": "1987",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I17@",
+        "@I41@"
+      ],
+      "spouses": [
+        "@I113@"
+      ],
+      "children": [
+        "@I111@",
+        "@I110@",
+        "@I112@"
+      ],
+      "siblings": [
+        "@I39@",
+        "@I40@",
+        "@I42@",
+        "@I35@"
+      ],
+      "fams": [
+        "@F30@"
+      ],
+      "famc": [
+        "@F11@"
+      ],
+      "memory": null
+    },
+    "@I44@": {
+      "id": "@I44@",
+      "fsid": "G5X4-SD7",
+      "name": "Teresa Trần Thị Nguyệt",
+      "raw_name": "Thị Nguyệt /Teresa Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "06/06/1964",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I18@",
+        "@I59@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I55@",
+        "@I54@",
+        "@I47@",
+        "@I56@",
+        "@I46@",
+        "@I48@",
+        "@I49@",
+        "@I50@",
+        "@I52@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F12@"
+      ],
+      "memory": null
+    },
+    "@I45@": {
+      "id": "@I45@",
+      "fsid": "GRB6-R94",
+      "name": "Con Bà Nghi - Ông Thư",
+      "raw_name": " /Con Bà Nghi - Ông Thư/",
+      "sex": "M",
+      "birth": null,
+      "death": {
+        "date": "",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [
+        "@I18@",
+        "@I51@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F13@"
+      ],
+      "memory": null
+    },
+    "@I46@": {
+      "id": "@I46@",
+      "fsid": "G5XW-XBH",
+      "name": "Giacôbê Trần Trung Kiêm",
+      "raw_name": "Trần /Giacôbê/",
+      "sex": "M",
+      "birth": {
+        "date": "10/05/1967",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": {
+        "date": "10/12/2023",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "baptism": null,
+      "parents": [
+        "@I18@",
+        "@I59@"
+      ],
+      "spouses": [
+        "@I114@"
+      ],
+      "children": [
+        "@I117@",
+        "@I116@"
+      ],
+      "siblings": [
+        "@I55@",
+        "@I54@",
+        "@I47@",
+        "@I56@",
+        "@I44@",
+        "@I48@",
+        "@I49@",
+        "@I50@",
+        "@I52@"
+      ],
+      "fams": [
+        "@F31@"
+      ],
+      "famc": [
+        "@F12@"
+      ],
+      "memory": null
+    },
+    "@I47@": {
+      "id": "@I47@",
+      "fsid": "G5XQ-BHG",
+      "name": "Gioakim Trần Đức Hạnh",
+      "raw_name": "Trần /Gioakim/",
+      "sex": "M",
+      "birth": {
+        "date": "13/08/1959",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I18@",
+        "@I59@"
+      ],
+      "spouses": [
+        "@I127@"
+      ],
+      "children": [
+        "@I122@",
+        "@I124@",
+        "@I115@",
+        "@I126@"
+      ],
+      "siblings": [
+        "@I55@",
+        "@I54@",
+        "@I56@",
+        "@I44@",
+        "@I46@",
+        "@I48@",
+        "@I49@",
+        "@I50@",
+        "@I52@"
+      ],
+      "fams": [
+        "@F32@"
+      ],
+      "famc": [
+        "@F12@"
+      ],
+      "memory": null
+    },
+    "@I48@": {
+      "id": "@I48@",
+      "fsid": "G5XW-HCR",
+      "name": "Phanxico Trần Văn Toàn",
+      "raw_name": "Văn Toàn /Phanxico Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "06/06/1969",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I18@",
+        "@I59@"
+      ],
+      "spouses": [
+        "@I121@"
+      ],
+      "children": [
+        "@I118@",
+        "@I119@"
+      ],
+      "siblings": [
+        "@I55@",
+        "@I54@",
+        "@I47@",
+        "@I56@",
+        "@I44@",
+        "@I46@",
+        "@I49@",
+        "@I50@",
+        "@I52@"
+      ],
+      "fams": [
+        "@F33@"
+      ],
+      "famc": [
+        "@F12@"
+      ],
+      "memory": null
+    },
+    "@I49@": {
+      "id": "@I49@",
+      "fsid": "G5XW-GS1",
+      "name": "Mattheu Trần Văn Đạo",
+      "raw_name": "Trần /Mattheu/",
+      "sex": "M",
+      "birth": {
+        "date": "21/09/1971",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I18@",
+        "@I59@"
+      ],
+      "spouses": [
+        "@I125@"
+      ],
+      "children": [
+        "@I120@",
+        "@I123@"
+      ],
+      "siblings": [
+        "@I55@",
+        "@I54@",
+        "@I47@",
+        "@I56@",
+        "@I44@",
+        "@I46@",
+        "@I48@",
+        "@I50@",
+        "@I52@"
+      ],
+      "fams": [
+        "@F34@"
+      ],
+      "famc": [
+        "@F12@"
+      ],
+      "memory": null
+    },
+    "@I50@": {
+      "id": "@I50@",
+      "fsid": "G5X4-4TG",
+      "name": "Bonaventura Trần Văn Nghĩa",
+      "raw_name": "Trần /Bonaventura/",
+      "sex": "M",
+      "birth": {
+        "date": "12/07/1973",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I18@",
+        "@I59@"
+      ],
+      "spouses": [
+        "@I130@"
+      ],
+      "children": [
+        "@I128@",
+        "@I129@"
+      ],
+      "siblings": [
+        "@I55@",
+        "@I54@",
+        "@I47@",
+        "@I56@",
+        "@I44@",
+        "@I46@",
+        "@I48@",
+        "@I49@",
+        "@I52@"
+      ],
+      "fams": [
+        "@F35@"
+      ],
+      "famc": [
+        "@F12@"
+      ],
+      "memory": null
+    },
+    "@I51@": {
+      "id": "@I51@",
+      "fsid": "GRB6-XCQ",
+      "name": "Bà Lê Thị Nghi - Cả",
+      "raw_name": " /Bà Lê Thị Nghi - Cả/",
+      "sex": "F",
+      "birth": null,
+      "death": {
+        "date": "",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I18@"
+      ],
+      "children": [
+        "@I45@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F13@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I52@": {
+      "id": "@I52@",
+      "fsid": "G5X4-FMG",
+      "name": "Bênađô Trần Trung Chính",
+      "raw_name": "Trung Chính /Bênađô Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "20/08/1975",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I18@",
+        "@I59@"
+      ],
+      "spouses": [
+        "@I133@"
+      ],
+      "children": [
+        "@I131@",
+        "@I132@"
+      ],
+      "siblings": [
+        "@I55@",
+        "@I54@",
+        "@I47@",
+        "@I56@",
+        "@I44@",
+        "@I46@",
+        "@I48@",
+        "@I49@",
+        "@I50@"
+      ],
+      "fams": [
+        "@F36@"
+      ],
+      "famc": [
+        "@F12@"
+      ],
+      "memory": null
+    },
+    "@I53@": {
+      "id": "@I53@",
+      "fsid": "G5XF-96P",
+      "name": "Trịnh Thị Linh",
+      "raw_name": "Thị Linh /Trịnh/",
+      "sex": "F",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I57@",
+        "@I20@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I58@",
+        "@I60@",
+        "@I61@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F14@"
+      ],
+      "memory": null
+    },
+    "@I54@": {
+      "id": "@I54@",
+      "fsid": "G5XW-X8X",
+      "name": "Agnest Trần Thị Đức",
+      "raw_name": "Trần /Agnest/",
+      "sex": "F",
+      "birth": {
+        "date": "BET 15 OCT 1956 AND 19 OCT 1956",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I18@",
+        "@I59@"
+      ],
+      "spouses": [
+        "@I143@"
+      ],
+      "children": [
+        "@I136@",
+        "@I137@",
+        "@I135@",
+        "@I134@",
+        "@I140@",
+        "@I138@",
+        "@I139@"
+      ],
+      "siblings": [
+        "@I55@",
+        "@I47@",
+        "@I56@",
+        "@I44@",
+        "@I46@",
+        "@I48@",
+        "@I49@",
+        "@I50@",
+        "@I52@"
+      ],
+      "fams": [
+        "@F37@"
+      ],
+      "famc": [
+        "@F12@"
+      ],
+      "memory": null
+    },
+    "@I55@": {
+      "id": "@I55@",
+      "fsid": "G5X4-SBN",
+      "name": "Terresa Trần Thị Phúc",
+      "raw_name": "Trần /Terresa/",
+      "sex": "F",
+      "birth": {
+        "date": "14/10/1956",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I18@",
+        "@I59@"
+      ],
+      "spouses": [
+        "@I149@"
+      ],
+      "children": [
+        "@I141@",
+        "@I145@",
+        "@I142@",
+        "@I144@",
+        "@I148@",
+        "@I146@",
+        "@I150@"
+      ],
+      "siblings": [
+        "@I54@",
+        "@I47@",
+        "@I56@",
+        "@I44@",
+        "@I46@",
+        "@I48@",
+        "@I49@",
+        "@I50@",
+        "@I52@"
+      ],
+      "fams": [
+        "@F38@"
+      ],
+      "famc": [
+        "@F12@"
+      ],
+      "memory": null
+    },
+    "@I56@": {
+      "id": "@I56@",
+      "fsid": "G5XW-676",
+      "name": "Teresa Trần Thị Ngoan",
+      "raw_name": "Trần /Teresa/",
+      "sex": "F",
+      "birth": {
+        "date": "05/04/1963",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I18@",
+        "@I59@"
+      ],
+      "spouses": [
+        "@I156@"
+      ],
+      "children": [
+        "@I152@",
+        "@I155@",
+        "@I154@",
+        "@I147@",
+        "@I160@"
+      ],
+      "siblings": [
+        "@I55@",
+        "@I54@",
+        "@I47@",
+        "@I44@",
+        "@I46@",
+        "@I48@",
+        "@I49@",
+        "@I50@",
+        "@I52@"
+      ],
+      "fams": [
+        "@F39@"
+      ],
+      "famc": [
+        "@F12@"
+      ],
+      "memory": null
+    },
+    "@I57@": {
+      "id": "@I57@",
+      "fsid": "G5XF-XXT",
+      "name": "Trịnh Văn Tình",
+      "raw_name": "Văn Tình /Trịnh/",
+      "sex": "M",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I20@"
+      ],
+      "children": [
+        "@I53@",
+        "@I58@",
+        "@I60@",
+        "@I61@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F14@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I58@": {
+      "id": "@I58@",
+      "fsid": "G5XF-KXF",
+      "name": "Trịnh Thị Tuyên",
+      "raw_name": "Thị Tuyên /Trịnh/",
+      "sex": "F",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I57@",
+        "@I20@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I53@",
+        "@I60@",
+        "@I61@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F14@"
+      ],
+      "memory": null
+    },
+    "@I59@": {
+      "id": "@I59@",
+      "fsid": "G5X7-BT8",
+      "name": "Bà Sa - Teresa Phạm Thị Hưng",
+      "raw_name": "Phạm /Bà Sa - Teresa/",
+      "sex": "F",
+      "birth": {
+        "date": "Khoảng 1934",
+        "place": "Kim Sơn, Ninh Bình, Việt Nam"
+      },
+      "death": {
+        "date": "16/09/2021",
+        "place": "Hồ Chí Minh, Việt Nam"
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I18@"
+      ],
+      "children": [
+        "@I55@",
+        "@I54@",
+        "@I47@",
+        "@I56@",
+        "@I44@",
+        "@I46@",
+        "@I48@",
+        "@I49@",
+        "@I50@",
+        "@I52@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F12@"
+      ],
+      "famc": [],
+      "memory": {
+        "title": "📖 CÂU CHUYỆN VỀ BÀ SA",
+        "story": "Bà sinh ra ở Kim Sơn, Ninh Bình, gặp và lấy ông Trần Trọng Thư ở Cẩm Phong, Cẩm Thuỷ, Thanh Hoá, sinh được 10 người con, vào Sài Gòn lập nghiệp bằng công việc bán hàng rong những năm 1987-1990.\n\nBà được nhớ ơn bởi nhà bà gần như được coi là nơi cưu mang của họ hàng, đồng hương vào Sài Gòn để kiếm kế mưu sinh; là nơi giúp quy tụ, gắn kết các mối liên hệ trong dòng họ.\n\nBà mất năm 2021, khi dịch Covid đến hồi gần kết thúc, khi các biện pháp quản lý mùa dịch của nhà nước được nới lỏng hơn. Đám tang của bà được con cháu tổ chức chu đáo hơn so với những nạn nhân Covid năm đó."
+      }
+    },
+    "@I60@": {
+      "id": "@I60@",
+      "fsid": "G5XX-YWH",
+      "name": "Trịnh Văn Quang",
+      "raw_name": "Văn Quang /Trịnh/",
+      "sex": "M",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I57@",
+        "@I20@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I53@",
+        "@I58@",
+        "@I61@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F14@"
+      ],
+      "memory": null
+    },
+    "@I61@": {
+      "id": "@I61@",
+      "fsid": "G5XF-HJJ",
+      "name": "Trịnh Văn Tuấn",
+      "raw_name": "Văn Tuấn /Trịnh/",
+      "sex": "M",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I57@",
+        "@I20@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I53@",
+        "@I58@",
+        "@I60@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F14@"
+      ],
+      "memory": null
+    },
+    "@I62@": {
+      "id": "@I62@",
+      "fsid": "G5XX-1BH",
+      "name": "Gioan Trần Đức Nam",
+      "raw_name": "Đức Nam /Gioan Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "1997",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I21@",
+        "@I69@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I65@",
+        "@I67@",
+        "@I63@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F15@"
+      ],
+      "memory": null
+    },
+    "@I63@": {
+      "id": "@I63@",
+      "fsid": "G5XF-39K",
+      "name": "Maria Trần Ngọc Thiên Duyên",
+      "raw_name": "Ngọc Thiên Duyên /Maria Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "1998",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I21@",
+        "@I69@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I65@",
+        "@I67@",
+        "@I62@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F15@"
+      ],
+      "memory": null
+    },
+    "@I64@": {
+      "id": "@I64@",
+      "fsid": "G5XX-T9J",
+      "name": "Nguyễn Thị Nhung",
+      "raw_name": "Thị Nhung /Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "1987",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I72@",
+        "@I22@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I66@",
+        "@I68@",
+        "@I70@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F16@"
+      ],
+      "memory": null
+    },
+    "@I65@": {
+      "id": "@I65@",
+      "fsid": "G5XX-16S",
+      "name": "Maria Trần Thị Trang",
+      "raw_name": "Thị Trang /Maria Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "1990",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I21@",
+        "@I69@"
+      ],
+      "spouses": [
+        "@I157@"
+      ],
+      "children": [
+        "@I153@"
+      ],
+      "siblings": [
+        "@I67@",
+        "@I62@",
+        "@I63@"
+      ],
+      "fams": [
+        "@F41@"
+      ],
+      "famc": [
+        "@F15@"
+      ],
+      "memory": null
+    },
+    "@I66@": {
+      "id": "@I66@",
+      "fsid": "G5XF-Z72",
+      "name": "Nguyễn Văn Mạnh",
+      "raw_name": " /Nguyễn Văn Mạnh/",
+      "sex": "M",
+      "birth": {
+        "date": "1989",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I72@",
+        "@I22@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I64@",
+        "@I68@",
+        "@I70@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F16@"
+      ],
+      "memory": null
+    },
+    "@I67@": {
+      "id": "@I67@",
+      "fsid": "G5XF-96C",
+      "name": "Teresa Trần Lệ Quyên",
+      "raw_name": "Lệ Quyên /Teresa Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "1992",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I21@",
+        "@I69@"
+      ],
+      "spouses": [
+        "@I158@"
+      ],
+      "children": [
+        "@I159@"
+      ],
+      "siblings": [
+        "@I65@",
+        "@I62@",
+        "@I63@"
+      ],
+      "fams": [
+        "@F42@"
+      ],
+      "famc": [
+        "@F15@"
+      ],
+      "memory": null
+    },
+    "@I68@": {
+      "id": "@I68@",
+      "fsid": "G5XF-6BT",
+      "name": "Nguyễn Văn Hưng",
+      "raw_name": "Văn Hưng /Nguyễn/",
+      "sex": "M",
+      "birth": {
+        "date": "1992",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I72@",
+        "@I22@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I64@",
+        "@I66@",
+        "@I70@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F16@"
+      ],
+      "memory": null
+    },
+    "@I69@": {
+      "id": "@I69@",
+      "fsid": "G5XF-J4D",
+      "name": "Anna Nguyễn Thị Nhân",
+      "raw_name": "Thị Nhân /Anna Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "06/09/1966",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I21@"
+      ],
+      "children": [
+        "@I65@",
+        "@I67@",
+        "@I62@",
+        "@I63@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F15@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I70@": {
+      "id": "@I70@",
+      "fsid": "G5XF-VYR",
+      "name": "Nguyễn Văn Tân",
+      "raw_name": "Văn Tân /Nguyễn/",
+      "sex": "M",
+      "birth": {
+        "date": "1998",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I72@",
+        "@I22@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I64@",
+        "@I66@",
+        "@I68@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F16@"
+      ],
+      "memory": null
+    },
+    "@I71@": {
+      "id": "@I71@",
+      "fsid": "G5XF-85K",
+      "name": "Trần Thị Huyền",
+      "raw_name": "Thị Huyền /Trần/",
+      "sex": "F",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I25@",
+        "@I74@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I73@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F17@"
+      ],
+      "memory": null
+    },
+    "@I72@": {
+      "id": "@I72@",
+      "fsid": "G5XF-FJ1",
+      "name": "Nguyễn Văn Ngọc",
+      "raw_name": "Văn Ngọc /Nguyễn/",
+      "sex": "M",
+      "birth": {
+        "date": "1959",
+        "place": ""
+      },
+      "death": {
+        "date": "2021",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I22@"
+      ],
+      "children": [
+        "@I64@",
+        "@I66@",
+        "@I68@",
+        "@I70@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F16@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I73@": {
+      "id": "@I73@",
+      "fsid": "G5XF-XFW",
+      "name": "Trần Thị Lan Anh",
+      "raw_name": "Thị Lan Anh /Trần/",
+      "sex": "F",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I25@",
+        "@I74@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I71@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F17@"
+      ],
+      "memory": null
+    },
+    "@I74@": {
+      "id": "@I74@",
+      "fsid": "G5XF-JH7",
+      "name": "Thím Hợp",
+      "raw_name": " /Thím Hợp/",
+      "sex": "F",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I25@"
+      ],
+      "children": [
+        "@I71@",
+        "@I73@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F17@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I75@": {
+      "id": "@I75@",
+      "fsid": "G5XX-YP4",
+      "name": "Maria Trần Nguyễn Hồng Ân",
+      "raw_name": "Hồng Ân /Maria Trần Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "2007",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I26@",
+        "@I77@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I76@",
+        "@I78@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F18@"
+      ],
+      "memory": null
+    },
+    "@I76@": {
+      "id": "@I76@",
+      "fsid": "G5XF-997",
+      "name": "Gioan Trần Nguyễn Xuân Phát",
+      "raw_name": "Xuân Phát /Gioan Trần Nguyễn/",
+      "sex": "M",
+      "birth": {
+        "date": "2002",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I26@",
+        "@I77@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I75@",
+        "@I78@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F18@"
+      ],
+      "memory": null
+    },
+    "@I77@": {
+      "id": "@I77@",
+      "fsid": "G5XF-L3L",
+      "name": "Nguyễn Thị Thu Thuý",
+      "raw_name": "Thị Thu Thuý /Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "1977",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I26@"
+      ],
+      "children": [
+        "@I76@",
+        "@I75@",
+        "@I78@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F18@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I78@": {
+      "id": "@I78@",
+      "fsid": "G5XF-XFS",
+      "name": "An Tôn Trần Nguyễn Xuân Lộc",
+      "raw_name": "Xuân Lộc /An Tôn Trần Nguyễn/",
+      "sex": "M",
+      "birth": {
+        "date": "2008",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I26@",
+        "@I77@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I76@",
+        "@I75@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F18@"
+      ],
+      "memory": null
+    },
+    "@I79@": {
+      "id": "@I79@",
+      "fsid": "G5XF-ZGP",
+      "name": "Nguyễn Trần X",
+      "raw_name": " /Nguyễn Trần X/",
+      "sex": "F",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I83@",
+        "@I28@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I80@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F19@"
+      ],
+      "memory": null
+    },
+    "@I80@": {
+      "id": "@I80@",
+      "fsid": "G5XF-KX1",
+      "name": "Nguyễn Trần",
+      "raw_name": " /Nguyễn Trần/",
+      "sex": "M",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I83@",
+        "@I28@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I79@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F19@"
+      ],
+      "memory": null
+    },
+    "@I81@": {
+      "id": "@I81@",
+      "fsid": "G5JL-H5Z",
+      "name": "Trần Đình Minh Quang",
+      "raw_name": "Minh Quang /Trần Đình/",
+      "sex": "M",
+      "birth": {
+        "date": "2020",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I30@",
+        "@I85@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I82@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F20@"
+      ],
+      "memory": null
+    },
+    "@I82@": {
+      "id": "@I82@",
+      "fsid": "G5JL-R9V",
+      "name": "Trần Thư Phương",
+      "raw_name": "Thư Phương /Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "2022",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I30@",
+        "@I85@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I81@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F20@"
+      ],
+      "memory": null
+    },
+    "@I83@": {
+      "id": "@I83@",
+      "fsid": "G5XF-N7S",
+      "name": "Nguyễn Đức Tốt",
+      "raw_name": "Đức Tốt /Nguyễn/",
+      "sex": "M",
+      "birth": {
+        "date": "1978",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I28@"
+      ],
+      "children": [
+        "@I80@",
+        "@I79@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F19@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I84@": {
+      "id": "@I84@",
+      "fsid": "G5JG-9LL",
+      "name": "Nguyễn Tuấn Anh",
+      "raw_name": "Tuấn Anh /Nguyễn/",
+      "sex": "M",
+      "birth": {
+        "date": "2010",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I89@",
+        "@I31@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I86@",
+        "@I87@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F21@"
+      ],
+      "memory": null
+    },
+    "@I85@": {
+      "id": "@I85@",
+      "fsid": "G5JL-L7P",
+      "name": "Hoàng Thị Phương Hoa",
+      "raw_name": "Thị Phương Hoa /Hoàng/",
+      "sex": "F",
+      "birth": {
+        "date": "1995",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I30@"
+      ],
+      "children": [
+        "@I81@",
+        "@I82@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F20@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I86@": {
+      "id": "@I86@",
+      "fsid": "G5JL-ND8",
+      "name": "Nguyễn Tuấn Đạt",
+      "raw_name": "Tuấn Đạt /Nguyễn/",
+      "sex": "M",
+      "birth": {
+        "date": "2015",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I89@",
+        "@I31@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I84@",
+        "@I87@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F21@"
+      ],
+      "memory": null
+    },
+    "@I87@": {
+      "id": "@I87@",
+      "fsid": "G5JL-JXC",
+      "name": "Thành viên mới hai tháng nữa bổ sung",
+      "raw_name": " /Thành viên mới hai tháng nữa bổ sung/",
+      "sex": "",
+      "birth": {
+        "date": "",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I89@",
+        "@I31@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I84@",
+        "@I86@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F21@"
+      ],
+      "memory": null
+    },
+    "@I88@": {
+      "id": "@I88@",
+      "fsid": "G5JL-DQ6",
+      "name": "Đàm Anh Khai",
+      "raw_name": "Anh Khai /Đàm/",
+      "sex": "M",
+      "birth": {
+        "date": "2019",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I90@",
+        "@I32@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F22@"
+      ],
+      "memory": null
+    },
+    "@I89@": {
+      "id": "@I89@",
+      "fsid": "G5JG-CXX",
+      "name": "Nguyễn Văn Kỳ",
+      "raw_name": "Văn Kỳ /Nguyễn/",
+      "sex": "M",
+      "birth": {
+        "date": "1982",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I31@"
+      ],
+      "children": [
+        "@I84@",
+        "@I86@",
+        "@I87@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F21@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I90@": {
+      "id": "@I90@",
+      "fsid": "G5JG-2J9",
+      "name": "Đàm Khắc Đồng",
+      "raw_name": "Khắc Đồng /Đàm/",
+      "sex": "M",
+      "birth": {
+        "date": "1979",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I32@"
+      ],
+      "children": [
+        "@I88@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F22@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I91@": {
+      "id": "@I91@",
+      "fsid": "G5JG-5XH",
+      "name": "Trần Khánh Linh",
+      "raw_name": "Khánh Linh /Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "2010",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I92@",
+        "@I32@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F23@"
+      ],
+      "memory": null
+    },
+    "@I92@": {
+      "id": "@I92@",
+      "fsid": "G5JG-4RQ",
+      "name": "Trần Minh Tiến",
+      "raw_name": "Minh Tiến /Trần/",
+      "sex": "M",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I32@"
+      ],
+      "children": [
+        "@I91@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F23@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I93@": {
+      "id": "@I93@",
+      "fsid": "P9S8-C9R",
+      "name": "Teresa Hoàng Thị Phương",
+      "raw_name": "Thị Phương /Teresa Hoàng/",
+      "sex": "F",
+      "birth": null,
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I33@"
+      ],
+      "children": [],
+      "siblings": [],
+      "fams": [
+        "@F24@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I94@": {
+      "id": "@I94@",
+      "fsid": "G5JG-38D",
+      "name": "Nguyễn Đăng Quang Anh",
+      "raw_name": "Quang Anh /Nguyễn Đăng/",
+      "sex": "M",
+      "birth": {
+        "date": "2015",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I97@",
+        "@I36@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I95@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F25@"
+      ],
+      "memory": null
+    },
+    "@I95@": {
+      "id": "@I95@",
+      "fsid": "G5JG-2M7",
+      "name": "Nguyễn Đăng Bảo",
+      "raw_name": "Đăng Bảo /Nguyễn/",
+      "sex": "M",
+      "birth": {
+        "date": "2020",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I97@",
+        "@I36@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I94@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F25@"
+      ],
+      "memory": null
+    },
+    "@I96@": {
+      "id": "@I96@",
+      "fsid": "G5JL-LWR",
+      "name": "Hà Băng Di",
+      "raw_name": "Băng Di /Hà/",
+      "sex": "F",
+      "birth": {
+        "date": "03/10/2013",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I101@",
+        "@I37@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I98@",
+        "@I99@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F26@"
+      ],
+      "memory": null
+    },
+    "@I97@": {
+      "id": "@I97@",
+      "fsid": "G5XN-JC1",
+      "name": "Nguyễn Đăng Trường",
+      "raw_name": "Đăng Trường /Nguyễn/",
+      "sex": "M",
+      "birth": {
+        "date": "1989",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I36@"
+      ],
+      "children": [
+        "@I94@",
+        "@I95@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F25@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I98@": {
+      "id": "@I98@",
+      "fsid": "G5JL-TLK",
+      "name": "Hà Khánh Chi",
+      "raw_name": "Khánh Chi /Hà/",
+      "sex": "F",
+      "birth": {
+        "date": "09/08/2016",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I101@",
+        "@I37@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I96@",
+        "@I99@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F26@"
+      ],
+      "memory": null
+    },
+    "@I99@": {
+      "id": "@I99@",
+      "fsid": "G5JL-6W4",
+      "name": "Hà Thị Ngọc Diệp",
+      "raw_name": "Thị Ngọc Diệp /Hà/",
+      "sex": "F",
+      "birth": {
+        "date": "03/01/2022",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I101@",
+        "@I37@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I96@",
+        "@I98@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F26@"
+      ],
+      "memory": null
+    },
+    "@I100@": {
+      "id": "@I100@",
+      "fsid": "G5XX-ZZF",
+      "name": "Vũ Thị Huệ",
+      "raw_name": "Thị Huệ /Vũ/",
+      "sex": "F",
+      "birth": {
+        "date": "2002",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I102@",
+        "@I39@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I109@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F27@"
+      ],
+      "memory": null
+    },
+    "@I101@": {
+      "id": "@I101@",
+      "fsid": "G5XN-MDR",
+      "name": "Hà Văn Quyết",
+      "raw_name": " /Hà Văn Quyết/",
+      "sex": "M",
+      "birth": {
+        "date": "12/04/1985",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I37@"
+      ],
+      "children": [
+        "@I96@",
+        "@I98@",
+        "@I99@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F26@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I102@": {
+      "id": "@I102@",
+      "fsid": "G5XX-CPT",
+      "name": "Vũ Văn Thuần",
+      "raw_name": "Văn Thuần /Vũ/",
+      "sex": "M",
+      "birth": {
+        "date": "1973",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I39@"
+      ],
+      "children": [
+        "@I109@",
+        "@I100@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F27@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I103@": {
+      "id": "@I103@",
+      "fsid": "G5XX-LQ4",
+      "name": "Lê Trần Tiến Đạt",
+      "raw_name": "Tiến Đạt /Lê Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "2007",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I40@",
+        "@I105@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I104@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F28@"
+      ],
+      "memory": null
+    },
+    "@I104@": {
+      "id": "@I104@",
+      "fsid": "G5XX-KNZ",
+      "name": "Lê Trần Tiến Huy",
+      "raw_name": "Tiến Huy /Lê Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "2011",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I40@",
+        "@I105@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I103@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F28@"
+      ],
+      "memory": null
+    },
+    "@I105@": {
+      "id": "@I105@",
+      "fsid": "G5XX-427",
+      "name": "Trần Thị Nhàn",
+      "raw_name": "Thị Nhàn /Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "1977",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I40@"
+      ],
+      "children": [
+        "@I103@",
+        "@I104@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F28@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I106@": {
+      "id": "@I106@",
+      "fsid": "G5XX-KN6",
+      "name": "Đinh Quang Dũng",
+      "raw_name": "Quang Dũng /Đinh/",
+      "sex": "M",
+      "birth": {
+        "date": "2010",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I108@",
+        "@I42@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I107@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F29@"
+      ],
+      "memory": null
+    },
+    "@I107@": {
+      "id": "@I107@",
+      "fsid": "G5XX-D6R",
+      "name": "Đinh Quang Đức",
+      "raw_name": "Quang Đức /Đinh/",
+      "sex": "M",
+      "birth": {
+        "date": "2014",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I108@",
+        "@I42@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I106@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F29@"
+      ],
+      "memory": null
+    },
+    "@I108@": {
+      "id": "@I108@",
+      "fsid": "G5XX-C5B",
+      "name": "Đinh Văn Phượng",
+      "raw_name": "Văn Phượng /Đinh/",
+      "sex": "M",
+      "birth": {
+        "date": "1982",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I42@"
+      ],
+      "children": [
+        "@I106@",
+        "@I107@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F29@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I109@": {
+      "id": "@I109@",
+      "fsid": "G5XX-V14",
+      "name": "Vũ Trọng Quý",
+      "raw_name": "Trọng Quý /Vũ/",
+      "sex": "M",
+      "birth": {
+        "date": "1996",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I102@",
+        "@I39@"
+      ],
+      "spouses": [
+        "@I163@"
+      ],
+      "children": [],
+      "siblings": [
+        "@I100@"
+      ],
+      "fams": [
+        "@F43@"
+      ],
+      "famc": [
+        "@F27@"
+      ],
+      "memory": null
+    },
+    "@I110@": {
+      "id": "@I110@",
+      "fsid": "G5XX-XK8",
+      "name": "Điền Lê Tuệ Linh",
+      "raw_name": "Tuệ Linh /Điền Lê/",
+      "sex": "F",
+      "birth": {
+        "date": "2017",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I113@",
+        "@I43@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I111@",
+        "@I112@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F30@"
+      ],
+      "memory": null
+    },
+    "@I111@": {
+      "id": "@I111@",
+      "fsid": "G5XX-CCF",
+      "name": "Điền Lê Đức Anh",
+      "raw_name": "Đức Anh /Điền Lê/",
+      "sex": "M",
+      "birth": {
+        "date": "2014",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I113@",
+        "@I43@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I110@",
+        "@I112@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F30@"
+      ],
+      "memory": null
+    },
+    "@I112@": {
+      "id": "@I112@",
+      "fsid": "G5XX-CCR",
+      "name": "Điền Lê Hiếu Minh",
+      "raw_name": "Hiếu Minh /Điền Lê/",
+      "sex": "M",
+      "birth": {
+        "date": "2021",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I113@",
+        "@I43@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I111@",
+        "@I110@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F30@"
+      ],
+      "memory": null
+    },
+    "@I113@": {
+      "id": "@I113@",
+      "fsid": "G5XX-D1T",
+      "name": "Điền Quang Sơn",
+      "raw_name": "Quang Sơn /Điền/",
+      "sex": "M",
+      "birth": {
+        "date": "1986",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I43@"
+      ],
+      "children": [
+        "@I111@",
+        "@I110@",
+        "@I112@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F30@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I114@": {
+      "id": "@I114@",
+      "fsid": "G5XX-NKK",
+      "name": "Lucia Nguyễn Thị Mai",
+      "raw_name": "Nguyễn /Lucia/",
+      "sex": "F",
+      "birth": {
+        "date": "14/09/1968",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": {
+        "date": "31/01/2023",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I46@"
+      ],
+      "children": [
+        "@I117@",
+        "@I116@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F31@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I115@": {
+      "id": "@I115@",
+      "fsid": "G5X7-SK8",
+      "name": "Gioan Baotixita Trần Quốc Tuấn",
+      "raw_name": "Quốc Tuấn /Gioan Baotixita Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "05/07/1987",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I47@",
+        "@I127@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I122@",
+        "@I124@",
+        "@I126@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F32@"
+      ],
+      "memory": null
+    },
+    "@I116@": {
+      "id": "@I116@",
+      "fsid": "G5XX-JQR",
+      "name": "Anton Trần Thế An",
+      "raw_name": "Trần /Anton/",
+      "sex": "M",
+      "birth": {
+        "date": "27/07/1994",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I46@",
+        "@I114@"
+      ],
+      "spouses": [
+        "@I165@"
+      ],
+      "children": [
+        "@I161@"
+      ],
+      "siblings": [
+        "@I117@"
+      ],
+      "fams": [
+        "@F44@"
+      ],
+      "famc": [
+        "@F31@"
+      ],
+      "memory": null
+    },
+    "@I117@": {
+      "id": "@I117@",
+      "fsid": "G5XX-X69",
+      "name": "Giuse Trần Minh Long",
+      "raw_name": "Trần /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "20/07/1991",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I46@",
+        "@I114@"
+      ],
+      "spouses": [
+        "@I171@"
+      ],
+      "children": [
+        "@I162@",
+        "@I166@"
+      ],
+      "siblings": [
+        "@I116@"
+      ],
+      "fams": [
+        "@F45@"
+      ],
+      "famc": [
+        "@F31@"
+      ],
+      "memory": null
+    },
+    "@I118@": {
+      "id": "@I118@",
+      "fsid": "G5XF-7NG",
+      "name": "Teresa Trần Nguyễn Linh Giang",
+      "raw_name": "Linh Giang /Teresa Trần Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "09/02/2008",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I48@",
+        "@I121@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I119@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F33@"
+      ],
+      "memory": null
+    },
+    "@I119@": {
+      "id": "@I119@",
+      "fsid": "G5XF-9LD",
+      "name": "Maria Trần Nguyễn Linh Lam",
+      "raw_name": "Linh Lam /Maria Trần Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "01/09/2011",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I48@",
+        "@I121@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I118@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F33@"
+      ],
+      "memory": null
+    },
+    "@I120@": {
+      "id": "@I120@",
+      "fsid": "G5XX-578",
+      "name": "Giuse Trần Minh Đăng",
+      "raw_name": "Trần /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "25/03/2003",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I49@",
+        "@I125@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I123@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F34@"
+      ],
+      "memory": null
+    },
+    "@I121@": {
+      "id": "@I121@",
+      "fsid": "G5XX-J73",
+      "name": "Teresa Nguyễn Thị Lưu",
+      "raw_name": "Thị Lưu /Teresa Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "04/09/1975",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I48@"
+      ],
+      "children": [
+        "@I118@",
+        "@I119@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F33@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I122@": {
+      "id": "@I122@",
+      "fsid": "G5X7-XG1",
+      "name": "Maria Trần Thị Hân",
+      "raw_name": "Thị Hân /Maria Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "23/10/1983",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I47@",
+        "@I127@"
+      ],
+      "spouses": [
+        "@I172@"
+      ],
+      "children": [
+        "@I167@",
+        "@I164@"
+      ],
+      "siblings": [
+        "@I124@",
+        "@I115@",
+        "@I126@"
+      ],
+      "fams": [
+        "@F46@"
+      ],
+      "famc": [
+        "@F32@"
+      ],
+      "memory": null
+    },
+    "@I123@": {
+      "id": "@I123@",
+      "fsid": "G5XX-Y6L",
+      "name": "Maria Trần Minh Anh",
+      "raw_name": "Trần /Maria/",
+      "sex": "F",
+      "birth": {
+        "date": "29/08/2005",
+        "place": "Hồ Chí Minh, Vietnam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I49@",
+        "@I125@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I120@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F34@"
+      ],
+      "memory": null
+    },
+    "@I124@": {
+      "id": "@I124@",
+      "fsid": "G5XW-7JZ",
+      "name": "Teresa Trần Thị Nga",
+      "raw_name": "Thị Nga /Teresa Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "24/06/1985",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I47@",
+        "@I127@"
+      ],
+      "spouses": [
+        "@I174@"
+      ],
+      "children": [
+        "@I168@",
+        "@I169@"
+      ],
+      "siblings": [
+        "@I122@",
+        "@I115@",
+        "@I126@"
+      ],
+      "fams": [
+        "@F47@"
+      ],
+      "famc": [
+        "@F32@"
+      ],
+      "memory": null
+    },
+    "@I125@": {
+      "id": "@I125@",
+      "fsid": "G5XX-NS4",
+      "name": "Maria Nguyễn Thị Thu Hiền",
+      "raw_name": "Nguyễn /Maria/",
+      "sex": "F",
+      "birth": {
+        "date": "15/09/1971",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I49@"
+      ],
+      "children": [
+        "@I120@",
+        "@I123@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F34@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I126@": {
+      "id": "@I126@",
+      "fsid": "G5X4-QXS",
+      "name": "Giuse Trần Hải Linh",
+      "raw_name": "Giuse /Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "21/09/1994",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I47@",
+        "@I127@"
+      ],
+      "spouses": [
+        "@I173@"
+      ],
+      "children": [
+        "@I170@"
+      ],
+      "siblings": [
+        "@I122@",
+        "@I124@",
+        "@I115@"
+      ],
+      "fams": [
+        "@F48@"
+      ],
+      "famc": [
+        "@F32@"
+      ],
+      "memory": null
+    },
+    "@I127@": {
+      "id": "@I127@",
+      "fsid": "G5X7-GBR",
+      "name": "Maria Madalena Nguyễn Thị Đào",
+      "raw_name": "Thị Đào /Maria Madalena Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "25/10/1959",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I47@"
+      ],
+      "children": [
+        "@I122@",
+        "@I124@",
+        "@I115@",
+        "@I126@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F32@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I128@": {
+      "id": "@I128@",
+      "fsid": "G5XX-135",
+      "name": "Maria Chiara Trần Lê Gia Linh",
+      "raw_name": "Trần Lê /Maria Chiara/",
+      "sex": "F",
+      "birth": {
+        "date": "21/09/2006",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I50@",
+        "@I130@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I129@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F35@"
+      ],
+      "memory": null
+    },
+    "@I129@": {
+      "id": "@I129@",
+      "fsid": "G5XX-RHT",
+      "name": "An-tôn Trần Lê Gia Bảo",
+      "raw_name": "Trần Lê /An-tôn/",
+      "sex": "M",
+      "birth": {
+        "date": "29/01/2008",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I50@",
+        "@I130@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I128@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F35@"
+      ],
+      "memory": null
+    },
+    "@I130@": {
+      "id": "@I130@",
+      "fsid": "G5XF-979",
+      "name": "Inne Lê Thị Hoàng Thanh",
+      "raw_name": "Lê /Inne/",
+      "sex": "F",
+      "birth": {
+        "date": "04/12/1976",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I50@"
+      ],
+      "children": [
+        "@I128@",
+        "@I129@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F35@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I131@": {
+      "id": "@I131@",
+      "fsid": "G5XF-Q6B",
+      "name": "Vinh Sơn Trần Nhật Quang",
+      "raw_name": "Nhật Quang /Vinh Sơn Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "28/04/2004",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I52@",
+        "@I133@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I132@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F36@"
+      ],
+      "memory": null
+    },
+    "@I132@": {
+      "id": "@I132@",
+      "fsid": "G5XF-3ZF",
+      "name": "Teresa Trần Nhật Quỳnh",
+      "raw_name": "Nhật Quỳnh /Teresa Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "10/07/2006",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I52@",
+        "@I133@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I131@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F36@"
+      ],
+      "memory": null
+    },
+    "@I133@": {
+      "id": "@I133@",
+      "fsid": "G5XX-BJT",
+      "name": "Maria Teresa Trần Ngọc Mai",
+      "raw_name": "Maria Teresa Trần //",
+      "sex": "F",
+      "birth": {
+        "date": "14/02/1978",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I52@"
+      ],
+      "children": [
+        "@I131@",
+        "@I132@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F36@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I134@": {
+      "id": "@I134@",
+      "fsid": "G5XX-5VP",
+      "name": "Nguyễn Thị Huệ",
+      "raw_name": "Thị Huệ /Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "1984",
+        "place": ""
+      },
+      "death": {
+        "date": "1990",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [
+        "@I143@",
+        "@I54@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I136@",
+        "@I137@",
+        "@I135@",
+        "@I140@",
+        "@I138@",
+        "@I139@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F37@"
+      ],
+      "memory": null
+    },
+    "@I135@": {
+      "id": "@I135@",
+      "fsid": "G5XX-6P2",
+      "name": "Lucia Nguyễn Thị Lan",
+      "raw_name": "Nguyễn /Lucia/",
+      "sex": "F",
+      "birth": {
+        "date": "20/11/1982",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I143@",
+        "@I54@"
+      ],
+      "spouses": [
+        "@I175@"
+      ],
+      "children": [
+        "@I184@"
+      ],
+      "siblings": [
+        "@I136@",
+        "@I137@",
+        "@I134@",
+        "@I140@",
+        "@I138@",
+        "@I139@"
+      ],
+      "fams": [
+        "@F49@"
+      ],
+      "famc": [
+        "@F37@"
+      ],
+      "memory": null
+    },
+    "@I136@": {
+      "id": "@I136@",
+      "fsid": "G5XX-FDN",
+      "name": "Maria Nguyễn Thị Thanh Thuý",
+      "raw_name": "Nguyễn /Maria/",
+      "sex": "F",
+      "birth": {
+        "date": "13/08/1978",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I143@",
+        "@I54@"
+      ],
+      "spouses": [
+        "@I180@"
+      ],
+      "children": [
+        "@I176@",
+        "@I177@"
+      ],
+      "siblings": [
+        "@I137@",
+        "@I135@",
+        "@I134@",
+        "@I140@",
+        "@I138@",
+        "@I139@"
+      ],
+      "fams": [
+        "@F50@"
+      ],
+      "famc": [
+        "@F37@"
+      ],
+      "memory": null
+    },
+    "@I137@": {
+      "id": "@I137@",
+      "fsid": "G5XX-59X",
+      "name": "Yxave Nguyễn Thị Ngọc",
+      "raw_name": "Nguyễn /Yxave/",
+      "sex": "F",
+      "birth": {
+        "date": "20/09/1980",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I143@",
+        "@I54@"
+      ],
+      "spouses": [
+        "@I185@"
+      ],
+      "children": [
+        "@I178@",
+        "@I179@"
+      ],
+      "siblings": [
+        "@I136@",
+        "@I135@",
+        "@I134@",
+        "@I140@",
+        "@I138@",
+        "@I139@"
+      ],
+      "fams": [
+        "@F51@"
+      ],
+      "famc": [
+        "@F37@"
+      ],
+      "memory": null
+    },
+    "@I138@": {
+      "id": "@I138@",
+      "fsid": "G5XX-6WJ",
+      "name": "Giuse Nguyễn Văn Đạt",
+      "raw_name": "Nguyễn /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "18/03/1989",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I143@",
+        "@I54@"
+      ],
+      "spouses": [
+        "@I186@"
+      ],
+      "children": [
+        "@I181@",
+        "@I182@"
+      ],
+      "siblings": [
+        "@I136@",
+        "@I137@",
+        "@I135@",
+        "@I134@",
+        "@I140@",
+        "@I139@"
+      ],
+      "fams": [
+        "@F52@"
+      ],
+      "famc": [
+        "@F37@"
+      ],
+      "memory": null
+    },
+    "@I139@": {
+      "id": "@I139@",
+      "fsid": "G5XX-B1V",
+      "name": "Phê-rô Nguyễn Văn Luân",
+      "raw_name": "Nguyễn /Phê-rô/",
+      "sex": "M",
+      "birth": {
+        "date": "10/04/1991",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I143@",
+        "@I54@"
+      ],
+      "spouses": [
+        "@I187@"
+      ],
+      "children": [
+        "@I183@",
+        "@I188@"
+      ],
+      "siblings": [
+        "@I136@",
+        "@I137@",
+        "@I135@",
+        "@I134@",
+        "@I140@",
+        "@I138@"
+      ],
+      "fams": [
+        "@F53@"
+      ],
+      "famc": [
+        "@F37@"
+      ],
+      "memory": null
+    },
+    "@I140@": {
+      "id": "@I140@",
+      "fsid": "G5XX-DL8",
+      "name": "Giuse Nguyễn Văn Thắng",
+      "raw_name": "Nguyễn /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "09/10/1986",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I143@",
+        "@I54@"
+      ],
+      "spouses": [
+        "@I191@"
+      ],
+      "children": [
+        "@I189@",
+        "@I190@",
+        "@I192@"
+      ],
+      "siblings": [
+        "@I136@",
+        "@I137@",
+        "@I135@",
+        "@I134@",
+        "@I138@",
+        "@I139@"
+      ],
+      "fams": [
+        "@F54@"
+      ],
+      "famc": [
+        "@F37@"
+      ],
+      "memory": null
+    },
+    "@I141@": {
+      "id": "@I141@",
+      "fsid": "G5X4-7L5",
+      "name": "Marria Nguyễn Thị Huyền",
+      "raw_name": "Nguyễn /Marria/",
+      "sex": "F",
+      "birth": {
+        "date": "22/05/1981",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I149@",
+        "@I55@"
+      ],
+      "spouses": [
+        "@I197@"
+      ],
+      "children": [
+        "@I193@"
+      ],
+      "siblings": [
+        "@I145@",
+        "@I142@",
+        "@I144@",
+        "@I148@",
+        "@I146@",
+        "@I150@"
+      ],
+      "fams": [
+        "@F55@"
+      ],
+      "famc": [
+        "@F38@"
+      ],
+      "memory": null
+    },
+    "@I142@": {
+      "id": "@I142@",
+      "fsid": "G5XX-VKD",
+      "name": "AnNa Nguyễn Thị Hằng",
+      "raw_name": "Nguyễn /AnNa/",
+      "sex": "F",
+      "birth": {
+        "date": "01/11/1984",
+        "place": "Thanh Hoá"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I149@",
+        "@I55@"
+      ],
+      "spouses": [
+        "@I196@"
+      ],
+      "children": [
+        "@I194@"
+      ],
+      "siblings": [
+        "@I141@",
+        "@I145@",
+        "@I144@",
+        "@I148@",
+        "@I146@",
+        "@I150@"
+      ],
+      "fams": [
+        "@F56@"
+      ],
+      "famc": [
+        "@F38@"
+      ],
+      "memory": null
+    },
+    "@I143@": {
+      "id": "@I143@",
+      "fsid": "G5XX-2HY",
+      "name": "Micae Nguyễn Văn Thìn",
+      "raw_name": "Nguyễn /Micae/",
+      "sex": "M",
+      "birth": {
+        "date": "1954",
+        "place": ""
+      },
+      "death": {
+        "date": "19/08/2016",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I54@"
+      ],
+      "children": [
+        "@I136@",
+        "@I137@",
+        "@I135@",
+        "@I134@",
+        "@I140@",
+        "@I138@",
+        "@I139@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F37@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I144@": {
+      "id": "@I144@",
+      "fsid": "G5X4-QS6",
+      "name": "Terresa Nguyễn Thị Ánh",
+      "raw_name": "Nguyễn /Terresa/",
+      "sex": "F",
+      "birth": {
+        "date": "20/10/1986",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I149@",
+        "@I55@"
+      ],
+      "spouses": [
+        "@I200@"
+      ],
+      "children": [
+        "@I195@",
+        "@I198@"
+      ],
+      "siblings": [
+        "@I141@",
+        "@I145@",
+        "@I142@",
+        "@I148@",
+        "@I146@",
+        "@I150@"
+      ],
+      "fams": [
+        "@F57@"
+      ],
+      "famc": [
+        "@F38@"
+      ],
+      "memory": null
+    },
+    "@I145@": {
+      "id": "@I145@",
+      "fsid": "G5XW-DLM",
+      "name": "Lucia Nguyễn Thị Hà",
+      "raw_name": "Nguyễn /Lucia/",
+      "sex": "F",
+      "birth": {
+        "date": "20/10/1982",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I149@",
+        "@I55@"
+      ],
+      "spouses": [
+        "@I203@"
+      ],
+      "children": [
+        "@I199@",
+        "@I201@",
+        "@I202@"
+      ],
+      "siblings": [
+        "@I141@",
+        "@I142@",
+        "@I144@",
+        "@I148@",
+        "@I146@",
+        "@I150@"
+      ],
+      "fams": [
+        "@F58@"
+      ],
+      "famc": [
+        "@F38@"
+      ],
+      "memory": null
+    },
+    "@I146@": {
+      "id": "@I146@",
+      "fsid": "G5X4-S11",
+      "name": "Giuse Nguyễn Sơn Lâm",
+      "raw_name": "Nguyễn /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "17/12/1994",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I149@",
+        "@I55@"
+      ],
+      "spouses": [
+        "@I206@"
+      ],
+      "children": [
+        "@I204@"
+      ],
+      "siblings": [
+        "@I141@",
+        "@I145@",
+        "@I142@",
+        "@I144@",
+        "@I148@",
+        "@I150@"
+      ],
+      "fams": [
+        "@F59@"
+      ],
+      "famc": [
+        "@F38@"
+      ],
+      "memory": null
+    },
+    "@I147@": {
+      "id": "@I147@",
+      "fsid": "G5XX-X13",
+      "name": "Gioan Baotixita Trần Tiến Tùng",
+      "raw_name": "Trần /Gioan Baotixita/",
+      "sex": "M",
+      "birth": {
+        "date": "10/06/1987",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": {
+        "date": "17/09/2013",
+        "place": "Bảo Lộc, Lâm Ðồng, Việt Nam"
+      },
+      "baptism": null,
+      "parents": [
+        "@I156@",
+        "@I56@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I152@",
+        "@I155@",
+        "@I154@",
+        "@I160@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F39@"
+      ],
+      "memory": null
+    },
+    "@I148@": {
+      "id": "@I148@",
+      "fsid": "G5X4-3NL",
+      "name": "Maria Nguyễn Thị Hồng",
+      "raw_name": "Nguyễn /Maria/",
+      "sex": "F",
+      "birth": {
+        "date": "17/10/1988",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I149@",
+        "@I55@"
+      ],
+      "spouses": [
+        "@I207@",
+        "@I210@"
+      ],
+      "children": [
+        "@I205@",
+        "@I209@"
+      ],
+      "siblings": [
+        "@I141@",
+        "@I145@",
+        "@I142@",
+        "@I144@",
+        "@I146@",
+        "@I150@"
+      ],
+      "fams": [
+        "@F60@",
+        "@F61@"
+      ],
+      "famc": [
+        "@F38@"
+      ],
+      "memory": null
+    },
+    "@I149@": {
+      "id": "@I149@",
+      "fsid": "G5XW-8KK",
+      "name": "Giuse Nguyễn Huy Xuân",
+      "raw_name": "Nguyễn /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "20/12/1952",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I55@"
+      ],
+      "children": [
+        "@I141@",
+        "@I145@",
+        "@I142@",
+        "@I144@",
+        "@I148@",
+        "@I146@",
+        "@I150@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F38@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I150@": {
+      "id": "@I150@",
+      "fsid": "G5X4-87R",
+      "name": "Gioan Nguyễn Hồng Ân",
+      "raw_name": "Nguyễn /Gioan/",
+      "sex": "M",
+      "birth": {
+        "date": "12/04/1997",
+        "place": "Bảo Lộc, Lâm Ðồng, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I149@",
+        "@I55@"
+      ],
+      "spouses": [
+        "@I211@"
+      ],
+      "children": [
+        "@I208@"
+      ],
+      "siblings": [
+        "@I141@",
+        "@I145@",
+        "@I142@",
+        "@I144@",
+        "@I148@",
+        "@I146@"
+      ],
+      "fams": [
+        "@F62@"
+      ],
+      "famc": [
+        "@F38@"
+      ],
+      "memory": null
+    },
+    "@I151@": {
+      "id": "@I151@",
+      "fsid": "G5XX-RGW",
+      "name": "Mẹ Tình Thương",
+      "raw_name": " /Mẹ Tình Thương/",
+      "sex": "F",
+      "birth": null,
+      "death": {
+        "date": "",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [
+        "@F40@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I152@": {
+      "id": "@I152@",
+      "fsid": "G5XX-FFJ",
+      "name": "Teresa Trần Thị Tình",
+      "raw_name": "Trần /Teresa/",
+      "sex": "F",
+      "birth": {
+        "date": "10/03/1978",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I156@",
+        "@I56@"
+      ],
+      "spouses": [
+        "@I213@"
+      ],
+      "children": [
+        "@I216@",
+        "@I212@"
+      ],
+      "siblings": [
+        "@I155@",
+        "@I154@",
+        "@I147@",
+        "@I160@"
+      ],
+      "fams": [
+        "@F63@"
+      ],
+      "famc": [
+        "@F39@"
+      ],
+      "memory": null
+    },
+    "@I153@": {
+      "id": "@I153@",
+      "fsid": "G52M-87Y",
+      "name": "Gioan Baotixita Hứa Trần Bảo Nguyên",
+      "raw_name": "Trần Bảo Nguyên /Gioan Baotixita Hứa/",
+      "sex": "M",
+      "birth": {
+        "date": "2018",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I157@",
+        "@I65@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F41@"
+      ],
+      "memory": null
+    },
+    "@I154@": {
+      "id": "@I154@",
+      "fsid": "G5XX-6TS",
+      "name": "Giuse Trần Tiến Dũng",
+      "raw_name": "Trần /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "25/09/1985",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I156@",
+        "@I56@"
+      ],
+      "spouses": [
+        "@I214@"
+      ],
+      "children": [
+        "@I215@"
+      ],
+      "siblings": [
+        "@I152@",
+        "@I155@",
+        "@I147@",
+        "@I160@"
+      ],
+      "fams": [
+        "@F64@"
+      ],
+      "famc": [
+        "@F39@"
+      ],
+      "memory": null
+    },
+    "@I155@": {
+      "id": "@I155@",
+      "fsid": "G5XX-PVY",
+      "name": "Teresa Trần Thị Thương",
+      "raw_name": "Trần /Teresa/",
+      "sex": "F",
+      "birth": {
+        "date": "09/09/1980",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I156@",
+        "@I56@"
+      ],
+      "spouses": [
+        "@I220@"
+      ],
+      "children": [
+        "@I217@",
+        "@I218@"
+      ],
+      "siblings": [
+        "@I152@",
+        "@I154@",
+        "@I147@",
+        "@I160@"
+      ],
+      "fams": [
+        "@F65@"
+      ],
+      "famc": [
+        "@F39@"
+      ],
+      "memory": null
+    },
+    "@I156@": {
+      "id": "@I156@",
+      "fsid": "G5XX-5LQ",
+      "name": "Gioan Baotixita Trần Ngọc Tâm",
+      "raw_name": "Trần /Gioan Baotixita/",
+      "sex": "M",
+      "birth": {
+        "date": "15/05/1957",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I56@"
+      ],
+      "children": [
+        "@I152@",
+        "@I155@",
+        "@I154@",
+        "@I147@",
+        "@I160@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F39@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I157@": {
+      "id": "@I157@",
+      "fsid": "G52M-S2S",
+      "name": "Antôn Hứa Đình Hợp",
+      "raw_name": "Đình Hợp /Antôn Hứa/",
+      "sex": "M",
+      "birth": {
+        "date": "1989",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I65@"
+      ],
+      "children": [
+        "@I153@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F41@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I158@": {
+      "id": "@I158@",
+      "fsid": "G5V1-7WJ",
+      "name": "Phero Trần Trọng Nhân",
+      "raw_name": "Trọng Nhân /Phero Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "1991",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I67@"
+      ],
+      "children": [
+        "@I159@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F42@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I159@": {
+      "id": "@I159@",
+      "fsid": "GRQP-S63",
+      "name": "Phero Trần Minh Trí",
+      "raw_name": "Minh Trí /Phero Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "2015",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I158@",
+        "@I67@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F42@"
+      ],
+      "memory": null
+    },
+    "@I160@": {
+      "id": "@I160@",
+      "fsid": "G5XX-P91",
+      "name": "Gioan Baotixita Trần Văn Tuyển",
+      "raw_name": "Trần /Gioan Baotixita/",
+      "sex": "M",
+      "birth": {
+        "date": "08/08/1989",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I156@",
+        "@I56@"
+      ],
+      "spouses": [
+        "@I221@"
+      ],
+      "children": [
+        "@I219@"
+      ],
+      "siblings": [
+        "@I152@",
+        "@I155@",
+        "@I154@",
+        "@I147@"
+      ],
+      "fams": [
+        "@F66@"
+      ],
+      "famc": [
+        "@F39@"
+      ],
+      "memory": null
+    },
+    "@I161@": {
+      "id": "@I161@",
+      "fsid": "P41B-PV2",
+      "name": "Anna Trần Phương Anh",
+      "raw_name": "Phương Anh /Anna Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "30/07/2025",
+        "place": "HCM"
+      },
+      "death": null,
+      "baptism": {
+        "date": "11/01/2026",
+        "place": "Giáo xứ Thanh Đa, hcm, Việt Nam"
+      },
+      "parents": [
+        "@I116@",
+        "@I165@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F44@"
+      ],
+      "memory": null
+    },
+    "@I162@": {
+      "id": "@I162@",
+      "fsid": "G5XF-9QL",
+      "name": "Giuse Trần Minh Hiếu",
+      "raw_name": "Trần /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "04/12/2020",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I117@",
+        "@I171@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I166@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F45@"
+      ],
+      "memory": null
+    },
+    "@I163@": {
+      "id": "@I163@",
+      "fsid": "G5XX-43Z",
+      "name": "Nguyễn Thị Thuý",
+      "raw_name": "Thị Thuý /Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "1996",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I109@"
+      ],
+      "children": [],
+      "siblings": [],
+      "fams": [
+        "@F43@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I164@": {
+      "id": "@I164@",
+      "fsid": "G5X4-4PY",
+      "name": "Maria Phạm Uyên Phương",
+      "raw_name": "Phạm /Maria/",
+      "sex": "F",
+      "birth": {
+        "date": "08/11/2019",
+        "place": "Hồ Chí Minh, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I172@",
+        "@I122@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I167@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F46@"
+      ],
+      "memory": null
+    },
+    "@I165@": {
+      "id": "@I165@",
+      "fsid": "G5XX-RPN",
+      "name": "Phạm Phương Nga",
+      "raw_name": "Phương Nga /Phạm/",
+      "sex": "F",
+      "birth": {
+        "date": "28/01/1996",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I116@"
+      ],
+      "children": [
+        "@I161@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F44@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I166@": {
+      "id": "@I166@",
+      "fsid": "PZV4-X28",
+      "name": "Gioan Trần Minh Quang",
+      "raw_name": "Trần Minh Quang /Gioan/",
+      "sex": "M",
+      "birth": {
+        "date": "08/04/2026",
+        "place": "Hồ Chí Minh, Vietnam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I117@",
+        "@I171@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I162@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F45@"
+      ],
+      "memory": null
+    },
+    "@I167@": {
+      "id": "@I167@",
+      "fsid": "G5XW-TB3",
+      "name": "Gioan Phạm Minh Hoàng",
+      "raw_name": "Minh Hoàng /Gioan Phạm/",
+      "sex": "M",
+      "birth": {
+        "date": "24/11/2017",
+        "place": "Hồ Chí Minh, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I172@",
+        "@I122@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I164@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F46@"
+      ],
+      "memory": null
+    },
+    "@I168@": {
+      "id": "@I168@",
+      "fsid": "G5XW-K4P",
+      "name": "Tito Nguyễn Trần Thiên Khoa",
+      "raw_name": "Thiên Khoa /Tito Nguyễn Trần/",
+      "sex": "M",
+      "birth": {
+        "date": "29/08/2016",
+        "place": "Hồ Chí Minh, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I174@",
+        "@I124@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I169@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F47@"
+      ],
+      "memory": null
+    },
+    "@I169@": {
+      "id": "@I169@",
+      "fsid": "G5XX-JKX",
+      "name": "Catarina Nguyễn Trần Nhã Uyên",
+      "raw_name": "Nhã Uyên /Catarina Nguyễn Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "25/04/2019",
+        "place": "Hồ Chí Minh, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I174@",
+        "@I124@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I168@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F47@"
+      ],
+      "memory": null
+    },
+    "@I170@": {
+      "id": "@I170@",
+      "fsid": "PX8S-YTM",
+      "name": "Maria Trần An Nhã (Clara)",
+      "raw_name": "An Nhã (Clara) /Maria Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "13/06/2026",
+        "place": "Sai Gon, Hồ Chí Minh, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I126@",
+        "@I173@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F48@"
+      ],
+      "memory": null
+    },
+    "@I171@": {
+      "id": "@I171@",
+      "fsid": "G5XX-P2S",
+      "name": "Anna Trần Thị Linh",
+      "raw_name": "Trần /Anna/",
+      "sex": "F",
+      "birth": {
+        "date": "07/03/1995",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I117@"
+      ],
+      "children": [
+        "@I162@",
+        "@I166@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F45@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I172@": {
+      "id": "@I172@",
+      "fsid": "G5XW-BNB",
+      "name": "Giuse Phạm Văn Hạnh",
+      "raw_name": "Văn Hạnh /Giuse Phạm/",
+      "sex": "M",
+      "birth": {
+        "date": "24/10/1983",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I122@"
+      ],
+      "children": [
+        "@I167@",
+        "@I164@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F46@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I173@": {
+      "id": "@I173@",
+      "fsid": "G5XW-XH8",
+      "name": "Thị Oanh Thư Maria Nguyễn",
+      "raw_name": "Maria Nguyễn /Thị Oanh Thư/",
+      "sex": "F",
+      "birth": {
+        "date": "20/04/1992",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I126@"
+      ],
+      "children": [
+        "@I170@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F48@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I174@": {
+      "id": "@I174@",
+      "fsid": "G5X4-MQF",
+      "name": "Giuse Nguyễn Văn Khảo",
+      "raw_name": "Văn Khảo /Giuse Nguyễn/",
+      "sex": "M",
+      "birth": {
+        "date": "02/02/1984",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I124@"
+      ],
+      "children": [
+        "@I168@",
+        "@I169@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F47@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I175@": {
+      "id": "@I175@",
+      "fsid": "G5XX-XTR",
+      "name": "Giuse Lăng Văn Trường",
+      "raw_name": "Lăng /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "1978",
+        "place": ""
+      },
+      "death": {
+        "date": "2009",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I135@"
+      ],
+      "children": [
+        "@I184@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F49@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I176@": {
+      "id": "@I176@",
+      "fsid": "G5XX-K59",
+      "name": "Maria Trần Huyền Trân",
+      "raw_name": "Trần /Maria/",
+      "sex": "F",
+      "birth": {
+        "date": "12/12/2009",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I180@",
+        "@I136@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I177@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F50@"
+      ],
+      "memory": null
+    },
+    "@I177@": {
+      "id": "@I177@",
+      "fsid": "G5XX-DLK",
+      "name": "Anton Trần Quốc Việt",
+      "raw_name": "Trần /Anton/",
+      "sex": "M",
+      "birth": {
+        "date": "13/09/2011",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I180@",
+        "@I136@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I176@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F50@"
+      ],
+      "memory": null
+    },
+    "@I178@": {
+      "id": "@I178@",
+      "fsid": "G5XX-2Z9",
+      "name": "Anton Nguyễn Trung Hiếu",
+      "raw_name": "Nguyễn /Anton/",
+      "sex": "M",
+      "birth": {
+        "date": "25/03/2009",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I185@",
+        "@I137@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I179@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F51@"
+      ],
+      "memory": null
+    },
+    "@I179@": {
+      "id": "@I179@",
+      "fsid": "G5XX-LDD",
+      "name": "Lucia Nguyễn Ngọc Khánh Băng",
+      "raw_name": "Nguyễn /Lucia/",
+      "sex": "F",
+      "birth": {
+        "date": "04/07/2014",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I185@",
+        "@I137@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I178@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F51@"
+      ],
+      "memory": null
+    },
+    "@I180@": {
+      "id": "@I180@",
+      "fsid": "G5XX-TWG",
+      "name": "Giuse Trần Duy Quốc",
+      "raw_name": "Trần /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "02/06/1981",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I136@"
+      ],
+      "children": [
+        "@I176@",
+        "@I177@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F50@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I181@": {
+      "id": "@I181@",
+      "fsid": "G5XX-1N6",
+      "name": "Giuse Nguyễn Đào Minh Quân",
+      "raw_name": "Nguyễn /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "28/02/2014",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I138@",
+        "@I186@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I182@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F52@"
+      ],
+      "memory": null
+    },
+    "@I182@": {
+      "id": "@I182@",
+      "fsid": "G5XX-1M8",
+      "name": "Terexa Nguyễn Đào Ngọc Nhi",
+      "raw_name": "Nguyễn /Terexa/",
+      "sex": "F",
+      "birth": {
+        "date": "06/08/2020",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I138@",
+        "@I186@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I181@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F52@"
+      ],
+      "memory": null
+    },
+    "@I183@": {
+      "id": "@I183@",
+      "fsid": "G5XX-R7N",
+      "name": "Simon Nguyễn Nam Khôi",
+      "raw_name": "Nguyễn /Simon/",
+      "sex": "M",
+      "birth": {
+        "date": "15/07/2023",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I139@",
+        "@I187@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I188@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F53@"
+      ],
+      "memory": null
+    },
+    "@I184@": {
+      "id": "@I184@",
+      "fsid": "G5XX-F1D",
+      "name": "Maria Lăng Nguyễn Ánh Tuyên",
+      "raw_name": "Lăng Nguyễn /Maria/",
+      "sex": "F",
+      "birth": {
+        "date": "26/02/2001",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I175@",
+        "@I135@"
+      ],
+      "spouses": [
+        "@I222@"
+      ],
+      "children": [],
+      "siblings": [],
+      "fams": [
+        "@F67@"
+      ],
+      "famc": [
+        "@F49@"
+      ],
+      "memory": null
+    },
+    "@I185@": {
+      "id": "@I185@",
+      "fsid": "G5XF-M9D",
+      "name": "Phanxico Nguyễn Văn Trung",
+      "raw_name": "Nguyễn /Phanxico/",
+      "sex": "M",
+      "birth": {
+        "date": "01/01/1980",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I137@"
+      ],
+      "children": [
+        "@I178@",
+        "@I179@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F51@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I186@": {
+      "id": "@I186@",
+      "fsid": "G5XX-PJC",
+      "name": "Maria Đào Thị Chung",
+      "raw_name": "Đào /Maria/",
+      "sex": "F",
+      "birth": {
+        "date": "10/10/1988",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I138@"
+      ],
+      "children": [
+        "@I181@",
+        "@I182@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F52@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I187@": {
+      "id": "@I187@",
+      "fsid": "G5XX-R7X",
+      "name": "Trương Thị Thuỳ Trang",
+      "raw_name": "Thị Thuỳ Trang /Trương/",
+      "sex": "F",
+      "birth": {
+        "date": "30/07/1991",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I139@"
+      ],
+      "children": [
+        "@I183@",
+        "@I188@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F53@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I188@": {
+      "id": "@I188@",
+      "fsid": "G1X9-1Z3",
+      "name": "Nicola Nguyễn Hải Đông",
+      "raw_name": "Hải Đông /Nicola Nguyễn/",
+      "sex": "M",
+      "birth": {
+        "date": "18/09/2024",
+        "place": "Thủ Ðức, Hồ Chí Minh, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I139@",
+        "@I187@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I183@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F53@"
+      ],
+      "memory": null
+    },
+    "@I189@": {
+      "id": "@I189@",
+      "fsid": "G5XX-PJ7",
+      "name": "Cecilia Nguyễn Bùi Nhật Linh",
+      "raw_name": "Nguyễn Bùi /Cecilia/",
+      "sex": "M",
+      "birth": {
+        "date": "13/11/2012",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I140@",
+        "@I191@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I190@",
+        "@I192@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F54@"
+      ],
+      "memory": null
+    },
+    "@I190@": {
+      "id": "@I190@",
+      "fsid": "G5XX-JVR",
+      "name": "Cecilia Nguyễn Bùi Trà My",
+      "raw_name": "Nguyễn Bùi /Cecilia/",
+      "sex": "F",
+      "birth": {
+        "date": "29/06/2016",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I140@",
+        "@I191@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I189@",
+        "@I192@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F54@"
+      ],
+      "memory": null
+    },
+    "@I191@": {
+      "id": "@I191@",
+      "fsid": "G5XX-K5H",
+      "name": "Terexa Bùi Thị Điệp",
+      "raw_name": "Bùi /Terexa/",
+      "sex": "F",
+      "birth": {
+        "date": "15/07/1986",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I140@"
+      ],
+      "children": [
+        "@I189@",
+        "@I190@",
+        "@I192@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F54@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I192@": {
+      "id": "@I192@",
+      "fsid": "G5XX-R7W",
+      "name": "Giuse Nguyễn Quang Hải",
+      "raw_name": "Nguyễn /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "27/02/2019",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I140@",
+        "@I191@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I189@",
+        "@I190@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F54@"
+      ],
+      "memory": null
+    },
+    "@I193@": {
+      "id": "@I193@",
+      "fsid": "G5XX-GDN",
+      "name": "Phê rô Vũ Hùng Phong",
+      "raw_name": "Vũ /Phê rô/",
+      "sex": "M",
+      "birth": {
+        "date": "21/07/2002",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I197@",
+        "@I141@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F55@"
+      ],
+      "memory": null
+    },
+    "@I194@": {
+      "id": "@I194@",
+      "fsid": "G5XX-DQ5",
+      "name": "Nguyễn Phạm Bình Minh",
+      "raw_name": "Bình Minh /Nguyễn Phạm/",
+      "sex": "M",
+      "birth": {
+        "date": "13/03/2024",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I196@",
+        "@I142@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F56@"
+      ],
+      "memory": null
+    },
+    "@I195@": {
+      "id": "@I195@",
+      "fsid": "G5XX-674",
+      "name": "Gioan Dương Minh Nhật",
+      "raw_name": "Dương /Gioan/",
+      "sex": "M",
+      "birth": {
+        "date": "09/11/2017",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I200@",
+        "@I144@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I198@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F57@"
+      ],
+      "memory": null
+    },
+    "@I196@": {
+      "id": "@I196@",
+      "fsid": "G5XX-5J4",
+      "name": "Nguyễn Văn Bình",
+      "raw_name": "Văn Bình /Nguyễn/",
+      "sex": "M",
+      "birth": {
+        "date": "29/07/1987",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I142@"
+      ],
+      "children": [
+        "@I194@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F56@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I197@": {
+      "id": "@I197@",
+      "fsid": "G5XX-YR6",
+      "name": "Gioan Vũ Văn Hùng",
+      "raw_name": "Vũ /Gioan/",
+      "sex": "M",
+      "birth": {
+        "date": "09/03/1972",
+        "place": ""
+      },
+      "death": {
+        "date": "16/03/2015",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I141@"
+      ],
+      "children": [
+        "@I193@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F55@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I198@": {
+      "id": "@I198@",
+      "fsid": "G5XX-XH5",
+      "name": "Giuse Dương Chí Thiện",
+      "raw_name": "Dương /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "14/01/2020",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I200@",
+        "@I144@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I195@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F57@"
+      ],
+      "memory": null
+    },
+    "@I199@": {
+      "id": "@I199@",
+      "fsid": "G5XX-DQ2",
+      "name": "Giuse Văn Trọng Mạnh",
+      "raw_name": "Văn /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "20/02/2007",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I203@",
+        "@I145@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I201@",
+        "@I202@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F58@"
+      ],
+      "memory": null
+    },
+    "@I200@": {
+      "id": "@I200@",
+      "fsid": "G5XX-G6Q",
+      "name": "Vinh sơn Dương Chí Dũng",
+      "raw_name": "Dương /Vinh sơn/",
+      "sex": "M",
+      "birth": {
+        "date": "01/01/1987",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I144@"
+      ],
+      "children": [
+        "@I195@",
+        "@I198@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F57@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I201@": {
+      "id": "@I201@",
+      "fsid": "G5XX-XHC",
+      "name": "Terresa Văn Nguyễn Hà My",
+      "raw_name": "Văn Nguyễn /Terresa/",
+      "sex": "F",
+      "birth": {
+        "date": "21/08/2009",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I203@",
+        "@I145@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I199@",
+        "@I202@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F58@"
+      ],
+      "memory": null
+    },
+    "@I202@": {
+      "id": "@I202@",
+      "fsid": "G5XX-N1V",
+      "name": "Maria Văn Nguyễn Hà Phương",
+      "raw_name": "Văn Nguyễn /Maria/",
+      "sex": "F",
+      "birth": {
+        "date": "25/03/2016",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I203@",
+        "@I145@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I199@",
+        "@I201@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F58@"
+      ],
+      "memory": null
+    },
+    "@I203@": {
+      "id": "@I203@",
+      "fsid": "G5XX-DQV",
+      "name": "Gioan Văn Trọng Thường",
+      "raw_name": "Văn /Gioan/",
+      "sex": "M",
+      "birth": {
+        "date": "09/10/1979",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I145@"
+      ],
+      "children": [
+        "@I199@",
+        "@I201@",
+        "@I202@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F58@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I204@": {
+      "id": "@I204@",
+      "fsid": "G5F9-ZMZ",
+      "name": "Anna Nguyễn Thanh Vân",
+      "raw_name": "Thanh Vân /Anna Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "06/01/2024",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I146@",
+        "@I206@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F59@"
+      ],
+      "memory": null
+    },
+    "@I205@": {
+      "id": "@I205@",
+      "fsid": "G5F2-89P",
+      "name": "Giuse Bùi Gia Thiện",
+      "raw_name": "Bùi /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "20/05/2023",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I207@",
+        "@I148@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F60@"
+      ],
+      "memory": null
+    },
+    "@I206@": {
+      "id": "@I206@",
+      "fsid": "G5F9-9GV",
+      "name": "La Thị Kim",
+      "raw_name": "Thị Kim /La/",
+      "sex": "F",
+      "birth": {
+        "date": "1988",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I146@"
+      ],
+      "children": [
+        "@I204@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F59@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I207@": {
+      "id": "@I207@",
+      "fsid": "G5F2-TTQ",
+      "name": "Bùi Trung Dũng",
+      "raw_name": "Trung Dũng /Bùi/",
+      "sex": "M",
+      "birth": {
+        "date": "07/09/1990",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I148@"
+      ],
+      "children": [
+        "@I205@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F60@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I208@": {
+      "id": "@I208@",
+      "fsid": "GRGM-TCY",
+      "name": "Lucia Nguyễn Ngọc Khánh Vân",
+      "raw_name": "Ngọc Khánh Vân /Lucia Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "18/04/2024",
+        "place": "Hóc Môn, Hồ Chí Minh, Việt Nam"
+      },
+      "death": null,
+      "baptism": {
+        "date": "01/06/2024",
+        "place": "Hóc Môn, Hồ Chí Minh, Việt Nam"
+      },
+      "parents": [
+        "@I150@",
+        "@I211@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F62@"
+      ],
+      "memory": null
+    },
+    "@I209@": {
+      "id": "@I209@",
+      "fsid": "G5XX-PFH",
+      "name": "Teresa Lương Nguyễn Hoàng Nhi",
+      "raw_name": "Lương Nguyễn /Teresa/",
+      "sex": "F",
+      "birth": {
+        "date": "24/06/2012",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I210@",
+        "@I148@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F61@"
+      ],
+      "memory": null
+    },
+    "@I210@": {
+      "id": "@I210@",
+      "fsid": "G5XX-V24",
+      "name": "Lương Văn Toàn",
+      "raw_name": "Văn Toàn /Lương/",
+      "sex": "M",
+      "birth": {
+        "date": "1982",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I148@"
+      ],
+      "children": [
+        "@I209@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F61@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I211@": {
+      "id": "@I211@",
+      "fsid": "G5X1-TNH",
+      "name": "Maria Nguyễn Minh Thư",
+      "raw_name": "Minh Thư /Maria Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "11/11/2002",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I150@"
+      ],
+      "children": [
+        "@I208@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F62@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I212@": {
+      "id": "@I212@",
+      "fsid": "G5XX-R46",
+      "name": "Teresa Trần Thị Hằng",
+      "raw_name": "Trần /Teresa/",
+      "sex": "F",
+      "birth": {
+        "date": "05/11/2000",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I213@",
+        "@I152@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I216@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F63@"
+      ],
+      "memory": null
+    },
+    "@I213@": {
+      "id": "@I213@",
+      "fsid": "G5XX-KTZ",
+      "name": "Phaolo Trần Đình Hữu",
+      "raw_name": "Trần /Phaolo/",
+      "sex": "M",
+      "birth": {
+        "date": "10/03/1971",
+        "place": ""
+      },
+      "death": {
+        "date": "03/09/2000",
+        "place": ""
+      },
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I152@"
+      ],
+      "children": [
+        "@I216@",
+        "@I212@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F63@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I214@": {
+      "id": "@I214@",
+      "fsid": "G5XX-R4G",
+      "name": "Anna Dương Ngọc Thảo",
+      "raw_name": "Dương /Anna/",
+      "sex": "F",
+      "birth": {
+        "date": "28/03/1984",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I154@"
+      ],
+      "children": [
+        "@I215@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F64@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I215@": {
+      "id": "@I215@",
+      "fsid": "G5XX-BJ9",
+      "name": "Gioan Baotixita Trần Dương Anh Khôi",
+      "raw_name": "Trần Dương /Gioan Baotixita/",
+      "sex": "M",
+      "birth": {
+        "date": "19/05/2013",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I154@",
+        "@I214@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F64@"
+      ],
+      "memory": null
+    },
+    "@I216@": {
+      "id": "@I216@",
+      "fsid": "G5XX-R4C",
+      "name": "Giuse Trần Đình Hoàng",
+      "raw_name": "Trần /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "16/11/1998",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I213@",
+        "@I152@"
+      ],
+      "spouses": [
+        "@I223@"
+      ],
+      "children": [],
+      "siblings": [
+        "@I212@"
+      ],
+      "fams": [
+        "@F68@"
+      ],
+      "famc": [
+        "@F63@"
+      ],
+      "memory": null
+    },
+    "@I217@": {
+      "id": "@I217@",
+      "fsid": "G5XX-GNR",
+      "name": "Giuse Phạm Thanh Sơn",
+      "raw_name": "Phạm /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "18/02/2009",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I220@",
+        "@I155@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I218@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F65@"
+      ],
+      "memory": null
+    },
+    "@I218@": {
+      "id": "@I218@",
+      "fsid": "G5XX-GNB",
+      "name": "Teresa Phạm Thanh Vân",
+      "raw_name": "Phạm /Teresa/",
+      "sex": "F",
+      "birth": {
+        "date": "01/03/2013",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I220@",
+        "@I155@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "@I217@"
+      ],
+      "fams": [],
+      "famc": [
+        "@F65@"
+      ],
+      "memory": null
+    },
+    "@I219@": {
+      "id": "@I219@",
+      "fsid": "G1XS-W6K",
+      "name": "Maria Trần Khánh Lam",
+      "raw_name": "Khánh Lam /Maria Trần/",
+      "sex": "F",
+      "birth": {
+        "date": "14/11/2024",
+        "place": "Sóc Trăng, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [
+        "@I160@",
+        "@I221@"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "fams": [],
+      "famc": [
+        "@F66@"
+      ],
+      "memory": null
+    },
+    "@I220@": {
+      "id": "@I220@",
+      "fsid": "G5XF-M3Y",
+      "name": "Giuse Phạm Hữu Thanh",
+      "raw_name": "Phạm /Giuse/",
+      "sex": "M",
+      "birth": {
+        "date": "01/05/1976",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I155@"
+      ],
+      "children": [
+        "@I217@",
+        "@I218@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F65@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I221@": {
+      "id": "@I221@",
+      "fsid": "G5XX-2DJ",
+      "name": "Anna Vũ Thị Hồng Duyên",
+      "raw_name": "Vũ /Anna/",
+      "sex": "F",
+      "birth": {
+        "date": "12/05/1996",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I160@"
+      ],
+      "children": [
+        "@I219@"
+      ],
+      "siblings": [],
+      "fams": [
+        "@F66@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I222@": {
+      "id": "@I222@",
+      "fsid": "P9SS-7XY",
+      "name": "Phao lô Nguyễn Văn Quế",
+      "raw_name": "Nguyễn Văn Quế /Phao lô/",
+      "sex": "M",
+      "birth": {
+        "date": "07/10/1995",
+        "place": "Thanh Hóa, Việt Nam"
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I184@"
+      ],
+      "children": [],
+      "siblings": [],
+      "fams": [
+        "@F67@"
+      ],
+      "famc": [],
+      "memory": null
+    },
+    "@I223@": {
+      "id": "@I223@",
+      "fsid": "G1B5-W5Y",
+      "name": "Maria Nguyễn Thị Hồng",
+      "raw_name": "Thị Hồng /Maria Nguyễn/",
+      "sex": "F",
+      "birth": {
+        "date": "24/11/1998",
+        "place": ""
+      },
+      "death": null,
+      "baptism": null,
+      "parents": [],
+      "spouses": [
+        "@I216@"
+      ],
+      "children": [],
+      "siblings": [],
+      "fams": [
+        "@F68@"
+      ],
+      "famc": [],
+      "memory": null
+    }
+  },
+  "families": {
+    "@F1@": {
+      "id": "@F1@",
+      "husband": "@I5@",
+      "wife": "@I4@",
+      "children": [
+        "@I1@",
+        "@I15@"
+      ],
+      "marriage": null
+    },
+    "@F2@": {
+      "id": "@F2@",
+      "husband": "@I1@",
+      "wife": "@I8@",
+      "children": [
+        "@I6@",
+        "@I18@",
+        "@I7@",
+        "@I9@",
+        "@I2@",
+        "@I3@"
+      ],
+      "marriage": null
+    },
+    "@F3@": {
+      "id": "@F3@",
+      "husband": "@I11@",
+      "wife": "@I6@",
+      "children": [
+        "@I10@",
+        "@I17@"
+      ],
+      "marriage": null
+    },
+    "@F4@": {
+      "id": "@F4@",
+      "husband": "@I12@",
+      "wife": "@I7@",
+      "children": [
+        "@I16@",
+        "@I13@",
+        "@I14@"
+      ],
+      "marriage": null
+    },
+    "@F5@": {
+      "id": "@F5@",
+      "husband": "@I9@",
+      "wife": "@I23@",
+      "children": [
+        "@I21@",
+        "@I22@",
+        "@I20@",
+        "@I26@",
+        "@I25@",
+        "@I28@"
+      ],
+      "marriage": null
+    },
+    "@F6@": {
+      "id": "@F6@",
+      "husband": "",
+      "wife": "@I10@",
+      "children": [
+        "@I19@"
+      ],
+      "marriage": null
+    },
+    "@F7@": {
+      "id": "@F7@",
+      "husband": "@I27@",
+      "wife": "@I13@",
+      "children": [
+        "@I24@",
+        "@I30@"
+      ],
+      "marriage": null
+    },
+    "@F8@": {
+      "id": "@F8@",
+      "husband": "@I14@",
+      "wife": "@I29@",
+      "children": [
+        "@I32@",
+        "@I31@"
+      ],
+      "marriage": null
+    },
+    "@F9@": {
+      "id": "@F9@",
+      "husband": "@I38@",
+      "wife": "@I15@",
+      "children": [],
+      "marriage": null
+    },
+    "@F10@": {
+      "id": "@F10@",
+      "husband": "@I16@",
+      "wife": "@I34@",
+      "children": [
+        "@I37@",
+        "@I36@",
+        "@I33@"
+      ],
+      "marriage": null
+    },
+    "@F11@": {
+      "id": "@F11@",
+      "husband": "@I17@",
+      "wife": "@I41@",
+      "children": [
+        "@I39@",
+        "@I40@",
+        "@I42@",
+        "@I35@",
+        "@I43@"
+      ],
+      "marriage": null
+    },
+    "@F12@": {
+      "id": "@F12@",
+      "husband": "@I18@",
+      "wife": "@I59@",
+      "children": [
+        "@I55@",
+        "@I54@",
+        "@I47@",
+        "@I56@",
+        "@I44@",
+        "@I46@",
+        "@I48@",
+        "@I49@",
+        "@I50@",
+        "@I52@"
+      ],
+      "marriage": null
+    },
+    "@F13@": {
+      "id": "@F13@",
+      "husband": "@I18@",
+      "wife": "@I51@",
+      "children": [
+        "@I45@"
+      ],
+      "marriage": null
+    },
+    "@F14@": {
+      "id": "@F14@",
+      "husband": "@I57@",
+      "wife": "@I20@",
+      "children": [
+        "@I53@",
+        "@I58@",
+        "@I60@",
+        "@I61@"
+      ],
+      "marriage": null
+    },
+    "@F15@": {
+      "id": "@F15@",
+      "husband": "@I21@",
+      "wife": "@I69@",
+      "children": [
+        "@I65@",
+        "@I67@",
+        "@I62@",
+        "@I63@"
+      ],
+      "marriage": null
+    },
+    "@F16@": {
+      "id": "@F16@",
+      "husband": "@I72@",
+      "wife": "@I22@",
+      "children": [
+        "@I64@",
+        "@I66@",
+        "@I68@",
+        "@I70@"
+      ],
+      "marriage": null
+    },
+    "@F17@": {
+      "id": "@F17@",
+      "husband": "@I25@",
+      "wife": "@I74@",
+      "children": [
+        "@I71@",
+        "@I73@"
+      ],
+      "marriage": null
+    },
+    "@F18@": {
+      "id": "@F18@",
+      "husband": "@I26@",
+      "wife": "@I77@",
+      "children": [
+        "@I76@",
+        "@I75@",
+        "@I78@"
+      ],
+      "marriage": null
+    },
+    "@F19@": {
+      "id": "@F19@",
+      "husband": "@I83@",
+      "wife": "@I28@",
+      "children": [
+        "@I80@",
+        "@I79@"
+      ],
+      "marriage": null
+    },
+    "@F20@": {
+      "id": "@F20@",
+      "husband": "@I30@",
+      "wife": "@I85@",
+      "children": [
+        "@I81@",
+        "@I82@"
+      ],
+      "marriage": null
+    },
+    "@F21@": {
+      "id": "@F21@",
+      "husband": "@I89@",
+      "wife": "@I31@",
+      "children": [
+        "@I84@",
+        "@I86@",
+        "@I87@"
+      ],
+      "marriage": null
+    },
+    "@F22@": {
+      "id": "@F22@",
+      "husband": "@I90@",
+      "wife": "@I32@",
+      "children": [
+        "@I88@"
+      ],
+      "marriage": null
+    },
+    "@F23@": {
+      "id": "@F23@",
+      "husband": "@I92@",
+      "wife": "@I32@",
+      "children": [
+        "@I91@"
+      ],
+      "marriage": null
+    },
+    "@F24@": {
+      "id": "@F24@",
+      "husband": "@I33@",
+      "wife": "@I93@",
+      "children": [],
+      "marriage": {
+        "date": "03/02/2025",
+        "place": "Nhà thờ Giáo Xứ Lộc Mỹ, Nghi Quang, Nghi Lộc, Nghệ An"
+      }
+    },
+    "@F25@": {
+      "id": "@F25@",
+      "husband": "@I97@",
+      "wife": "@I36@",
+      "children": [
+        "@I94@",
+        "@I95@"
+      ],
+      "marriage": null
+    },
+    "@F26@": {
+      "id": "@F26@",
+      "husband": "@I101@",
+      "wife": "@I37@",
+      "children": [
+        "@I96@",
+        "@I98@",
+        "@I99@"
+      ],
+      "marriage": null
+    },
+    "@F27@": {
+      "id": "@F27@",
+      "husband": "@I102@",
+      "wife": "@I39@",
+      "children": [
+        "@I109@",
+        "@I100@"
+      ],
+      "marriage": null
+    },
+    "@F28@": {
+      "id": "@F28@",
+      "husband": "@I40@",
+      "wife": "@I105@",
+      "children": [
+        "@I103@",
+        "@I104@"
+      ],
+      "marriage": null
+    },
+    "@F29@": {
+      "id": "@F29@",
+      "husband": "@I108@",
+      "wife": "@I42@",
+      "children": [
+        "@I106@",
+        "@I107@"
+      ],
+      "marriage": null
+    },
+    "@F30@": {
+      "id": "@F30@",
+      "husband": "@I113@",
+      "wife": "@I43@",
+      "children": [
+        "@I111@",
+        "@I110@",
+        "@I112@"
+      ],
+      "marriage": null
+    },
+    "@F31@": {
+      "id": "@F31@",
+      "husband": "@I46@",
+      "wife": "@I114@",
+      "children": [
+        "@I117@",
+        "@I116@"
+      ],
+      "marriage": null
+    },
+    "@F32@": {
+      "id": "@F32@",
+      "husband": "@I47@",
+      "wife": "@I127@",
+      "children": [
+        "@I122@",
+        "@I124@",
+        "@I115@",
+        "@I126@"
+      ],
+      "marriage": null
+    },
+    "@F33@": {
+      "id": "@F33@",
+      "husband": "@I48@",
+      "wife": "@I121@",
+      "children": [
+        "@I118@",
+        "@I119@"
+      ],
+      "marriage": null
+    },
+    "@F34@": {
+      "id": "@F34@",
+      "husband": "@I49@",
+      "wife": "@I125@",
+      "children": [
+        "@I120@",
+        "@I123@"
+      ],
+      "marriage": null
+    },
+    "@F35@": {
+      "id": "@F35@",
+      "husband": "@I50@",
+      "wife": "@I130@",
+      "children": [
+        "@I128@",
+        "@I129@"
+      ],
+      "marriage": null
+    },
+    "@F36@": {
+      "id": "@F36@",
+      "husband": "@I52@",
+      "wife": "@I133@",
+      "children": [
+        "@I131@",
+        "@I132@"
+      ],
+      "marriage": null
+    },
+    "@F37@": {
+      "id": "@F37@",
+      "husband": "@I143@",
+      "wife": "@I54@",
+      "children": [
+        "@I136@",
+        "@I137@",
+        "@I135@",
+        "@I134@",
+        "@I140@",
+        "@I138@",
+        "@I139@"
+      ],
+      "marriage": null
+    },
+    "@F38@": {
+      "id": "@F38@",
+      "husband": "@I149@",
+      "wife": "@I55@",
+      "children": [
+        "@I141@",
+        "@I145@",
+        "@I142@",
+        "@I144@",
+        "@I148@",
+        "@I146@",
+        "@I150@"
+      ],
+      "marriage": null
+    },
+    "@F39@": {
+      "id": "@F39@",
+      "husband": "@I156@",
+      "wife": "@I56@",
+      "children": [
+        "@I152@",
+        "@I155@",
+        "@I154@",
+        "@I147@",
+        "@I160@"
+      ],
+      "marriage": null
+    },
+    "@F40@": {
+      "id": "@F40@",
+      "husband": "",
+      "wife": "@I151@",
+      "children": [],
+      "marriage": null
+    },
+    "@F41@": {
+      "id": "@F41@",
+      "husband": "@I157@",
+      "wife": "@I65@",
+      "children": [
+        "@I153@"
+      ],
+      "marriage": null
+    },
+    "@F42@": {
+      "id": "@F42@",
+      "husband": "@I158@",
+      "wife": "@I67@",
+      "children": [
+        "@I159@"
+      ],
+      "marriage": null
+    },
+    "@F43@": {
+      "id": "@F43@",
+      "husband": "@I109@",
+      "wife": "@I163@",
+      "children": [],
+      "marriage": null
+    },
+    "@F44@": {
+      "id": "@F44@",
+      "husband": "@I116@",
+      "wife": "@I165@",
+      "children": [
+        "@I161@"
+      ],
+      "marriage": null
+    },
+    "@F45@": {
+      "id": "@F45@",
+      "husband": "@I117@",
+      "wife": "@I171@",
+      "children": [
+        "@I162@",
+        "@I166@"
+      ],
+      "marriage": null
+    },
+    "@F46@": {
+      "id": "@F46@",
+      "husband": "@I172@",
+      "wife": "@I122@",
+      "children": [
+        "@I167@",
+        "@I164@"
+      ],
+      "marriage": null
+    },
+    "@F47@": {
+      "id": "@F47@",
+      "husband": "@I174@",
+      "wife": "@I124@",
+      "children": [
+        "@I168@",
+        "@I169@"
+      ],
+      "marriage": null
+    },
+    "@F48@": {
+      "id": "@F48@",
+      "husband": "@I126@",
+      "wife": "@I173@",
+      "children": [
+        "@I170@"
+      ],
+      "marriage": null
+    },
+    "@F49@": {
+      "id": "@F49@",
+      "husband": "@I175@",
+      "wife": "@I135@",
+      "children": [
+        "@I184@"
+      ],
+      "marriage": null
+    },
+    "@F50@": {
+      "id": "@F50@",
+      "husband": "@I180@",
+      "wife": "@I136@",
+      "children": [
+        "@I176@",
+        "@I177@"
+      ],
+      "marriage": null
+    },
+    "@F51@": {
+      "id": "@F51@",
+      "husband": "@I185@",
+      "wife": "@I137@",
+      "children": [
+        "@I178@",
+        "@I179@"
+      ],
+      "marriage": null
+    },
+    "@F52@": {
+      "id": "@F52@",
+      "husband": "@I138@",
+      "wife": "@I186@",
+      "children": [
+        "@I181@",
+        "@I182@"
+      ],
+      "marriage": null
+    },
+    "@F53@": {
+      "id": "@F53@",
+      "husband": "@I139@",
+      "wife": "@I187@",
+      "children": [
+        "@I183@",
+        "@I188@"
+      ],
+      "marriage": null
+    },
+    "@F54@": {
+      "id": "@F54@",
+      "husband": "@I140@",
+      "wife": "@I191@",
+      "children": [
+        "@I189@",
+        "@I190@",
+        "@I192@"
+      ],
+      "marriage": null
+    },
+    "@F55@": {
+      "id": "@F55@",
+      "husband": "@I197@",
+      "wife": "@I141@",
+      "children": [
+        "@I193@"
+      ],
+      "marriage": null
+    },
+    "@F56@": {
+      "id": "@F56@",
+      "husband": "@I196@",
+      "wife": "@I142@",
+      "children": [
+        "@I194@"
+      ],
+      "marriage": null
+    },
+    "@F57@": {
+      "id": "@F57@",
+      "husband": "@I200@",
+      "wife": "@I144@",
+      "children": [
+        "@I195@",
+        "@I198@"
+      ],
+      "marriage": null
+    },
+    "@F58@": {
+      "id": "@F58@",
+      "husband": "@I203@",
+      "wife": "@I145@",
+      "children": [
+        "@I199@",
+        "@I201@",
+        "@I202@"
+      ],
+      "marriage": null
+    },
+    "@F59@": {
+      "id": "@F59@",
+      "husband": "@I146@",
+      "wife": "@I206@",
+      "children": [
+        "@I204@"
+      ],
+      "marriage": null
+    },
+    "@F60@": {
+      "id": "@F60@",
+      "husband": "@I207@",
+      "wife": "@I148@",
+      "children": [
+        "@I205@"
+      ],
+      "marriage": null
+    },
+    "@F61@": {
+      "id": "@F61@",
+      "husband": "@I210@",
+      "wife": "@I148@",
+      "children": [
+        "@I209@"
+      ],
+      "marriage": null
+    },
+    "@F62@": {
+      "id": "@F62@",
+      "husband": "@I150@",
+      "wife": "@I211@",
+      "children": [
+        "@I208@"
+      ],
+      "marriage": null
+    },
+    "@F63@": {
+      "id": "@F63@",
+      "husband": "@I213@",
+      "wife": "@I152@",
+      "children": [
+        "@I216@",
+        "@I212@"
+      ],
+      "marriage": null
+    },
+    "@F64@": {
+      "id": "@F64@",
+      "husband": "@I154@",
+      "wife": "@I214@",
+      "children": [
+        "@I215@"
+      ],
+      "marriage": null
+    },
+    "@F65@": {
+      "id": "@F65@",
+      "husband": "@I220@",
+      "wife": "@I155@",
+      "children": [
+        "@I217@",
+        "@I218@"
+      ],
+      "marriage": null
+    },
+    "@F66@": {
+      "id": "@F66@",
+      "husband": "@I160@",
+      "wife": "@I221@",
+      "children": [
+        "@I219@"
+      ],
+      "marriage": null
+    },
+    "@F67@": {
+      "id": "@F67@",
+      "husband": "@I222@",
+      "wife": "@I184@",
+      "children": [],
+      "marriage": {
+        "date": "21/02/2025",
+        "place": "Nhà Thờ giáo xứ Phong ý, Thị Trấn Phong Sơn, Thanh Hoá, Việt Nam"
+      }
+    },
+    "@F68@": {
+      "id": "@F68@",
+      "husband": "@I216@",
+      "wife": "@I223@",
+      "children": [],
+      "marriage": null
+    }
+  },
+  "timeline": [
+    {
+      "type": "BIRTH",
+      "year": 1872,
+      "date": "1872",
+      "personId": "@I1@",
+      "personName": "Giuse Trần Trọng Thu",
+      "title": "Sinh nhật: Giuse Trần Trọng Thu"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1888,
+      "date": "1888",
+      "personId": "@I8@",
+      "personName": "Nguyễn Thị Xuân - Út",
+      "title": "Sinh nhật: Nguyễn Thị Xuân - Út"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1917,
+      "date": "1917",
+      "personId": "@I6@",
+      "personName": "Trần Thị Thi",
+      "title": "Sinh nhật: Trần Thị Thi"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1918,
+      "date": "1918",
+      "personId": "@I18@",
+      "personName": "An-tôn Trần Trọng Thư",
+      "title": "Sinh nhật: An-tôn Trần Trọng Thư"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1925,
+      "date": "1925",
+      "personId": "@I12@",
+      "personName": "Gioan Lã Văn Mão",
+      "title": "Sinh nhật: Gioan Lã Văn Mão"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1929,
+      "date": "1929",
+      "personId": "@I7@",
+      "personName": "Catarina Trần Thị Vị",
+      "title": "Sinh nhật: Catarina Trần Thị Vị"
+    },
+    {
+      "type": "DEATH",
+      "year": 1929,
+      "date": "1929",
+      "personId": "@I8@",
+      "personName": "Nguyễn Thị Xuân - Út",
+      "title": "Qua đời: Nguyễn Thị Xuân - Út"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1929,
+      "date": "1929",
+      "personId": "@I9@",
+      "personName": "Gioan Trần Trọng Thả",
+      "title": "Sinh nhật: Gioan Trần Trọng Thả"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1934,
+      "date": "Khoảng 1934",
+      "personId": "@I59@",
+      "personName": "Bà Sa - Teresa Phạm Thị Hưng",
+      "title": "Sinh nhật: Bà Sa - Teresa Phạm Thị Hưng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1942,
+      "date": "1942",
+      "personId": "@I23@",
+      "personName": "Maria Lê Thị Phùng",
+      "title": "Sinh nhật: Maria Lê Thị Phùng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1949,
+      "date": "1949",
+      "personId": "@I10@",
+      "personName": "Cecilia Lê Thị Hoa",
+      "title": "Sinh nhật: Cecilia Lê Thị Hoa"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1951,
+      "date": "1951",
+      "personId": "@I17@",
+      "personName": "Lê Đức Thành",
+      "title": "Sinh nhật: Lê Đức Thành"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1952,
+      "date": "20/12/1952",
+      "personId": "@I149@",
+      "personName": "Giuse Nguyễn Huy Xuân",
+      "title": "Sinh nhật: Giuse Nguyễn Huy Xuân"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1953,
+      "date": "1953",
+      "personId": "@I34@",
+      "personName": "Đinh Thị Xây",
+      "title": "Sinh nhật: Đinh Thị Xây"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1954,
+      "date": "1954",
+      "personId": "@I143@",
+      "personName": "Micae Nguyễn Văn Thìn",
+      "title": "Sinh nhật: Micae Nguyễn Văn Thìn"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1955,
+      "date": "1955",
+      "personId": "@I16@",
+      "personName": "Lã Văn Minh",
+      "title": "Sinh nhật: Lã Văn Minh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1955,
+      "date": "1955",
+      "personId": "@I41@",
+      "personName": "Maria Trương Thị Tần",
+      "title": "Sinh nhật: Maria Trương Thị Tần"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1956,
+      "date": "14/10/1956",
+      "personId": "@I55@",
+      "personName": "Terresa Trần Thị Phúc",
+      "title": "Sinh nhật: Terresa Trần Thị Phúc"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1956,
+      "date": "1956",
+      "personId": "@I27@",
+      "personName": "Trần Quốc Long",
+      "title": "Sinh nhật: Trần Quốc Long"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1956,
+      "date": "BET 15 OCT 1956 AND 19 OCT 1956",
+      "personId": "@I54@",
+      "personName": "Agnest Trần Thị Đức",
+      "title": "Sinh nhật: Agnest Trần Thị Đức"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1957,
+      "date": "15/05/1957",
+      "personId": "@I156@",
+      "personName": "Gioan Baotixita Trần Ngọc Tâm",
+      "title": "Sinh nhật: Gioan Baotixita Trần Ngọc Tâm"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1959,
+      "date": "13/08/1959",
+      "personId": "@I47@",
+      "personName": "Gioakim Trần Đức Hạnh",
+      "title": "Sinh nhật: Gioakim Trần Đức Hạnh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1959,
+      "date": "1959",
+      "personId": "@I72@",
+      "personName": "Nguyễn Văn Ngọc",
+      "title": "Sinh nhật: Nguyễn Văn Ngọc"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1959,
+      "date": "25/10/1959",
+      "personId": "@I127@",
+      "personName": "Maria Madalena Nguyễn Thị Đào",
+      "title": "Sinh nhật: Maria Madalena Nguyễn Thị Đào"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1960,
+      "date": "1960",
+      "personId": "@I29@",
+      "personName": "Bùi Thị Minh",
+      "title": "Sinh nhật: Bùi Thị Minh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1960,
+      "date": "28/02/1960",
+      "personId": "@I13@",
+      "personName": "Lã Thị Hường",
+      "title": "Sinh nhật: Lã Thị Hường"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1960,
+      "date": "29/11/1960",
+      "personId": "@I21@",
+      "personName": "Ghêgonô Trần Ngọc Thuận",
+      "title": "Sinh nhật: Ghêgonô Trần Ngọc Thuận"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1962,
+      "date": "03/03/1962",
+      "personId": "@I14@",
+      "personName": "Giuse Lã Văn Tiến",
+      "title": "Sinh nhật: Giuse Lã Văn Tiến"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1963,
+      "date": "05/04/1963",
+      "personId": "@I56@",
+      "personName": "Teresa Trần Thị Ngoan",
+      "title": "Sinh nhật: Teresa Trần Thị Ngoan"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1963,
+      "date": "1963",
+      "personId": "@I22@",
+      "personName": "Trần Thị Hoà",
+      "title": "Sinh nhật: Trần Thị Hoà"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1964,
+      "date": "06/06/1964",
+      "personId": "@I44@",
+      "personName": "Teresa Trần Thị Nguyệt",
+      "title": "Sinh nhật: Teresa Trần Thị Nguyệt"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1964,
+      "date": "1964",
+      "personId": "@I20@",
+      "personName": "Trần Thị Dung",
+      "title": "Sinh nhật: Trần Thị Dung"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1966,
+      "date": "06/09/1966",
+      "personId": "@I69@",
+      "personName": "Anna Nguyễn Thị Nhân",
+      "title": "Sinh nhật: Anna Nguyễn Thị Nhân"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1967,
+      "date": "10/05/1967",
+      "personId": "@I46@",
+      "personName": "Giacôbê Trần Trung Kiêm",
+      "title": "Sinh nhật: Giacôbê Trần Trung Kiêm"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1968,
+      "date": "14/09/1968",
+      "personId": "@I114@",
+      "personName": "Lucia Nguyễn Thị Mai",
+      "title": "Sinh nhật: Lucia Nguyễn Thị Mai"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1968,
+      "date": "21/03/1968",
+      "personId": "@I26@",
+      "personName": "Giuse Trần Xuân Hiệp",
+      "title": "Sinh nhật: Giuse Trần Xuân Hiệp"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1969,
+      "date": "06/06/1969",
+      "personId": "@I48@",
+      "personName": "Phanxico Trần Văn Toàn",
+      "title": "Sinh nhật: Phanxico Trần Văn Toàn"
+    },
+    {
+      "type": "DEATH",
+      "year": 1969,
+      "date": "15/08/1969",
+      "personId": "@I1@",
+      "personName": "Giuse Trần Trọng Thu",
+      "title": "Qua đời: Giuse Trần Trọng Thu"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1970,
+      "date": "1970",
+      "personId": "@I25@",
+      "personName": "Trần Văn Lương",
+      "title": "Sinh nhật: Trần Văn Lương"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1971,
+      "date": "10/03/1971",
+      "personId": "@I213@",
+      "personName": "Phaolo Trần Đình Hữu",
+      "title": "Sinh nhật: Phaolo Trần Đình Hữu"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1971,
+      "date": "15/09/1971",
+      "personId": "@I125@",
+      "personName": "Maria Nguyễn Thị Thu Hiền",
+      "title": "Sinh nhật: Maria Nguyễn Thị Thu Hiền"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1971,
+      "date": "21/09/1971",
+      "personId": "@I49@",
+      "personName": "Mattheu Trần Văn Đạo",
+      "title": "Sinh nhật: Mattheu Trần Văn Đạo"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1972,
+      "date": "09/03/1972",
+      "personId": "@I197@",
+      "personName": "Gioan Vũ Văn Hùng",
+      "title": "Sinh nhật: Gioan Vũ Văn Hùng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1973,
+      "date": "12/07/1973",
+      "personId": "@I50@",
+      "personName": "Bonaventura Trần Văn Nghĩa",
+      "title": "Sinh nhật: Bonaventura Trần Văn Nghĩa"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1973,
+      "date": "1973",
+      "personId": "@I102@",
+      "personName": "Vũ Văn Thuần",
+      "title": "Sinh nhật: Vũ Văn Thuần"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1975,
+      "date": "04/09/1975",
+      "personId": "@I121@",
+      "personName": "Teresa Nguyễn Thị Lưu",
+      "title": "Sinh nhật: Teresa Nguyễn Thị Lưu"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1975,
+      "date": "1975",
+      "personId": "@I28@",
+      "personName": "Trần Thị Liên",
+      "title": "Sinh nhật: Trần Thị Liên"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1975,
+      "date": "20/08/1975",
+      "personId": "@I52@",
+      "personName": "Bênađô Trần Trung Chính",
+      "title": "Sinh nhật: Bênađô Trần Trung Chính"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1976,
+      "date": "01/05/1976",
+      "personId": "@I220@",
+      "personName": "Giuse Phạm Hữu Thanh",
+      "title": "Sinh nhật: Giuse Phạm Hữu Thanh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1976,
+      "date": "04/12/1976",
+      "personId": "@I130@",
+      "personName": "Inne Lê Thị Hoàng Thanh",
+      "title": "Sinh nhật: Inne Lê Thị Hoàng Thanh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1977,
+      "date": "1977",
+      "personId": "@I39@",
+      "personName": "Lê Thị Tâm",
+      "title": "Sinh nhật: Lê Thị Tâm"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1977,
+      "date": "1977",
+      "personId": "@I77@",
+      "personName": "Nguyễn Thị Thu Thuý",
+      "title": "Sinh nhật: Nguyễn Thị Thu Thuý"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1977,
+      "date": "1977",
+      "personId": "@I105@",
+      "personName": "Trần Thị Nhàn",
+      "title": "Sinh nhật: Trần Thị Nhàn"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1978,
+      "date": "10/03/1978",
+      "personId": "@I152@",
+      "personName": "Teresa Trần Thị Tình",
+      "title": "Sinh nhật: Teresa Trần Thị Tình"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1978,
+      "date": "13/08/1978",
+      "personId": "@I136@",
+      "personName": "Maria Nguyễn Thị Thanh Thuý",
+      "title": "Sinh nhật: Maria Nguyễn Thị Thanh Thuý"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1978,
+      "date": "14/02/1978",
+      "personId": "@I133@",
+      "personName": "Maria Teresa Trần Ngọc Mai",
+      "title": "Sinh nhật: Maria Teresa Trần Ngọc Mai"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1978,
+      "date": "1978",
+      "personId": "@I40@",
+      "personName": "Lê Minh Hải",
+      "title": "Sinh nhật: Lê Minh Hải"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1978,
+      "date": "1978",
+      "personId": "@I83@",
+      "personName": "Nguyễn Đức Tốt",
+      "title": "Sinh nhật: Nguyễn Đức Tốt"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1978,
+      "date": "1978",
+      "personId": "@I175@",
+      "personName": "Giuse Lăng Văn Trường",
+      "title": "Sinh nhật: Giuse Lăng Văn Trường"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1979,
+      "date": "09/10/1979",
+      "personId": "@I203@",
+      "personName": "Gioan Văn Trọng Thường",
+      "title": "Sinh nhật: Gioan Văn Trọng Thường"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1979,
+      "date": "1979",
+      "personId": "@I90@",
+      "personName": "Đàm Khắc Đồng",
+      "title": "Sinh nhật: Đàm Khắc Đồng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1980,
+      "date": "01/01/1980",
+      "personId": "@I185@",
+      "personName": "Phanxico Nguyễn Văn Trung",
+      "title": "Sinh nhật: Phanxico Nguyễn Văn Trung"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1980,
+      "date": "09/09/1980",
+      "personId": "@I155@",
+      "personName": "Teresa Trần Thị Thương",
+      "title": "Sinh nhật: Teresa Trần Thị Thương"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1980,
+      "date": "20/09/1980",
+      "personId": "@I137@",
+      "personName": "Yxave Nguyễn Thị Ngọc",
+      "title": "Sinh nhật: Yxave Nguyễn Thị Ngọc"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1981,
+      "date": "02/06/1981",
+      "personId": "@I180@",
+      "personName": "Giuse Trần Duy Quốc",
+      "title": "Sinh nhật: Giuse Trần Duy Quốc"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1981,
+      "date": "22/05/1981",
+      "personId": "@I141@",
+      "personName": "Marria Nguyễn Thị Huyền",
+      "title": "Sinh nhật: Marria Nguyễn Thị Huyền"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1982,
+      "date": "1982",
+      "personId": "@I89@",
+      "personName": "Nguyễn Văn Kỳ",
+      "title": "Sinh nhật: Nguyễn Văn Kỳ"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1982,
+      "date": "1982",
+      "personId": "@I108@",
+      "personName": "Đinh Văn Phượng",
+      "title": "Sinh nhật: Đinh Văn Phượng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1982,
+      "date": "1982",
+      "personId": "@I210@",
+      "personName": "Lương Văn Toàn",
+      "title": "Sinh nhật: Lương Văn Toàn"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1982,
+      "date": "20/10/1982",
+      "personId": "@I145@",
+      "personName": "Lucia Nguyễn Thị Hà",
+      "title": "Sinh nhật: Lucia Nguyễn Thị Hà"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1982,
+      "date": "20/11/1982",
+      "personId": "@I135@",
+      "personName": "Lucia Nguyễn Thị Lan",
+      "title": "Sinh nhật: Lucia Nguyễn Thị Lan"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1983,
+      "date": "1983",
+      "personId": "@I42@",
+      "personName": "Lê Thị Yến",
+      "title": "Sinh nhật: Lê Thị Yến"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1983,
+      "date": "23/10/1983",
+      "personId": "@I122@",
+      "personName": "Maria Trần Thị Hân",
+      "title": "Sinh nhật: Maria Trần Thị Hân"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1983,
+      "date": "24/10/1983",
+      "personId": "@I172@",
+      "personName": "Giuse Phạm Văn Hạnh",
+      "title": "Sinh nhật: Giuse Phạm Văn Hạnh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1984,
+      "date": "01/11/1984",
+      "personId": "@I142@",
+      "personName": "AnNa Nguyễn Thị Hằng",
+      "title": "Sinh nhật: AnNa Nguyễn Thị Hằng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1984,
+      "date": "02/02/1984",
+      "personId": "@I174@",
+      "personName": "Giuse Nguyễn Văn Khảo",
+      "title": "Sinh nhật: Giuse Nguyễn Văn Khảo"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1984,
+      "date": "1984",
+      "personId": "@I35@",
+      "personName": "Lê Thị Oanh - đi tu",
+      "title": "Sinh nhật: Lê Thị Oanh - đi tu"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1984,
+      "date": "1984",
+      "personId": "@I134@",
+      "personName": "Nguyễn Thị Huệ",
+      "title": "Sinh nhật: Nguyễn Thị Huệ"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1984,
+      "date": "28/03/1984",
+      "personId": "@I214@",
+      "personName": "Anna Dương Ngọc Thảo",
+      "title": "Sinh nhật: Anna Dương Ngọc Thảo"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1985,
+      "date": "12/04/1985",
+      "personId": "@I101@",
+      "personName": "Hà Văn Quyết",
+      "title": "Sinh nhật: Hà Văn Quyết"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1985,
+      "date": "1985",
+      "personId": "@I32@",
+      "personName": "Lã Thị Hằng",
+      "title": "Sinh nhật: Lã Thị Hằng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1985,
+      "date": "24/06/1985",
+      "personId": "@I124@",
+      "personName": "Teresa Trần Thị Nga",
+      "title": "Sinh nhật: Teresa Trần Thị Nga"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1985,
+      "date": "25/09/1985",
+      "personId": "@I154@",
+      "personName": "Giuse Trần Tiến Dũng",
+      "title": "Sinh nhật: Giuse Trần Tiến Dũng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1986,
+      "date": "09/10/1986",
+      "personId": "@I140@",
+      "personName": "Giuse Nguyễn Văn Thắng",
+      "title": "Sinh nhật: Giuse Nguyễn Văn Thắng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1986,
+      "date": "15/07/1986",
+      "personId": "@I191@",
+      "personName": "Terexa Bùi Thị Điệp",
+      "title": "Sinh nhật: Terexa Bùi Thị Điệp"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1986,
+      "date": "1986",
+      "personId": "@I113@",
+      "personName": "Điền Quang Sơn",
+      "title": "Sinh nhật: Điền Quang Sơn"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1986,
+      "date": "20/10/1986",
+      "personId": "@I144@",
+      "personName": "Terresa Nguyễn Thị Ánh",
+      "title": "Sinh nhật: Terresa Nguyễn Thị Ánh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1987,
+      "date": "01/01/1987",
+      "personId": "@I200@",
+      "personName": "Vinh sơn Dương Chí Dũng",
+      "title": "Sinh nhật: Vinh sơn Dương Chí Dũng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1987,
+      "date": "05/07/1987",
+      "personId": "@I115@",
+      "personName": "Gioan Baotixita Trần Quốc Tuấn",
+      "title": "Sinh nhật: Gioan Baotixita Trần Quốc Tuấn"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1987,
+      "date": "10/06/1987",
+      "personId": "@I147@",
+      "personName": "Gioan Baotixita Trần Tiến Tùng",
+      "title": "Sinh nhật: Gioan Baotixita Trần Tiến Tùng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1987,
+      "date": "1987",
+      "personId": "@I31@",
+      "personName": "Lã Thị Thuý",
+      "title": "Sinh nhật: Lã Thị Thuý"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1987,
+      "date": "1987",
+      "personId": "@I43@",
+      "personName": "Lê Thị Vân",
+      "title": "Sinh nhật: Lê Thị Vân"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1987,
+      "date": "1987",
+      "personId": "@I64@",
+      "personName": "Nguyễn Thị Nhung",
+      "title": "Sinh nhật: Nguyễn Thị Nhung"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1987,
+      "date": "20/05/1987",
+      "personId": "@I37@",
+      "personName": "Teresa Lã Thị Hiền",
+      "title": "Sinh nhật: Teresa Lã Thị Hiền"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1987,
+      "date": "29/07/1987",
+      "personId": "@I196@",
+      "personName": "Nguyễn Văn Bình",
+      "title": "Sinh nhật: Nguyễn Văn Bình"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1988,
+      "date": "10/10/1988",
+      "personId": "@I186@",
+      "personName": "Maria Đào Thị Chung",
+      "title": "Sinh nhật: Maria Đào Thị Chung"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1988,
+      "date": "17/10/1988",
+      "personId": "@I148@",
+      "personName": "Maria Nguyễn Thị Hồng",
+      "title": "Sinh nhật: Maria Nguyễn Thị Hồng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1988,
+      "date": "1988",
+      "personId": "@I36@",
+      "personName": "Lã Thị Thảo",
+      "title": "Sinh nhật: Lã Thị Thảo"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1988,
+      "date": "1988",
+      "personId": "@I206@",
+      "personName": "La Thị Kim",
+      "title": "Sinh nhật: La Thị Kim"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1989,
+      "date": "08/08/1989",
+      "personId": "@I160@",
+      "personName": "Gioan Baotixita Trần Văn Tuyển",
+      "title": "Sinh nhật: Gioan Baotixita Trần Văn Tuyển"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1989,
+      "date": "18/03/1989",
+      "personId": "@I138@",
+      "personName": "Giuse Nguyễn Văn Đạt",
+      "title": "Sinh nhật: Giuse Nguyễn Văn Đạt"
+    },
+    {
+      "type": "DEATH",
+      "year": 1989,
+      "date": "1989",
+      "personId": "@I6@",
+      "personName": "Trần Thị Thi",
+      "title": "Qua đời: Trần Thị Thi"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1989,
+      "date": "1989",
+      "personId": "@I66@",
+      "personName": "Nguyễn Văn Mạnh",
+      "title": "Sinh nhật: Nguyễn Văn Mạnh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1989,
+      "date": "1989",
+      "personId": "@I97@",
+      "personName": "Nguyễn Đăng Trường",
+      "title": "Sinh nhật: Nguyễn Đăng Trường"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1989,
+      "date": "1989",
+      "personId": "@I157@",
+      "personName": "Antôn Hứa Đình Hợp",
+      "title": "Sinh nhật: Antôn Hứa Đình Hợp"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1990,
+      "date": "07/09/1990",
+      "personId": "@I207@",
+      "personName": "Bùi Trung Dũng",
+      "title": "Sinh nhật: Bùi Trung Dũng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1990,
+      "date": "1990",
+      "personId": "@I33@",
+      "personName": "Giuse Lã Xuân Hùng",
+      "title": "Sinh nhật: Giuse Lã Xuân Hùng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1990,
+      "date": "1990",
+      "personId": "@I65@",
+      "personName": "Maria Trần Thị Trang",
+      "title": "Sinh nhật: Maria Trần Thị Trang"
+    },
+    {
+      "type": "DEATH",
+      "year": 1990,
+      "date": "1990",
+      "personId": "@I134@",
+      "personName": "Nguyễn Thị Huệ",
+      "title": "Qua đời: Nguyễn Thị Huệ"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1991,
+      "date": "10/04/1991",
+      "personId": "@I139@",
+      "personName": "Phê-rô Nguyễn Văn Luân",
+      "title": "Sinh nhật: Phê-rô Nguyễn Văn Luân"
+    },
+    {
+      "type": "DEATH",
+      "year": 1991,
+      "date": "17/05/1991",
+      "personId": "@I18@",
+      "personName": "An-tôn Trần Trọng Thư",
+      "title": "Qua đời: An-tôn Trần Trọng Thư"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1991,
+      "date": "1991",
+      "personId": "@I158@",
+      "personName": "Phero Trần Trọng Nhân",
+      "title": "Sinh nhật: Phero Trần Trọng Nhân"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1991,
+      "date": "20/07/1991",
+      "personId": "@I117@",
+      "personName": "Giuse Trần Minh Long",
+      "title": "Sinh nhật: Giuse Trần Minh Long"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1991,
+      "date": "30/07/1991",
+      "personId": "@I187@",
+      "personName": "Trương Thị Thuỳ Trang",
+      "title": "Sinh nhật: Trương Thị Thuỳ Trang"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1992,
+      "date": "1992",
+      "personId": "@I67@",
+      "personName": "Teresa Trần Lệ Quyên",
+      "title": "Sinh nhật: Teresa Trần Lệ Quyên"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1992,
+      "date": "1992",
+      "personId": "@I68@",
+      "personName": "Nguyễn Văn Hưng",
+      "title": "Sinh nhật: Nguyễn Văn Hưng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1992,
+      "date": "20/04/1992",
+      "personId": "@I173@",
+      "personName": "Thị Oanh Thư Maria Nguyễn",
+      "title": "Sinh nhật: Thị Oanh Thư Maria Nguyễn"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1994,
+      "date": "17/12/1994",
+      "personId": "@I146@",
+      "personName": "Giuse Nguyễn Sơn Lâm",
+      "title": "Sinh nhật: Giuse Nguyễn Sơn Lâm"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1994,
+      "date": "21/09/1994",
+      "personId": "@I126@",
+      "personName": "Giuse Trần Hải Linh",
+      "title": "Sinh nhật: Giuse Trần Hải Linh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1994,
+      "date": "27/07/1994",
+      "personId": "@I116@",
+      "personName": "Anton Trần Thế An",
+      "title": "Sinh nhật: Anton Trần Thế An"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1995,
+      "date": "07/03/1995",
+      "personId": "@I171@",
+      "personName": "Anna Trần Thị Linh",
+      "title": "Sinh nhật: Anna Trần Thị Linh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1995,
+      "date": "07/10/1995",
+      "personId": "@I222@",
+      "personName": "Phao lô Nguyễn Văn Quế",
+      "title": "Sinh nhật: Phao lô Nguyễn Văn Quế"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1995,
+      "date": "1995",
+      "personId": "@I85@",
+      "personName": "Hoàng Thị Phương Hoa",
+      "title": "Sinh nhật: Hoàng Thị Phương Hoa"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1996,
+      "date": "12/05/1996",
+      "personId": "@I221@",
+      "personName": "Anna Vũ Thị Hồng Duyên",
+      "title": "Sinh nhật: Anna Vũ Thị Hồng Duyên"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1996,
+      "date": "1996",
+      "personId": "@I109@",
+      "personName": "Vũ Trọng Quý",
+      "title": "Sinh nhật: Vũ Trọng Quý"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1996,
+      "date": "1996",
+      "personId": "@I163@",
+      "personName": "Nguyễn Thị Thuý",
+      "title": "Sinh nhật: Nguyễn Thị Thuý"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1996,
+      "date": "28/01/1996",
+      "personId": "@I165@",
+      "personName": "Phạm Phương Nga",
+      "title": "Sinh nhật: Phạm Phương Nga"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1997,
+      "date": "12/04/1997",
+      "personId": "@I150@",
+      "personName": "Gioan Nguyễn Hồng Ân",
+      "title": "Sinh nhật: Gioan Nguyễn Hồng Ân"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1997,
+      "date": "1997",
+      "personId": "@I62@",
+      "personName": "Gioan Trần Đức Nam",
+      "title": "Sinh nhật: Gioan Trần Đức Nam"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1998,
+      "date": "16/11/1998",
+      "personId": "@I216@",
+      "personName": "Giuse Trần Đình Hoàng",
+      "title": "Sinh nhật: Giuse Trần Đình Hoàng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1998,
+      "date": "1998",
+      "personId": "@I63@",
+      "personName": "Maria Trần Ngọc Thiên Duyên",
+      "title": "Sinh nhật: Maria Trần Ngọc Thiên Duyên"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1998,
+      "date": "1998",
+      "personId": "@I70@",
+      "personName": "Nguyễn Văn Tân",
+      "title": "Sinh nhật: Nguyễn Văn Tân"
+    },
+    {
+      "type": "BIRTH",
+      "year": 1998,
+      "date": "24/11/1998",
+      "personId": "@I223@",
+      "personName": "Maria Nguyễn Thị Hồng",
+      "title": "Sinh nhật: Maria Nguyễn Thị Hồng"
+    },
+    {
+      "type": "DEATH",
+      "year": 2000,
+      "date": "03/09/2000",
+      "personId": "@I213@",
+      "personName": "Phaolo Trần Đình Hữu",
+      "title": "Qua đời: Phaolo Trần Đình Hữu"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2000,
+      "date": "05/11/2000",
+      "personId": "@I212@",
+      "personName": "Teresa Trần Thị Hằng",
+      "title": "Sinh nhật: Teresa Trần Thị Hằng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2001,
+      "date": "26/02/2001",
+      "personId": "@I184@",
+      "personName": "Maria Lăng Nguyễn Ánh Tuyên",
+      "title": "Sinh nhật: Maria Lăng Nguyễn Ánh Tuyên"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2002,
+      "date": "11/11/2002",
+      "personId": "@I211@",
+      "personName": "Maria Nguyễn Minh Thư",
+      "title": "Sinh nhật: Maria Nguyễn Minh Thư"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2002,
+      "date": "2002",
+      "personId": "@I76@",
+      "personName": "Gioan Trần Nguyễn Xuân Phát",
+      "title": "Sinh nhật: Gioan Trần Nguyễn Xuân Phát"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2002,
+      "date": "2002",
+      "personId": "@I100@",
+      "personName": "Vũ Thị Huệ",
+      "title": "Sinh nhật: Vũ Thị Huệ"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2002,
+      "date": "21/07/2002",
+      "personId": "@I193@",
+      "personName": "Phê rô Vũ Hùng Phong",
+      "title": "Sinh nhật: Phê rô Vũ Hùng Phong"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2003,
+      "date": "25/03/2003",
+      "personId": "@I120@",
+      "personName": "Giuse Trần Minh Đăng",
+      "title": "Sinh nhật: Giuse Trần Minh Đăng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2004,
+      "date": "28/04/2004",
+      "personId": "@I131@",
+      "personName": "Vinh Sơn Trần Nhật Quang",
+      "title": "Sinh nhật: Vinh Sơn Trần Nhật Quang"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2005,
+      "date": "29/08/2005",
+      "personId": "@I123@",
+      "personName": "Maria Trần Minh Anh",
+      "title": "Sinh nhật: Maria Trần Minh Anh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2006,
+      "date": "10/07/2006",
+      "personId": "@I132@",
+      "personName": "Teresa Trần Nhật Quỳnh",
+      "title": "Sinh nhật: Teresa Trần Nhật Quỳnh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2006,
+      "date": "21/09/2006",
+      "personId": "@I128@",
+      "personName": "Maria Chiara Trần Lê Gia Linh",
+      "title": "Sinh nhật: Maria Chiara Trần Lê Gia Linh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2007,
+      "date": "20/02/2007",
+      "personId": "@I199@",
+      "personName": "Giuse Văn Trọng Mạnh",
+      "title": "Sinh nhật: Giuse Văn Trọng Mạnh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2007,
+      "date": "2007",
+      "personId": "@I75@",
+      "personName": "Maria Trần Nguyễn Hồng Ân",
+      "title": "Sinh nhật: Maria Trần Nguyễn Hồng Ân"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2007,
+      "date": "2007",
+      "personId": "@I103@",
+      "personName": "Lê Trần Tiến Đạt",
+      "title": "Sinh nhật: Lê Trần Tiến Đạt"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2008,
+      "date": "09/02/2008",
+      "personId": "@I118@",
+      "personName": "Teresa Trần Nguyễn Linh Giang",
+      "title": "Sinh nhật: Teresa Trần Nguyễn Linh Giang"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2008,
+      "date": "2008",
+      "personId": "@I78@",
+      "personName": "An Tôn Trần Nguyễn Xuân Lộc",
+      "title": "Sinh nhật: An Tôn Trần Nguyễn Xuân Lộc"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2008,
+      "date": "29/01/2008",
+      "personId": "@I129@",
+      "personName": "An-tôn Trần Lê Gia Bảo",
+      "title": "Sinh nhật: An-tôn Trần Lê Gia Bảo"
+    },
+    {
+      "type": "DEATH",
+      "year": 2009,
+      "date": "02/05/2009",
+      "personId": "@I7@",
+      "personName": "Catarina Trần Thị Vị",
+      "title": "Qua đời: Catarina Trần Thị Vị"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2009,
+      "date": "12/12/2009",
+      "personId": "@I176@",
+      "personName": "Maria Trần Huyền Trân",
+      "title": "Sinh nhật: Maria Trần Huyền Trân"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2009,
+      "date": "18/02/2009",
+      "personId": "@I217@",
+      "personName": "Giuse Phạm Thanh Sơn",
+      "title": "Sinh nhật: Giuse Phạm Thanh Sơn"
+    },
+    {
+      "type": "DEATH",
+      "year": 2009,
+      "date": "2009",
+      "personId": "@I175@",
+      "personName": "Giuse Lăng Văn Trường",
+      "title": "Qua đời: Giuse Lăng Văn Trường"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2009,
+      "date": "21/08/2009",
+      "personId": "@I201@",
+      "personName": "Terresa Văn Nguyễn Hà My",
+      "title": "Sinh nhật: Terresa Văn Nguyễn Hà My"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2009,
+      "date": "25/03/2009",
+      "personId": "@I178@",
+      "personName": "Anton Nguyễn Trung Hiếu",
+      "title": "Sinh nhật: Anton Nguyễn Trung Hiếu"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2010,
+      "date": "2010",
+      "personId": "@I84@",
+      "personName": "Nguyễn Tuấn Anh",
+      "title": "Sinh nhật: Nguyễn Tuấn Anh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2010,
+      "date": "2010",
+      "personId": "@I91@",
+      "personName": "Trần Khánh Linh",
+      "title": "Sinh nhật: Trần Khánh Linh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2010,
+      "date": "2010",
+      "personId": "@I106@",
+      "personName": "Đinh Quang Dũng",
+      "title": "Sinh nhật: Đinh Quang Dũng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2011,
+      "date": "01/09/2011",
+      "personId": "@I119@",
+      "personName": "Maria Trần Nguyễn Linh Lam",
+      "title": "Sinh nhật: Maria Trần Nguyễn Linh Lam"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2011,
+      "date": "13/09/2011",
+      "personId": "@I177@",
+      "personName": "Anton Trần Quốc Việt",
+      "title": "Sinh nhật: Anton Trần Quốc Việt"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2011,
+      "date": "2011",
+      "personId": "@I104@",
+      "personName": "Lê Trần Tiến Huy",
+      "title": "Sinh nhật: Lê Trần Tiến Huy"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2012,
+      "date": "13/11/2012",
+      "personId": "@I189@",
+      "personName": "Cecilia Nguyễn Bùi Nhật Linh",
+      "title": "Sinh nhật: Cecilia Nguyễn Bùi Nhật Linh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2012,
+      "date": "24/06/2012",
+      "personId": "@I209@",
+      "personName": "Teresa Lương Nguyễn Hoàng Nhi",
+      "title": "Sinh nhật: Teresa Lương Nguyễn Hoàng Nhi"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2013,
+      "date": "01/03/2013",
+      "personId": "@I218@",
+      "personName": "Teresa Phạm Thanh Vân",
+      "title": "Sinh nhật: Teresa Phạm Thanh Vân"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2013,
+      "date": "03/10/2013",
+      "personId": "@I96@",
+      "personName": "Hà Băng Di",
+      "title": "Sinh nhật: Hà Băng Di"
+    },
+    {
+      "type": "DEATH",
+      "year": 2013,
+      "date": "17/09/2013",
+      "personId": "@I147@",
+      "personName": "Gioan Baotixita Trần Tiến Tùng",
+      "title": "Qua đời: Gioan Baotixita Trần Tiến Tùng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2013,
+      "date": "19/05/2013",
+      "personId": "@I215@",
+      "personName": "Gioan Baotixita Trần Dương Anh Khôi",
+      "title": "Sinh nhật: Gioan Baotixita Trần Dương Anh Khôi"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2014,
+      "date": "04/07/2014",
+      "personId": "@I179@",
+      "personName": "Lucia Nguyễn Ngọc Khánh Băng",
+      "title": "Sinh nhật: Lucia Nguyễn Ngọc Khánh Băng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2014,
+      "date": "2014",
+      "personId": "@I107@",
+      "personName": "Đinh Quang Đức",
+      "title": "Sinh nhật: Đinh Quang Đức"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2014,
+      "date": "2014",
+      "personId": "@I111@",
+      "personName": "Điền Lê Đức Anh",
+      "title": "Sinh nhật: Điền Lê Đức Anh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2014,
+      "date": "28/02/2014",
+      "personId": "@I181@",
+      "personName": "Giuse Nguyễn Đào Minh Quân",
+      "title": "Sinh nhật: Giuse Nguyễn Đào Minh Quân"
+    },
+    {
+      "type": "DEATH",
+      "year": 2015,
+      "date": "16/03/2015",
+      "personId": "@I197@",
+      "personName": "Gioan Vũ Văn Hùng",
+      "title": "Qua đời: Gioan Vũ Văn Hùng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2015,
+      "date": "2015",
+      "personId": "@I86@",
+      "personName": "Nguyễn Tuấn Đạt",
+      "title": "Sinh nhật: Nguyễn Tuấn Đạt"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2015,
+      "date": "2015",
+      "personId": "@I94@",
+      "personName": "Nguyễn Đăng Quang Anh",
+      "title": "Sinh nhật: Nguyễn Đăng Quang Anh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2015,
+      "date": "2015",
+      "personId": "@I159@",
+      "personName": "Phero Trần Minh Trí",
+      "title": "Sinh nhật: Phero Trần Minh Trí"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2016,
+      "date": "09/08/2016",
+      "personId": "@I98@",
+      "personName": "Hà Khánh Chi",
+      "title": "Sinh nhật: Hà Khánh Chi"
+    },
+    {
+      "type": "DEATH",
+      "year": 2016,
+      "date": "19/08/2016",
+      "personId": "@I143@",
+      "personName": "Micae Nguyễn Văn Thìn",
+      "title": "Qua đời: Micae Nguyễn Văn Thìn"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2016,
+      "date": "25/03/2016",
+      "personId": "@I202@",
+      "personName": "Maria Văn Nguyễn Hà Phương",
+      "title": "Sinh nhật: Maria Văn Nguyễn Hà Phương"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2016,
+      "date": "29/06/2016",
+      "personId": "@I190@",
+      "personName": "Cecilia Nguyễn Bùi Trà My",
+      "title": "Sinh nhật: Cecilia Nguyễn Bùi Trà My"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2016,
+      "date": "29/08/2016",
+      "personId": "@I168@",
+      "personName": "Tito Nguyễn Trần Thiên Khoa",
+      "title": "Sinh nhật: Tito Nguyễn Trần Thiên Khoa"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2017,
+      "date": "09/11/2017",
+      "personId": "@I195@",
+      "personName": "Gioan Dương Minh Nhật",
+      "title": "Sinh nhật: Gioan Dương Minh Nhật"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2017,
+      "date": "2017",
+      "personId": "@I110@",
+      "personName": "Điền Lê Tuệ Linh",
+      "title": "Sinh nhật: Điền Lê Tuệ Linh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2017,
+      "date": "24/11/2017",
+      "personId": "@I167@",
+      "personName": "Gioan Phạm Minh Hoàng",
+      "title": "Sinh nhật: Gioan Phạm Minh Hoàng"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2018,
+      "date": "2018",
+      "personId": "@I153@",
+      "personName": "Gioan Baotixita Hứa Trần Bảo Nguyên",
+      "title": "Sinh nhật: Gioan Baotixita Hứa Trần Bảo Nguyên"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2019,
+      "date": "08/11/2019",
+      "personId": "@I164@",
+      "personName": "Maria Phạm Uyên Phương",
+      "title": "Sinh nhật: Maria Phạm Uyên Phương"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2019,
+      "date": "2019",
+      "personId": "@I88@",
+      "personName": "Đàm Anh Khai",
+      "title": "Sinh nhật: Đàm Anh Khai"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2019,
+      "date": "25/04/2019",
+      "personId": "@I169@",
+      "personName": "Catarina Nguyễn Trần Nhã Uyên",
+      "title": "Sinh nhật: Catarina Nguyễn Trần Nhã Uyên"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2019,
+      "date": "27/02/2019",
+      "personId": "@I192@",
+      "personName": "Giuse Nguyễn Quang Hải",
+      "title": "Sinh nhật: Giuse Nguyễn Quang Hải"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2020,
+      "date": "04/12/2020",
+      "personId": "@I162@",
+      "personName": "Giuse Trần Minh Hiếu",
+      "title": "Sinh nhật: Giuse Trần Minh Hiếu"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2020,
+      "date": "06/08/2020",
+      "personId": "@I182@",
+      "personName": "Terexa Nguyễn Đào Ngọc Nhi",
+      "title": "Sinh nhật: Terexa Nguyễn Đào Ngọc Nhi"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2020,
+      "date": "14/01/2020",
+      "personId": "@I198@",
+      "personName": "Giuse Dương Chí Thiện",
+      "title": "Sinh nhật: Giuse Dương Chí Thiện"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2020,
+      "date": "2020",
+      "personId": "@I81@",
+      "personName": "Trần Đình Minh Quang",
+      "title": "Sinh nhật: Trần Đình Minh Quang"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2020,
+      "date": "2020",
+      "personId": "@I95@",
+      "personName": "Nguyễn Đăng Bảo",
+      "title": "Sinh nhật: Nguyễn Đăng Bảo"
+    },
+    {
+      "type": "DEATH",
+      "year": 2021,
+      "date": "16/09/2021",
+      "personId": "@I59@",
+      "personName": "Bà Sa - Teresa Phạm Thị Hưng",
+      "title": "Qua đời: Bà Sa - Teresa Phạm Thị Hưng"
+    },
+    {
+      "type": "DEATH",
+      "year": 2021,
+      "date": "2021",
+      "personId": "@I23@",
+      "personName": "Maria Lê Thị Phùng",
+      "title": "Qua đời: Maria Lê Thị Phùng"
+    },
+    {
+      "type": "DEATH",
+      "year": 2021,
+      "date": "2021",
+      "personId": "@I72@",
+      "personName": "Nguyễn Văn Ngọc",
+      "title": "Qua đời: Nguyễn Văn Ngọc"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2021,
+      "date": "2021",
+      "personId": "@I112@",
+      "personName": "Điền Lê Hiếu Minh",
+      "title": "Sinh nhật: Điền Lê Hiếu Minh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2022,
+      "date": "03/01/2022",
+      "personId": "@I99@",
+      "personName": "Hà Thị Ngọc Diệp",
+      "title": "Sinh nhật: Hà Thị Ngọc Diệp"
+    },
+    {
+      "type": "DEATH",
+      "year": 2022,
+      "date": "20/04/2022",
+      "personId": "@I41@",
+      "personName": "Maria Trương Thị Tần",
+      "title": "Qua đời: Maria Trương Thị Tần"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2022,
+      "date": "2022",
+      "personId": "@I82@",
+      "personName": "Trần Thư Phương",
+      "title": "Sinh nhật: Trần Thư Phương"
+    },
+    {
+      "type": "DEATH",
+      "year": 2022,
+      "date": "27/01/2022",
+      "personId": "@I12@",
+      "personName": "Gioan Lã Văn Mão",
+      "title": "Qua đời: Gioan Lã Văn Mão"
+    },
+    {
+      "type": "DEATH",
+      "year": 2023,
+      "date": "10/12/2023",
+      "personId": "@I46@",
+      "personName": "Giacôbê Trần Trung Kiêm",
+      "title": "Qua đời: Giacôbê Trần Trung Kiêm"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2023,
+      "date": "15/07/2023",
+      "personId": "@I183@",
+      "personName": "Simon Nguyễn Nam Khôi",
+      "title": "Sinh nhật: Simon Nguyễn Nam Khôi"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2023,
+      "date": "20/05/2023",
+      "personId": "@I205@",
+      "personName": "Giuse Bùi Gia Thiện",
+      "title": "Sinh nhật: Giuse Bùi Gia Thiện"
+    },
+    {
+      "type": "DEATH",
+      "year": 2023,
+      "date": "31/01/2023",
+      "personId": "@I114@",
+      "personName": "Lucia Nguyễn Thị Mai",
+      "title": "Qua đời: Lucia Nguyễn Thị Mai"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2024,
+      "date": "06/01/2024",
+      "personId": "@I204@",
+      "personName": "Anna Nguyễn Thanh Vân",
+      "title": "Sinh nhật: Anna Nguyễn Thanh Vân"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2024,
+      "date": "13/03/2024",
+      "personId": "@I194@",
+      "personName": "Nguyễn Phạm Bình Minh",
+      "title": "Sinh nhật: Nguyễn Phạm Bình Minh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2024,
+      "date": "14/11/2024",
+      "personId": "@I219@",
+      "personName": "Maria Trần Khánh Lam",
+      "title": "Sinh nhật: Maria Trần Khánh Lam"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2024,
+      "date": "18/04/2024",
+      "personId": "@I208@",
+      "personName": "Lucia Nguyễn Ngọc Khánh Vân",
+      "title": "Sinh nhật: Lucia Nguyễn Ngọc Khánh Vân"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2024,
+      "date": "18/09/2024",
+      "personId": "@I188@",
+      "personName": "Nicola Nguyễn Hải Đông",
+      "title": "Sinh nhật: Nicola Nguyễn Hải Đông"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2025,
+      "date": "30/07/2025",
+      "personId": "@I161@",
+      "personName": "Anna Trần Phương Anh",
+      "title": "Sinh nhật: Anna Trần Phương Anh"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2026,
+      "date": "08/04/2026",
+      "personId": "@I166@",
+      "personName": "Gioan Trần Minh Quang",
+      "title": "Sinh nhật: Gioan Trần Minh Quang"
+    },
+    {
+      "type": "BIRTH",
+      "year": 2026,
+      "date": "13/06/2026",
+      "personId": "@I170@",
+      "personName": "Maria Trần An Nhã (Clara)",
+      "title": "Sinh nhật: Maria Trần An Nhã (Clara)"
+    }
+  ],
+  "memories": [
+    {
+      "id": "G5X7-BT8",
+      "personId": "@I59@",
+      "personName": "Bà Sa - Teresa Phạm Thị Hưng",
+      "title": "📖 CÂU CHUYỆN VỀ BÀ SA",
+      "story": "Bà sinh ra ở Kim Sơn, Ninh Bình, gặp và lấy ông Trần Trọng Thư ở Cẩm Phong, Cẩm Thuỷ, Thanh Hoá, sinh được 10 người con, vào Sài Gòn lập nghiệp bằng công việc bán hàng rong những năm 1987-1990.\n\nBà được nhớ ơn bởi nhà bà gần như được coi là nơi cưu mang của họ hàng, đồng hương vào Sài Gòn để kiếm kế mưu sinh; là nơi giúp quy tụ, gắn kết các mối liên hệ trong dòng họ.\n\nBà mất năm 2021, khi dịch Covid đến hồi gần kết thúc, khi các biện pháp quản lý mùa dịch của nhà nước được nới lỏng hơn. Đám tang của bà được con cháu tổ chức chu đáo hơn so với những nạn nhân Covid năm đó."
+    },
+    {
+      "id": "G5X4-ZNG",
+      "personId": "@I18@",
+      "personName": "An-tôn Trần Trọng Thư",
+      "title": "📖 KÝ ỨC VỀ ÔNG AN-TÔN TRẦN TRỌNG THƯ",
+      "story": "Ông được biết đến như một người đạo đức, hiền lành, chất phác. Là người giúp việc cho giáo xứ Phong Ý từ đời trước của cha Quỳnh, đến cha Quỳnh, và truyền lại việc này cho con trai cả của ông là Trần Đức Hạnh tiếp tục công việc trong giáo xứ, sau đó đến cha Vinh, rồi đến cha Nhân. (Các linh mục quản xứ có lẽ sẽ được thể hiện tại kho lưu trữ tại giáo xứ Phong Ý. Sau cha Quỳnh thì ông Hạnh không làm việc này nữa).\n\nÔng gặp bà Hưng cũng nhờ sự tác hợp của các đấng bậc bề trên của cả 2 họ. Ông Thư được cha chánh xứ tiền nhiệm của cha Quỳnh nhận vào làm việc trong giáo xứ khi gia đình ông cố Thu ly tán sau sự kiện ông cố Thu bỏ nhà đi. Bà Sa - tên của tổ tiên bà đặt cho (tên trong giấy khai sinh hiện tại là bà Hưng. Trước đó tên là Hương, do vào nhà dòng, không có giấy tờ nên đi đâu cũng mượn giấy tờ người có tên Phạm Thị Hương, sau này, ông Thư làm giấy khai sinh thì trong giấy tờ, bà tên Phạm Thị Hưng).\n\nCâu chuyện được nhắc nhiều về ông là giai thoại chiếc mâm bằng đồng.\nChuyện kể rằng, nhà ông có chiếc mâm bằng đồng rất quý, một ngày nọ, nó bỗng dưng biến mất, ông trấn an mọi người trong nhà và nói rằng, rồi chiếc mâm đó sẽ được trả lại. Ông dặn dò con cháu siêng năng cầu nguyện. Và sau đó, chiếc mâm đồng đã được trả về thật. Câu chuyện được kết luận rằng, nhờ sự cầu nguyện mà ông đã cảm hóa được người ăn trộm quay về đường ngay nẻo chính.\n\nÔng là người giữ khuôn phép truyền thống, ưu ái cháu đích tôn - anh Trần Quốc Tuấn.\nChuyện kể rằng, ngày đó, làm cả 1 con bò, ông để giành được 1 cái lưỡi bò đem cho cháu đích tôn.\nLại có chuyện khác, ông leo lên cây trứng gà (lekima) để hái quả duy nhất của cây, cho cháu đích tôn bị té gãy chân.\n\nSự kiện con trai ông Hạnh ra đời, cả dòng họ đốt đèn ăn mừng rất lớn. (những người đương thời như Bác Phúc, Bác Đức chắc sẽ biết câu chuyện này). Bà Đào cũng có cảm giác rất đỗi tự hào vì sinh được con trai nối dõi.\n\n(Tuấn ghi lại theo lời kể của ông Hạnh - bà Đào ngày 08/04/2024)"
+    }
+  ]
+}
