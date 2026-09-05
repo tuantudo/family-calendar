@@ -8,12 +8,12 @@ X-WR-TIMEZONE:Asia/Ho_Chi_Minh
 BEGIN:VEVENT
 UID:automation-test-isolated-001@giadinhongthu.vn
 DTSTAMP:20260905T000000Z
-SUMMARY:🧪 AUTOMATION TEST — Event Create Test
+SUMMARY:🧪 AUTOMATION TEST — Event Update Test (SUCCESS)
 DTSTART;VALUE=DATE:20260905
 DTEND;VALUE=DATE:20260906
 RRULE:FREQ=YEARLY
 TRANSP:TRANSPARENT
-DESCRIPTION:🧪 Đây là sự kiện test tự động CREATE / UPDATE / DELETE của pipeline GAS-ICS-Sync.
+DESCRIPTION:🧪 Đây là sự kiện test tự động UPDATE thành công của pipeline GAS-ICS-Sync!
 END:VEVENT
 BEGIN:VEVENT
 UID:birthday-G5XN-NWJ@giadinhongthu.vn
