@@ -55,68 +55,133 @@
     <!-- MAIN VIEWPORT -->
     <main>
 
-        <!-- 1. HOME / PUBLICATION LANDING VIEW (DYNAMIC DATA-DRIVEN) -->
+        <!-- 1. HOME / PUBLICATION LANDING VIEW (COMMUNICATION REFOUNDED) -->
         <section id="view_home" class="view-section active">
             
-            <!-- SECTION 1: EDITORIAL MASTHEAD & SUBJECT HERO -->
-            <div class="home-pub-hero">
-                <div class="home-pub-kicker">Gia phả dòng họ</div>
-                <h1 class="home-pub-title" id="heroPublicationTitle">Trích lục Gia phả chính thức</h1>
-                <p class="home-pub-anchor" id="homeHeroAnchor"></p>
-                <div class="home-pub-actions">
-                    <a class="pub-btn pub-btn-primary" href="#/gia-pha" onclick="navigateRoute('/gia-pha')">Khám phá Cây Phả Đồ →</a>
-                    <a class="pub-btn pub-btn-outline" id="homeHeroPeopleBtn" href="#/gia-pha/nhan-vat" onclick="navigateRoute('/gia-pha/nhan-vat')">Tra cứu Thành viên</a>
+            <!-- SECTION 1: PUBLICATION IDENTITY & PURPOSE -->
+            <div class="pub-comm-masthead">
+                <div class="pub-comm-kicker">Ấn phẩm Di sản & Ký ức Gia đình</div>
+                <h1 class="pub-comm-title" id="heroPublicationTitle">Giòng Họ Trần Trọng Thu</h1>
+                <p class="pub-comm-lede" id="homeHeroAnchor"></p>
+                <div class="pub-comm-prompt">
+                    <span class="prompt-text">Khám phá ấn phẩm theo 3 không gian nội dung chính:</span>
                 </div>
             </div>
 
-            <!-- SECTION 2: HUMAN MEMORY & LIVING VOICES (DYNAMIC) -->
-            <div class="home-human-spotlight" id="homeHumanSpotlight">
-                <div class="spotlight-header">
-                    <span class="spotlight-label">Ký ức & Giai thoại</span>
-                    <span class="spotlight-rule"></span>
+            <!-- SECTION 2: THREE CORE TERRITORIES EXPLAINED -->
+            <div class="pub-comm-territories">
+                <div class="comm-territory-card card-genealogy" onclick="navigateRoute('/gia-pha')">
+                    <div class="card-badge">CẤU TRÚC & HUYẾT THỐNG</div>
+                    <div class="card-head">
+                        <span class="card-icon">🌳</span>
+                        <h2 class="card-title">Gia Phả</h2>
+                    </div>
+                    <p class="card-desc">
+                        Không gian ghi nhận con người, gia đình, thế hệ và các mối quan hệ huyết thống. Tra cứu danh bạ thành viên và khám phá cây phả hệ tương tác đa tầng.
+                    </p>
+                    <div class="card-meta" id="homeGenealogyMeta"></div>
+                    <div class="card-link">Vào xem Cây Phả Đồ & Danh Bạ →</div>
                 </div>
-                <div class="spotlight-content" id="homeSpotlightContent"></div>
+
+                <div class="comm-territory-card card-mach" onclick="navigateRoute('/mach')">
+                    <div class="card-badge">TỰ SỰ & KÝ ỨC</div>
+                    <div class="card-head">
+                        <span class="card-icon">🧵</span>
+                        <h2 class="card-title">Mạch</h2>
+                    </div>
+                    <p class="card-desc">
+                        Tập san lưu giữ những câu chuyện đời, nếp nhà, những bức thư gửi thế hệ mai sau và những suy ngẫm về nguồn cội qua tiếng nói của người trong gia đình.
+                    </p>
+                    <div class="card-meta" id="homeMachMeta"></div>
+                    <div class="card-link">Đọc Tập San Mạch →</div>
+                </div>
+
+                <div class="comm-territory-card card-archive" onclick="navigateRoute('/tu-lieu')">
+                    <div class="card-badge">VẬT CHỨNG & HỒ SƠ</div>
+                    <div class="card-head">
+                        <span class="card-icon">📜</span>
+                        <h2 class="card-title">Tư Liệu</h2>
+                    </div>
+                    <p class="card-desc">
+                        Kho lưu trữ bảo tồn các văn bản hộ tịch, sổ gia bạ, ảnh cổ, thư từ và di vật của tiền nhân đang được sưu tầm và số hóa từng bước.
+                    </p>
+                    <div class="card-meta" id="homeArchiveMeta"></div>
+                    <div class="card-link">Xem Kho Lưu Trữ Tư Liệu →</div>
+                </div>
             </div>
 
-            <!-- SECTION 3: EDITORIAL ESSAY FROM MẠCH (DYNAMIC) -->
-            <div class="home-editorial-feature" id="homeEditorialFeature">
-                <div class="spotlight-header">
-                    <span class="spotlight-label">Từ Tập San MẠCH</span>
-                    <span class="spotlight-rule"></span>
+            <!-- SECTION 3: LIVING SUBSTANCE (CON NGƯỜI & TIẾNG NÓI THỰC TẾ) -->
+            <div class="pub-comm-substance-grid">
+                
+                <!-- SUB-BLOCK A: HUMAN MEMORY SPOTLIGHT -->
+                <div class="comm-substance-box box-memory" id="homeHumanSpotlight">
+                    <div class="box-tag">KÝ ỨC THỰC TẾ</div>
+                    <div id="homeSpotlightContent"></div>
                 </div>
-                <div class="home-feature-card" id="homeFeatureCard"></div>
+
+                <!-- SUB-BLOCK B: FEATURED EDITORIAL ESSAY -->
+                <div class="comm-substance-box box-essay" id="homeEditorialFeature">
+                    <div class="box-tag">TRÍCH ĐOẠN TỰ SỰ</div>
+                    <div id="homeFeatureCard"></div>
+                </div>
+
             </div>
 
-            <!-- SECTION 4: THREE ARCHIVAL TERRITORIES (PUBLICATION PILLARS DYNAMIC) -->
-            <div class="home-territory-pillars">
-                <div class="spotlight-header">
-                    <span class="spotlight-label">Không gian Khám phá Di sản</span>
-                    <span class="spotlight-rule"></span>
+            <!-- SECTION 4: HOW TO EXPLORE (INTENT-BASED DISCOVERY) -->
+            <div class="pub-comm-explore">
+                <div class="explore-header">
+                    <h3 class="explore-title">Lối vào Khám phá Nhanh</h3>
+                    <p class="explore-sub">Bắt đầu tra cứu và tìm hiểu theo đúng nhu cầu của bạn:</p>
                 </div>
-                <div class="home-pillar-grid" id="homePillarGrid"></div>
+                <div class="explore-grid">
+                    <a class="explore-item" href="#/gia-pha/nhan-vat" onclick="navigateRoute('/gia-pha/nhan-vat')">
+                        <span class="explore-icon">👥</span>
+                        <div>
+                            <div class="explore-name">Tìm một người trong họ</div>
+                            <div class="explore-info" id="explorePeopleCount">Tra cứu hồ sơ thành viên qua 5 thế hệ</div>
+                        </div>
+                    </a>
+                    <a class="explore-item" href="#/gia-pha" onclick="navigateRoute('/gia-pha')">
+                        <span class="explore-icon">🕸️</span>
+                        <div>
+                            <div class="explore-name">Xem cây phả hệ tương tác</div>
+                            <div class="explore-info">Bản đồ đồ thị huyết thống trực hệ & mở rộng</div>
+                        </div>
+                    </a>
+                    <a class="explore-item" href="#/lich" onclick="navigateRoute('/lich')">
+                        <span class="explore-icon">📅</span>
+                        <div>
+                            <div class="explore-name">Lịch ngày giỗ & sự kiện</div>
+                            <div class="explore-info">Lịch gia đình đồng bộ Âm lịch & Dương lịch</div>
+                        </div>
+                    </a>
+                    <a class="explore-item" href="#/gia-pha/ky-uc" onclick="navigateRoute('/gia-pha/ky-uc')">
+                        <span class="explore-icon">📖</span>
+                        <div>
+                            <div class="explore-name">Đọc ký ức & giai thoại</div>
+                            <div class="explore-info">Những câu chuyện truyền khẩu được ghi chép lại</div>
+                        </div>
+                    </a>
+                </div>
             </div>
 
-            <!-- SECTION 5: SUBSTANCE & CAPABILITIES (SUBTLE DATA-DRIVEN FOOTPRINT) -->
-            <div class="home-substance-strip">
-                <div class="substance-facts" id="homeSubstanceFacts"></div>
-                <div class="substance-tools">
-                    <a class="tool-link" href="#/lich" onclick="navigateRoute('/lich')">📅 Lịch Gia Đình (Âm & Dương lịch)</a>
-                    <a class="tool-link" href="#/tim-kiem" onclick="navigateRoute('/tim-kiem')">🔍 Tra cứu toàn cục</a>
+            <!-- SECTION 5: METHODOLOGY, TRUST & SCOPE -->
+            <div class="pub-comm-footer-context">
+                <div class="context-method">
+                    <div class="method-badge">NGUYÊN TẮC BẢO TỒN</div>
+                    <h4 class="method-heading">“Giữ lại trước khi diễn giải”</h4>
+                    <p class="method-text">
+                        Ấn phẩm được biên soạn với tôn chỉ ghi nhận trung thực những gì thực sự còn lại từ lời kể, giấy tờ và chứng từ gốc. 
+                        Mọi dữ liệu phả hệ đều được phân tầng xác tín độc lập, không thêm thắt hư cấu.
+                    </p>
+                    <div class="method-actions">
+                        <a class="comm-link" href="#/ve-dong-ho" onclick="navigateRoute('/ve-dong-ho')">Tìm hiểu về Dòng họ →</a>
+                        <span class="comm-sep">·</span>
+                        <a class="comm-link" href="#/ve-du-an" onclick="navigateRoute('/ve-du-an')">Phương pháp & Tôn chỉ biên soạn →</a>
+                    </div>
                 </div>
-            </div>
-
-            <!-- SECTION 6: METHOD & STEWARDSHIP STATEMENT -->
-            <div class="home-method-strip">
-                <div class="method-motto">“Giữ lại trước khi diễn giải”</div>
-                <p class="method-desc">
-                    Trước khi kể cho người khác dòng họ mình là gì, hãy ghi nhận trung thực và đầy đủ những gì thực sự còn lại. 
-                    Mọi dữ liệu đều được định vị theo 7 tầng xác tín độc lập.
-                </p>
-                <div class="method-links">
-                    <a class="inline-link" href="#/ve-dong-ho" onclick="navigateRoute('/ve-dong-ho')">Về Dòng Họ</a>
-                    <span class="method-sep">·</span>
-                    <a class="inline-link" href="#/ve-du-an" onclick="navigateRoute('/ve-du-an')">Về Dự Án & Phương Pháp</a>
-                </div>
+                
+                <div class="context-facts" id="homeSubstanceFacts"></div>
             </div>
 
         </section>

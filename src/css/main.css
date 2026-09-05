@@ -3317,414 +3317,410 @@ footer { background: var(--surface); border-top: 1px solid var(--border); text-a
 }
 
 /* ==========================================================================
-   RECOMPOSED HOMEPAGE EDITORIAL & ARCHIVAL STYLES (FAMILY FRONT DOOR)
+   HOMEPAGE COMMUNICATION REFOUNDATION STYLES (FAMILY PUBLICATION FRONT DOOR)
    ========================================================================== */
 
-/* 1. EDITORIAL MASTHEAD & HERO */
-.home-pub-hero {
-    padding: 48px 24px 40px;
+/* 1. MASTHEAD & IDENTITY */
+.pub-comm-masthead {
     text-align: center;
     max-width: 860px;
-    margin: 0 auto 36px;
+    margin: 0 auto 40px;
+    padding: 40px 16px 32px;
     border-bottom: 1px solid var(--border-subtle);
 }
 
-.home-pub-kicker {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-}
-
-.home-pub-title {
-    font-family: var(--font-serif-display, var(--font-serif));
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-dark);
-    line-height: 1.25;
-    margin: 0 0 18px;
-    letter-spacing: -0.01em;
-}
-
-.home-pub-anchor {
-    font-family: var(--font-serif);
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: var(--text-main);
-    max-width: 680px;
-    margin: 0 auto 28px;
-}
-
-.home-pub-anchor strong {
-    color: var(--lacquer-red);
-    font-weight: 600;
-}
-
-.home-pub-actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-.pub-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 22px;
-    font-size: 13.5px;
-    font-weight: 600;
-    border-radius: var(--radius-pill);
-    text-decoration: none;
-    transition: all var(--transition-fast);
-}
-
-.pub-btn-primary {
-    background: var(--lacquer-red);
-    color: #FFFFFF;
-    box-shadow: var(--shadow-xs);
-}
-.pub-btn-primary:hover {
-    background: var(--lacquer-red-hover);
-    color: #FFFFFF;
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-sm);
-}
-
-.pub-btn-outline {
-    background: var(--surface);
-    color: var(--text-main);
-    border: 1px solid var(--border);
-}
-.pub-btn-outline:hover {
-    background: var(--bg-warm);
-    border-color: var(--border-hover);
-    color: var(--lacquer-red);
-}
-
-/* SECTION HEADER / EDITORIAL RULE */
-.spotlight-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 24px;
-}
-
-.spotlight-label {
+.pub-comm-kicker {
     font-size: 11.5px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+    margin-bottom: 14px;
+}
+
+.pub-comm-title {
+    font-family: var(--font-serif-display, var(--font-serif));
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    line-height: 1.2;
+    margin: 0 0 18px;
+    letter-spacing: -0.02em;
+}
+
+.pub-comm-lede {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    line-height: 1.85;
+    color: var(--text-main);
+    max-width: 740px;
+    margin: 0 auto 24px;
+}
+
+.pub-comm-lede strong {
+    color: var(--lacquer-red);
+    font-weight: 600;
+}
+
+.pub-comm-prompt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.prompt-text {
+    font-size: 13px;
+    font-weight: 600;
     color: var(--text-muted);
-    white-space: nowrap;
 }
 
-.spotlight-rule {
-    flex-grow: 1;
-    height: 1px;
-    background: var(--border-subtle);
+/* 2. THREE CORE TERRITORIES */
+.pub-comm-territories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: var(--container-max);
+    margin: 0 auto 48px;
 }
 
-/* 2. HUMAN SPOTLIGHT */
-.home-human-spotlight {
-    max-width: 860px;
-    margin: 0 auto 44px;
-}
-
-.spotlight-content {
+.comm-territory-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-left: 4px solid var(--accent);
-    border-radius: var(--radius-md);
-    padding: 32px 36px 28px;
+    border-radius: var(--radius-lg);
+    padding: 30px 24px 26px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    box-shadow: var(--shadow-xs);
     position: relative;
+}
+
+.comm-territory-card:hover {
+    border-color: var(--lacquer-red);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+.card-badge {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.card-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.card-icon {
+    font-size: 24px;
+}
+
+.card-title {
+    font-family: var(--font-serif-display, var(--font-serif));
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin: 0;
+}
+
+.card-desc {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-meta {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    padding: 10px 0;
+    border-top: 1px dashed var(--border-subtle);
+    margin-bottom: 12px;
+}
+
+.card-link {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--lacquer-red);
+}
+
+/* 3. LIVING SUBSTANCE (SPOTLIGHT & ESSAY) */
+.pub-comm-substance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: var(--container-max);
+    margin: 0 auto 48px;
+}
+
+.comm-substance-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 30px 28px;
+    display: flex;
+    flex-direction: column;
     box-shadow: var(--shadow-xs);
 }
 
-.spotlight-quote-mark {
-    font-family: var(--font-serif);
-    font-size: 4rem;
-    line-height: 0.8;
-    color: var(--accent);
-    opacity: 0.35;
-    user-select: none;
-    flex-shrink: 0;
+.box-memory {
+    border-left: 4px solid var(--accent);
 }
 
-.spotlight-body {
-    flex-grow: 1;
+.box-essay {
+    border-left: 4px solid var(--lacquer-red);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+.box-essay:hover {
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
 }
 
-.spotlight-title {
+.box-tag {
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.essay-tag {
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--lacquer-red);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.box-title {
     font-family: var(--font-serif-display, var(--font-serif));
     font-size: 1.35rem;
     font-weight: 700;
     color: var(--primary-dark);
     margin: 0 0 12px;
+    line-height: 1.35;
 }
 
-.spotlight-passage {
+.box-passage {
     font-family: var(--font-serif);
-    font-size: 15.5px;
-    line-height: 1.85;
-    color: var(--text-main);
-    margin-bottom: 16px;
-}
-
-.spotlight-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    font-size: 12.5px;
-    color: var(--text-muted);
-    border-top: 1px dashed var(--border-subtle);
-    padding-top: 14px;
-    flex-wrap: wrap;
-}
-
-.spotlight-link {
-    color: var(--lacquer-red);
-    text-decoration: none;
-    font-weight: 600;
-}
-.spotlight-link:hover {
-    text-decoration: underline;
-}
-
-/* 3. EDITORIAL FEATURE (MẠCH) */
-.home-editorial-feature {
-    max-width: 860px;
-    margin: 0 auto 44px;
-}
-
-.home-feature-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: 32px 36px;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    box-shadow: var(--shadow-xs);
-}
-
-.home-feature-card:hover {
-    border-color: var(--lacquer-red);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-}
-
-.feature-tag {
-    font-size: 11.5px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--lacquer-red);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.feature-title {
-    font-family: var(--font-serif-display, var(--font-serif));
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--primary-dark);
-    margin: 0 0 14px;
-    line-height: 1.3;
-}
-
-.feature-excerpt {
-    font-family: var(--font-serif);
-    font-size: 15px;
+    font-size: 14.5px;
     line-height: 1.8;
     color: var(--text-main);
     margin-bottom: 20px;
-}
-
-.feature-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 13px;
-    color: var(--text-muted);
-    border-top: 1px solid var(--border-subtle);
-    padding-top: 14px;
-}
-
-.feature-read-more {
-    color: var(--lacquer-red);
-    font-weight: 600;
-}
-
-/* 4. THREE ARCHIVAL TERRITORIES (PILLARS) */
-.home-territory-pillars {
-    max-width: 860px;
-    margin: 0 auto 44px;
-}
-
-.home-pillar-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-}
-
-.home-pillar-item {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: 24px 20px;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    display: flex;
-    flex-direction: column;
-}
-
-.home-pillar-item:hover {
-    border-color: var(--lacquer-red);
-    box-shadow: var(--shadow-sm);
-    transform: translateY(-2px);
-}
-
-.pillar-num {
-    font-family: var(--font-serif);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 10px;
-}
-
-.pillar-title {
-    font-family: var(--font-sans);
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--primary-dark);
-    margin: 0 0 8px;
-}
-
-.pillar-desc {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 16px;
     flex-grow: 1;
 }
 
-.pillar-action {
-    font-size: 12.5px;
-    font-weight: 700;
-    color: var(--lacquer-red);
-    margin-top: auto;
-}
-
-/* 5. SUBSTANCE & CAPABILITIES STRIP */
-.home-substance-strip {
-    max-width: 860px;
-    margin: 0 auto 36px;
-    padding: 16px 20px;
-    background: var(--bg-warm);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
+.box-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 14px;
     flex-wrap: wrap;
+    gap: 8px;
 }
 
-.substance-facts {
-    font-size: 13.5px;
-    color: var(--text-main);
+.box-link {
+    color: var(--lacquer-red);
+    font-weight: 600;
+    text-decoration: none;
+}
+.box-link:hover {
+    text-decoration: underline;
+}
+
+/* 4. HOW TO EXPLORE GRID */
+.pub-comm-explore {
+    max-width: var(--container-max);
+    margin: 0 auto 48px;
+    background: var(--bg-warm);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+}
+
+.explore-header {
+    margin-bottom: 20px;
+}
+
+.explore-title {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin: 0 0 4px;
+}
+
+.explore-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.explore-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px 18px;
     display: flex;
     align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.substance-facts strong {
-    color: var(--primary-dark);
-    font-weight: 700;
-}
-
-.fact-dot {
-    color: var(--text-muted);
-    opacity: 0.5;
-}
-
-.substance-tools {
-    display: flex;
     gap: 14px;
-    flex-wrap: wrap;
-}
-
-.tool-link {
-    font-size: 12.5px;
-    font-weight: 600;
-    color: var(--text-muted);
     text-decoration: none;
-    transition: color var(--transition-fast);
-}
-.tool-link:hover {
-    color: var(--lacquer-red);
+    transition: all var(--transition-fast);
 }
 
-/* 6. METHOD & STEWARDSHIP STRIP */
-.home-method-strip {
-    max-width: 860px;
-    margin: 0 auto 20px;
-    text-align: center;
-    padding: 24px 16px;
+.explore-item:hover {
+    border-color: var(--lacquer-red);
+    box-shadow: var(--shadow-xs);
+    transform: translateY(-1px);
+}
+
+.explore-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.explore-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 2px;
+}
+
+.explore-info {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* 5. METHODOLOGY & TRUST CONTEXT */
+.pub-comm-footer-context {
+    max-width: var(--container-max);
+    margin: 0 auto 24px;
     border-top: 1px solid var(--border-subtle);
+    padding-top: 32px;
 }
 
-.method-motto {
-    font-family: var(--font-serif-display, var(--font-serif));
-    font-size: 1.25rem;
-    font-style: italic;
-    color: var(--lacquer-red);
+.context-method {
+    max-width: 720px;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.method-badge {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
     margin-bottom: 8px;
 }
 
-.method-desc {
-    font-size: 13px;
+.method-heading {
+    font-family: var(--font-serif-display, var(--font-serif));
+    font-size: 1.45rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--lacquer-red);
+    margin: 0 0 10px;
+}
+
+.method-text {
+    font-size: 13.5px;
+    line-height: 1.75;
     color: var(--text-muted);
-    line-height: 1.6;
-    max-width: 580px;
-    margin: 0 auto 12px;
+    margin-bottom: 16px;
 }
 
-.method-links {
-    font-size: 12.5px;
+.method-actions {
+    font-size: 13px;
 }
 
-.method-sep {
-    margin: 0 8px;
+.comm-link {
+    color: var(--lacquer-red);
+    text-decoration: none;
+    font-weight: 600;
+}
+.comm-link:hover {
+    text-decoration: underline;
+}
+
+.comm-sep {
+    margin: 0 10px;
     color: var(--text-muted);
     opacity: 0.4;
 }
 
-/* RESPONSIVE BREAKPOINTS FOR RECOMPOSED HOMEPAGE */
-@media (max-width: 768px) {
-    .home-pub-hero { padding: 32px 16px 28px; }
-    .home-pub-title { font-size: 1.95rem; }
-    .home-pub-anchor { font-size: 1rem; line-height: 1.7; }
-    .spotlight-content { padding: 24px 20px; }
-    .spotlight-quote-mark { font-size: 3rem; }
-    .home-feature-card { padding: 24px 20px; }
-    .home-pillar-grid { grid-template-columns: 1fr; gap: 12px; }
-    .home-substance-strip { flex-direction: column; align-items: flex-start; gap: 12px; }
+.context-facts {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 14px 20px;
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.fact-row {
+    font-size: 13px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.fact-label {
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.fact-val strong {
+    color: var(--primary-dark);
+}
+
+.fact-sep {
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 880px) {
+    .pub-comm-territories { grid-template-columns: 1fr; gap: 14px; }
+    .pub-comm-substance-grid { grid-template-columns: 1fr; gap: 16px; }
+    .explore-grid { grid-template-columns: 1fr; }
+    .pub-comm-title { font-size: 2.15rem; }
+    .pub-comm-lede { font-size: 1.05rem; }
 }
 
 @media (max-width: 430px) {
-    .home-pub-title { font-size: 1.65rem; }
-    .home-pub-actions { flex-direction: column; width: 100%; gap: 10px; }
-    .pub-btn { width: 100%; }
-    .spotlight-content { flex-direction: column; gap: 8px; }
-    .spotlight-quote-mark { display: none; }
-    .feature-title { font-size: 1.35rem; }
+    .pub-comm-masthead { padding: 28px 12px 24px; }
+    .pub-comm-title { font-size: 1.85rem; }
+    .comm-territory-card { padding: 22px 18px; }
+    .comm-substance-box { padding: 22px 18px; }
+    .pub-comm-explore { padding: 22px 16px; }
 }
+
 
 
