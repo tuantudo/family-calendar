@@ -10,6 +10,58 @@ import re
 import json
 import shutil
 import hashlib
+from html.parser import HTMLParser
+import markdown
+from markdown.inlinepatterns import SimpleTagPattern
+from markdown.extensions import Extension
+
+# --- MARKDOWN DIALECT & PARSER EXTENSIONS ---
+DEL_RE = r"(\~\~)(.+?)(\~\~)"
+
+class MachMarkdownExtension(Extension):
+    """Custom extension for MẠCH publication engine (Strikethrough, safe inlines)"""
+    def extendMarkdown(self, md):
+        md.inlinePatterns.register(SimpleTagPattern(DEL_RE, "del"), "del", 175)
+
+class InlineASTParser(HTMLParser):
+    """Parses compiled HTML into normalized AST inline nodes"""
+    def __init__(self):
+        super().__init__()
+        self.inlines = []
+        self.tag_stack = []
+
+    def handle_starttag(self, tag, attrs):
+        attr_dict = dict(attrs)
+        self.tag_stack.append((tag, attr_dict))
+
+    def handle_endtag(self, tag):
+        if self.tag_stack and self.tag_stack[-1][0] == tag:
+            self.tag_stack.pop()
+
+    def handle_data(self, data):
+        if not data:
+            return
+        if not self.tag_stack:
+            self.inlines.append({"type": "text", "text": data})
+        else:
+            current_tag, attrs = self.tag_stack[-1]
+            type_map = {
+                "strong": "strong",
+                "b": "strong",
+                "em": "emphasis",
+                "i": "emphasis",
+                "code": "code",
+                "del": "strikethrough",
+                "a": "link",
+                "sup": "footnote_ref",
+            }
+            node = {
+                "type": type_map.get(current_tag, current_tag),
+                "text": data
+            }
+            if current_tag == "a" and "href" in attrs:
+                node["href"] = attrs["href"]
+            self.inlines.append(node)
 
 OBSIDIAN_ROOT = "/Users/tuantq/Obsidian/20_PROJECTS/Mach"
 OBSIDIAN_PROJECTS = os.path.join(OBSIDIAN_ROOT, "PROJECTS")
@@ -633,10 +685,84 @@ CLARA_REGISTRY = [
     }
 ]
 
+# Mapping of Obsidian Wikilinks to publication routes
+WIKILINK_MAP = {
+    "00 — MỤC LỤC": "01-gioi-thieu",
+    "01 — GIỚI THIỆU": "01-gioi-thieu",
+    "02 — CÂY GIA PHẢ & MẠCH": "02-cay-gia-pha-va-mach",
+    "03 — KHI SỰ GẦN GŨI KHÔNG CÒN TỰ NHIÊN": "03-khi-su-gan-gui-khong-con-tu-nhien",
+    "04 — TỪ HỆ TƯ TƯỞNG ĐẾN ĐẠO LÝ ĐỜI SỐNG": "04-tu-he-tu-tuong-den-dao-ly-doi-song",
+    "05 — NHỮNG KHẾ ƯỚC VÔ HÌNH CỦA DÒNG HỌ": "05-nhung-khe-uoc-vo-hinh-cua-dong-ho",
+    "06 — GIỖ VÀ KÝ ỨC GIA ĐÌNH": "06-gio-va-ky-uc-gia-dinh",
+    "07 — MỘ TỔ VÀ CẢM THỨC QUAY VỀ": "07-mo-to-va-cam-thuc-quay-ve",
+    "08 — ĐÁM CƯỚI NHƯ MỘT DẤU CHUYỂN THẾ HỆ": "08-dam-cuoi-nhu-mot-dau-chuyen-the-he",
+    "09 — VÌ SAO CON CHÁU CÒN QUAY VỀ NGÀY TẾT?": "09-vi-sao-con-chau-con-quay-ve-ngay-tet",
+    "10 — GIA ĐÌNH HẠT NHÂN VÀ SỰ CHUYỂN ĐỔI CỦA ĐẠI GIA ĐÌNH": "10-gia-dinh-hat-nhan-va-su-chuyen-doi",
+    "11 — NHỮNG NGƯỜI KHÔNG CÒN QUAY VỀ NỮA": "11-nhung-nguoi-khong-con-quay-ve-nua",
+    "12 — GHI CHÚ & CHÚ GIẢI": "12-ghi-chu-va-chu-giai",
+    "Thư gửi Clara - 001": "clara-001",
+    "Thư gửi Clara - 002": "clara-002",
+    "Thư gửi Clara - 003": "clara-003",
+    "Thư gửi Clara - 004": "clara-004",
+    "Thư gửi Clara - 005": "clara-005",
+    "Thư gửi Clara - 006": "clara-006",
+    "Thư gửi Clara, Rina, Tina, Tin và Tito - 007": "clara-007"
+}
+
+def resolve_wikilinks_in_text(text):
+    def _repl(m):
+        target = m.group(1).strip()
+        label = m.group(2).strip() if m.group(2) else target
+        clean_target = target.replace(".md", "").strip()
+        if clean_target in WIKILINK_MAP:
+            slug = WIKILINK_MAP[clean_target]
+            return f'<a href="#/mach/bai-viet/{slug}" class="mach-internal-link">{label}</a>'
+        elif "DNA" in clean_target or "SYSTEM" in clean_target or "AUTHORITY" in clean_target:
+            return f'<span class="mach-ref-tag">{label}</span>'
+        return f'<span class="mach-ref-text">{label}</span>'
+    return re.sub(r'\[\[([^\]\|]+)(?:\|([^\]]+))?\]\]', _repl, text)
+
+# Global Markdown Converter Instance with Extra, Footnotes, Sane Lists, and Mach Extension
+MD_CONVERTER = markdown.Markdown(extensions=["extra", "sane_lists", MachMarkdownExtension()])
+
+def parse_inline_markdown(text):
+    """
+    Transforms inline Markdown text into:
+    1. clean_text (plain text without markdown markers)
+    2. html (semantic HTML)
+    3. inlines (AST token array)
+    """
+    if not text:
+        return "", "", []
+    
+    # 1. Resolve Wikilinks [[...]]
+    text_processed = resolve_wikilinks_in_text(text)
+    
+    # 2. Transform Footnote references [^N] into semantic sup links
+    text_processed = re.sub(r'\[\^(\d+)\]', r'<sup class="story-footnote-ref"><a href="#fn-\1">[\1]</a></sup>', text_processed)
+    
+    # 3. Convert via Python-Markdown Engine
+    MD_CONVERTER.reset()
+    html = MD_CONVERTER.convert(text_processed)
+    
+    # 4. Strip outer <p>...</p> if it is a single inline block
+    if html.startswith("<p>") and html.endswith("</p>") and html.count("<p>") == 1:
+        html = html[3:-4]
+    
+    # 5. Extract AST Inlines
+    ast_parser = InlineASTParser()
+    ast_parser.feed(html)
+    inlines = ast_parser.inlines if ast_parser.inlines else [{"type": "text", "text": text}]
+    
+    # 6. Extract clean plain text
+    clean_text = re.sub(r'<[^>]+>', '', html).strip()
+    
+    return clean_text, html, inlines
+
 # --- 3. CONTENT BLOCK PARSER ENGINE ---
 def parse_markdown_to_blocks(raw_content, article_meta, media_registry):
     """
-    Parses raw Markdown into normalized ContentBlock[]
+    Parses raw Markdown into normalized ContentBlock[] with rich AST inlines and semantic HTML.
     Extracts footnotes, editorial DNA/orchestration notes, figures, quotes, headings.
     """
     slug = article_meta["slug"]
@@ -653,7 +779,13 @@ def parse_markdown_to_blocks(raw_content, article_meta, media_registry):
     # 2. Extract Footnotes
     footnote_matches = re.findall(r'\[\^(\d+)\]:\s*(.*)', text)
     for fn_id, fn_text in footnote_matches:
-        footnotes.append({"id": fn_id, "text": fn_text.strip()})
+        fn_clean, fn_html, fn_inlines = parse_inline_markdown(fn_text.strip())
+        footnotes.append({
+            "id": fn_id,
+            "text": fn_clean,
+            "html": fn_html,
+            "inlines": fn_inlines
+        })
     text = re.sub(r'\[\^(\d+)\]:\s*.*', '', text)
 
     # 3. Extract and separate Obsidian DNA / Orchestration Notes
@@ -661,7 +793,6 @@ def parse_markdown_to_blocks(raw_content, article_meta, media_registry):
     main_body = dna_split[0]
     
     # 4. Clean Red Spans / Editorial directives
-    # Replace [SPREAD XX — ...] or red spans with clean section headers/dividers
     def clean_spread_spans(match):
         content = match.group(1)
         spread_m = re.search(r'\[SPREAD\s*\d+\s*—\s*([^\]]+)\]', content, re.IGNORECASE)
@@ -676,7 +807,6 @@ def parse_markdown_to_blocks(raw_content, article_meta, media_registry):
         return res
 
     main_body = re.sub(r'<span[^>]*style=["\']color:\s*red["\'][^>]*>([\s\S]*?)</span>', clean_spread_spans, main_body, flags=re.IGNORECASE)
-    # Remove any remaining raw Obsidian tag hashes (e.g. #mach/tinh-lien-tuc)
     main_body = re.sub(r'#mach/[a-zA-Z0-9\-_]+', '', main_body)
 
     # 5. Split by double newlines into discrete chunks
@@ -705,57 +835,61 @@ def parse_markdown_to_blocks(raw_content, article_meta, media_registry):
         # B. Heading 1 / 2 / 3
         if chunk.startswith("# "):
             h_text = chunk.replace("# ", "").strip()
-            # If matches article title, skip to avoid duplicate H1
             if h_text.lower() == article_meta["title"].lower() or h_text.lower() in article_meta["title"].lower():
                 continue
+            h_clean, h_html, h_inlines = parse_inline_markdown(h_text)
             blocks.append({
                 "id": blk_id,
                 "type": "heading",
                 "level": 2,
-                "text": h_text,
-                "anchorId": re.sub(r'[^a-zA-Z0-9\-_]+', '-', h_text.lower()).strip('-')
+                "text": h_clean,
+                "html": h_html,
+                "inlines": h_inlines,
+                "anchorId": re.sub(r'[^a-zA-Z0-9\-_]+', '-', h_clean.lower()).strip('-')
             })
             block_idx += 1
             continue
         elif chunk.startswith("## "):
             h_text = chunk.replace("## ", "").strip()
+            h_clean, h_html, h_inlines = parse_inline_markdown(h_text)
             blocks.append({
                 "id": blk_id,
                 "type": "heading",
                 "level": 2,
-                "text": h_text,
-                "anchorId": re.sub(r'[^a-zA-Z0-9\-_]+', '-', h_text.lower()).strip('-')
+                "text": h_clean,
+                "html": h_html,
+                "inlines": h_inlines,
+                "anchorId": re.sub(r'[^a-zA-Z0-9\-_]+', '-', h_clean.lower()).strip('-')
             })
             block_idx += 1
             continue
         elif chunk.startswith("### "):
             h_text = chunk.replace("### ", "").strip()
+            h_clean, h_html, h_inlines = parse_inline_markdown(h_text)
             blocks.append({
                 "id": blk_id,
                 "type": "heading",
                 "level": 3,
-                "text": h_text,
-                "anchorId": re.sub(r'[^a-zA-Z0-9\-_]+', '-', h_text.lower()).strip('-')
+                "text": h_clean,
+                "html": h_html,
+                "inlines": h_inlines,
+                "anchorId": re.sub(r'[^a-zA-Z0-9\-_]+', '-', h_clean.lower()).strip('-')
             })
             block_idx += 1
             continue
 
-        # C. Images: ![alt](src) and optional caption *caption*
+        # C. Images
         img_m = re.match(r'!\[(.*?)\]\((.*?)\)(?:\s*\n\s*[\*_](.*?)[\*_])?', chunk, re.DOTALL)
         if img_m:
             alt = img_m.group(1).strip()
             src = img_m.group(2).strip()
             cap = img_m.group(3).strip() if img_m.group(3) else alt
-
-            # Map to mediaRegistry or register dynamic ID
             matched_media_id = None
             for mid, mobj in media_registry.items():
                 if mobj["src"] in src or src in mobj["src"] or (mobj.get("rawSrc") and mobj["rawSrc"] in src):
                     matched_media_id = mid
                     break
-            
             if not matched_media_id:
-                # Create dynamic media asset in registry
                 matched_media_id = f"med_{slug}_{block_idx:02d}"
                 media_registry[matched_media_id] = {
                     "id": matched_media_id,
@@ -769,7 +903,6 @@ def parse_markdown_to_blocks(raw_content, article_meta, media_registry):
                     "provenance": "Trích lục bài viết",
                     "variants": {"thumb": src, "medium": src, "large": src}
                 }
-
             blocks.append({
                 "id": blk_id,
                 "type": "media",
@@ -783,14 +916,16 @@ def parse_markdown_to_blocks(raw_content, article_meta, media_registry):
         # D. Blockquotes & Pull Quotes
         if chunk.startswith("> "):
             q_text = re.sub(r'^>\s*', '', chunk, flags=re.MULTILINE).strip()
-            # If short and in quotation marks, make it a PullQuote
             is_pull = len(q_text) < 220 and (q_text.startswith("“") or q_text.startswith('"'))
-            q_clean = q_text.strip('“”"\'')
+            q_clean_raw = q_text.strip('“”"\'')
+            q_clean, q_html, q_inlines = parse_inline_markdown(q_clean_raw)
             if is_pull:
                 blocks.append({
                     "id": blk_id,
                     "type": "pull_quote",
                     "text": q_clean,
+                    "html": q_html,
+                    "inlines": q_inlines,
                     "author": article_meta.get("authorName")
                 })
             else:
@@ -798,6 +933,8 @@ def parse_markdown_to_blocks(raw_content, article_meta, media_registry):
                     "id": blk_id,
                     "type": "quote",
                     "text": q_clean,
+                    "html": q_html,
+                    "inlines": q_inlines,
                     "author": article_meta.get("authorName")
                 })
             block_idx += 1
@@ -807,19 +944,32 @@ def parse_markdown_to_blocks(raw_content, article_meta, media_registry):
         if re.match(r'^[\*\-\d\.]+\s+', chunk):
             lines = chunk.split('\n')
             is_ordered = bool(re.match(r'^\d+\.', lines[0]))
-            items = [re.sub(r'^[\*\-\d\.]+\s+', '', line).strip() for line in lines if line.strip()]
+            items = []
+            items_html = []
+            items_inlines = []
+            for line in lines:
+                l_strip = line.strip()
+                if not l_strip:
+                    continue
+                item_content = re.sub(r'^[\*\-\d\.]+\s+', '', l_strip).strip()
+                i_clean, i_html, i_inlines = parse_inline_markdown(item_content)
+                items.append(i_clean)
+                items_html.append(i_html)
+                items_inlines.append(i_inlines)
             blocks.append({
                 "id": blk_id,
                 "type": "list",
                 "ordered": is_ordered,
-                "items": items
+                "items": items,
+                "itemsHtml": items_html,
+                "itemsInlines": items_inlines
             })
             block_idx += 1
             continue
 
-        # F. Signature Block (e.g. **Bác Tuấn**, **Người giữ mạch**)
-        if re.match(r'^(?:Chào con,\s*\n+)?\*\*(?:Bác Tuấn|Người giữ mạch|Ban Biên Tập)\*\*$', chunk, re.IGNORECASE):
-            sig_name = chunk.replace("Chào con,", "").replace("**", "").strip()
+        # F. Signature Block
+        if re.match(r'^(?:Chào con,\s*\n+)?\*\*(?:Bác Tuấn|Cậu Tuấn|Người giữ mạch|Ban Biên Tập|Tuấn)\*\*$', chunk, re.IGNORECASE):
+            sig_name = chunk.replace("Chào con,", "").replace("**", "").replace("__", "").strip()
             blocks.append({
                 "id": blk_id,
                 "type": "signature",
@@ -833,28 +983,25 @@ def parse_markdown_to_blocks(raw_content, article_meta, media_registry):
 
         # G. Paragraph / Lead
         clean_p = chunk.replace('\n', ' ').strip()
-        # First prose paragraph of an essay gets lead / drop-cap treatment if appropriate
+        p_clean, p_html, p_inlines = parse_inline_markdown(clean_p)
         if not has_seen_first_prose:
             has_seen_first_prose = True
-            if article_meta.get("articleType") == "essay" and len(clean_p) > 120:
-                blocks.append({
-                    "id": blk_id,
-                    "type": "paragraph",
-                    "text": clean_p,
-                    "hasDropCap": True
-                })
-            else:
-                blocks.append({
-                    "id": blk_id,
-                    "type": "paragraph",
-                    "text": clean_p,
-                    "hasDropCap": False
-                })
+            is_essay = article_meta.get("articleType") == "essay" and len(clean_p) > 120
+            blocks.append({
+                "id": blk_id,
+                "type": "paragraph",
+                "text": p_clean,
+                "html": p_html,
+                "inlines": p_inlines,
+                "hasDropCap": is_essay
+            })
         else:
             blocks.append({
                 "id": blk_id,
                 "type": "paragraph",
-                "text": clean_p,
+                "text": p_clean,
+                "html": p_html,
+                "inlines": p_inlines,
                 "hasDropCap": False
             })
         block_idx += 1

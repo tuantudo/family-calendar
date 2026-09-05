@@ -697,7 +697,16 @@ function fallbackCopy(text, btnEl) {
 
 // --- TREE MODULE (ARCH_03D: REAL VISUAL FAMILY GRAPH) ---
 let graphScale = 1.0;
+let graphPanX = 0;
+let graphPanY = 0;
 let graphHistory = [];
+
+function applyGraphTransform() {
+    const viewport = document.getElementById("graphCanvasViewport");
+    if (viewport) {
+        viewport.style.transform = `translate(${graphPanX}px, ${graphPanY}px) scale(${graphScale})`;
+    }
+}
 
 function initTreeDropdown(defaultRootId) {
     const select = document.getElementById("treeCenterSelect");
@@ -771,19 +780,15 @@ function graphGoHome() {
 }
 
 function zoomGraph(delta) {
-    graphScale = Math.min(1.4, Math.max(0.65, Math.round((graphScale + delta) * 10) / 10));
-    const viewport = document.getElementById("graphCanvasViewport");
-    if (viewport) {
-        viewport.style.transform = `scale(${graphScale})`;
-    }
+    graphScale = Math.min(1.5, Math.max(0.5, Math.round((graphScale + delta) * 100) / 100));
+    applyGraphTransform();
 }
 
 function resetGraphZoom() {
     graphScale = 1.0;
-    const viewport = document.getElementById("graphCanvasViewport");
-    if (viewport) {
-        viewport.style.transform = "scale(1.0)";
-    }
+    graphPanX = 0;
+    graphPanY = 0;
+    applyGraphTransform();
 }
 
 // Compact Interactive Graph Node
@@ -824,6 +829,10 @@ function renderFocusPedigreeTree(centerId) {
 
     const select = document.getElementById("treeCenterSelect");
     if (select && select.value !== centerId) select.value = centerId;
+
+    // Reset pan on new focus
+    graphPanX = 0;
+    graphPanY = 0;
 
     // Render Lineage Breadcrumbs Path from Root Anchor
     if (pathContainer) {
@@ -931,19 +940,109 @@ function renderFocusPedigreeTree(centerId) {
     container.innerHTML = `
         <div class="family-graph-wrapper" id="familyGraphWrapper">
             <div class="graph-floating-toolbar">
-                <button class="graph-tool-btn" onclick="zoomGraph(0.1)" title="Phóng to">+</button>
-                <button class="graph-tool-btn" onclick="zoomGraph(-0.1)" title="Thu nhỏ">−</button>
-                <button class="graph-tool-btn" onclick="resetGraphZoom()" title="Đặt lại kích thước">⟲ 100%</button>
-                <button class="graph-tool-btn" onclick="graphGoHome()" title="Về mốc Cố Thu">⌂ Cố Thu</button>
+                <button class="graph-tool-btn" onclick="zoomGraph(0.15)" title="Phóng to" aria-label="Phóng to">+</button>
+                <button class="graph-tool-btn" onclick="zoomGraph(-0.15)" title="Thu nhỏ" aria-label="Thu nhỏ">−</button>
+                <button class="graph-tool-btn" onclick="resetGraphZoom()" title="Đặt lại kích thước" aria-label="Đặt lại">⟲ 100%</button>
+                <button class="graph-tool-btn" onclick="graphGoHome()" title="Về mốc Cố Thu" aria-label="Về Cố Thu">⌂ Cố Thu</button>
+                ${graphHistory.length > 0 ? `<button class="graph-tool-btn" onclick="graphGoBack()" title="Quay lại người trước" aria-label="Quay lại">↩ Quay lại</button>` : ''}
             </div>
 
-            <div class="graph-canvas-viewport" id="graphCanvasViewport" style="transform: scale(${graphScale});">
+            <div class="graph-canvas-viewport" id="graphCanvasViewport" style="transform: translate(${graphPanX}px, ${graphPanY}px) scale(${graphScale});">
                 ${parentsHtml}
                 ${focusHtml}
                 ${childrenHtml}
             </div>
         </div>
     `;
+
+    attachGraphCanvasInteractions();
+}
+
+// Touch Pan, Mouse Drag & Pinch Zoom Interaction Handler
+function attachGraphCanvasInteractions() {
+    const wrapper = document.getElementById("familyGraphWrapper");
+    if (!wrapper) return;
+
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let initialPanX = 0;
+    let initialPanY = 0;
+    let initialPinchDist = 0;
+    let initialPinchScale = 1.0;
+
+    // Mouse Dragging
+    wrapper.addEventListener("mousedown", (e) => {
+        if (e.target.closest(".graph-floating-toolbar") || e.target.closest(".graph-node") || e.target.closest(".grand-badge")) {
+            return;
+        }
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        initialPanX = graphPanX;
+        initialPanY = graphPanY;
+        wrapper.style.cursor = "grabbing";
+    });
+
+    window.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+        graphPanX = initialPanX + dx;
+        graphPanY = initialPanY + dy;
+        applyGraphTransform();
+    });
+
+    window.addEventListener("mouseup", () => {
+        if (isDragging) {
+            isDragging = false;
+            if (wrapper) wrapper.style.cursor = "grab";
+        }
+    });
+
+    // Touch 1-Finger Pan & 2-Finger Pinch Zoom
+    wrapper.addEventListener("touchstart", (e) => {
+        if (e.target.closest(".graph-floating-toolbar") || e.target.closest(".graph-node") || e.target.closest(".grand-badge")) {
+            return;
+        }
+        if (e.touches.length === 1) {
+            isDragging = true;
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            initialPanX = graphPanX;
+            initialPanY = graphPanY;
+        } else if (e.touches.length === 2) {
+            isDragging = false;
+            const t1 = e.touches[0];
+            const t2 = e.touches[1];
+            initialPinchDist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+            initialPinchScale = graphScale;
+        }
+    }, { passive: true });
+
+    wrapper.addEventListener("touchmove", (e) => {
+        if (e.touches.length === 1 && isDragging) {
+            const dx = e.touches[0].clientX - startX;
+            const dy = e.touches[0].clientY - startY;
+            graphPanX = initialPanX + dx;
+            graphPanY = initialPanY + dy;
+            applyGraphTransform();
+            e.preventDefault(); // Prevent page scroll during canvas drag
+        } else if (e.touches.length === 2 && initialPinchDist > 0) {
+            const t1 = e.touches[0];
+            const t2 = e.touches[1];
+            const currentDist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+            const factor = currentDist / initialPinchDist;
+            graphScale = Math.min(1.5, Math.max(0.5, Math.round(initialPinchScale * factor * 100) / 100));
+            applyGraphTransform();
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    wrapper.addEventListener("touchend", () => {
+        isDragging = false;
+        initialPinchDist = 0;
+    }, { passive: true });
 }
 
 // 2. EXPLORE MODE: Grouped by Generation Bands (F0, F1, F2, F3, F4)
@@ -1016,13 +1115,66 @@ function renderUnifiedPersonCard(p, isTreeNode = false, isCenter = false) {
 }
 
 // --- DIRECTORIES ---
-function renderPeopleDirectory() {
+let currentPeopleGenFilter = 'all';
+
+function filterPeopleByGen(gen) {
+    currentPeopleGenFilter = gen;
+    renderPeopleDirectory(gen);
+}
+
+function renderPeopleDirectory(filterGen = currentPeopleGenFilter) {
+    currentPeopleGenFilter = filterGen;
     const grid = document.getElementById("peopleGrid");
     if (!grid) return;
     grid.innerHTML = "";
-    Object.values(appData.people).forEach(p => {
+
+    const allPeople = Object.values(appData.people);
+    const countMap = { all: allPeople.length, 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 };
+    allPeople.forEach(p => {
+        const gMeta = getGenerationMeta(p.id);
+        if (gMeta && gMeta.level !== undefined && countMap[gMeta.level] !== undefined) {
+            countMap[gMeta.level]++;
+        }
+    });
+
+    const cntAll = document.getElementById("cnt_ppl_all");
+    const cntF0 = document.getElementById("cnt_ppl_f0");
+    const cntF1 = document.getElementById("cnt_ppl_f1");
+    const cntF2 = document.getElementById("cnt_ppl_f2");
+    const cntF3 = document.getElementById("cnt_ppl_f3");
+    const cntF4 = document.getElementById("cnt_ppl_f4");
+    if (cntAll) cntAll.innerText = countMap.all;
+    if (cntF0) cntF0.innerText = countMap[0];
+    if (cntF1) cntF1.innerText = countMap[1];
+    if (cntF2) cntF2.innerText = countMap[2];
+    if (cntF3) cntF3.innerText = countMap[3];
+    if (cntF4) cntF4.innerText = countMap[4];
+
+    const pills = [
+        { id: "filter_ppl_all", val: 'all' },
+        { id: "filter_ppl_0", val: 0 },
+        { id: "filter_ppl_1", val: 1 },
+        { id: "filter_ppl_2", val: 2 },
+        { id: "filter_ppl_3", val: 3 },
+        { id: "filter_ppl_4", val: 4 }
+    ];
+    pills.forEach(p => {
+        const el = document.getElementById(p.id);
+        if (el) el.classList.toggle("active", filterGen === p.val);
+    });
+
+    let renderedCount = 0;
+    allPeople.forEach(p => {
+        const gMeta = getGenerationMeta(p.id);
+        if (filterGen !== 'all' && gMeta.level !== filterGen) return;
+
+        renderedCount++;
         grid.innerHTML += renderUnifiedPersonCard(p, false);
     });
+
+    if (renderedCount === 0) {
+        grid.innerHTML = `<div style="grid-column: 1/-1; padding: 32px; text-align: center; color: var(--text-muted); background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius-md);">Không có thành viên nào thuộc thế hệ này.</div>`;
+    }
 }
 
 function filterFamiliesByGen(gen) {
@@ -1598,7 +1750,7 @@ function renderArticleComposition(article, mediaRegistry, authorsRegistry, serie
                 <div class="story-footnotes-box">
                     <div class="story-footnotes-title">Chú thích & Ghi chú tư liệu</div>
                     <ol class="story-footnotes-list">
-                        ${article.footnotes.map(fn => `<li id="fn-${fn.id}">${formatInlineMarkdown(fn.text)}</li>`).join("")}
+                        ${article.footnotes.map(fn => `<li id="fn-${fn.id}">${fn.html || formatInlineMarkdown(fn.text)}</li>`).join("")}
                     </ol>
                 </div>
             `;
@@ -1654,43 +1806,44 @@ function renderContentBlocks(blocks, mediaRegistry, authorsRegistry, article) {
     return blocks.map(block => {
         switch (block.type) {
             case 'lead':
-                return `<p class="story-lead">${formatInlineMarkdown(block.text)}</p>`;
+                return `<p class="story-lead">${block.html || formatInlineMarkdown(block.text)}</p>`;
             case 'paragraph': {
                 const dropClass = block.hasDropCap ? ' class="drop-cap-p"' : '';
-                return `<p${dropClass}>${formatInlineMarkdown(block.text)}</p>`;
+                return `<p${dropClass}>${block.html || formatInlineMarkdown(block.text)}</p>`;
             }
             case 'heading': {
                 const lvl = block.level || 2;
                 const anchor = block.anchorId ? ` id="${block.anchorId}"` : '';
-                return `<h${lvl}${anchor}>${formatInlineMarkdown(block.text)}</h${lvl}>`;
+                return `<h${lvl}${anchor}>${block.html || formatInlineMarkdown(block.text)}</h${lvl}>`;
             }
             case 'media':
                 return renderMediaBlock(block, mediaRegistry);
             case 'quote':
                 return `
                     <blockquote class="story-quote">
-                        <p>${formatInlineMarkdown(block.text)}</p>
-                        ${block.author ? `<cite>— ${block.author}</cite>` : ''}
+                        <p>${block.html || formatInlineMarkdown(block.text)}</p>
+                        ${block.author ? `<cite>— ${formatInlineMarkdown(block.author)}</cite>` : ''}
                     </blockquote>
                 `;
             case 'pull_quote':
                 return `
                     <div class="story-pull-quote">
-                        <blockquote>“${formatInlineMarkdown(block.text)}”</blockquote>
-                        ${block.author ? `<cite>${block.author}</cite>` : ''}
+                        <blockquote>“${block.html || formatInlineMarkdown(block.text)}”</blockquote>
+                        ${block.author ? `<cite>${formatInlineMarkdown(block.author)}</cite>` : ''}
                     </div>
                 `;
             case 'divider':
                 return `<div class="story-divider story-divider-${block.style || 'section_break'}"><span>❦</span></div>`;
             case 'list': {
                 const tag = block.ordered ? 'ol' : 'ul';
-                return `<${tag} class="story-list">${block.items.map(item => `<li>${formatInlineMarkdown(item)}</li>`).join('')}</${tag}>`;
+                const itemsList = block.itemsHtml && block.itemsHtml.length > 0 ? block.itemsHtml : (block.items || []).map(i => formatInlineMarkdown(i));
+                return `<${tag} class="story-list">${itemsList.map(item => `<li>${item}</li>`).join('')}</${tag}>`;
             }
             case 'callout':
                 return `
                     <div class="story-callout story-callout-${block.tone || 'heritage'}">
-                        ${block.title ? `<h4>${block.title}</h4>` : ''}
-                        <p>${formatInlineMarkdown(block.text)}</p>
+                        ${block.title ? `<h4>${formatInlineMarkdown(block.title)}</h4>` : ''}
+                        <p>${block.html || formatInlineMarkdown(block.text)}</p>
                     </div>
                 `;
             case 'signature': {
@@ -1698,13 +1851,13 @@ function renderContentBlocks(blocks, mediaRegistry, authorsRegistry, article) {
                 const authorName = block.authorName || (author ? author.name : '');
                 return `
                     <div class="story-signature">
-                        <div class="signature-name">${authorName}</div>
+                        <div class="signature-name">${formatInlineMarkdown(authorName)}</div>
                         ${block.location ? `<div class="signature-meta">${block.location}${block.dateStr ? ' · ' + block.dateStr : ''}</div>` : ''}
                     </div>
                 `;
             }
             default:
-                return block.text ? `<p>${formatInlineMarkdown(block.text)}</p>` : '';
+                return block.html ? `<p>${block.html}</p>` : (block.text ? `<p>${formatInlineMarkdown(block.text)}</p>` : '');
         }
     }).join("");
 }
@@ -1726,7 +1879,7 @@ function renderMediaBlock(block, mediaRegistry) {
             </picture>
             ${(caption || credit) ? `
                 <figcaption>
-                    ${caption ? `<span class="figure-caption-text">${caption}</span>` : ''}
+                    ${caption ? `<span class="figure-caption-text">${formatInlineMarkdown(caption)}</span>` : ''}
                     ${credit ? `<span class="figure-credit">Ảnh: ${credit}</span>` : ''}
                 </figcaption>
             ` : ''}
@@ -1736,12 +1889,84 @@ function renderMediaBlock(block, mediaRegistry) {
 
 function formatInlineMarkdown(text) {
     if (!text) return "";
-    return text
-        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-        .replace(/_([^_]+)_/g, '<em>$1</em>')
-        .replace(/\[\^(\d+)\]/g, '<sup class="story-footnote-ref"><a href="#fn-$1">[$1]</a></sup>')
-        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+    
+    // 1. If text already looks like compiled HTML (contains tags but no raw unparsed markdown symbols), return it safely
+    if (/<(strong|em|a|code|del|sup|span)[\s>]/.test(text) && !/(\*\*|__|\~\~|\[\^)/.test(text)) {
+        return text;
+    }
+
+    // 2. Escape dangerous HTML characters for injection security (Criterion 33)
+    let safe = text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+
+    // 3. Protect inline code `code`
+    const codeSnippets = [];
+    safe = safe.replace(/`([^`]+)`/g, (match, code) => {
+        codeSnippets.push(`<code>${code}</code>`);
+        return `___CODE_TOKEN_${codeSnippets.length - 1}___`;
+    });
+
+    // 4. Resolve Wikilinks [[target|label]] and [[target]]
+    const wikilinkMap = {
+        "00 — MỤC LỤC": "01-gioi-thieu",
+        "01 — GIỚI THIỆU": "01-gioi-thieu",
+        "02 — CÂY GIA PHẢ & MẠCH": "02-cay-gia-pha-va-mach",
+        "03 — KHI SỰ GẦN GŨI KHÔNG CÒN TỰ NHIÊN": "03-khi-su-gan-gui-khong-con-tu-nhien",
+        "04 — TỪ HỆ TƯ TƯỞNG ĐẾN ĐẠO LÝ ĐỜI SỐNG": "04-tu-he-tu-tuong-den-dao-ly-doi-song",
+        "05 — NHỮNG KHẾ ƯỚC VÔ HÌNH CỦA DÒNG HỌ": "05-nhung-khe-uoc-vo-hinh-cua-dong-ho",
+        "06 — GIỖ VÀ KÝ ỨC GIA ĐÌNH": "06-gio-va-ky-uc-gia-dinh",
+        "07 — MỘ TỔ VÀ CẢM THỨC QUAY VỀ": "07-mo-to-va-cam-thuc-quay-ve",
+        "08 — ĐÁM CƯỚI NHƯ MỘT DẤU CHUYỂN THẾ HỆ": "08-dam-cuoi-nhu-mot-dau-chuyen-the-he",
+        "09 — VÌ SAO CON CHÁU CÒN QUAY VỀ NGÀY TẾT?": "09-vi-sao-con-chau-con-quay-ve-ngay-tet",
+        "10 — GIA ĐÌNH HẠT NHÂN VÀ SỰ CHUYỂN ĐỔI CỦA ĐẠI GIA ĐÌNH": "10-gia-dinh-hat-nhan-va-su-chuyen-doi",
+        "11 — NHỮNG NGƯỜI KHÔNG CÒN QUAY VỀ NỮA": "11-nhung-nguoi-khong-con-quay-ve-nua",
+        "12 — GHI CHÚ & CHÚ GIẢI": "12-ghi-chu-va-chu-giai",
+        "Thư gửi Clara - 001": "clara-001",
+        "Thư gửi Clara - 002": "clara-002",
+        "Thư gửi Clara - 003": "clara-003",
+        "Thư gửi Clara - 004": "clara-004",
+        "Thư gửi Clara - 005": "clara-005",
+        "Thư gửi Clara - 006": "clara-006",
+        "Thư gửi Clara, Rina, Tina, Tin và Tito - 007": "clara-007"
+    };
+    safe = safe.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (match, target, label) => {
+        const cleanTarget = target.replace(/\.md$/, "").trim();
+        const display = (label || target).trim();
+        if (wikilinkMap[cleanTarget]) {
+            return `<a href="#/mach/bai-viet/${wikilinkMap[cleanTarget]}" class="mach-internal-link">${display}</a>`;
+        }
+        return `<span class="mach-ref-tag">${display}</span>`;
+    });
+
+    // 5. Footnote references [^N]
+    safe = safe.replace(/\[\^(\d+)\]/g, '<sup class="story-footnote-ref"><a href="#fn-$1">[$1]</a></sup>');
+
+    // 6. Links [text](url)
+    safe = safe.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+
+    // 7. Bold + Italic ***text*** or ___text___
+    safe = safe.replace(/\*\*\*([^*]+)\*\*\*/g, '<strong><em>$1</em></strong>');
+    safe = safe.replace(/___([^_]+)___/g, '<strong><em>$1</em></strong>');
+
+    // 8. Bold **text** or __text__
+    safe = safe.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    safe = safe.replace(/__([^_]+)__/g, '<strong>$1</strong>');
+
+    // 9. Italic *text* or _text_ (handling word boundaries and punctuation)
+    safe = safe.replace(/(^|[^\*])\*([^\*\n]+)\*([^\*]|$)/g, '$1<em>$2</em>$3');
+    safe = safe.replace(/(^|[^_])_([^_]+)_([^_]|$)/g, '$1<em>$2</em>$3');
+
+    // 10. Strikethrough ~~text~~
+    safe = safe.replace(/~~([^~]+)~~/g, '<del>$1</del>');
+
+    // 11. Restore Code snippets
+    safe = safe.replace(/___CODE_TOKEN_(\d+)___/g, (match, idx) => codeSnippets[parseInt(idx, 10)]);
+
+    return safe;
 }
 
 function openSeriesDetail(slug) {
