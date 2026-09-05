@@ -19,7 +19,7 @@
 
             <div class="nav-search">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="globalSearchInput" placeholder="Tìm người, ngày âm/dương..." onkeyup="handleGlobalSearch(event)">
+                <input type="text" id="globalSearchInput" placeholder="Tìm người, thế hệ F0-F4, ngày âm/dương..." onkeyup="handleGlobalSearch(event)">
                 <div id="globalSearchDropdown" class="search-dropdown"></div>
             </div>
 
@@ -46,7 +46,7 @@
                 <div class="hero-badge">Trích lục Gia phả chính thức</div>
                 <h1 class="hero-title" id="heroPublicationTitle">Gia Phả Gia Tộc</h1>
                 <div class="hero-sub">Hệ Thống Tri Thức & Kỷ Niệm Gia Tộc Trực Tuyến</div>
-                <p class="hero-text">Hệ thống số hóa toàn diện dữ liệu gia phả, mối liên hệ trực hệ, tư liệu lịch sử và lịch sự kiện gia đình.</p>
+                <p class="hero-text">Hệ thống số hóa toàn diện dữ liệu gia phả, phân tầng thế hệ F0–F4 theo mốc Family Anchor, tư liệu lịch sử và lịch sự kiện gia đình.</p>
             </div>
 
             <div class="stats-grid">
@@ -80,7 +80,7 @@
                     <div class="quick-icon">🌳</div>
                     <div>
                         <div class="quick-title">Cây Phả Đồ</div>
-                        <div class="quick-desc">Khám phá các thế hệ tiền nhân và hậu duệ trực hệ</div>
+                        <div class="quick-desc">Khám phá các thế hệ tiền nhân F0 và hậu duệ F1–F4 trực hệ</div>
                     </div>
                 </a>
                 <a class="quick-card" href="#/people" onclick="navigateRoute('/people')">
@@ -100,7 +100,7 @@
             </div>
         </section>
 
-        <!-- 2. CALENDAR APPLICATION MODULE (GOOGLE CALENDAR UX) -->
+        <!-- 2. CALENDAR APPLICATION MODULE -->
         <section id="view_calendar" class="view-section">
             <div class="section-header">
                 <h2 class="section-title">📅 Lịch Gia Đình Trực Tuyến</h2>
@@ -159,17 +159,33 @@
             </div>
         </section>
 
-        <!-- 3. FAMILY TREE VIEW -->
+        <!-- 3. FAMILY TREE VIEW (ARCH_03 PEDIGREE & GENERATIONS) -->
         <section id="view_tree" class="view-section">
             <div class="section-header">
-                <h2 class="section-title">🌳 Cây Phả Đồ Trực Hệ</h2>
-                <p class="section-desc">Khám phá các thế hệ tiền nhân, hậu duệ và các nhánh gia đình.</p>
+                <h2 class="section-title">🌳 Cây Phả Đồ & Hệ Thống Thế Hệ</h2>
+                <p class="section-desc">Quy chiếu thế hệ F0–F4 theo Family Anchor • Nhấp chọn bất kỳ người nào làm trọng tâm hiển thị (Focus Person).</p>
             </div>
+
             <div class="tree-container">
-                <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600;">
-                    <span>Chọn người làm trung tâm phả đồ:</span>
-                    <select id="treeCenterSelect" onchange="renderFamilyTree(this.value)" style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border); font-size: 14px; background: var(--bg);"></select>
+                <!-- GENERATION LEGEND -->
+                <div class="tree-legend-bar">
+                    <div class="legend-item"><span class="legend-dot" style="background:#1e3a8a;"></span> F0 (Family Anchor / Cố Thu)</div>
+                    <div class="legend-item"><span class="legend-dot" style="background:#047857;"></span> F1 (Đời Con)</div>
+                    <div class="legend-item"><span class="legend-dot" style="background:#b45309;"></span> F2 (Đời Cháu)</div>
+                    <div class="legend-item"><span class="legend-dot" style="background:#4338ca;"></span> F3 (Đời Chắt)</div>
+                    <div class="legend-item"><span class="legend-dot" style="background:#be185d;"></span> F4 (Đời Chút)</div>
                 </div>
+
+                <!-- BREADCRUMBS RELATIONSHIP PATH -->
+                <div id="treeRelationPath" class="relation-path-bar"></div>
+
+                <!-- FOCUS SELECTOR -->
+                <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; width: 100%; max-width: 600px;">
+                    <span style="white-space: nowrap;">Chọn trọng tâm phả đồ:</span>
+                    <select id="treeCenterSelect" onchange="renderFamilyTree(this.value)" style="padding: 7px 12px; border-radius: 6px; border: 1px solid var(--border); font-size: 13.5px; background: var(--bg); width: 100%;"></select>
+                </div>
+
+                <!-- VIEWPORT -->
                 <div id="treeGraphViewport" style="width: 100%; display: flex; flex-direction: column; align-items: center;"></div>
             </div>
         </section>
@@ -178,7 +194,7 @@
         <section id="view_people" class="view-section">
             <div class="section-header">
                 <h2 class="section-title">👥 Danh Sách Thành Viên Gia Tộc (<span id="peopleTotalCount">-</span>)</h2>
-                <p class="section-desc">Tra cứu lý lịch, quan hệ huyết thống và ngày kỷ niệm của từng thành viên.</p>
+                <p class="section-desc">Tra cứu lý lịch, phân loại thế hệ và ngày kỷ niệm của từng thành viên.</p>
             </div>
             <div id="peopleGrid" class="directory-grid"></div>
         </section>
@@ -198,7 +214,7 @@
                 <div style="border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                     <div>
                         <div style="font-size: 24px; font-weight: 800; color: var(--primary-dark);" id="p_name">Họ Tên</div>
-                        <div style="font-size: 14px; color: var(--text-muted); margin-top: 2px;" id="p_gender_status">Giới tính</div>
+                        <div style="font-size: 14px; color: var(--text-muted); margin-top: 4px;" id="p_gender_status">Giới tính</div>
                     </div>
                     <div style="font-family: monospace; font-size: 13px; color: var(--text-muted); background: var(--bg); padding: 4px 8px; border-radius: 4px;" id="p_fsid">FSID</div>
                 </div>

@@ -1,10 +1,11 @@
 /**
- * app.js — Main Web Application Controller & Entity Graph
+ * app.js — Main Web Application Controller & Entity Graph Engine
  * Architectural Benchmark: Google Calendar UX + webtrees Entity Graph
+ * ARCH_03: Dynamic Generation Derivation, Relationship Path, Generation Color Coding
  * 100% Data-Driven, Zero Hard-Code
  */
 
-// --- GLOBAL STATE ---
+// --- GLOBAL APPLICATION STATE ---
 let appData = {
     publication: "",
     rootAnchor: "",
@@ -15,6 +16,11 @@ let appData = {
     timeline: [],
     memories: []
 };
+
+// Derived Graph State
+let derivedGenerations = {}; // pid -> level integer (0 = Root Anchor, 1 = F1, etc.)
+let derivedPaths = {};        // pid -> [pid0, pid1, ... pidN] shortest lineage path from Anchor
+let currentTreeFocusId = "";  // Currently selected person in Tree View
 
 let calEvents = [];
 let curCalDate = new Date();
@@ -34,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(r => r.json())
         .then(data => {
             appData = data;
+            deriveFamilyGraphGenerations(data.rootAnchor || Object.keys(data.people)[0]);
+            
             bindPublicationHeaders(data);
             bindStats(data.stats);
 
@@ -52,6 +60,58 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("hashchange", handleHashRoute);
+
+// --- DYNAMIC GRAPH DERIVATION ENGINE (BFS FROM FAMILY ANCHOR) ---
+function deriveFamilyGraphGenerations(rootId) {
+    const people = appData.people;
+    derivedGenerations = {};
+    derivedPaths = {};
+
+    if (!people[rootId]) return;
+
+    // Build relationship adjacency graph
+    const adj = {};
+    Object.keys(people).forEach(pid => {
+        adj[pid] = [];
+        const p = people[pid];
+        (p.children || []).forEach(cid => { if (people[cid]) adj[pid].push({ id: cid, delta: 1, type: 'child' }); });
+        (p.parents || []).forEach(parId => { if (people[parId]) adj[pid].push({ id: parId, delta: -1, type: 'parent' }); });
+        (p.spouses || []).forEach(sid => { if (people[sid]) adj[pid].push({ id: sid, delta: 0, type: 'spouse' }); });
+    });
+
+    // BFS Queue
+    const queue = [rootId];
+    derivedGenerations[rootId] = 0;
+    derivedPaths[rootId] = [rootId];
+    const visited = new Set([rootId]);
+
+    while (queue.length > 0) {
+        const currId = queue.shift();
+        const currLvl = derivedGenerations[currId];
+        const currPath = derivedPaths[currId];
+
+        (adj[currId] || []).forEach(edge => {
+            if (!visited.has(edge.id)) {
+                visited.add(edge.id);
+                derivedGenerations[edge.id] = currLvl + edge.delta;
+                derivedPaths[edge.id] = [...currPath, edge.id];
+                queue.push(edge.id);
+            }
+        });
+    }
+}
+
+function getGenerationMeta(pid) {
+    const lvl = derivedGenerations[pid];
+    if (lvl === undefined) return { label: "Gia tộc", badgeCls: "gen-other", borderCls: "border-other", title: "Thành viên gia tộc" };
+    if (lvl < 0) return { label: `Tiền nhân (F${lvl})`, badgeCls: "gen-f0", borderCls: "border-f0", title: "Bậc tiền nhân" };
+    if (lvl === 0) return { label: "F0 · Gốc Phả Hệ", badgeCls: "gen-f0", borderCls: "border-f0", title: "Cố Thu (Family Anchor)" };
+    if (lvl === 1) return { label: "F1 · Đời Con", badgeCls: "gen-f1", borderCls: "border-f1", title: "Thế hệ thứ 1 (Con)" };
+    if (lvl === 2) return { label: "F2 · Đời Cháu", badgeCls: "gen-f2", borderCls: "border-f2", title: "Thế hệ thứ 2 (Cháu)" };
+    if (lvl === 3) return { label: "F3 · Đời Chắt", badgeCls: "gen-f3", borderCls: "border-f3", title: "Thế hệ thứ 3 (Chắt)" };
+    if (lvl === 4) return { label: "F4 · Đời Chút", badgeCls: "gen-f4", borderCls: "border-f4", title: "Thế hệ thứ 4 (Chút)" };
+    return { label: `F${lvl} · Hậu duệ`, badgeCls: "gen-f4", borderCls: "border-f4", title: `Thế hệ thứ ${lvl}` };
+}
 
 function bindPublicationHeaders(data) {
     if (data.publication) {
@@ -109,7 +169,7 @@ function showSectionByRoute(route) {
     if (route === "/tree") {
         secId = "view_tree";
         navId = "nav_tree";
-        renderFamilyTree(appData.rootAnchor || Object.keys(appData.people)[0]);
+        renderFamilyTree(currentTreeFocusId || appData.rootAnchor || Object.keys(appData.people)[0]);
     } else if (route === "/people") {
         secId = "view_people";
         navId = "nav_people";
@@ -395,7 +455,7 @@ function openEventDetailModal(evIdx, yr) {
     if (modal) modal.classList.add("active");
 }
 
-// --- TREE MODULE (PEDIGREE & GENERATIONS) ---
+// --- TREE MODULE (PEDIGREE, FOCUS PERSON & GENERATIONS) ---
 function initTreeDropdown(defaultRootId) {
     const select = document.getElementById("treeCenterSelect");
     if (!select) return;
@@ -403,18 +463,39 @@ function initTreeDropdown(defaultRootId) {
     Object.values(appData.people).forEach(p => {
         const opt = document.createElement("option");
         opt.value = p.id;
-        opt.innerText = `${p.name} (${p.fsid || p.id})`;
+        const gMeta = getGenerationMeta(p.id);
+        opt.innerText = `[${gMeta.label}] ${p.name} (${p.fsid || p.id})`;
         if (p.id === defaultRootId) opt.selected = true;
         select.appendChild(opt);
     });
 }
 
 function renderFamilyTree(centerId) {
+    currentTreeFocusId = centerId;
     const container = document.getElementById("treeGraphViewport");
+    const pathContainer = document.getElementById("treeRelationPath");
     if (!container) return;
     container.innerHTML = "";
+
     const person = appData.people[centerId];
     if (!person) return;
+
+    // Update select value if out of sync
+    const select = document.getElementById("treeCenterSelect");
+    if (select && select.value !== centerId) select.value = centerId;
+
+    // Render Relationship Breadcrumbs Path from Root Anchor
+    if (pathContainer) {
+        const pathIds = derivedPaths[centerId] || [centerId];
+        let pathHtml = `<span style="font-weight:700; color:var(--text-muted);">🧭 Phả hệ trực hệ:</span> `;
+        pathHtml += pathIds.map((pid, idx) => {
+            const p = appData.people[pid];
+            const isLast = idx === pathIds.length - 1;
+            const gMeta = getGenerationMeta(pid);
+            return `<a onclick="renderFamilyTree('${pid}')" class="path-step" style="${isLast ? 'color:var(--accent); font-weight:800;' : ''}">${p ? p.name : pid} (${gMeta.label.split('·')[0].trim()})</a>`;
+        }).join(` <span class="path-arrow">→</span> `);
+        pathContainer.innerHTML = pathHtml;
+    }
 
     let parentsHtml = person.parents.length > 0 ? person.parents.map(pid => renderTreeNodeCard(pid, 'parent')).join("") : `<div style="font-size:13px; color:var(--text-muted); padding:10px;">(Không có thông tin thân phụ/thân mẫu)</div>`;
     let centerHtml = renderTreeNodeCard(person.id, 'center');
@@ -423,11 +504,11 @@ function renderFamilyTree(centerId) {
 
     container.innerHTML = `
         <div style="font-size:12px; font-weight:800; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px;">1. Thân Phụ & Thân Mẫu (Tiền Nhân)</div>
-        <div class="tree-level">${parentsHtml}</div>
+        <div class="tree-level" style="flex-wrap:wrap;">${parentsHtml}</div>
         <div style="font-size:18px; color:var(--border); margin:-10px 0 10px;">↓</div>
 
-        <div style="font-size:12px; font-weight:800; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px;">2. Thế Hệ Đương Thời (Vợ / Chồng)</div>
-        <div class="tree-level">${centerHtml}${spousesHtml}</div>
+        <div style="font-size:12px; font-weight:800; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px;">2. Trọng Tâm Hiện Tại (Focus Person & Hôn Phối)</div>
+        <div class="tree-level" style="flex-wrap:wrap;">${centerHtml}${spousesHtml}</div>
         <div style="font-size:18px; color:var(--border); margin:-10px 0 10px;">↓</div>
 
         <div style="font-size:12px; font-weight:800; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px;">3. Con Cái Trực Hệ (Hậu Duệ)</div>
@@ -439,15 +520,20 @@ function renderTreeNodeCard(pid, type) {
     const p = appData.people[pid];
     if (!p) return "";
     const isCenter = type === 'center';
+    const gMeta = getGenerationMeta(p.id);
     const bYear = p.birth && p.birth.date ? p.birth.date : "?";
     const dYear = p.death && p.death.date ? p.death.date : "";
     const lifeStr = dYear ? `${bYear} – ${dYear}` : (bYear !== "?" ? `Sinh: ${bYear}` : "");
 
     return `
-        <div class="tree-node ${isCenter ? 'center' : ''}" onclick="openPersonProfile('${p.id}')">
-            <div style="font-weight:700; font-size:14.5px;">${p.name}</div>
+        <div class="tree-node ${isCenter ? 'center' : ''} ${gMeta.borderCls}" onclick="renderFamilyTree('${p.id}')">
+            <div class="gen-badge ${gMeta.badgeCls}">${gMeta.label}</div>
+            <div style="font-weight:700; font-size:15px; color:var(--primary-dark);">${p.name}</div>
             <div style="font-size:12px; color:var(--text-muted); margin-top:2px;">${lifeStr}</div>
-            <div style="font-size:10.5px; color:var(--primary); margin-top:4px; font-weight:700;">${isCenter ? '★ Trọng tâm' : 'Xem hồ sơ →'}</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                <span style="font-size:11px; font-weight:700; color:var(--accent);">FSID: ${p.fsid || p.id}</span>
+                <a onclick="event.stopPropagation(); openPersonProfile('${p.id}')" style="font-size:11.5px; color:var(--primary); font-weight:700; text-decoration:underline;">Hồ sơ →</a>
+            </div>
         </div>
     `;
 }
@@ -459,11 +545,13 @@ function renderPeopleDirectory() {
     grid.innerHTML = "";
     Object.values(appData.people).forEach(p => {
         const card = document.createElement("div");
+        const gMeta = getGenerationMeta(p.id);
         card.className = "person-card";
         card.onclick = () => openPersonProfile(p.id);
         const bDate = p.birth && p.birth.date ? p.birth.date : "Chưa rõ";
         const dDate = p.death && p.death.date ? p.death.date : "";
         card.innerHTML = `
+            <div class="gen-badge ${gMeta.badgeCls}" style="margin-bottom:6px;">${gMeta.label}</div>
             <div style="font-weight:700; font-size:15.5px; color:var(--primary-dark);">${p.name}</div>
             <div style="font-size:12.5px; color:var(--text-muted); margin-top:3px;">FSID: <strong>${p.fsid || p.id}</strong> • ${p.sex === 'M' ? 'Nam' : 'Nữ'}</div>
             <div style="font-size:12.5px; color:var(--text-muted);">Sinh: ${bDate} ${dDate ? `• Mất: ${dDate}` : ''}</div>
@@ -498,6 +586,7 @@ function openPersonProfile(pid) {
     const sec = document.getElementById("view_person");
     if (sec) sec.classList.add("active");
 
+    const gMeta = getGenerationMeta(p.id);
     const pName = document.getElementById("p_name");
     const pGender = document.getElementById("p_gender_status");
     const pFsid = document.getElementById("p_fsid");
@@ -505,7 +594,7 @@ function openPersonProfile(pid) {
     const pRels = document.getElementById("p_relatives");
 
     if (pName) pName.innerText = p.name;
-    if (pGender) pGender.innerText = `${p.sex === 'M' ? 'Nam' : 'Nữ'} • Tên gốc: ${p.raw_name}`;
+    if (pGender) pGender.innerHTML = `<span class="gen-badge ${gMeta.badgeCls}">${gMeta.label}</span> • ${p.sex === 'M' ? 'Nam' : 'Nữ'} • Tên gốc: ${p.raw_name}`;
     if (pFsid) pFsid.innerText = `FSID: ${p.fsid || p.id}`;
 
     let factsHtml = `<div>• <strong>Ngày sinh:</strong> ${p.birth && p.birth.date ? p.birth.date : 'Chưa có dữ kiện'} ${p.birth && p.birth.place ? `(${p.birth.place})` : ''}</div>`;
@@ -535,6 +624,7 @@ function openPersonProfile(pid) {
             if (ch) relsHtml += `<a class="rel-link" onclick="openPersonProfile('${ch.id}')">👶 ${ch.name}</a>`;
         });
     }
+    relsHtml += `<div style="margin-top:14px;"><button class="cal-nav-btn" onclick="renderFamilyTree('${p.id}'); navigateRoute('/tree');">🌳 Xem cây phả đồ lấy người này làm trọng tâm →</button></div>`;
     if (pRels) pRels.innerHTML = relsHtml;
 
     const memBox = document.getElementById("p_memory_box");
@@ -630,7 +720,8 @@ function handleGlobalSearch(e) {
     const results = [];
     Object.values(appData.people).forEach(p => {
         if (p.name.toLowerCase().includes(q) || (p.fsid && p.fsid.toLowerCase().includes(q))) {
-            results.push({ type: 'PERSON', id: p.id, title: p.name, sub: `Thành viên • FSID: ${p.fsid || p.id}` });
+            const gMeta = getGenerationMeta(p.id);
+            results.push({ type: 'PERSON', id: p.id, title: p.name, sub: `${gMeta.label} • FSID: ${p.fsid || p.id}` });
         }
     });
     appData.memories.forEach(m => {
