@@ -12,6 +12,8 @@
             --primary-light: #eff6ff;
             --accent: #b45309;
             --accent-light: #fef3c7;
+            --lunar-tag: #92400e;
+            --lunar-bg: #fffbeb;
             --bg: #f8fafc;
             --card-bg: #ffffff;
             --text-main: #0f172a;
@@ -208,7 +210,7 @@
         .modal-content {
             background: #ffffff;
             border-radius: var(--radius);
-            max-width: 600px;
+            max-width: 620px;
             width: 100%;
             max-height: 85vh;
             display: flex;
@@ -277,35 +279,63 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .event-item {
-            padding: 12px 14px;
+            padding: 14px 16px;
             background: var(--bg);
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 10px;
+            transition: border-color 0.15s ease;
+        }
+
+        .event-item:hover {
+            border-color: var(--border-hover);
         }
 
         .event-item-title {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 15px;
             color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .event-date-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px 12px;
+            font-size: 13.5px;
             margin-bottom: 4px;
         }
 
-        .event-item-meta {
-            font-size: 13px;
-            color: var(--text-muted);
+        .solar-badge {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .lunar-badge {
+            background: var(--lunar-bg);
+            color: var(--lunar-tag);
+            border: 1px solid #fde68a;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 12.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
         .event-item-desc {
             font-size: 13px;
             color: var(--text-main);
-            margin-top: 6px;
+            margin-top: 8px;
             white-space: pre-line;
             border-top: 1px dashed var(--border);
-            padding-top: 6px;
+            padding-top: 8px;
+            line-height: 1.5;
         }
 
         /* ADD OPTIONS MODAL */
@@ -482,7 +512,7 @@
         </footer>
     </div>
 
-    <!-- MODAL: XEM LỊCH TRÊN WEB (CLIENT-SIDE ICS VIEWER) -->
+    <!-- MODAL: XEM LỊCH TRÊN WEB (CLIENT-SIDE ICS VIEWER VỚI DƯƠNG LỊCH & ÂM LỊCH) -->
     <div id="viewerModal" class="modal-backdrop" onclick="closeModal(event, 'viewerModal')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <div class="modal-header">
@@ -490,7 +520,7 @@
                 <button class="btn-close" onclick="closeModalDirect('viewerModal')">&times;</button>
             </div>
             <div class="modal-body">
-                <input type="text" id="eventSearch" class="search-box" placeholder="🔍 Tìm kiếm thành viên hoặc ngày..." onkeyup="filterEvents()">
+                <input type="text" id="eventSearch" class="search-box" placeholder="🔍 Tìm kiếm thành viên, ngày dương (17/05) hoặc ngày âm (04/04)..." onkeyup="filterEvents()">
                 <div id="viewerLoading" style="text-align: center; padding: 20px; color: var(--text-muted);">Đang tải dữ liệu sự kiện...</div>
                 <ul id="eventList" class="event-list" style="display: none;"></ul>
             </div>
@@ -548,6 +578,144 @@
     </div>
 
     <script>
+        /*
+        * =========================================================================
+        * THUẬT TOÁN TÍNH ÂM LỊCH VIỆT NAM CHUẨN (Múi giờ Asia/Ho_Chi_Minh: GMT+7)
+        * Dựa trên thuật toán thiên văn Hồ Ngọc Đức (Public Domain / MIT compatible)
+        * =========================================================================
+        */
+        const LunarCal = {
+            INT: (d) => Math.floor(d),
+            
+            jdFromDate: function(dd, mm, yy) {
+                let a = this.INT((14 - mm) / 12);
+                let y = yy + 4800 - a;
+                let m = mm + 12 * a - 3;
+                let jd = dd + this.INT((153 * m + 2) / 5) + 365 * y + this.INT(y / 4) - this.INT(y / 100) + this.INT(y / 400) - 32045;
+                if (jd < 2299161) {
+                    jd = dd + this.INT((153 * m + 2) / 5) + 365 * y + this.INT(y / 4) - 32083;
+                }
+                return jd;
+            },
+
+            getNewMoonDay: function(k, timeZone = 7.0) {
+                let T = k / 1236.85;
+                let T2 = T * T;
+                let T3 = T2 * T;
+                let dr = Math.PI / 180;
+                let Jd1 = 2415020.75933 + 29.53058868 * k + 0.0001178 * T2 - 0.000000155 * T3;
+                Jd1 += 0.00033 * Math.sin((166.56 + 132.87 * T - 0.009173 * T2) * dr);
+                let M = 359.2242 + 29.10535608 * k - 0.0000333 * T2 - 0.00000347 * T3;
+                let Mpr = 306.0253 + 385.81691806 * k + 0.0107306 * T2 + 0.00001236 * T3;
+                let F = 21.2964 + 390.67050646 * k - 0.0016528 * T2 - 0.00000239 * T3;
+                let C1 = (0.1734 - 0.000393 * T) * Math.sin(M * dr) + 0.0021 * Math.sin(2 * dr * M);
+                C1 -= 0.4068 * Math.sin(Mpr * dr) + 0.0161 * Math.sin(2 * dr * Mpr);
+                C1 -= 0.0004 * Math.sin(3 * dr * Mpr);
+                C1 += 0.0104 * Math.sin(2 * dr * F) - 0.0051 * Math.sin((M + Mpr) * dr);
+                C1 -= 0.0074 * Math.sin((M - Mpr) * dr) + 0.0004 * Math.sin((2 * F + M) * dr);
+                C1 -= 0.0004 * Math.sin((2 * F - M) * dr) - 0.0006 * Math.sin((2 * F + Mpr) * dr);
+                C1 += 0.0010 * Math.sin((2 * F - Mpr) * dr) + 0.0005 * Math.sin((2 * Mpr + M) * dr);
+                let deltat = 0;
+                if (T < -11) {
+                    deltat = 0.001 + 0.000839 * T + 0.0002261 * T2 - 0.00000845 * T3 - 0.000000081 * T * T3;
+                } else {
+                    deltat = -0.000078 + 0.000044 * T + 0.0000207 * T2;
+                }
+                let JdNew = Jd1 + C1 - deltat;
+                return this.INT(JdNew + 0.5 + timeZone / 24);
+            },
+
+            getSunLongitude: function(dayNumber, timeZone = 7.0) {
+                let T = (dayNumber - 2451545.5 - timeZone / 24) / 36525;
+                let T2 = T * T;
+                let dr = Math.PI / 180;
+                let M = 357.52910 + 35999.05029 * T - 0.0001537 * T2;
+                let L0 = 280.46645 + 36000.76983 * T + 0.0003032 * T2;
+                let DL = (1.914602 - 0.004817 * T - 0.000014 * T2) * Math.sin(dr * M);
+                DL += (0.019993 - 0.000101 * T) * Math.sin(dr * 2 * M) + 0.000289 * Math.sin(dr * 3 * M);
+                let L = (L0 + DL) * dr;
+                L = L - Math.PI * 2 * this.INT(L / (Math.PI * 2));
+                return this.INT(L / (Math.PI / 6));
+            },
+
+            getLunarMonth11: function(yy, timeZone = 7.0) {
+                let off = this.jdFromDate(31, 12, yy) - 2415021;
+                let k = this.INT(off / 29.530588853);
+                let nm = this.getNewMoonDay(k, timeZone);
+                let sunLong = this.getSunLongitude(nm, timeZone);
+                if (sunLong >= 9) {
+                    nm = this.getNewMoonDay(k - 1, timeZone);
+                }
+                return nm;
+            },
+
+            getLeapMonthOffset: function(a11, timeZone = 7.0) {
+                let k = this.INT((a11 - 2415021.076998695) / 29.530588853 + 0.5);
+                let last = 0;
+                let i = 1;
+                let arc = this.getSunLongitude(this.getNewMoonDay(k + i, timeZone), timeZone);
+                while (arc !== last && i < 14) {
+                    last = arc;
+                    i++;
+                    arc = this.getSunLongitude(this.getNewMoonDay(k + i, timeZone), timeZone);
+                }
+                return i - 1;
+            },
+
+            CAN: ["Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ", "Canh", "Tân", "Nhâm", "Quý"],
+            CHI: ["Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi", "Thân", "Dậu", "Tuất", "Hợi"],
+
+            getYearCanChi: function(year) {
+                return this.CAN[(year + 6) % 10] + " " + this.CHI[(year + 8) % 12];
+            },
+
+            convertSolar2Lunar: function(dd, mm, yy, timeZone = 7.0) {
+                let dayNumber = this.jdFromDate(dd, mm, yy);
+                let k = this.INT((dayNumber - 2415021.076998695) / 29.530588853);
+                let monthStart = this.getNewMoonDay(k + 1, timeZone);
+                if (monthStart > dayNumber) {
+                    monthStart = this.getNewMoonDay(k, timeZone);
+                }
+                let a11, a11next, lunarYear;
+                if (monthStart >= this.getLunarMonth11(yy, timeZone)) {
+                    a11 = this.getLunarMonth11(yy, timeZone);
+                    a11next = this.getLunarMonth11(yy + 1, timeZone);
+                    lunarYear = yy + 1;
+                } else {
+                    a11 = this.getLunarMonth11(yy - 1, timeZone);
+                    a11next = this.getLunarMonth11(yy, timeZone);
+                    lunarYear = yy;
+                }
+                let lunarDay = dayNumber - monthStart + 1;
+                let diff = this.INT((monthStart - a11) / 29);
+                let lunarLeap = 0;
+                let lunarMonth = diff + 11;
+                if ((a11next - a11) > 365) {
+                    let leapMonthDiff = this.getLeapMonthOffset(a11, timeZone);
+                    if (diff >= leapMonthDiff) {
+                        lunarMonth = diff + 10;
+                        if (diff === leapMonthDiff) {
+                            lunarLeap = 1;
+                        }
+                    }
+                }
+                if (lunarMonth > 12) {
+                    lunarMonth = lunarMonth - 12;
+                }
+                if (lunarMonth >= 11 && diff < 4) {
+                    lunarYear = lunarYear - 1;
+                }
+                return {
+                    day: lunarDay,
+                    month: lunarMonth,
+                    year: lunarYear,
+                    isLeap: lunarLeap === 1,
+                    canChi: this.getYearCanChi(lunarYear),
+                    fullText: `${lunarDay < 10 ? '0' + lunarDay : lunarDay}/${lunarMonth < 10 ? '0' + lunarMonth : lunarMonth}${lunarLeap === 1 ? ' (Nhuận)' : ''} ÂL · Năm ${this.getYearCanChi(lunarYear)}`
+                };
+            }
+        };
+
         const BASE_URL = "https://tuantudo.github.io/family-calendar/calendars/";
         let currentEvents = [];
 
@@ -582,7 +750,7 @@
             });
         }
 
-        // --- VIEWER MODAL (CLIENT-SIDE ICS PARSER) ---
+        // --- VIEWER MODAL (CLIENT-SIDE ICS PARSER + VIETNAMESE LUNAR CALENDAR) ---
         function openViewer(calKey, calName) {
             document.getElementById("viewerTitle").innerText = calName;
             document.getElementById("viewerLoading").style.display = "block";
@@ -617,6 +785,13 @@
                     cur = {};
                 } else if (line === "END:VEVENT") {
                     if (inEvent && cur.summary) {
+                        // Calculate Lunar info dynamically from Solar date
+                        if (cur.dtstart && cur.dtstart.length >= 8) {
+                            const y = parseInt(cur.dtstart.substring(0, 4), 10);
+                            const m = parseInt(cur.dtstart.substring(4, 6), 10);
+                            const d = parseInt(cur.dtstart.substring(6, 8), 10);
+                            cur.lunar = LunarCal.convertSolar2Lunar(d, m, y);
+                        }
                         events.push(cur);
                     }
                     inEvent = false;
@@ -638,7 +813,7 @@
                 }
             }
 
-            // Sort by month/day
+            // Sort strictly by Solar month/day
             events.sort((a, b) => {
                 const da = (a.dtstart || "").slice(-4);
                 const db = (b.dtstart || "").slice(-4);
@@ -656,7 +831,7 @@
                 .replace(/\\\\/g, "\\");
         }
 
-        function formatDate(raw) {
+        function formatSolarDate(raw) {
             if (!raw || raw.length < 8) return "";
             const y = raw.substring(0, 4);
             const m = raw.substring(4, 6);
@@ -677,10 +852,15 @@
                 const li = document.createElement("li");
                 li.className = "event-item";
                 
-                const dateStr = formatDate(ev.dtstart);
+                const solarStr = formatSolarDate(ev.dtstart);
+                const lunarStr = ev.lunar ? ev.lunar.fullText : "";
+
                 li.innerHTML = `
                     <div class="event-item-title">${escapeHtml(ev.summary || "")}</div>
-                    <div class="event-item-meta">📅 Ngày: <strong>${dateStr}</strong> (Hàng năm)</div>
+                    <div class="event-date-row">
+                        <span class="solar-badge">📅 Dương lịch: <strong>${solarStr}</strong></span>
+                        ${lunarStr ? `<span class="lunar-badge">🌙 Âm lịch: <strong>${escapeHtml(lunarStr)}</strong></span>` : ""}
+                    </div>
                     ${ev.description ? `<div class="event-item-desc">${escapeHtml(ev.description)}</div>` : ""}
                 `;
                 list.appendChild(li);
@@ -696,8 +876,9 @@
             const filtered = currentEvents.filter(ev => {
                 const s = (ev.summary || "").toLowerCase();
                 const d = (ev.description || "").toLowerCase();
-                const dt = formatDate(ev.dtstart);
-                return s.includes(q) || d.includes(q) || dt.includes(q);
+                const dt = formatSolarDate(ev.dtstart);
+                const ln = ev.lunar ? (ev.lunar.fullText + " " + ev.lunar.canChi).toLowerCase() : "";
+                return s.includes(q) || d.includes(q) || dt.includes(q) || ln.includes(q);
             });
             renderEvents(filtered);
         }
