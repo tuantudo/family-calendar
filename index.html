@@ -55,102 +55,50 @@
     <!-- MAIN VIEWPORT -->
     <main>
 
-        <!-- 1. HOME / PUBLICATION LANDING VIEW (RECOMPOSED) -->
+        <!-- 1. HOME / PUBLICATION LANDING VIEW (DYNAMIC DATA-DRIVEN) -->
         <section id="view_home" class="view-section active">
             
             <!-- SECTION 1: EDITORIAL MASTHEAD & SUBJECT HERO -->
             <div class="home-pub-hero">
                 <div class="home-pub-kicker">Gia phả dòng họ</div>
-                <h1 class="home-pub-title" id="heroPublicationTitle">Trích lục Gia phả nhà ông Trần Trọng Thu</h1>
-                <p class="home-pub-anchor">
-                    Khởi nguyên từ cụ <strong>Giuse Trần Trọng Thu</strong> (1872 – 1969) tại Thanh Hóa, 
-                    trải qua hơn một thế kỷ rưỡi với 5 thế hệ nối tiếp, nếp nhà và ký ức được gìn giữ qua từng biến thiên thời cuộc.
-                </p>
+                <h1 class="home-pub-title" id="heroPublicationTitle">Trích lục Gia phả chính thức</h1>
+                <p class="home-pub-anchor" id="homeHeroAnchor"></p>
                 <div class="home-pub-actions">
                     <a class="pub-btn pub-btn-primary" href="#/gia-pha" onclick="navigateRoute('/gia-pha')">Khám phá Cây Phả Đồ →</a>
-                    <a class="pub-btn pub-btn-outline" href="#/gia-pha/nhan-vat" onclick="navigateRoute('/gia-pha/nhan-vat')">Tra cứu Thành viên (223)</a>
+                    <a class="pub-btn pub-btn-outline" id="homeHeroPeopleBtn" href="#/gia-pha/nhan-vat" onclick="navigateRoute('/gia-pha/nhan-vat')">Tra cứu Thành viên</a>
                 </div>
             </div>
 
-            <!-- SECTION 2: HUMAN MEMORY & LIVING VOICES -->
-            <div class="home-human-spotlight">
+            <!-- SECTION 2: HUMAN MEMORY & LIVING VOICES (DYNAMIC) -->
+            <div class="home-human-spotlight" id="homeHumanSpotlight">
                 <div class="spotlight-header">
                     <span class="spotlight-label">Ký ức & Giai thoại</span>
                     <span class="spotlight-rule"></span>
                 </div>
-                <div class="spotlight-content">
-                    <div class="spotlight-quote-mark">“</div>
-                    <div class="spotlight-body">
-                        <h2 class="spotlight-title">Ký ức về Bà Sa — Teresa Phạm Thị Hưng</h2>
-                        <p class="spotlight-passage">
-                            Bà sinh ra ở Kim Sơn, Ninh Bình, gặp và lấy ông Trần Trọng Thư ở Cẩm Phong, Cẩm Thủy, Thanh Hóa, sinh được 10 người con, rồi cùng gia đình vào Sài Gòn lập nghiệp bằng gánh hàng rong từ những năm 1987–1990. Mười người con trưởng thành là mười cuộc đời tiếp nối công đức và sự tần tảo của một người mẹ.
-                        </p>
-                        <div class="spotlight-meta">
-                            <span>Ghi chép truyền khẩu gia tộc · Nhánh F1</span>
-                            <a class="spotlight-link" href="#/gia-pha/ky-uc" onclick="navigateRoute('/gia-pha/ky-uc')">Đọc toàn bộ ký ức dòng họ →</a>
-                        </div>
-                    </div>
-                </div>
+                <div class="spotlight-content" id="homeSpotlightContent"></div>
             </div>
 
-            <!-- SECTION 3: EDITORIAL ESSAY FROM MẠCH -->
-            <div class="home-editorial-feature">
+            <!-- SECTION 3: EDITORIAL ESSAY FROM MẠCH (DYNAMIC) -->
+            <div class="home-editorial-feature" id="homeEditorialFeature">
                 <div class="spotlight-header">
                     <span class="spotlight-label">Từ Tập San MẠCH</span>
                     <span class="spotlight-rule"></span>
                 </div>
-                <div class="home-feature-card" onclick="navigateRoute('/mach/bai-viet/06-gio-va-ky-uc-gia-dinh')">
-                    <div class="feature-tag">MẠCH · TỰ SỰ & NẾP NHÀ</div>
-                    <h2 class="feature-title">Giỗ Và Ký Ức Gia Đình</h2>
-                    <p class="feature-excerpt">
-                        Ngày giỗ trong gia đình không chỉ là một nghi lễ tưởng niệm người đã khuất, mà là chiếc neo neo giữ cảm thức về nguồn cội. Đó là khoảnh khắc con cháu tề tựu, nhắc lại từng lời ăn tiếng nói, từng thói quen và cách đối đãi của tiền nhân để thấy mình không bao giờ đơn độc giữa dòng đời.
-                    </p>
-                    <div class="feature-footer">
-                        <span>✍️ Người giữ mạch · MẠCH Số 01 (2026)</span>
-                        <span class="feature-read-more">Đọc bài viết →</span>
-                    </div>
-                </div>
+                <div class="home-feature-card" id="homeFeatureCard"></div>
             </div>
 
-            <!-- SECTION 4: THREE ARCHIVAL TERRITORIES (PUBLICATION PILLARS) -->
+            <!-- SECTION 4: THREE ARCHIVAL TERRITORIES (PUBLICATION PILLARS DYNAMIC) -->
             <div class="home-territory-pillars">
                 <div class="spotlight-header">
                     <span class="spotlight-label">Không gian Khám phá Di sản</span>
                     <span class="spotlight-rule"></span>
                 </div>
-                <div class="home-pillar-grid">
-                    <div class="home-pillar-item" onclick="navigateRoute('/gia-pha')">
-                        <div class="pillar-num">I</div>
-                        <h3 class="pillar-title">Gia Phả Trực Hệ</h3>
-                        <p class="pillar-desc">Cây phả hệ đa tầng, hồ sơ 223 thành viên, 68 gia đình và bản đồ 5 thế hệ từ tiền nhân F0 đến hậu duệ.</p>
-                        <span class="pillar-action">Mở Cây Phả Đồ →</span>
-                    </div>
-                    <div class="home-pillar-item" onclick="navigateRoute('/mach')">
-                        <div class="pillar-num">II</div>
-                        <h3 class="pillar-title">Tập San Mạch</h3>
-                        <p class="pillar-desc">19 bài tự sự, khảo cứu nếp nhà, những bức thư gửi thế hệ sau và ký ức được ghi chép lại.</p>
-                        <span class="pillar-action">Đọc Tập San →</span>
-                    </div>
-                    <div class="home-pillar-item" onclick="navigateRoute('/tu-lieu')">
-                        <div class="pillar-num">III</div>
-                        <h3 class="pillar-title">Kho Lưu Trữ Tư Liệu</h3>
-                        <p class="pillar-desc">Không gian bảo tồn văn bản hộ tịch, sổ gia bạ, ảnh cổ và di vật gia tộc đang trong quá trình số hóa.</p>
-                        <span class="pillar-action">Xem Tư Liệu →</span>
-                    </div>
-                </div>
+                <div class="home-pillar-grid" id="homePillarGrid"></div>
             </div>
 
-            <!-- SECTION 5: SUBSTANCE & CAPABILITIES (SUBTLE FOOTPRINT) -->
+            <!-- SECTION 5: SUBSTANCE & CAPABILITIES (SUBTLE DATA-DRIVEN FOOTPRINT) -->
             <div class="home-substance-strip">
-                <div class="substance-facts">
-                    <span class="fact-item"><strong>223</strong> thành viên</span>
-                    <span class="fact-dot">·</span>
-                    <span class="fact-item"><strong>68</strong> gia đình</span>
-                    <span class="fact-dot">·</span>
-                    <span class="fact-item"><strong>5</strong> thế hệ</span>
-                    <span class="fact-dot">·</span>
-                    <span class="fact-item"><strong>1872</strong> đến nay</span>
-                </div>
+                <div class="substance-facts" id="homeSubstanceFacts"></div>
                 <div class="substance-tools">
                     <a class="tool-link" href="#/lich" onclick="navigateRoute('/lich')">📅 Lịch Gia Đình (Âm & Dương lịch)</a>
                     <a class="tool-link" href="#/tim-kiem" onclick="navigateRoute('/tim-kiem')">🔍 Tra cứu toàn cục</a>

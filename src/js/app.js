@@ -1507,54 +1507,152 @@ function escapeHtml(text) {
 }
 
 // =======================================================
-// HOME PUBLICATION LANDING (PUBLICATION_V1)
+// HOME PUBLICATION LANDING (DATA-DRIVEN RECOMPOSITION)
 // =======================================================
 
 function renderHomePublicationLanding() {
-    // 1. Territory cards: populate stats after data load
-    const cardStats = document.querySelectorAll(".pub-territory-stats");
-    if (cardStats.length > 0) {
-        const peopleCount = (appData.stats && appData.stats.individuals) || Object.keys(appData.people).length || 0;
-        const famCount = (appData.stats && appData.stats.families) || Object.keys(appData.families).length || 0;
-        const storyCount = (machData && (machData.articles || machData.stories)) ? (machData.articles || machData.stories).length : 0;
-        const labels = [
-            `${peopleCount} thành viên • ${famCount} gia đình • Phả đồ tương tác`,
-            `${storyCount} bài viết • 2 tuyển tập • 3 tác giả`,
-            `${Object.keys(machData.archiveIndex || {}).length} hiện vật đang số hóa`
-        ];
-        cardStats.forEach((el, i) => { if (labels[i]) el.innerText = labels[i]; });
+    if (!appData) return;
+
+    const people = appData.people || {};
+    const stats = appData.stats || { individuals: Object.keys(people).length, families: Object.keys(appData.families || {}).length, memories: (appData.memories || []).length };
+    const rootId = appData.rootAnchor || Object.keys(people)[0];
+    const rootPerson = people[rootId];
+
+    // 1. SECTION 1: Dynamic Hero Subject & Anchor
+    const heroAnchorEl = document.getElementById("homeHeroAnchor");
+    if (heroAnchorEl) {
+        if (rootPerson) {
+            const rootName = rootPerson.name || "Tiền nhân khởi tổ";
+            const bYear = rootPerson.birth && rootPerson.birth.date ? rootPerson.birth.date.replace(/[^0-9]/g, '').slice(0, 4) : "1872";
+            const dYear = rootPerson.death && rootPerson.death.date ? rootPerson.death.date.slice(-4) : "1969";
+            const bPlace = (rootPerson.birth && rootPerson.birth.place) ? rootPerson.birth.place.split(',')[0].trim() : "Thanh Hóa";
+            const genLevels = window.maxDerivedGenLevel ? (window.maxDerivedGenLevel + 1) : 5;
+            
+            heroAnchorEl.innerHTML = `Khởi nguyên từ cụ <strong>${escapeHtml(rootName)}</strong> (${bYear} – ${dYear}) tại ${escapeHtml(bPlace)}, trải qua hơn một thế kỷ rưỡi với ${genLevels} thế hệ nối tiếp, nếp nhà và ký ức được gìn giữ qua từng biến thiên thời cuộc.`;
+        } else {
+            heroAnchorEl.innerText = "Nơi những gì còn nhớ được ở lại, được kết nối và có thể được truyền lại qua các thế hệ gia tộc.";
+        }
     }
 
-    // 2. Latest MẠCH stories on home
-    const latestGrid = document.getElementById("homeLatestStories");
-    if (latestGrid && machData && (machData.articles || machData.stories)) {
-        const articleList = (machData.articles || machData.stories).slice();
-        articleList.sort((a, b) => {
-            const da = a.date || a.publishedAt || '';
-            const db = b.date || b.publishedAt || '';
-            return db.localeCompare(da);
-        });
-        latestGrid.innerHTML = articleList.slice(0, 3).map(s => {
-            const seriesId = (s.seriesIds && s.seriesIds.length > 0) ? s.seriesIds[0] : (s.seriesId || s.seriesSlug);
-            const ser = (machData.series && seriesId) ? machData.series[seriesId] : null;
-            const authId = (s.authorIds && s.authorIds.length > 0) ? s.authorIds[0] : s.authorId;
-            const auth = (machData.authors && authId) ? machData.authors[authId] : { name: "Ban Biên Tập" };
-            const isLetter = s.articleType === 'letter' || (ser && ser.seriesType === 'epistolary');
-            const tagLabel = ser ? `${(ser.shortTitle || ser.title).toUpperCase()}${s.seriesOrder ? ' · ' + (isLetter ? 'SỐ' : 'BÀI') + ' ' + String(s.seriesOrder).padStart(2, '0') : ''}` : 'MẠCH';
-            return `
-                <div class="story-card" onclick="navigateRoute('/mach/bai-viet/${s.slug}')">
-                    <div>
-                        <div class="story-card-tag">${tagLabel}</div>
-                        <h3 class="story-card-title">${s.title}</h3>
-                        <p class="story-card-excerpt">${s.excerpt || s.deckLead || s.subtitle || ''}</p>
-                    </div>
-                    <div class="story-card-footer">
-                        <span>✍️ ${auth.name}</span>
-                        <span>${s.date || (s.publishedAt ? s.publishedAt.slice(0, 10) : '2026')}</span>
+    const heroPeopleBtn = document.getElementById("homeHeroPeopleBtn");
+    if (heroPeopleBtn) {
+        heroPeopleBtn.innerText = `Tra cứu Thành viên (${stats.individuals || 223})`;
+    }
+
+    // 2. SECTION 2: Dynamic Human Memory Spotlight
+    const spotlightContent = document.getElementById("homeSpotlightContent");
+    if (spotlightContent) {
+        const memories = appData.memories || [];
+        if (memories.length > 0) {
+            // Select primary memory (default to first complete story)
+            const mem = memories[0];
+            const title = mem.title ? mem.title.replace(/^📖\s*/, '') : "Ký ức gia đình";
+            const personName = mem.personName ? ` — ${mem.personName.split('@')[0].trim()}` : '';
+            const fullTitle = `${title}${personName}`;
+            const passage = mem.story ? (mem.story.length > 320 ? mem.story.slice(0, 320).trim() + '...' : mem.story) : '';
+            
+            spotlightContent.innerHTML = `
+                <div class="spotlight-quote-mark">“</div>
+                <div class="spotlight-body">
+                    <h2 class="spotlight-title">${escapeHtml(fullTitle)}</h2>
+                    <p class="spotlight-passage">${escapeHtml(passage)}</p>
+                    <div class="spotlight-meta">
+                        <span>Ghi chép truyền khẩu gia tộc · ${memories.length} mẩu ký ức</span>
+                        <a class="spotlight-link" href="#/gia-pha/ky-uc" onclick="navigateRoute('/gia-pha/ky-uc')">Đọc toàn bộ ký ức dòng họ →</a>
                     </div>
                 </div>
             `;
-        }).join("");
+        } else {
+            const spotlightSec = document.getElementById("homeHumanSpotlight");
+            if (spotlightSec) spotlightSec.style.display = "none";
+        }
+    }
+
+    // 3. SECTION 3: Dynamic Editorial Essay from MẠCH (Selector Engine)
+    const featureCard = document.getElementById("homeFeatureCard");
+    if (featureCard && machData && (machData.articles || machData.stories)) {
+        const allArticles = machData.articles || machData.stories;
+        
+        // Editorial selection strategy:
+        // Priority 1: Curated thematic story about family/rituals ('06-gio-va-ky-uc-gia-dinh')
+        // Priority 2: Epistolary flagship ('clara-001')
+        // Priority 3: First available story
+        let featured = allArticles.find(a => a.slug === '06-gio-va-ky-uc-gia-dinh') 
+                    || allArticles.find(a => a.slug === 'clara-001')
+                    || allArticles[0];
+
+        if (featured) {
+            const seriesId = (featured.seriesIds && featured.seriesIds.length > 0) ? featured.seriesIds[0] : (featured.seriesId || featured.seriesSlug);
+            const ser = (machData.series && seriesId) ? machData.series[seriesId] : null;
+            const authId = (featured.authorIds && featured.authorIds.length > 0) ? featured.authorIds[0] : featured.authorId;
+            const auth = (machData.authors && authId) ? machData.authors[authId] : { name: "Ban Biên Tập MẠCH" };
+            const isLetter = featured.articleType === 'letter' || (ser && ser.seriesType === 'epistolary');
+            const tagLabel = ser ? `${(ser.shortTitle || ser.title).toUpperCase()}${featured.seriesOrder ? ' · ' + (isLetter ? 'SỐ' : 'BÀI') + ' ' + String(featured.seriesOrder).padStart(2, '0') : ''}` : 'MẠCH · TỰ SỰ & NẾP NHÀ';
+            const excerpt = featured.excerpt || featured.deckLead || featured.subtitle || "Khám phá bài viết trong tập san MẠCH.";
+
+            featureCard.setAttribute("onclick", `navigateRoute('/mach/bai-viet/${featured.slug}')`);
+            featureCard.innerHTML = `
+                <div class="feature-tag">${escapeHtml(tagLabel)}</div>
+                <h2 class="feature-title">${escapeHtml(featured.title)}</h2>
+                <p class="feature-excerpt">${escapeHtml(excerpt)}</p>
+                <div class="feature-footer">
+                    <span>✍️ ${escapeHtml(auth.name)} · ${featured.date || (featured.publishedAt ? featured.publishedAt.slice(0, 10) : '2026')}</span>
+                    <span class="feature-read-more">Đọc bài viết →</span>
+                </div>
+            `;
+        }
+    }
+
+    // 4. SECTION 4: Dynamic Archival Pillars (Gia Phả / Mạch / Tư Liệu)
+    const pillarGrid = document.getElementById("homePillarGrid");
+    if (pillarGrid) {
+        const peopleCount = stats.individuals || Object.keys(people).length;
+        const famCount = stats.families || Object.keys(appData.families || {}).length;
+        const articleCount = (machData && (machData.articles || machData.stories)) ? (machData.articles || machData.stories).length : 19;
+        const archiveCount = Object.keys((machData && machData.archiveIndex) || {}).length;
+        const archiveStatusText = archiveCount > 0 
+            ? `${archiveCount} hiện vật và tài liệu lưu trữ` 
+            : "Không gian bảo tồn văn bản hộ tịch, sổ gia bạ, ảnh cổ và di vật gia tộc đang trong quá trình số hóa.";
+
+        pillarGrid.innerHTML = `
+            <div class="home-pillar-item" onclick="navigateRoute('/gia-pha')">
+                <div class="pillar-num">I</div>
+                <h3 class="pillar-title">Gia Phả Trực Hệ</h3>
+                <p class="pillar-desc">Cây phả hệ đa tầng, hồ sơ ${peopleCount} thành viên, ${famCount} gia đình và bản đồ thế hệ từ tiền nhân đến hậu duệ.</p>
+                <span class="pillar-action">Mở Cây Phả Đồ →</span>
+            </div>
+            <div class="home-pillar-item" onclick="navigateRoute('/mach')">
+                <div class="pillar-num">II</div>
+                <h3 class="pillar-title">Tập San Mạch</h3>
+                <p class="pillar-desc">${articleCount} bài tự sự, khảo cứu nếp nhà, những bức thư gửi thế hệ sau và ký ức được ghi chép lại.</p>
+                <span class="pillar-action">Đọc Tập San →</span>
+            </div>
+            <div class="home-pillar-item" onclick="navigateRoute('/tu-lieu')">
+                <div class="pillar-num">III</div>
+                <h3 class="pillar-title">Kho Lưu Trữ Tư Liệu</h3>
+                <p class="pillar-desc">${archiveStatusText}</p>
+                <span class="pillar-action">Xem Tư Liệu →</span>
+            </div>
+        `;
+    }
+
+    // 5. SECTION 5: Dynamic Substance Facts
+    const substanceFacts = document.getElementById("homeSubstanceFacts");
+    if (substanceFacts) {
+        const peopleCount = stats.individuals || Object.keys(people).length;
+        const famCount = stats.families || Object.keys(appData.families || {}).length;
+        const genCount = window.maxDerivedGenLevel ? (window.maxDerivedGenLevel + 1) : 5;
+        const startYear = (rootPerson && rootPerson.birth && rootPerson.birth.date) ? rootPerson.birth.date.replace(/[^0-9]/g, '').slice(0, 4) : "1872";
+
+        substanceFacts.innerHTML = `
+            <span class="fact-item"><strong>${peopleCount}</strong> thành viên</span>
+            <span class="fact-dot">·</span>
+            <span class="fact-item"><strong>${famCount}</strong> gia đình</span>
+            <span class="fact-dot">·</span>
+            <span class="fact-item"><strong>${genCount}</strong> thế hệ</span>
+            <span class="fact-dot">·</span>
+            <span class="fact-item"><strong>${startYear}</strong> đến nay</span>
+        `;
     }
 }
 
