@@ -159,34 +159,41 @@
             </div>
         </section>
 
-        <!-- 3. FAMILY TREE VIEW (ARCH_03 PEDIGREE & GENERATIONS) -->
+        <!-- 3. FAMILY TREE VIEW (ARCH_03B DUAL MODE: EXPLORE & FOCUS) -->
         <section id="view_tree" class="view-section">
             <div class="section-header">
-                <h2 class="section-title">🌳 Cây Phả Đồ & Hệ Thống Thế Hệ</h2>
-                <p class="section-desc">Quy chiếu thế hệ F0–F4 theo Family Anchor • Nhấp chọn bất kỳ người nào làm trọng tâm hiển thị (Focus Person).</p>
+                <h2 class="section-title">🌳 Cây Gia Phả & Bản Đồ Thế Hệ</h2>
+                <p class="section-desc">Khám phá dòng họ từ Family Anchor (Cố Thu F0) • Phân tầng thế hệ và nhánh gia đình nhất quán.</p>
             </div>
 
             <div class="tree-container">
-                <!-- GENERATION LEGEND -->
-                <div class="tree-legend-bar">
-                    <div class="legend-item"><span class="legend-dot" style="background:#1e3a8a;"></span> F0 (Family Anchor / Cố Thu)</div>
-                    <div class="legend-item"><span class="legend-dot" style="background:#047857;"></span> F1 (Đời Con)</div>
-                    <div class="legend-item"><span class="legend-dot" style="background:#b45309;"></span> F2 (Đời Cháu)</div>
-                    <div class="legend-item"><span class="legend-dot" style="background:#4338ca;"></span> F3 (Đời Chắt)</div>
-                    <div class="legend-item"><span class="legend-dot" style="background:#be185d;"></span> F4 (Đời Chút)</div>
+                <!-- TOP CONTROLS & DUAL MODE SWITCH -->
+                <div class="tree-view-mode-bar">
+                    <div class="tree-legend-bar">
+                        <div class="legend-item"><span class="legend-dot" style="background:#1e3a8a;"></span> F0 (Family Anchor)</div>
+                        <div class="legend-item"><span class="legend-dot" style="background:#047857;"></span> F1 (Đời Con)</div>
+                        <div class="legend-item"><span class="legend-dot" style="background:#b45309;"></span> F2 (Đời Cháu)</div>
+                        <div class="legend-item"><span class="legend-dot" style="background:#4338ca;"></span> F3 (Đời Chắt)</div>
+                        <div class="legend-item"><span class="legend-dot" style="background:#be185d;"></span> F4 (Đời Chút)</div>
+                    </div>
+
+                    <div class="cal-view-switch">
+                        <button class="view-tab-btn active" id="btn_tree_explore" onclick="switchTreeViewMode('explore')">🌐 Toàn Cảnh Thế Hệ</button>
+                        <button class="view-tab-btn" id="btn_tree_focus" onclick="switchTreeViewMode('focus')">🎯 Tiêu Điểm Phả Đồ</button>
+                    </div>
                 </div>
 
-                <!-- BREADCRUMBS RELATIONSHIP PATH -->
-                <div id="treeRelationPath" class="relation-path-bar"></div>
+                <!-- BREADCRUMBS RELATIONSHIP PATH (VISIBLE IN FOCUS MODE) -->
+                <div id="treeRelationPath" class="relation-path-bar" style="display: none;"></div>
 
-                <!-- FOCUS SELECTOR -->
-                <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; width: 100%; max-width: 600px;">
-                    <span style="white-space: nowrap;">Chọn trọng tâm phả đồ:</span>
-                    <select id="treeCenterSelect" onchange="renderFamilyTree(this.value)" style="padding: 7px 12px; border-radius: 6px; border: 1px solid var(--border); font-size: 13.5px; background: var(--bg); width: 100%;"></select>
+                <!-- FOCUS SELECTOR (VISIBLE IN FOCUS MODE) -->
+                <div id="treeFocusSelectorBar" style="display: none; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; width: 100%; max-width: 600px;">
+                    <span style="white-space: nowrap;">Chọn tiêu điểm phả đồ:</span>
+                    <select id="treeCenterSelect" onchange="renderFocusPedigreeTree(this.value)" style="padding: 7px 12px; border-radius: 6px; border: 1px solid var(--border); font-size: 13.5px; background: var(--bg); width: 100%;"></select>
                 </div>
 
-                <!-- VIEWPORT -->
-                <div id="treeGraphViewport" style="width: 100%; display: flex; flex-direction: column; align-items: center;"></div>
+                <!-- MAIN TREE VIEWPORT (GENERATION BANDS OR FOCUSED SUBGRAPH) -->
+                <div id="treeGraphViewport" style="width: 100%; display: flex; flex-direction: column; gap: 20px;"></div>
             </div>
         </section>
 
