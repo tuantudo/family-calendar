@@ -836,17 +836,17 @@ function renderUnifiedPersonCard(p, isTreeNode = false, isCenter = false) {
     return `
         <div class="person-card ${gMeta.borderCls}" ${isTreeNode ? `onclick="renderFocusPedigreeTree('${p.id}')"` : `onclick="openPersonProfile('${p.id}')"`} style="${isCenter ? 'border: 2px solid var(--primary); box-shadow: var(--shadow-md);' : ''}">
             <div>
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <div class="card-header-row">
                     <span class="gen-badge ${gMeta.badgeCls}">${gMeta.label}</span>
-                    <span style="font-family:monospace; font-size:11.5px; color:var(--text-muted); background:var(--bg); padding:2px 6px; border-radius:4px;">${p.fsid || p.id}</span>
+                    <span class="card-id-badge">${p.fsid || p.id}</span>
                 </div>
-                <div style="font-weight:700; font-size:16px; color:var(--primary-dark);">${p.name}</div>
-                <div style="font-size:13px; color:var(--text-muted); margin-top:4px;">📅 ${lifeStr}</div>
-                <div style="font-size:12.5px; color:var(--text-muted); margin-top:2px;">Giới tính: <strong>${p.sex === 'M' ? 'Nam' : 'Nữ'}</strong> • Con cái: <strong>${p.children ? p.children.length : 0}</strong></div>
+                <div class="card-name-title">${p.name}</div>
+                <div class="card-meta-primary">📅 ${lifeStr}</div>
+                <div class="card-meta-secondary">Giới tính: <strong>${p.sex === 'M' ? 'Nam' : 'Nữ'}</strong> • Con cái: <strong>${p.children ? p.children.length : 0}</strong></div>
             </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; padding-top:10px; border-top:1px dashed var(--border); font-size:12.5px;">
-                <a onclick="event.stopPropagation(); renderFocusPedigreeTree('${p.id}'); switchTreeViewMode('focus');" style="color:var(--accent); font-weight:700; cursor:pointer;">🌳 Tiêu điểm phả đồ</a>
-                <a onclick="event.stopPropagation(); openPersonProfile('${p.id}');" style="color:var(--primary); font-weight:700; cursor:pointer;">Hồ sơ →</a>
+            <div class="card-footer-row">
+                <a class="card-accent-link" onclick="event.stopPropagation(); renderFocusPedigreeTree('${p.id}'); switchTreeViewMode('focus');">🌳 Tiêu điểm phả đồ</a>
+                <a class="card-action-link" onclick="event.stopPropagation(); openPersonProfile('${p.id}');">Hồ sơ →</a>
             </div>
         </div>
     `;
@@ -920,17 +920,17 @@ function renderFamiliesDirectory(filterGen = currentFamilyGenFilter) {
         const husb = appData.people[f.husband], wife = appData.people[f.wife];
         card.innerHTML = `
             <div>
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <div class="card-header-row">
                     <span class="gen-badge ${fMeta.badgeCls}">${fMeta.label}</span>
-                    <span style="font-family:monospace; font-size:11.5px; color:var(--text-muted); background:rgba(0,0,0,0.04); padding:2px 6px; border-radius:4px;">${f.id}</span>
+                    <span class="card-id-badge">${f.id}</span>
                 </div>
-                <div style="font-weight:700; font-size:16px; color:var(--primary-dark);">Nhánh: ${husb ? husb.name : 'Chưa rõ'} & ${wife ? wife.name : 'Chưa rõ'}</div>
-                <div style="font-size:13px; color:var(--text-muted); margin-top:4px;">Kết hôn: ${f.marriage && f.marriage.date ? f.marriage.date : 'Chưa có dữ kiện'}</div>
-                <div style="font-size:12.5px; color:var(--text-muted); margin-top:2px;">Con cái trực hệ: <strong>${f.children.length}</strong> người con</div>
+                <div class="card-name-title">Nhánh: ${husb ? husb.name : 'Chưa rõ'} & ${wife ? wife.name : 'Chưa rõ'}</div>
+                <div class="card-meta-primary">Kết hôn: ${f.marriage && f.marriage.date ? f.marriage.date : 'Chưa có dữ kiện'}</div>
+                <div class="card-meta-secondary">Con cái trực hệ: <strong>${f.children.length}</strong> người con</div>
             </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; padding-top:10px; border-top:1px dashed var(--border); font-size:12.5px;">
-                <span style="font-size:12px; color:var(--text-muted);">${fMeta.title}</span>
-                <span style="color:var(--primary); font-weight:700;">Xem chi tiết nhánh →</span>
+            <div class="card-footer-row">
+                <span class="card-meta-secondary">${fMeta.title}</span>
+                <span class="card-action-link">Xem chi tiết nhánh →</span>
             </div>
         `;
         grid.appendChild(card);
@@ -1342,7 +1342,7 @@ function openStoryDetail(slug) {
         // Format figures
         text = text.replace(/!\[(.*?)\]\((.*?)\)(?:\s*\n\s*[\*_](.*?)[\*_])?/g, (m, alt, src, cap) => {
             const caption = cap ? cap.trim().replace(/^[\*_]+|[\*_]+$/g, "") : alt;
-            return `<figure><img src="${src}" alt="${alt}"><figcaption style="font-size:13.5px; text-align:center; color:var(--text-muted); font-style:italic; margin-top:8px;">${caption}</figcaption></figure>`;
+            return `<figure><img src="${src}" alt="${alt}"><figcaption>${caption}</figcaption></figure>`;
         });
 
         // Convert double newline to paragraphs
@@ -1353,7 +1353,9 @@ function openStoryDetail(slug) {
             if (p.startsWith("# ")) return `<h2 style="text-align:center; margin-bottom:1.5em;">${p.replace("# ", "")}</h2>`;
             if (p.startsWith("## ")) return `<h2>${p.replace("## ", "")}</h2>`;
             if (p.startsWith("> ")) return `<blockquote>${p.replace(/^>\s*/gm, "")}</blockquote>`;
-            return `<p>${p.replace(/\n/g, "<br>")}</p>`;
+            // Clean inline soft line breaks while respecting markdown styling
+            const cleanP = p.replace(/\n/g, " ");
+            return `<p>${cleanP}</p>`;
         }).join("");
 
         contentBody.innerHTML = paragraphs;
