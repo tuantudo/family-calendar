@@ -17,6 +17,14 @@ let appData = {
     memories: []
 };
 
+let machData = {
+    authors: {},
+    series: {},
+    topics: {},
+    stories: []
+};
+let currentMachTab = 'all'; // 'all' | 'series' | 'authors'
+
 // Derived Graph State
 let derivedGenerations = {}; // pid -> level integer (0 = Root Anchor, 1 = F1, etc.)
 let derivedPaths = {};        // pid -> [pid0, pid1, ... pidN] shortest lineage path from Anchor
@@ -55,7 +63,17 @@ document.addEventListener("DOMContentLoaded", () => {
             renderMemories();
 
             loadCalendarFeeds();
-            handleHashRoute();
+            fetch("data/mach.json")
+                .then(r => r.json())
+                .then(m => {
+                    machData = m;
+                    renderMachModule();
+                    handleHashRoute();
+                })
+                .catch(err => {
+                    console.warn("Could not load data/mach.json:", err);
+                    handleHashRoute();
+                });
         })
         .catch(err => {
             console.error("Error loading genealogy dataset:", err);
@@ -194,6 +212,15 @@ function handleHashRoute() {
     } else if (hash.startsWith("#/family/")) {
         const fid = hash.replace("#/family/", "");
         openFamilyProfile(fid);
+    } else if (hash.startsWith("#/mach/bai-viet/")) {
+        const slug = hash.replace("#/mach/bai-viet/", "");
+        openStoryDetail(slug);
+    } else if (hash.startsWith("#/mach/series/")) {
+        const slug = hash.replace("#/mach/series/", "");
+        openSeriesDetail(slug);
+    } else if (hash.startsWith("#/mach/tac-gia/")) {
+        const aid = hash.replace("#/mach/tac-gia/", "");
+        openAuthorDetail(aid);
     } else {
         const route = hash.replace("#", "") || "/";
         showSectionByRoute(route);
@@ -211,26 +238,31 @@ function showSectionByRoute(route) {
     let secId = "view_home";
     let navId = "nav_home";
 
-    if (route === "/tree") {
+    if (route === "/tree" || route === "/gia-pha" || route === "/gia-pha/cay") {
         secId = "view_tree";
         navId = "nav_tree";
         renderTreeModule();
-    } else if (route === "/people") {
+    } else if (route === "/people" || route === "/gia-pha/nguoi") {
         secId = "view_people";
         navId = "nav_people";
-    } else if (route === "/families") {
+    } else if (route === "/families" || route === "/gia-pha/gia-dinh") {
         secId = "view_families";
         navId = "nav_families";
-    } else if (route === "/calendar") {
+    } else if (route === "/calendar" || route === "/lich") {
         secId = "view_calendar";
         navId = "nav_calendar";
         renderCalendarModule();
+    } else if (route === "/mach" || route === "/mach/bai-viet" || route === "/mach/series" || route === "/mach/tac-gia") {
+        secId = "view_mach";
+        navId = "nav_mach";
+        renderMachModule();
     } else if (route === "/timeline") {
         secId = "view_timeline";
         navId = "nav_timeline";
     } else if (route === "/memories") {
-        secId = "view_memories";
-        navId = "nav_memories";
+        secId = "view_mach";
+        navId = "nav_mach";
+        renderMachModule();
     }
 
     const sec = document.getElementById(secId);
@@ -1133,3 +1165,379 @@ function escapeHtml(text) {
     div.innerText = text;
     return div.innerHTML;
 }
+
+// =======================================================
+// MẠCH EDITORIAL & NARRATIVE MODULE CONTROLLER (MACH_01)
+// =======================================================
+
+function filterMachTab(tab) {
+    currentMachTab = tab;
+    document.querySelectorAll(".mach-nav-btn").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".mach-tab-panel").forEach(p => p.classList.remove("active"));
+
+    const btn = document.getElementById(`btn_mach_${tab}`);
+    if (btn) btn.classList.add("active");
+
+    if (tab === "all") {
+        const p = document.getElementById("machTabContentAll");
+        if (p) p.classList.add("active");
+    } else if (tab === "series") {
+        const p = document.getElementById("machTabContentSeries");
+        if (p) p.classList.add("active");
+    } else if (tab === "authors") {
+        const p = document.getElementById("machTabContentAuthors");
+        if (p) p.classList.add("active");
+    }
+}
+
+function renderMachModule() {
+    if (!machData || !machData.stories) return;
+
+    // 1. Render Featured Story
+    const featContainer = document.getElementById("machFeaturedContainer");
+    if (featContainer && machData.stories.length > 0) {
+        const feat = machData.stories[0];
+        const auth = (machData.authors && machData.authors[feat.authorId]) ? machData.authors[feat.authorId] : { name: "Ban Biên Tập" };
+        const ser = (machData.series && machData.series[feat.seriesSlug]) ? machData.series[feat.seriesSlug] : { title: "Chuyên đề" };
+        featContainer.innerHTML = `
+            <div class="series-card" style="border-left: 5px solid var(--lacquer-red); margin-bottom: 24px;" onclick="navigateRoute('/mach/bai-viet/${feat.slug}')">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                    <span class="series-card-badge">⭐ BÀI VIẾT NỔI BẬT • ${ser.title.toUpperCase()}</span>
+                    <span style="font-size:12.5px; color:var(--text-subtle);">${feat.date}</span>
+                </div>
+                <h3 class="series-card-title" style="margin-top: 6px;">${feat.title}</h3>
+                <p class="series-card-desc">${feat.excerpt}</p>
+                <div class="series-card-meta">
+                    <span>✍️ ${auth.name}</span>
+                    <span style="color:var(--lacquer-red); font-weight:700;">Đọc tiếp bài viết →</span>
+                </div>
+            </div>
+        `;
+    }
+
+    // 2. Render Stories Grid
+    const storiesGrid = document.getElementById("machStoriesGrid");
+    if (storiesGrid) {
+        storiesGrid.innerHTML = machData.stories.map(s => {
+            const ser = (machData.series && machData.series[s.seriesSlug]) ? machData.series[s.seriesSlug] : { title: "Tự sự" };
+            const auth = (machData.authors && machData.authors[s.authorId]) ? machData.authors[s.authorId] : { name: "Ban Biên Tập" };
+            return `
+                <div class="story-card" onclick="navigateRoute('/mach/bai-viet/${s.slug}')">
+                    <div>
+                        <div class="story-card-tag">${ser.title} ${s.seriesOrder ? '· Số ' + String(s.seriesOrder).padStart(2, '0') : ''}</div>
+                        <h3 class="story-card-title">${s.title}</h3>
+                        <p class="story-card-excerpt">${s.excerpt}</p>
+                    </div>
+                    <div class="story-card-footer">
+                        <span>✍️ ${auth.name}</span>
+                        <span>${s.date}</span>
+                    </div>
+                </div>
+            `;
+        }).join("");
+    }
+
+    // 3. Render Series Grid
+    const seriesGrid = document.getElementById("machSeriesGrid");
+    if (seriesGrid && machData.series) {
+        seriesGrid.innerHTML = Object.values(machData.series).map(ser => {
+            const auth = (machData.authors && machData.authors[ser.authorId]) ? machData.authors[ser.authorId] : { name: "Ban Biên Tập" };
+            return `
+                <div class="series-card" onclick="navigateRoute('/mach/series/${ser.slug}')">
+                    <span class="series-card-badge">📚 TUYỂN TẬP • ${ser.stories.length} BÀI</span>
+                    <h3 class="series-card-title">${ser.title}</h3>
+                    <div style="font-style:italic; font-size:13.5px; color:var(--text-muted); margin-bottom:10px;">${ser.subtitle || ''}</div>
+                    <p class="series-card-desc">${ser.description}</p>
+                    <div class="series-card-meta">
+                        <span>Chủ biên: <strong>${auth.name}</strong></span>
+                        <span style="color:var(--imperial-gold); font-weight:700;">Xem tuyển tập →</span>
+                    </div>
+                </div>
+            `;
+        }).join("");
+    }
+
+    // 4. Render Authors Grid
+    const authorsGrid = document.getElementById("machAuthorsGrid");
+    if (authorsGrid && machData.authors) {
+        authorsGrid.innerHTML = Object.values(machData.authors).map(a => {
+            const authorStoriesCount = machData.stories.filter(s => s.authorId === a.id).length;
+            return `
+                <div class="author-card" onclick="navigateRoute('/mach/tac-gia/${a.id}')">
+                    <div class="author-card-header">
+                        <div class="author-avatar">${a.avatar || '✍️'}</div>
+                        <div>
+                            <div class="author-name">${a.name}</div>
+                            <div class="author-role">${a.role}</div>
+                        </div>
+                    </div>
+                    <p class="author-bio">${a.bio}</p>
+                    <div style="margin-top:14px; font-size:12.5px; color:var(--lacquer-red); font-weight:700;">
+                        ${authorStoriesCount} tác phẩm đã đóng góp →
+                    </div>
+                </div>
+            `;
+        }).join("");
+    }
+}
+
+function openStoryDetail(slug) {
+    if (!machData || !machData.stories) return;
+    const story = machData.stories.find(s => s.slug === slug);
+    if (!story) return;
+
+    document.querySelectorAll(".view-section").forEach(s => s.classList.remove("active"));
+    document.querySelectorAll(".nav-item-btn").forEach(b => b.classList.remove("active"));
+    const storySec = document.getElementById("view_story");
+    if (storySec) storySec.classList.add("active");
+    const machNav = document.getElementById("nav_mach");
+    if (machNav) machNav.classList.add("active");
+
+    const ser = machData.series ? machData.series[story.seriesSlug] : null;
+    const auth = (machData.authors && machData.authors[story.authorId]) ? machData.authors[story.authorId] : { name: "Ban Biên Tập", role: "", bio: "", avatar: "✍️" };
+
+    // Set Breadcrumb
+    const bc = document.getElementById("storySeriesBreadcrumb");
+    if (bc) {
+        if (ser) {
+            bc.innerHTML = `<a onclick="navigateRoute('/mach/series/${ser.slug}')" style="cursor:pointer; text-decoration:underline;">Tuyển tập: ${ser.title}</a>`;
+        } else {
+            bc.innerHTML = "";
+        }
+    }
+
+    // Header
+    const tagOrder = document.getElementById("storyTagOrder");
+    if (tagOrder) {
+        tagOrder.innerText = ser ? `${ser.title} ${story.seriesOrder ? '• THƯ SỐ ' + String(story.seriesOrder).padStart(2, '0') : ''}` : "TỰ SỰ";
+    }
+    const stTitle = document.getElementById("storyTitle");
+    if (stTitle) stTitle.innerText = story.title;
+    const authMeta = document.getElementById("storyAuthorMeta");
+    if (authMeta) authMeta.innerHTML = `✍️ <a onclick="navigateRoute('/mach/tac-gia/${auth.id}')" style="color:inherit; cursor:pointer; text-decoration:underline;">${auth.name}</a>`;
+    const dateMeta = document.getElementById("storyDateMeta");
+    if (dateMeta) dateMeta.innerText = story.date || "2026";
+
+    // Mentions
+    const mentionsBar = document.getElementById("storyMentionsBar");
+    if (mentionsBar) {
+        if (story.mentions && story.mentions.length > 0) {
+            mentionsBar.style.display = "flex";
+            mentionsBar.innerHTML = `<span style="font-weight:700; color:var(--text-muted); margin-right:6px;">🌿 Nhân vật liên quan:</span>` +
+                story.mentions.map(m => `<span class="mention-chip" onclick="openPersonProfile('${m.id}')">${m.name}</span>`).join(" ");
+        } else {
+            mentionsBar.style.display = "none";
+        }
+    }
+
+    // Body rendering
+    const contentBody = document.getElementById("storyContentBody");
+    if (contentBody) {
+        let text = story.contentMarkdown;
+        if (text.startsWith("---")) {
+            const pts = text.split("---", 2);
+            if (pts.length >= 3) text = pts[2].trim();
+        }
+        
+        // Format figures
+        text = text.replace(/!\[(.*?)\]\((.*?)\)(?:\s*\n\s*[\*_](.*?)[\*_])?/g, (m, alt, src, cap) => {
+            const caption = cap ? cap.trim().replace(/^[\*_]+|[\*_]+$/g, "") : alt;
+            return `<figure><img src="${src}" alt="${alt}"><figcaption style="font-size:13.5px; text-align:center; color:var(--text-muted); font-style:italic; margin-top:8px;">${caption}</figcaption></figure>`;
+        });
+
+        // Convert double newline to paragraphs
+        const paragraphs = text.split(/\n\s*\n/).map(p => {
+            p = p.trim();
+            if (!p) return "";
+            if (p.startsWith("<figure")) return p;
+            if (p.startsWith("# ")) return `<h2 style="text-align:center; margin-bottom:1.5em;">${p.replace("# ", "")}</h2>`;
+            if (p.startsWith("## ")) return `<h2>${p.replace("## ", "")}</h2>`;
+            if (p.startsWith("> ")) return `<blockquote>${p.replace(/^>\s*/gm, "")}</blockquote>`;
+            return `<p>${p.replace(/\n/g, "<br>")}</p>`;
+        }).join("");
+
+        contentBody.innerHTML = paragraphs;
+    }
+
+    // Author card footer
+    const authorCard = document.getElementById("storyAuthorCard");
+    if (authorCard) {
+        authorCard.innerHTML = `
+            <div class="author-card" style="cursor:default;">
+                <div class="author-card-header">
+                    <div class="author-avatar">${auth.avatar || '✍️'}</div>
+                    <div>
+                        <div class="author-name">${auth.name}</div>
+                        <div class="author-role">${auth.role}</div>
+                    </div>
+                </div>
+                <p class="author-bio">${auth.bio}</p>
+            </div>
+        `;
+    }
+
+    // Prev / Next Navigation in Series
+    const prevNext = document.getElementById("storyNavPrevNext");
+    if (prevNext && ser) {
+        const curIdx = ser.stories.indexOf(story.slug);
+        const prevSlug = curIdx > 0 ? ser.stories[curIdx - 1] : null;
+        const nextSlug = curIdx < ser.stories.length - 1 ? ser.stories[curIdx + 1] : null;
+        
+        const prevStory = prevSlug ? machData.stories.find(s => s.slug === prevSlug) : null;
+        const nextStory = nextSlug ? machData.stories.find(s => s.slug === nextSlug) : null;
+
+        let navHtml = "";
+        if (prevStory) {
+            navHtml += `<button class="story-nav-btn" onclick="navigateRoute('/mach/bai-viet/${prevStory.slug}')">← Bài trước: ${prevStory.title}</button>`;
+        } else {
+            navHtml += `<div></div>`;
+        }
+        if (nextStory) {
+            navHtml += `<button class="story-nav-btn" onclick="navigateRoute('/mach/bai-viet/${nextStory.slug}')">Bài tiếp: ${nextStory.title} →</button>`;
+        }
+        prevNext.innerHTML = navHtml;
+    }
+
+    window.scrollTo(0, 0);
+}
+
+function openSeriesDetail(slug) {
+    if (!machData || !machData.series) return;
+    const ser = machData.series[slug];
+    if (!ser) return;
+
+    document.querySelectorAll(".view-section").forEach(s => s.classList.remove("active"));
+    document.querySelectorAll(".nav-item-btn").forEach(b => b.classList.remove("active"));
+    const sec = document.getElementById("view_series_detail");
+    if (sec) sec.classList.add("active");
+    const machNav = document.getElementById("nav_mach");
+    if (machNav) machNav.classList.add("active");
+
+    const auth = (machData.authors && machData.authors[ser.authorId]) ? machData.authors[ser.authorId] : { name: "Ban Biên Tập" };
+    const headerCard = document.getElementById("seriesHeaderCard");
+    if (headerCard) {
+        headerCard.innerHTML = `
+            <span class="series-card-badge">📚 TUYỂN TẬP ĐẶC BIỆT</span>
+            <h1 class="story-title" style="margin-top:10px; margin-bottom:8px;">${ser.title}</h1>
+            <div style="font-style:italic; font-size:16px; color:var(--imperial-gold); margin-bottom:16px;">${ser.subtitle || ''}</div>
+            <p style="font-size:15px; color:var(--text-main); line-height:1.7;">${ser.description}</p>
+            <div style="margin-top:18px; font-size:13.5px; color:var(--text-muted); border-top:1px solid var(--border-subtle); padding-top:12px;">
+                Tác giả / Chủ biên: <strong>${auth.name}</strong> • Số bài: <strong>${ser.stories.length}</strong>
+            </div>
+        `;
+    }
+
+    const grid = document.getElementById("seriesStoriesGrid");
+    if (grid) {
+        const seriesStories = ser.stories.map(stSlug => machData.stories.find(s => s.slug === stSlug)).filter(Boolean);
+        grid.innerHTML = seriesStories.map(s => `
+            <div class="story-card" onclick="navigateRoute('/mach/bai-viet/${s.slug}')">
+                <div>
+                    <div class="story-card-tag">THƯ SỐ ${String(s.seriesOrder).padStart(2, '0')}</div>
+                    <h3 class="story-card-title">${s.title}</h3>
+                    <p class="story-card-excerpt">${s.excerpt}</p>
+                </div>
+                <div class="story-card-footer">
+                    <span>${s.date}</span>
+                    <span style="color:var(--lacquer-red); font-weight:700;">Đọc bài →</span>
+                </div>
+            </div>
+        `).join("");
+    }
+    window.scrollTo(0, 0);
+}
+
+function openAuthorDetail(authorId) {
+    if (!machData || !machData.authors) return;
+    const auth = machData.authors[authorId];
+    if (!auth) return;
+
+    document.querySelectorAll(".view-section").forEach(s => s.classList.remove("active"));
+    document.querySelectorAll(".nav-item-btn").forEach(b => b.classList.remove("active"));
+    const sec = document.getElementById("view_author_detail");
+    if (sec) sec.classList.add("active");
+    const machNav = document.getElementById("nav_mach");
+    if (machNav) machNav.classList.add("active");
+
+    const headerCard = document.getElementById("authorHeaderCard");
+    if (headerCard) {
+        headerCard.innerHTML = `
+            <div class="author-card-header">
+                <div class="author-avatar" style="width:64px; height:64px; font-size:36px;">${auth.avatar || '✍️'}</div>
+                <div>
+                    <h1 class="story-title" style="margin-bottom:4px;">${auth.name}</h1>
+                    <div class="author-role" style="font-size:15px;">${auth.role}</div>
+                </div>
+            </div>
+            <p class="author-bio" style="font-size:15px; margin-top:14px;">${auth.bio}</p>
+        `;
+    }
+
+    const grid = document.getElementById("authorStoriesGrid");
+    if (grid) {
+        const authorStories = machData.stories.filter(s => s.authorId === authorId);
+        grid.innerHTML = authorStories.map(s => {
+            const ser = (machData.series && machData.series[s.seriesSlug]) ? machData.series[s.seriesSlug] : { title: "Tự sự" };
+            return `
+                <div class="story-card" onclick="navigateRoute('/mach/bai-viet/${s.slug}')">
+                    <div>
+                        <div class="story-card-tag">${ser.title}</div>
+                        <h3 class="story-card-title">${s.title}</h3>
+                        <p class="story-card-excerpt">${s.excerpt}</p>
+                    </div>
+                    <div class="story-card-footer">
+                        <span>${s.date}</span>
+                        <span style="color:var(--lacquer-red); font-weight:700;">Đọc bài →</span>
+                    </div>
+                </div>
+            `;
+        }).join("");
+    }
+    window.scrollTo(0, 0);
+}
+
+// Override Global Search to index MẠCH stories
+handleGlobalSearch = function(e) {
+    const q = e.target.value.toLowerCase().trim();
+    const dd = document.getElementById("globalSearchDropdown");
+    if (!dd) return;
+    if (!q) { dd.style.display = "none"; return; }
+
+    const results = [];
+    Object.values(appData.people).forEach(p => {
+        if (p.name.toLowerCase().includes(q) || (p.fsid && p.fsid.toLowerCase().includes(q))) {
+            const gMeta = getGenerationMeta(p.id);
+            results.push({ type: 'PERSON', id: p.id, title: p.name, sub: `${gMeta.label} • FSID: ${p.fsid || p.id}` });
+        }
+    });
+
+    if (machData && machData.stories) {
+        machData.stories.forEach(s => {
+            if (s.title.toLowerCase().includes(q) || s.excerpt.toLowerCase().includes(q)) {
+                results.push({ type: 'STORY', id: s.slug, title: s.title, sub: `🧵 MẠCH • ${s.date}` });
+            }
+        });
+    }
+
+    if (results.length === 0) {
+        dd.innerHTML = `<div style="padding:12px; color:var(--text-muted); text-align:center;">Không tìm thấy kết quả</div>`;
+    } else {
+        dd.innerHTML = results.slice(0, 10).map(r => `
+            <div class="search-row" onclick="selectGlobalSearchResult('${r.type}', '${r.id}')">
+                <div style="font-weight:700; color:var(--primary-dark);">${r.title}</div>
+                <div style="font-size:12px; color:var(--text-muted);">${r.sub}</div>
+            </div>
+        `).join("");
+    }
+    dd.style.display = "block";
+};
+
+selectGlobalSearchResult = function(type, id) {
+    const dd = document.getElementById("globalSearchDropdown");
+    const inp = document.getElementById("globalSearchInput");
+    if (dd) dd.style.display = "none";
+    if (inp) inp.value = "";
+    if (type === 'PERSON') openPersonProfile(id);
+    else if (type === 'STORY') navigateRoute(`/mach/bai-viet/${id}`);
+    else if (type === 'MEMORY') navigateRoute('/mach');
+};

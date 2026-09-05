@@ -32,12 +32,11 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="#/" class="nav-item-btn active" id="nav_home" onclick="navigateRoute('/')">Tổng quan</a></li>
-                    <li><a href="#/calendar" class="nav-item-btn" id="nav_calendar" onclick="navigateRoute('/calendar')">Lịch Gia Đình</a></li>
-                    <li><a href="#/tree" class="nav-item-btn" id="nav_tree" onclick="navigateRoute('/tree')">Cây Gia Phả</a></li>
+                    <li><a href="#/tree" class="nav-item-btn" id="nav_tree" onclick="navigateRoute('/tree')">🌳 Gia Phả</a></li>
+                    <li><a href="#/mach" class="nav-item-btn" id="nav_mach" onclick="navigateRoute('/mach')">🧵 Mạch</a></li>
+                    <li><a href="#/calendar" class="nav-item-btn" id="nav_calendar" onclick="navigateRoute('/calendar')">📅 Lịch</a></li>
                     <li><a href="#/people" class="nav-item-btn" id="nav_people" onclick="navigateRoute('/people')">Thành viên</a></li>
                     <li><a href="#/families" class="nav-item-btn" id="nav_families" onclick="navigateRoute('/families')">Gia đình</a></li>
-                    <li><a href="#/timeline" class="nav-item-btn" id="nav_timeline" onclick="navigateRoute('/timeline')">Dòng thời gian</a></li>
-                    <li><a href="#/memories" class="nav-item-btn" id="nav_memories" onclick="navigateRoute('/memories')">Ký ức & Tư liệu</a></li>
                 </ul>
             </nav>
         </div>
@@ -96,11 +95,11 @@
                         <div class="quick-desc" id="quickDescPeople">Tra cứu thành viên gia tộc và lý lịch chi tiết</div>
                     </div>
                 </a>
-                <a class="quick-card" href="#/memories" onclick="navigateRoute('/memories')">
-                    <div class="quick-icon">📖</div>
+                <a class="quick-card" href="#/mach" onclick="navigateRoute('/mach')">
+                    <div class="quick-icon">🧵</div>
                     <div>
-                        <div class="quick-title">Ký Ức & Giai Thoại</div>
-                        <div class="quick-desc">Giai thoại truyền khẩu và truyền thống gia tộc</div>
+                        <div class="quick-title">MẠCH — Tự Sự & Kỷ Yếu</div>
+                        <div class="quick-desc">Tuyển tập "Thư gửi Clara", ký ức và khảo cứu nguồn cội</div>
                     </div>
                 </a>
             </div>
@@ -320,6 +319,88 @@
                 <p class="section-desc">Ghi chép truyền khẩu và những mẩu chuyện lưu truyền qua các thế hệ con cháu.</p>
             </div>
             <div id="memoriesContainer"></div>
+        </section>
+
+
+        <!-- 10. MẠCH HOME / INDEX VIEW -->
+        <section id="view_mach" class="view-section">
+            <div class="mach-hero">
+                <div class="mach-badge">🧵 Không Gian Tự Sự & Kỷ Yếu Dòng Họ</div>
+                <h1 class="mach-hero-title">MẠCH</h1>
+                <p class="mach-hero-sub">Lưu giữ dòng chảy ký ức, những bức thư gửi thế hệ mai sau và các khảo cứu về nếp nhà, văn hóa tộc ước.</p>
+            </div>
+
+            <!-- MẠCH SUB NAVIGATION -->
+            <div class="mach-nav-tabs">
+                <button class="mach-nav-btn active" id="btn_mach_all" onclick="filterMachTab('all')">Tất cả bài viết</button>
+                <button class="mach-nav-btn" id="btn_mach_series" onclick="filterMachTab('series')">Tuyển tập & Series</button>
+                <button class="mach-nav-btn" id="btn_mach_authors" onclick="filterMachTab('authors')">Tác giả</button>
+            </div>
+
+            <div id="machTabContentAll" class="mach-tab-panel active">
+                <div class="mach-featured-section" id="machFeaturedContainer"></div>
+                <div class="section-divider-title"><span>Tất cả bài viết & ký ức</span></div>
+                <div class="mach-stories-grid" id="machStoriesGrid"></div>
+            </div>
+
+            <div id="machTabContentSeries" class="mach-tab-panel">
+                <div class="mach-series-grid" id="machSeriesGrid"></div>
+            </div>
+
+            <div id="machTabContentAuthors" class="mach-tab-panel">
+                <div class="mach-authors-grid" id="machAuthorsGrid"></div>
+            </div>
+        </section>
+
+        <!-- 11. MẠCH STORY DETAIL VIEW -->
+        <section id="view_story" class="view-section">
+            <div class="story-article-wrapper">
+                <div class="story-header-nav">
+                    <a class="back-link-btn" onclick="navigateRoute('/mach')">← Quay lại MẠCH</a>
+                    <div id="storySeriesBreadcrumb" class="story-breadcrumb-badge"></div>
+                </div>
+
+                <article class="story-article-container">
+                    <header class="story-main-header">
+                        <div class="story-tag-order" id="storyTagOrder"></div>
+                        <h1 class="story-title" id="storyTitle">Tiêu đề bài viết</h1>
+                        <div class="story-meta-row">
+                            <span class="story-meta-item" id="storyAuthorMeta">✍️ Tác giả</span>
+                            <span class="story-meta-dot">•</span>
+                            <span class="story-meta-item" id="storyDateMeta">📅 Ngày</span>
+                        </div>
+                    </header>
+
+                    <div id="storyMentionsBar" class="story-mentions-bar" style="display: none;"></div>
+
+                    <div class="story-content-body" id="storyContentBody"></div>
+
+                    <div class="story-article-footer">
+                        <div class="story-author-card" id="storyAuthorCard"></div>
+                        <div class="story-nav-prev-next" id="storyNavPrevNext"></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 12. MẠCH SERIES DETAIL VIEW -->
+        <section id="view_series_detail" class="view-section">
+            <div class="series-detail-wrapper">
+                <a class="back-link-btn" onclick="navigateRoute('/mach')">← Quay lại MẠCH</a>
+                <div class="series-header-card" id="seriesHeaderCard"></div>
+                <div class="section-divider-title"><span>Danh sách bài viết trong tuyển tập</span></div>
+                <div class="mach-stories-grid" id="seriesStoriesGrid"></div>
+            </div>
+        </section>
+
+        <!-- 13. MẠCH AUTHOR DETAIL VIEW -->
+        <section id="view_author_detail" class="view-section">
+            <div class="author-detail-wrapper">
+                <a class="back-link-btn" onclick="navigateRoute('/mach')">← Quay lại MẠCH</a>
+                <div class="author-header-card" id="authorHeaderCard"></div>
+                <div class="section-divider-title"><span>Các tác phẩm & bài viết đã đóng góp</span></div>
+                <div class="mach-stories-grid" id="authorStoriesGrid"></div>
+            </div>
         </section>
 
     </main>
