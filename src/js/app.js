@@ -210,6 +210,10 @@ function handleHashRoute() {
     if (!raw.startsWith('/')) raw = '/' + raw;
     const route = raw.split('#')[0] || "/";
 
+    // Close any floating popup modals on route transition
+    closeModalDirect('calendarSubscribeModal');
+    closeModalDirect('eventModal');
+
     if (route.startsWith("/person/")) {
         const pid = route.replace("/person/", "");
         openPersonProfile(pid);
@@ -538,7 +542,9 @@ function openEventDetailModal(evIdx, yr) {
     if (modal) modal.classList.add("active");
 }
 
-// --- CALENDAR SUBSCRIPTION & ADD-TO-PHONE UTILITIES ---
+// --- CALENDAR SUBSCRIPTION & ADD-TO-PHONE UTILITIES (CALENDAR_02) ---
+let currentCalPlatform = 'apple'; // 'apple' | 'google' | 'other'
+
 function getAbsoluteFeedUrl(file) {
     if (typeof window !== "undefined" && window.location && window.location.origin && window.location.origin.startsWith("http")) {
         const base = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/');
@@ -552,44 +558,97 @@ function getWebcalUrl(file) {
     return httpUrl.replace(/^https?:\/\//i, 'webcal://');
 }
 
-function openCalendarSubscribeModal() {
-    const container = document.getElementById("calendarFeedList");
-    if (container) {
-        const feedMeta = {
-            birthdays: { desc: "Sinh nhật dương lịch của mọi thành viên trong gia tộc họ Trần Trọng Thu" },
-            patrons: { desc: "Lễ Quan thầy / Thánh bổn mạng của các thành viên Công giáo trong gia đình" },
-            memorials: { desc: "Lễ giỗ phụ mẫu, ông bà, tổ tiên & các bậc tiền nhân (tính theo Âm lịch & Dương lịch)" },
-            milestones: { desc: "Kỷ niệm thành lập, các sự kiện họp mặt và ngày kỷ niệm chung của dòng họ" }
-        };
+function selectCalendarPlatform(platform) {
+    currentCalPlatform = platform;
+    document.querySelectorAll('.cal-plat-btn').forEach(b => b.classList.remove('active'));
+    const activeBtn = document.getElementById(`tab_plat_${platform}`);
+    if (activeBtn) activeBtn.classList.add('active');
+    renderCalendarPlatformContent();
+}
 
-        container.innerHTML = CAL_FEEDS.map(f => {
-            const absUrl = getAbsoluteFeedUrl(f.file);
-            const webcalUrl = getWebcalUrl(f.file);
-            const countEl = document.getElementById(f.countEl);
-            const countText = countEl ? `${countEl.innerText} sự kiện` : "";
-            const meta = feedMeta[f.key] || { desc: "" };
+function renderCalendarPlatformContent() {
+    const banner = document.getElementById('platBanner');
+    const feedList = document.getElementById('calendarFeedList');
+    if (!banner || !feedList) return;
 
-            return `
-                <div class="subscribe-feed-card">
-                    <div class="subscribe-feed-header">
-                        <span class="subscribe-feed-badge ${f.class}">${f.icon} ${f.label}</span>
-                        ${countText ? `<span class="subscribe-feed-count">${escapeHtml(countText)}</span>` : ''}
-                    </div>
-                    <div class="subscribe-feed-title">${f.icon} Lịch ${f.label} Gia Đình</div>
-                    <div class="subscribe-feed-desc">${escapeHtml(meta.desc)}</div>
-                    <div class="subscribe-url-row">
-                        <input type="text" class="feed-url-input" readonly value="${escapeHtml(absUrl)}" id="feed_url_${f.key}" onclick="this.select()">
-                        <button class="btn-feed-copy" id="btn_copy_${f.key}" onclick="copyCalendarFeedUrl('${f.key}', '${escapeHtml(absUrl)}', this)">
-                            📋 Sao chép URL
-                        </button>
-                        <a class="btn-feed-webcal" href="${escapeHtml(webcalUrl)}" title="Đăng ký trực tiếp vào ứng dụng Apple Calendar">
-                            🍎 Mở Apple Calendar
-                        </a>
-                    </div>
-                </div>
-            `;
-        }).join('');
+    const feedMeta = {
+        birthdays: { desc: "Sinh nhật dương lịch của mọi thành viên trong gia tộc họ Trần Trọng Thu" },
+        patrons: { desc: "Lễ Quan thầy / Thánh bổn mạng của các thành viên Công giáo trong gia đình" },
+        memorials: { desc: "Lễ giỗ phụ mẫu, ông bà, tổ tiên & các bậc tiền nhân (tính theo Âm lịch & Dương lịch)" },
+        milestones: { desc: "Kỷ niệm thành lập, các sự kiện họp mặt và ngày kỷ niệm chung của dòng họ" }
+    };
+
+    if (currentCalPlatform === 'apple') {
+        banner.className = 'subscribe-plat-banner apple-theme';
+        banner.innerHTML = `<strong>🍎 Dành cho iPhone, iPad và máy Mac:</strong><br>Bấm nút <strong>"🍎 Thêm vào Apple Calendar"</strong> để ứng dụng Lịch trên máy tự động mở và đăng ký đồng bộ.`;
+    } else if (currentCalPlatform === 'google') {
+        banner.className = 'subscribe-plat-banner google-theme';
+        banner.innerHTML = `<strong>🌐 Dành cho Google Calendar (Android & Máy tính):</strong><br>
+        <em>(Lưu ý: Ứng dụng Google Calendar trên điện thoại không hỗ trợ thêm lịch qua URL trực tiếp. Bạn chỉ cần thêm 1 lần trên web <a href="https://calendar.google.com" target="_blank" rel="noopener" style="color:#1d4ed8; text-decoration:underline; font-weight:700;">calendar.google.com</a>, lịch sẽ tự động đồng bộ về điện thoại)</em>.<br>
+        <strong>Cách làm:</strong> Bấm <strong>"📋 Sao chép URL"</strong> > Mở Google Calendar Web > Cột trái mục <em>"Lịch khác" (+) > Chọn "Từ URL"</em> > Dán địa chỉ.`;
+    } else {
+        banner.className = 'subscribe-plat-banner other-theme';
+        banner.innerHTML = `<strong>💻 Microsoft Outlook & Ứng dụng khác:</strong><br>Bấm <strong>"📋 Sao chép URL"</strong> > Trong phần mềm Lịch chọn <em>Add Calendar > Subscribe from web</em> và dán địa chỉ.`;
     }
+
+    feedList.innerHTML = CAL_FEEDS.map(f => {
+        const absUrl = getAbsoluteFeedUrl(f.file);
+        const webcalUrl = getWebcalUrl(f.file);
+        const countEl = document.getElementById(f.countEl);
+        const countText = countEl ? `${countEl.innerText} sự kiện` : "";
+        const meta = feedMeta[f.key] || { desc: "" };
+
+        let actionsHtml = "";
+        if (currentCalPlatform === 'apple') {
+            actionsHtml = `
+                <a class="btn-plat-primary" href="${escapeHtml(webcalUrl)}" title="Mở Apple Calendar">
+                    🍎 Thêm vào Apple Calendar
+                </a>
+                <button class="btn-plat-secondary" id="btn_copy_${f.key}" onclick="copyCalendarFeedUrl('${f.key}', '${escapeHtml(absUrl)}', this)">
+                    📋 Sao chép URL
+                </button>
+            `;
+        } else if (currentCalPlatform === 'google') {
+            actionsHtml = `
+                <button class="btn-plat-primary google" id="btn_copy_${f.key}" onclick="copyCalendarFeedUrl('${f.key}', '${escapeHtml(absUrl)}', this)">
+                    📋 Sao chép URL lịch
+                </button>
+                <a class="btn-plat-secondary" href="https://calendar.google.com" target="_blank" rel="noopener">
+                    🌐 Mở Google Calendar Web ↗
+                </a>
+            `;
+        } else {
+            actionsHtml = `
+                <button class="btn-plat-primary" id="btn_copy_${f.key}" onclick="copyCalendarFeedUrl('${f.key}', '${escapeHtml(absUrl)}', this)">
+                    📋 Sao chép URL lịch
+                </button>
+            `;
+        }
+
+        return `
+            <div class="subscribe-feed-card">
+                <div class="subscribe-feed-header">
+                    <span class="subscribe-feed-badge ${f.class}">${f.icon} ${f.label}</span>
+                    ${countText ? `<span class="subscribe-feed-count">${escapeHtml(countText)}</span>` : ''}
+                </div>
+                <div class="subscribe-feed-title">${f.icon} Lịch ${f.label} Gia Đình</div>
+                <div class="subscribe-feed-desc">${escapeHtml(meta.desc)}</div>
+                <div class="subscribe-actions-row">
+                    ${actionsHtml}
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+function openCalendarSubscribeModal() {
+    // Auto-detect device
+    if (typeof navigator !== "undefined" && /iPhone|iPad|Macintosh/i.test(navigator.userAgent)) {
+        currentCalPlatform = 'apple';
+    } else if (typeof navigator !== "undefined" && /Android/i.test(navigator.userAgent)) {
+        currentCalPlatform = 'google';
+    }
+    selectCalendarPlatform(currentCalPlatform);
     const modal = document.getElementById("calendarSubscribeModal");
     if (modal) modal.classList.add("active");
 }
@@ -600,7 +659,7 @@ function copyCalendarFeedUrl(feedKey, url, btnEl) {
             if (btnEl) {
                 const originalHtml = btnEl.innerHTML;
                 btnEl.classList.add("copied");
-                btnEl.innerHTML = "✅ Đã sao chép URL!";
+                btnEl.innerHTML = "✅ Đã sao chép!";
                 setTimeout(() => {
                     btnEl.classList.remove("copied");
                     btnEl.innerHTML = originalHtml;
@@ -608,34 +667,33 @@ function copyCalendarFeedUrl(feedKey, url, btnEl) {
             }
         }).catch(err => {
             console.error("Clipboard copy error:", err);
-            fallbackCopy(feedKey);
+            fallbackCopy(url, btnEl);
         });
     } else {
-        fallbackCopy(feedKey);
+        fallbackCopy(url, btnEl);
     }
 }
 
-function fallbackCopy(feedKey) {
-    const input = document.getElementById(`feed_url_${feedKey}`);
-    if (input) {
-        input.focus();
-        input.select();
-        try {
-            document.execCommand('copy');
-            const btn = document.getElementById(`btn_copy_${feedKey}`);
-            if (btn) {
-                const originalHtml = btn.innerHTML;
-                btn.classList.add("copied");
-                btn.innerHTML = "✅ Đã sao chép URL!";
-                setTimeout(() => {
-                    btn.classList.remove("copied");
-                    btn.innerHTML = originalHtml;
-                }, 2000);
-            }
-        } catch (e) {
-            console.warn("execCommand fallback failed", e);
+function fallbackCopy(text, btnEl) {
+    const tempInput = document.createElement("textarea");
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    try {
+        document.execCommand('copy');
+        if (btnEl) {
+            const originalHtml = btnEl.innerHTML;
+            btnEl.classList.add("copied");
+            btnEl.innerHTML = "✅ Đã sao chép!";
+            setTimeout(() => {
+                btnEl.classList.remove("copied");
+                btnEl.innerHTML = originalHtml;
+            }, 2000);
         }
+    } catch (e) {
+        console.warn("execCommand fallback failed", e);
     }
+    document.body.removeChild(tempInput);
 }
 
 // --- TREE MODULE (ARCH_03D: REAL VISUAL FAMILY GRAPH) ---

@@ -983,46 +983,39 @@
         </div>
     </div>
 
-    <!-- CALENDAR SUBSCRIBE MODAL -->
+    <!-- CALENDAR SUBSCRIBE MODAL (CALENDAR_02) -->
     <div id="calendarSubscribeModal" class="modal-bg" onclick="closeModal(event, 'calendarSubscribeModal')">
         <div class="modal-box subscribe-modal-box" onclick="event.stopPropagation()">
             <div class="modal-head">
                 <div>
-                    <div style="font-weight: 800; font-size: 18px; color: var(--primary-dark); display: flex; align-items: center; gap: 8px;">
-                        <span>📲</span> Đăng ký Lịch Gia Đình vào Thiết Bị
+                    <div class="subscribe-modal-title">
+                        <span>📲</span> Đăng ký Lịch Gia Đình
                     </div>
-                    <p style="margin: 4px 0 0 0; font-size: 13px; color: var(--text-muted);">
-                        Đăng ký 4 luồng lịch ICS chính thức để thiết bị tự động cập nhật và nhắc nhở ngày lễ giỗ, sinh nhật, bổn mạng.
+                    <p class="subscribe-modal-sub">
+                        Đăng ký một lần. Lịch trên điện thoại sẽ tự động cập nhật khi có ngày giỗ, sinh nhật, bổn mạng hoặc sự kiện gia đình mới.
                     </p>
                 </div>
                 <button class="close-btn" onclick="closeModalDirect('calendarSubscribeModal')">&times;</button>
             </div>
             <div class="modal-body-content">
-                <div class="subscribe-feed-list" id="calendarFeedList"></div>
-
-                <div class="subscribe-guide-box">
-                    <div class="subscribe-guide-title">
-                        <span>💡</span> Hướng dẫn thêm lịch vào các thiết bị
-                    </div>
-                    <div class="subscribe-guide-item">
-                        <div class="subscribe-guide-item-head">🍎 iPhone / iPad / Mac (Apple Calendar):</div>
-                        <div class="subscribe-guide-item-body">
-                            Bấm nút <strong>"Mở Apple Calendar"</strong> bên cạnh luồng lịch muốn thêm để thiết bị tự động mở ứng dụng Lịch và hiển thị hộp thoại đăng ký. Hoặc vào <em>Cài đặt (Settings) &gt; Lịch (Calendar) &gt; Tài khoản &gt; Thêm tài khoản &gt; Khác &gt; Thêm lịch đã đăng ký (Add Subscribed Calendar)</em> rồi dán link ICS.
-                        </div>
-                    </div>
-                    <div class="subscribe-guide-item">
-                        <div class="subscribe-guide-item-head">🌐 Google Calendar (Android / Máy tính / Web):</div>
-                        <div class="subscribe-guide-item-body">
-                            Bấm nút <strong>"Sao chép URL"</strong> tương ứng. Mở trình duyệt web truy cập vào <a href="https://calendar.google.com" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600; text-decoration: underline;">calendar.google.com</a> &gt; nhìn cột bên trái tại mục <em>"Lịch khác" (dấu +) &gt; Chọn "Từ URL" (From URL)</em> &gt; Dán đường dẫn vừa sao chép. <em>(Lưu ý: Ứng dụng Google Calendar trên điện thoại không hỗ trợ thêm link URL trực tiếp trong app, cần thêm qua giao diện web Google Calendar để đồng bộ về app)</em>.
-                        </div>
-                    </div>
-                    <div class="subscribe-guide-item">
-                        <div class="subscribe-guide-item-head">💻 Microsoft Outlook:</div>
-                        <div class="subscribe-guide-item-body">
-                            Mở ứng dụng Outlook hoặc web Outlook &gt; Chọn <em>Add Calendar (Thêm lịch) &gt; Subscribe from web (Đăng ký từ web)</em> &gt; Dán đường dẫn ICS đã sao chép.
-                        </div>
-                    </div>
+                <!-- PLATFORM SELECTOR TABS -->
+                <div class="subscribe-platform-selector">
+                    <button class="cal-plat-btn active" id="tab_plat_apple" onclick="selectCalendarPlatform('apple')">
+                        🍎 iPhone / Mac (Apple)
+                    </button>
+                    <button class="cal-plat-btn" id="tab_plat_google" onclick="selectCalendarPlatform('google')">
+                        🌐 Google Calendar
+                    </button>
+                    <button class="cal-plat-btn" id="tab_plat_other" onclick="selectCalendarPlatform('other')">
+                        💻 Ứng dụng khác
+                    </button>
                 </div>
+
+                <!-- DYNAMIC PLATFORM NOTICE -->
+                <div class="subscribe-plat-banner" id="platBanner"></div>
+
+                <!-- DYNAMIC FEED LIST -->
+                <div class="subscribe-feed-list" id="calendarFeedList"></div>
             </div>
         </div>
     </div>
