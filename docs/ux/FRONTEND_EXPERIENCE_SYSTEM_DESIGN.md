@@ -78,6 +78,30 @@ Mô hình kiến trúc trải nghiệm độc lập được thiết lập:
 
 ## 4. BẢNG ĐỐI CHIẾU KHỚP NỐI & KHOẢNG TRỐNG BACKEND (BACKEND FIT & DATA GAP MAP)
 
-1. **Về Hình ảnh Nhân vật:** Backend `genealogy.json` hiện chưa có trường ảnh đại diện trực tiếp cho từng cá nhân -> *Frontend dùng hệ thống biểu tượng tôn nghiêm + liên kết qua `media` trong `mach.json`*.
-2. **Về Thước đo Độ xác tín:** Backend mới lưu dữ liệu GEDCOM chuẩn -> *Integration Layer bổ sung Metadata xác tín 7 mức cho từng sự kiện*.
-3. **Về Quan hệ Đa chiều:** Cần liên kết 2 chiều giữa Entity người với Bài viết MẠCH nhắc đến họ -> *Integration Layer thiết lập Reverse Indexing*.
+1. **Về Hình ảnh Nhân vật:** Đã có `data/media.json` và `data/person_media.json` cung cấp 185 ảnh FamilySearch chân thực. Khi không có ảnh, dùng presentation fallback trung tính.
+2. **Về Thước đo Độ xác tín:** Metadata xác tín 7 mức cho từng sự kiện và tư liệu.
+3. **Về Quan hệ Đa chiều:** Reverse Indexing giữa Entity người với Bài viết MẠCH và Tư liệu.
+
+---
+
+## 5. ĐẶC TẢ HỆ THỐNG BIỂU TƯỢNG & MÀU SẮC (ICONOGRAPHY & COLOR DESIGN CONTRACT)
+
+### 5.1. Định Vị Ký Hiệu Học (Iconography Contract)
+> “Iconography trong CÂY GIA PHẢ / GIÒNG HỌ TRẦN TRỌNG THU là hệ thống ký hiệu chức năng, đơn sắc, tiết chế và nhất quán. Icon không dùng như lớp trang trí hoặc như hệ mã màu cho các publication territories.”
+
+1. **Phân loại Icon được phép tồn tại:**
+   - **Functional Icons:** Ký hiệu điều hướng và công cụ (`Search`, `Calendar`, `Chevron/Arrow`, `Close`, `Copy/Check`).
+   - **Entity Symbols:** Ký hiệu thực thể vi mô (`Person`, `Family`, `Document`, `Memory`) — chỉ dùng khi thiếu không gian text hoặc cần phân định nhanh trong kết quả tra cứu.
+   - **State/Certainty Indicators:** Ký hiệu trạng thái (`Confirmed`, `Oral Tradition`, `Unverified`).
+2. **Quy chuẩn hiển thị:**
+   - **Monochrome & Inherit:** Thừa hưởng màu từ chữ (`currentColor`), không tự mang màu riêng.
+   - **Loại bỏ Emoji:** Thay thế toàn bộ emoji màu (`🌳`, `🧵`, `📜`, `📅`, `🎂`, `✝️`, `🕯️`, `🍎`, `🌐`) bằng hệ thống ký hiệu SVG/Vector đơn sắc hoặc text nhãn rõ ràng.
+
+### 5.2. Định Vị Hệ Thống Màu Sắc (Color Contract)
+> “Color không được dùng như cơ chế mặc định để phân biệt Gia Phả / Mạch / Tư Liệu. Màu chỉ được sử dụng khi có vai trò semantic, interaction, state hoặc brand identity rõ ràng.”
+
+1. **Territory $\ne$ Color:** Không gán màu sắc độc quyền cho Gia Phả (Xanh), Mạch (Hồng/Đỏ), Tư Liệu (Vàng/Nâu). Cả 3 vùng xuất bản cùng chia sẻ bảng màu di sản chung (Archival Linen `--bg: #F7F5F0`, Charcoal `--text-main: #241E19`, Border `--border: #E5E0D6`).
+2. **Vai trò của Brand Accents:**
+   - `--lacquer-red: #881337` (Sơn Mài Bắc Bộ): Dùng cho tương tác chính, nút hành động chủ đạo (Primary CTA), link active, viền trích đoạn điểm nhấn.
+   - `--imperial-gold: #B45309` (Hoàng Kim / Đồng Cổ): Dùng cho Motto `TỪ 1872 ĐẾN CHÚNG TA`, nhãn niên đại và huy hiệu thế hệ F0.
+

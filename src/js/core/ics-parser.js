@@ -41,7 +41,7 @@ const IcsParser = {
                 if (idx > -1) {
                     const k = l.substring(0, idx).split(";")[0];
                     const v = l.substring(idx + 1);
-                    if (k === "SUMMARY") cur.summary = this.unescapeIcs(v);
+                    if (k === "SUMMARY") cur.summary = this.unescapeIcs(v).replace(/^[\u{1F300}-\u{1FAFF}\u2600-\u27BF\u2B00-\u2BFF\uFE0F]+\s*/u, "");
                     else if (k === "DTSTART") cur.dtstart = v;
                     else if (k === "DESCRIPTION") cur.description = this.unescapeIcs(v);
                     else if (k === "UID") cur.uid = v;

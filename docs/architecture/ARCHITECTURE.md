@@ -258,10 +258,43 @@ Trang chủ (*Home*) không phải là một bảng điều khiển dữ liệu 
 > **WORKING EDITORIAL FRAMING (CHƯA PHẢI SLOGAN CUỐI):**
 > 
 > *“GIÒNG HỌ TRẦN TRỌNG THU là một nơi để những gì còn nhớ được ở lại, được kết nối và có thể được truyền lại.”*
-> 
-> ---
-> 
-> **BẢN THẢO LỜI MỞ ĐẦU ẤN PHẨM (WORKING INTRODUCTION):**
+
+---
+
+### BRAND IDENTITY DECISION (CANONICAL)
+
+`TỪ 1872 ĐẾN CHÚNG TA` là brand narrative / identity line của GIÒNG HỌ TRẦN TRỌNG THU.
+
+Đây là một đơn vị nhận diện hoàn chỉnh, không phải slogan quảng cáo.
+
+`1872` là điểm neo lịch sử của dòng họ, gắn với cụ Giuse Trần Trọng Thu.
+
+`ĐẾN CHÚNG TA` nối trực tiếp quá khứ với thế hệ hiện tại.
+
+Motto này đồng thời là cơ sở ý tưởng cho hướng phát triển visual identity/emblem của dòng họ trong tương lai.
+
+`CÂY GIA PHẢ` là một territory/sản phẩm trong hệ thống, KHÔNG phải brand tagline hay descriptor của `GIÒNG HỌ TRẦN TRỌNG THU`.
+
+Canonical rendering:
+```
+GIÒNG HỌ TRẦN TRỌNG THU
+TỪ 1872 ĐẾN CHÚNG TA
+```
+
+Không được tự ý:
+- thêm dấu ba chấm
+- thêm từ "LƯỢT"
+- rút gọn chỉ còn mốc năm
+- dùng lại biến thể khác đã bị thay thế
+- đổi hậu tố thành mốc thời gian hiện tại
+- đổi thành `CÂY GIA PHẢ`
+- hoặc sửa câu chữ
+
+nếu chưa có quyết định mới của Owner.
+
+---
+
+**BẢN THẢO LỜI MỞ ĐẦU ẤN PHẨM (WORKING INTRODUCTION):**
 > 
 > *Giòng họ Trần Trọng Thu không bắt đầu từ một kho tàng lớn.*
 > 
@@ -295,7 +328,44 @@ Tài liệu này xác định các vấn đề học thuật và kiến trúc c�
 
 ---
 
-## XI. NGUYÊN TẮC KỶ LUẬT THỰC THI
+## XI. NGUYÊN TẮC THIẾT KẾ HỆ THỐNG: ICONOGRAPHY & COLOR SYSTEM (CANONICAL)
 
-- **KHÔNG** triển khai mã nguồn, không sửa UI, không can thiệp production.
+### 1. ICONOGRAPHY PRINCIPLE
+> “Iconography trong CÂY GIA PHẢ / GIÒNG HỌ TRẦN TRỌNG THU là hệ thống ký hiệu chức năng, đơn sắc, tiết chế và nhất quán. Icon không dùng như lớp trang trí hoặc như hệ mã màu cho các publication territories.”
+
+- **Ký hiệu chức năng (Functional Symbols):** Chỉ sử dụng icon khi có giá trị hỗ trợ thao tác hoặc định vị ngữ cảnh (Search, Calendar, Expand/Collapse, External link, Close, State).
+- **Đơn sắc & Kế thừa (Monochrome & Inheritance):** Icon phải đơn sắc, thừa hưởng màu từ `currentColor` / text color, không mang màu sắc cầu vồng hay gradient.
+- **Không dùng Emoji làm Icon hệ thống:** Loại bỏ hoàn toàn emoji màu mè khỏi các thành phần điều hướng, thẻ xuất bản và tiêu đề trang.
+
+### 2. COLOR PRINCIPLE
+> “Color không được dùng như cơ chế mặc định để phân biệt Gia Phả / Mạch / Tư Liệu. Màu chỉ được sử dụng khi có vai trò semantic, interaction, state hoặc brand identity rõ ràng.”
+
+- Màu sắc phục vụ 5 mục tiêu: (1) Hierarchy, (2) Interaction, (3) State, (4) Accessibility, (5) Brand Identity.
+- Không gán màu sắc tùy tiện cho icon để "trang trí card".
+- Brand Accents (`--lacquer-red: #881337`, `--imperial-gold: #B45309`) được sử dụng có tiết chế, không biến thành bảng màu đồ họa cho icon.
+
+### 3. TERRITORY PRINCIPLE
+> “Gia Phả, Mạch và Tư Liệu là publication territories, không phải ba visual themes độc lập.”
+
+- Ba vùng xuất bản phân biệt bằng: Typography, Heading, Copy, Layout, Content và Navigation Context — **không phân biệt bằng 3 hệ màu hoặc 3 icon hoạt hình riêng**.
+
+### 4. BRAND PRINCIPLE
+> “Iconography phải hỗ trợ, không cạnh tranh với Family Name và Family Brand Narrative:
+> GIÒNG HỌ TRẦN TRỌNG THU
+> TỪ 1872 ĐẾN CHÚNG TA.”
+
+- Trật tự thị giác tối thượng:
+  1. Family Name (`GIÒNG HỌ TRẦN TRỌNG THU`)
+  2. Family Motto / Narrative (`TỪ 1872 ĐẾN CHÚNG TA`)
+  3. Typography
+  4. Photography / Archival Material
+  5. Content
+  6. Functional Iconography
+
+---
+
+## XII. NGUYÊN TẮC KỶ LUẬT THỰC THI
+
+- **KHÔNG** triển khai mã nguồn, không sửa UI, không can thiệp production ngoài phạm vi đã được phê duyệt.
+- Mọi thay đổi về thẩm mỹ và ký hiệu phải tuân thủ nghiêm ngặt các nguyên tắc Canonical ở trên.
 - Mọi điều chỉnh tiếp theo phải bắt đầu từ tài liệu nền tảng này trước khi cập nhật các đặc tả chi tiết (Data Contract, Sitemap IA, UI Specs).

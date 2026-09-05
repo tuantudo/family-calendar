@@ -17,10 +17,10 @@
     <header class="global-navbar">
         <div class="nav-inner">
             <a href="#/" class="brand-link" onclick="navigateRoute('/')">
-                <div class="brand-logo">🌿</div>
+                <div class="brand-logo" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"/><path d="M12 13c0-3.5 2.5-6 6-6 0 3.5-2.5 6-6 6z"/><path d="M12 13c0-3.5-2.5-6-6-6 0 3.5 2.5 6 6 6z"/><path d="M5 21h14"/></svg></div>
                 <div class="brand-info">
                     <span class="brand-title" id="globalBrandTitle">GIÒNG HỌ TRẦN TRỌNG THU</span>
-                    <span class="brand-badge" id="globalBrandBadge">CÂY GIA PHẢ</span>
+                    <span class="brand-badge" id="globalBrandBadge">TỪ 1872 ĐẾN CHÚNG TA</span>
                 </div>
             </a>
 
@@ -28,7 +28,7 @@
                 <ul class="nav-links">
                     <li><a href="#/" class="nav-item-btn active" id="nav_home" onclick="navigateRoute('/')">Trang Chủ</a></li>
                     <li class="nav-dropdown">
-                        <a href="#/gia-pha" class="nav-item-btn" id="nav_gia_pha" onclick="navigateRoute('/gia-pha')">🌳 Gia Phả</a>
+                        <a href="#/gia-pha" class="nav-item-btn" id="nav_gia_pha" onclick="navigateRoute('/gia-pha')">Gia Phả</a>
                         <div class="nav-dropdown-menu">
                             <a href="#/gia-pha" onclick="navigateRoute('/gia-pha')">Cây Phả Đồ</a>
                             <a href="#/gia-pha/nhan-vat" onclick="navigateRoute('/gia-pha/nhan-vat')">Thành viên</a>
@@ -37,10 +37,10 @@
                             <a href="#/gia-pha/ky-uc" onclick="navigateRoute('/gia-pha/ky-uc')">Ký ức</a>
                         </div>
                     </li>
-                    <li><a href="#/mach" class="nav-item-btn" id="nav_mach" onclick="navigateRoute('/mach')">🧵 Mạch</a></li>
-                    <li><a href="#/tu-lieu" class="nav-item-btn" id="nav_tu_lieu" onclick="navigateRoute('/tu-lieu')">📜 Tư Liệu</a></li>
-                    <li><a href="#/lich" class="nav-item-btn" id="nav_lich" onclick="navigateRoute('/lich')">📅 Lịch</a></li>
-                    <li><a href="#/tim-kiem" class="nav-item-btn" id="nav_tim_kiem" onclick="navigateRoute('/tim-kiem')">🔍 Tìm kiếm</a></li>
+                    <li><a href="#/mach" class="nav-item-btn" id="nav_mach" onclick="navigateRoute('/mach')">Mạch</a></li>
+                    <li><a href="#/tu-lieu" class="nav-item-btn" id="nav_tu_lieu" onclick="navigateRoute('/tu-lieu')">Tư Liệu</a></li>
+                    <li><a href="#/lich" class="nav-item-btn" id="nav_lich" onclick="navigateRoute('/lich')">Lịch</a></li>
+                    <li><a href="#/tim-kiem" class="nav-item-btn" id="nav_tim_kiem" onclick="navigateRoute('/tim-kiem')">Tìm kiếm</a></li>
                 </ul>
             </nav>
         </div>
@@ -78,21 +78,18 @@
                 </div>
                 <div class="explore-grid intent-3-grid">
                     <a class="explore-item" href="#/gia-pha/nhan-vat" onclick="navigateRoute('/gia-pha/nhan-vat')">
-                        <span class="explore-icon">👥</span>
                         <div>
                             <div class="explore-name">Tìm một người trong họ</div>
                             <div class="explore-info" id="explorePeopleCount">Tra cứu 223 thành viên qua 5 thế hệ</div>
                         </div>
                     </a>
                     <a class="explore-item" href="#/gia-pha" onclick="navigateRoute('/gia-pha')">
-                        <span class="explore-icon">🌳</span>
                         <div>
                             <div class="explore-name">Xem cây phả đồ tương tác</div>
                             <div class="explore-info">Bản đồ huyết thống trực hệ & phân tầng thế hệ</div>
                         </div>
                     </a>
                     <a class="explore-item" href="#/mach" onclick="navigateRoute('/mach')">
-                        <span class="explore-icon">📖</span>
                         <div>
                             <div class="explore-name">Đọc chuyện & Ký ức</div>
                             <div class="explore-info">Thư từ, bút ký nếp nhà và câu chuyện truyền khẩu</div>
@@ -110,7 +107,6 @@
                     <div class="comm-territory-card card-genealogy" onclick="navigateRoute('/gia-pha')">
                         <div class="card-badge">CẤU TRÚC & HUYẾT THỐNG</div>
                         <div class="card-head">
-                            <span class="card-icon">🌳</span>
                             <h2 class="card-title">Gia Phả</h2>
                         </div>
                         <p class="card-desc">
@@ -123,7 +119,6 @@
                     <div class="comm-territory-card card-mach" onclick="navigateRoute('/mach')">
                         <div class="card-badge">TỰ SỰ & KÝ ỨC</div>
                         <div class="card-head">
-                            <span class="card-icon">🧵</span>
                             <h2 class="card-title">Mạch</h2>
                         </div>
                         <p class="card-desc">
@@ -136,7 +131,6 @@
                     <div class="comm-territory-card card-archive" onclick="navigateRoute('/tu-lieu')">
                         <div class="card-badge">VẬT CHỨNG & HỒ SƠ</div>
                         <div class="card-head">
-                            <span class="card-icon">📜</span>
                             <h2 class="card-title">Tư Liệu</h2>
                         </div>
                         <p class="card-desc">
@@ -161,10 +155,12 @@
                 <div class="system-stats-bar" id="homeSubstanceFacts"></div>
                 <div class="system-capabilities-bar">
                     <a class="cap-btn" href="#/lich" onclick="navigateRoute('/lich')">
-                        <span>📅</span> Lịch Gia Đình (Âm / Dương)
+                        <svg class="ui-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                        <span>Lịch Gia Đình (Âm / Dương)</span>
                     </a>
                     <a class="cap-btn" href="#/tim-kiem" onclick="navigateRoute('/tim-kiem')">
-                        <span>🔍</span> Tra cứu toàn cục
+                        <svg class="ui-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        <span>Tra cứu toàn cục</span>
                     </a>
                 </div>
             </div>
@@ -175,11 +171,11 @@
         <section id="view_calendar" class="view-section">
             <div class="section-header cal-section-header">
                 <div>
-                    <h2 class="section-title">📅 Lịch Gia Đình Trực Tuyến</h2>
+                    <h2 class="section-title">Lịch Gia Đình Trực Tuyến</h2>
                     <p class="section-desc">Đồng bộ tự động từ gia phả • Tra cứu song song Dương lịch & Âm lịch Việt Nam.</p>
                 </div>
                 <button class="btn-cal-subscribe-action" onclick="openCalendarSubscribeModal()">
-                    📲 Đăng ký Lịch Gia Đình
+                    Đăng ký Lịch Gia Đình
                 </button>
             </div>
 
@@ -207,16 +203,16 @@
                 <div class="cal-filter-bar">
                     <span style="font-weight: 700; color: var(--text-muted); font-size: 12px; text-transform: uppercase;">Lọc sự kiện:</span>
                     <label class="filter-chip active-birth" id="chip_birth" onclick="toggleLayerChip('birthdays')">
-                        <input type="checkbox" id="chk_birth" checked> 🎂 Sinh nhật (<span id="cnt_birth">-</span>)
+                        <input type="checkbox" id="chk_birth" checked> Sinh nhật (<span id="cnt_birth">-</span>)
                     </label>
                     <label class="filter-chip active-patron" id="chip_patron" onclick="toggleLayerChip('patrons')">
-                        <input type="checkbox" id="chk_patron" checked> ✝️ Bổn mạng (<span id="cnt_patron">-</span>)
+                        <input type="checkbox" id="chk_patron" checked> Bổn mạng (<span id="cnt_patron">-</span>)
                     </label>
                     <label class="filter-chip active-mem" id="chip_mem" onclick="toggleLayerChip('memorials')">
-                        <input type="checkbox" id="chk_mem" checked> 🕯️ Ngày giỗ (<span id="cnt_mem">-</span>)
+                        <input type="checkbox" id="chk_mem" checked> Ngày giỗ (<span id="cnt_mem">-</span>)
                     </label>
                     <label class="filter-chip active-event" id="chip_event" onclick="toggleLayerChip('milestones')">
-                        <input type="checkbox" id="chk_event" checked> 📅 Sự kiện (<span id="cnt_event">-</span>)
+                        <input type="checkbox" id="chk_event" checked> Sự kiện (<span id="cnt_event">-</span>)
                     </label>
                 </div>
 
@@ -238,7 +234,7 @@
         <!-- 3. FAMILY TREE VIEW (ARCH_03B DUAL MODE: EXPLORE & FOCUS) -->
         <section id="view_tree" class="view-section">
             <div class="section-header">
-                <h2 class="section-title">🌳 Cây Gia Phả & Bản Đồ Thế Hệ</h2>
+                <h2 class="section-title">Cây Gia Phả & Bản Đồ Thế Hệ</h2>
                 <p class="section-desc">Khám phá dòng họ từ Family Anchor (Cố Thu F0) • Phân tầng thế hệ và nhánh gia đình nhất quán.</p>
             </div>
 
@@ -254,8 +250,8 @@
                     </div>
 
                     <div class="cal-view-switch">
-                        <button class="view-tab-btn active" id="btn_tree_focus" onclick="switchTreeViewMode('focus')">🎯 Phả Đồ Tương Tác</button>
-                        <button class="view-tab-btn" id="btn_tree_explore" onclick="switchTreeViewMode('explore')">🌐 Toàn Cảnh Thế Hệ</button>
+                        <button class="view-tab-btn active" id="btn_tree_focus" onclick="switchTreeViewMode('focus')">Phả Đồ Tương Tác</button>
+                        <button class="view-tab-btn" id="btn_tree_explore" onclick="switchTreeViewMode('explore')">Toàn Cảnh Thế Hệ</button>
                     </div>
                 </div>
 
@@ -283,7 +279,7 @@
         <section id="view_people" class="view-section">
             <div class="section-header">
                 <h2 class="section-title">
-                    <span>👥 Danh Sách Thành Viên Gia Tộc</span>
+                    <span>Danh Sách Thành Viên Gia Tộc</span>
                     <span class="title-count">(<span id="peopleTotalCount">-</span>)</span>
                 </h2>
                 <p class="section-desc">Tra cứu lý lịch, phân loại thế hệ và ngày kỷ niệm của từng thành viên.</p>
@@ -304,7 +300,7 @@
         <section id="view_families" class="view-section">
             <div class="section-header">
                 <h2 class="section-title">
-                    <span>🏡 Danh Sách Gia Đình & Nhánh Hôn Phối</span>
+                    <span>Danh Sách Gia Đình & Nhánh Hôn Phối</span>
                     <span class="title-count">(<span id="familiesTotalCount">-</span>)</span>
                 </h2>
                 <p class="section-desc">Phân loại thế hệ và cấu trúc các đơn vị gia đình trong dòng họ Cố Thu.</p>
@@ -325,12 +321,12 @@
         <section id="view_person" class="view-section">
             <div class="profile-header-nav" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
                 <button class="back-link-btn" onclick="navigateRoute('/tree')">← Quay lại Cây Phả Hệ</button>
-                <button class="back-link-btn" onclick="navigateRoute('/people')">👥 Danh sách thành viên</button>
+                <button class="back-link-btn" onclick="navigateRoute('/people')">← Danh sách thành viên</button>
             </div>
             <div class="profile-container" id="personProfileContainer">
                 <div class="profile-hero-section">
                     <div class="profile-avatar-wrapper" id="p_avatar_container">
-                        <span class="profile-avatar-fallback" id="p_avatar_fallback">👤</span>
+                        <span class="profile-avatar-fallback" id="p_avatar_fallback"></span>
                     </div>
                     <div class="profile-info-main">
                         <div style="font-size: 24px; font-weight: 800; color: var(--primary-dark);" id="p_name">Họ Tên</div>
@@ -342,19 +338,19 @@
 
                 <div class="profile-grid">
                     <div class="profile-box">
-                        <div style="font-size: 14px; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px;">📅 Sự Kiện Bản Thân</div>
+                        <div style="font-size: 14px; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px;">Sự Kiện Bản Thân</div>
                         <div style="font-size: 13.5px;" id="p_facts"></div>
                     </div>
 
                     <div class="profile-box">
-                        <div style="font-size: 14px; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px;">👨‍👩‍👧 Mạng Lưới Gia Đình</div>
+                        <div style="font-size: 14px; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px;">Mạng Lưới Gia Đình</div>
                         <div id="p_relatives"></div>
                     </div>
                 </div>
 
                 <div id="p_memory_box" style="margin-top: 20px; display: none;">
                     <div class="profile-box" style="background: var(--accent-light); border-color: #fde68a;">
-                        <div style="font-size: 15px; font-weight: 800; color: var(--accent); margin-bottom: 8px;" id="p_memory_title">📖 Ký ức / Giai thoại</div>
+                        <div style="font-size: 15px; font-weight: 800; color: var(--accent); margin-bottom: 8px;" id="p_memory_title">Ký ức / Giai thoại</div>
                         <div style="font-size: 14px; line-height: 1.6; white-space: pre-line;" id="p_memory_text"></div>
                     </div>
                 </div>
@@ -365,7 +361,7 @@
         <section id="view_family" class="view-section">
             <div class="profile-header-nav" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
                 <button class="back-link-btn" onclick="navigateRoute('/families')">← Quay lại Danh Sách Gia Đình</button>
-                <button class="back-link-btn" onclick="navigateRoute('/tree')">🌳 Cây Phả Hệ</button>
+                <button class="back-link-btn" onclick="navigateRoute('/tree')">← Cây Phả Hệ</button>
             </div>
             <div class="profile-container" id="familyProfileContainer">
                 <div style="border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
@@ -381,12 +377,12 @@
 
                 <div class="profile-grid">
                     <div class="profile-box">
-                        <div style="font-size: 14px; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px;">💑 Cha & Mẹ</div>
+                        <div style="font-size: 14px; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px;">Cha & Mẹ</div>
                         <div id="f_parents"></div>
                     </div>
 
                     <div class="profile-box">
-                        <div style="font-size: 14px; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px;">👶 Danh Sách Con Cái</div>
+                        <div style="font-size: 14px; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px;">Danh Sách Con Cái</div>
                         <div id="f_children"></div>
                     </div>
                 </div>
@@ -396,7 +392,7 @@
         <!-- 8. TIMELINE VIEW -->
         <section id="view_timeline" class="view-section">
             <div class="section-header">
-                <h2 class="section-title">⏳ Dòng Thời Gian Lịch Sử Gia Tộc</h2>
+                <h2 class="section-title">Dòng Thời Gian Lịch Sử Gia Tộc</h2>
                 <p class="section-desc">Cột mốc sinh tử và biến cố lịch sử qua các thế hệ.</p>
             </div>
             <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
@@ -407,7 +403,7 @@
         <!-- 9. MEMORIES VIEW -->
         <section id="view_memories" class="view-section">
             <div class="section-header">
-                <h2 class="section-title">📖 Ký Ức & Giai Thoại Gia Đình</h2>
+                <h2 class="section-title">Ký Ức & Giai Thoại Gia Đình</h2>
                 <p class="section-desc">Ghi chép truyền khẩu và những mẩu chuyện lưu truyền qua các thế hệ con cháu.</p>
             </div>
             <div id="memoriesContainer"></div>
@@ -417,7 +413,7 @@
         <!-- 10. MẠCH HOME / INDEX VIEW -->
         <section id="view_mach" class="view-section">
 <div class="mach-hero">
-                    <div class="mach-badge">🧵 Không Gian Khảo Cứu & Tự Sự Dòng Họ</div>
+                    <div class="mach-badge">Không Gian Khảo Cứu & Tự Sự Dòng Họ</div>
                     <h1 class="mach-hero-title">MẠCH</h1>
                     <p class="mach-hero-sub">Lưu giữ dòng chảy ký ức, các ấn phẩm chuyên đề và khảo cứu về đời sống dòng họ trong thời hiện đại.</p>
                     <div class="mach-hero-meta" id="machHeroMeta"></div>
@@ -458,9 +454,9 @@
                         <div class="story-tag-order" id="storyTagOrder"></div>
                         <h1 class="story-title" id="storyTitle">Tiêu đề bài viết</h1>
                         <div class="story-meta-row">
-                            <span class="story-meta-item" id="storyAuthorMeta">✍️ Tác giả</span>
+                            <span class="story-meta-item" id="storyAuthorMeta">Tác giả</span>
                             <span class="story-meta-dot">•</span>
-                            <span class="story-meta-item" id="storyDateMeta">📅 Ngày</span>
+                            <span class="story-meta-item" id="storyDateMeta">Ngày</span>
                         </div>
                     </header>
 
@@ -500,7 +496,7 @@
         <section id="view_tu_lieu" class="view-section">
             <div class="tu-lieu-wrapper">
                 <div class="tu-lieu-hero">
-                    <div class="tu-lieu-badge">📜 Lãnh Thổ Tư Liệu</div>
+                    <div class="tu-lieu-badge">Lãnh Thổ Tư Liệu</div>
                     <h1 class="tu-lieu-title">TƯ LIỆU</h1>
                     <p class="tu-lieu-sub">Kho bảo tồn những vật chứng còn lại của dòng họ — hình ảnh, giấy tờ, văn bản, âm thanh và kỷ vật đời sống.</p>
                 </div>
@@ -511,17 +507,14 @@
                     </div>
                     <div class="tu-lieu-guidance">
                         <div class="tu-lieu-guidance-card">
-                            <div class="tu-lieu-guidance-icon">🖼️</div>
                             <div class="tu-lieu-guidance-title">Hình ảnh di sản</div>
                             <div class="tu-lieu-guidance-desc">Ảnh cổ, chân dung tiền nhân, ảnh sinh hoạt gia đình</div>
                         </div>
                         <div class="tu-lieu-guidance-card">
-                            <div class="tu-lieu-guidance-icon">📄</div>
                             <div class="tu-lieu-guidance-title">Văn bản & Giấy tờ</div>
                             <div class="tu-lieu-guidance-desc">Trích lục gia phả, giấy hộ tịch, sổ rửa tội, thư tay</div>
                         </div>
                         <div class="tu-lieu-guidance-card">
-                            <div class="tu-lieu-guidance-icon">🎙️</div>
                             <div class="tu-lieu-guidance-title">Âm thanh & Video</div>
                             <div class="tu-lieu-guidance-desc">Lời kể của các bậc tiền nhân, thước phim tư liệu</div>
                         </div>
@@ -535,10 +528,10 @@
         <section id="view_search" class="view-section">
             <div class="search-page-wrapper">
                 <div class="search-page-header">
-                    <h2 class="section-title">🔍 Tìm Kiếm Toàn Cục</h2>
+                    <h2 class="section-title">Tìm Kiếm Toàn Cục</h2>
                     <p class="section-desc">Tra cứu đồng thời nhân vật, bài viết, tuyển tập, tác giả và ký ức trong toàn bộ publication.</p>
                     <div class="search-page-input-wrap">
-                        <span class="search-icon">🔍</span>
+                        <span class="search-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg></span>
                         <input type="text" id="searchPageInput" placeholder="Nhập tên người, bài viết, thế hệ F0-F4, ngày âm/dương..." onkeyup="handleSearchPageInput(event)" oninput="handleSearchPageInput(event)">
                         <button class="btn-cal-subscribe-action" onclick="runSearchPage()">Tìm kiếm</button>
                     </div>
@@ -584,7 +577,7 @@
                 
                 <!-- TOP HEADER BANNER -->
                 <div class="specimen-banner">
-                    <span class="specimen-badge">🎨 Identity Evaluation Specimen</span>
+                    <span class="specimen-badge">Identity Evaluation Specimen</span>
                     <h1 class="specimen-title">Bảng So Sánh Danh Tính Typography</h1>
                     <p class="specimen-desc">
                         Đánh giá trực quan 3 phương án font chữ cho Hệ thống Tri thức CÂY GIA PHẢ DÒNG HỌ TRẦN TRỌNG THU.
@@ -623,7 +616,7 @@
 
                     <!-- 1. Vietnamese Glyph Test -->
                     <div class="specimen-block">
-                        <div class="specimen-block-title sp-sans"><span>🔤</span> 1. Thử Nghiệm Bảng Chữ & Dấu Tiếng Việt (Glyph Stress Test)</div>
+                        <div class="specimen-block-title sp-sans">1. Thử Nghiệm Bảng Chữ & Dấu Tiếng Việt (Glyph Stress Test)</div>
                         <div class="specimen-glyph-box">
                             <div class="specimen-glyph-vowels sp-sans">
                                 ă â ê ô ơ ư đ &nbsp;•&nbsp; á à ả ã ạ &nbsp;•&nbsp; ấ ầ ẩ ẫ ậ &nbsp;•&nbsp; ế ề ể ễ ệ &nbsp;•&nbsp; ố ồ ổ ỗ ộ &nbsp;•&nbsp; ờ ở ỡ ợ &nbsp;•&nbsp; ứ ừ ử ữ ự
@@ -644,7 +637,7 @@
 
                     <!-- 2. Typographic Roles Scale -->
                     <div class="specimen-block">
-                        <div class="specimen-block-title sp-sans"><span>📐</span> 2. Hệ Thống Thứ Bậc Chữ (Typographic Hierarchy & Roles)</div>
+                        <div class="specimen-block-title sp-sans">2. Hệ Thống Thứ Bậc Chữ (Typographic Hierarchy & Roles)</div>
                         <div class="specimen-scale-table sp-sans">
                             <div class="specimen-scale-row">
                                 <span class="specimen-scale-label">Display (36px / 800)</span>
@@ -691,13 +684,13 @@
 
                     <!-- 3. Domain UI Components -->
                     <div class="specimen-block">
-                        <div class="specimen-block-title sp-sans"><span>🖥️</span> 3. Giao Diện & Dữ Liệu Thực Tế (Domain UI Samples)</div>
+                        <div class="specimen-block-title sp-sans">3. Giao Diện & Dữ Liệu Thực Tế (Domain UI Samples)</div>
                         <div class="specimen-ui-grid sp-sans">
                             <!-- Brand & Nav Sample -->
                             <div class="specimen-ui-card">
                                 <div style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">A. Brand & Navigation</div>
                                 <div style="display: flex; align-items: center; justify-content: space-between; background: var(--surface); padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm);">
-                                    <div style="font-weight: 800; font-size: 14px; color: var(--primary-dark);">🌿 DÒNG HỌ TRẦN TRỌNG THU</div>
+                                    <div style="font-weight: 800; font-size: 14px; color: var(--primary-dark);">DÒNG HỌ TRẦN TRỌNG THU</div>
                                     <div style="display: flex; gap: 8px; font-size: 12px; font-weight: 600;">
                                         <span style="color: var(--lacquer-red);">GIA PHẢ</span>
                                         <span style="color: var(--text-muted);">MẠCH</span>
@@ -727,14 +720,14 @@
                                 <div style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">C. Lịch & Bộ Lọc Đa Luồng</div>
                                 <div style="background: var(--surface); padding: 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); display: flex; flex-direction: column; gap: 8px;">
                                     <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                                        <span class="filter-chip active-birth" style="font-size: 11.5px; padding: 4px 8px;">🎂 Sinh nhật (118)</span>
-                                        <span class="filter-chip active-patron" style="font-size: 11.5px; padding: 4px 8px;">✝️ Bổn mạng (115)</span>
-                                        <span class="filter-chip active-mem" style="font-size: 11.5px; padding: 4px 8px;">🕯️ Tưởng niệm (28)</span>
-                                        <span class="filter-chip active-event" style="font-size: 11.5px; padding: 4px 8px;">📅 Sự kiện (4)</span>
+                                        <span class="filter-chip active-birth" style="font-size: 11.5px; padding: 4px 8px;">Sinh nhật (118)</span>
+                                        <span class="filter-chip active-patron" style="font-size: 11.5px; padding: 4px 8px;">Bổn mạng (115)</span>
+                                        <span class="filter-chip active-mem" style="font-size: 11.5px; padding: 4px 8px;">Tưởng niệm (28)</span>
+                                        <span class="filter-chip active-event" style="font-size: 11.5px; padding: 4px 8px;">Sự kiện (4)</span>
                                     </div>
                                     <div style="display: flex; gap: 6px; margin-top: 4px;">
-                                        <button class="btn-feed-copy" style="flex: 1; font-size: 12px; padding: 6px 10px;">📋 Sao chép URL</button>
-                                        <button class="btn-feed-webcal" style="flex: 1; font-size: 12px; padding: 6px 10px;">🍎 Mở Apple Calendar</button>
+                                        <button class="btn-feed-copy" style="flex: 1; font-size: 12px; padding: 6px 10px;">Sao chép URL</button>
+                                        <button class="btn-feed-webcal" style="flex: 1; font-size: 12px; padding: 6px 10px;">Mở Apple Calendar</button>
                                     </div>
                                 </div>
                             </div>
@@ -743,7 +736,7 @@
 
                     <!-- 4. Long-form Reading Test -->
                     <div class="specimen-block">
-                        <div class="specimen-block-title sp-sans"><span>📖</span> 4. Thử Nghiệm Đọc Bài Viết Dài (MẠCH Long-Form Reading Test)</div>
+                        <div class="specimen-block-title sp-sans">4. Thử Nghiệm Đọc Bài Viết Dài (MẠCH Long-Form Reading Test)</div>
                         <div class="specimen-reading-column">
                             <h3 class="specimen-reading-title sp-serif">Những điều còn giữ con người ở lại với nhau</h3>
                             <div class="specimen-reading-meta sp-sans">
@@ -788,7 +781,7 @@
 
                     <!-- 1. Vietnamese Glyph Test -->
                     <div class="specimen-block">
-                        <div class="specimen-block-title sp-sans"><span>🔤</span> 1. Thử Nghiệm Bảng Chữ & Dấu Tiếng Việt (Glyph Stress Test)</div>
+                        <div class="specimen-block-title sp-sans">1. Thử Nghiệm Bảng Chữ & Dấu Tiếng Việt (Glyph Stress Test)</div>
                         <div class="specimen-glyph-box">
                             <div class="specimen-glyph-vowels sp-sans">
                                 ă â ê ô ơ ư đ &nbsp;•&nbsp; á à ả ã ạ &nbsp;•&nbsp; ấ ầ ẩ ẫ ậ &nbsp;•&nbsp; ế ề ể ễ ệ &nbsp;•&nbsp; ố ồ ổ ỗ ộ &nbsp;•&nbsp; ờ ở ỡ ợ &nbsp;•&nbsp; ứ ừ ử ữ ự
@@ -809,7 +802,7 @@
 
                     <!-- 2. Typographic Roles Scale -->
                     <div class="specimen-block">
-                        <div class="specimen-block-title sp-sans"><span>📐</span> 2. Hệ Thống Thứ Bậc Chữ (Typographic Hierarchy & Roles)</div>
+                        <div class="specimen-block-title sp-sans">2. Hệ Thống Thứ Bậc Chữ (Typographic Hierarchy & Roles)</div>
                         <div class="specimen-scale-table sp-sans">
                             <div class="specimen-scale-row">
                                 <span class="specimen-scale-label">Display (36px / 800)</span>
@@ -856,13 +849,13 @@
 
                     <!-- 3. Domain UI Components -->
                     <div class="specimen-block">
-                        <div class="specimen-block-title sp-sans"><span>🖥️</span> 3. Giao Diện & Dữ Liệu Thực Tế (Domain UI Samples)</div>
+                        <div class="specimen-block-title sp-sans">3. Giao Diện & Dữ Liệu Thực Tế (Domain UI Samples)</div>
                         <div class="specimen-ui-grid sp-sans">
                             <!-- Brand & Nav Sample -->
                             <div class="specimen-ui-card">
                                 <div style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">A. Brand & Navigation</div>
                                 <div style="display: flex; align-items: center; justify-content: space-between; background: var(--surface); padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm);">
-                                    <div style="font-weight: 800; font-size: 14px; color: var(--primary-dark);">🌿 DÒNG HỌ TRẦN TRỌNG THU</div>
+                                    <div style="font-weight: 800; font-size: 14px; color: var(--primary-dark);">DÒNG HỌ TRẦN TRỌNG THU</div>
                                     <div style="display: flex; gap: 8px; font-size: 12px; font-weight: 600;">
                                         <span style="color: var(--lacquer-red);">GIA PHẢ</span>
                                         <span style="color: var(--text-muted);">MẠCH</span>
@@ -892,14 +885,14 @@
                                 <div style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">C. Lịch & Bộ Lọc Đa Luồng</div>
                                 <div style="background: var(--surface); padding: 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); display: flex; flex-direction: column; gap: 8px;">
                                     <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                                        <span class="filter-chip active-birth" style="font-size: 11.5px; padding: 4px 8px;">🎂 Sinh nhật (118)</span>
-                                        <span class="filter-chip active-patron" style="font-size: 11.5px; padding: 4px 8px;">✝️ Bổn mạng (115)</span>
-                                        <span class="filter-chip active-mem" style="font-size: 11.5px; padding: 4px 8px;">🕯️ Tưởng niệm (28)</span>
-                                        <span class="filter-chip active-event" style="font-size: 11.5px; padding: 4px 8px;">📅 Sự kiện (4)</span>
+                                        <span class="filter-chip active-birth" style="font-size: 11.5px; padding: 4px 8px;">Sinh nhật (118)</span>
+                                        <span class="filter-chip active-patron" style="font-size: 11.5px; padding: 4px 8px;">Bổn mạng (115)</span>
+                                        <span class="filter-chip active-mem" style="font-size: 11.5px; padding: 4px 8px;">Tưởng niệm (28)</span>
+                                        <span class="filter-chip active-event" style="font-size: 11.5px; padding: 4px 8px;">Sự kiện (4)</span>
                                     </div>
                                     <div style="display: flex; gap: 6px; margin-top: 4px;">
-                                        <button class="btn-feed-copy" style="flex: 1; font-size: 12px; padding: 6px 10px;">📋 Sao chép URL</button>
-                                        <button class="btn-feed-webcal" style="flex: 1; font-size: 12px; padding: 6px 10px;">🍎 Mở Apple Calendar</button>
+                                        <button class="btn-feed-copy" style="flex: 1; font-size: 12px; padding: 6px 10px;">Sao chép URL</button>
+                                        <button class="btn-feed-webcal" style="flex: 1; font-size: 12px; padding: 6px 10px;">Mở Apple Calendar</button>
                                     </div>
                                 </div>
                             </div>
@@ -908,7 +901,7 @@
 
                     <!-- 4. Long-form Reading Test -->
                     <div class="specimen-block">
-                        <div class="specimen-block-title sp-sans"><span>📖</span> 4. Thử Nghiệm Đọc Bài Viết Dài (MẠCH Long-Form Reading Test)</div>
+                        <div class="specimen-block-title sp-sans">4. Thử Nghiệm Đọc Bài Viết Dài (MẠCH Long-Form Reading Test)</div>
                         <div class="specimen-reading-column">
                             <h3 class="specimen-reading-title sp-sans">Những điều còn giữ con người ở lại với nhau</h3>
                             <div class="specimen-reading-meta sp-sans">
@@ -953,7 +946,7 @@
 
                     <!-- 1. Vietnamese Glyph Test -->
                     <div class="specimen-block">
-                        <div class="specimen-block-title sp-sans"><span>🔤</span> 1. Thử Nghiệm Bảng Chữ & Dấu Tiếng Việt (Glyph Stress Test)</div>
+                        <div class="specimen-block-title sp-sans">1. Thử Nghiệm Bảng Chữ & Dấu Tiếng Việt (Glyph Stress Test)</div>
                         <div class="specimen-glyph-box">
                             <div class="specimen-glyph-vowels sp-sans">
                                 ă â ê ô ơ ư đ &nbsp;•&nbsp; á à ả ã ạ &nbsp;•&nbsp; ấ ầ ẩ ẫ ậ &nbsp;•&nbsp; ế ề ể ễ ệ &nbsp;•&nbsp; ố ồ ổ ỗ ộ &nbsp;•&nbsp; ờ ở ỡ ợ &nbsp;•&nbsp; ứ ừ ử ữ ự
@@ -974,7 +967,7 @@
 
                     <!-- 2. Typographic Roles Scale -->
                     <div class="specimen-block">
-                        <div class="specimen-block-title sp-sans"><span>📐</span> 2. Hệ Thống Thứ Bậc Chữ (Typographic Hierarchy & Roles)</div>
+                        <div class="specimen-block-title sp-sans">2. Hệ Thống Thứ Bậc Chữ (Typographic Hierarchy & Roles)</div>
                         <div class="specimen-scale-table sp-sans">
                             <div class="specimen-scale-row">
                                 <span class="specimen-scale-label">Display (36px / 800)</span>
@@ -1021,13 +1014,13 @@
 
                     <!-- 3. Domain UI Components -->
                     <div class="specimen-block">
-                        <div class="specimen-block-title sp-sans"><span>🖥️</span> 3. Giao Diện & Dữ Liệu Thực Tế (Domain UI Samples)</div>
+                        <div class="specimen-block-title sp-sans">3. Giao Diện & Dữ Liệu Thực Tế (Domain UI Samples)</div>
                         <div class="specimen-ui-grid sp-sans">
                             <!-- Brand & Nav Sample -->
                             <div class="specimen-ui-card">
                                 <div style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">A. Brand & Navigation</div>
                                 <div style="display: flex; align-items: center; justify-content: space-between; background: var(--surface); padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm);">
-                                    <div style="font-weight: 800; font-size: 14px; color: var(--primary-dark);">🌿 DÒNG HỌ TRẦN TRỌNG THU</div>
+                                    <div style="font-weight: 800; font-size: 14px; color: var(--primary-dark);">DÒNG HỌ TRẦN TRỌNG THU</div>
                                     <div style="display: flex; gap: 8px; font-size: 12px; font-weight: 600;">
                                         <span style="color: var(--lacquer-red);">GIA PHẢ</span>
                                         <span style="color: var(--text-muted);">MẠCH</span>
@@ -1057,14 +1050,14 @@
                                 <div style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">C. Lịch & Bộ Lọc Đa Luồng</div>
                                 <div style="background: var(--surface); padding: 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); display: flex; flex-direction: column; gap: 8px;">
                                     <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                                        <span class="filter-chip active-birth" style="font-size: 11.5px; padding: 4px 8px;">🎂 Sinh nhật (118)</span>
-                                        <span class="filter-chip active-patron" style="font-size: 11.5px; padding: 4px 8px;">✝️ Bổn mạng (115)</span>
-                                        <span class="filter-chip active-mem" style="font-size: 11.5px; padding: 4px 8px;">🕯️ Tưởng niệm (28)</span>
-                                        <span class="filter-chip active-event" style="font-size: 11.5px; padding: 4px 8px;">📅 Sự kiện (4)</span>
+                                        <span class="filter-chip active-birth" style="font-size: 11.5px; padding: 4px 8px;">Sinh nhật (118)</span>
+                                        <span class="filter-chip active-patron" style="font-size: 11.5px; padding: 4px 8px;">Bổn mạng (115)</span>
+                                        <span class="filter-chip active-mem" style="font-size: 11.5px; padding: 4px 8px;">Tưởng niệm (28)</span>
+                                        <span class="filter-chip active-event" style="font-size: 11.5px; padding: 4px 8px;">Sự kiện (4)</span>
                                     </div>
                                     <div style="display: flex; gap: 6px; margin-top: 4px;">
-                                        <button class="btn-feed-copy" style="flex: 1; font-size: 12px; padding: 6px 10px;">📋 Sao chép URL</button>
-                                        <button class="btn-feed-webcal" style="flex: 1; font-size: 12px; padding: 6px 10px;">🍎 Mở Apple Calendar</button>
+                                        <button class="btn-feed-copy" style="flex: 1; font-size: 12px; padding: 6px 10px;">Sao chép URL</button>
+                                        <button class="btn-feed-webcal" style="flex: 1; font-size: 12px; padding: 6px 10px;">Mở Apple Calendar</button>
                                     </div>
                                 </div>
                             </div>
@@ -1073,7 +1066,7 @@
 
                     <!-- 4. Long-form Reading Test -->
                     <div class="specimen-block">
-                        <div class="specimen-block-title sp-sans"><span>📖</span> 4. Thử Nghiệm Đọc Bài Viết Dài (MẠCH Long-Form Reading Test)</div>
+                        <div class="specimen-block-title sp-sans">4. Thử Nghiệm Đọc Bài Viết Dài (MẠCH Long-Form Reading Test)</div>
                         <div class="specimen-reading-column">
                             <h3 class="specimen-reading-title sp-serif">Những điều còn giữ con người ở lại với nhau</h3>
                             <div class="specimen-reading-meta sp-sans">
@@ -1145,7 +1138,7 @@
             <div class="modal-head">
                 <div>
                     <div class="subscribe-modal-title">
-                        <span>📲</span> Đăng ký Lịch Gia Đình
+                        Đăng ký Lịch Gia Đình
                     </div>
                     <p class="subscribe-modal-sub">
                         Đăng ký một lần. Lịch trên điện thoại sẽ tự động cập nhật khi có ngày giỗ, sinh nhật, bổn mạng hoặc sự kiện gia đình mới.
@@ -1157,13 +1150,13 @@
                 <!-- PLATFORM SELECTOR TABS -->
                 <div class="subscribe-platform-selector">
                     <button class="cal-plat-btn active" id="tab_plat_apple" onclick="selectCalendarPlatform('apple')">
-                        🍎 iPhone / Mac (Apple)
+                        iPhone / Mac (Apple)
                     </button>
                     <button class="cal-plat-btn" id="tab_plat_google" onclick="selectCalendarPlatform('google')">
-                        🌐 Google Calendar
+                        Google Calendar
                     </button>
                     <button class="cal-plat-btn" id="tab_plat_other" onclick="selectCalendarPlatform('other')">
-                        💻 Ứng dụng khác
+                        Ứng dụng khác
                     </button>
                 </div>
 

@@ -45,10 +45,10 @@ let calViewMode = 'month'; // 'month' | 'agenda'
 let calLayers = { birthdays: true, patrons: true, memorials: true, milestones: true };
 
 const CAL_FEEDS = [
-    { key: "birthdays", file: "calendars/CAL_01_BIRTHDAYS.ics", class: "birth", icon: "🎂", label: "Sinh nhật", countEl: "cnt_birth" },
-    { key: "patrons", file: "calendars/CAL_02_PATRON_FEASTS.ics", class: "patron", icon: "✝️", label: "Bổn mạng", countEl: "cnt_patron" },
-    { key: "memorials", file: "calendars/CAL_03_MEMORIALS.ics", class: "mem", icon: "🕯️", label: "Ngày giỗ", countEl: "cnt_mem" },
-    { key: "milestones", file: "calendars/CAL_04_FAMILY_MILESTONES.ics", class: "event", icon: "📅", label: "Sự kiện", countEl: "cnt_event" }
+    { key: "birthdays", file: "calendars/CAL_01_BIRTHDAYS.ics", class: "birth", icon: "", label: "Sinh nhật", countEl: "cnt_birth" },
+    { key: "patrons", file: "calendars/CAL_02_PATRON_FEASTS.ics", class: "patron", icon: "", label: "Bổn mạng", countEl: "cnt_patron" },
+    { key: "memorials", file: "calendars/CAL_03_MEMORIALS.ics", class: "mem", icon: "", label: "Ngày giỗ", countEl: "cnt_mem" },
+    { key: "milestones", file: "calendars/CAL_04_FAMILY_MILESTONES.ics", class: "event", icon: "", label: "Sự kiện", countEl: "cnt_event" }
 ];
 
 // --- INITIALIZATION ---
@@ -152,6 +152,21 @@ function getPersonPortrait(personId) {
     return primary;
 }
 
+// Monochrome SVG avatar placeholders (presentation fallback only — no MediaAsset created).
+// Same stroke language, currentColor; shape differs slightly by recorded sex, never by color.
+const AVATAR_SVG = {
+    male: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><circle cx="12" cy="8" r="3.6"/><path d="M4.8 20c1.1-3.7 3.9-5.5 7.2-5.5s6.1 1.8 7.2 5.5"/></svg>',
+    female: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><circle cx="12" cy="8.2" r="3.4"/><path d="M7.4 6.4C6.6 8 6.4 10 6.8 12c.2 1.4.7 2.6 1.3 3.4C9.6 16.6 10.8 17 12 17s2.4-.4 3.9-1.6c.6-.8 1.1-2 1.3-3.4.4-2 .2-4-.6-5.6"/><path d="M5.2 20c1-3.4 3.6-5 6.8-5s5.8 1.6 6.8 5"/></svg>',
+    neutral: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><circle cx="12" cy="8" r="3.6"/><path d="M4.8 20c1.1-3.7 3.9-5.5 7.2-5.5s6.1 1.8 7.2 5.5"/></svg>'
+};
+
+function avatarSvgForSex(sex) {
+    const s = (sex || "").toUpperCase();
+    if (s === "M") return AVATAR_SVG.male;
+    if (s === "F") return AVATAR_SVG.female;
+    return AVATAR_SVG.neutral;
+}
+
 // Presentation-level avatar resolver with gender-aware UI fallback
 function resolvePersonAvatar(person) {
     if (!person || !person.id) return null;
@@ -172,8 +187,8 @@ function resolvePersonAvatar(person) {
             url: null,
             isPlaceholder: true,
             placeholderType: "male",
-            icon: "👨",
-            childIcon: "👦",
+            icon: null,
+            childIcon: null,
             label: "Nam"
         };
     } else if (sex === "F") {
@@ -181,8 +196,8 @@ function resolvePersonAvatar(person) {
             url: null,
             isPlaceholder: true,
             placeholderType: "female",
-            icon: "👩",
-            childIcon: "👧",
+            icon: null,
+            childIcon: null,
             label: "Nữ"
         };
     } else {
@@ -190,8 +205,8 @@ function resolvePersonAvatar(person) {
             url: null,
             isPlaceholder: true,
             placeholderType: "neutral",
-            icon: "👤",
-            childIcon: "👤",
+            icon: null,
+            childIcon: null,
             label: "Chưa xác định"
         };
     }
@@ -291,10 +306,10 @@ function getFamilyGenerationMeta(fid) {
     return { level: lvl, label: `F${lvl} · Hậu duệ`, badgeCls: "gen-f4", borderCls: "border-f4", bgCls: "bg-gen-f4", title: `Nhánh thế hệ thứ ${lvl}` };
 }
 
-// --- SITE IDENTITY & PAGE CONTEXT CONFIGURATION ---
+/// --- SITE IDENTITY & PAGE CONTEXT CONFIGURATION ---
 const SITE_CONFIG = {
     publicationName: "GIÒNG HỌ TRẦN TRỌNG THU",
-    subtitle: "CÂY GIA PHẢ"
+    subtitle: "TỪ 1872 ĐẾN CHÚNG TA"
 };
 
 const ROUTE_CONTEXTS = {
@@ -332,49 +347,55 @@ const ROUTE_CONTEXTS = {
     "/gia-pha/nhan-vat": {
         type: "GENEALOGY",
         territory: "gia_pha",
-        title: "Gia Phả • Thành Viên",
+        title: "Gia Phả • Danh Bạ Thành Viên",
         navId: "nav_gia_pha",
-        secId: "view_people"
+        secId: "view_people",
+        init: () => renderPeopleDirectory()
     },
     "/people": {
         type: "GENEALOGY",
         territory: "gia_pha",
-        title: "Gia Phả • Thành Viên",
+        title: "Gia Phả • Danh Bạ Thành Viên",
         navId: "nav_gia_pha",
-        secId: "view_people"
+        secId: "view_people",
+        init: () => renderPeopleDirectory()
     },
     "/gia-pha/gia-dinh": {
         type: "GENEALOGY",
         territory: "gia_pha",
         title: "Gia Phả • Gia Đình",
         navId: "nav_gia_pha",
-        secId: "view_families"
+        secId: "view_families",
+        init: () => renderFamiliesDirectory()
     },
     "/families": {
         type: "GENEALOGY",
         territory: "gia_pha",
         title: "Gia Phả • Gia Đình",
         navId: "nav_gia_pha",
-        secId: "view_families"
+        secId: "view_families",
+        init: () => renderFamiliesDirectory()
     },
     "/gia-pha/dong-thoi-gian": {
         type: "GENEALOGY",
         territory: "gia_pha",
         title: "Gia Phả • Dòng Thời Gian",
         navId: "nav_gia_pha",
-        secId: "view_timeline"
+        secId: "view_timeline",
+        init: () => renderTimeline()
     },
     "/timeline": {
         type: "GENEALOGY",
         territory: "gia_pha",
         title: "Gia Phả • Dòng Thời Gian",
         navId: "nav_gia_pha",
-        secId: "view_timeline"
+        secId: "view_timeline",
+        init: () => renderTimeline()
     },
     "/gia-pha/ky-uc": {
         type: "GENEALOGY",
         territory: "gia_pha",
-        title: "Gia Phả • Ký Ức & Giai Thoại",
+        title: "Gia Phả • Ký Ức",
         navId: "nav_gia_pha",
         secId: "view_memories",
         init: () => renderMemories()
@@ -382,76 +403,84 @@ const ROUTE_CONTEXTS = {
     "/memories": {
         type: "GENEALOGY",
         territory: "gia_pha",
-        title: "Gia Phả • Ký Ức & Giai Thoại",
+        title: "Gia Phả • Ký Ức",
         navId: "nav_gia_pha",
         secId: "view_memories",
         init: () => renderMemories()
     },
     "/mach": {
-        type: "MACH",
+        type: "EDITORIAL",
         territory: "mach",
-        title: "Mạch • Tập San & Ký Ức",
+        title: "Mạch • Tập San Di Sản",
         navId: "nav_mach",
         secId: "view_mach",
         init: () => renderMachModule()
     },
     "/tu-lieu": {
-        type: "TU_LIEU",
+        type: "ARCHIVE",
         territory: "tu_lieu",
-        title: "Tư Liệu • Lưu Trữ Hiện Vật",
+        title: "Tư Liệu • Hồ Sơ Gốc",
+        navId: "nav_tu_lieu",
+        secId: "view_tu_lieu",
+        init: () => renderTuLieuModule()
+    },
+    "/archive": {
+        type: "ARCHIVE",
+        territory: "tu_lieu",
+        title: "Tư Liệu • Hồ Sơ Gốc",
         navId: "nav_tu_lieu",
         secId: "view_tu_lieu",
         init: () => renderTuLieuModule()
     },
     "/lich": {
-        type: "CALENDAR",
-        territory: "capability",
-        title: "Lịch Gia Đình",
+        type: "TOOL",
+        territory: "system",
+        title: "Lịch Gia Đình Trực Tuyến",
         navId: "nav_lich",
         secId: "view_calendar",
         init: () => renderCalendarModule()
     },
     "/calendar": {
-        type: "CALENDAR",
-        territory: "capability",
-        title: "Lịch Gia Đình",
+        type: "TOOL",
+        territory: "system",
+        title: "Lịch Gia Đình Trực Tuyến",
         navId: "nav_lich",
         secId: "view_calendar",
         init: () => renderCalendarModule()
     },
     "/tim-kiem": {
-        type: "SEARCH",
-        territory: "capability",
-        title: "Tìm Kiếm Toàn Cục",
+        type: "TOOL",
+        territory: "system",
+        title: "Tra Cứu Toàn Cục",
         navId: "nav_tim_kiem",
         secId: "view_search",
         init: () => runSearchPage()
     },
     "/search": {
-        type: "SEARCH",
-        territory: "capability",
-        title: "Tìm Kiếm Toàn Cục",
+        type: "TOOL",
+        territory: "system",
+        title: "Tra Cứu Toàn Cục",
         navId: "nav_tim_kiem",
         secId: "view_search",
         init: () => runSearchPage()
     },
     "/ve-dong-ho": {
-        type: "ABOUT",
-        territory: "about",
-        title: "Về Dòng Họ",
+        type: "PROJECT",
+        territory: "project",
+        title: "Về Dòng Họ Trần Trọng Thu",
         navId: "",
         secId: "view_ve_dong_ho"
     },
     "/ve-du-an": {
-        type: "ABOUT",
-        territory: "about",
-        title: "Về Dự Án",
+        type: "PROJECT",
+        territory: "project",
+        title: "Về Dự Án & Tôn Chỉ Biên Soạn",
         navId: "",
         secId: "view_ve_du_an"
     },
-    "/typography-specimen": {
-        type: "SPECIMEN",
-        territory: "specimen",
+    "/specimen": {
+        type: "PROJECT",
+        territory: "project",
         title: "Typography Specimen",
         navId: "",
         secId: "view_typography_specimen"
@@ -460,7 +489,7 @@ const ROUTE_CONTEXTS = {
 
 function bindPublicationHeaders(data) {
     const pubName = (data && data.publication) || SITE_CONFIG.publicationName;
-    const subTitle = (data && data.subtitle) || SITE_CONFIG.subtitle;
+    const subTitle = SITE_CONFIG.subtitle;
 
     const brandTitle = document.getElementById("globalBrandTitle");
     if (brandTitle) brandTitle.innerText = pubName;
@@ -695,7 +724,7 @@ function renderAgendaList(y, m) {
         matchedEvs.forEach(ev => {
             evCardsHtml += `
                 <div class="agenda-event-card ${ev.chipCls}" onclick="openEventDetailModal(${calEvents.indexOf(ev)}, ${y})">
-                    <div class="agenda-ev-title">${ev.icon} ${escapeHtml(ev.summary)}</div>
+                    <div class="agenda-ev-title">${escapeHtml(ev.summary)}</div>
                     <div class="agenda-ev-meta">Loại: <strong>${ev.label}</strong> • Nhấp để xem hồ sơ gia phả & ký ức</div>
                 </div>
             `;
@@ -704,7 +733,7 @@ function renderAgendaList(y, m) {
         dayGroup.innerHTML = `
             <div class="agenda-date-head">
                 <span>Ngày ${d < 10 ? '0' + d : d}/${(m + 1) < 10 ? '0' + (m + 1) : (m + 1)}/${y}</span>
-                <span style="font-size:13px; font-weight:600; color:var(--lunar-color);">🌙 ${lunar.fullText}</span>
+                <span style="font-size:13px; font-weight:600; color:var(--lunar-color);">${lunar.fullText}</span>
             </div>
             <div class="agenda-events-list">${evCardsHtml}</div>
         `;
@@ -758,7 +787,7 @@ function openDayDrawer(day, month, year, lunar, events) {
     const list = document.getElementById("drawerEventsList");
 
     if (elTitle) elTitle.innerText = `Ngày ${day < 10 ? '0' + day : day}/${month < 10 ? '0' + month : month}/${year}`;
-    if (elSub) elSub.innerText = `🌙 Âm lịch: ${lunar.fullText}`;
+    if (elSub) elSub.innerText = `Âm lịch: ${lunar.fullText}`;
     if (!list) return;
 
     list.innerHTML = "";
@@ -773,7 +802,7 @@ function openDayDrawer(day, month, year, lunar, events) {
                 openEventDetailModal(calEvents.indexOf(ev), year);
             };
             card.innerHTML = `
-                <div style="font-weight:700; font-size:15px;">${ev.icon} ${escapeHtml(ev.summary)}</div>
+                <div style="font-weight:700; font-size:15px;">${escapeHtml(ev.summary)}</div>
                 <div style="font-size:13px; color:var(--text-muted); margin-top:4px;">Loại: <strong>${ev.label}</strong> • Xem chi tiết hồ sơ →</div>
             `;
             list.appendChild(card);
@@ -804,8 +833,8 @@ function openEventDetailModal(evIdx, yr) {
     if (elTitle) elTitle.innerText = ev.summary;
     if (elDates) {
         elDates.innerHTML = `
-            <div>📅 <strong>Dương lịch:</strong> ${ev.day < 10 ? '0' + ev.day : ev.day}/${ev.month < 10 ? '0' + ev.month : ev.month}/${yr}</div>
-            <div style="color:var(--lunar-color); margin-top:3px;">🌙 <strong>Âm lịch:</strong> ${lunar.fullText}</div>
+                <div><strong>Dương lịch:</strong> ${ev.day < 10 ? '0' + ev.day : ev.day}/${ev.month < 10 ? '0' + ev.month : ev.month}/${yr}</div>
+                <div style="color:var(--lunar-color); margin-top:3px;"><strong>Âm lịch:</strong> ${lunar.fullText}</div>
         `;
     }
 
@@ -817,7 +846,7 @@ function openEventDetailModal(evIdx, yr) {
         linkBox.style.display = "block";
         linkBox.innerHTML = `
             <div style="padding:10px 14px; background:var(--primary-light); border-radius:8px; border:1px solid #bfdbfe; font-size:13.5px;">
-                👤 Thành viên liên quan: <a onclick="closeModalDirect('eventModal'); openPersonProfile('${personMatch.id}')" style="color:var(--primary); font-weight:700; cursor:pointer; text-decoration:underline;">${personMatch.name} (Xem hồ sơ gia phả →)</a>
+                Thành viên liên quan: <a onclick="closeModalDirect('eventModal'); openPersonProfile('${personMatch.id}')" style="color:var(--primary); font-weight:700; cursor:pointer; text-decoration:underline;">${personMatch.name} (Xem hồ sơ gia phả →)</a>
             </div>
         `;
     } else if (linkBox) {
@@ -867,15 +896,15 @@ function renderCalendarPlatformContent() {
 
     if (currentCalPlatform === 'apple') {
         banner.className = 'subscribe-plat-banner apple-theme';
-        banner.innerHTML = `<strong>🍎 Dành cho iPhone, iPad và máy Mac:</strong><br>Bấm nút <strong>"🍎 Thêm vào Apple Calendar"</strong> để ứng dụng Lịch trên máy tự động mở và đăng ký đồng bộ.`;
+        banner.innerHTML = `<strong>Dành cho iPhone, iPad và máy Mac:</strong><br>Bấm nút <strong>"Thêm vào Apple Calendar"</strong> để ứng dụng Lịch trên máy tự động mở và đăng ký đồng bộ.`;
     } else if (currentCalPlatform === 'google') {
         banner.className = 'subscribe-plat-banner google-theme';
-        banner.innerHTML = `<strong>🌐 Dành cho Google Calendar (Android & Máy tính):</strong><br>
+        banner.innerHTML = `<strong>Dành cho Google Calendar (Android & Máy tính):</strong><br>
         <em>(Lưu ý: Ứng dụng Google Calendar trên điện thoại không hỗ trợ thêm lịch qua URL trực tiếp. Bạn chỉ cần thêm 1 lần trên web <a href="https://calendar.google.com" target="_blank" rel="noopener" style="color:#1d4ed8; text-decoration:underline; font-weight:700;">calendar.google.com</a>, lịch sẽ tự động đồng bộ về điện thoại)</em>.<br>
-        <strong>Cách làm:</strong> Bấm <strong>"📋 Sao chép URL"</strong> > Mở Google Calendar Web > Cột trái mục <em>"Lịch khác" (+) > Chọn "Từ URL"</em> > Dán địa chỉ.`;
+        <strong>Cách làm:</strong> Bấm <strong>"Sao chép URL"</strong> > Mở Google Calendar Web > Cột trái mục <em>"Lịch khác" (+) > Chọn "Từ URL"</em> > Dán địa chỉ.`;
     } else {
         banner.className = 'subscribe-plat-banner other-theme';
-        banner.innerHTML = `<strong>💻 Microsoft Outlook & Ứng dụng khác:</strong><br>Bấm <strong>"📋 Sao chép URL"</strong> > Trong phần mềm Lịch chọn <em>Add Calendar > Subscribe from web</em> và dán địa chỉ.`;
+        banner.innerHTML = `<strong>Microsoft Outlook & Ứng dụng khác:</strong><br>Bấm <strong>"Sao chép URL"</strong> > Trong phần mềm Lịch chọn <em>Add Calendar > Subscribe from web</em> và dán địa chỉ.`;
     }
 
     feedList.innerHTML = CAL_FEEDS.map(f => {
@@ -889,25 +918,25 @@ function renderCalendarPlatformContent() {
         if (currentCalPlatform === 'apple') {
             actionsHtml = `
                 <a class="btn-plat-primary" href="${escapeHtml(webcalUrl)}" title="Mở Apple Calendar">
-                    🍎 Thêm vào Apple Calendar
+                    Thêm vào Apple Calendar
                 </a>
                 <button class="btn-plat-secondary" id="btn_copy_${f.key}" onclick="copyCalendarFeedUrl('${f.key}', '${escapeHtml(absUrl)}', this)">
-                    📋 Sao chép URL
+                    Sao chép URL
                 </button>
             `;
         } else if (currentCalPlatform === 'google') {
             actionsHtml = `
                 <button class="btn-plat-primary google" id="btn_copy_${f.key}" onclick="copyCalendarFeedUrl('${f.key}', '${escapeHtml(absUrl)}', this)">
-                    📋 Sao chép URL lịch
+                    Sao chép URL lịch
                 </button>
                 <a class="btn-plat-secondary" href="https://calendar.google.com" target="_blank" rel="noopener">
-                    🌐 Mở Google Calendar Web ↗
+                    Mở Google Calendar Web ↗
                 </a>
             `;
         } else {
             actionsHtml = `
                 <button class="btn-plat-primary" id="btn_copy_${f.key}" onclick="copyCalendarFeedUrl('${f.key}', '${escapeHtml(absUrl)}', this)">
-                    📋 Sao chép URL lịch
+                    Sao chép URL lịch
                 </button>
             `;
         }
@@ -915,7 +944,7 @@ function renderCalendarPlatformContent() {
         return `
             <div class="subscribe-feed-card">
                 <div class="subscribe-feed-header">
-                    <div class="subscribe-feed-title">${f.icon} Lịch ${f.label}</div>
+                    <div class="subscribe-feed-title">Lịch ${f.label}</div>
                     ${countText ? `<span class="subscribe-feed-count">${escapeHtml(countText)}</span>` : ''}
                 </div>
                 <div class="subscribe-feed-desc">${escapeHtml(meta.desc)}</div>
@@ -945,7 +974,7 @@ function copyCalendarFeedUrl(feedKey, url, btnEl) {
             if (btnEl) {
                 const originalHtml = btnEl.innerHTML;
                 btnEl.classList.add("copied");
-                btnEl.innerHTML = "✅ Đã sao chép!";
+                btnEl.innerHTML = "Đã sao chép!";
                 setTimeout(() => {
                     btnEl.classList.remove("copied");
                     btnEl.innerHTML = originalHtml;
@@ -970,7 +999,7 @@ function fallbackCopy(text, btnEl) {
         if (btnEl) {
             const originalHtml = btnEl.innerHTML;
             btnEl.classList.add("copied");
-            btnEl.innerHTML = "✅ Đã sao chép!";
+            btnEl.innerHTML = "Đã sao chép!";
             setTimeout(() => {
                 btnEl.classList.remove("copied");
                 btnEl.innerHTML = originalHtml;
@@ -1087,10 +1116,10 @@ function renderGraphNode(p, role = 'child', isFocus = false) {
     const lifeStr = dDate ? `${bDate} – ${dDate}` : (bDate !== "Chưa rõ" ? `s. ${bDate}` : "Chưa có năm sinh");
     const avatar = resolvePersonAvatar(p);
 
-    const fallbackIcon = avatar && avatar.icon ? avatar.icon : (p.sex === 'M' ? '👨' : (p.sex === 'F' ? '👩' : '👤'));
+    const fallbackSvg = avatarSvgForSex(p.sex);
     const avatarHtml = (avatar && !avatar.isPlaceholder && avatar.url)
-        ? `<div class="node-avatar-box"><img src="${avatar.url}" alt="${p.name}" class="node-avatar-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'node-avatar-fallback\\'>${fallbackIcon}</span>'"/></div>`
-        : `<div class="node-avatar-box"><span class="node-avatar-fallback">${fallbackIcon}</span></div>`;
+        ? `<div class="node-avatar-box"><img src="${avatar.url}" alt="${p.name}" class="node-avatar-img" loading="lazy"/></div>`
+        : `<div class="node-avatar-box"><span class="node-avatar-fallback">${fallbackSvg}</span></div>`;
 
     return `
         <div class="graph-node ${gMeta.borderCls} ${isFocus ? 'node-focus' : ''}" onclick="focusGraphPerson('${p.id}')">
@@ -1103,7 +1132,7 @@ function renderGraphNode(p, role = 'child', isFocus = false) {
                 ${avatarHtml}
                 <div class="node-content-main">
                     <div class="node-name" title="${p.name}">${p.name}</div>
-                    <div class="node-meta">📅 ${lifeStr}</div>
+                    <div class="node-meta">${lifeStr}</div>
                 </div>
             </div>
             <div class="node-actions" onclick="event.stopPropagation();">
@@ -1136,7 +1165,7 @@ function renderFocusPedigreeTree(centerId) {
     if (pathContainer) {
         pathContainer.style.display = "flex";
         const pathIds = derivedPaths[centerId] || [centerId];
-        let pathHtml = `<span style="font-weight:700; color:var(--text-muted);"><span style="color:var(--accent);">🧭</span> Tuyến phả hệ trực hệ:</span> `;
+        let pathHtml = `<span style="font-weight:700; color:var(--text-muted);">Tuyến phả hệ trực hệ:</span> `;
         pathHtml += pathIds.map((pid, idx) => {
             const p = appData.people[pid];
             const isLast = idx === pathIds.length - 1;
@@ -1155,7 +1184,7 @@ function renderFocusPedigreeTree(centerId) {
             <div class="graph-tier-row">
                 <div class="graph-nodes-cluster">
                     ${renderGraphNode(par1, 'parent')}
-                    <div class="union-hub">💑 Phụ Mẫu</div>
+                    <div class="union-hub">Phụ Mẫu</div>
                     ${renderGraphNode(par2, 'parent')}
                 </div>
             </div>
@@ -1173,7 +1202,7 @@ function renderFocusPedigreeTree(centerId) {
         `;
     } else {
         parentsHtml = `
-            <div class="tier-badge-label" style="background:#eff6ff; color:#1e3a8a; border-color:#bfdbfe;">🌲 Mốc Khởi Thủy Gia Tộc (Anchor)</div>
+            <div class="tier-badge-label" style="background:#eff6ff; color:#1e3a8a; border-color:#bfdbfe;">Mốc Khởi Thủy Gia Tộc (Anchor)</div>
             <div class="vertical-stem-line"></div>
         `;
     }
@@ -1181,12 +1210,12 @@ function renderFocusPedigreeTree(centerId) {
     // 2. Tier 2: Focus Person & Spouse Union (Trọng tâm & Hôn phối)
     let focusHtml = "";
     if (person.spouses.length > 0) {
-        const spousesNodes = person.spouses.map(sid => renderGraphNode(appData.people[sid], 'spouse')).join(`<div class="union-hub" style="margin: 0 4px;">💍</div>`);
+        const spousesNodes = person.spouses.map(sid => renderGraphNode(appData.people[sid], 'spouse')).join(`<div class="union-hub" style="margin: 0 4px;">+</div>`);
         focusHtml = `
             <div class="graph-tier-row">
                 <div class="graph-nodes-cluster">
                     ${renderGraphNode(person, 'focus', true)}
-                    <div class="union-hub">💍 Hôn phối</div>
+                    <div class="union-hub">Hôn phối</div>
                     ${spousesNodes}
                 </div>
             </div>
@@ -1212,7 +1241,7 @@ function renderFocusPedigreeTree(centerId) {
                 <div class="child-column">
                     <div class="child-drop-line"></div>
                     ${renderGraphNode(ch, 'child')}
-                    ${grandCount > 0 ? `<div class="grand-badge" onclick="event.stopPropagation(); focusGraphPerson('${ch.id}')" title="Nhấn để xem nhánh con cháu">👶 ${grandCount} người con ↓</div>` : ''}
+                    ${grandCount > 0 ? `<div class="grand-badge" onclick="event.stopPropagation(); focusGraphPerson('${ch.id}')" title="Nhấn để xem nhánh con cháu">${grandCount} người con ↓</div>` : ''}
                 </div>
             `;
         }).join("");
@@ -1394,10 +1423,10 @@ function renderUnifiedPersonCard(p, isTreeNode = false, isCenter = false) {
     const lifeStr = dDate ? `${bDate} – ${dDate}` : (bDate !== "Chưa rõ" ? `Sinh: ${bDate}` : "Chưa có năm sinh");
     const avatar = resolvePersonAvatar(p);
 
-    const fallbackIcon = avatar && avatar.icon ? avatar.icon : (p.sex === 'M' ? '👨' : (p.sex === 'F' ? '👩' : '👤'));
+    const fallbackSvg = avatarSvgForSex(p.sex);
     const avatarHtml = (avatar && !avatar.isPlaceholder && avatar.url)
-        ? `<div class="card-avatar-box"><img src="${avatar.url}" alt="${p.name}" class="card-avatar-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'card-avatar-fallback\\'>${fallbackIcon}</span>'"/></div>`
-        : `<div class="card-avatar-box"><span class="card-avatar-fallback">${fallbackIcon}</span></div>`;
+        ? `<div class="card-avatar-box"><img src="${avatar.url}" alt="${p.name}" class="card-avatar-img" loading="lazy"/></div>`
+        : `<div class="card-avatar-box"><span class="card-avatar-fallback">${fallbackSvg}</span></div>`;
 
     return `
         <div class="person-card ${gMeta.borderCls}" ${isTreeNode ? `onclick="renderFocusPedigreeTree('${p.id}')"` : `onclick="openPersonProfile('${p.id}')"`} style="${isCenter ? 'border: 2px solid var(--primary); box-shadow: var(--shadow-md);' : ''}">
@@ -1410,13 +1439,13 @@ function renderUnifiedPersonCard(p, isTreeNode = false, isCenter = false) {
                     ${avatarHtml}
                     <div class="card-content-main">
                         <div class="card-name-title">${p.name}</div>
-                        <div class="card-meta-primary">📅 ${lifeStr}</div>
+                        <div class="card-meta-primary">${lifeStr}</div>
                         <div class="card-meta-secondary">Giới tính: <strong>${p.sex === 'M' ? 'Nam' : 'Nữ'}</strong> • Con: <strong>${p.children ? p.children.length : 0}</strong></div>
                     </div>
                 </div>
             </div>
             <div class="card-footer-row">
-                <a class="card-accent-link" onclick="event.stopPropagation(); renderFocusPedigreeTree('${p.id}'); switchTreeViewMode('focus');">🌳 Tiêu điểm phả đồ</a>
+                <a class="card-accent-link" onclick="event.stopPropagation(); renderFocusPedigreeTree('${p.id}'); switchTreeViewMode('focus');">Tiêu điểm phả đồ →</a>
                 <a class="card-action-link" onclick="event.stopPropagation(); openPersonProfile('${p.id}');">Hồ sơ →</a>
             </div>
         </div>
@@ -1602,12 +1631,12 @@ function openPersonProfile(pid) {
     const pRels = document.getElementById("p_relatives");
 
     const avatar = resolvePersonAvatar(p);
-    const fallbackIcon = avatar && avatar.icon ? avatar.icon : (p.sex === 'M' ? '👨' : (p.sex === 'F' ? '👩' : '👤'));
+    const fallbackSvg = avatarSvgForSex(p.sex);
     if (pAvatar) {
         if (avatar && !avatar.isPlaceholder && avatar.url) {
-            pAvatar.innerHTML = `<img src="${avatar.url}" alt="${p.name}" class="profile-avatar-img" onerror="this.parentElement.innerHTML='<span class=\\'profile-avatar-fallback\\'>${fallbackIcon}</span>'"/>`;
+            pAvatar.innerHTML = `<img src="${avatar.url}" alt="${p.name}" class="profile-avatar-img"/>`;
         } else {
-            pAvatar.innerHTML = `<span class="profile-avatar-fallback">${fallbackIcon}</span>`;
+            pAvatar.innerHTML = `<span class="profile-avatar-fallback">${fallbackSvg}</span>`;
         }
     }
 
@@ -1615,7 +1644,7 @@ function openPersonProfile(pid) {
         if (avatar && !avatar.isPlaceholder && avatar.url) {
             const srcLabel = avatar.source || "FamilySearch";
             const srcId = avatar.sourceId || p.fsid || p.id;
-            pProv.innerHTML = `<span class="profile-provenance-tag">🏛️ Ảnh chân dung ${srcLabel} (${srcId})</span>`;
+            pProv.innerHTML = `<span class="profile-provenance-tag">Ảnh chân dung ${srcLabel} (${srcId})</span>`;
         } else {
             pProv.innerHTML = `<span style="font-size: 11.5px; color: var(--text-muted);">Chưa có ảnh chân dung lưu trữ</span>`;
         }
@@ -1639,10 +1668,10 @@ function openPersonProfile(pid) {
             if (par) {
                 const gPar = getGenerationMeta(par.id);
                 const parAv = resolvePersonAvatar(par);
-                const parIcon = parAv && parAv.icon ? parAv.icon : (par.sex === 'M' ? '👨' : (par.sex === 'F' ? '👩' : '👤'));
+                const parSvg = avatarSvgForSex(par.sex);
                 const parThumb = (parAv && !parAv.isPlaceholder && parAv.url)
-                    ? `<span class="rel-thumb-box"><img src="${parAv.url}" alt="${par.name}" class="rel-thumb-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'rel-thumb-fallback\\'>${parIcon}</span>'"/></span>`
-                    : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${parIcon}</span></span>`;
+                    ? `<span class="rel-thumb-box"><img src="${parAv.url}" alt="${par.name}" class="rel-thumb-img" loading="lazy"/></span>`
+                    : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${parSvg}</span></span>`;
                 relsHtml += `<a class="rel-link" onclick="openPersonProfile('${par.id}')">${parThumb}<span class="gen-badge ${gPar.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gPar.label.split('·')[0].trim()}</span> ${par.name} (${par.sex === 'M' ? 'Cha' : (par.sex === 'F' ? 'Mẹ' : 'Phụ huynh')})</a>`;
             }
         });
@@ -1654,9 +1683,10 @@ function openPersonProfile(pid) {
             if (sp) {
                 const gSp = getGenerationMeta(sp.id);
                 const spAv = resolvePersonAvatar(sp);
+                const spSvg = avatarSvgForSex(sp.sex);
                 const spThumb = (spAv && !spAv.isPlaceholder && spAv.url)
-                    ? `<span class="rel-thumb-box"><img src="${spAv.url}" alt="${sp.name}" class="rel-thumb-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'rel-thumb-fallback\\'>💍</span>'"/></span>`
-                    : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">💍</span></span>`;
+                    ? `<span class="rel-thumb-box"><img src="${spAv.url}" alt="${sp.name}" class="rel-thumb-img" loading="lazy"/></span>`
+                    : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${spSvg}</span></span>`;
                 relsHtml += `<a class="rel-link" onclick="openPersonProfile('${sp.id}')">${spThumb}<span class="gen-badge ${gSp.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gSp.label.split('·')[0].trim()}</span> ${sp.name}</a>`;
             }
         });
@@ -1668,15 +1698,15 @@ function openPersonProfile(pid) {
             if (ch) {
                 const gCh = getGenerationMeta(ch.id);
                 const chAv = resolvePersonAvatar(ch);
-                const chIcon = chAv && chAv.childIcon ? chAv.childIcon : (ch.sex === 'M' ? '👦' : (ch.sex === 'F' ? '👧' : '👤'));
+                const chSvg = avatarSvgForSex(ch.sex);
                 const chThumb = (chAv && !chAv.isPlaceholder && chAv.url)
-                    ? `<span class="rel-thumb-box"><img src="${chAv.url}" alt="${ch.name}" class="rel-thumb-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'rel-thumb-fallback\\'>${chIcon}</span>'"/></span>`
-                    : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${chIcon}</span></span>`;
+                    ? `<span class="rel-thumb-box"><img src="${chAv.url}" alt="${ch.name}" class="rel-thumb-img" loading="lazy"/></span>`
+                    : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${chSvg}</span></span>`;
                 relsHtml += `<a class="rel-link" onclick="openPersonProfile('${ch.id}')">${chThumb}<span class="gen-badge ${gCh.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gCh.label.split('·')[0].trim()}</span> ${ch.name}</a>`;
             }
         });
     }
-    relsHtml += `<div style="margin-top:16px;"><button class="cal-nav-btn today" onclick="currentTreeFocusId='${p.id}'; switchTreeViewMode('focus'); navigateRoute('/tree');">🌳 Xem cây phả đồ lấy người này làm trọng tâm →</button></div>`;
+    relsHtml += `<div style="margin-top:16px;"><button class="cal-nav-btn today" onclick="currentTreeFocusId='${p.id}'; switchTreeViewMode('focus'); navigateRoute('/tree');">Xem cây phả đồ lấy người này làm trọng tâm →</button></div>`;
     if (pRels) pRels.innerHTML = relsHtml;
 
     const memBox = document.getElementById("p_memory_box");
@@ -1736,19 +1766,19 @@ function openFamilyProfile(fid) {
     if (husb) {
         const gH = getGenerationMeta(husb.id);
         const hAv = resolvePersonAvatar(husb);
-        const hIcon = hAv && hAv.icon ? hAv.icon : '👨';
+        const hSvg = avatarSvgForSex(husb.sex);
         const hThumb = (hAv && !hAv.isPlaceholder && hAv.url)
-            ? `<span class="rel-thumb-box"><img src="${hAv.url}" alt="${husb.name}" class="rel-thumb-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'rel-thumb-fallback\\'>${hIcon}</span>'"/></span>`
-            : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${hIcon}</span></span>`;
+            ? `<span class="rel-thumb-box"><img src="${hAv.url}" alt="${husb.name}" class="rel-thumb-img" loading="lazy"/></span>`
+            : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${hSvg}</span></span>`;
         pHtml += `<a class="rel-link" onclick="openPersonProfile('${husb.id}')">${hThumb}<span class="gen-badge ${gH.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gH.label.split('·')[0].trim()}</span> Người chồng: ${husb.name}</a>`;
     }
     if (wife) {
         const gW = getGenerationMeta(wife.id);
         const wAv = resolvePersonAvatar(wife);
-        const wIcon = wAv && wAv.icon ? wAv.icon : '👩';
+        const wSvg = avatarSvgForSex(wife.sex);
         const wThumb = (wAv && !wAv.isPlaceholder && wAv.url)
-            ? `<span class="rel-thumb-box"><img src="${wAv.url}" alt="${wife.name}" class="rel-thumb-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'rel-thumb-fallback\\'>${wIcon}</span>'"/></span>`
-            : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${wIcon}</span></span>`;
+            ? `<span class="rel-thumb-box"><img src="${wAv.url}" alt="${wife.name}" class="rel-thumb-img" loading="lazy"/></span>`
+            : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${wSvg}</span></span>`;
         pHtml += `<a class="rel-link" onclick="openPersonProfile('${wife.id}')">${wThumb}<span class="gen-badge ${gW.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gW.label.split('·')[0].trim()}</span> Người vợ: ${wife.name}</a>`;
     }
     if (fParents) fParents.innerHTML = pHtml;
@@ -1760,10 +1790,10 @@ function openFamilyProfile(fid) {
             if (c) {
                 const gC = getGenerationMeta(c.id);
                 const cAv = resolvePersonAvatar(c);
-                const cIcon = cAv && cAv.childIcon ? cAv.childIcon : (c.sex === 'M' ? '👦' : (c.sex === 'F' ? '👧' : '👤'));
+                const cSvg = avatarSvgForSex(c.sex);
                 const cThumb = (cAv && !cAv.isPlaceholder && cAv.url)
-                    ? `<span class="rel-thumb-box"><img src="${cAv.url}" alt="${c.name}" class="rel-thumb-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'rel-thumb-fallback\\'>${cIcon}</span>'"/></span>`
-                    : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${cIcon}</span></span>`;
+                    ? `<span class="rel-thumb-box"><img src="${cAv.url}" alt="${c.name}" class="rel-thumb-img" loading="lazy"/></span>`
+                    : `<span class="rel-thumb-box"><span class="rel-thumb-fallback">${cSvg}</span></span>`;
                 cHtml += `<a class="rel-link" onclick="openPersonProfile('${c.id}')">${cThumb}<span class="gen-badge ${gC.badgeCls}" style="font-size:10px; padding:1px 6px; margin-right:4px;">${gC.label.split('·')[0].trim()}</span> ${c.name}</a>`;
             }
         });
@@ -1917,7 +1947,7 @@ function renderHomePublicationLanding() {
         if (memories.length > 0) {
             // Default to memory 0 (Bà Sa) as recommended in brief, easily configurable
             const mem = memories[0];
-            const title = mem.title ? mem.title.replace(/^📖\s*/, '') : "Ký ức tiền nhân";
+            const title = mem.title ? mem.title.replace(/^[📖🕯️]\s*/u, '') : "Ký ức tiền nhân";
             const personName = mem.personName ? ` — ${mem.personName.split('@')[0].trim()}` : '';
             const fullTitle = `${title}${personName}`;
             // Clean passage from memory story without altering facts
@@ -1992,7 +2022,7 @@ function renderHomePublicationLanding() {
                 <h3 class="box-title">${escapeHtml(featured.title)}</h3>
                 <p class="box-passage">${escapeHtml(excerpt)}</p>
                 <div class="box-footer">
-                    <span>✍️ ${escapeHtml(auth.name)} · ${featured.date || (featured.publishedAt ? featured.publishedAt.slice(0, 10) : '2026')}</span>
+                    <span>${escapeHtml(auth.name)} · ${featured.date || (featured.publishedAt ? featured.publishedAt.slice(0, 10) : '2026')}</span>
                     <span class="box-link">Đọc bài viết →</span>
                 </div>
             `;
@@ -2078,13 +2108,13 @@ function renderMachModule() {
             featHtml += `
                 <div class="series-card" style="border-left: 5px solid var(--lacquer-red); cursor:pointer;" onclick="navigateRoute('/mach/series/${issue01.slug}')">
                     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-                        <span class="series-card-badge">📖 TẬP SAN LƯU TRỮ • 12 BÀI</span>
+                        <span class="series-card-badge">TẬP SAN LƯU TRỮ • 12 BÀI</span>
                         <span style="font-size:12px; color:var(--text-muted);">Số 01/2026</span>
                     </div>
                     <h3 class="series-card-title" style="margin-top: 8px; font-size:1.15rem;">${issue01.title}</h3>
                     <p class="series-card-desc" style="font-size:13.5px;">${issue01.description}</p>
                     <div class="series-card-meta">
-                        <span>✍️ ${auth.name}</span>
+                        <span>${auth.name}</span>
                         <span style="color:var(--lacquer-red); font-weight:700;">Xem toàn bộ tập san →</span>
                     </div>
                 </div>
@@ -2096,13 +2126,13 @@ function renderMachModule() {
             featHtml += `
                 <div class="series-card" style="border-left: 5px solid #d97706; cursor:pointer;" onclick="navigateRoute('/mach/series/${clara.slug}')">
                     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-                        <span class="series-card-badge" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">✉️ CHUỖI THƯ TỪ • 7 LÁ THƯ</span>
+                        <span class="series-card-badge" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">CHUỖI THƯ TỪ • 7 LÁ THƯ</span>
                         <span style="font-size:12px; color:var(--text-muted);">2026</span>
                     </div>
                     <h3 class="series-card-title" style="margin-top: 8px; font-size:1.15rem;">${clara.title}</h3>
                     <p class="series-card-desc" style="font-size:13.5px;">${clara.description}</p>
                     <div class="series-card-meta">
-                        <span>✍️ ${auth.name}</span>
+                        <span>${auth.name}</span>
                         <span style="color:#d97706; font-weight:700;">Đọc các lá thư →</span>
                     </div>
                 </div>
@@ -2138,7 +2168,7 @@ function renderMachModule() {
                         <p class="story-card-excerpt">${s.excerpt || s.deckLead || s.subtitle || ''}</p>
                     </div>
                     <div class="story-card-footer">
-                        <span>✍️ ${auth.name}</span>
+                        <span>${auth.name}</span>
                         <span>${s.date || (s.publishedAt ? s.publishedAt.slice(0, 10) : '2026')}</span>
                     </div>
                 </div>
@@ -2154,7 +2184,7 @@ function renderMachModule() {
             const auth = (machData.authors && authId) ? machData.authors[authId] : { name: "Ban Biên Tập" };
             const articleCount = (ser.articleIds || ser.stories || []).length;
             const isEpistolary = ser.seriesType === 'epistolary';
-            const badgeText = isEpistolary ? `✉️ CHUỖI THƯ TỪ • ${articleCount} LÁ THƯ` : `📖 TẬP SAN GIA TỘC • ${articleCount} BÀI`;
+            const badgeText = isEpistolary ? `CHUỖI THƯ TỪ • ${articleCount} LÁ THƯ` : `TẬP SAN GIA TỘC • ${articleCount} BÀI`;
             const badgeColor = isEpistolary ? `background:#fef3c7; color:#92400e; border-color:#fde68a;` : ``;
             const borderAccent = isEpistolary ? `border-left: 5px solid #d97706;` : `border-left: 5px solid var(--lacquer-red);`;
 
@@ -2182,7 +2212,7 @@ function renderMachModule() {
             return `
                 <div class="author-card" onclick="navigateRoute('/mach/tac-gia/${a.slug || a.id}')">
                     <div class="author-card-header">
-                        <div class="author-avatar">${a.avatarEmoji || a.avatar || '✍️'}</div>
+                        <div class="author-avatar author-avatar-initial">${escapeHtml((a.name || 'B').trim().charAt(0))}</div>
                         <div>
                             <div class="author-name">${a.name}</div>
                             <div class="author-role">${a.role}</div>
@@ -2228,7 +2258,7 @@ function renderArticleComposition(article, mediaRegistry, authorsRegistry, serie
     const seriesId = (article.seriesIds && article.seriesIds.length > 0) ? article.seriesIds[0] : (article.seriesId || article.seriesSlug);
     const series = (seriesRegistry && seriesId) ? seriesRegistry[seriesId] : null;
     const authorId = (article.authorIds && article.authorIds.length > 0) ? article.authorIds[0] : article.authorId;
-    const author = (authorsRegistry && authorId) ? authorsRegistry[authorId] : { name: "Ban Biên Tập", role: "", bio: "", avatarEmoji: "✍️" };
+    const author = (authorsRegistry && authorId) ? authorsRegistry[authorId] : { name: "Ban Biên Tập", role: "", bio: "", avatarEmoji: "" };
     const isLetter = article.articleType === 'letter' || (series && series.seriesType === 'epistolary');
 
     // 2. Breadcrumb
@@ -2255,7 +2285,7 @@ function renderArticleComposition(article, mediaRegistry, authorsRegistry, serie
 
     const authMeta = document.getElementById("storyAuthorMeta");
     if (authMeta) {
-        authMeta.innerHTML = `✍️ <a onclick="navigateRoute('/mach/tac-gia/${author.slug || author.id}')" style="color:inherit; cursor:pointer; text-decoration:underline;">${author.name}</a>`;
+        authMeta.innerHTML = `<a onclick="navigateRoute('/mach/tac-gia/${author.slug || author.id}')" style="color:inherit; cursor:pointer; text-decoration:underline;">${author.name}</a>`;
     }
 
     const dateMeta = document.getElementById("storyDateMeta");
@@ -2271,7 +2301,7 @@ function renderArticleComposition(article, mediaRegistry, authorsRegistry, serie
             const validPeople = pIds.map(pid => appData.people[pid]).filter(Boolean);
             if (validPeople.length > 0) {
                 mentionsBar.style.display = "flex";
-                mentionsBar.innerHTML = `<span style="font-weight:700; color:var(--text-muted); margin-right:6px;">🌿 Nhân vật liên quan:</span>` +
+                mentionsBar.innerHTML = `<span style="font-weight:700; color:var(--text-muted); margin-right:6px;">Nhân vật liên quan:</span>` +
                     validPeople.map(p => `<span class="mention-chip" onclick="openPersonProfile('${p.id}')">${p.name}</span>`).join(" ");
             } else {
                 mentionsBar.style.display = "none";
@@ -2328,7 +2358,7 @@ function renderArticleComposition(article, mediaRegistry, authorsRegistry, serie
         authorCard.innerHTML = `
             <div class="author-card" style="cursor:default;">
                 <div class="author-card-header">
-                    <div class="author-avatar">${author.avatarEmoji || author.avatar || '✍️'}</div>
+                    <div class="author-avatar author-avatar-initial">${escapeHtml((author.name || 'B').trim().charAt(0))}</div>
                     <div>
                         <div class="author-name">${author.name}</div>
                         <div class="author-role">${author.role || ''}</div>
@@ -2553,7 +2583,7 @@ function openSeriesDetail(slug) {
     const authId = (ser.authorIds && ser.authorIds.length > 0) ? ser.authorIds[0] : ser.authorId;
     const auth = (machData.authors && authId) ? machData.authors[authId] : { name: "Ban Biên Tập" };
     const isEpistolary = ser.seriesType === 'epistolary';
-    const badgeText = isEpistolary ? `✉️ CHUỖI THƯ TỪ GIA TỘC` : `📚 TẬP SAN LƯU TRỮ`;
+    const badgeText = isEpistolary ? `CHUỖI THƯ TỪ GIA TỘC` : `TẬP SAN LƯU TRỮ`;
     const headerCard = document.getElementById("seriesHeaderCard");
     const articleIds = ser.articleIds || ser.stories || [];
     if (headerCard) {
@@ -2616,7 +2646,7 @@ function openAuthorDetail(authorId) {
     if (headerCard) {
         headerCard.innerHTML = `
             <div class="author-card-header">
-                <div class="author-avatar" style="width:64px; height:64px; font-size:36px;">${auth.avatarEmoji || auth.avatar || '✍️'}</div>
+                <div class="author-avatar author-avatar-initial" style="width:64px; height:64px; font-size:28px;">${escapeHtml((auth.name || 'B').trim().charAt(0))}</div>
                 <div>
                     <h1 class="story-title" style="margin-bottom:4px;">${auth.name}</h1>
                     <div class="author-role" style="font-size:15px;">${auth.role}</div>
@@ -2673,7 +2703,7 @@ handleGlobalSearch = function(e) {
     allArticles.forEach(s => {
         if (s.title.toLowerCase().includes(q) || (s.excerpt && s.excerpt.toLowerCase().includes(q)) || (s.deckLead && s.deckLead.toLowerCase().includes(q)) || (s.subtitle && s.subtitle.toLowerCase().includes(q))) {
             const isLetter = s.articleType === 'letter' || (s.seriesIds && s.seriesIds.includes("thu-gui-clara"));
-            const prefix = isLetter ? "✉️ Thư gửi Clara" : "📖 Tập san MẠCH";
+            const prefix = isLetter ? "Thư gửi Clara" : "Tập san MẠCH";
             results.push({ type: 'STORY', id: s.slug, title: s.title, sub: `${prefix} • ${s.date || (s.publishedAt ? s.publishedAt.slice(0, 10) : '')}` });
         }
     });
@@ -2682,7 +2712,7 @@ handleGlobalSearch = function(e) {
     if (machData && machData.series) {
         Object.values(machData.series).forEach(ser => {
             if (ser.title.toLowerCase().includes(q) || ser.description.toLowerCase().includes(q)) {
-                results.push({ type: 'SERIES', id: ser.slug || ser.id, title: ser.title, sub: `📚 Chuỗi Series MẠCH` });
+                results.push({ type: 'SERIES', id: ser.slug || ser.id, title: ser.title, sub: `Chuỗi Series MẠCH` });
             }
         });
     }
@@ -2691,7 +2721,7 @@ handleGlobalSearch = function(e) {
     if (machData && machData.authors) {
         Object.values(machData.authors).forEach(a => {
             if (a.name.toLowerCase().includes(q) || a.role.toLowerCase().includes(q)) {
-                results.push({ type: 'AUTHOR', id: a.slug || a.id, title: a.name, sub: `✍️ Tác giả: ${a.role}` });
+                results.push({ type: 'AUTHOR', id: a.slug || a.id, title: a.name, sub: `Tác giả: ${a.role}` });
             }
         });
     }
@@ -2749,13 +2779,13 @@ function runSearchPage() {
     Object.values(appData.people || {}).forEach(p => {
         if ((p.name && p.name.toLowerCase().includes(q)) || (p.fsid && p.fsid.toLowerCase().includes(q))) {
             const gMeta = getGenerationMeta(p.id);
-            results.push({ type: 'PERSON', id: p.id, icon: '👤', title: p.name, sub: `${gMeta.label} • FSID: ${p.fsid || p.id}`, cat: 'Nhân vật' });
+            results.push({ type: 'PERSON', id: p.id, icon: '', title: p.name, sub: `${gMeta.label} • FSID: ${p.fsid || p.id}`, cat: 'Nhân vật' });
         }
     });
 
     (appData.memories || []).forEach(m => {
         if ((m.title && m.title.toLowerCase().includes(q)) || (m.story && m.story.toLowerCase().includes(q))) {
-            results.push({ type: 'MEMORY', id: m.id, icon: '🕯️', title: m.title, sub: `Ký ức gia tộc • ${m.personName || ''}`, cat: 'Ký ức' });
+            results.push({ type: 'MEMORY', id: m.id, icon: '', title: m.title, sub: `Ký ức gia tộc • ${m.personName || ''}`, cat: 'Ký ức' });
         }
     });
 
@@ -2763,15 +2793,15 @@ function runSearchPage() {
     allArticles.forEach(s => {
         if ((s.title && s.title.toLowerCase().includes(q)) || (s.excerpt && s.excerpt.toLowerCase().includes(q)) || (s.deckLead && s.deckLead.toLowerCase().includes(q)) || (s.subtitle && s.subtitle.toLowerCase().includes(q))) {
             const isLetter = s.articleType === 'letter' || (s.seriesIds && s.seriesIds.includes("thu-gui-clara"));
-            const prefix = isLetter ? "✉️ Thư gửi Clara" : "📖 Tập san MẠCH";
-            results.push({ type: 'STORY', id: s.slug, icon: '📖', title: s.title, sub: `${prefix} • ${s.date || (s.publishedAt ? s.publishedAt.slice(0, 10) : '')}`, cat: 'Bài viết' });
+            const prefix = isLetter ? "Thư gửi Clara" : "Tập san MẠCH";
+            results.push({ type: 'STORY', id: s.slug, icon: '', title: s.title, sub: `${prefix} • ${s.date || (s.publishedAt ? s.publishedAt.slice(0, 10) : '')}`, cat: 'Bài viết' });
         }
     });
 
     if (machData && machData.series) {
         Object.values(machData.series).forEach(ser => {
             if (ser.title.toLowerCase().includes(q) || (ser.description && ser.description.toLowerCase().includes(q))) {
-                results.push({ type: 'SERIES', id: ser.slug || ser.id, icon: '📚', title: ser.title, sub: 'Chuỗi tuyển tập MẠCH', cat: 'Tuyển tập' });
+                results.push({ type: 'SERIES', id: ser.slug || ser.id, icon: '', title: ser.title, sub: 'Chuỗi tuyển tập MẠCH', cat: 'Tuyển tập' });
             }
         });
     }
@@ -2779,7 +2809,7 @@ function runSearchPage() {
     if (machData && machData.authors) {
         Object.values(machData.authors).forEach(a => {
             if (a.name.toLowerCase().includes(q) || (a.role && a.role.toLowerCase().includes(q))) {
-                results.push({ type: 'AUTHOR', id: a.slug || a.id, icon: '✍️', title: a.name, sub: `Tác giả: ${a.role || ''}`, cat: 'Tác giả' });
+                results.push({ type: 'AUTHOR', id: a.slug || a.id, icon: '', title: a.name, sub: `Tác giả: ${a.role || ''}`, cat: 'Tác giả' });
             }
         });
     }
@@ -2799,7 +2829,7 @@ function runSearchPage() {
                 <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:12px;">
                     ${byCat[cat].map(r => `
                         <div class="search-result-card" onclick="selectSearchPageResult('${r.type}', '${r.id}')">
-                            <div class="search-result-icon">${r.icon}</div>
+                            ${r.icon ? `<div class="search-result-icon">${r.icon}</div>` : ''}
                             <div>
                                 <div class="search-result-title">${escapeHtml(r.title)}</div>
                                 <div class="search-result-sub">${escapeHtml(r.sub)}</div>

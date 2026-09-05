@@ -50,15 +50,48 @@ Hệ thống là một **Nền tảng Xuất bản Di sản & Tri thức Gia t�
 
 ---
 
-## 3. BRAND / NAMING MODEL
+## 3. BRAND / NAMING MODEL & BRAND IDENTITY DECISION
+
+### BRAND IDENTITY DECISION
+
+`TỪ 1872 ĐẾN CHÚNG TA` là brand narrative / identity line của GIÒNG HỌ TRẦN TRỌNG THU.
+
+Đây là một đơn vị nhận diện hoàn chỉnh, không phải slogan quảng cáo.
+
+`1872` là điểm neo lịch sử của dòng họ, gắn với cụ Giuse Trần Trọng Thu.
+
+`ĐẾN CHÚNG TA` nối trực tiếp quá khứ với thế hệ hiện tại.
+
+`CÂY GIA PHẢ` là một territory/sản phẩm trong hệ thống, KHÔNG phải brand tagline hay descriptor của `GIÒNG HỌ TRẦN TRỌNG THU`.
+
+Canonical rendering:
+```
+GIÒNG HỌ TRẦN TRỌNG THU
+TỪ 1872 ĐẾN CHÚNG TA
+```
+
+Không được tự ý:
+- thêm dấu ba chấm
+- thêm từ "LƯỢT"
+- rút gọn chỉ còn mốc năm
+- dùng lại biến thể khác đã bị thay thế
+- đổi hậu tố thành mốc thời gian hiện tại
+- đổi thành `CÂY GIA PHẢ`
+- hoặc sửa câu chữ
+
+nếu chưa có quyết định mới của Owner.
+
+---
+
+### 3.1. Bảng phân định Danh xưng & Nhận diện
 
 | Cấp độ | Tên gọi chuẩn hóa | Diễn giải & Quy tắc sử dụng | Trạng thái |
 | :--- | :--- | :--- | :--- |
 | **Brand Name (Chủ thể)** | **Dòng họ Trần Trọng Thu** *(hoặc Giòng họ Trần Trọng Thu)* | Tên gọi của cộng đồng gia tộc. Trên văn bản hiện đại dùng "Dòng họ", trong các tài liệu trích lục truyền thống chấp nhận "Giòng họ". | `CONFIRMED` |
-| **Product / Publication** | **CÂY GIA PHẢ** | Tên của nền tảng xuất bản di sản số. Không tự hạ thấp thành "Web app", không tự nâng thành "Viện lưu trữ". | `CONFIRMED` |
-| **Logo / Brand Mark** | 🌿 (Mầm xanh) / 🌳 (Cây di sản) | Hiện trạng navbar đang dùng icon `🌿` và favicon `🌳`. **Quy tắc:** Giữ nguyên biểu tượng tối giản hiện có; không tự thiết kế logo phức tạp khi chưa có quyết định đồ họa từ Owner. | `CONFIRMED` |
-| **Descriptor (Mô tả ngắn)** | *Ấn phẩm Di sản, Ký ức & Tri thức Gia đình* | Câu mô tả ngắn, trang trọng, phi kỹ thuật, đặt dưới masthead/kicker. Tuyệt đối không dùng từ ngữ marketing phần mềm như "Portal v2.0", "Hệ thống tri thức AI". | `PROPOSED` |
-| **Tagline / Method** | *"Giữ lại trước khi diễn giải"* | Tôn chỉ phương pháp luận tối thượng. Đặt ở tầng Dự án (Khối Phương pháp / Gần Chân trang), không đặt làm câu mở đầu chiếm chỗ của danh tính dòng họ. | `CONFIRMED` |
+| **Family Motto (Brand Identity)** | **`TỪ 1872 ĐẾN CHÚNG TA`** | Khẩu hiệu nhận diện hoàn chỉnh dưới tên thương hiệu ở Header/Navbar. Desktop hiển thị trọn vẹn trên 1 dòng. Giữ nguyên câu chữ, không diễn giải thêm. | `CONFIRMED (CANONICAL)` |
+| **Product / Territory** | **CÂY GIA PHẢ** | Một vùng/trục sản phẩm trong hệ thống (Gia Phả). Không dùng làm brand line hay tagline dưới tên Giòng họ. | `CONFIRMED` |
+| **Logo / Brand Mark** | 🌿 (Mầm xanh) / 🌳 (Cây di sản) | Hiện trạng navbar đang dùng icon `🌿` và favicon `🌳`. Giữ nguyên biểu tượng tối giản hiện có. | `CONFIRMED` |
+| **Tagline / Method** | *"Giữ lại trước khi diễn giải"* | Tôn chỉ phương pháp luận tối thượng. Đặt ở tầng Dự án (`#/ve-du-an`), không đặt ở Header hay Masthead. | `CONFIRMED` |
 
 ---
 
