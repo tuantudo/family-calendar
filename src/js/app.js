@@ -1511,7 +1511,8 @@ function openStoryDetail(slug) {
         if (isClara) {
             tagOrder.innerText = `THƯ GỬI CLARA • LÁ THƯ SỐ ${String(story.seriesOrder).padStart(2, '0')}`;
         } else {
-            tagOrder.innerText = ser ? `${ser.title} • ${story.section ? story.section.toUpperCase() + ' · ' : ''}BÀI ${String(story.seriesOrder).padStart(2, '0')}` : (story.section ? story.section.toUpperCase() : "MẠCH");
+            const shortSerTitle = ser ? (ser.shortTitle || "TẬP SAN MẠCH") : "MẠCH";
+            tagOrder.innerText = `${shortSerTitle.toUpperCase()} • ${story.section ? story.section.toUpperCase() + ' · ' : ''}BÀI ${String(story.seriesOrder).padStart(2, '0')}`;
         }
     }
     const stTitle = document.getElementById("storyTitle");
@@ -1542,6 +1543,22 @@ function openStoryDetail(slug) {
         // If the top line starts with # and matches title/heading, strip it to prevent duplicate main header
         text = text.replace(/^#\s+[^\n]+\n+/, '').trim();
         
+        // Strip out red spread markers, DNA reference sections, orchestration notes and typography notes
+        text = text.replace(/<span style="color:red">[\s\S]*?<\/span>/gi, '');
+        text = text.replace(/#\s+ARTICLE DNA[\s\S]*$/i, '');
+        text = text.replace(/#\s+ARTICLE ORCHESTRATION NOTES[\s\S]*$/i, '');
+        text = text.replace(/#\s+TYPOGRAPHY NOTES[\s\S]*$/i, '');
+        
+        // Extract footnotes
+        const footnotes = [];
+        text = text.replace(/\[\^(\d+)\]:\s*([\s\S]*?)(?=\n\[\^|\n\n|$)/g, (match, fnId, fnContent) => {
+            footnotes.push({ id: fnId, text: fnContent.trim() });
+            return "";
+        });
+
+        // Replace inline footnote references
+        text = text.replace(/\[\^(\d+)\]/g, '<sup class="story-footnote-ref"><a href="#fn-$1">[$1]</a></sup>');
+
         // Format figures
         text = text.replace(/!\[(.*?)\]\((.*?)\)(?:\s*\n\s*[\*_](.*?)[\*_])?/g, (m, alt, src, cap) => {
             const caption = cap ? cap.trim().replace(/^[\*_]+|[\*_]+$/g, "") : alt;
@@ -1553,15 +1570,29 @@ function openStoryDetail(slug) {
             p = p.trim();
             if (!p) return "";
             if (p.startsWith("<figure")) return p;
-            if (p.startsWith("# ")) return `<h2 style="text-align:center; margin-bottom:1.5em;">${p.replace("# ", "")}</h2>`;
-            if (p.startsWith("## ")) return `<h2>${p.replace("## ", "")}</h2>`;
+            if (p.startsWith("### ")) return `<h3>${p.replace(/^###\s+/, "")}</h3>`;
+            if (p.startsWith("## ")) return `<h2>${p.replace(/^##\s+/, "")}</h2>`;
+            if (p.startsWith("# ")) return `<h2 style="text-align:center; margin-bottom:1.2em;">${p.replace(/^#\s+/, "")}</h2>`;
             if (p.startsWith("> ")) return `<blockquote>${p.replace(/^>\s*/gm, "")}</blockquote>`;
+            if (p === "---" || p === "***" || p === "___") return `<hr class="story-divider">`;
             // Clean inline soft line breaks while respecting markdown styling
             const cleanP = p.replace(/\n/g, " ");
             return `<p>${cleanP}</p>`;
         }).join("");
 
-        contentBody.innerHTML = paragraphs;
+        let finalHtml = paragraphs;
+        if (footnotes.length > 0) {
+            finalHtml += `
+                <div class="story-footnotes-box">
+                    <div class="story-footnotes-title">Chú thích & Ghi chú biên tập</div>
+                    <ol class="story-footnotes-list">
+                        ${footnotes.map(fn => `<li id="fn-${fn.id}">${fn.text}</li>`).join("")}
+                    </ol>
+                </div>
+            `;
+        }
+
+        contentBody.innerHTML = finalHtml;
     }
 
     // Author card footer
