@@ -205,24 +205,27 @@ function bindStats(stats) {
 
 // --- ROUTING & VIEW NAVIGATION ---
 function handleHashRoute() {
-    const hash = window.location.hash || "#/";
-    if (hash.startsWith("#/person/")) {
-        const pid = hash.replace("#/person/", "");
+    let raw = window.location.hash || "#/";
+    raw = raw.replace(/^#+/, '');
+    if (!raw.startsWith('/')) raw = '/' + raw;
+    const route = raw.split('#')[0] || "/";
+
+    if (route.startsWith("/person/")) {
+        const pid = route.replace("/person/", "");
         openPersonProfile(pid);
-    } else if (hash.startsWith("#/family/")) {
-        const fid = hash.replace("#/family/", "");
+    } else if (route.startsWith("/family/")) {
+        const fid = route.replace("/family/", "");
         openFamilyProfile(fid);
-    } else if (hash.startsWith("#/mach/bai-viet/")) {
-        const slug = hash.replace("#/mach/bai-viet/", "");
+    } else if (route.startsWith("/mach/bai-viet/")) {
+        const slug = route.replace("/mach/bai-viet/", "");
         openStoryDetail(slug);
-    } else if (hash.startsWith("#/mach/series/")) {
-        const slug = hash.replace("#/mach/series/", "");
+    } else if (route.startsWith("/mach/series/")) {
+        const slug = route.replace("/mach/series/", "");
         openSeriesDetail(slug);
-    } else if (hash.startsWith("#/mach/tac-gia/")) {
-        const aid = hash.replace("#/mach/tac-gia/", "");
+    } else if (route.startsWith("/mach/tac-gia/")) {
+        const aid = route.replace("/mach/tac-gia/", "");
         openAuthorDetail(aid);
     } else {
-        const route = hash.replace("#", "") || "/";
         showSectionByRoute(route);
     }
 }
@@ -263,6 +266,9 @@ function showSectionByRoute(route) {
         secId = "view_mach";
         navId = "nav_mach";
         renderMachModule();
+    } else if (route === "/typography-specimen" || route === "/typography") {
+        secId = "view_typography_specimen";
+        navId = "";
     }
 
     const sec = document.getElementById(secId);

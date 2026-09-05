@@ -2148,3 +2148,404 @@ footer { background: var(--surface); border-top: 1px solid var(--border); text-a
     .story-tag-order { font-size: var(--text-micro); }
     .series-header-card, .author-header-card { padding: 24px 16px; border-radius: var(--radius-lg); }
 }
+
+/* ==========================================================
+   TYPOGRAPHY SPECIMEN EVALUATION MODULE (TYPOGRAPHY_03)
+   ========================================================== */
+
+.specimen-wrapper {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+}
+
+.specimen-banner {
+    background: linear-gradient(135deg, var(--surface) 0%, var(--bg-warm) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 36px 28px;
+    text-align: center;
+    margin: 16px 0 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.specimen-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    background: var(--lacquer-red-light);
+    color: var(--lacquer-red);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: var(--radius-pill);
+    margin-bottom: 12px;
+}
+
+.specimen-title {
+    font-family: var(--font-sans);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    letter-spacing: -0.02em;
+    margin: 0 0 10px 0;
+}
+
+.specimen-desc {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    color: var(--text-muted);
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Specimen Jump Navigation Bar */
+.specimen-nav-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xs);
+    margin: 0 auto 36px;
+    max-width: 820px;
+    box-sizing: border-box;
+}
+
+.specimen-jump-btn {
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: var(--radius-md);
+    color: var(--text-main);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+    text-align: center;
+}
+
+.specimen-jump-btn:hover {
+    border-color: var(--lacquer-red);
+    color: var(--lacquer-red);
+    background: var(--lacquer-red-light);
+}
+
+/* Option Scopes */
+.font-specimen-opt-a {
+    --sp-sans: 'Noto Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --sp-serif: 'Noto Serif', Georgia, serif;
+}
+
+.font-specimen-opt-b {
+    --sp-sans: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --sp-serif: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.font-specimen-opt-c {
+    --sp-sans: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --sp-serif: 'Source Serif 4', Georgia, serif;
+}
+
+.specimen-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 36px 32px;
+    margin-bottom: 48px;
+    box-shadow: var(--shadow-sm);
+}
+
+.specimen-opt-header {
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 32px;
+}
+
+.specimen-opt-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.tag-opt-a { background: #e0f2fe; color: #0369a1; }
+.tag-opt-b { background: #fef3c7; color: #b45309; }
+.tag-opt-c { background: #ecfdf5; color: #047857; }
+
+.specimen-opt-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin: 0 0 6px 0;
+}
+
+.specimen-opt-sub {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.specimen-font-stacks {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+.specimen-stack-pill {
+    font-size: 12.5px;
+    padding: 4px 10px;
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-main);
+}
+.specimen-stack-pill strong { color: var(--lacquer-red); }
+
+/* Sub-blocks inside specimen card */
+.specimen-block {
+    margin-bottom: 36px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+}
+.specimen-block:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.specimen-block-title {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 1. Glyph Stress Test Box */
+.specimen-glyph-box {
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+}
+.specimen-glyph-vowels {
+    font-size: 1.375rem;
+    letter-spacing: 0.12em;
+    color: var(--lacquer-red);
+    font-weight: 600;
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+.specimen-glyph-sentences {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.specimen-glyph-sent {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-main);
+    padding: 8px 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+}
+
+/* 2. Typographic Roles Scale */
+.specimen-scale-table {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.specimen-scale-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: baseline;
+    gap: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border);
+}
+.specimen-scale-label {
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+}
+
+/* 3. Domain UI Mockup */
+.specimen-ui-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 14px;
+}
+.specimen-ui-card {
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 4. Long-form Reading Column */
+.specimen-reading-column {
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    box-shadow: var(--shadow-xs);
+}
+.specimen-reading-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    line-height: 1.25;
+    margin: 0 0 8px 0;
+    text-align: left;
+}
+.specimen-reading-meta {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    text-align: left;
+}
+.specimen-reading-lead {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--text-main);
+    margin-bottom: 18px;
+    text-align: left;
+}
+.specimen-reading-body {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--text-main);
+    text-align: left;
+}
+.specimen-reading-body p {
+    margin-bottom: 1.4em;
+    text-align: left;
+}
+.specimen-reading-quote {
+    border-left: 3px solid var(--lacquer-red);
+    padding: 12px 18px;
+    margin: 20px 0;
+    font-style: italic;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    background: var(--bg-warm);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    text-align: left;
+}
+
+/* Scope font bindings for elements inside option cards */
+.font-specimen-opt-a .sp-sans,
+.font-specimen-opt-a .specimen-scale-table,
+.font-specimen-opt-a .specimen-ui-card,
+.font-specimen-opt-a .specimen-glyph-sent,
+.font-specimen-opt-a .specimen-opt-title,
+.font-specimen-opt-a .specimen-opt-sub,
+.font-specimen-opt-a .specimen-reading-meta {
+    font-family: var(--sp-sans) !important;
+}
+
+.font-specimen-opt-a .sp-serif,
+.font-specimen-opt-a .specimen-reading-title,
+.font-specimen-opt-a .specimen-reading-lead,
+.font-specimen-opt-a .specimen-reading-body,
+.font-specimen-opt-a .specimen-reading-quote {
+    font-family: var(--sp-serif) !important;
+}
+
+.font-specimen-opt-b .sp-sans,
+.font-specimen-opt-b .specimen-scale-table,
+.font-specimen-opt-b .specimen-ui-card,
+.font-specimen-opt-b .specimen-glyph-sent,
+.font-specimen-opt-b .specimen-opt-title,
+.font-specimen-opt-b .specimen-opt-sub,
+.font-specimen-opt-b .specimen-reading-meta,
+.font-specimen-opt-b .sp-serif,
+.font-specimen-opt-b .specimen-reading-title,
+.font-specimen-opt-b .specimen-reading-lead,
+.font-specimen-opt-b .specimen-reading-body,
+.font-specimen-opt-b .specimen-reading-quote {
+    font-family: var(--sp-sans) !important;
+}
+
+.font-specimen-opt-c .sp-sans,
+.font-specimen-opt-c .specimen-scale-table,
+.font-specimen-opt-c .specimen-ui-card,
+.font-specimen-opt-c .specimen-glyph-sent,
+.font-specimen-opt-c .specimen-opt-title,
+.font-specimen-opt-c .specimen-opt-sub,
+.font-specimen-opt-c .specimen-reading-meta {
+    font-family: var(--sp-sans) !important;
+}
+
+.font-specimen-opt-c .sp-serif,
+.font-specimen-opt-c .specimen-reading-title,
+.font-specimen-opt-c .specimen-reading-lead,
+.font-specimen-opt-c .specimen-reading-body,
+.font-specimen-opt-c .specimen-reading-quote {
+    font-family: var(--sp-serif) !important;
+}
+
+@media (max-width: 768px) {
+    .specimen-nav-box {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px;
+        margin-bottom: 24px;
+    }
+    .specimen-jump-btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+    .specimen-card { padding: 24px 18px; margin-bottom: 32px; }
+    .specimen-scale-row { grid-template-columns: 1fr; gap: 6px; }
+    .specimen-reading-column { padding: 20px 16px; }
+    .specimen-reading-title { font-size: 1.5rem; }
+}
+
+@media (max-width: 430px) {
+    .specimen-wrapper { padding: 0 8px 60px; }
+    .specimen-banner { padding: 22px 14px; margin: 12px 0 18px; }
+    .specimen-title { font-size: 1.35rem; }
+    .specimen-desc { font-size: 13.5px; }
+    .specimen-nav-box { gap: 6px; padding: 10px; margin-bottom: 20px; }
+    .specimen-jump-btn { font-size: 12px; padding: 8px 10px; }
+    .specimen-card { padding: 18px 12px; border-radius: var(--radius-lg); }
+    .specimen-opt-title { font-size: 1.35rem; }
+    .specimen-glyph-vowels { font-size: 1.15rem; letter-spacing: 0.08em; }
+    .specimen-glyph-sent { font-size: 13.5px; padding: 6px 10px; }
+    .specimen-reading-column { padding: 14px 10px; }
+    .specimen-reading-title { font-size: 1.35rem; }
+    .specimen-reading-lead { font-size: 1rem; line-height: 1.6; }
+    .specimen-reading-body { font-size: 0.9375rem; line-height: 1.65; }
+    .specimen-reading-body p { margin-bottom: 1.1em; }
+    .specimen-reading-quote { font-size: 0.9375rem; padding: 10px 12px; margin: 14px 0; }
+}
+
