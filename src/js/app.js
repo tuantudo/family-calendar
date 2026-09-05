@@ -1084,6 +1084,7 @@ function renderGraphNode(p, role = 'child', isFocus = false) {
     const gMeta = getGenerationMeta(p.id);
     const bDate = p.birth && p.birth.date ? p.birth.date : "Chưa rõ";
     const dDate = p.death && p.death.date ? p.death.date : "";
+    const lifeStr = dDate ? `${bDate} – ${dDate}` : (bDate !== "Chưa rõ" ? `s. ${bDate}` : "Chưa có năm sinh");
     const avatar = resolvePersonAvatar(p);
 
     const fallbackIcon = avatar && avatar.icon ? avatar.icon : (p.sex === 'M' ? '👨' : (p.sex === 'F' ? '👩' : '👤'));
