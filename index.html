@@ -107,9 +107,14 @@
 
         <!-- 2. CALENDAR APPLICATION MODULE -->
         <section id="view_calendar" class="view-section">
-            <div class="section-header">
-                <h2 class="section-title">📅 Lịch Gia Đình Trực Tuyến</h2>
-                <p class="section-desc">Đồng bộ tự động từ gia phả • Tra cứu song song Dương lịch & Âm lịch Việt Nam.</p>
+            <div class="section-header cal-section-header">
+                <div>
+                    <h2 class="section-title">📅 Lịch Gia Đình Trực Tuyến</h2>
+                    <p class="section-desc">Đồng bộ tự động từ gia phả • Tra cứu song song Dương lịch & Âm lịch Việt Nam.</p>
+                </div>
+                <button class="btn-cal-subscribe-action" onclick="openCalendarSubscribeModal()">
+                    📲 Đồng bộ / Thêm vào điện thoại
+                </button>
             </div>
 
             <div class="cal-app-container">
@@ -147,6 +152,20 @@
                     <label class="filter-chip active-event" id="chip_event" onclick="toggleLayerChip('milestones')">
                         <input type="checkbox" id="chk_event" checked> 📅 Sự kiện (<span id="cnt_event">-</span>)
                     </label>
+                </div>
+
+                <!-- CALENDAR SUBSCRIBE BANNER / ACTION -->
+                <div class="cal-subscribe-banner">
+                    <div class="cal-subscribe-banner-info">
+                        <span class="cal-subscribe-icon">📲</span>
+                        <div>
+                            <div class="cal-subscribe-title">Đăng ký Lịch Gia Đình vào điện thoại & máy tính</div>
+                            <div class="cal-subscribe-subtitle">Tự động cập nhật ngày sinh nhật, bổn mạng, ngày giỗ & sự kiện gia đình vào Apple Calendar, Google Calendar, Outlook.</div>
+                        </div>
+                    </div>
+                    <button class="btn-cal-subscribe-banner" onclick="openCalendarSubscribeModal()">
+                        Xem 4 nguồn lịch & Hướng dẫn
+                    </button>
                 </div>
 
                 <!-- MONTH GRID VIEW -->
@@ -435,6 +454,50 @@
                 <div id="evModalDates" style="background: var(--bg); padding: 10px 14px; border-radius: 8px; margin-bottom: 12px; font-size: 13.5px; border: 1px solid var(--border);"></div>
                 <div id="evModalPersonLink" style="margin-bottom: 12px; display: none;"></div>
                 <div id="evModalDesc" style="font-size: 14px; white-space: pre-line; line-height: 1.6; border-top: 1px dashed var(--border); padding-top: 10px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CALENDAR SUBSCRIBE MODAL -->
+    <div id="calendarSubscribeModal" class="modal-bg" onclick="closeModal(event, 'calendarSubscribeModal')">
+        <div class="modal-box subscribe-modal-box" onclick="event.stopPropagation()">
+            <div class="modal-head">
+                <div>
+                    <div style="font-weight: 800; font-size: 18px; color: var(--primary-dark); display: flex; align-items: center; gap: 8px;">
+                        <span>📲</span> Đăng ký Lịch Gia Đình vào Thiết Bị
+                    </div>
+                    <p style="margin: 4px 0 0 0; font-size: 13px; color: var(--text-muted);">
+                        Đăng ký 4 luồng lịch ICS chính thức để thiết bị tự động cập nhật và nhắc nhở ngày lễ giỗ, sinh nhật, bổn mạng.
+                    </p>
+                </div>
+                <button class="close-btn" onclick="closeModalDirect('calendarSubscribeModal')">&times;</button>
+            </div>
+            <div class="modal-body-content">
+                <div class="subscribe-feed-list" id="calendarFeedList"></div>
+
+                <div class="subscribe-guide-box">
+                    <div class="subscribe-guide-title">
+                        <span>💡</span> Hướng dẫn thêm lịch vào các thiết bị
+                    </div>
+                    <div class="subscribe-guide-item">
+                        <div class="subscribe-guide-item-head">🍎 iPhone / iPad / Mac (Apple Calendar):</div>
+                        <div class="subscribe-guide-item-body">
+                            Bấm nút <strong>"Mở Apple Calendar"</strong> bên cạnh luồng lịch muốn thêm để thiết bị tự động mở ứng dụng Lịch và hiển thị hộp thoại đăng ký. Hoặc vào <em>Cài đặt (Settings) &gt; Lịch (Calendar) &gt; Tài khoản &gt; Thêm tài khoản &gt; Khác &gt; Thêm lịch đã đăng ký (Add Subscribed Calendar)</em> rồi dán link ICS.
+                        </div>
+                    </div>
+                    <div class="subscribe-guide-item">
+                        <div class="subscribe-guide-item-head">🌐 Google Calendar (Android / Máy tính / Web):</div>
+                        <div class="subscribe-guide-item-body">
+                            Bấm nút <strong>"Sao chép URL"</strong> tương ứng. Mở trình duyệt web truy cập vào <a href="https://calendar.google.com" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600; text-decoration: underline;">calendar.google.com</a> &gt; nhìn cột bên trái tại mục <em>"Lịch khác" (dấu +) &gt; Chọn "Từ URL" (From URL)</em> &gt; Dán đường dẫn vừa sao chép. <em>(Lưu ý: Ứng dụng Google Calendar trên điện thoại không hỗ trợ thêm link URL trực tiếp trong app, cần thêm qua giao diện web Google Calendar để đồng bộ về app)</em>.
+                        </div>
+                    </div>
+                    <div class="subscribe-guide-item">
+                        <div class="subscribe-guide-item-head">💻 Microsoft Outlook:</div>
+                        <div class="subscribe-guide-item-body">
+                            Mở ứng dụng Outlook hoặc web Outlook &gt; Chọn <em>Add Calendar (Thêm lịch) &gt; Subscribe from web (Đăng ký từ web)</em> &gt; Dán đường dẫn ICS đã sao chép.
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

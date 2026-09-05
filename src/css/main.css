@@ -819,6 +819,10 @@ main {
     box-shadow: var(--shadow-lg);
     overflow: hidden;
 }
+.subscribe-modal-box {
+    max-width: 680px;
+    width: 100%;
+}
 .modal-head {
     padding: 18px 20px;
     border-bottom: 1px solid var(--border);
@@ -828,6 +832,224 @@ main {
 }
 .modal-body-content { padding: 20px; overflow-y: auto; flex-grow: 1; }
 .close-btn { background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-muted); line-height: 1; }
+
+/* CALENDAR SUBSCRIPTION BANNER & COMPONENTS */
+.cal-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.btn-cal-subscribe-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--lacquer-red);
+    color: var(--lacquer-red);
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-sans);
+    font-size: var(--text-meta);
+    font-weight: var(--weight-bold);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-xs);
+}
+.btn-cal-subscribe-action:hover {
+    background: var(--lacquer-red);
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.cal-subscribe-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #fff1f2 0%, #fffbeb 100%);
+    border: 1px solid #fecdd3;
+    border-radius: var(--radius-lg);
+    padding: 14px 20px;
+    margin: 14px 0 20px;
+    gap: 16px;
+    flex-wrap: wrap;
+    box-shadow: var(--shadow-xs);
+}
+.cal-subscribe-banner-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    min-width: 280px;
+}
+.cal-subscribe-icon {
+    font-size: 28px;
+    line-height: 1;
+}
+.cal-subscribe-title {
+    font-size: var(--text-body);
+    font-weight: var(--weight-bold);
+    color: var(--lacquer-red-hover);
+    margin-bottom: 2px;
+}
+.cal-subscribe-subtitle {
+    font-size: var(--text-caption);
+    color: var(--text-muted);
+    line-height: var(--leading-normal);
+}
+.btn-cal-subscribe-banner {
+    background: var(--lacquer-red);
+    color: #ffffff;
+    border: 1px solid var(--lacquer-red);
+    border-radius: var(--radius-md);
+    padding: 9px 18px;
+    font-family: var(--font-sans);
+    font-size: var(--text-meta);
+    font-weight: var(--weight-bold);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+    box-shadow: var(--shadow-xs);
+}
+.btn-cal-subscribe-banner:hover {
+    background: var(--lacquer-red-hover);
+    border-color: var(--lacquer-red-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.subscribe-feed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.subscribe-feed-card {
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.subscribe-feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.subscribe-feed-title {
+    font-size: var(--text-body);
+    font-weight: var(--weight-bold);
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.subscribe-feed-desc {
+    font-size: var(--text-caption);
+    color: var(--text-muted);
+}
+
+.subscribe-url-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.feed-url-input {
+    flex-grow: 1;
+    min-width: 200px;
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 7px 10px;
+    color: var(--text-muted);
+    outline: none;
+}
+.feed-url-input:focus {
+    border-color: var(--lacquer-red);
+}
+
+.btn-feed-copy {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 7px 12px;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-caption);
+    font-weight: var(--weight-bold);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+.btn-feed-copy:hover {
+    background: var(--lacquer-red-light);
+    border-color: var(--lacquer-red);
+    color: var(--lacquer-red);
+}
+.btn-feed-copy.copied {
+    background: #dcfce7;
+    border-color: #86efac;
+    color: #166534;
+}
+
+.btn-feed-webcal {
+    background: var(--lacquer-red);
+    color: #ffffff;
+    border: 1px solid var(--lacquer-red);
+    padding: 7px 12px;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-caption);
+    font-weight: var(--weight-bold);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+.btn-feed-webcal:hover {
+    background: var(--lacquer-red-hover);
+}
+
+.subscribe-guide-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-top: 14px;
+}
+.subscribe-guide-title {
+    font-size: var(--text-meta);
+    font-weight: var(--weight-bold);
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.subscribe-guide-item {
+    font-size: var(--text-caption);
+    color: var(--text-muted);
+    line-height: var(--leading-relaxed);
+    margin-bottom: 6px;
+}
+.subscribe-guide-item strong {
+    color: var(--text-main);
+}
+.subscribe-guide-item:last-child {
+    margin-bottom: 0;
+}
 
 /* UNIFIED DESIGN LANGUAGE: DIRECTORIES & FAMILY GRAPH (ARCH_03B) */
 .directory-grid {

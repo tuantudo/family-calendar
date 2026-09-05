@@ -532,6 +532,106 @@ function openEventDetailModal(evIdx, yr) {
     if (modal) modal.classList.add("active");
 }
 
+// --- CALENDAR SUBSCRIPTION & ADD-TO-PHONE UTILITIES ---
+function getAbsoluteFeedUrl(file) {
+    if (typeof window !== "undefined" && window.location && window.location.origin && window.location.origin.startsWith("http")) {
+        const base = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/');
+        return new URL(file, base).href;
+    }
+    return `https://gionghotrantrongthu.vercel.app/${file}`;
+}
+
+function getWebcalUrl(file) {
+    const httpUrl = getAbsoluteFeedUrl(file);
+    return httpUrl.replace(/^https?:\/\//i, 'webcal://');
+}
+
+function openCalendarSubscribeModal() {
+    const container = document.getElementById("calendarFeedList");
+    if (container) {
+        const feedMeta = {
+            birthdays: { desc: "Sinh nhật dương lịch của mọi thành viên trong gia tộc họ Trần Trọng Thu" },
+            patrons: { desc: "Lễ Quan thầy / Thánh bổn mạng của các thành viên Công giáo trong gia đình" },
+            memorials: { desc: "Lễ giỗ phụ mẫu, ông bà, tổ tiên & các bậc tiền nhân (tính theo Âm lịch & Dương lịch)" },
+            milestones: { desc: "Kỷ niệm thành lập, các sự kiện họp mặt và ngày kỷ niệm chung của dòng họ" }
+        };
+
+        container.innerHTML = CAL_FEEDS.map(f => {
+            const absUrl = getAbsoluteFeedUrl(f.file);
+            const webcalUrl = getWebcalUrl(f.file);
+            const countEl = document.getElementById(f.countEl);
+            const countText = countEl ? `${countEl.innerText} sự kiện` : "";
+            const meta = feedMeta[f.key] || { desc: "" };
+
+            return `
+                <div class="subscribe-feed-card">
+                    <div class="subscribe-feed-header">
+                        <span class="subscribe-feed-badge ${f.class}">${f.icon} ${f.label}</span>
+                        ${countText ? `<span class="subscribe-feed-count">${escapeHtml(countText)}</span>` : ''}
+                    </div>
+                    <div class="subscribe-feed-title">${f.icon} Lịch ${f.label} Gia Đình</div>
+                    <div class="subscribe-feed-desc">${escapeHtml(meta.desc)}</div>
+                    <div class="subscribe-url-row">
+                        <input type="text" class="feed-url-input" readonly value="${escapeHtml(absUrl)}" id="feed_url_${f.key}" onclick="this.select()">
+                        <button class="btn-feed-copy" id="btn_copy_${f.key}" onclick="copyCalendarFeedUrl('${f.key}', '${escapeHtml(absUrl)}', this)">
+                            📋 Sao chép URL
+                        </button>
+                        <a class="btn-feed-webcal" href="${escapeHtml(webcalUrl)}" title="Đăng ký trực tiếp vào ứng dụng Apple Calendar">
+                            🍎 Mở Apple Calendar
+                        </a>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+    const modal = document.getElementById("calendarSubscribeModal");
+    if (modal) modal.classList.add("active");
+}
+
+function copyCalendarFeedUrl(feedKey, url, btnEl) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => {
+            if (btnEl) {
+                const originalHtml = btnEl.innerHTML;
+                btnEl.classList.add("copied");
+                btnEl.innerHTML = "✅ Đã sao chép URL!";
+                setTimeout(() => {
+                    btnEl.classList.remove("copied");
+                    btnEl.innerHTML = originalHtml;
+                }, 2000);
+            }
+        }).catch(err => {
+            console.error("Clipboard copy error:", err);
+            fallbackCopy(feedKey);
+        });
+    } else {
+        fallbackCopy(feedKey);
+    }
+}
+
+function fallbackCopy(feedKey) {
+    const input = document.getElementById(`feed_url_${feedKey}`);
+    if (input) {
+        input.focus();
+        input.select();
+        try {
+            document.execCommand('copy');
+            const btn = document.getElementById(`btn_copy_${feedKey}`);
+            if (btn) {
+                const originalHtml = btn.innerHTML;
+                btn.classList.add("copied");
+                btn.innerHTML = "✅ Đã sao chép URL!";
+                setTimeout(() => {
+                    btn.classList.remove("copied");
+                    btn.innerHTML = originalHtml;
+                }, 2000);
+            }
+        } catch (e) {
+            console.warn("execCommand fallback failed", e);
+        }
+    }
+}
+
 // --- TREE MODULE (ARCH_03D: REAL VISUAL FAMILY GRAPH) ---
 let graphScale = 1.0;
 let graphHistory = [];
