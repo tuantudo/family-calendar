@@ -17,7 +17,7 @@
 ## 1. MỤC ĐÍCH & ĐỊNH VỊ XUẤT BẢN (PUBLICATION PURPOSE & POSITIONING)
 
 ### 1.1. Bản chất của Publication
-Publication `gionghotrantrongthu.vercel.app` là một **Hệ Thống Xuất Bản Di Sản & Ký Ức Gia Tộc Thống Nhất (Unified Family Heritage & Memory Publication)**, phục vụ mục tiêu cốt lõi:
+Publication `giatoctrantrongthu.vercel.app` là một **Hệ Thống Xuất Bản Di Sản & Ký Ức Gia Tộc Thống Nhất (Unified Family Heritage & Memory Publication)**, phục vụ mục tiêu cốt lõi:
 > **“Xây dựng hạ tầng để một dòng họ có thể bắt đầu nhớ chính mình một cách có hệ thống.”**
 
 ### 1.2. Phân định giữa Database và Publication

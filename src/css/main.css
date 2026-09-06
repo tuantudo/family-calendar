@@ -1628,15 +1628,15 @@ main {
 }
 
 .graph-canvas-viewport {
+    min-width: max-content;
     width: 100%;
     min-height: 480px;
-    padding: 36px 20px 48px;
+    padding: 36px 20px 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    overflow-x: auto;
-    overflow-y: hidden;
+    /* Removed overflow-x: auto to rely on JS pan/zoom */
     transform-origin: center top;
     transition: transform 0.15s ease-out;
 }
@@ -2206,7 +2206,7 @@ footer { background: var(--surface); border-top: 1px solid var(--border); text-a
     }
     .graph-floating-toolbar {
         top: auto;
-        bottom: 12px;
+        bottom: calc(12px + env(safe-area-inset-bottom, 0px));
         right: 12px;
         padding: 4px 6px;
         gap: 6px;

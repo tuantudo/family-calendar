@@ -866,7 +866,7 @@ function getAbsoluteFeedUrl(file) {
         const base = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/');
         return new URL(file, base).href;
     }
-    return `https://gionghotrantrongthu.vercel.app/${file}`;
+    return `https://giatoctrantrongthu.vercel.app/${file}`;
 }
 
 function getWebcalUrl(file) {

@@ -14,7 +14,7 @@ GITHUB REPOSITORY (tuantudo/family-calendar) [SOURCE OF TRUTH]
 GITHUB ACTIONS                                VERCEL PLATFORM
 (Integrity & Invariant Gates)                 (Primary Public Web Delivery)
         ↓                                           ↓
-GITHUB PAGES (Fallback Mirror)                https://gionghotrantrongthu.vercel.app
+GITHUB PAGES (Fallback Mirror)                https://giatoctrantrongthu.vercel.app
 ```
 
 * **Local Workspace**: `/Users/tuantq/Projects/Personal/family-calendar` là môi trường phát triển chính thức duy nhất.
@@ -96,7 +96,7 @@ Tệp cấu hình `vercel.json` định nghĩa chuẩn URL và chính sách bả
    vercel --prod --yes
    ```
 4. Web App chính thức được cập nhật ngay lập tức tại:
-   `https://gionghotrantrongthu.vercel.app`
+   `https://giatoctrantrongthu.vercel.app`
 
 ---
 
@@ -115,7 +115,7 @@ Tệp cấu hình `vercel.json` định nghĩa chuẩn URL và chính sách bả
 ## 5. CHIẾN LƯỢC TÊN MIỀN & KHẢ NĂNG ROLLBACK
 
 ### 5.1. Domain Strategy
-* **Primary Production URL**: `https://gionghotrantrongthu.vercel.app`
+* **Primary Production URL**: `https://giatoctrantrongthu.vercel.app`
 * **Fallback Mirror**: `https://tuantudo.github.io/family-calendar`
 * **Tương lai**: Dễ dàng gán Custom Domain riêng mà không cần thay đổi cấu trúc URL hay logic routing của ứng dụng.
 
