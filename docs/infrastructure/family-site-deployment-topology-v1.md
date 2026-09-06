@@ -1,36 +1,40 @@
-# DEPLOYMENT TOPOLOGY V1
+# DEPLOYMENT TOPOLOGY V1.1
 
-Dựa trên thực tế hạ tầng (NAS Synology DS223j, cấu hình thấp, không Docker) và ưu thế của Vercel (Global CDN, Serverless), kiến trúc kết hợp (Hybrid) là phương án tối ưu nhất.
+Kiến trúc triển khai Hybrid (Phân tán Frontend và Backend) được áp dụng nhằm tối ưu hóa tải cho NAS cục bộ và đảm bảo tính sẵn sàng (Availability) cho luồng tương tác cơ bản của người dùng.
 
 ## 1. Network Topology (Hybrid Model)
 
 ```text
-INTERNET (Public Users)
-   │
-   ├── [Vercel Edge Network] ───────────────> (STATIC ASSETS & FRONTEND ROUTING)
-   │     - https://giatoctrantrongthu.vercel.app
-   │
-   └── [Synology NAS Reverse Proxy] ────────> (DYNAMIC API & MEDIA)
-         - https://api.giatoctrantrongthu.com (Custom Domain hoặc DDNS Synology)
-         │
-         ├── [WebStation Proxy]
-         │     │
-         │     ├── API Layer (Node.js v20 / PM2)
-         │     │     └── Đọc/Ghi Database
-         │     │
-         │     └── Media Storage (`/volume1/web/family-genealogy/media/`)
-         │           └── Phân phối ảnh/tư liệu tĩnh qua Nginx
-         │
-         └── [MariaDB 10] (Isolated, Localhost ONLY)
+[ PUBLIC BOUNDARY ] 
+        │
+        ├── (1) VERCEL EDGE NETWORK (Frontend & CDN)
+        │       - URL: https://giatoctrantrongthu.vercel.app
+        │       - Role: Giao diện tĩnh, Routing, UI State, Static Assets (CSS/JS/Icons).
+        │       - Fallback: Trưng bày thông báo "Archive Offline" nếu mất kết nối về NAS.
+        │
+        └── (2) SYNOLOGY NAS (Self-hosted Application/Data Origin)
+                - URL: https://api.giatoctrantrongthu.com (Thông qua DDNS & Reverse Proxy)
+                │
+ [ PRIVATE BOUNDARY / NAS INTERNAL ]
+                │
+                ├── WebStation (Nginx Reverse Proxy)
+                │    │
+                │    ├── NODE.JS APPLICATION LAYER (API Server)
+                │    │    - Port: 3000 (Internal)
+                │    │    - Role: Xử lý Domain Logic, Media Access Control (ACL).
+                │    │
+                │    └── MEDIA STORAGE FILESYSTEM
+                │         - Path: /volume1/web/family-genealogy/media/
+                │         - Access: Chỉ có thể truy xuất thông qua API/Application Layer, không expose trực tiếp.
+                │
+                └── MARIADB 10 (Database)
+                     - Port: 3306 (Bind 127.0.0.1 ONLY)
+                     - Role: Relational Data, Search Index.
 ```
 
-## 2. CI/CD Pipeline (GitHub-driven)
+## 2. Failure Scenarios & Resilience
 
-```text
-LOCAL WORKSPACE (Developer)
-   │
-   ├── (Push Frontend Changes) ─────> [GitHub Main] ───> [Vercel CI/CD] ──> PRODUCTION FRONTEND
-   │
-   └── (Push Backend Changes) ──────> [GitHub Main] ───> [Manual/Script Pull on NAS] ──> PRODUCTION API
-```
-*Ghi chú: Việc deploy backend API lên NAS DS223j sẽ dùng Bash script pull từ GitHub, vì DS223j không chạy GitHub Actions Runner.*
+NAS không phải là hệ thống duy nhất bảo đảm availability của toàn bộ website.
+- **NAS Failure / Mất điện / Mạng nhà rớt:** Vercel Frontend vẫn sống. Người dùng vẫn truy cập được trang chủ, đọc được UI, nhưng dữ liệu Động (Cây phả hệ chi tiết, Nội dung Mạch) sẽ không load được. Ứng dụng sẽ hiển thị trạng thái *"Kết nối đến Kho Lưu Trữ Dòng Họ đang gián đoạn"* một cách có chủ đích, thay vì sập toàn bộ (White screen).
+- **Vercel Failure:** Rất hiếm xảy ra do kiến trúc Global Edge. Nếu xảy ra, toàn bộ giao diện ngừng hoạt động.
+- **Database Corruption:** Hệ thống API sẽ tự động kích hoạt Maintenance Mode, trả HTTP 503 cho Frontend để ngăn lỗi lan truyền. Dữ liệu sẽ được phục hồi từ Daily Cloud Backup.
