@@ -845,7 +845,7 @@ function openEventDetailModal(evIdx, yr) {
     if (personMatch && linkBox) {
         linkBox.style.display = "block";
         linkBox.innerHTML = `
-            <div style="padding:10px 14px; background:var(--primary-light); border-radius:8px; border:1px solid #bfdbfe; font-size:13.5px;">
+            <div style="padding:10px 14px; background:var(--bg-hover);  border:1px solid var(--border-dark); font-size:13.5px;">
                 Thành viên liên quan: <a onclick="closeModalDirect('eventModal'); openPersonProfile('${personMatch.id}')" style="color:var(--primary); font-weight:700; cursor:pointer; text-decoration:underline;">${personMatch.name} (Xem hồ sơ gia phả →)</a>
             </div>
         `;
@@ -1202,7 +1202,7 @@ function renderFocusPedigreeTree(centerId) {
         `;
     } else {
         parentsHtml = `
-            <div class="tier-badge-label" style="background:#eff6ff; color:#1e3a8a; border-color:#bfdbfe;">Mốc Khởi Thủy Gia Tộc (Anchor)</div>
+            <div class="tier-badge-label" style="background:var(--bg-surface); color:var(--text-main); border-color:var(--border-dark);">Mốc Khởi Thủy Gia Tộc (Anchor)</div>
             <div class="vertical-stem-line"></div>
         `;
     }
@@ -1257,7 +1257,7 @@ function renderFocusPedigreeTree(centerId) {
     } else {
         childrenHtml = `
             <div class="vertical-stem-line"></div>
-            <div style="font-size:12px; color:var(--text-muted); background:#ffffff; border:1px dashed var(--border); padding:5px 14px; border-radius:12px; margin-top:2px;">
+            <div style="font-size:12px; color:var(--text-muted); background:#ffffff; border:1px dashed var(--border); padding:5px 14px;  margin-top:2px;">
                 (Chưa ghi nhận hậu duệ trực hệ)
             </div>
         `;
@@ -1429,7 +1429,7 @@ function renderUnifiedPersonCard(p, isTreeNode = false, isCenter = false) {
         : `<div class="card-avatar-box"><span class="card-avatar-fallback">${fallbackSvg}</span></div>`;
 
     return `
-        <div class="person-card ${gMeta.borderCls}" ${isTreeNode ? `onclick="renderFocusPedigreeTree('${p.id}')"` : `onclick="openPersonProfile('${p.id}')"`} style="${isCenter ? 'border: 2px solid var(--primary); box-shadow: var(--shadow-md);' : ''}">
+        <div class="person-card ${gMeta.borderCls}" ${isTreeNode ? `onclick="renderFocusPedigreeTree('${p.id}')"` : `onclick="openPersonProfile('${p.id}')"`} style="${isCenter ? 'border: 2px solid var(--primary); ' : ''}">
             <div>
                 <div class="card-header-row">
                     <span class="gen-badge ${gMeta.badgeCls}">${gMeta.label}</span>
@@ -1511,7 +1511,7 @@ function renderPeopleDirectory(filterGen = currentPeopleGenFilter) {
     });
 
     if (renderedCount === 0) {
-        grid.innerHTML = `<div style="grid-column: 1/-1; padding: 32px; text-align: center; color: var(--text-muted); background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius-md);">Không có thành viên nào thuộc thế hệ này.</div>`;
+        grid.innerHTML = `<div style="grid-column: 1/-1; padding: 32px; text-align: center; color: var(--text-muted); background: var(--surface); border: 1px dashed var(--border); ">Không có thành viên nào thuộc thế hệ này.</div>`;
     }
 }
 
@@ -1590,7 +1590,7 @@ function renderFamiliesDirectory(filterGen = currentFamilyGenFilter) {
     });
 
     if (renderedCount === 0) {
-        grid.innerHTML = `<div style="grid-column: 1/-1; padding: 32px; text-align: center; color: var(--text-muted); background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius-md);">Không có đơn vị gia đình nào thuộc thế hệ này.</div>`;
+        grid.innerHTML = `<div style="grid-column: 1/-1; padding: 32px; text-align: center; color: var(--text-muted); background: var(--surface); border: 1px dashed var(--border); ">Không có đơn vị gia đình nào thuộc thế hệ này.</div>`;
     }
 }
 
