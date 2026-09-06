@@ -1934,9 +1934,9 @@ function renderHomePublicationLanding() {
             const bPlace = (rootPerson.birth && rootPerson.birth.place) ? rootPerson.birth.place.split(',')[0].trim() : "Thanh Hóa";
             const genLevels = window.maxDerivedGenLevel ? (window.maxDerivedGenLevel + 1) : 5;
             
-            heroAnchorEl.innerHTML = `Dòng họ bắt đầu từ cụ <strong>${escapeHtml(rootName)}</strong> (${bYear}–${dYear}) tại ${escapeHtml(bPlace)}, trải qua hơn 150 năm với ${genLevels} thế hệ tiếp nối.`;
+            heroAnchorEl.innerHTML = `Bắt đầu từ cụ <strong>${escapeHtml(rootName)}</strong> (${bYear}–${dYear}) tại ${escapeHtml(bPlace)}, trải qua hơn 150 năm với ${genLevels} thế hệ tiếp nối.`;
         } else {
-            heroAnchorEl.innerText = "Dòng họ bắt đầu từ cụ Giuse Trần Trọng Thu (1872–1969) tại Thanh Hóa, trải qua hơn 150 năm với 5 thế hệ tiếp nối.";
+            heroAnchorEl.innerText = "Bắt đầu từ cụ Giuse Trần Trọng Thu (1872–1969) tại Thanh Hóa, trải qua hơn 150 năm với 5 thế hệ tiếp nối.";
         }
     }
 
