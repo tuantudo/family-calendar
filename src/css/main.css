@@ -2687,8 +2687,8 @@ footer { background: var(--surface); border-top: 1px solid var(--border); text-a
 /* Reading Body */
 .story-content-body {
     font-family: var(--font-serif);
-    font-size: var(--text-body-lg);
-    line-height: var(--leading-loose);
+    font-size: calc(1.125rem * var(--text-scale, 1));
+    line-height: var(--leading-relaxed);
     color: var(--text-main);
     max-width: 100%;
 }
@@ -3072,7 +3072,7 @@ footer { background: var(--surface); border-top: 1px solid var(--border); text-a
     .story-mentions-bar { padding: 10px 12px; margin-bottom: 22px; font-size: 12.5px; gap: 6px; }
     .mention-chip { padding: 4px 10px; font-size: 11.5px; min-height: 28px; }
     
-    .story-content-body { font-size: 1.0625rem; line-height: 1.75; }
+    .story-content-body { font-size: calc(1.0625rem * var(--text-scale, 1)); line-height: 1.75; }
     .story-content-body p { margin-bottom: 1.25em; text-align: left; text-wrap: pretty; }
     .story-content-body h2 { font-size: 1.35rem; margin-top: 1.6em; margin-bottom: 0.6em; line-height: 1.3; }
     .story-content-body h3 { font-size: 1.15rem; margin-top: 1.4em; margin-bottom: 0.5em; }
@@ -3099,7 +3099,7 @@ footer { background: var(--surface); border-top: 1px solid var(--border); text-a
     .story-article-wrapper { padding: 0 4px; margin-bottom: 32px; }
     .story-article-container { padding: 18px 12px; border-radius: var(--radius-md); }
     .story-title { font-size: 1.45rem; line-height: 1.25; }
-    .story-content-body { font-size: 1rem; line-height: 1.7; }
+    .story-content-body { font-size: calc(1rem * var(--text-scale, 1)); line-height: 1.7; }
     .story-content-body blockquote { padding: 10px 12px; font-size: 0.95rem; }
     .story-tag-order { font-size: 10.5px; }
     .series-header-card, .author-header-card { padding: 18px 12px; border-radius: var(--radius-md); }
@@ -3998,3 +3998,36 @@ footer { background: var(--surface); border-top: 1px solid var(--border); text-a
 
 
 
+
+/* Reading Accessibility Controls */
+.font-size-controls {
+    display: flex;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 2px;
+}
+.font-btn {
+    background: transparent;
+    border: none;
+    padding: 4px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    border-radius: 6px;
+    cursor: pointer;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
+}
+.font-btn:hover {
+    background: var(--bg-warm);
+    color: var(--primary-dark);
+}
+.font-btn.active {
+    background: var(--primary-dark);
+    color: var(--on-primary);
+}

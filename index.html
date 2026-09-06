@@ -98,10 +98,10 @@
                 </div>
             </div>
 
-            <!-- BLOCK 04: THREE PUBLICATION TERRITORIES (BA TRỤC ẤN PHẨM) -->
+            <!-- BLOCK 04: THREE PUBLICATION TERRITORIES (BA TRỤC NỘI DUNG) -->
             <div class="pub-comm-territory-section">
                 <div class="section-subhead">
-                    <span class="subhead-tag">BA TRỤC ẤN PHẨM</span>
+                    <span class="subhead-tag">BA TRỤC NỘI DUNG</span>
                 </div>
                 <div class="pub-comm-territories">
                     <div class="comm-territory-card card-genealogy" onclick="navigateRoute('/gia-pha')">
@@ -415,7 +415,7 @@
 <div class="mach-hero">
                     <div class="mach-badge">Không Gian Khảo Cứu & Tự Sự Dòng Họ</div>
                     <h1 class="mach-hero-title">MẠCH</h1>
-                    <p class="mach-hero-sub">Lưu giữ dòng chảy ký ức, các ấn phẩm chuyên đề và khảo cứu về đời sống dòng họ trong thời hiện đại.</p>
+                    <p class="mach-hero-sub">Lưu giữ dòng chảy ký ức, các bài viết chuyên đề và khảo cứu về đời sống dòng họ trong thời hiện đại.</p>
                     <div class="mach-hero-meta" id="machHeroMeta"></div>
                 </div>
 
@@ -446,7 +446,14 @@
             <div class="story-article-wrapper">
                 <div class="story-header-nav">
                     <a class="back-link-btn" onclick="navigateRoute('/mach')">← Quay lại MẠCH</a>
-                    <div id="storySeriesBreadcrumb" class="story-breadcrumb-badge"></div>
+                    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                        <div id="storySeriesBreadcrumb" class="story-breadcrumb-badge"></div>
+                        <div class="font-size-controls">
+                            <button class="font-btn" onclick="changeArticleFontSize(-1)" title="Thu nhỏ chữ">A−</button>
+                            <button class="font-btn" onclick="resetArticleFontSize()" title="Cỡ chữ mặc định">A</button>
+                            <button class="font-btn" onclick="changeArticleFontSize(1)" title="Phóng to chữ">A+</button>
+                        </div>
+                    </div>
                 </div>
 
                 <article class="story-article-container">
@@ -644,7 +651,7 @@
                             </div>
                             <div class="specimen-scale-row">
                                 <span class="specimen-scale-label">Heading 1 (28px / 700)</span>
-                                <div style="font-size: 1.75rem; font-weight: 700; color: var(--primary-dark); line-height: 1.25;">Trích lục Gia Phả & Di Sản Dòng Tộc</div>
+                                <div style="font-size: 1.75rem; font-weight: 700; color: var(--primary-dark); line-height: 1.25;">Trích lục Gia Phả & Di Sản Gia Tộc</div>
                             </div>
                             <div class="specimen-scale-row">
                                 <span class="specimen-scale-label">Heading 2 (22px / 700)</span>
@@ -809,7 +816,7 @@
                             </div>
                             <div class="specimen-scale-row">
                                 <span class="specimen-scale-label">Heading 1 (28px / 700)</span>
-                                <div style="font-size: 1.75rem; font-weight: 700; color: var(--primary-dark); line-height: 1.25;">Trích lục Gia Phả & Di Sản Dòng Tộc</div>
+                                <div style="font-size: 1.75rem; font-weight: 700; color: var(--primary-dark); line-height: 1.25;">Trích lục Gia Phả & Di Sản Gia Tộc</div>
                             </div>
                             <div class="specimen-scale-row">
                                 <span class="specimen-scale-label">Heading 2 (22px / 700)</span>
@@ -974,7 +981,7 @@
                             </div>
                             <div class="specimen-scale-row">
                                 <span class="specimen-scale-label">Heading 1 (28px / 700)</span>
-                                <div style="font-size: 1.75rem; font-weight: 700; color: var(--primary-dark); line-height: 1.25;">Trích lục Gia Phả & Di Sản Dòng Tộc</div>
+                                <div style="font-size: 1.75rem; font-weight: 700; color: var(--primary-dark); line-height: 1.25;">Trích lục Gia Phả & Di Sản Gia Tộc</div>
                             </div>
                             <div class="specimen-scale-row">
                                 <span class="specimen-scale-label">Heading 2 (22px / 700)</span>
@@ -1099,9 +1106,6 @@
 
     <!-- FOOTER -->
     <footer>
-        <div style="font-weight: 700; color: var(--primary-dark); font-size: 15px; margin-bottom: 4px;">GIA TỘC TRẦN TRỌNG THU</div>
-        <div style="font-size: 13px; margin-bottom: 16px;">Từ 1872 đến chúng ta</div>
-        <div style="font-size: 14px; font-weight: 500; color: var(--text-main); margin-bottom: 24px;">Gia Phả · Mạch · Tư Liệu · Giới thiệu</div>
         <div style="font-size: 12.5px; line-height: 1.6;">
             © 2026 Gia tộc Trần Trọng Thu<br>
             Lưu giữ, cập nhật và phát triển qua các thế hệ.

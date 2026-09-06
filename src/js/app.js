@@ -308,7 +308,7 @@ function getFamilyGenerationMeta(fid) {
 
 /// --- SITE IDENTITY & PAGE CONTEXT CONFIGURATION ---
 const SITE_CONFIG = {
-    publicationName: "GIÒNG HỌ TRẦN TRỌNG THU",
+    publicationName: "GIA TỘC TRẦN TRỌNG THU",
     subtitle: "TỪ 1872 ĐẾN CHÚNG TA"
 };
 
@@ -2853,3 +2853,47 @@ function selectSearchPageResult(type, id) {
     else if (type === 'AUTHOR') navigateRoute(`/mach/tac-gia/${id}`);
     else if (type === 'MEMORY') navigateRoute('/gia-pha/ky-uc');
 }
+
+// --- ARTICLE FONT SIZE CONTROL ---
+let currentArticleFontLevel = 0;
+const fontScaleSteps = [1.0, 1.25, 1.5, 1.75, 2.0];
+
+function changeArticleFontSize(delta) {
+    currentArticleFontLevel += delta;
+    if (currentArticleFontLevel < 0) currentArticleFontLevel = 0;
+    if (currentArticleFontLevel >= fontScaleSteps.length) currentArticleFontLevel = fontScaleSteps.length - 1;
+    applyArticleFontSize();
+}
+
+function resetArticleFontSize() {
+    currentArticleFontLevel = 0;
+    applyArticleFontSize();
+}
+
+function applyArticleFontSize() {
+    const scale = fontScaleSteps[currentArticleFontLevel];
+    document.documentElement.style.setProperty('--text-scale', scale);
+    
+    // Attempt to persist in session storage
+    try {
+        sessionStorage.setItem('article_font_level', currentArticleFontLevel);
+    } catch (e) {}
+}
+
+// Restore on load if available
+window.addEventListener('DOMContentLoaded', () => {
+    try {
+        const saved = sessionStorage.getItem('article_font_level');
+        if (saved !== null) {
+            currentArticleFontLevel = parseInt(saved, 10) || 0;
+            applyArticleFontSize();
+        }
+    } catch (e) {}
+});
+try {
+    const saved = sessionStorage.getItem('article_font_level');
+    if (saved !== null) {
+        currentArticleFontLevel = parseInt(saved, 10) || 0;
+        applyArticleFontSize();
+    }
+} catch (e) {}
