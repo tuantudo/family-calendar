@@ -1,0 +1,13 @@
+# GIA TỘC TRẦN TRỌNG THU — PAGE MODEL MATRIX V1
+
+Bảng dưới đây chứng minh rằng: **Các page khác nhau vì USER GOAL + CONTENT MODEL khác nhau, chứ không phải vì mỗi page được một designer thiết kế riêng.** Mọi page đều tuân thủ Visual Grammar V1.
+
+| Page/View | User Goal | Content Type | Information Hierarchy | Primary Interaction | Page Composition | Pattern / Component | Shared Visual Language | Allowed Variation |
+|---|---|---|---|---|---|---|---|---|
+| **Home** | Orientation, Khám phá tổng quan | Lời ngỏ, Intent Links | 1. Tên Gia tộc<br>2. Lời ngỏ<br>3. 3 Trụ cột chính | Click vào Phả hệ / Mạch / Tư liệu | 1-Column centered (Focus) | Masthead, Intent Cards | Nền ngà, Font Serif tiêu đề, Không shadow, Viền mảnh | Layout tập trung giữa màn hình thay vì dàn đều. |
+| **Gia Phả (Tree)** | Khám phá cấu trúc vĩ mô của dòng họ | Graph / Network Nodes | 1. Root Node<br>2. Các nhánh Đời 1, Đời 2 | Kéo, Thả, Zoom, Click mở Node | Full canvas (Interactive) | D3 SVG Nodes | Màu nền canvas chuẩn, Font Sans-serif cho tên trong node | Canvas không giới hạn chiều rộng, không xài Grid 12 cột. |
+| **Danh Bạ (People)** | Tra cứu nhanh một người cụ thể | List / Index | 1. Thanh tìm kiếm<br>2. Phân nhóm A-Z<br>3. Tên người | Cuộn, Lọc, Gõ tìm kiếm | 1-Column List (Data density) | Search Bar, Index List, Badges | Typography scale chuẩn cho Data (nhỏ gọn, Sans-serif) | Cho phép mật độ chữ (density) cực cao để lướt nhanh. |
+| **Hồ Sơ (Person Detail)** | Tra cứu chi tiết một thực thể lưu trữ | Archival Data + Relational Links | 1. Tên & Ảnh<br>2. Meta FSID<br>3. Mạng lưới gia đình | Click nhảy sang họ hàng (Hub) | 2-Column (Thông tin chính / Liên kết họ hàng) | Entity Header, Meta Grid, Timeline, Relation Cards | Header chuẩn, Ảnh viền mỏng không bo góc | 2 cột để tận dụng không gian Desktop cho Navigation. |
+| **Bài Viết (Story Detail)** | Đọc sâu một câu chuyện, ký ức | Long-form Prose | 1. Tựa đề<br>2. Thông tin xuất bản<br>3. Nội dung văn bản | Cuộn đọc (Scrolling) | 1-Column Narrow (Tối ưu Reading) | Editorial Header, Prose Block | Text Serif siêu lớn, khoảng trắng lớn tạo nhịp điệu | Bố cục hẹp lại (max 68ch), chữ to lên. |
+| **Tư Liệu (Archive)** | Xem hình ảnh, văn bản cổ | Media Artifacts | 1. Hình ảnh<br>2. Chú thích / Nguồn gốc | Xem ảnh lớn (Lightbox) | Grid / Masonry | Image Frame, Caption Meta | Hình vuông vức 0px radius, viền mỏng bảo vệ | Lưới dạng Gallery, không tuân thủ Grid text thông thường. |
+| **Lịch (Calendar)** | Xem các mốc giỗ chạp sắp tới | Chronological List | 1. Tháng/Ngày<br>2. Tên Sự kiện/Người | Cuộn, Lọc theo loại (Sinh/Giỗ) | 1-Column Timeline | Timeline Pattern, Event Badge | Cấu trúc list tương tự Danh bạ | Dùng Accent Color (Đỏ/Vàng) để highlight ngày quan trọng. |
