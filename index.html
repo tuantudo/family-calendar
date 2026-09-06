@@ -56,120 +56,50 @@
 
         <!-- 1. HOME / PUBLICATION LANDING VIEW (FAMILY FRONT DOOR) -->
         <section id="view_home" class="view-section active">
-            
-            <!-- BLOCK 01: HERO — IDENTITY & TIME ANCHOR (SUBJECT) -->
-            <div class="pub-comm-masthead">
-                <h1 class="pub-comm-title" id="heroPublicationTitle">GIA TỘC TRẦN TRỌNG THU</h1>
-                <p class="pub-comm-lede" id="homeHeroAnchor">
-                    Bắt đầu từ cụ Giuse Trần Trọng Thu (1872–1969) tại Thanh Hóa, trải qua hơn 150 năm với 5 thế hệ tiếp nối.
-                </p>
-                <div class="pub-comm-hero-actions">
-                    <button class="btn-hero-primary" onclick="navigateRoute('/gia-pha')">Xem cây phả hệ →</button>
-                    <a class="btn-hero-secondary" href="#home_intent_paths">Bắt đầu khám phá ↓</a>
-                </div>
-            </div>
-
-            <!-- BLOCK 02: HUMAN STORY TEASER (SUBJECT — KÝ ỨC THỰC TẾ) -->
-            <div class="pub-comm-story-teaser" id="homeHumanSpotlight">
-                <div class="box-tag">KÝ ỨC TIỀN NHÂN</div>
-                <div id="homeSpotlightContent"></div>
-            </div>
-
-            <!-- BLOCK 03: THREE INTENT PATHS (LỐI ĐI THEO NHU CẦU) -->
-            <div class="pub-comm-explore" id="home_intent_paths">
-                <div class="explore-header">
-                    <h3 class="explore-title">Lối vào theo nhu cầu</h3>
-                    <p class="explore-sub">Bắt đầu khám phá theo hướng bạn muốn tìm hiểu:</p>
-                </div>
-                <div class="explore-grid intent-3-grid">
-                    <a class="explore-item" href="#/gia-pha/nhan-vat" onclick="navigateRoute('/gia-pha/nhan-vat')">
-                        <div>
-                            <div class="explore-name">Tìm một người trong họ</div>
-                            <div class="explore-info" id="explorePeopleCount">Tra cứu 223 thành viên qua 5 thế hệ</div>
-                        </div>
-                    </a>
-                    <a class="explore-item" href="#/gia-pha" onclick="navigateRoute('/gia-pha')">
-                        <div>
-                            <div class="explore-name">Xem cây phả đồ tương tác</div>
-                            <div class="explore-info">Bản đồ huyết thống trực hệ & phân tầng thế hệ</div>
-                        </div>
-                    </a>
-                    <a class="explore-item" href="#/mach" onclick="navigateRoute('/mach')">
-                        <div>
-                            <div class="explore-name">Đọc chuyện & Ký ức</div>
-                            <div class="explore-info">Thư từ, bút ký nếp nhà và câu chuyện truyền khẩu</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- BLOCK 04: THREE PUBLICATION TERRITORIES (BA TRỤC NỘI DUNG) -->
-            <div class="pub-comm-territory-section">
-                <div class="section-subhead">
-                    <span class="subhead-tag">BA TRỤC NỘI DUNG</span>
-                </div>
-                <div class="pub-comm-territories">
-                    <div class="comm-territory-card card-genealogy" onclick="navigateRoute('/gia-pha')">
-                        <div class="card-badge">CẤU TRÚC & HUYẾT THỐNG</div>
-                        <div class="card-head">
-                            <h2 class="card-title">Gia Phả</h2>
-                        </div>
-                        <p class="card-desc">
-                            Không gian ghi nhận con người, gia đình, thế hệ và các mối quan hệ huyết thống. Tra cứu danh bạ thành viên và khám phá cây phả hệ tương tác đa tầng.
-                        </p>
-                        <div class="card-meta" id="homeGenealogyMeta"></div>
-                        <div class="card-link">Vào xem Cây Phả Đồ & Danh Bạ →</div>
+            <div class="archival-home-container">
+                <!-- HERO: THE CHRONICLE COVER -->
+                <header class="home-hero">
+                    <div class="home-hero-seal">
+                        <span class="seal-mark"></span> Biên Niên Sử Gia Tộc
                     </div>
+                    <h1 class="home-hero-title">TRẦN TRỌNG THU</h1>
+                    <p class="home-hero-lede">
+                        Bắt đầu từ cụ Giuse Trần Trọng Thu (1872–1969) tại Thanh Hóa,<br>
+                        trải qua hơn 150 năm với 5 thế hệ tiếp nối.
+                    </p>
+                </header>
 
-                    <div class="comm-territory-card card-mach" onclick="navigateRoute('/mach')">
-                        <div class="card-badge">TỰ SỰ & KÝ ỨC</div>
-                        <div class="card-head">
-                            <h2 class="card-title">Mạch</h2>
-                        </div>
-                        <p class="card-desc">
-                            Tập san lưu giữ những câu chuyện đời, nếp nhà, những bức thư gửi thế hệ mai sau và những suy ngẫm về nguồn cội qua tiếng nói của người trong gia đình.
-                        </p>
-                        <div class="card-meta" id="homeMachMeta"></div>
-                        <div class="card-link">Đọc Tập San Mạch →</div>
-                    </div>
-
-                    <div class="comm-territory-card card-archive" onclick="navigateRoute('/tu-lieu')">
-                        <div class="card-badge">VẬT CHỨNG & HỒ SƠ</div>
-                        <div class="card-head">
-                            <h2 class="card-title">Tư Liệu</h2>
-                        </div>
-                        <p class="card-desc">
-                            Kho lưu trữ bảo tồn các văn bản hộ tịch, sổ gia bạ, ảnh cổ, thư từ và di vật của tiền nhân đang trong quá trình sưu tầm và số hóa từng bước.
-                        </p>
-                        <div class="card-meta" id="homeArchiveMeta">Đang sưu tầm & số hóa tư liệu</div>
-                        <div class="card-link">Xem Không Gian Tư Liệu →</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BLOCK 05: MẠCH FEATURED & EDITORIAL ESSAYS (TỪ MẠCH) -->
-            <div class="pub-comm-mach-feature-section" id="homeEditorialFeature">
-                <div class="section-subhead">
-                    <span class="subhead-tag">TỪ TẬP SAN MẠCH</span>
-                </div>
-                <div id="homeFeatureCard"></div>
-            </div>
-
-            <!-- BLOCK 06: SYSTEM CAPABILITIES & SCALE (QUY MÔ & CÔNG CỤ) -->
-            <div class="pub-comm-system-strip">
-                <div class="system-stats-bar" id="homeSubstanceFacts"></div>
-                <div class="system-capabilities-bar">
-                    <a class="cap-btn" href="#/lich" onclick="navigateRoute('/lich')">
-                        <svg class="ui-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                        <span>Lịch Gia Đình (Âm / Dương)</span>
+                <!-- THE THREE PILLARS (LEDGER STYLE) -->
+                <nav class="home-pillars">
+                    <a href="#/gia-pha" class="pillar-item" onclick="navigateRoute('/gia-pha')">
+                        <span class="pillar-number">I</span>
+                        <h2 class="pillar-title">Gia Phả & Phả Đồ</h2>
+                        <p class="pillar-desc">Cấu trúc huyết thống, danh bạ thành viên, và bản đồ thế hệ tương tác trực tiếp.</p>
+                        <span class="pillar-meta" id="homeGenealogyMeta">223 Thành viên • 68 Gia đình</span>
                     </a>
-                    <a class="cap-btn" href="#/tim-kiem" onclick="navigateRoute('/tim-kiem')">
-                        <svg class="ui-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                        <span>Tra cứu toàn cục</span>
+                    
+                    <a href="#/mach" class="pillar-item" onclick="navigateRoute('/mach')">
+                        <span class="pillar-number">II</span>
+                        <h2 class="pillar-title">Tập San Mạch</h2>
+                        <p class="pillar-desc">Không gian lưu giữ những câu chuyện đời, nếp nhà và bút ký truyền lại mai sau.</p>
+                        <span class="pillar-meta" id="homeMachMeta">Đọc thư từ & tự sự</span>
                     </a>
+                    
+                    <a href="#/tu-lieu" class="pillar-item" onclick="navigateRoute('/tu-lieu')">
+                        <span class="pillar-number">III</span>
+                        <h2 class="pillar-title">Tư Liệu Gốc</h2>
+                        <p class="pillar-desc">Kho lưu trữ văn bản hộ tịch, sổ gia bạ, ảnh cổ và các hiện vật gia đình.</p>
+                        <span class="pillar-meta" id="homeArchiveMeta">Vật chứng lịch sử</span>
+                    </a>
+                </nav>
+
+                <!-- UTILITY BAR -->
+                <div class="home-utilities">
+                    <a href="#/lich" class="utility-link" onclick="navigateRoute('/lich')">Lịch Gia Đình & Ngày Giỗ</a>
+                    <span class="utility-divider"></span>
+                    <a href="#/tim-kiem" class="utility-link" onclick="navigateRoute('/tim-kiem')">Tra cứu Dữ liệu Tổng hợp</a>
                 </div>
             </div>
-
         </section>
 
         <!-- 2. CALENDAR APPLICATION MODULE -->
