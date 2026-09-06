@@ -24,7 +24,7 @@
                 </div>
             </a>
 
-            <nav>
+            <nav style="display: flex; align-items: center;">
                 <ul class="nav-links">
                     <li><a href="#/" class="nav-item-btn active" id="nav_home" onclick="navigateRoute('/')">Trang Chủ</a></li>
                     <li class="nav-dropdown">
@@ -42,6 +42,11 @@
                     <li><a href="#/lich" class="nav-item-btn" id="nav_lich" onclick="navigateRoute('/lich')">Lịch</a></li>
                     <li><a href="#/tim-kiem" class="nav-item-btn" id="nav_tim_kiem" onclick="navigateRoute('/tim-kiem')">Tìm kiếm</a></li>
                 </ul>
+                <div class="font-size-controls global-font-controls" style="margin-left: 8px;" aria-label="Điều chỉnh kích thước chữ">
+                    <button class="font-btn" onclick="changeArticleFontSize(-1)" aria-label="Thu nhỏ chữ" title="Thu nhỏ chữ">A−</button>
+                    <button class="font-btn" onclick="resetArticleFontSize()" aria-label="Cỡ chữ mặc định" title="Cỡ chữ mặc định">A</button>
+                    <button class="font-btn" onclick="changeArticleFontSize(1)" aria-label="Phóng to chữ" title="Phóng to chữ">A+</button>
+                </div>
             </nav>
         </div>
     </header>
@@ -446,14 +451,7 @@
             <div class="story-article-wrapper">
                 <div class="story-header-nav">
                     <a class="back-link-btn" onclick="navigateRoute('/mach')">← Quay lại MẠCH</a>
-                    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-                        <div id="storySeriesBreadcrumb" class="story-breadcrumb-badge"></div>
-                        <div class="font-size-controls">
-                            <button class="font-btn" onclick="changeArticleFontSize(-1)" title="Thu nhỏ chữ">A−</button>
-                            <button class="font-btn" onclick="resetArticleFontSize()" title="Cỡ chữ mặc định">A</button>
-                            <button class="font-btn" onclick="changeArticleFontSize(1)" title="Phóng to chữ">A+</button>
-                        </div>
-                    </div>
+                    <div id="storySeriesBreadcrumb" class="story-breadcrumb-badge"></div>
                 </div>
 
                 <article class="story-article-container">

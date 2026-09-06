@@ -2872,18 +2872,18 @@ function resetArticleFontSize() {
 
 function applyArticleFontSize() {
     const scale = fontScaleSteps[currentArticleFontLevel];
-    document.documentElement.style.setProperty('--text-scale', scale);
+    document.documentElement.style.setProperty('--global-text-scale', scale);
     
     // Attempt to persist in session storage
     try {
-        sessionStorage.setItem('article_font_level', currentArticleFontLevel);
+        localStorage.setItem('article_font_level', currentArticleFontLevel);
     } catch (e) {}
 }
 
 // Restore on load if available
 window.addEventListener('DOMContentLoaded', () => {
     try {
-        const saved = sessionStorage.getItem('article_font_level');
+        const saved = localStorage.getItem('article_font_level');
         if (saved !== null) {
             currentArticleFontLevel = parseInt(saved, 10) || 0;
             applyArticleFontSize();
@@ -2891,7 +2891,7 @@ window.addEventListener('DOMContentLoaded', () => {
     } catch (e) {}
 });
 try {
-    const saved = sessionStorage.getItem('article_font_level');
+    const saved = localStorage.getItem('article_font_level');
     if (saved !== null) {
         currentArticleFontLevel = parseInt(saved, 10) || 0;
         applyArticleFontSize();
