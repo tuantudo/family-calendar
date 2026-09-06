@@ -28,7 +28,7 @@ GITHUB PAGES (Fallback Mirror)                https://giatoctrantrongthu.vercel.
 ## 2. THIẾT LẬP VERCEL PROJECT & DEPLOYMENT
 
 ### 2.1. Thông Tin Project Vercel
-* **Project Name**: `gionghotrantrongthu`
+* **Project Name**: `giatoctrantrongthu` (renamed from `gionghotrantrongthu`; same project ID `prj_jwHYW33ioSD0SfOhKhY0lU9dEoV3`)
 * **Project ID**: `prj_jwHYW33ioSD0SfOhKhY0lU9dEoV3`
 * **Organization / Team**: `tuantqs-projects-74ccf90b` (`team_4F5pke8is2RERpfcYLlJuufy`)
 * **Framework Preset**: Static (HTML/CSS/Vanilla JS)

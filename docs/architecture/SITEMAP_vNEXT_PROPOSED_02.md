@@ -1,5 +1,5 @@
 # SITEMAP vNEXT — PROPOSED / REFINEMENT 02
-## DỰ ÁN CÂY GIA PHẢ / GIÒNG HỌ TRẦN TRỌNG THU
+## DỰ ÁN CÂY GIA PHẢ / GIA TỘC TRẦN TRỌNG THU
 
 ---
 
@@ -16,7 +16,7 @@
 
 ## 2. PHẠM VI (SCOPE)
 
-1. Xác định cấu trúc sitemap đề xuất cho hệ thống Giòng họ Trần Trọng Thu dựa trên kết quả khảo sát toàn diện (forensic audit) từ website hiện hữu và Publication Model v1.
+1. Xác định cấu trúc sitemap đề xuất cho hệ thống Dòng họ Trần Trọng Thu dựa trên kết quả khảo sát toàn diện (forensic audit) từ website hiện hữu và Publication Model v1.
 2. Thiết lập ranh giới khái niệm giữa **Information Architecture**, **Sitemap**, **Navigation**, và **Cross-system Capabilities**.
 3. Bảo toàn 100% tính năng, công cụ, bộ lọc, thuật toán đồ thị và dữ liệu hiện có trong website mà không làm mất mát bất kỳ năng lực nào.
 4. **Phạm vi loại trừ (Out of Scope)**:
@@ -65,7 +65,7 @@
 Cấu trúc sitemap chuẩn hóa sử dụng định danh trung tính, mô tả đúng chức năng:
 
 ```
-SITEMAP vNEXT (GIÒNG HỌ TRẦN TRỌNG THU)
+SITEMAP vNEXT (GIA TỘC TRẦN TRỌNG THU)
 │
 ├── [/] — Trang chủ: Giới thiệu dự án và điều hướng đến các phần nội dung chính
 │   └── (Annotation: Page_Home)

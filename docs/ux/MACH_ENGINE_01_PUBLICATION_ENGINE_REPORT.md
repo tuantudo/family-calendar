@@ -6,6 +6,7 @@
 - **Tài liệu tham chiếu**: `MACH_FOUNDATION_01` & `MACH_FOUNDATION_02`
 - **Ngày hoàn thành**: 05/09/2026
 - **Trạng thái**: Hoàn tất Triển khai & Đã Kiểm thử Toàn diện (Production-Ready)
+- **Status**: CURRENT — Implementation report của Publication Engine v3.0 (không phải architecture authority; authority thuộc `docs/architecture/ARCHITECTURE.md` → `docs/publication/PUBLICATION_MODEL_01.md`)
 
 ---
 

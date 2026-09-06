@@ -1,5 +1,5 @@
 # HỆ THỐNG GIẢI PHẪU TRANG (PAGE ANATOMY SYSTEM)
-## DỰ ÁN: CÂY GIA PHẢ / GIÒNG HỌ TRẦN TRỌNG THU
+## DỰ ÁN: CÂY GIA PHẢ / GIA TỘC TRẦN TRỌNG THU
 *Mã tài liệu: `docs/ux/PAGE_ANATOMY_SYSTEM.md` — Trạng thái: Canonical IA Specification*
 
 ---

@@ -257,13 +257,13 @@ Trang chủ (*Home*) không phải là một bảng điều khiển dữ liệu 
 > [!NOTE]
 > **WORKING EDITORIAL FRAMING (CHƯA PHẢI SLOGAN CUỐI):**
 > 
-> *“GIÒNG HỌ TRẦN TRỌNG THU là một nơi để những gì còn nhớ được ở lại, được kết nối và có thể được truyền lại.”*
+> *“GIA TỘC TRẦN TRỌNG THU là một nơi để những gì còn nhớ được ở lại, được kết nối và có thể được truyền lại.”*
 
 ---
 
 ### BRAND IDENTITY DECISION (CANONICAL)
 
-`TỪ 1872 ĐẾN CHÚNG TA` là brand narrative / identity line của GIÒNG HỌ TRẦN TRỌNG THU.
+`TỪ 1872 ĐẾN CHÚNG TA` là brand narrative / identity line của GIA TỘC TRẦN TRỌNG THU.
 
 Đây là một đơn vị nhận diện hoàn chỉnh, không phải slogan quảng cáo.
 
@@ -273,11 +273,11 @@ Trang chủ (*Home*) không phải là một bảng điều khiển dữ liệu 
 
 Motto này đồng thời là cơ sở ý tưởng cho hướng phát triển visual identity/emblem của dòng họ trong tương lai.
 
-`CÂY GIA PHẢ` là một territory/sản phẩm trong hệ thống, KHÔNG phải brand tagline hay descriptor của `GIÒNG HỌ TRẦN TRỌNG THU`.
+`CÂY GIA PHẢ` là một territory/sản phẩm trong hệ thống, KHÔNG phải brand tagline hay descriptor của `GIA TỘC TRẦN TRỌNG THU`.
 
 Canonical rendering:
 ```
-GIÒNG HỌ TRẦN TRỌNG THU
+GIA TỘC TRẦN TRỌNG THU
 TỪ 1872 ĐẾN CHÚNG TA
 ```
 
@@ -331,7 +331,7 @@ Tài liệu này xác định các vấn đề học thuật và kiến trúc c�
 ## XI. NGUYÊN TẮC THIẾT KẾ HỆ THỐNG: ICONOGRAPHY & COLOR SYSTEM (CANONICAL)
 
 ### 1. ICONOGRAPHY PRINCIPLE
-> “Iconography trong CÂY GIA PHẢ / GIÒNG HỌ TRẦN TRỌNG THU là hệ thống ký hiệu chức năng, đơn sắc, tiết chế và nhất quán. Icon không dùng như lớp trang trí hoặc như hệ mã màu cho các publication territories.”
+> “Iconography trong CÂY GIA PHẢ / GIA TỘC TRẦN TRỌNG THU là hệ thống ký hiệu chức năng, đơn sắc, tiết chế và nhất quán. Icon không dùng như lớp trang trí hoặc như hệ mã màu cho các publication territories.”
 
 - **Ký hiệu chức năng (Functional Symbols):** Chỉ sử dụng icon khi có giá trị hỗ trợ thao tác hoặc định vị ngữ cảnh (Search, Calendar, Expand/Collapse, External link, Close, State).
 - **Đơn sắc & Kế thừa (Monochrome & Inheritance):** Icon phải đơn sắc, thừa hưởng màu từ `currentColor` / text color, không mang màu sắc cầu vồng hay gradient.
@@ -351,11 +351,11 @@ Tài liệu này xác định các vấn đề học thuật và kiến trúc c�
 
 ### 4. BRAND PRINCIPLE
 > “Iconography phải hỗ trợ, không cạnh tranh với Family Name và Family Brand Narrative:
-> GIÒNG HỌ TRẦN TRỌNG THU
+> GIA TỘC TRẦN TRỌNG THU
 > TỪ 1872 ĐẾN CHÚNG TA.”
 
 - Trật tự thị giác tối thượng:
-  1. Family Name (`GIÒNG HỌ TRẦN TRỌNG THU`)
+  1. Family Name (`GIA TỘC TRẦN TRỌNG THU`)
   2. Family Motto / Narrative (`TỪ 1872 ĐẾN CHÚNG TA`)
   3. Typography
   4. Photography / Archival Material

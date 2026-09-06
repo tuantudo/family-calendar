@@ -1,5 +1,5 @@
 # BÁO CÁO TOÀN DIỆN: FRONTEND ↔ BACKEND INTEGRATION AUDIT
-## DỰ ÁN: CÂY GIA PHẢ / GIÒNG HỌ TRẦN TRỌNG THU
+## DỰ ÁN: CÂY GIA PHẢ / GIA TỘC TRẦN TRỌNG THU
 *Mã tài liệu: `docs/ux/FRONTEND_BACKEND_INTEGRATION_AUDIT.md` — Trạng thái: Canonical Architecture & Contract Baseline*
 
 ---

@@ -1,5 +1,5 @@
 # SITEMAP REORGANIZATION & EXISTING WEBSITE IA AUDIT
-## DỰ ÁN CÂY GIA PHẢ / GIÒNG HỌ TRẦN TRỌNG THU
+## DỰ ÁN CÂY GIA PHẢ / GIA TỘC TRẦN TRỌNG THU
 
 > **Mã tài liệu**: `SITEMAP_REORGANIZATION_01`  
 > **Phân loại**: Architectural Reorganization & Forensic Feature Inventory  
@@ -160,10 +160,10 @@ Bảng phân bổ chính thức vị trí đích của từng màn hình, tuyế
 Cấu trúc cây sitemap toàn diện hợp nhất toàn bộ tài sản hiện có vào 3 Lãnh thổ Xuất bản và 2 Lớp Nền tảng:
 
 ```
-PROPOSED SITEMAP vNEXT (GIÒNG HỌ TRẦN TRỌNG THU)
+PROPOSED SITEMAP vNEXT (GIA TỘC TRẦN TRỌNG THU)
 │
 ├── 🌐 TRANG CHỦ & CỬA NGÕ TOÀN CẢNH
-│   └── [/] (Page_Home) — Đại sảnh Di sản Giòng họ, Thống kê, Lối vào 3 Lãnh thổ, Lịch & Tìm kiếm
+│   └── [/] (Page_Home) — Đại sảnh Di sản Dòng họ, Thống kê, Lối vào 3 Lãnh thổ, Lịch & Tìm kiếm
 │
 ├── 🏛️ LÃNH THỔ 1: GIA PHẢ (/gia-pha) — Lineage, Kinship & Identity
 │   ├── [/gia-pha] (Page_SectionLanding: Gia Phả)
@@ -193,7 +193,7 @@ PROPOSED SITEMAP vNEXT (GIÒNG HỌ TRẦN TRỌNG THU)
 │   └── [/tu-lieu/bo-suu-tap/:slug] (Page_Collection) — Bộ sưu tập tư liệu theo chuyên đề
 │
 ├── 📖 THÔNG TIN CHUNG & TỔ CHỨC
-│   ├── [/ve-dong-ho] (Page_AboutFamily) — Nguồn gốc, Lịch sử & Truyền thống Giòng họ Trần Trọng Thu
+│   ├── [/ve-dong-ho] (Page_AboutFamily) — Nguồn gốc, Lịch sử & Truyền thống Dòng họ Trần Trọng Thu
 │   ├── [/ve-du-an] (Page_AboutProject) — Tuyên ngôn dự án, Triết lý "Giữ lại trước khi diễn giải", Quản trị
 │   └── [/ve-du-an/typography-specimen] (Internal Specimen) — Bảng so sánh Typography [TỪ #/typography-specimen]
 │
@@ -228,7 +228,7 @@ PROPOSED SITEMAP vNEXT (GIÒNG HỌ TRẦN TRỌNG THU)
 - **Mối liên kết**: Cung cấp bằng chứng gốc bảo chứng cho các hồ sơ trong `GIA PHẢ` và làm dẫn chứng cho các bài viết trong `MẠCH`.
 
 ### 5.4. VỀ DÒNG HỌ & VỀ DỰ ÁN (Institutional Context)
-- **Về Dòng Họ (`/ve-dong-ho`)**: Không gian trang trọng giới thiệu cội nguồn, danh xưng, các đời tiền nhân và truyền thống đạo lý của Giòng họ Trần Trọng Thu.
+- **Về Dòng Họ (`/ve-dong-ho`)**: Không gian trang trọng giới thiệu cội nguồn, danh xưng, các đời tiền nhân và truyền thống đạo lý của Dòng họ Trần Trọng Thu.
 - **Về Dự Án (`/ve-du-an`)**: Ghi nhận công lao người khởi xướng (Steward/Initiator), tuyên ngôn phương pháp luận "Giữ lại trước khi diễn giải", và chứa công cụ kiểm thử thiết kế typography nội bộ.
 
 ---

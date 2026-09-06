@@ -1,5 +1,5 @@
 # KHẢO SÁT & NGHIÊN CỨU THỰC NGHIỆM CHUẨN MỰC UI/UX (UI REFERENCE RESEARCH)
-## DỰ ÁN: CÂY GIA PHẢ / GIÒNG HỌ TRẦN TRỌNG THU
+## DỰ ÁN: CÂY GIA PHẢ / GIA TỘC TRẦN TRỌNG THU
 *Mã tài liệu: `docs/ux/UI_REFERENCE_RESEARCH.md` — Trạng thái: Canonical Research Artifact*
 
 ---

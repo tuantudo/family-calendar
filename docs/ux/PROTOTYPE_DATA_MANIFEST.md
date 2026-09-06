@@ -1,5 +1,5 @@
 # PROTOTYPE DATA MANIFEST (KIỂM TOÁN DỮ LIỆU NGUỒN PROTOTYPE)
-## DỰ ÁN: CÂY GIA PHẢ / GIÒNG HỌ TRẦN TRỌNG THU
+## DỰ ÁN: CÂY GIA PHẢ / GIA TỘC TRẦN TRỌNG THU
 *Mã tài liệu: `docs/ux/PROTOTYPE_DATA_MANIFEST.md` — Trạng thái: Canonical Audit Gate*
 
 ---

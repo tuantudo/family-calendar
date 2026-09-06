@@ -1,9 +1,12 @@
-# CÂY GIA PHẢ — FAMILY CALENDAR & KNOWLEDGE APP
+# CÂY GIA PHẢ — GIA TỘC TRẦN TRỌNG THU
 
-Hệ thống số hóa phả hệ và lịch gia đình trực tuyến của Gia phả nhà ông Trần Trọng Thu.
+Hệ thống xuất bản di sản & ký ức gia tộc: Gia Phả (cấu trúc dòng họ), Mạch (bài viết, câu chuyện), Tư Liệu (vật chứng còn lại).
 
-- **Trang chủ trực tuyến**: https://tuantudo.github.io/family-calendar/
-- **Kiến trúc**: Static-first Single Page Application (GitHub Pages CDN).
+- **Website entity**: GIA TỘC TRẦN TRỌNG THU — `TỪ 1872 ĐẾN CHÚNG TA`
+- **Production**: https://giatoctrantrongthu.vercel.app
+- **Source of Truth**: `docs/architecture/ARCHITECTURE.md`
+- **Documentation index**: `docs/README.md`
+- **Kiến trúc**: Static-first Single Page Application (Vercel CDN; GitHub Pages fallback).
 
 ---
 

@@ -324,40 +324,47 @@
 
         <!-- 6. PERSON PROFILE VIEW -->
         <section id="view_person" class="view-section">
-            <div class="profile-header-nav" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
-                <button class="back-link-btn" onclick="navigateRoute('/tree')">← Quay lại Cây Phả Hệ</button>
-                <button class="back-link-btn" onclick="navigateRoute('/people')">← Danh sách thành viên</button>
+            <div class="profile-header-nav">
+                <button class="back-link-btn" onclick="navigateRoute('/tree')">← Cây Phả Hệ</button>
+                <button class="back-link-btn" onclick="navigateRoute('/people')">← Danh bạ</button>
             </div>
-            <div class="profile-container" id="personProfileContainer">
-                <div class="profile-hero-section">
-                    <div class="profile-avatar-wrapper" id="p_avatar_container">
-                        <span class="profile-avatar-fallback" id="p_avatar_fallback"></span>
+            
+            <div class="archival-container" id="personProfileContainer">
+                <header class="entity-hero">
+                    <div class="entity-avatar-box">
+                        <div class="entity-avatar" id="p_avatar_container">
+                            <span class="profile-avatar-fallback" id="p_avatar_fallback"></span>
+                        </div>
+                        <div class="entity-provenance" id="p_provenance_badge"></div>
                     </div>
-                    <div class="profile-info-main">
-                        <div style="font-size: 24px; font-weight: 800; color: var(--primary-dark);" id="p_name">Họ Tên</div>
-                        <div style="font-size: 14px; color: var(--text-muted); margin-top: 4px;" id="p_gender_status">Giới tính</div>
-                        <div id="p_provenance_badge"></div>
+                    
+                    <div class="entity-info">
+                        <h1 class="entity-name" id="p_name"></h1>
+                        <div class="entity-badges" id="p_gender_status"></div>
+                        <div class="entity-meta-grid">
+                            <div class="meta-item">
+                                <span class="meta-label">FSID</span>
+                                <span class="meta-value" id="p_fsid"></span>
+                            </div>
+                        </div>
                     </div>
-                    <div style="font-family: monospace; font-size: 13px; color: var(--text-muted); background: var(--bg); padding: 4px 8px; border-radius: 4px; align-self: flex-start;" id="p_fsid">FSID</div>
-                </div>
+                </header>
 
-                <div class="profile-grid">
-                    <div class="profile-box">
-                        <div style="font-size: 14px; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px;">Sự Kiện Bản Thân</div>
-                        <div style="font-size: 13.5px;" id="p_facts"></div>
-                    </div>
-
-                    <div class="profile-box">
-                        <div style="font-size: 14px; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px;">Mạng Lưới Gia Đình</div>
+                <div class="entity-body-grid">
+                    <main class="entity-main">
+                        <h2 class="section-heading">Tiểu Sử & Sự Kiện</h2>
+                        <div class="timeline-content" id="p_facts"></div>
+                        
+                        <div id="p_memory_box" style="display: none; margin-top: 2rem;">
+                            <h2 class="section-heading" id="p_memory_title">Ký Ức</h2>
+                            <div class="timeline-content" id="p_memory_text" style="white-space: pre-line;"></div>
+                        </div>
+                    </main>
+                    
+                    <aside class="entity-sidebar">
+                        <h2 class="section-heading">Gia Đình</h2>
                         <div id="p_relatives"></div>
-                    </div>
-                </div>
-
-                <div id="p_memory_box" style="margin-top: 20px; display: none;">
-                    <div class="profile-box" style="background: var(--accent-light); border-color: #fde68a;">
-                        <div style="font-size: 15px; font-weight: 800; color: var(--accent); margin-bottom: 8px;" id="p_memory_title">Ký ức / Giai thoại</div>
-                        <div style="font-size: 14px; line-height: 1.6; white-space: pre-line;" id="p_memory_text"></div>
-                    </div>
+                    </aside>
                 </div>
             </div>
         </section>

@@ -1,5 +1,5 @@
 # FRONTEND EXPERIENCE SYSTEM — DESIGN SPEC & REFERENCE BENCHMARK
-## CÂY GIA PHẢ / GIÒNG HỌ TRẦN TRỌNG THU
+## CÂY GIA PHẢ / GIA TỘC TRẦN TRỌNG THU
 *Tài liệu Đặc tả Thiết kế Trải nghiệm Độc lập & Khảo sát Chuẩn mực Quốc tế*
 *Ngày lập: 05/09/2026 — Trạng thái: Phase 1 Baseline*
 
@@ -87,7 +87,7 @@ Mô hình kiến trúc trải nghiệm độc lập được thiết lập:
 ## 5. ĐẶC TẢ HỆ THỐNG BIỂU TƯỢNG & MÀU SẮC (ICONOGRAPHY & COLOR DESIGN CONTRACT)
 
 ### 5.1. Định Vị Ký Hiệu Học (Iconography Contract)
-> “Iconography trong CÂY GIA PHẢ / GIÒNG HỌ TRẦN TRỌNG THU là hệ thống ký hiệu chức năng, đơn sắc, tiết chế và nhất quán. Icon không dùng như lớp trang trí hoặc như hệ mã màu cho các publication territories.”
+> “Iconography trong CÂY GIA PHẢ / GIA TỘC TRẦN TRỌNG THU là hệ thống ký hiệu chức năng, đơn sắc, tiết chế và nhất quán. Icon không dùng như lớp trang trí hoặc như hệ mã màu cho các publication territories.”
 
 1. **Phân loại Icon được phép tồn tại:**
    - **Functional Icons:** Ký hiệu điều hướng và công cụ (`Search`, `Calendar`, `Chevron/Arrow`, `Close`, `Copy/Check`).

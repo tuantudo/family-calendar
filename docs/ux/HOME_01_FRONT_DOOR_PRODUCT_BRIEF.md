@@ -13,7 +13,7 @@
 
 ### 1.1. Bản chất của Homepage
 Homepage của toàn bộ hệ thống là **CỬA VÀO CỦA MỘT DÒNG HỌ (FAMILY FRONT DOOR)**.
-- **ĐÂY LÀ:** Cổng vào chung của toàn bộ Gia Tộc & Hệ Thống Xuất Bản Di Sản Giòng Họ Trần Trọng Thu.
+- **ĐÂY LÀ:** Cổng vào chung của toàn bộ Gia Tộc & Hệ Thống Xuất Bản Di Sản Dòng Họ Trần Trọng Thu.
 - **ĐÂY KHÔNG PHẢI LÀ:**
   - ❌ Homepage riêng của tạp chí MẠCH;
   - ❌ Software dashboard (bảng điều khiển trạng thái phần mềm);
@@ -38,9 +38,9 @@ Khi một người đọc (dù là con cháu trong họ hay khách thăm) bướ
 ### 2.1. Định vị sản phẩm
 Hệ thống là một **Nền tảng Xuất bản Di sản & Tri thức Gia tộc Thống nhất (Unified Family Heritage & Memory Publication Platform)**.
 
-### 2.2. Phân định giữa Giòng Họ và Cây Gia Phả
-- **GIÒNG HỌ TRẦN TRỌNG THU (Subject / Heritage Community):** Là chủ thể thực tế — cộng đồng con người, huyết thống, lịch sử, nếp nhà và ký ức trải dài qua nhiều thế hệ.
-- **CÂY GIA PHẢ (Product / Publication Medium):** Là tên gọi của ấn phẩm/nền tảng công nghệ số đóng vai trò ghi nhận, lưu giữ, kết nối và trao truyền di sản của Giòng Họ.
+### 2.2. Phân định giữa Dòng Họ và Cây Gia Phả
+- **DÒNG HỌ TRẦN TRỌNG THU (Subject / Heritage Community):** Là chủ thể thực tế — cộng đồng con người, huyết thống, lịch sử, nếp nhà và ký ức trải dài qua nhiều thế hệ.
+- **CÂY GIA PHẢ (Product / Publication Medium):** Là tên gọi của nền tảng công nghệ số đóng vai trò ghi nhận, lưu giữ, kết nối và trao truyền di sản của Dòng Họ.
 
 ### 2.3. Đối tượng sử dụng (Audience Segments)
 1. **Con cháu thế hệ trẻ (F2, F3, F4):** Tìm về cội nguồn, muốn biết ông bà mình là ai, quê quán ở đâu, đọc những lời dặn dò và nếp sống của thế hệ trước (nhu cầu: tìm người, xem quan hệ, đọc thư).
@@ -404,7 +404,7 @@ Khi có lệnh triển khai chính thức từ Owner, công việc thi công s�
 Bản Product Brief này đạt chuẩn nghiệm thu khi thỏa mãn toàn bộ các điều kiện:
 - [x] **Family Front Door:** Trang chủ được định nghĩa là Cửa vào của toàn bộ Dòng họ, không phải dashboard hay blog.
 - [x] **Trật tự nhận thức:** Chứng minh rõ chuỗi `SUBJECT` $\to$ `PUBLICATION` $\to$ `SYSTEM` $\to$ `PROJECT`.
-- [x] **Brand / Product Hierarchy:** Phân định rạch ròi giữa Chủ thể (*Giòng họ Trần Trọng Thu*) và Ấn phẩm (*CÂY GIA PHẢ*).
+- [x] **Brand / Product Hierarchy:** Phân định rạch ròi giữa Chủ thể (*Dòng họ Trần Trọng Thu*) và Nền tảng (*CÂY GIA PHẢ*).
 - [x] **Không lẫn lộn:** Không nhầm lẫn giữa Trang chủ CÂY GIA PHẢ và tạp chí MẠCH.
 - [x] **Không bịa đặt dữ liệu:** Mọi claim đều có SOT trong `genealogy.json` và `mach.json`; không lặp lại Thọ Vực/Bình Châu/Bình Triệu; không tạo archive hiện vật giả.
 - [x] **Bảo toàn năng lực 100%:** Giữ trọn vẹn toàn bộ 14 routes và các view chức năng hiện hữu.
