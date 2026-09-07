@@ -38,3 +38,11 @@ NAS không phải là hệ thống duy nhất bảo đảm availability của to
 - **NAS Failure / Mất điện / Mạng nhà rớt:** Vercel Frontend vẫn sống. Người dùng vẫn truy cập được trang chủ, đọc được UI, nhưng dữ liệu Động (Cây phả hệ chi tiết, Nội dung Mạch) sẽ không load được. Ứng dụng sẽ hiển thị trạng thái *"Kết nối đến Kho Lưu Trữ Dòng Họ đang gián đoạn"* một cách có chủ đích, thay vì sập toàn bộ (White screen).
 - **Vercel Failure:** Rất hiếm xảy ra do kiến trúc Global Edge. Nếu xảy ra, toàn bộ giao diện ngừng hoạt động.
 - **Database Corruption:** Hệ thống API sẽ tự động kích hoạt Maintenance Mode, trả HTTP 503 cho Frontend để ngăn lỗi lan truyền. Dữ liệu sẽ được phục hồi từ Daily Cloud Backup.
+
+---
+### VERTICAL SLICE V1 UPDATE
+- **MariaDB** là production database thật (hosted trên NAS).
+- **SQLite** không còn là production fallback (đã bị loại bỏ khỏi production path và git tracking).
+- **NAS** đóng vai trò là data origin (chứa MariaDB và NAS filesystem cho media binary).
+- **Git** chỉ quản lý source code + schema/migrations, không chứa production data hay secrets.
+- **Bitwarden** là nơi duy nhất quản lý credentials (SSH, MariaDB, v.v.).
