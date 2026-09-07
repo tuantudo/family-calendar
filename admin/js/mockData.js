@@ -14,7 +14,7 @@ export const state = {
         { id: 'i2', type: 'Kỷ niệm', title: 'Hồi ức ngày Tết', sender: 'Trần E', date: '2026-09-06', status: 'NEW', linkedPersonId: null, content: 'Tết xưa ông nội hay gói bánh chưng...' }
     ],
     images: [],
-    events: []
+    
 };
 
 // Simple local storage sync to persist across reloads during prototyping

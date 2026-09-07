@@ -151,6 +151,27 @@ app.delete('/api/edges', async (req, res) => {
 });
 
 
+
+app.get('/api/events', async (req, res) => {
+    try {
+        res.json(await allQuery("SELECT * FROM calendar_events ORDER BY dtstart DESC"));
+    } catch(e) {
+        res.status(500).json({error: e.message});
+    }
+});
+app.post('/api/events', async (req, res) => {
+    try {
+        const { uid, summary, dtstart, dtend, description, location, calendar_type, event_type, status } = req.body;
+        const query = useMariaDB ? 
+            "REPLACE INTO calendar_events (uid, summary, dtstart, dtend, description, location, calendar_type, event_type, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)" :
+            "INSERT OR REPLACE INTO calendar_events (uid, summary, dtstart, dtend, description, location, calendar_type, event_type, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        await runQuery(query, [uid, summary, dtstart, dtend, description, location, calendar_type || 'CAL_04_FAMILY_MILESTONES', event_type || 'milestone', status || 'PUBLISHED']);
+        res.json({ success: true });
+    } catch(e) {
+        res.status(500).json({error: e.message});
+    }
+});
+
 // ------------------- PUBLIC WEB ADAPTERS -------------------
 app.get('/api/genealogy.json', async (req, res) => {
     try {
@@ -291,7 +312,7 @@ app.get('/api/calendars/:filename', async (req, res) => {
     try {
         const { filename } = req.params;
         const calType = filename.replace('.ics', '');
-        const evRows = await allQuery("SELECT * FROM calendar_events WHERE calendar_type = ?", [calType]);
+        const evRows = await allQuery("SELECT * FROM calendar_events WHERE calendar_type = ? AND status = 'PUBLISHED'", [calType]);
         if (evRows.length === 0) return res.status(404).send('Not found');
         
         let ics = 'BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Gia Toc//Calendar//VI\n';

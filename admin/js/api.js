@@ -42,3 +42,14 @@ export async function removeEdge(source_id, target_id, edge_type) {
         body: JSON.stringify({ source_id, target_id, edge_type })
     }).then(r => r.json());
 }
+
+export async function getEvents() {
+    return fetch(`${API_BASE}/events`).then(r => r.json());
+}
+export async function saveEvent(event) {
+    return fetch(`${API_BASE}/events`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(event)
+    }).then(r => r.json());
+}
