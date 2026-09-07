@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gia Tộc Trần Trọng Thu | Admin Control Room</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Trần Trọng Thu</h2>
+                <div class="subtitle">CONTROL ROOM</div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <a href="#/" class="nav-item">Dashboard</a>
+                </div>
+                <div class="nav-section">
+                    <div class="section-title">HỘP THƯ</div>
+                    <a href="#/inbox" class="nav-item">Inbox <span class="badge" id="badge-inbox">0</span></a>
+                </div>
+                <div class="nav-section">
+                    <div class="section-title">KHO TRI THỨC</div>
+                    <a href="#/people" class="nav-item">Nhân sự (People)</a>
+                    <a href="#/stories" class="nav-item">Mạch (Stories)</a>
+                    <a href="#/archive" class="nav-item">Di sản (Archive)</a>
+                    <a href="#/events" class="nav-item">Sự kiện (Events)</a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">Vai trò: Ban Biên Tập</div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="main-view">
+            <!-- Content injected by JS routing -->
+        </main>
+    </div>
+
+    <!-- Typeahead Overlay (Global) -->
+    <div id="typeahead-overlay" class="typeahead-overlay hidden">
+        <div class="typeahead-backdrop" id="typeahead-backdrop"></div>
+        <div class="typeahead-container">
+            <div class="typeahead-header">
+                <h3 id="typeahead-title">Chọn đối tượng</h3>
+            </div>
+            <input type="text" id="typeahead-input" placeholder="Tìm tên nhân vật...">
+            <ul id="typeahead-results" class="typeahead-results"></ul>
+        </div>
+    </div>
+    
+    <!-- Public Preview Modal -->
+    <div id="preview-modal" class="modal-overlay hidden">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3>Public Preview</h3>
+                <button class="btn-close" id="btn-close-modal">Đóng</button>
+            </div>
+            <div class="modal-body" id="preview-content"></div>
+        </div>
+    </div>
+
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>
