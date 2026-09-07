@@ -1,91 +1,162 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const dbPath = path.join(__dirname, 'family_archive.db');
-const db = new sqlite3.Database(dbPath);
+const useMariaDB = process.env.DB_CLIENT === 'mysql';
+let db, runQuery, allQuery, getQuery;
 
-// Initialize DB schema
-db.serialize(() => {
-    db.run(`CREATE TABLE IF NOT EXISTS people (
-        id TEXT PRIMARY KEY,
-        name TEXT,
-        birthYear TEXT,
-        deathYear TEXT,
-        gender TEXT,
-        notes TEXT,
-        status TEXT
-    )`);
+async function initDB() {
+    if (useMariaDB) {
+        console.log("Using MariaDB connection...");
+        const mysql = require('mysql2/promise');
+        db = await mysql.createPool({
+            host: process.env.DB_HOST || '127.0.0.1',
+            port: process.env.DB_PORT || 3306,
+            user: process.env.DB_USER,
+            password: process.env.DB_PASSWORD,
+            database: process.env.DB_NAME || 'family_archive',
+            waitForConnections: true,
+            connectionLimit: 10,
+            queueLimit: 0
+        });
 
-    db.run(`CREATE TABLE IF NOT EXISTS stories (
-        id TEXT PRIMARY KEY,
-        title TEXT,
-        author TEXT,
-        content TEXT,
-        status TEXT,
-        updatedAt TEXT
-    )`);
+        runQuery = async (q, params) => {
+            const [result] = await db.execute(q, params);
+            return result;
+        };
+        allQuery = async (q, params) => {
+            const [rows] = await db.execute(q, params);
+            return rows;
+        };
+        getQuery = async (q, params) => {
+            const [rows] = await db.execute(q, params);
+            return rows[0];
+        };
 
-    db.run(`CREATE TABLE IF NOT EXISTS edges (
-        source_id TEXT,
-        target_id TEXT,
-        edge_type TEXT,
-        PRIMARY KEY (source_id, target_id, edge_type)
-    )`);
-});
+        // Create tables for MariaDB
+        await runQuery(`CREATE TABLE IF NOT EXISTS people (
+            id VARCHAR(255) PRIMARY KEY,
+            name VARCHAR(255),
+            birthYear VARCHAR(50),
+            deathYear VARCHAR(50),
+            gender VARCHAR(50),
+            notes TEXT,
+            status VARCHAR(50)
+        )`);
 
-// Helper for promise-based queries
-const all = (q, params = []) => new Promise((res, rej) => db.all(q, params, (err, rows) => err ? rej(err) : res(rows)));
-const get = (q, params = []) => new Promise((res, rej) => db.get(q, params, (err, row) => err ? rej(err) : res(row)));
-const run = (q, params = []) => new Promise((res, rej) => db.run(q, params, (err) => err ? rej(err) : res()));
+        await runQuery(`CREATE TABLE IF NOT EXISTS stories (
+            id VARCHAR(255) PRIMARY KEY,
+            title VARCHAR(255),
+            author VARCHAR(255),
+            content LONGTEXT,
+            status VARCHAR(50),
+            updatedAt VARCHAR(50)
+        )`);
+
+        await runQuery(`CREATE TABLE IF NOT EXISTS edges (
+            source_id VARCHAR(255),
+            target_id VARCHAR(255),
+            edge_type VARCHAR(50),
+            PRIMARY KEY (source_id, target_id, edge_type)
+        )`);
+
+        // Check and seed
+        const rows = await allQuery("SELECT COUNT(*) AS count FROM people");
+        if (rows[0].count === 0) {
+            console.log("Seeding MariaDB...");
+            await runQuery(`INSERT INTO people (id, name, birthYear, deathYear, gender, notes, status) VALUES 
+                ('p1', 'Trần Trọng Thu', '1915', '1995', 'Nam', 'Gốc tộc', 'PUBLISHED'),
+                ('p2', 'Trần Quốc Anh', '1942', '2010', 'Nam', 'Trưởng nam', 'PUBLISHED'),
+                ('p3', 'Trần Hoàng Nam', '1970', '', 'Nam', 'Cháu đích tôn', 'PUBLISHED')
+            `);
+            await runQuery(`INSERT INTO stories (id, title, author, content, status, updatedAt) VALUES 
+                ('s1', 'Ký ức về người thầy năm xưa', 'Quốc Anh', 'Cha tôi cả đời chỉ bận tâm đến sách vở...', 'PUBLISHED', '2026-09-01')
+            `);
+            await runQuery(`INSERT IGNORE INTO edges (source_id, target_id, edge_type) VALUES 
+                ('p2', 'p1', 'PARENT'),
+                ('p3', 'p2', 'PARENT'),
+                ('s1', 'p1', 'MENTION')
+            `);
+        }
+    } else {
+        console.log("Using local SQLite fallback...");
+        const sqlite3 = require('sqlite3').verbose();
+        const dbPath = path.join(__dirname, 'family_archive.db');
+        db = new sqlite3.Database(dbPath);
+
+        runQuery = (q, params = []) => new Promise((res, rej) => db.run(q, params, (err) => err ? rej(err) : res()));
+        allQuery = (q, params = []) => new Promise((res, rej) => db.all(q, params, (err, rows) => err ? rej(err) : res(rows)));
+        getQuery = (q, params = []) => new Promise((res, rej) => db.get(q, params, (err, row) => err ? rej(err) : res(row)));
+        
+        await runQuery(`CREATE TABLE IF NOT EXISTS people (
+            id TEXT PRIMARY KEY, name TEXT, birthYear TEXT, deathYear TEXT, gender TEXT, notes TEXT, status TEXT
+        )`);
+        await runQuery(`CREATE TABLE IF NOT EXISTS stories (
+            id TEXT PRIMARY KEY, title TEXT, author TEXT, content TEXT, status TEXT, updatedAt TEXT
+        )`);
+        await runQuery(`CREATE TABLE IF NOT EXISTS edges (
+            source_id TEXT, target_id TEXT, edge_type TEXT, PRIMARY KEY (source_id, target_id, edge_type)
+        )`);
+    }
+}
+
+initDB().catch(console.error);
 
 // ------------------- ADMIN CRUD -------------------
 app.get('/api/people', async (req, res) => {
-    res.json(await all("SELECT * FROM people"));
+    res.json(await allQuery("SELECT * FROM people"));
 });
 app.post('/api/people', async (req, res) => {
     const { id, name, birthYear, deathYear, gender, notes, status } = req.body;
-    await run("INSERT OR REPLACE INTO people VALUES (?, ?, ?, ?, ?, ?, ?)", [id, name, birthYear, deathYear, gender, notes, status]);
+    const query = useMariaDB ? 
+        "REPLACE INTO people (id, name, birthYear, deathYear, gender, notes, status) VALUES (?, ?, ?, ?, ?, ?, ?)" :
+        "INSERT OR REPLACE INTO people VALUES (?, ?, ?, ?, ?, ?, ?)";
+    await runQuery(query, [id, name, birthYear, deathYear, gender, notes, status]);
     res.json({ success: true });
 });
+
 app.get('/api/stories', async (req, res) => {
-    res.json(await all("SELECT * FROM stories"));
+    res.json(await allQuery("SELECT * FROM stories"));
 });
 app.post('/api/stories', async (req, res) => {
     const { id, title, author, content, status, updatedAt } = req.body;
-    await run("INSERT OR REPLACE INTO stories VALUES (?, ?, ?, ?, ?, ?)", [id, title, author, content, status, updatedAt]);
+    const query = useMariaDB ? 
+        "REPLACE INTO stories (id, title, author, content, status, updatedAt) VALUES (?, ?, ?, ?, ?, ?)" :
+        "INSERT OR REPLACE INTO stories VALUES (?, ?, ?, ?, ?, ?)";
+    await runQuery(query, [id, title, author, content, status, updatedAt]);
     res.json({ success: true });
 });
+
 app.get('/api/edges', async (req, res) => {
-    res.json(await all("SELECT * FROM edges"));
+    res.json(await allQuery("SELECT * FROM edges"));
 });
 app.post('/api/edges', async (req, res) => {
     const { source_id, target_id, edge_type } = req.body;
-    await run("INSERT OR IGNORE INTO edges VALUES (?, ?, ?)", [source_id, target_id, edge_type]);
+    const query = useMariaDB ? 
+        "INSERT IGNORE INTO edges (source_id, target_id, edge_type) VALUES (?, ?, ?)" :
+        "INSERT OR IGNORE INTO edges VALUES (?, ?, ?)";
+    await runQuery(query, [source_id, target_id, edge_type]);
     res.json({ success: true });
 });
 app.delete('/api/edges', async (req, res) => {
     const { source_id, target_id, edge_type } = req.body;
-    await run("DELETE FROM edges WHERE source_id = ? AND target_id = ? AND edge_type = ?", [source_id, target_id, edge_type]);
+    await runQuery("DELETE FROM edges WHERE source_id = ? AND target_id = ? AND edge_type = ?", [source_id, target_id, edge_type]);
     res.json({ success: true });
 });
 
 // ------------------- PUBLIC WEB ADAPTERS -------------------
 app.get('/api/genealogy.json', async (req, res) => {
-    const people = await all("SELECT * FROM people WHERE status = 'PUBLISHED'");
-    const edges = await all("SELECT * FROM edges");
+    const people = await allQuery("SELECT * FROM people WHERE status = 'PUBLISHED'");
+    const edges = await allQuery("SELECT * FROM edges");
     
     let publicPeople = {};
     let publicFamilies = {};
     
-    // Group families. A family is created for each SPOUSE edge or PARENT grouping.
-    // For simplicity in vertical slice, we map edges to a pseudo-family format.
-    let familyCounter = 1;
     people.forEach(p => {
         const spouses = edges.filter(e => (e.source_id === p.id || e.target_id === p.id) && e.edge_type === 'SPOUSE').map(e => e.source_id === p.id ? e.target_id : e.source_id);
         const children = edges.filter(e => e.source_id === p.id && e.edge_type === 'PARENT').map(e => e.target_id);
@@ -98,7 +169,7 @@ app.get('/api/genealogy.json', async (req, res) => {
             birth: { date: p.birthYear },
             death: { date: p.deathYear },
             parents: parents,
-            fams: [] // we'll populate if they have kids/spouse
+            fams: [] 
         };
         
         if (spouses.length > 0 || children.length > 0) {
@@ -122,8 +193,8 @@ app.get('/api/genealogy.json', async (req, res) => {
 });
 
 app.get('/api/mach.json', async (req, res) => {
-    const stories = await all("SELECT * FROM stories WHERE status = 'PUBLISHED'");
-    const edges = await all("SELECT * FROM edges WHERE edge_type = 'MENTION'");
+    const stories = await allQuery("SELECT * FROM stories WHERE status = 'PUBLISHED'");
+    const edges = await allQuery("SELECT * FROM edges WHERE edge_type = 'MENTION'");
     
     let publicStories = stories.map(s => {
         let linked = edges.filter(e => e.source_id === s.id).map(e => e.target_id);
