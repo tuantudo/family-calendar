@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .finally(() => {
         // 2. Fetch genealogy.json
-        fetch("data/genealogy.json")
+        fetch("http://localhost:3000/api/genealogy.json")
             .then(r => r.json())
             .then(data => {
                 appData = data;
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 renderMemories();
 
                 loadCalendarFeeds();
-                fetch("data/mach.json")
+                fetch("http://localhost:3000/api/mach.json")
                     .then(r => r.json())
                     .then(m => {
                         machData = m;

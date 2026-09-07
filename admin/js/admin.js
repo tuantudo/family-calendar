@@ -1,4 +1,4 @@
-import { state, saveState } from './mockData.js';
+import * as API from './api.js';
 
 const mainView = document.getElementById('main-view');
 const badgeInbox = document.getElementById('badge-inbox');
@@ -12,12 +12,14 @@ const previewModal = document.getElementById('preview-modal');
 const previewContent = document.getElementById('preview-content');
 
 let currentTypeaheadCallback = null;
+let allPeopleCache = []; // used for typeahead
 
 // Routing
 window.addEventListener('hashchange', router);
 window.addEventListener('DOMContentLoaded', init);
 
-function init() {
+async function init() {
+    allPeopleCache = await API.getPeople();
     updateBadge();
     router();
     
@@ -26,18 +28,16 @@ function init() {
     
     typeaheadInput.addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
-        const results = state.people.filter(p => p.name.toLowerCase().includes(term));
+        const results = allPeopleCache.filter(p => p.name.toLowerCase().includes(term));
         renderTypeaheadResults(results);
     });
 }
 
 function updateBadge() {
-    const newCount = state.inbox.filter(i => i.status === 'NEW').length;
-    badgeInbox.textContent = newCount;
-    badgeInbox.style.display = newCount > 0 ? 'inline-block' : 'none';
+    badgeInbox.style.display = 'none'; // mock inbox out of DB for now
 }
 
-function router() {
+async function router() {
     const hash = window.location.hash.slice(1) || '/';
     document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
     
@@ -46,37 +46,31 @@ function router() {
     if (activeNav) activeNav.classList.add('active');
 
     if (hash === '/') renderDashboard();
-    else if (hash === '/inbox') renderInboxList();
-    else if (hash.startsWith('/inbox/')) renderInboxDetail(hash.split('/')[2]);
     else if (hash === '/people') renderPeopleList();
     else if (hash.startsWith('/people/')) renderPersonEditor(hash.split('/')[2]);
     else if (hash === '/stories') renderStoriesList();
     else if (hash.startsWith('/stories/')) renderStoryEditor(hash.split('/')[2]);
-    else mainView.innerHTML = `<div class="view-header"><h1>Chưa có sẵn</h1></div><div class="view-content"><p>Route chưa được implement trong V1 Prototype.</p></div>`;
+    else mainView.innerHTML = `<div class="view-header"><h1>Chưa có sẵn</h1></div><div class="view-content"><p>Tính năng chưa tích hợp DB thật.</p></div>`;
 }
 
 // ---------------- DASHBOARD ----------------
-function renderDashboard() {
-    const draftStories = state.stories.filter(s => s.status === 'DRAFT').length;
-    const newInbox = state.inbox.filter(i => i.status === 'NEW').length;
+async function renderDashboard() {
+    const stories = await API.getStories();
+    const people = await API.getPeople();
+    const draftStories = stories.filter(s => s.status === 'DRAFT').length;
 
     mainView.innerHTML = `
         <div class="view-header"><h1>Dashboard</h1></div>
         <div class="view-content">
             <div class="grid">
-                <a href="#/inbox" class="card">
-                    <h3>Cần xử lý</h3>
-                    <div class="metric">${newInbox}</div>
-                    <div class="desc">Báo cáo & Đóng góp mới trong Hộp thư</div>
-                </a>
                 <a href="#/stories" class="card">
                     <h3>Bản nháp</h3>
                     <div class="metric">${draftStories}</div>
-                    <div class="desc">Mạch đang soạn thảo chờ duyệt</div>
+                    <div class="desc">Mạch đang soạn thảo</div>
                 </a>
                 <a href="#/people" class="card">
                     <h3>Hồ sơ</h3>
-                    <div class="metric">${state.people.length}</div>
+                    <div class="metric">${people.length}</div>
                     <div class="desc">Nhân sự trong phả hệ</div>
                 </a>
             </div>
@@ -84,99 +78,10 @@ function renderDashboard() {
     `;
 }
 
-// ---------------- INBOX ----------------
-function renderInboxList() {
-    const rows = state.inbox.map(item => `
-        <tr onclick="window.location.hash = '/inbox/${item.id}'">
-            <td><span class="status ${item.status.toLowerCase()}">${item.status}</span></td>
-            <td><strong>${item.type}</strong></td>
-            <td>${item.title}</td>
-            <td>${item.sender}</td>
-            <td>${item.date}</td>
-        </tr>
-    `).join('');
-
-    mainView.innerHTML = `
-        <div class="view-header"><h1>Hộp Thư Cộng Đồng</h1></div>
-        <div class="view-content">
-            <table class="data-table">
-                <thead><tr><th>Trạng thái</th><th>Loại</th><th>Tiêu đề</th><th>Người gửi</th><th>Ngày</th></tr></thead>
-                <tbody>${rows}</tbody>
-            </table>
-        </div>
-    `;
-}
-
-function renderInboxDetail(id) {
-    const item = state.inbox.find(i => i.id === id);
-    if (!item) return;
-
-    const personContext = item.linkedPersonId ? state.people.find(p => p.id === item.linkedPersonId) : null;
-    
-    let contextHtml = '';
-    if (personContext) {
-        contextHtml = `
-            <div class="edge-panel">
-                <div class="edge-header">Hồ sơ liên quan</div>
-                <div class="edge-content">
-                    <strong>${personContext.name} (${personContext.birthYear})</strong>
-                    <br><br>
-                    <button class="btn" onclick="window.open('#/people/${personContext.id}', '_blank')">Mở hồ sơ kiểm tra &raquo;</button>
-                </div>
-            </div>
-        `;
-    }
-
-    window.resolveInbox = () => {
-        item.status = 'RESOLVED';
-        saveState();
-        updateBadge();
-        window.location.hash = '/inbox';
-    };
-
-    window.convertToStory = () => {
-        const newId = 's' + Date.now();
-        state.stories.push({
-            id: newId, title: item.title, author: item.sender, status: 'DRAFT', updatedAt: new Date().toISOString().split('T')[0], content: item.content, linkedPeople: [], images: []
-        });
-        item.status = 'RESOLVED';
-        saveState();
-        updateBadge();
-        window.location.hash = '/stories/' + newId;
-    };
-
-    mainView.innerHTML = `
-        <div class="view-header">
-            <h1>Chi tiết Hộp thư</h1>
-            <button class="btn" onclick="window.history.back()">Quay lại</button>
-        </div>
-        <div class="view-content">
-            <div class="inbox-split">
-                <div class="inbox-item">
-                    <div class="inbox-meta">
-                        <h2>${item.title}</h2>
-                        <div class="info"><strong>Loại:</strong> ${item.type}</div>
-                        <div class="info"><strong>Người gửi:</strong> ${item.sender} (${item.date})</div>
-                        <div class="info"><strong>Trạng thái:</strong> <span class="status ${item.status.toLowerCase()}">${item.status}</span></div>
-                    </div>
-                    <div class="inbox-content">${item.content}</div>
-                    
-                    <div class="inbox-actions">
-                        ${item.status === 'NEW' ? `<button class="btn btn-primary" onclick="resolveInbox()">Đánh dấu Đã xử lý (Resolve)</button>` : ''}
-                        ${item.status === 'NEW' && item.type === 'Kỷ niệm' ? `<button class="btn" onclick="convertToStory()">Chuyển thành Bản nháp Mạch</button>` : ''}
-                    </div>
-                </div>
-                <div class="inbox-item" style="background: transparent; border: none; padding: 0;">
-                    ${contextHtml}
-                </div>
-            </div>
-        </div>
-    `;
-}
-
 // ---------------- PEOPLE ----------------
-function renderPeopleList() {
-    const rows = state.people.map(p => `
+async function renderPeopleList() {
+    const people = await API.getPeople();
+    const rows = people.map(p => `
         <tr onclick="window.location.hash = '/people/${p.id}'">
             <td>${p.name}</td>
             <td>${p.birthYear || '?'} - ${p.deathYear || (p.gender === 'Nam' ? 'Hiện tại' : 'Hiện tại')}</td>
@@ -199,55 +104,67 @@ function renderPeopleList() {
     `;
 }
 
-function renderPersonEditor(id) {
-    let p = state.people.find(x => x.id === id);
+async function renderPersonEditor(id) {
+    let p;
     let isNew = false;
-    if (!p) {
+    if (id === 'new') {
         isNew = true;
-        p = { id: 'p' + Date.now(), name: '', birthYear: '', deathYear: '', gender: 'Nam', status: 'DRAFT', notes: '', parents: [], spouses: [], children: [] };
+        p = { id: 'p' + Date.now(), name: '', birthYear: '', deathYear: '', gender: 'Nam', status: 'DRAFT', notes: '' };
+    } else {
+        const people = await API.getPeople();
+        p = people.find(x => x.id === id);
     }
+    
+    const edges = await API.getEdges();
+    const parents = edges.filter(e => e.target_id === p.id && e.edge_type === 'PARENT').map(e => e.source_id);
+    const children = edges.filter(e => e.source_id === p.id && e.edge_type === 'PARENT').map(e => e.target_id);
+    const spouses = edges.filter(e => (e.source_id === p.id || e.target_id === p.id) && e.edge_type === 'SPOUSE')
+                        .map(e => e.source_id === p.id ? e.target_id : e.source_id);
 
-    window.savePerson = () => {
+    window.savePerson = async () => {
         p.name = document.getElementById('p-name').value;
         p.birthYear = document.getElementById('p-birth').value;
         p.deathYear = document.getElementById('p-death').value;
         p.gender = document.getElementById('p-gender').value;
         p.notes = document.getElementById('p-notes').value;
-        if (isNew) state.people.push(p);
-        saveState();
-        renderPersonEditor(p.id); // reload
+        await API.savePerson(p);
+        allPeopleCache = await API.getPeople(); // update cache
+        renderPersonEditor(p.id); 
     };
 
-    window.publishPerson = () => {
+    window.publishPerson = async () => {
         p.status = 'PUBLISHED';
-        window.savePerson();
+        await window.savePerson();
     };
 
-    window.removeEdge = (type, targetId) => {
-        p[type] = p[type].filter(x => x !== targetId);
-        saveState();
+    window.removeEdge = async (type, targetId) => {
+        if (type === 'parents') await API.removeEdge(targetId, p.id, 'PARENT');
+        if (type === 'children') await API.removeEdge(p.id, targetId, 'PARENT');
+        if (type === 'spouses') {
+            await API.removeEdge(p.id, targetId, 'SPOUSE');
+            await API.removeEdge(targetId, p.id, 'SPOUSE');
+        }
         renderPersonEditor(p.id);
     };
 
     window.openTypeahead = (type, title) => {
         typeaheadTitle.textContent = title;
         typeaheadInput.value = '';
-        currentTypeaheadCallback = (selectedId) => {
-            if (!p[type].includes(selectedId)) {
-                p[type].push(selectedId);
-                saveState();
-                renderPersonEditor(p.id);
-            }
+        currentTypeaheadCallback = async (selectedId) => {
+            if (type === 'parents') await API.addEdge(selectedId, p.id, 'PARENT');
+            if (type === 'children') await API.addEdge(p.id, selectedId, 'PARENT');
+            if (type === 'spouses') await API.addEdge(p.id, selectedId, 'SPOUSE'); // Only 1 way needed if query checks both, but we can do it
+            renderPersonEditor(p.id);
         };
-        renderTypeaheadResults(state.people);
+        renderTypeaheadResults(allPeopleCache);
         typeaheadOverlay.classList.remove('hidden');
         typeaheadInput.focus();
     };
 
-    const renderEdgeChips = (type) => {
-        if (!p[type] || p[type].length === 0) return `<span class="empty-text">Chưa có liên kết</span>`;
-        return p[type].map(targetId => {
-            const target = state.people.find(x => x.id === targetId);
+    const renderEdgeChips = (arr, type) => {
+        if (!arr || arr.length === 0) return `<span class="empty-text">Chưa có liên kết</span>`;
+        return arr.map(targetId => {
+            const target = allPeopleCache.find(x => x.id === targetId);
             return `<div class="edge-chip">${target ? target.name : 'Unknown'} <span class="unlink" onclick="removeEdge('${type}', '${targetId}')">×</span></div>`;
         }).join('');
     };
@@ -293,18 +210,20 @@ function renderPersonEditor(id) {
                 
                 <!-- Right: Relational Graph Edges -->
                 <div style="flex: 1;">
+                    ${isNew ? '<p>Hãy lưu bản nháp trước khi thêm quan hệ gia đình.</p>' : `
                     <div class="edge-panel">
                         <div class="edge-header">Cha Mẹ <button class="btn-add-edge" onclick="openTypeahead('parents', 'Chọn Cha/Mẹ')">+ Nối</button></div>
-                        <div class="edge-content">${renderEdgeChips('parents')}</div>
+                        <div class="edge-content">${renderEdgeChips(parents, 'parents')}</div>
                     </div>
                     <div class="edge-panel">
                         <div class="edge-header">Vợ / Chồng <button class="btn-add-edge" onclick="openTypeahead('spouses', 'Chọn Vợ/Chồng')">+ Nối</button></div>
-                        <div class="edge-content">${renderEdgeChips('spouses')}</div>
+                        <div class="edge-content">${renderEdgeChips(spouses, 'spouses')}</div>
                     </div>
                     <div class="edge-panel">
                         <div class="edge-header">Con cái <button class="btn-add-edge" onclick="openTypeahead('children', 'Chọn Con cái')">+ Nối</button></div>
-                        <div class="edge-content">${renderEdgeChips('children')}</div>
+                        <div class="edge-content">${renderEdgeChips(children, 'children')}</div>
                     </div>
+                    `}
                 </div>
             </div>
         </div>
@@ -312,8 +231,9 @@ function renderPersonEditor(id) {
 }
 
 // ---------------- STORIES ----------------
-function renderStoriesList() {
-    const rows = state.stories.map(s => `
+async function renderStoriesList() {
+    const stories = await API.getStories();
+    const rows = stories.map(s => `
         <tr onclick="window.location.hash = '/stories/${s.id}'">
             <td><strong>${s.title}</strong></td>
             <td>${s.author}</td>
@@ -336,27 +256,32 @@ function renderStoriesList() {
     `;
 }
 
-function renderStoryEditor(id) {
-    let s = state.stories.find(x => x.id === id);
+async function renderStoryEditor(id) {
+    let s;
     let isNew = false;
-    if (!s) {
+    if (id === 'new') {
         isNew = true;
-        s = { id: 's' + Date.now(), title: '', author: 'Ban Biên Tập', status: 'DRAFT', updatedAt: new Date().toISOString().split('T')[0], content: '', linkedPeople: [], images: [] };
+        s = { id: 's' + Date.now(), title: '', author: 'Ban Biên Tập', status: 'DRAFT', updatedAt: new Date().toISOString().split('T')[0], content: '' };
+    } else {
+        const stories = await API.getStories();
+        s = stories.find(x => x.id === id);
     }
+    
+    const edges = await API.getEdges();
+    const linkedPeople = edges.filter(e => e.source_id === s.id && e.edge_type === 'MENTION').map(e => e.target_id);
 
-    window.saveStory = () => {
+    window.saveStory = async () => {
         s.title = document.getElementById('s-title').value;
         s.author = document.getElementById('s-author').value;
         s.content = document.getElementById('s-content').value;
         s.updatedAt = new Date().toISOString().split('T')[0];
-        if (isNew) state.stories.push(s);
-        saveState();
+        await API.saveStory(s);
         renderStoryEditor(s.id); 
     };
 
-    window.publishStory = () => {
+    window.publishStory = async () => {
         s.status = 'PUBLISHED';
-        window.saveStory();
+        await window.saveStory();
     };
 
     window.previewStory = () => {
@@ -372,31 +297,29 @@ function renderStoryEditor(id) {
         previewModal.classList.remove('hidden');
     };
 
-    window.removeStoryEdge = (targetId) => {
-        s.linkedPeople = s.linkedPeople.filter(x => x !== targetId);
-        saveState();
+    window.removeStoryEdge = async (targetId) => {
+        await API.removeEdge(s.id, targetId, 'MENTION');
         renderStoryEditor(s.id);
     };
 
     window.openStoryTypeahead = () => {
         typeaheadTitle.textContent = 'Gắn nhân vật vào bài viết';
         typeaheadInput.value = '';
-        currentTypeaheadCallback = (selectedId) => {
-            if (!s.linkedPeople.includes(selectedId)) {
-                s.linkedPeople.push(selectedId);
-                saveState();
+        currentTypeaheadCallback = async (selectedId) => {
+            if (!linkedPeople.includes(selectedId)) {
+                await API.addEdge(s.id, selectedId, 'MENTION');
                 renderStoryEditor(s.id);
             }
         };
-        renderTypeaheadResults(state.people);
+        renderTypeaheadResults(allPeopleCache);
         typeaheadOverlay.classList.remove('hidden');
         typeaheadInput.focus();
     };
 
     const renderEdgeChips = () => {
-        if (!s.linkedPeople || s.linkedPeople.length === 0) return `<span class="empty-text">Chưa có liên kết</span>`;
-        return s.linkedPeople.map(targetId => {
-            const target = state.people.find(x => x.id === targetId);
+        if (!linkedPeople || linkedPeople.length === 0) return `<span class="empty-text">Chưa có liên kết</span>`;
+        return linkedPeople.map(targetId => {
+            const target = allPeopleCache.find(x => x.id === targetId);
             return `<div class="edge-chip">${target ? target.name : 'Unknown'} <span class="unlink" onclick="removeStoryEdge('${targetId}')">×</span></div>`;
         }).join('');
     };
@@ -426,16 +349,12 @@ function renderStoryEditor(id) {
                 
                 <!-- Right: Metadata & Links -->
                 <div style="flex: 1;">
+                    ${isNew ? '<p>Lưu nháp trước khi tag nhân vật.</p>' : `
                     <div class="edge-panel">
                         <div class="edge-header">Nhân vật trong bài <button class="btn-add-edge" onclick="openStoryTypeahead()">+ Tag</button></div>
                         <div class="edge-content">${renderEdgeChips()}</div>
                     </div>
-                    <div class="edge-panel">
-                        <div class="edge-header">Hình ảnh đính kèm</div>
-                        <div class="edge-content">
-                            <span class="empty-text">Chưa có ảnh (Kéo thả vào đây)</span>
-                        </div>
-                    </div>
+                    `}
                 </div>
             </div>
         </div>
