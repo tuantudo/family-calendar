@@ -24,3 +24,5 @@ local_secrets.*
 *.gedcom
 .vercel
 .env*
+server/family_archive.db
+node_modules/

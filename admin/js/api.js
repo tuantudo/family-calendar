@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:3000/api';
+const API_BASE = 'https://api.giatoctrantrongthu.com/api';
 
 export async function getPeople() {
     return fetch(`${API_BASE}/people`).then(r => r.json());
