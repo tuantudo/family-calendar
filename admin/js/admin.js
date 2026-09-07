@@ -50,8 +50,9 @@ async function router() {
     else if (hash.startsWith('/people/')) renderPersonEditor(hash.split('/')[2]);
     else if (hash === '/stories') renderStoriesList();
     else if (hash.startsWith('/stories/')) renderStoryEditor(hash.split('/')[2]);
-    else if (hash === '/events') renderEventsList();
+    else if (hash === '/events' || hash === '/eventsgiat') renderEventsList();
     else if (hash.startsWith('/events/')) renderEventEditor(hash.split('/')[2]);
+    else if (hash.startsWith('/eventsgiat/')) renderEventEditor(hash.split('/')[2]);
     else mainView.innerHTML = `<div class="view-header"><h1>Chưa có sẵn</h1></div><div class="view-content"><p>Tính năng chưa tích hợp DB thật.</p></div>`;
 }
 
