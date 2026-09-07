@@ -116,3 +116,20 @@ Dấu ấn của AI (Google AI Studio) thể hiện rất rõ qua:
 
 ---
 **END OF REPORT**
+
+## 12. REUSABLE ENGINEERING LESSONS
+
+### KEEP IN MIND
+- Sự khác biệt giữa tốc độ Prototype (Prototype Velocity) và tính bền vững Kỹ thuật (Engineering Robustness). AI Studio có thể sinh UI và dummy data tĩnh rất nhanh, nhưng thiếu architecture để làm một hệ thống thực sự.
+- Việc sử dụng AI-assisted development không đồng nghĩa với việc có một kiến trúc tốt. Cần có định hướng Kỹ sư Hệ thống (Systems Engineering) đi trước.
+- UI/UX pattern về việc hiển thị toast/alert để mô phỏng các thông báo quan trọng (ví dụ: Thông báo sự kiện/ngày giỗ) là một flow thân thiện với người dùng, có thể tham khảo cho Admin Web khi xử lý thông báo thành công.
+
+### DO NOT COPY
+- Kiến trúc tĩnh (Static/Client-side only) kết hợp với `localStorage`.
+- Đóng gói Static Bundle vào Google Cloud Run (sai mục đích sử dụng container, gây tốn kém).
+- Data model quá đơn giản và cứng nhắc (Flat objects, `parentId` và `spouseId` dạng chuỗi 1-1). Không copy giới hạn quan hệ này.
+- Trộn lẫn quyền quản trị (Thêm/Sửa người) với giao diện đọc của Public Web.
+
+### FUTURE REFERENCE
+- Mẫu UI Card hiển thị thông tin tóm tắt và hành vi progressive disclosure khi mở chi tiết thành viên.
+- Nếu dự án có nhu cầu phát triển ứng dụng di động tĩnh hoàn toàn không cần server (Offline-first PWA mini), có thể tái áp dụng một phần kiến trúc client-side tĩnh.
