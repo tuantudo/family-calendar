@@ -149,72 +149,149 @@ app.delete('/api/edges', async (req, res) => {
     res.json({ success: true });
 });
 
+
 // ------------------- PUBLIC WEB ADAPTERS -------------------
 app.get('/api/genealogy.json', async (req, res) => {
-    const people = await allQuery("SELECT * FROM people WHERE status = 'PUBLISHED'");
-    const edges = await allQuery("SELECT * FROM edges");
-    
-    let publicPeople = {};
-    let publicFamilies = {};
-    
-    people.forEach(p => {
-        const spouses = edges.filter(e => (e.source_id === p.id || e.target_id === p.id) && e.edge_type === 'SPOUSE').map(e => e.source_id === p.id ? e.target_id : e.source_id);
-        const children = edges.filter(e => e.source_id === p.id && e.edge_type === 'PARENT').map(e => e.target_id);
-        const parents = edges.filter(e => e.target_id === p.id && e.edge_type === 'PARENT').map(e => e.source_id);
-        
-        publicPeople[p.id] = {
-            id: p.id,
-            name: p.name,
-            sex: p.gender === 'Nam' ? 'M' : 'F',
-            birth: { date: p.birthYear },
-            death: { date: p.deathYear },
-            parents: parents,
-            fams: [] 
-        };
-        
-        if (spouses.length > 0 || children.length > 0) {
-            let famId = '@F' + p.id + '@';
-            publicFamilies[famId] = {
-                id: famId,
-                husb: p.gender === 'Nam' ? p.id : (spouses.length > 0 ? spouses[0] : null),
-                wife: p.gender === 'Nữ' ? p.id : (spouses.length > 0 ? spouses[0] : null),
-                children: children
-            };
-            publicPeople[p.id].fams.push(famId);
-        }
-    });
+    try {
+        const peopleRows = await allQuery("SELECT * FROM people WHERE status = 'PUBLISHED'");
+        const familyRows = await allQuery("SELECT * FROM families");
+        const memoryRows = await allQuery("SELECT * FROM memories");
+        const timelineRows = await allQuery("SELECT * FROM timeline");
 
-    res.json({
-        rootAnchor: people.length > 0 ? people[0].id : '',
-        people: publicPeople,
-        families: publicFamilies,
-        stats: { individuals: people.length, families: Object.keys(publicFamilies).length, memories: 0 }
-    });
+        let publicPeople = {};
+        for (let r of peopleRows) {
+            let p = r.payload ? (typeof r.payload === 'string' ? JSON.parse(r.payload) : r.payload) : {};
+            p.id = r.id;
+            p.name = r.name;
+            publicPeople[r.id] = p;
+        }
+
+        let publicFamilies = {};
+        for (let r of familyRows) {
+            let f = r.payload ? (typeof r.payload === 'string' ? JSON.parse(r.payload) : r.payload) : {};
+            f.id = r.id;
+            publicFamilies[r.id] = f;
+        }
+
+        let publicMemories = memoryRows.map(r => {
+            let m = r.payload ? (typeof r.payload === 'string' ? JSON.parse(r.payload) : r.payload) : {};
+            m.id = r.id;
+            return m;
+        });
+
+        let publicTimeline = timelineRows.map(r => ({
+            id: r.id,
+            date: r.date,
+            title: r.title,
+            description: r.description,
+            icon: r.icon
+        }));
+
+        res.json({
+            rootAnchor: peopleRows.length > 0 ? (publicPeople['@I1@'] ? '@I1@' : peopleRows[0].id) : '',
+            people: publicPeople,
+            families: publicFamilies,
+            memories: publicMemories,
+            timeline: publicTimeline,
+            stats: { individuals: peopleRows.length, families: familyRows.length, memories: memoryRows.length }
+        });
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
 });
 
 app.get('/api/mach.json', async (req, res) => {
-    const stories = await allQuery("SELECT * FROM stories WHERE status = 'PUBLISHED'");
-    const edges = await allQuery("SELECT * FROM edges WHERE edge_type = 'MENTION'");
-    
-    let publicStories = stories.map(s => {
-        let linked = edges.filter(e => e.source_id === s.id).map(e => e.target_id);
-        return {
-            id: s.id,
-            slug: s.id,
-            title: s.title,
-            authorId: "tuan", 
-            publishedAt: s.updatedAt,
-            excerpt: s.content.substring(0, 100) + '...',
-            content: `<p>${s.content.replace(/\n/g, '<br>')}</p>`,
-            linkedPeople: linked
-        };
-    });
+    try {
+        const storyRows = await allQuery("SELECT * FROM stories WHERE status = 'PUBLISHED'");
+        const authorRows = await allQuery("SELECT * FROM authors");
+        const seriesRows = await allQuery("SELECT * FROM series");
 
-    res.json({
-        authors: { "tuan": { id: "tuan", name: "Tác giả Gia đình" } },
-        stories: publicStories
-    });
+        let publicAuthors = {};
+        for (let r of authorRows) {
+            let a = r.payload ? (typeof r.payload === 'string' ? JSON.parse(r.payload) : r.payload) : {};
+            a.id = r.id;
+            publicAuthors[r.id] = a;
+        }
+
+        let publicSeries = {};
+        for (let r of seriesRows) {
+            let s = r.payload ? (typeof r.payload === 'string' ? JSON.parse(r.payload) : r.payload) : {};
+            s.id = r.id;
+            publicSeries[r.id] = s;
+        }
+
+        let publicStories = storyRows.map(r => {
+            let s = r.payload ? (typeof r.payload === 'string' ? JSON.parse(r.payload) : r.payload) : {};
+            s.id = r.id;
+            s.slug = r.id;
+            if (s.linkedPeople && typeof s.linkedPeople === 'string') s.linkedPeople = JSON.parse(s.linkedPeople);
+            return s;
+        });
+
+        res.json({
+            authors: publicAuthors,
+            series: publicSeries,
+            stories: publicStories
+        });
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
+
+app.get('/api/media.json', async (req, res) => {
+    try {
+        const mediaRows = await allQuery("SELECT * FROM media");
+        let publicMedia = {};
+        for (let r of mediaRows) {
+            let m = r.payload ? (typeof r.payload === 'string' ? JSON.parse(r.payload) : r.payload) : {};
+            m.id = r.id;
+            publicMedia[r.id] = m;
+        }
+        res.json(publicMedia);
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
+
+app.get('/api/person_media.json', async (req, res) => {
+    try {
+        const pmRows = await allQuery("SELECT * FROM person_media");
+        let publicPM = pmRows.map(r => ({
+            relationId: r.relation_id,
+            personId: r.person_id,
+            assetId: r.asset_id,
+            role: r.role,
+            isPrimary: r.is_primary === 1
+        }));
+        res.json(publicPM);
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
+
+app.get('/api/calendars/:filename', async (req, res) => {
+    try {
+        const { filename } = req.params;
+        const calType = filename.replace('.ics', '');
+        const evRows = await allQuery("SELECT * FROM calendar_events WHERE calendar_type = ?", [calType]);
+        if (evRows.length === 0) return res.status(404).send('Not found');
+        
+        let ics = 'BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Gia Toc//Calendar//VI\n';
+        for (let r of evRows) {
+            ics += 'BEGIN:VEVENT\n';
+            ics += 'UID:' + r.uid + '\n';
+            ics += 'SUMMARY:' + r.summary + '\n';
+            ics += 'DTSTART:' + r.dtstart + '\n';
+            if (r.description) ics += 'DESCRIPTION:' + r.description.replace(/\n/g, '\\n') + '\n';
+            ics += 'END:VEVENT\n';
+        }
+        ics += 'END:VCALENDAR';
+        res.set('Content-Type', 'text/calendar');
+        res.send(ics);
+    } catch (e) {
+        res.status(500).send(e.message);
+    }
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`API Server running on port ${port}`));
+app.listen(port, '127.0.0.1', () => console.log(`API Server running on port ${port}`));

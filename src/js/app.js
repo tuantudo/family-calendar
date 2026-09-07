@@ -45,18 +45,18 @@ let calViewMode = 'month'; // 'month' | 'agenda'
 let calLayers = { birthdays: true, patrons: true, memorials: true, milestones: true };
 
 const CAL_FEEDS = [
-    { key: "birthdays", file: "calendars/CAL_01_BIRTHDAYS.ics", class: "birth", icon: "", label: "Sinh nhật", countEl: "cnt_birth" },
-    { key: "patrons", file: "calendars/CAL_02_PATRON_FEASTS.ics", class: "patron", icon: "", label: "Bổn mạng", countEl: "cnt_patron" },
-    { key: "memorials", file: "calendars/CAL_03_MEMORIALS.ics", class: "mem", icon: "", label: "Ngày giỗ", countEl: "cnt_mem" },
-    { key: "milestones", file: "calendars/CAL_04_FAMILY_MILESTONES.ics", class: "event", icon: "", label: "Sự kiện", countEl: "cnt_event" }
+    { key: "birthdays", file: "https://api.giatoctrantrongthu.com/api/calendars/CAL_01_BIRTHDAYS.ics", class: "birth", icon: "", label: "Sinh nhật", countEl: "cnt_birth" },
+    { key: "patrons", file: "https://api.giatoctrantrongthu.com/api/calendars/CAL_02_PATRON_FEASTS.ics", class: "patron", icon: "", label: "Bổn mạng", countEl: "cnt_patron" },
+    { key: "memorials", file: "https://api.giatoctrantrongthu.com/api/calendars/CAL_03_MEMORIALS.ics", class: "mem", icon: "", label: "Ngày giỗ", countEl: "cnt_mem" },
+    { key: "milestones", file: "https://api.giatoctrantrongthu.com/api/calendars/CAL_04_FAMILY_MILESTONES.ics", class: "event", icon: "", label: "Sự kiện", countEl: "cnt_event" }
 ];
 
 // --- INITIALIZATION ---
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Fetch Media Management Layer (media.json & person_media.json) in parallel
     Promise.all([
-        fetch("data/media.json").then(r => r.ok ? r.json() : {}).catch(() => ({})),
-        fetch("data/person_media.json").then(r => r.ok ? r.json() : []).catch(() => ([]))
+        fetch("https://api.giatoctrantrongthu.com/api/media.json").then(r => r.ok ? r.json() : {}).catch(() => ({})),
+        fetch("https://api.giatoctrantrongthu.com/api/person_media.json").then(r => r.ok ? r.json() : []).catch(() => ([]))
     ])
     .then(([mediaAssets, personMediaList]) => {
         mediaDb.assets = mediaAssets || {};
