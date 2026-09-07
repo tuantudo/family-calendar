@@ -6,6 +6,7 @@ const path = require('path');
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use('/assets/images', express.static(path.join(__dirname, 'assets/images')));
 
 const useMariaDB = process.env.DB_CLIENT === 'mysql';
 let db, runQuery, allQuery, getQuery;
@@ -175,6 +176,8 @@ app.get('/api/genealogy.json', async (req, res) => {
 
         let publicMemories = memoryRows.map(r => {
             let m = r.payload ? (typeof r.payload === 'string' ? JSON.parse(r.payload) : r.payload) : {};
+            if (m.file && !m.file.startsWith('http')) m.file = 'https://api.giatoctrantrongthu.com/' + m.file;
+            if (m.path && !m.path.startsWith('http')) m.path = 'https://api.giatoctrantrongthu.com/' + m.path;
             m.id = r.id;
             return m;
         });
@@ -216,12 +219,24 @@ app.get('/api/mach.json', async (req, res) => {
         let publicSeries = {};
         for (let r of seriesRows) {
             let s = r.payload ? (typeof r.payload === 'string' ? JSON.parse(r.payload) : r.payload) : {};
+            if (s.coverImage && !s.coverImage.startsWith('http')) s.coverImage = 'https://api.giatoctrantrongthu.com/' + s.coverImage;
+            if (s.src && !s.src.startsWith('http')) s.src = 'https://api.giatoctrantrongthu.com/' + s.src;
+            if (s.thumb && !s.thumb.startsWith('http')) s.thumb = 'https://api.giatoctrantrongthu.com/' + s.thumb;
+            if (s.medium && !s.medium.startsWith('http')) s.medium = 'https://api.giatoctrantrongthu.com/' + s.medium;
+            if (s.large && !s.large.startsWith('http')) s.large = 'https://api.giatoctrantrongthu.com/' + s.large;
+            if (s.content) s.content = s.content.replace(/assets\/images\//g, 'https://api.giatoctrantrongthu.com/assets/images/');
             s.id = r.id;
             publicSeries[r.id] = s;
         }
 
         let publicStories = storyRows.map(r => {
             let s = r.payload ? (typeof r.payload === 'string' ? JSON.parse(r.payload) : r.payload) : {};
+            if (s.coverImage && !s.coverImage.startsWith('http')) s.coverImage = 'https://api.giatoctrantrongthu.com/' + s.coverImage;
+            if (s.src && !s.src.startsWith('http')) s.src = 'https://api.giatoctrantrongthu.com/' + s.src;
+            if (s.thumb && !s.thumb.startsWith('http')) s.thumb = 'https://api.giatoctrantrongthu.com/' + s.thumb;
+            if (s.medium && !s.medium.startsWith('http')) s.medium = 'https://api.giatoctrantrongthu.com/' + s.medium;
+            if (s.large && !s.large.startsWith('http')) s.large = 'https://api.giatoctrantrongthu.com/' + s.large;
+            if (s.content) s.content = s.content.replace(/assets\/images\//g, 'https://api.giatoctrantrongthu.com/assets/images/');
             s.id = r.id;
             s.slug = r.id;
             if (s.linkedPeople && typeof s.linkedPeople === 'string') s.linkedPeople = JSON.parse(s.linkedPeople);
@@ -244,6 +259,8 @@ app.get('/api/media.json', async (req, res) => {
         let publicMedia = {};
         for (let r of mediaRows) {
             let m = r.payload ? (typeof r.payload === 'string' ? JSON.parse(r.payload) : r.payload) : {};
+            if (m.file && !m.file.startsWith('http')) m.file = 'https://api.giatoctrantrongthu.com/' + m.file;
+            if (m.path && !m.path.startsWith('http')) m.path = 'https://api.giatoctrantrongthu.com/' + m.path;
             m.id = r.id;
             publicMedia[r.id] = m;
         }
@@ -261,7 +278,8 @@ app.get('/api/person_media.json', async (req, res) => {
             personId: r.person_id,
             assetId: r.asset_id,
             role: r.role,
-            isPrimary: r.is_primary === 1
+            isPrimary: r.is_primary === 1,
+            status: "MATCHED"
         }));
         res.json(publicPM);
     } catch (e) {
