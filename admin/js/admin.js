@@ -387,3 +387,205 @@ function closeTypeahead() {
 function closePreview() {
     previewModal.classList.add('hidden');
 }
+
+// ---------------- EVENTS ----------------
+async function renderEventsList() {
+    const events = await API.getEvents();
+    
+    window.createNewEvent = async () => {
+        const uid = 'evt_' + Date.now();
+        await API.saveEvent({
+            uid,
+            summary: 'Sự kiện mới',
+            dtstart: '',
+            dtend: '',
+            description: '',
+            location: '',
+            calendar_type: 'CAL_04_FAMILY_MILESTONES',
+            event_type: 'milestone',
+            status: 'DRAFT'
+        });
+        window.location.hash = '#/events/' + uid;
+    };
+
+    mainView.innerHTML = `
+        <div class="view-header">
+            <h1>Quản Lý Sự Kiện</h1>
+            <button class="btn btn-primary" onclick="createNewEvent()">+ Sự Kiện Mới</button>
+        </div>
+        <div class="view-content">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Tên sự kiện</th>
+                        <th>Ngày bắt đầu</th>
+                        <th>Loại lịch</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${events.map(e => `
+                        <tr onclick="window.location.hash='#/events/${e.uid}'">
+                            <td><strong>${e.summary || 'Không tên'}</strong></td>
+                            <td>${e.dtstart || 'N/A'}</td>
+                            <td><span class="badge ${e.calendar_type}">${e.calendar_type}</span></td>
+                            <td><span class="status ${e.status ? e.status.toLowerCase() : 'draft'}">${e.status || 'DRAFT'}</span></td>
+                        </tr>
+                    `).join('')}
+                    ${events.length === 0 ? '<tr><td colspan="4" class="empty-text">Chưa có sự kiện nào.</td></tr>' : ''}
+                </tbody>
+            </table>
+        </div>
+    `;
+}
+
+async function renderEventEditor(uid) {
+    const events = await API.getEvents();
+    const e = events.find(x => x.uid === uid);
+    if (!e) {
+        mainView.innerHTML = `<div class="view-content">Không tìm thấy sự kiện.</div>`;
+        return;
+    }
+
+    const isNew = e.status === 'DRAFT' && e.summary === 'Sự kiện mới';
+    
+    // Graph links for INVOLVES edge
+    const edges = await API.getEdges();
+    const linkedPeople = edges.filter(ed => ed.source_id === e.uid && ed.edge_type === 'INVOLVES').map(ed => ed.target_id);
+
+    window.saveEventItem = async () => {
+        const payload = {
+            uid: e.uid,
+            summary: document.getElementById('e-summary').value,
+            dtstart: document.getElementById('e-dtstart').value,
+            dtend: document.getElementById('e-dtend').value,
+            description: document.getElementById('e-desc').value,
+            location: document.getElementById('e-location').value,
+            calendar_type: document.getElementById('e-caltype').value,
+            event_type: document.getElementById('e-evtype').value,
+            status: e.status
+        };
+        await API.saveEvent(payload);
+        renderEventsList();
+    };
+
+    window.publishEventItem = async () => {
+        const payload = {
+            uid: e.uid,
+            summary: document.getElementById('e-summary').value,
+            dtstart: document.getElementById('e-dtstart').value,
+            dtend: document.getElementById('e-dtend').value,
+            description: document.getElementById('e-desc').value,
+            location: document.getElementById('e-location').value,
+            calendar_type: document.getElementById('e-caltype').value,
+            event_type: document.getElementById('e-evtype').value,
+            status: 'PUBLISHED'
+        };
+        await API.saveEvent(payload);
+        renderEventsList();
+    };
+
+    window.hideEventItem = async () => {
+        const payload = {
+            uid: e.uid,
+            summary: document.getElementById('e-summary').value,
+            dtstart: document.getElementById('e-dtstart').value,
+            dtend: document.getElementById('e-dtend').value,
+            description: document.getElementById('e-desc').value,
+            location: document.getElementById('e-location').value,
+            calendar_type: document.getElementById('e-caltype').value,
+            event_type: document.getElementById('e-evtype').value,
+            status: 'HIDDEN'
+        };
+        await API.saveEvent(payload);
+        renderEventsList();
+    };
+
+    window.removeEventEdge = async (targetId) => {
+        await API.removeEdge(e.uid, targetId, 'INVOLVES');
+        renderEventEditor(e.uid);
+    };
+
+    window.openEventTypeahead = () => {
+        typeaheadTitle.textContent = 'Gắn nhân vật vào sự kiện';
+        typeaheadInput.value = '';
+        currentTypeaheadCallback = async (selectedId) => {
+            if (!linkedPeople.includes(selectedId)) {
+                await API.addEdge(e.uid, selectedId, 'INVOLVES');
+                renderEventEditor(e.uid);
+            }
+        };
+        renderTypeaheadResults(allPeopleCache);
+        typeaheadOverlay.classList.remove('hidden');
+        typeaheadInput.focus();
+    };
+
+    const renderEdgeChips = () => {
+        if (!linkedPeople || linkedPeople.length === 0) return `<span class="empty-text">Chưa có liên kết</span>`;
+        return linkedPeople.map(targetId => {
+            const target = allPeopleCache.find(x => x.id === targetId);
+            return `<div class="edge-chip">${target ? target.name : 'Unknown'} <span class="unlink" onclick="removeEventEdge('${targetId}')">×</span></div>`;
+        }).join('');
+    };
+
+    mainView.innerHTML = `
+        <div class="view-header">
+            <h1>Sửa Sự Kiện <span class="status ${e.status ? e.status.toLowerCase() : 'draft'}">${e.status || 'DRAFT'}</span></h1>
+            <div>
+                <button class="btn" onclick="saveEventItem()">Lưu Nháp / Save</button>
+                ${e.status !== 'PUBLISHED' ? `<button class="btn btn-primary" onclick="publishEventItem()">Xuất Bản (Publish)</button>` : `<button class="btn" onclick="hideEventItem()">Ẩn (Hidden)</button>`}
+            </div>
+        </div>
+        <div class="view-content">
+            <div class="inbox-split">
+                <div style="flex: 2;">
+                    <div class="form-group">
+                        <label class="form-label">Tên sự kiện</label>
+                        <input type="text" class="form-control title-input" id="e-summary" value="${e.summary || ''}">
+                    </div>
+                    <div class="form-group" style="display: flex; gap: 1rem;">
+                        <div style="flex: 1;">
+                            <label class="form-label">Ngày bắt đầu (YYYYMMDD)</label>
+                            <input type="text" class="form-control" id="e-dtstart" value="${e.dtstart || ''}">
+                        </div>
+                        <div style="flex: 1;">
+                            <label class="form-label">Ngày kết thúc</label>
+                            <input type="text" class="form-control" id="e-dtend" value="${e.dtend || ''}">
+                        </div>
+                    </div>
+                    <div class="form-group" style="display: flex; gap: 1rem;">
+                        <div style="flex: 1;">
+                            <label class="form-label">Loại lịch (Calendar)</label>
+                            <select class="form-control" id="e-caltype">
+                                <option value="CAL_01_BIRTHDAYS" ${e.calendar_type==='CAL_01_BIRTHDAYS'?'selected':''}>Sinh nhật</option>
+                                <option value="CAL_03_MEMORIALS" ${e.calendar_type==='CAL_03_MEMORIALS'?'selected':''}>Giỗ chạp</option>
+                                <option value="CAL_04_FAMILY_MILESTONES" ${e.calendar_type==='CAL_04_FAMILY_MILESTONES'?'selected':''}>Sự kiện dòng họ</option>
+                            </select>
+                        </div>
+                        <div style="flex: 1;">
+                            <label class="form-label">Phân loại (Type)</label>
+                            <input type="text" class="form-control" id="e-evtype" value="${e.event_type || ''}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Địa điểm</label>
+                        <input type="text" class="form-control" id="e-location" value="${e.location || ''}">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Mô tả chi tiết</label>
+                        <textarea class="form-control" id="e-desc" style="height: 150px;">${e.description || ''}</textarea>
+                    </div>
+                </div>
+                
+                <div style="flex: 1;">
+                    ${isNew ? '<p>Lưu nháp trước khi tag nhân vật.</p>' : `
+                    <div class="edge-panel">
+                        <div class="edge-header">Nhân vật liên quan <button class="btn-add-edge" onclick="openEventTypeahead()">+ Tag</button></div>
+                        <div class="edge-content">${renderEdgeChips()}</div>
+                    </div>
+                    `}
+                </div>
+            </div>
+        </div>
+    `;
+}
