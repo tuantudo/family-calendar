@@ -2,6 +2,19 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "admin.giatoctrantrongthu.com"
+        }
+      ],
+      "destination": "/admin",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/data/(.*)",
