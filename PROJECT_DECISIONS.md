@@ -9,4 +9,36 @@
 | D05 | Không cạnh tranh tính năng GEDCOM với FamilySearch | APPROVED | Sản phẩm tập trung vào tính tự sự (Narrative) và Di sản, không nhằm tạo một bộ máy dò tìm gia phả phức tạp. | Bỏ qua các module import/export GEDCOM phức tạp. |
 | D06 | Maintain "Documentary Intimacy" Visual Language | APPROVED | Tôn trọng giá trị thời gian, không làm giao diện SaaS hiện đại bóng bẩy. | Giữ nguyên font EB Garamond, hairline borders, UI phẳng. |
 | D07 | Frontend không giữ Ownership dữ liệu | APPROVED | Để đạt được "Dynamic Web", mọi dữ liệu (người, mạch, media refs, calendar) phải gọi từ API. | Xóa thư mục `data/` và `calendars/` khỏi source code frontend. |
+| D08 | User Audience & Visibility Model V1 | APPROVED | Website phục vụ đa lớp đối tượng (Public, Member, Family, Self, Admin). Access control định hình Product/UX, không chỉ là technical security. | Mọi module tương lai phải thiết kế UX/Data dựa trên lớp Audience. |
 
+
+## D08: USER AUDIENCE & VISIBILITY MODEL V1
+
+**Decision**: Website Gia tộc Trần Trọng Thư không chỉ phục vụ một loại người dùng mà được thiết kế ngay từ bản chất để phục vụ các lớp đối tượng (audience) khác nhau. Mỗi lớp có trải nghiệm, nội dung, và phạm vi visibility phù hợp.
+**Status**: APPROVED (Owner Decision)
+**Scope**: Toàn bộ kiến trúc sản phẩm, Frontend UX, Backend API, và Database Schema.
+
+**Rationale (Ý nghĩa của từng lớp & Product Principle)**:
+Nguyên tắc sản phẩm: *"Audience → Intent → Access → Content → Experience."* Không thiết kế website từ một giao diện duy nhất rồi đắp thêm permission. Access Control là một phần lõi của Product Architecture. 
+
+User Audience Model V1 bao gồm 5 lớp:
+1. **PUBLIC (Người ngoài / Chưa xác thực):** 
+   - *Mục tiêu:* Khám phá, hiểu dòng họ, tiếp cận lịch sử, văn hóa, con người, di sản được chủ động công khai. 
+   - *Giới hạn:* KHÔNG mặc định được xem toàn bộ dữ liệu genealogy.
+2. **MEMBER (Thành viên được xác thực):** 
+   - *Mục tiêu:* Khám phá sâu hơn, tiếp cận thông tin/nội bộ mở rộng, tham gia đóng góp.
+3. **FAMILY (Thành viên thuộc một nhánh/gia đình):** 
+   - *Mục tiêu:* Xem thông tin liên quan trực tiếp đến gia đình mình (shared memories, family archive).
+   - *Giới hạn:* KHÔNG mặc định xem private data của nhánh khác.
+4. **SELF (Chính cá nhân người dùng):** 
+   - *Mục tiêu:* Quản lý thông tin cá nhân, xem/kiểm soát dữ liệu riêng tư, profile của bản thân.
+5. **ADMIN (Ban biên tập):** 
+   - *Mục tiêu:* Quản lý nội dung, duyệt contribution, publish/unpublish, duy trì tính chính xác của Knowledge Graph.
+
+**Visibility Principle**: 
+Một resource không nhất thiết có duy nhất một trạng thái PUBLIC/PRIVATE. Visibility phụ thuộc vào: `Identity`, `Membership`, `Family Relationship`, `Ownership/Self`, `Resource`, `Action`, và `Editorial Policy`. 
+
+**Consequence (Product Implication)**:
+- **Tách bạch Model**: *USER/AUDIENCE MODEL* (Public, Member, Family, Self, Admin) là cách Owner nhìn sản phẩm. *TECHNICAL AUTHORIZATION MODEL* (Identity + Membership + Relationship + Resource + Action + Visibility) là cách hệ thống thực thi. Hai lớp này liên quan nhưng không đồng nhất.
+- **Quy tắc thiết kế tính năng**: Trong các phase phát triển tiếp theo của mọi module (Home, Tree, People, Story, Archive...), phải luôn trả lời được: *"Module này phục vụ audience nào?"* và *"Audience đó được nhìn thấy/làm được gì?"*
+- Liên kết với Technical Audit: Quyết định này đặt nền móng lý luận cho báo cáo kiến trúc `docs/architecture/access-control-data-visibility-audit-v1.md`.
